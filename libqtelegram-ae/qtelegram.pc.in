@@ -1,0 +1,10 @@
+prefix=@PREFIX@
+exec_prefix=@EXEC_PREFIX@
+libdir=@LIBDIR@
+includedir=@INCLUDEDIR@
+
+Name: libqtelegram
+Description: Telegram library written in Qt 
+Version: 1.0.0
+Libs: -L${libdir} -lqtelegram
+Cflags: -I${includedir}

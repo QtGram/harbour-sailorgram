@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>database/profiles.sqlite</file>
+        <file>database/userdata.sqlite</file>
+        <file>database/database.sqlite</file>
+    </qresource>
+</RCC>

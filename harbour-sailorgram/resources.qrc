@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/telegram.png</file>
+        <file>res/waiting.png</file>
+    </qresource>
+</RCC>
