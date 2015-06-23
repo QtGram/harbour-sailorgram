@@ -46,7 +46,6 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/pages/ChatPage.qml \
     qml/pages/ConnectionPage.qml \
     qml/pages/ContactsPage.qml \
-    qml/pages/MainPage.qml \
     qml/models/Settings.qml \
     server.pub \
     qml/pages/PhoneNumberPage.qml \
@@ -55,7 +54,8 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/items/ContactItem.qml \
     qml/items/ChatItem.qml \
     qml/items/UserAvatar.qml \
-    qml/js/CountryList.js
+    qml/js/CountryList.js \
+    qml/pages/DialogsPage.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

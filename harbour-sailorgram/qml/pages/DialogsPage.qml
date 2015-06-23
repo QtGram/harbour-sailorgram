@@ -37,7 +37,7 @@ Page
 {
     property Telegram telegram
 
-    id: mainpage
+    id: dialogspage
 
     SilicaListView
     {
@@ -64,7 +64,7 @@ Page
         }
 
         model: DialogsModel {
-            telegram: mainpage.telegram
+            telegram: dialogspage.telegram
         }
 
         delegate: ListItem {
