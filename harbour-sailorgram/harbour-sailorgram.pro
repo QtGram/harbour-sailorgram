@@ -50,7 +50,8 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     server.pub \
     qml/pages/PhoneNumberPage.qml \
     qml/pages/AuthorizationPage.qml \
-    qml/js/Settings.js
+    qml/js/Settings.js \
+    qml/items/ContactItem.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

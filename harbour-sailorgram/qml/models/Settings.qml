@@ -35,15 +35,13 @@ QtObject
             if(!settings.telegram.authLoggedIn)
                 return;
 
-            console.log(settings.telegram.authLoggedIn);
-
             pageStack.completeAnimation();
-            pageStack.push(Qt.resolvedUrl("../pages/MainPage.qml"), { "telegram": settings.telegram })
+            pageStack.replace(Qt.resolvedUrl("../pages/MainPage.qml"), { "telegram": settings.telegram })
         }
 
         onAuthCodeRequested: {
             pageStack.completeAnimation();
-            pageStack.push(Qt.resolvedUrl("../pages/AuthorizationPage.qml"), { "telegram": settings.telegram })
+            pageStack.replace(Qt.resolvedUrl("../pages/AuthorizationPage.qml"), { "telegram": settings.telegram })
         }
 
         onErrorChanged: {

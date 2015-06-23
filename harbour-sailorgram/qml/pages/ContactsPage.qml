@@ -1,19 +1,22 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.Telegram 1.0
+import harbour.sailorgram.TelegramQml 1.0
 import "../items"
 
 Page
 {
-    property TelegramClient telegram
+    property Telegram telegram
 
     id: contactspage
 
     SilicaListView
     {
         anchors.fill: parent
-        model: telegram.contacts
         header: PageHeader { title: qsTr("Contacts") }
+
+        model: ContactsModel {
+            telegram: contactspage.telegram
+        }
 
         delegate: ListItem {
             width: parent.width
@@ -22,10 +25,7 @@ Page
             ContactItem {
                 id: contactitem
                 anchors.fill: parent
-                contactId: model.modelData.contact
-                fullName: model.modelData.firstName + " " + model.modelData.lastName
-                currentStatus: model.modelData.status
-                contactAvatar: model.modelData.avatar
+                user: telegram.user(item.userId)
             }
 
             onClicked: pageStack.replace(Qt.resolvedUrl("ChatPage.qml"), { "fullName": contactitem.fullName, "currentStatus": model.modelData.status,
