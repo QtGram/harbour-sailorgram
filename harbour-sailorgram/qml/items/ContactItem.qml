@@ -1,6 +1,7 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
+import "../items"
 
 Item
 {
@@ -19,19 +20,18 @@ Item
         anchors { left: parent.left; top: parent.top; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
         spacing: Theme.paddingSmall
 
-        Image
+        UserAvatar
         {
-            id: imgcontact
+            id: useravatar
             width: contactitem.height
             height: contactitem.height
-            fillMode: Image.PreserveAspectFit
-            cache: false
-            source: user.photo.photoSmall.download.location
+            telegram: contactspage.telegram
+            user: contactitem.user
         }
 
         Column
         {
-            width: parent.width - imgcontact.width
+            width: parent.width - useravatar.width
             height: parent.height
 
             Label

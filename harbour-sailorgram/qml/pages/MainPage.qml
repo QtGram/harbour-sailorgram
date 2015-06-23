@@ -31,6 +31,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
+import "../items"
 
 Page
 {
@@ -50,22 +51,29 @@ Page
 
         ViewPlaceholder
         {
-            enabled: true // telegram.chats.length <= 0
+            enabled: lvchats.count <= 0
             text: qsTr("No Chats\n\nPick a contact by selecting \"Contacts\" from the Pull Down Menu")
         }
 
         id: lvchats
+        spacing: Theme.paddingMedium
         anchors.fill: parent
-        model: 0 //telegram.messageDialog()
+
+        header: PageHeader {
+            title: qsTr("Chats")
+        }
+
+        model: DialogsModel {
+            telegram: mainpage.telegram
+        }
 
         delegate: ListItem {
             contentWidth: parent.width
             height: Theme.itemSizeSmall
 
-            Label
-            {
+            ChatItem {
                 anchors.fill: parent
-                text: "Chat " + index
+                dialog: item
             }
         }
     }

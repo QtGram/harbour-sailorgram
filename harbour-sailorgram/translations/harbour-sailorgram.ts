@@ -83,6 +83,10 @@
 Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Chats</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PhoneNumberPage</name>

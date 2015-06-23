@@ -12,6 +12,7 @@ Page
     SilicaListView
     {
         anchors.fill: parent
+        spacing: Theme.paddingMedium
         header: PageHeader { title: qsTr("Contacts") }
 
         model: ContactsModel {
