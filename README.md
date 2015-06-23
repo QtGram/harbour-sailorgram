@@ -1,4 +1,5 @@
-An unofficial Telegram Client for SailfishOS
+An unofficial Telegram Client for SailfishOS.
+
 This software is under heavy development
 
 Dependencies
