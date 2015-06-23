@@ -33,7 +33,8 @@ server_pub.path = /usr/share/$$TARGET
 INSTALLS += server_pub
 
 SOURCES += src/harbour-sailorgram.cpp \
-    src/localstorage/telegramlocalstorage.cpp
+    src/localstorage/telegramlocalstorage.cpp \
+    src/telegramcalendar.cpp
 
 OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/cover/CoverPage.qml \
@@ -53,7 +54,8 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/js/Settings.js \
     qml/items/ContactItem.qml \
     qml/items/ChatItem.qml \
-    qml/items/UserAvatar.qml
+    qml/items/UserAvatar.qml \
+    qml/js/CountryList.js
 
 # to disable building translations every time, comment out the
 # following CONFIG line
@@ -66,7 +68,8 @@ CONFIG += sailfishapp_i18n
 TRANSLATIONS += translations/harbour-sailorgram-de.ts
 
 HEADERS += \
-    src/localstorage/telegramlocalstorage.h
+    src/localstorage/telegramlocalstorage.h \
+    src/telegramcalendar.h
 
 RESOURCES += \
     resources.qrc

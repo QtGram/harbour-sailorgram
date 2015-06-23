@@ -1,6 +1,7 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
+import harbour.sailorgram.TelegramCalendar 1.0
 import "../items"
 
 Item
@@ -36,9 +37,11 @@ Item
             Row
             {
                 height: chatitem.height / 2
+                anchors { left: parent.left; right: parent.right; rightMargin: Theme.paddingMedium }
 
                 Label {
                     id: lbluser
+                    width: parent.width - lbltime.width
                     text: ((user.username.length > 0) ? user.username : (user.firstName + " " + user.lastName))
                     verticalAlignment: Text.AlignVCenter
                     height: parent.height
@@ -47,23 +50,49 @@ Item
 
                 Label {
                     id: lbltime
-                    width: chatitem.width - lbluser.contentWidth
+                    height: parent.height
                     font.pixelSize: Theme.fontSizeTiny
                     verticalAlignment: Text.AlignVCenter
-                    height: parent.height
-                    elide: Text.ElideRight
+                    horizontalAlignment: Text.AlignRight
+                    text: TelegramCalendar.timeToString(telegram.message(dialog.topMessage).date)
                 }
             }
 
-            Label
+            Row
             {
-                id: lbllastmessage
-                width: chatitem.width
                 height: chatitem.height / 2
-                elide: Text.ElideRight
-                verticalAlignment: Text.AlignVCenter
-                font.pixelSize: Theme.fontSizeExtraSmall
-                text: telegram.message(dialog.topMessage).message
+                anchors { left: parent.left; right: parent.right; rightMargin: Theme.paddingMedium }
+
+                Label
+                {
+                    id: lbllastmessage
+                    width: parent.width - rectunread.width
+                    height: parent.height
+                    elide: Text.ElideRight
+                    verticalAlignment: Text.AlignVCenter
+                    font.pixelSize: Theme.fontSizeExtraSmall
+                    text: telegram.message(dialog.topMessage).message
+                }
+
+                Rectangle
+                {
+                    id: rectunread
+                    width: parent.height
+                    height: parent.height
+                    color: Theme.secondaryHighlightColor
+                    visible: dialog.unreadCount > 0
+                    radius: width * 0.5
+
+                    Label
+                    {
+                        anchors.centerIn: parent
+                        font.pixelSize: Theme.fontSizeTiny
+                        verticalAlignment: Text.AlignVCenter
+                        horizontalAlignment: Text.AlignHCenter
+                        font.bold: true
+                        text: dialog.unreadCount
+                    }
+                }
             }
         }
     }
