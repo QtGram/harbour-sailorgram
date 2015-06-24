@@ -6,8 +6,8 @@ import "../js/TelegramHelper.js" as TelegramHelper
 
 Item
 {
+    property Telegram telegram
     property User user
-    property alias currentStatus: lblstatus.text
 
     id: contactitem
 
@@ -26,7 +26,7 @@ Item
             id: useravatar
             width: contactitem.height
             height: contactitem.height
-            telegram: contactspage.telegram
+            telegram: contactitem.telegram
             user: contactitem.user
         }
 
@@ -49,7 +49,7 @@ Item
 
                 Label {
                     id: lblstaticstatus
-                    text: qsTr("Status") + ": " + user.status.wasOnline ? qsTr("Online") : qsTr("Offline")
+                    text: TelegramHelper.userStatus(user)
                     font.pixelSize: Theme.fontSizeExtraSmall
                     color: Theme.highlightColor
                 }

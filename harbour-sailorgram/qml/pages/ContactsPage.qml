@@ -26,6 +26,7 @@ Page
             ContactItem {
                 id: contactitem
                 anchors.fill: parent
+                telegram: contactspage.telegram
                 user: telegram.user(item.userId)
             }
 

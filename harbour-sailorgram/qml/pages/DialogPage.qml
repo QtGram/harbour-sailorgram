@@ -9,60 +9,99 @@ Page
 {
     property Telegram telegram
     property Dialog dialog
+    property int peerId: dialog.peer.chatId !== 0 ? dialog.peer.chatId : dialog.peer.userId
+    property bool muted: telegram.userData.isMuted(peerId)
 
     id: dialogpage
 
     Component.onCompleted: {
-        dialog.unreadCount = 0; /* Mark all messages as readed */
+        messagemodel.clearNewMessageFlag();
+        messagemodel.setReaded();
     }
 
-    SilicaListView
+    RemorsePopup { id: remorsepopup }
+
+    Connections
     {
-        PullDownMenu {
+        target: telegram.userData
+
+        onMuteChanged: {
+            if(id !== dialogpage.peerId)
+                return;
+
+            dialogpage.muted = telegram.userData.isMuted(dialogpage.peerId);
+        }
+    }
+
+    SilicaFlickable
+    {
+        id: flickable
+        anchors.fill: parent
+
+        PullDownMenu
+        {
             id: menu
 
             MenuItem {
-                text: qsTr("Delete History")
+                text: qsTr("Delete")
+
+                onClicked: {
+                    remorsepopup.execute(qsTr("Deleting History"), function() {
+                        telegram.messagesDeleteHistory(item.peer.userId);
+                        pageStack.pop();
+                    });
+                }
             }
 
             MenuItem {
-                text: qsTr("Remove Chat")
-            }
+                text: dialogpage.muted ? qsTr("Enable Notifications") : qsTr("Disable Notifications")
 
-            MenuItem {
-                text: qsTr("Silence Notifications")
+                onClicked: {
+                    if(dialogpage.muted)
+                        telegram.userData.removeMute(dialogpage.peerId)
+                    else
+                        telegram.userData.addMute(dialogpage.peerId)
+                }
             }
         }
 
-        id: lvdialog
-        anchors { left: parent.left; top: parent.top; right: parent.right; bottom: messagebar.top }
-        verticalLayoutDirection: ListView.BottomToTop
-        spacing: Theme.paddingMedium
-        clip: true
-
-        footer: PageHeader { /* ListView is reversed, header = footer */
-            title: qsTr("Chatting with: ") + TelegramHelper.userName(telegram.user(dialog.peer.userId))
-        }
-
-        model: MessagesModel {
-            id: messagemodel
+        ContactItem
+        {
+            id: header
+            anchors { left: parent.left; top: parent.top; right: parent.right; leftMargin: Theme.horizontalPageMargin; topMargin: Theme.paddingMedium }
+            height: Theme.itemSizeSmall
             telegram: dialogpage.telegram
-            dialog: dialogpage.dialog
+            user: telegram.user(dialog.peer.userId)
+        }
 
-            onMessageAdded: { /* We are in this chat, always mark these messages as unread */
-                var message = telegram.message(msgId);
-                message.unread = false;
+        SilicaListView
+        {
+            id: lvdialog
+            anchors { left: parent.left; top: header.bottom; right: parent.right; bottom: messagebar.top }
+            verticalLayoutDirection: ListView.BottomToTop
+            spacing: Theme.paddingMedium
+            clip: true
+
+            model: MessagesModel {
+                id: messagemodel
+                telegram: dialogpage.telegram
+                dialog: dialogpage.dialog
+
+                onMessageAdded: { /* We are in this chat, always mark these messages as unread */
+                    messagemodel.clearNewMessageFlag();
+                    messagemodel.setReaded();
+                }
+            }
+
+            delegate: MessageItem {
+                message: item
             }
         }
 
-        delegate: MessageItem {
-            message: item
+        MessageBar
+        {
+            id: messagebar
+            anchors { left: parent.left; bottom: parent.bottom; right: parent.right }
         }
-    }
-
-    MessageBar
-    {
-        id: messagebar
-        anchors { left: parent.left; bottom: parent.bottom; right: parent.right }
     }
 }

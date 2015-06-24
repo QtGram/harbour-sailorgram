@@ -24,21 +24,6 @@
     </message>
 </context>
 <context>
-    <name>ContactItem</name>
-    <message>
-        <source>Status</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Offline</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>ContactsPage</name>
     <message>
         <source>Contacts</source>
@@ -55,19 +40,19 @@
 <context>
     <name>DialogPage</name>
     <message>
-        <source>Delete History</source>
+        <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Remove Chat</source>
+        <source>Deleting History</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Silence Notifications</source>
+        <source>Enable Notifications</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Chatting with: </source>
+        <source>Disable Notifications</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -85,6 +70,14 @@ Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source
     </message>
     <message>
         <source>Chats</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete History</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting History</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -138,6 +131,33 @@ Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source
     <message>
         <source>Item</source>
         <translation type="vanished">Element</translation>
+    </message>
+</context>
+<context>
+    <name>TelegramHelper</name>
+    <message>
+        <source>Recently</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last Month</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last Week</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last Seen at %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

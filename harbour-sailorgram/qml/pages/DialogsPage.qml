@@ -68,9 +68,22 @@ Page
         }
 
         delegate: ListItem {
+            id: dialogitem
             contentWidth: parent.width
-            height: Theme.itemSizeSmall
+            contentHeight: Theme.itemSizeSmall
             onClicked: pageStack.push(Qt.resolvedUrl("DialogPage.qml"), {"telegram": dialogspage.telegram, "dialog": item })
+
+            menu: ContextMenu {
+                MenuItem {
+                    text: qsTr("Delete History")
+
+                    onClicked: {
+                        dialogitem.remorseAction(qsTr("Deleting History"), function() {
+                            telegram.messagesDeleteHistory(item.peer.userId);
+                        });
+                    }
+                }
+            }
 
             ChatItem {
                 anchors.fill: parent
