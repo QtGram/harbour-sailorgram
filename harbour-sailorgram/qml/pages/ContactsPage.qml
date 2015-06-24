@@ -29,8 +29,7 @@ Page
                 user: telegram.user(item.userId)
             }
 
-            onClicked: pageStack.replace(Qt.resolvedUrl("ChatPage.qml"), { "fullName": contactitem.fullName, "currentStatus": model.modelData.status,
-                                                                           "contactId": model.modelData.contact } )
+            onClicked: pageStack.replace(Qt.resolvedUrl("DialogPage.qml"), { "telegram": contactspage.telegram,  "dialog": contactspage.telegram.fakeDialogObject(item.userId, false) } )
         }
     }
 }

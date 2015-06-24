@@ -12,6 +12,10 @@ Page
 
     id: dialogpage
 
+    Component.onCompleted: {
+        dialog.unreadCount = 0; /* Mark all messages as readed */
+    }
+
     SilicaListView
     {
         PullDownMenu {
@@ -41,8 +45,14 @@ Page
         }
 
         model: MessagesModel {
+            id: messagemodel
             telegram: dialogpage.telegram
             dialog: dialogpage.dialog
+
+            onMessageAdded: { /* We are in this chat, always mark these messages as unread */
+                var message = telegram.message(msgId);
+                message.unread = false;
+            }
         }
 
         delegate: MessageItem {

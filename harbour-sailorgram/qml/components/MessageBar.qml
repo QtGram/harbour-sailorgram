@@ -24,6 +24,11 @@ Item
             anchors.bottom: parent.bottom
             visible: textarea.text.length > 0;
             icon.source: "image://theme/icon-m-message"
+
+            onClicked: {
+                messagemodel.sendMessage(textarea.text, (messagemodel.count > 0 ? true : false));
+                textarea.text = "";
+            }
         }
 
         IconButton
