@@ -17,25 +17,6 @@
     </message>
 </context>
 <context>
-    <name>ChatPage</name>
-    <message>
-        <source>Delete History</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Remove Chat</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Silence Notifications</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Chatting with: </source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>ConnectionPage</name>
     <message>
         <source>Connecting...</source>
@@ -72,6 +53,42 @@
     </message>
 </context>
 <context>
+    <name>DialogPage</name>
+    <message>
+        <source>Delete History</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove Chat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Silence Notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chatting with: </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DialogsPage</name>
+    <message>
+        <source>Contacts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No Chats
+
+Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chats</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FirstPage</name>
     <message>
         <source>Show Page 2</source>
@@ -87,19 +104,9 @@
     </message>
 </context>
 <context>
-    <name>MainPage</name>
+    <name>MessageBar</name>
     <message>
-        <source>Contacts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>No Chats
-
-Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Chats</source>
+        <source>Message</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

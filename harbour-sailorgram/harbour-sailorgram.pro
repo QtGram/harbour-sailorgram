@@ -43,7 +43,6 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     rpm/harbour-sailorgram.yaml \
     translations/*.ts \
     harbour-sailorgram.desktop \
-    qml/pages/ChatPage.qml \
     qml/pages/ConnectionPage.qml \
     qml/pages/ContactsPage.qml \
     qml/models/Settings.qml \
@@ -52,10 +51,14 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/pages/AuthorizationPage.qml \
     qml/js/Settings.js \
     qml/items/ContactItem.qml \
-    qml/items/ChatItem.qml \
     qml/items/UserAvatar.qml \
     qml/js/CountryList.js \
-    qml/pages/DialogsPage.qml
+    qml/pages/DialogsPage.qml \
+    qml/components/MessageBar.qml \
+    qml/pages/DialogPage.qml \
+    qml/items/ChatItem.qml \
+    qml/items/MessageItem.qml \
+    qml/js/TelegramHelper.js
 
 # to disable building translations every time, comment out the
 # following CONFIG line

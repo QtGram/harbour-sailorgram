@@ -17,25 +17,6 @@
     </message>
 </context>
 <context>
-    <name>ChatPage</name>
-    <message>
-        <source>Delete History</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Remove Chat</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Silence Notifications</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Chatting with: </source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>ConnectionPage</name>
     <message>
         <source>Connecting...</source>
@@ -72,7 +53,26 @@
     </message>
 </context>
 <context>
-    <name>MainPage</name>
+    <name>DialogPage</name>
+    <message>
+        <source>Delete History</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove Chat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Silence Notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chatting with: </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DialogsPage</name>
     <message>
         <source>Contacts</source>
         <translation type="unfinished"></translation>
@@ -85,6 +85,13 @@ Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source
     </message>
     <message>
         <source>Chats</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MessageBar</name>
+    <message>
+        <source>Message</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

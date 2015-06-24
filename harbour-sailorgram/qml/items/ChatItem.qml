@@ -3,6 +3,7 @@ import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import harbour.sailorgram.TelegramCalendar 1.0
 import "../items"
+import "../js/TelegramHelper.js" as TelegramHelper
 
 Item
 {
@@ -42,7 +43,7 @@ Item
                 Label {
                     id: lbluser
                     width: parent.width - lbltime.width
-                    text: ((user.username.length > 0) ? user.username : (user.firstName + " " + user.lastName))
+                    text: TelegramHelper.userName(user)
                     verticalAlignment: Text.AlignVCenter
                     height: parent.height
                     color: Theme.highlightColor

@@ -1,15 +1,16 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
+import harbour.sailorgram.TelegramQml 1.0
 import "../components"
 import "../items"
+import "../js/TelegramHelper.js" as TelegramHelper
 
 Page
 {
-    property string fullName
-    property string currentStatus
-    property string contactId
+    property Telegram telegram
+    property Dialog dialog
 
-    id: chatpage
+    id: dialogpage
 
     SilicaListView
     {
@@ -29,19 +30,23 @@ Page
             }
         }
 
-        id: lvchat
+        id: lvdialog
         anchors { left: parent.left; top: parent.top; right: parent.right; bottom: messagebar.top }
+        verticalLayoutDirection: ListView.BottomToTop
+        spacing: Theme.paddingMedium
         clip: true
 
-        model: 10
-
-        delegate: ChatItem {
-            text: "Testo " + index;
-            me: index % 2
+        footer: PageHeader { /* ListView is reversed, header = footer */
+            title: qsTr("Chatting with: ") + TelegramHelper.userName(telegram.user(dialog.peer.userId))
         }
 
-        header: PageHeader {
-            title: qsTr("Chatting with: ") + fullName
+        model: MessagesModel {
+            telegram: dialogpage.telegram
+            dialog: dialogpage.dialog
+        }
+
+        delegate: MessageItem {
+            message: item
         }
     }
 

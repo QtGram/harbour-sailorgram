@@ -70,6 +70,7 @@ Page
         delegate: ListItem {
             contentWidth: parent.width
             height: Theme.itemSizeSmall
+            onClicked: pageStack.push(Qt.resolvedUrl("DialogPage.qml"), {"telegram": dialogspage.telegram, "dialog": item })
 
             ChatItem {
                 anchors.fill: parent

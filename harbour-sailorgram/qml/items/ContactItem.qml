@@ -2,6 +2,7 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../items"
+import "../js/TelegramHelper.js" as TelegramHelper
 
 Item
 {
@@ -39,7 +40,7 @@ Item
                 id: lblfullname
                 width: parent.width
                 elide: Text.ElideRight
-                text: ((user.username.length > 0) ? user.username : (user.firstName + " " + user.lastName))
+                text: TelegramHelper.userName(user)
             }
 
             Row
