@@ -3,6 +3,7 @@ import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../components"
 import "../items"
+import "../items/messageitem"
 import "../js/TelegramHelper.js" as TelegramHelper
 
 Page
@@ -94,6 +95,7 @@ Page
             }
 
             delegate: MessageItem {
+                telegram: dialogpage.telegram
                 message: item
             }
         }

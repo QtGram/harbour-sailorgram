@@ -57,8 +57,10 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/components/MessageBar.qml \
     qml/pages/DialogPage.qml \
     qml/items/ChatItem.qml \
-    qml/items/MessageItem.qml \
-    qml/js/TelegramHelper.js
+    qml/items/messageitem/MessageItem.qml \
+    qml/js/TelegramHelper.js \
+    qml/items/messageitem/MessageText.qml \
+    qml/items/messageitem/MessagePhoto.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line
