@@ -2,6 +2,7 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import harbour.sailorgram.TelegramCalendar 1.0
+import "media"
 
 ListItem
 {
@@ -30,10 +31,21 @@ ListItem
         height: {
             var h = messagetext.height;
 
+            if(messagedocument.visible)
+                h += messagedocument.height
+
             if(messagephoto.visible)
                 h += messagephoto.height;
 
             return h;
+        }
+
+        MessageDocument
+        {
+            id: messagedocument
+            telegram: messageitem.telegram
+            message: messageitem.message
+            me: messageitem.me
         }
 
         MessagePhoto
@@ -41,7 +53,6 @@ ListItem
             id: messagephoto
             telegram: messageitem.telegram
             message: messageitem.message
-            hasMedia: (message.media ? (message.media.classType !== typeMessageMediaEmpty) : false)
             me: messageitem.me
         }
 
@@ -49,8 +60,8 @@ ListItem
         {
             id: messagetext
             width: parent.width
-            me: messageitem.me
             message: messageitem.message
+            me: messageitem.me
         }
     }
 }
