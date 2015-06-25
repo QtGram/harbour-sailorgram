@@ -9,6 +9,10 @@ var typeUserStatusRecently = 0xe26f42f1;
 var typeUserStatusLastWeek = 0x7bf09fc;
 var typeUserStatusLastMonth = 0x77ebc742;
 
+/* -- Internal Functions -- */
+function log10(x) { return Math.log(x) / Math.LN10 }
+/* -- Internal Functions -- */
+
 function userName(user)
 {
     return ((user.username.length > 0) ? user.username : (user.firstName + " " + user.lastName));
@@ -38,4 +42,17 @@ function userStatus(user)
     }
 
     return qsTr("Unknown");
+}
+
+function formatBytes(bytes, decimals)
+{
+   if(bytes === 0)
+       return "0 Byte";
+
+   var k = 1024;
+   var dm = decimals + 1 || 3;
+   var sizes = ["Bytes", "KiB", "MiB", "GiB", "TiB", "PiB", "EiB", "ZiB", "YiB"];
+   var i = Math.floor(Math.log(bytes) / Math.log(k));
+
+   return (bytes / Math.pow(k, i)).toPrecision(dm) + " " + sizes[i];
 }

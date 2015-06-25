@@ -3,14 +3,23 @@ import harbour.sailorgram.TelegramQml 1.0
 
 Item
 {
+    property FileLocation fileLocation
     property Telegram telegram
     property Message message
     property bool hasMedia
     property bool me
 
+    property alias fileHandler: filehandler
+
     id: messagemediaitem
     anchors { left: me ? parent.left : undefined; right: me ? undefined : parent.right }
     visible: hasMedia
+
+    FileHandler
+    {
+        id: filehandler
+        target: message
+    }
 
     onHasMediaChanged: {
         switch(message.media.classType) {
