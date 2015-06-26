@@ -63,7 +63,9 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/items/messageitem/MessageText.qml \
     qml/items/messageitem/MessageMediaItem.qml \
     qml/items/messageitem/media/MessagePhoto.qml \
-    qml/items/messageitem/media/MessageDocument.qml
+    qml/items/messageitem/media/MessageDocument.qml \
+    qml/menus/MessageMenu.qml \
+    qml/components/PopupMessage.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

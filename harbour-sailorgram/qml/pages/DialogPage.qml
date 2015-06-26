@@ -22,6 +22,12 @@ Page
 
     RemorsePopup { id: remorsepopup }
 
+    PopupMessage
+    {
+        id: popupmessage
+        anchors { left: parent.left; top: parent.top; right: parent.right }
+    }
+
     Connections
     {
         target: telegram.userData
@@ -88,7 +94,7 @@ Page
                 telegram: dialogpage.telegram
                 dialog: dialogpage.dialog
 
-                onMessageAdded: { /* We are in this chat, always mark these messages as unread */
+                onMessageAdded: { /* We are in this chat, always mark these messages as read */
                     messagemodel.clearNewMessageFlag();
                     messagemodel.setReaded();
                 }

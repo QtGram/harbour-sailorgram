@@ -2,6 +2,7 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import harbour.sailorgram.TelegramCalendar 1.0
+import "../../menus"
 import "media"
 
 ListItem
@@ -23,22 +24,16 @@ ListItem
     contentWidth: parent.width
     contentHeight: content.height
 
+    menu: MessageMenu {
+        id: messagemenu
+        telegram: messageitem.telegram
+        message: messageitem.message
+    }
+
     Column
     {
         id: content
         anchors { top: parent.top; left: parent.left; right: parent.right; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
-
-        height: {
-            var h = messagetext.height;
-
-            if(messagedocument.visible)
-                h += messagedocument.height
-
-            if(messagephoto.visible)
-                h += messagephoto.height;
-
-            return h;
-        }
 
         MessageDocument
         {

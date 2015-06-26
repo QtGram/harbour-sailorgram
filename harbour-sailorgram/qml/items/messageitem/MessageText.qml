@@ -16,7 +16,6 @@ Item
         id: content
         anchors.top: parent.top
         width: parent.width
-        height: lbltext.paintedHeight + lbldate.paintedHeight
 
         Label
         {
