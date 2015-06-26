@@ -2,5 +2,7 @@
     <qresource prefix="/">
         <file>res/telegram.png</file>
         <file>res/waiting.png</file>
+        <file>res/read.png</file>
+        <file>res/sent.png</file>
     </qresource>
 </RCC>
