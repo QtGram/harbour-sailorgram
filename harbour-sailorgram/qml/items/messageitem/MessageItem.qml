@@ -24,7 +24,7 @@ ListItem
     contentWidth: parent.width
     contentHeight: content.height
 
-    menu: MessageMenu {
+    menu: ConversationMenu {
         id: messagemenu
         telegram: messageitem.telegram
         message: messageitem.message
