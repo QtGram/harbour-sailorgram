@@ -4,9 +4,8 @@ CONFIG += qt
 QT += qml quick sql xml multimedia
 DEFINES += TELEGRAMQML_LIBRARY
 
-uri = TelegramQml
+# uri = TelegramQml
 
-LIBS += -L$$OUT_PWD/../libqtelegram-ae -lssl -lcrypto -lz -lqtelegram-ae
 INCLUDEPATH += $$PWD/../libqtelegram-ae
 
 # Input
@@ -75,7 +74,7 @@ linux {
 }
 
 #contains(BUILD_MODE,lib) {
-#    DEFINES += BUILD_MODE_LIB
+    DEFINES += BUILD_MODE_LIB
 #    isEmpty(PREFIX) {
 #        PREFIX = /usr
 #    }
@@ -90,18 +89,18 @@ linux {
 #    INSTALLS += target
 
 #} else {
-    CONFIG += plugin
-    DEFINES += BUILD_MODE_PLUGIN
+#    CONFIG += plugin
+#    DEFINES += BUILD_MODE_PLUGIN
 
 #    TARGET = $$qtLibraryTarget($$TARGET)
-    DISTFILES = qmldir
-    !equals(_PRO_FILE_PWD_, $$OUT_PWD) {
-        copy_qmldir.target = $$OUT_PWD/qmldir
-        copy_qmldir.depends = $$_PRO_FILE_PWD_/qmldir
-        copy_qmldir.commands = $(COPY_FILE) \"$$replace(copy_qmldir.depends, /, $$QMAKE_DIR_SEP)\" \"$$replace(copy_qmldir.target, /, $$QMAKE_DIR_SEP)\"
-        QMAKE_EXTRA_TARGETS += copy_qmldir
-        PRE_TARGETDEPS += $$copy_qmldir.target
-    }
+#    DISTFILES = qmldir
+#    !equals(_PRO_FILE_PWD_, $$OUT_PWD) {
+#        copy_qmldir.target = $$OUT_PWD/qmldir
+#        copy_qmldir.depends = $$_PRO_FILE_PWD_/qmldir
+#        copy_qmldir.commands = $(COPY_FILE) \"$$replace(copy_qmldir.depends, /, $$QMAKE_DIR_SEP)\" \"$$replace(copy_qmldir.target, /, $$QMAKE_DIR_SEP)\"
+#        QMAKE_EXTRA_TARGETS += copy_qmldir
+#        PRE_TARGETDEPS += $$copy_qmldir.target
+#    }
 
 #    qmldir.files = qmldir
 #    unix {

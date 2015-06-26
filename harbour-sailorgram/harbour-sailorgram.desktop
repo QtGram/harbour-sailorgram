@@ -2,5 +2,5 @@
 Type=Application
 X-Nemo-Application-Type=silica-qt5
 Icon=harbour-sailorgram
-Exec=harbour-sailorgram
+Exec=invoker --type=j -s /usr/bin/harbour-sailorgram
 Name=SailorGram

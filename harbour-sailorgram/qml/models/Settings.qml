@@ -24,7 +24,7 @@ QtObject
             if(phonenumber !== false)
                 return;
 
-            Settings.set("phonenumber", settings.telegram.phoneNumber); /* Save Phone Number for fast login */
+            Settings.set("phonenumber", settings.telegram.phoneNumber); // Save Phone Number for fast login
         }
 
         onAuthSignInErrorChanged: {

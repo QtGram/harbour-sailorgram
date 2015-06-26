@@ -15,17 +15,18 @@ TARGET = harbour-sailorgram
 CONFIG += sailfishapp
 QT += sql
 
+LIBS += -L$$OUT_PWD/../libqtelegram-ae -L$$OUT_PWD/../telegramqml -lssl -lcrypto -lz -lqtelegram-ae -ltelegramqml
+INCLUDEPATH += $$PWD/../telegramqml
+
+# TelegramQml
+libtelegram_qml.files = $$OUT_PWD/../telegramqml/*.so*
+libtelegram_qml.path = /usr/share/$$TARGET/lib
+INSTALLS += libtelegram_qml
+
 # LibQTelegram-AE
 libqtelegram_ae.files = $$OUT_PWD/../libqtelegram-ae/*.so*
 libqtelegram_ae.path = /usr/share/$$TARGET/lib
 INSTALLS += libqtelegram_ae
-
-# TelegramQml
-libtelegram_qml.files = $$OUT_PWD/../telegramqml/libtelegramqml.so \
-                        $$OUT_PWD/../telegramqml/qmldir
-
-libtelegram_qml.path = /usr/share/$$TARGET/harbour/sailorgram/TelegramQml
-INSTALLS += libtelegram_qml
 
 # Telegram Public Key
 server_pub.files = $$PWD/server.pub

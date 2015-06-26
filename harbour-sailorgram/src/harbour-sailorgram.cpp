@@ -30,6 +30,7 @@
 
 #include <QtQuick>
 #include <sailfishapp.h>
+#include <telegramqmlinitializer.h>
 #include "telegramcalendar.h"
 #include "localstorage/telegramlocalstorage.h"
 
@@ -38,6 +39,8 @@ int main(int argc, char *argv[])
     QScopedPointer<QGuiApplication> application(SailfishApp::application(argc, argv));
     application->setApplicationName("harbour-sailorgram");
     application->setApplicationVersion("0.5");
+
+    TelegramQmlInitializer::init("harbour.sailorgram.TelegramQml");
 
     qmlRegisterType<TelegramLocalStorage>("harbour.sailorgram.Telegram", 1, 0, "TelegramLocalStorage");
     qmlRegisterSingletonType<TelegramCalendar>("harbour.sailorgram.TelegramCalendar", 1, 0, "TelegramCalendar", &TelegramCalendar::initialize);
