@@ -36,7 +36,7 @@ QtObject
                 return;
 
             pageStack.completeAnimation();
-            pageStack.replace(Qt.resolvedUrl("../pages/DialogsPage.qml"), { "telegram": settings.telegram })
+            pageStack.replace(Qt.resolvedUrl("../pages/conversations/ConversationsPage.qml"), { "telegram": settings.telegram })
         }
 
         onAuthCodeRequested: {

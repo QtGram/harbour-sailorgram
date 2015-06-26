@@ -31,14 +31,30 @@
     </message>
 </context>
 <context>
-    <name>CoverPage</name>
+    <name>ConversationMenu</name>
     <message>
-        <source>My Cover</source>
-        <translation>Mein Cover</translation>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Message copied to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting Message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>DialogPage</name>
+    <name>ConversationPage</name>
     <message>
         <source>Delete</source>
         <translation type="unfinished"></translation>
@@ -57,7 +73,7 @@
     </message>
 </context>
 <context>
-    <name>DialogsPage</name>
+    <name>ConversationsPage</name>
     <message>
         <source>Contacts</source>
         <translation type="unfinished"></translation>
@@ -82,6 +98,13 @@ Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source
     </message>
 </context>
 <context>
+    <name>CoverPage</name>
+    <message>
+        <source>My Cover</source>
+        <translation>Mein Cover</translation>
+    </message>
+</context>
+<context>
     <name>FirstPage</name>
     <message>
         <source>Show Page 2</source>
@@ -100,29 +123,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source
     <name>MessageBar</name>
     <message>
         <source>Message</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>MessageMenu</name>
-    <message>
-        <source>Copy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Message copied to clipboard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deleting Message</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Download</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

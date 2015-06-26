@@ -30,7 +30,7 @@ Page
                 user: telegram.user(item.userId)
             }
 
-            onClicked: pageStack.replace(Qt.resolvedUrl("DialogPage.qml"), { "telegram": contactspage.telegram,  "dialog": contactspage.telegram.fakeDialogObject(item.userId, false) } )
+            onClicked: pageStack.replace(Qt.resolvedUrl("ConversationPage.qml"), { "telegram": contactspage.telegram,  "dialog": contactspage.telegram.fakeDialogObject(item.userId, false) } )
         }
     }
 }

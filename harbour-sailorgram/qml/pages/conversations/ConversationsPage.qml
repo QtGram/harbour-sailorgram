@@ -31,13 +31,13 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
-import "../items"
+import "../../items"
 
 Page
 {
     property Telegram telegram
 
-    id: dialogspage
+    id: conversationspage
 
     SilicaListView
     {
@@ -45,7 +45,7 @@ Page
         {
             MenuItem {
                 text: qsTr("Contacts")
-                onClicked: pageStack.push(Qt.resolvedUrl("ContactsPage.qml"), { "telegram": telegram })
+                onClicked: pageStack.push(Qt.resolvedUrl("../ContactsPage.qml"), { "telegram": telegram })
             }
         }
 
@@ -64,14 +64,14 @@ Page
         }
 
         model: DialogsModel {
-            telegram: dialogspage.telegram
+            telegram: conversationspage.telegram
         }
 
         delegate: ListItem {
             id: dialogitem
             contentWidth: parent.width
             contentHeight: Theme.itemSizeSmall
-            onClicked: pageStack.push(Qt.resolvedUrl("DialogPage.qml"), {"telegram": dialogspage.telegram, "dialog": item })
+            onClicked: pageStack.push(Qt.resolvedUrl("ConversationPage.qml"), {"telegram": conversationspage.telegram, "dialog": item })
 
             menu: ContextMenu {
                 MenuItem {

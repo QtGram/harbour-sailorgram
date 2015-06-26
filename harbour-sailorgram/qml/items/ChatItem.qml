@@ -26,7 +26,7 @@ Item
             id: useravatar
             width: chatitem.height
             height: chatitem.height
-            telegram: dialogspage.telegram
+            telegram: conversationspage.telegram
             user: chatitem.user
         }
 

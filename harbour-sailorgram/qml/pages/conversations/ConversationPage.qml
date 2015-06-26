@@ -1,10 +1,10 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
-import "../components"
-import "../items"
-import "../items/messageitem"
-import "../js/TelegramHelper.js" as TelegramHelper
+import "../../components"
+import "../../items"
+import "../../items/messageitem"
+import "../../js/TelegramHelper.js" as TelegramHelper
 
 Page
 {
@@ -13,7 +13,7 @@ Page
     property int peerId: dialog.peer.chatId !== 0 ? dialog.peer.chatId : dialog.peer.userId
     property bool muted: telegram.userData.isMuted(peerId)
 
-    id: dialogpage
+    id: conversationpage
 
     Component.onCompleted: {
         messagemodel.clearNewMessageFlag();
@@ -33,10 +33,10 @@ Page
         target: telegram.userData
 
         onMuteChanged: {
-            if(id !== dialogpage.peerId)
+            if(id !== conversationpage.peerId)
                 return;
 
-            dialogpage.muted = telegram.userData.isMuted(dialogpage.peerId);
+            conversationpage.muted = telegram.userData.isMuted(conversationpage.peerId);
         }
     }
 
@@ -61,13 +61,13 @@ Page
             }
 
             MenuItem {
-                text: dialogpage.muted ? qsTr("Enable Notifications") : qsTr("Disable Notifications")
+                text: conversationpage.muted ? qsTr("Enable Notifications") : qsTr("Disable Notifications")
 
                 onClicked: {
-                    if(dialogpage.muted)
-                        telegram.userData.removeMute(dialogpage.peerId)
+                    if(conversationpage.muted)
+                        telegram.userData.removeMute(conversationpage.peerId)
                     else
-                        telegram.userData.addMute(dialogpage.peerId)
+                        telegram.userData.addMute(conversationpage.peerId)
                 }
             }
         }
@@ -77,7 +77,7 @@ Page
             id: header
             anchors { left: parent.left; top: parent.top; right: parent.right; leftMargin: Theme.horizontalPageMargin; topMargin: Theme.paddingMedium }
             height: Theme.itemSizeSmall
-            telegram: dialogpage.telegram
+            telegram: conversationpage.telegram
             user: telegram.user(dialog.peer.userId)
         }
 
@@ -91,8 +91,8 @@ Page
 
             model: MessagesModel {
                 id: messagemodel
-                telegram: dialogpage.telegram
-                dialog: dialogpage.dialog
+                telegram: conversationpage.telegram
+                dialog: conversationpage.dialog
 
                 onMessageAdded: { /* We are in this chat, always mark these messages as read */
                     messagemodel.clearNewMessageFlag();
@@ -101,7 +101,7 @@ Page
             }
 
             delegate: MessageItem {
-                telegram: dialogpage.telegram
+                telegram: conversationpage.telegram
                 message: item
             }
         }
