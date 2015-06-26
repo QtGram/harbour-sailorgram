@@ -50,17 +50,6 @@ Page
             id: menu
 
             MenuItem {
-                text: qsTr("Delete")
-
-                onClicked: {
-                    remorsepopup.execute(qsTr("Deleting History"), function() {
-                        telegram.messagesDeleteHistory(item.peer.userId);
-                        pageStack.pop();
-                    });
-                }
-            }
-
-            MenuItem {
                 text: conversationpage.muted ? qsTr("Enable Notifications") : qsTr("Disable Notifications")
 
                 onClicked: {
@@ -68,6 +57,17 @@ Page
                         telegram.userData.removeMute(conversationpage.peerId)
                     else
                         telegram.userData.addMute(conversationpage.peerId)
+                }
+            }
+
+            MenuItem {
+                text: qsTr("Delete")
+
+                onClicked: {
+                    remorsepopup.execute(qsTr("Deleting History"), function() {
+                        telegram.messagesDeleteHistory(item.peer.userId);
+                        pageStack.pop();
+                    });
                 }
             }
         }
