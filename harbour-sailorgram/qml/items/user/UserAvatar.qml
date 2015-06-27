@@ -27,7 +27,7 @@ Image
         Label {
             anchors.centerIn: parent
             font.bold: true
-            text: user.firstName.slice(0, 1).toUpperCase() + user.lastName.slice(0, 1).toUpperCase();
+            text: user.firstName.slice(0, 1).toUpperCase() + ((user.lastName.length > 0) ? user.lastName.slice(0, 1).toUpperCase(): "");
         }
     }
 }
