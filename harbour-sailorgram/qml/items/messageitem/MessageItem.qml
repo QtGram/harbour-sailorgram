@@ -30,25 +30,55 @@ ListItem
         message: messageitem.message
     }
 
+    onClicked: {
+        if(!message.media)
+            return;
+
+        if(message.media.classType === messageitem.typeMessageMediaPhoto)
+            pageStack.push(Qt.resolvedUrl("../../pages/media/PhotoPage.qml"), { "telegram": messageitem.telegram, "photo": message.media.photo });
+        else if(message.media.classType === messageitem.typeMessageMediaDocument)
+            pageStack.push(Qt.resolvedUrl("../../pages/media/DocumentPage.qml"), { "telegram": messageitem.telegram, "document": message.media.document });
+    }
+
+    Component {
+        id: documentcomponent
+
+        MessageDocument {
+            telegram: messageitem.telegram
+            message: messageitem.message
+            me: messageitem.me
+        }
+    }
+
+    Component {
+        id: photocomponent
+
+        MessagePhoto {
+            telegram: messageitem.telegram
+            message: messageitem.message
+            me: messageitem.me
+        }
+    }
+
     Column
     {
         id: content
         anchors { top: parent.top; left: parent.left; right: parent.right; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
 
-        MessageDocument
+        Loader
         {
-            id: messagedocument
-            telegram: messageitem.telegram
-            message: messageitem.message
-            me: messageitem.me
-        }
+            anchors { left: me ? parent.left : undefined; right: me ? undefined : parent.right }
 
-        MessagePhoto
-        {
-            id: messagephoto
-            telegram: messageitem.telegram
-            message: messageitem.message
-            me: messageitem.me
+            sourceComponent: {
+                if(message.media) {
+                    if(message.media.classType === messageitem.typeMessageMediaPhoto)
+                        return photocomponent;
+                    else if(message.media.classType === messageitem.typeMessageMediaDocument)
+                        return documentcomponent;
+                }
+
+                return null;
+            }
         }
 
         MessageText

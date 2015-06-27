@@ -26,6 +26,9 @@ Page
             return;
 
         pageStack.pushAttached(Qt.resolvedUrl("../../pages/users/UserPage.qml"), { "telegram": conversationpage.telegram, "user": telegram.user(dialog.peer.userId), "actionVisible": false });
+
+        messagemodel.telegram = conversationpage.telegram;
+        messagemodel.dialog = conversationpage.dialog;
     }
 
     RemorsePopup { id: remorsepopup }
@@ -89,16 +92,20 @@ Page
 
         SilicaListView
         {
-            id: lvdialog
-            anchors { left: parent.left; top: header.bottom; right: parent.right; bottom: messagebar.top }
+            id: lvconversation
+            anchors { left: parent.left; top: header.bottom; right: parent.right; bottom: messagebar.top; topMargin: Theme.paddingSmall }
             verticalLayoutDirection: ListView.BottomToTop
             spacing: Theme.paddingMedium
             clip: true
 
+            BusyIndicator
+            {
+                anchors.centerIn: parent
+                running: messagemodel.count <= 0
+            }
+
             model: MessagesModel {
                 id: messagemodel
-                telegram: conversationpage.telegram
-                dialog: conversationpage.dialog
 
                 onMessageAdded: { /* We are in this chat, always mark these messages as read */
                     messagemodel.clearNewMessageFlag();

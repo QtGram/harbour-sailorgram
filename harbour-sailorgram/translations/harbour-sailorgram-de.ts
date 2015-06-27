@@ -113,6 +113,13 @@ Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source
     </message>
 </context>
 <context>
+    <name>MediaMenu</name>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MessageBar</name>
     <message>
         <source>Message</source>

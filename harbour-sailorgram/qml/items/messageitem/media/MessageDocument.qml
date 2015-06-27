@@ -1,5 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
+import harbour.sailorgram.TelegramCalendar 1.0
 import ".."
 import "../../../js/TelegramHelper.js" as TelegramHelper
 
@@ -24,7 +25,7 @@ MessageMediaItem
             id: imgpreview
             height: 48 * Theme.pixelSize
             width: height * sourceSize.width / sourceSize.height
-            source: hasMedia ? message.media.document.thumb.location.download.location : ""
+            source: message.media.document.thumb.location.download.location
         }
 
         Column

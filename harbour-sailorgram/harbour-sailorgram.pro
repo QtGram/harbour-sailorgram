@@ -67,7 +67,10 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/pages/users/UserPage.qml \
     qml/pages/users/UsersPage.qml \
     qml/menus/UserMenu.qml \
-    qml/components/ClickableLabel.qml
+    qml/components/ClickableLabel.qml \
+    qml/pages/media/PhotoPage.qml \
+    qml/menus/MediaMenu.qml \
+    qml/pages/media/DocumentPage.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

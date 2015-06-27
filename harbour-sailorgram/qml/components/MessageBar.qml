@@ -15,6 +15,7 @@ Item
             id: textarea
             width: parent.width - (btnallegate.visible ? btnallegate.width : btnsend.width)
             placeholderText: qsTr("Message") + "..."
+            focusOutBehavior: FocusBehavior.KeepFocus
             labelVisible: false
         }
 
@@ -26,8 +27,10 @@ Item
             icon.source: "image://theme/icon-m-message"
 
             onClicked: {
+                Qt.inputMethod.commit();
                 messagemodel.sendMessage(textarea.text, (messagemodel.count > 0 ? true : false));
                 textarea.text = "";
+
             }
         }
 

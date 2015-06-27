@@ -12,7 +12,6 @@ Item
     property alias fileHandler: filehandler
 
     id: messagemediaitem
-    anchors { left: me ? parent.left : undefined; right: me ? undefined : parent.right }
     visible: hasMedia
 
     FileHandler
