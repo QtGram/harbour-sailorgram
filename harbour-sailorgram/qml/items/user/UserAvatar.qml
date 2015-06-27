@@ -14,7 +14,7 @@ Image
 
     id: imgcontact
     fillMode: Image.PreserveAspectFit
-    cache: false
+    asynchronous: true
     source: user.photo.photoSmall.download.location
 
     Rectangle {

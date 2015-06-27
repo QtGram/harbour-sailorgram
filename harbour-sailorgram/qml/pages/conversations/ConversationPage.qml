@@ -2,7 +2,7 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../../components"
-import "../../items"
+import "../../items/user"
 import "../../items/messageitem"
 import "../../js/TelegramHelper.js" as TelegramHelper
 
@@ -14,10 +14,18 @@ Page
     property bool muted: telegram.userData.isMuted(peerId)
 
     id: conversationpage
+    allowedOrientations: defaultAllowedOrientations
 
     Component.onCompleted: {
         messagemodel.clearNewMessageFlag();
         messagemodel.setReaded();
+    }
+
+    onStatusChanged: {
+        if(status !== PageStatus.Active)
+            return;
+
+        pageStack.pushAttached(Qt.resolvedUrl("../../pages/users/UserPage.qml"), { "telegram": conversationpage.telegram, "user": telegram.user(dialog.peer.userId), "actionVisible": false });
     }
 
     RemorsePopup { id: remorsepopup }
@@ -47,8 +55,6 @@ Page
 
         PullDownMenu
         {
-            id: menu
-
             MenuItem {
                 text: conversationpage.muted ? qsTr("Enable Notifications") : qsTr("Disable Notifications")
 
@@ -72,7 +78,7 @@ Page
             }
         }
 
-        ContactItem
+        UserItem
         {
             id: header
             anchors { left: parent.left; top: parent.top; right: parent.right; leftMargin: Theme.horizontalPageMargin; topMargin: Theme.paddingMedium }

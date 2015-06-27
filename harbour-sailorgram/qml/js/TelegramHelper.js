@@ -9,13 +9,14 @@ var typeUserStatusRecently = 0xe26f42f1;
 var typeUserStatusLastWeek = 0x7bf09fc;
 var typeUserStatusLastMonth = 0x77ebc742;
 
-/* -- Internal Functions -- */
-function log10(x) { return Math.log(x) / Math.LN10 }
-/* -- Internal Functions -- */
-
 function userName(user)
 {
     return ((user.username.length > 0) ? user.username : (user.firstName + " " + user.lastName));
+}
+
+function phoneNumber(user)
+{
+    return completePhoneNumber(user.phone);
 }
 
 function userStatus(user)
@@ -55,4 +56,12 @@ function formatBytes(bytes, decimals)
    var i = Math.floor(Math.log(bytes) / Math.log(k));
 
    return (bytes / Math.pow(k, i)).toPrecision(dm) + " " + sizes[i];
+}
+
+function completePhoneNumber(phonenumber)
+{
+    if(phonenumber[0] !== '+')
+        return "+" + phonenumber;
+
+    return phonenumber;
 }

@@ -24,13 +24,6 @@
     </message>
 </context>
 <context>
-    <name>ContactsPage</name>
-    <message>
-        <source>Contacts</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>ConversationMenu</name>
     <message>
         <source>Copy</source>
@@ -101,7 +94,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source
     <name>CoverPage</name>
     <message>
         <source>My Cover</source>
-        <translation>Mein Cover</translation>
+        <translation type="vanished">Mein Cover</translation>
     </message>
 </context>
 <context>
@@ -180,6 +173,39 @@ Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source
     </message>
     <message>
         <source>Last Seen at %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UserMenu</name>
+    <message>
+        <source>Send Message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UserPage</name>
+    <message>
+        <source>Phone Number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send Message</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UsersPage</name>
+    <message>
+        <source>Contacts</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

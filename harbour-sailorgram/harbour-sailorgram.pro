@@ -38,21 +38,19 @@ SOURCES += src/harbour-sailorgram.cpp \
     src/telegramcalendar.cpp
 
 OTHER_FILES += qml/harbour-sailorgram.qml \
-    qml/cover/CoverPage.qml \
     rpm/harbour-sailorgram.changes.in \
     rpm/harbour-sailorgram.spec \
     rpm/harbour-sailorgram.yaml \
     translations/*.ts \
     harbour-sailorgram.desktop \
     qml/pages/ConnectionPage.qml \
-    qml/pages/ContactsPage.qml \
     qml/models/Settings.qml \
     server.pub \
     qml/pages/PhoneNumberPage.qml \
     qml/pages/AuthorizationPage.qml \
     qml/js/Settings.js \
-    qml/items/ContactItem.qml \
-    qml/items/UserAvatar.qml \
+    qml/items/user/UserAvatar.qml \
+    qml/items/user/UserItem.qml \
     qml/js/CountryList.js \
     qml/components/MessageBar.qml \
     qml/items/ChatItem.qml \
@@ -65,7 +63,11 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/components/PopupMessage.qml \
     qml/menus/ConversationMenu.qml \
     qml/pages/conversations/ConversationsPage.qml \
-    qml/pages/conversations/ConversationPage.qml
+    qml/pages/conversations/ConversationPage.qml \
+    qml/pages/users/UserPage.qml \
+    qml/pages/users/UsersPage.qml \
+    qml/menus/UserMenu.qml \
+    qml/components/ClickableLabel.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

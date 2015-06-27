@@ -38,6 +38,7 @@ Page
     property Telegram telegram
 
     id: conversationspage
+    allowedOrientations: defaultAllowedOrientations
 
     SilicaListView
     {
@@ -45,7 +46,7 @@ Page
         {
             MenuItem {
                 text: qsTr("Contacts")
-                onClicked: pageStack.push(Qt.resolvedUrl("../ContactsPage.qml"), { "telegram": telegram })
+                onClicked: pageStack.push(Qt.resolvedUrl("../users/UsersPage.qml"), { "telegram": telegram })
             }
         }
 

@@ -1,6 +1,7 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import "../js/CountryList.js" as CountryList
+import "../js/TelegramHelper.js" as TelegramHelper
 
 Dialog
 {
@@ -11,7 +12,7 @@ Dialog
     canAccept: tfphonenumber.text.length > 0
 
     onAccepted: {
-        settings.telegram.phoneNumber = tfcountrycode.text + tfphonenumber.text;
+        settings.telegram.phoneNumber = TelegramHelper.completePhoneNumber(tfcountrycode.text + tfphonenumber.text);
     }
 
     SilicaFlickable

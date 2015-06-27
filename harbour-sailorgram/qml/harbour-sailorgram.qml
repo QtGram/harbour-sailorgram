@@ -42,7 +42,7 @@ ApplicationWindow
     }
 
     id: mainwindow
-    cover: Qt.resolvedUrl("cover/CoverPage.qml")
+    cover: undefined
 
     initialPage: {
         Settings.load();
