@@ -18,7 +18,6 @@ ListItem
 
     property Telegram telegram
     property Message message
-    property bool me: (message.fromId === telegram.me)
 
     id: messageitem
     contentWidth: parent.width
@@ -46,7 +45,6 @@ ListItem
         MessageDocument {
             telegram: messageitem.telegram
             message: messageitem.message
-            me: messageitem.me
         }
     }
 
@@ -56,7 +54,6 @@ ListItem
         MessagePhoto {
             telegram: messageitem.telegram
             message: messageitem.message
-            me: messageitem.me
         }
     }
 
@@ -67,7 +64,7 @@ ListItem
 
         Loader
         {
-            anchors { left: me ? parent.left : undefined; right: me ? undefined : parent.right }
+            anchors { left: message.out ? parent.left : undefined; right: message.out ? undefined : parent.right }
 
             sourceComponent: {
                 if(message.media) {
@@ -86,7 +83,6 @@ ListItem
             id: messagetext
             width: parent.width
             message: messageitem.message
-            me: messageitem.me
         }
     }
 }

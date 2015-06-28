@@ -6,7 +6,6 @@ import harbour.sailorgram.TelegramCalendar 1.0
 Item
 {
     property Message message
-    property bool me
 
     id: messagetext
     height: content.height
@@ -21,11 +20,11 @@ Item
         Label
         {
             id: lbltext
-            color: me ? Theme.highlightColor : Theme.primaryColor
-            anchors { left: me ? parent.left : undefined; right: me ? undefined : parent.right }
+            color: message.out ? Theme.highlightColor : Theme.primaryColor
+            anchors { left: message.out ? parent.left : undefined; right: message.out ? undefined : parent.right }
             width: parent.width
             verticalAlignment: Text.AlignTop
-            horizontalAlignment: me ? Text.AlignLeft : Text.AlignRight
+            horizontalAlignment: message.out ? Text.AlignLeft : Text.AlignRight
             wrapMode: Text.WordWrap
             text: message.message
             visible: message.message.length > 0
@@ -33,13 +32,13 @@ Item
 
         Row
         {
-            anchors { right: me ? undefined : parent.right; left: me ? parent.left : undefined }
+            anchors { right: message.out ? undefined : parent.right; left: message.out ? parent.left : undefined }
             spacing: Theme.paddingSmall
 
             Image
             {
                 id: imgsent
-                visible: message.sent
+                visible: message.sent && message.out
                 fillMode: Image.PreserveAspectFit
                 width: lbldate.contentHeight
                 height: lbldate.contentHeight
@@ -49,7 +48,7 @@ Item
             Image
             {
                 id: imgread
-                visible: !message.unread
+                visible: !message.unread && message.out
                 fillMode: Image.PreserveAspectFit
                 width: lbldate.contentHeight
                 height: lbldate.contentHeight
@@ -61,7 +60,7 @@ Item
                 id: lbldate
                 font.pixelSize: Theme.fontSizeTiny
                 verticalAlignment: Text.AlignBottom
-                horizontalAlignment: me ? Text.AlignLeft : Text.AlignRight
+                horizontalAlignment: message.out ? Text.AlignLeft : Text.AlignRight
                 text: TelegramCalendar.timeToString(message.date)
             }
         }

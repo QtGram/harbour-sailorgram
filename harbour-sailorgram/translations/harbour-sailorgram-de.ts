@@ -12,11 +12,42 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Wait for the SMS containing the activation code and click &apos;Sign In&apos;</source>
+        <source>You have entered a wrong Authorization Code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You have entered a wrong Authorization Code</source>
+        <source>Wait for the SMS containing the activation code and press &apos;Sign In&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ChatItem</name>
+    <message>
+        <source>Audio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contact</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Document</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Photo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unsupported Media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Video</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -53,6 +84,14 @@
 <context>
     <name>ConversationPage</name>
     <message>
+        <source>Enable Notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable Notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
@@ -61,11 +100,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Enable Notifications</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Disable Notifications</source>
+        <source>Add to Contacts</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

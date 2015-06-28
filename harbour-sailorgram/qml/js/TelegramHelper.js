@@ -65,3 +65,8 @@ function completePhoneNumber(phonenumber)
 
     return phonenumber;
 }
+
+function isTelegramUser(user) // https://core.telegram.org/constructor/updateServiceNotification
+{
+    return user.id === 777000;
+}

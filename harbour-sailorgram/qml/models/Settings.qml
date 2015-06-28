@@ -6,7 +6,6 @@ import "../js/Settings.js" as Settings
 QtObject
 {
     id: settings
-
     property TelegramLocalStorage telegramlocalstorage: TelegramLocalStorage { }
 
     property Telegram telegram: Telegram {

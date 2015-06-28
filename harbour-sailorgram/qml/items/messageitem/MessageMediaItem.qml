@@ -7,7 +7,6 @@ Item
     property Telegram telegram
     property Message message
     property bool hasMedia
-    property bool me
 
     property alias fileHandler: filehandler
 
