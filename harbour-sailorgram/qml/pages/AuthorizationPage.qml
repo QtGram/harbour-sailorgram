@@ -46,7 +46,7 @@ Dialog
             Label
             {
                 id: lblinfo
-                text: authError ? qsTr("You have entered a wrong Authorization Code") : qsTr("Wait for the SMS containing the activation code and click 'Sign In'")
+                text: authError ? qsTr("You have entered a wrong Authorization Code") : qsTr("Wait for the SMS containing the activation code and press 'Sign In'")
                 font.pixelSize: Theme.fontSizeSmall
                 anchors { left: parent.left; top: imgwaiting.bottom; right: parent.right; topMargin: Theme.paddingLarge; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
                 horizontalAlignment: Text.AlignHCenter
