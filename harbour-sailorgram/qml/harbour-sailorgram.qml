@@ -36,23 +36,32 @@ import "js/Settings.js" as Settings
 
 ApplicationWindow
 {
+    default property alias settings: settings
+
     Settings
     {
         id: settings
+        Component.onCompleted: Settings.load()
     }
 
     id: mainwindow
     cover: undefined
 
-    initialPage: {
+    initialPage: Component {
+        ConnectionPage {
+            telegram: settings.telegram
+        }
+    }
+
+
+        /* {
         Settings.load();
         var phonenumber = Settings.get("phonenumber");
 
         if(phonenumber === false)
             return Qt.resolvedUrl("pages/PhoneNumberPage.qml");
 
-        settings.telegram.phoneNumber = phonenumber;
         return Qt.resolvedUrl("pages/ConnectionPage.qml");
-    }
+    } */
 }
 

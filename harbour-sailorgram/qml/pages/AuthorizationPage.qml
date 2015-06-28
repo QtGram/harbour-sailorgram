@@ -1,15 +1,23 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
+import "../models"
 import "../js/Settings.js" as Settings
 
 Dialog
 {
+    property alias authError: tfcode.errorHighlight
     property var telegram
 
     id: dlgauthorization
     canAccept: tfcode.text.length > 0
     acceptDestinationAction: PageStackAction.Replace
     onAccepted: telegram.authSignIn(tfcode.text)
+
+    acceptDestination: Component {
+        ConnectionPage {
+            telegram: dlgauthorization.telegram
+        }
+    }
 
     SilicaFlickable
     {
@@ -38,7 +46,7 @@ Dialog
             Label
             {
                 id: lblinfo
-                text: qsTr("Wait for the SMS containing the activation code and click 'Sign In'")
+                text: authError ? qsTr("You have entered a wrong Authorization Code") : qsTr("Wait for the SMS containing the activation code and click 'Sign In'")
                 font.pixelSize: Theme.fontSizeSmall
                 anchors { left: parent.left; top: imgwaiting.bottom; right: parent.right; topMargin: Theme.paddingLarge; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
                 horizontalAlignment: Text.AlignHCenter
@@ -51,6 +59,12 @@ Dialog
             id: tfcode
             anchors { left: parent.left; top: infocontainer.bottom; right: parent.right; topMargin: Theme.paddingLarge }
             placeholderText: qsTr("Authorization Code")
+            inputMethodHints: Qt.ImhNoAutoUppercase | Qt.ImhNoPredictiveText | Qt.ImhDigitsOnly
+
+            onTextChanged: {
+                if(authError)
+                    authError = false; /* Reset Error State */
+            }
         }
     }
 }

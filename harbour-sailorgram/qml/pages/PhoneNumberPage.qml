@@ -1,18 +1,26 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
+import "../models"
 import "../js/CountryList.js" as CountryList
 import "../js/TelegramHelper.js" as TelegramHelper
 
 Dialog
 {
+    property var telegram
+
     id: dlgphonenumber
     allowedOrientations: defaultAllowedOrientations
     acceptDestinationAction: PageStackAction.Replace
-    acceptDestination: Qt.resolvedUrl("ConnectionPage.qml")
     canAccept: tfphonenumber.text.length > 0
 
+    acceptDestination: Component {
+        ConnectionPage {
+            telegram: dlgphonenumber.telegram
+        }
+    }
+
     onAccepted: {
-        settings.telegram.phoneNumber = TelegramHelper.completePhoneNumber(tfcountrycode.text + tfphonenumber.text);
+        telegram.phoneNumber = TelegramHelper.completePhoneNumber(tfcountrycode.text + tfphonenumber.text);
     }
 
     SilicaFlickable
@@ -96,6 +104,7 @@ Dialog
                 {
                     id: tfcountrycode
                     width: font.pixelSize * 5
+                    inputMethodHints: Qt.ImhNoAutoUppercase | Qt.ImhNoPredictiveText | Qt.ImhDigitsOnly
                 }
 
                 TextField
@@ -103,6 +112,7 @@ Dialog
                     id: tfphonenumber
                     width: parent.width - tfcountrycode.width
                     placeholderText: qsTr("Phone Number")
+                    inputMethodHints: Qt.ImhNoAutoUppercase | Qt.ImhNoPredictiveText | Qt.ImhDigitsOnly
                 }
             }
         }

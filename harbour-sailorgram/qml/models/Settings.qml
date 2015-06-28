@@ -28,7 +28,11 @@ QtObject
         }
 
         onAuthSignInErrorChanged: {
-            console.log("auth_error_signin");
+            if(!settings.telegram.authSignInError)
+                return;
+
+            pageStack.completeAnimation();
+            pageStack.replace(Qt.resolvedUrl("../pages/AuthorizationPage.qml"), { "telegram": settings.telegram, "authError": settings.telegram.authSignInError })
         }
 
         onAuthLoggedInChanged: {
@@ -41,11 +45,7 @@ QtObject
 
         onAuthCodeRequested: {
             pageStack.completeAnimation();
-            pageStack.replace(Qt.resolvedUrl("../pages/AuthorizationPage.qml"), { "telegram": settings.telegram })
-        }
-
-        onErrorChanged: {
-            console.log("!!!!!!!!!!!!!!" + error);
+            pageStack.replace(Qt.resolvedUrl("../pages/AuthorizationPage.qml"), { "telegram": settings.telegram, "authError": settings.telegram.authSignInError })
         }
     }
 }

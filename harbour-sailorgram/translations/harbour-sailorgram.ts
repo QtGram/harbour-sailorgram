@@ -15,6 +15,10 @@
         <source>Wait for the SMS containing the activation code and click &apos;Sign In&apos;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>You have entered a wrong Authorization Code</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConnectionPage</name>

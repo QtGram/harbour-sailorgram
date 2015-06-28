@@ -98,8 +98,7 @@ Page
             spacing: Theme.paddingMedium
             clip: true
 
-            BusyIndicator
-            {
+            BusyIndicator {
                 anchors.centerIn: parent
                 running: messagemodel.count <= 0
             }
