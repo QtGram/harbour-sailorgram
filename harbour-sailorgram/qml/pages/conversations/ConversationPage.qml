@@ -8,30 +8,43 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 
 Page
 {
+   readonly property real typeUserSelf: 0x1c60e608
+   readonly property real typeUserContact: 0xcab35e18
+   readonly property real typeUserDeleted: 0xd6016d7a
+   readonly property real typeUserForeign: 0x75cf7a8
+   readonly property real typeUserEmpty: 0x200250ba
+   readonly property real typeUserRequest: 0xd9ccc4ef
+
     property Telegram telegram
     property Dialog dialog
+    property User user: telegram.user(dialog.peer.userId)
     property int peerId: dialog.peer.chatId !== 0 ? dialog.peer.chatId : dialog.peer.userId
     property bool muted: telegram.userData.isMuted(peerId)
 
     id: conversationpage
     allowedOrientations: defaultAllowedOrientations
 
-    Component.onCompleted: {
-        messagemodel.clearNewMessageFlag();
-        messagemodel.setReaded();
-    }
-
     onStatusChanged: {
         if(status !== PageStatus.Active)
             return;
 
-        pageStack.pushAttached(Qt.resolvedUrl("../../pages/users/UserPage.qml"), { "telegram": conversationpage.telegram, "user": telegram.user(dialog.peer.userId), "actionVisible": false });
+        pageStack.pushAttached(Qt.resolvedUrl("../../pages/users/UserPage.qml"), { "telegram": conversationpage.telegram, "user": conversationpage.user, "actionVisible": false });
 
+        messagemodel.setReaded();
         messagemodel.telegram = conversationpage.telegram;
         messagemodel.dialog = conversationpage.dialog;
     }
 
     RemorsePopup { id: remorsepopup }
+
+    Timer
+    {
+        id: refreshtimer
+        repeat: true
+        interval: 10000
+        onTriggered: messagemodel.refresh()
+        Component.onCompleted: start()
+    }
 
     PopupMessage
     {
@@ -79,6 +92,12 @@ Page
                     });
                 }
             }
+
+            MenuItem {
+                text: qsTr("Add to Contacts")
+                visible: !TelegramHelper.isTelegramUser(user) && (user.classType === conversationpage.typeUserRequest)
+                onClicked: telegram.addContact(user.firstName, user.lastName, user.phone)
+            }
         }
 
         UserItem
@@ -87,7 +106,7 @@ Page
             anchors { left: parent.left; top: parent.top; right: parent.right; leftMargin: Theme.horizontalPageMargin; topMargin: Theme.paddingMedium }
             height: Theme.itemSizeSmall
             telegram: conversationpage.telegram
-            user: telegram.user(dialog.peer.userId)
+            user: conversationpage.user
         }
 
         SilicaListView
@@ -106,9 +125,9 @@ Page
             model: MessagesModel {
                 id: messagemodel
 
-                onMessageAdded: { /* We are in this chat, always mark these messages as read */
-                    messagemodel.clearNewMessageFlag();
-                    messagemodel.setReaded();
+                onCountChanged: {
+                    if(count > 1)
+                        messagemodel.setReaded(); /* We are in this chat, always mark these messages as read */
                 }
             }
 
