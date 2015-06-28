@@ -15,7 +15,7 @@ MessageMediaItem
     Row
     {
         id: row
-        anchors { left: parent.left; top: parent.top; }
+        anchors { left: parent.left; top: parent.top }
         height: imgpreview.height
         width: imgpreview.width + info.width
         spacing: Theme.paddingSmall
@@ -25,13 +25,13 @@ MessageMediaItem
             id: imgpreview
             height: 48 * Theme.pixelSize
             width: height * sourceSize.width / sourceSize.height
-            source: message.media.document.thumb.location.download.location
+            source: message.media.document.thumb.location.download.location || "image://theme/icon-m-document"
         }
 
         Column
         {
             id: info
-            width: lblinfo.paintedWidth + sizemimerow.width
+            width: Math.max(lblinfo.paintedWidth, sizemimerow.width)
             height: imgpreview.height
 
             Label
@@ -49,7 +49,6 @@ MessageMediaItem
             Row
             {
                 id: sizemimerow
-                width: lblsize.paintedWidth + lblmime.paintedWidth
                 height: parent.height / 2
                 spacing: Theme.paddingMedium
 
@@ -57,8 +56,6 @@ MessageMediaItem
                 {
                     id: lblsize
                     font.pixelSize: Theme.fontSizeExtraSmall
-                    wrapMode: Text.NoWrap
-                    elide: Text.ElideRight
                     text: TelegramHelper.formatBytes(message.media.document.size, 2)
                 }
 
@@ -66,8 +63,6 @@ MessageMediaItem
                 {
                     id: lblmime
                     font.pixelSize: Theme.fontSizeExtraSmall
-                    wrapMode: Text.NoWrap
-                    elide: Text.ElideRight
                     text: message.media.document.mimeType
                 }
             }
