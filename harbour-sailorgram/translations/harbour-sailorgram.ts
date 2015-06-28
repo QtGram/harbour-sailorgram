@@ -21,7 +21,14 @@
     </message>
 </context>
 <context>
-    <name>ChatItem</name>
+    <name>ConnectionPage</name>
+    <message>
+        <source>Connecting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ConversationItem</name>
     <message>
         <source>Audio</source>
         <translation type="unfinished"></translation>
@@ -48,13 +55,6 @@
     </message>
     <message>
         <source>Video</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ConnectionPage</name>
-    <message>
-        <source>Connecting...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

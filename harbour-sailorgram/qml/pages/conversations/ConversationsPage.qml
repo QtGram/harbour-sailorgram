@@ -86,7 +86,7 @@ Page
                 }
             }
 
-            ChatItem {
+            ConversationItem {
                 anchors.fill: parent
                 dialog: item
             }
