@@ -52,16 +52,5 @@ ApplicationWindow
             telegram: settings.telegram
         }
     }
-
-
-        /* {
-        Settings.load();
-        var phonenumber = Settings.get("phonenumber");
-
-        if(phonenumber === false)
-            return Qt.resolvedUrl("pages/PhoneNumberPage.qml");
-
-        return Qt.resolvedUrl("pages/ConnectionPage.qml");
-    } */
 }
 
