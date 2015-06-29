@@ -57,7 +57,7 @@ ListItem
 
         if(path.length > 0)
         {
-            Qt.openUrlExternally(loader.item.fileHandler.filePath)
+            Qt.openUrlExternally(loader.item.fileHandler.filePath);
             return;
         }
 

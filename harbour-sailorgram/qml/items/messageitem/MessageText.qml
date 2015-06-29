@@ -37,22 +37,20 @@ Item
 
             Image
             {
-                id: imgsent
-                visible: message.sent && message.out
+                id: imgstatus
+                visible: message.out
                 fillMode: Image.PreserveAspectFit
                 width: lbldate.contentHeight
                 height: lbldate.contentHeight
-                source: "qrc:///res/sent.png"
-            }
+                source: {
+                    if(!message.unread)
+                        return "qrc:///res/read.png";
 
-            Image
-            {
-                id: imgread
-                visible: !message.unread && message.out
-                fillMode: Image.PreserveAspectFit
-                width: lbldate.contentHeight
-                height: lbldate.contentHeight
-                source: "qrc:///res/read.png"
+                    if(message.sent)
+                        return "qrc:///res/sent.png";
+
+                    return "qrc:///res/out.png";
+                }
             }
 
             Label
