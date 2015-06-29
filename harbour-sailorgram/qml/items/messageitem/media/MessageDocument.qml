@@ -1,16 +1,16 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
+import harbour.sailorgram.TelegramQml 1.0
 import harbour.sailorgram.TelegramCalendar 1.0
-import ".."
 import "../../../js/TelegramHelper.js" as TelegramHelper
 
 MessageMediaItem
 {
+    property FileLocation fileLocation: telegram.locationOfDocument(message.media.document)
+
     id: messagedocument
-    hasMedia: (message.media ? (message.media.classType === messageitem.typeMessageMediaDocument) : false)
     height: row.height
     width: Math.min(messageitem.width, row.width)
-    fileLocation: telegram.locationOfDocument(message.media.document)
 
     Row
     {
@@ -20,12 +20,11 @@ MessageMediaItem
         width: imgpreview.width + info.width
         spacing: Theme.paddingSmall
 
-        Image
+        MessageThumbnail
         {
             id: imgpreview
-            height: 48 * Theme.pixelSize
-            width: height * sourceSize.width / sourceSize.height
-            source: message.media.document.thumb.location.download.location || "image://theme/icon-m-document"
+            source: messagedocument.mediaPath || "image://theme/icon-m-document"
+            downloadProgress: fileHandler.progressPercent
         }
 
         Column

@@ -4,8 +4,12 @@ import harbour.sailorgram.TelegramQml 1.0
 
 ContextMenu
 {
+    signal downloadRequested()
+    signal openRequested();
+
     property Telegram telegram
     property Message message
+    property FileHandler fileHandler
 
     MenuItem
     {
@@ -31,6 +35,14 @@ ContextMenu
     MenuItem
     {
         text: qsTr("Download")
-        visible: message.media && (message.media.classType !== typeMessageMediaEmpty)
+        visible: !fileHandler ? false : (fileHandler.filePath.toString().length <= 0) && (message.media && (message.media.classType !== typeMessageMediaEmpty))
+        onClicked: downloadRequested()
+    }
+
+    MenuItem
+    {
+        text: qsTr("Open");
+        visible: !fileHandler ? false : (fileHandler.filePath.toString().length > 0) && (message.media && (message.media.classType !== typeMessageMediaEmpty))
+        onClicked: openRequested()
     }
 }

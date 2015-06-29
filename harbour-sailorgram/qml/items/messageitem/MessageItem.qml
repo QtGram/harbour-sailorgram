@@ -19,6 +19,23 @@ ListItem
     property Telegram telegram
     property Message message
 
+    function downloadMedia() {
+        messageitem.remorseAction(qsTr("Downloading Media"), function() {
+            switch(loader.item.fileHandler.targetType) {
+                case FileHandler.TypeTargetMediaVideo:
+                case FileHandler.TypeTargetMediaPhoto:
+                case FileHandler.TypeTargetMediaDocument:
+                case FileHandler.TypeTargetMediaAudio:
+                    loader.item.fileHandler.download();
+                    break;
+
+                default:
+                    break;
+            }
+
+        });
+    }
+
     id: messageitem
     contentWidth: parent.width
     contentHeight: content.height
@@ -27,16 +44,24 @@ ListItem
         id: messagemenu
         telegram: messageitem.telegram
         message: messageitem.message
+
+        onDownloadRequested: downloadMedia()
+        onOpenRequested: Qt.openUrlExternally(loader.item.fileHandler.filePath)
     }
 
     onClicked: {
         if(!message.media)
             return;
 
-        if(message.media.classType === messageitem.typeMessageMediaPhoto)
-            pageStack.push(Qt.resolvedUrl("../../pages/media/PhotoPage.qml"), { "telegram": messageitem.telegram, "photo": message.media.photo });
-        else if(message.media.classType === messageitem.typeMessageMediaDocument)
-            pageStack.push(Qt.resolvedUrl("../../pages/media/DocumentPage.qml"), { "telegram": messageitem.telegram, "document": message.media.document });
+        var path = loader.item.fileHandler.filePath.toString();
+
+        if(path.length > 0)
+        {
+            Qt.openUrlExternally(loader.item.fileHandler.filePath)
+            return;
+        }
+
+        downloadMedia();
     }
 
     Component {
@@ -64,6 +89,7 @@ ListItem
 
         Loader
         {
+            id: loader
             anchors { left: message.out ? parent.left : undefined; right: message.out ? undefined : parent.right }
 
             sourceComponent: {
@@ -75,6 +101,10 @@ ListItem
                 }
 
                 return null;
+            }
+
+            onLoaded: {
+                messagemenu.fileHandler = loader.item.fileHandler;
             }
         }
 

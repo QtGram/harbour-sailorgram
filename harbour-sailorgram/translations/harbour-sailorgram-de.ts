@@ -80,6 +80,10 @@
         <source>Download</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConversationPage</name>
@@ -152,16 +156,16 @@ Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source
     </message>
 </context>
 <context>
-    <name>MediaMenu</name>
+    <name>MessageBar</name>
     <message>
-        <source>Download</source>
+        <source>Message</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>MessageBar</name>
+    <name>MessageItem</name>
     <message>
-        <source>Message</source>
+        <source>Downloading Media</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
