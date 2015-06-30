@@ -32,8 +32,8 @@
 #include <sailfishapp.h>
 #include <telegramqmlinitializer.h>
 #include "dbus/notifications/notifications.h"
-#include "telegramcalendar.h"
 #include "localstorage/telegramlocalstorage.h"
+#include "telegramcalendar.h"
 
 int main(int argc, char *argv[])
 {

@@ -23,7 +23,7 @@
 <context>
     <name>ConnectionPage</name>
     <message>
-        <source>Connecting...</source>
+        <source>Connecting</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -99,6 +99,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source
     </message>
     <message>
         <source>Deleting History</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Test</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
