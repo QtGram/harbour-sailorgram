@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="fr">
 <context>
     <name>AuthorizationPage</name>
     <message>
         <source>Sign In</source>
-        <translation type="unfinished"></translation>
+        <translation>Se connecter</translation>
     </message>
     <message>
         <source>Authorization Code</source>
-        <translation type="unfinished"></translation>
+        <translation>Code d&apos;autorisation</translation>
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation type="unfinished"></translation>
+        <translation>Vous avez saisi un mauvais code d&apos;autorisation</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign In&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Veillez attendre le SMS contenant le code d&apos;activation et appuyez sur « Se connecter »</translation>
     </message>
 </context>
 <context>
@@ -31,23 +31,23 @@
     <name>ConversationMenu</name>
     <message>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Copier</translation>
     </message>
     <message>
         <source>Message copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Message copié dans le presse-papier </translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Effacer</translation>
     </message>
     <message>
         <source>Deleting Message</source>
-        <translation type="unfinished"></translation>
+        <translation>Suppression du message</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation type="unfinished"></translation>
+        <translation>Télécharger</translation>
     </message>
     <message>
         <source>Open</source>
@@ -58,55 +58,57 @@
     <name>ConversationPage</name>
     <message>
         <source>Enable Notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Activer les notifications</translation>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Désactiver les notifications</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Effacer</translation>
     </message>
     <message>
         <source>Deleting History</source>
-        <translation type="unfinished"></translation>
+        <translation>Suppression de l&apos;historique</translation>
     </message>
     <message>
         <source>Add to Contacts</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter aux Contacts</translation>
     </message>
 </context>
 <context>
     <name>ConversationsPage</name>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished"></translation>
+        <translation>Contacts</translation>
     </message>
     <message>
         <source>No Chats
 
 Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Aucune conversation
+
+Sélectionnez « Contact » à partir du menu descendant</translation>
     </message>
     <message>
         <source>Chats</source>
-        <translation type="unfinished"></translation>
+        <translation>Conversations</translation>
     </message>
     <message>
         <source>Delete History</source>
-        <translation type="unfinished"></translation>
+        <translation>Effacer l&apos;historique</translation>
     </message>
     <message>
         <source>Deleting History</source>
-        <translation type="unfinished"></translation>
+        <translation>Suppression de l&apos;historique</translation>
     </message>
 </context>
 <context>
     <name>MessageBar</name>
     <message>
         <source>Message</source>
-        <translation type="unfinished"></translation>
+        <translation>Message</translation>
     </message>
 </context>
 <context>
@@ -120,46 +122,46 @@ Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source
     <name>PhoneNumberPage</name>
     <message>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Suivant</translation>
     </message>
     <message>
         <source>Phone Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Numéro de téléphone</translation>
     </message>
     <message>
         <source>Country Code</source>
-        <translation type="unfinished"></translation>
+        <translation>Indicatif pays</translation>
     </message>
     <message>
         <source>Insert your phone number and press &apos;Next&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Saisissez votre numéro de téléphone et appuyez sur « Suivant »</translation>
     </message>
 </context>
 <context>
     <name>TelegramHelper</name>
     <message>
         <source>Recently</source>
-        <translation type="unfinished"></translation>
+        <translation>Dernièrement</translation>
     </message>
     <message>
         <source>Last Month</source>
-        <translation type="unfinished"></translation>
+        <translation>Le mois dernier</translation>
     </message>
     <message>
         <source>Last Week</source>
-        <translation type="unfinished"></translation>
+        <translation>La semaine dernière</translation>
     </message>
     <message>
         <source>Online</source>
-        <translation type="unfinished"></translation>
+        <translation>En ligne</translation>
     </message>
     <message>
         <source>Unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>Inconnu</translation>
     </message>
     <message>
         <source>Last Seen at %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Dernière connexion à %1</translation>
     </message>
     <message>
         <source>Document</source>
@@ -194,33 +196,33 @@ Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source
     <name>UserMenu</name>
     <message>
         <source>Send Message</source>
-        <translation type="unfinished"></translation>
+        <translation>Envoyer le message</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Profil</translation>
     </message>
 </context>
 <context>
     <name>UserPage</name>
     <message>
         <source>Phone Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Numéro de téléphone</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished"></translation>
+        <translation>Actions</translation>
     </message>
     <message>
         <source>Send Message</source>
-        <translation type="unfinished"></translation>
+        <translation>Envoyer le message</translation>
     </message>
 </context>
 <context>
     <name>UsersPage</name>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished"></translation>
+        <translation>Contacts</translation>
     </message>
 </context>
 </TS>

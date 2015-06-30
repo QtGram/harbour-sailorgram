@@ -17,9 +17,9 @@ Item
         else if(message.media.classType === TelegramConstants.typeMessageMediaVideo)
             return message.media.video.thumb.location.download.location;
         else if(message.media.classType === TelegramConstants.typeMessageMediaAudio)
-            return "image://theme/boh"; // FIXME: Audio Thumb
+            return "image://theme/icon-m-sounds";
         else if(message.media.classType === TelegramConstants.typeMessageMediaUnsupported)
-            return "image://theme/boh"; // FIXME: Unsupported Thumb
+            return "image://theme/icon-m-other";
         else if(message.media.classType === TelegramConstants.typeMessageMediaDocument)
             return message.media.document.thumb.location.download.location;
 
