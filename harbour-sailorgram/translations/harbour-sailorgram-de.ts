@@ -28,37 +28,6 @@
     </message>
 </context>
 <context>
-    <name>ConversationItem</name>
-    <message>
-        <source>Audio</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Contact</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Document</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Geo</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Photo</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unsupported Media</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Video</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>ConversationMenu</name>
     <message>
         <source>Copy</source>
@@ -223,6 +192,34 @@ Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source
     </message>
     <message>
         <source>Last Seen at %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Document</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contact</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Video</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unsupported</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Photo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geo</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

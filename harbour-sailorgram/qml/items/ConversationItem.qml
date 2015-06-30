@@ -7,15 +7,6 @@ import "../js/TelegramHelper.js" as TelegramHelper
 
 Item
 {
-    readonly property real typeMessageMediaDocument: 0x2fda2204
-    readonly property real typeMessageMediaContact: 0x5e7d2f39
-    readonly property real typeMessageMediaEmpty: 0x3ded6320
-    readonly property real typeMessageMediaVideo: 0xa2d24290
-    readonly property real typeMessageMediaUnsupported: 0x9f84f49e
-    readonly property real typeMessageMediaAudio: 0xc6b68300
-    readonly property real typeMessageMediaPhoto: 0xc8c45a2a
-    readonly property real typeMessageMediaGeo: 0x56e0d474
-
     property Dialog dialog
     property User user
     property Message message
@@ -92,38 +83,7 @@ Item
                     elide: Text.ElideRight
                     verticalAlignment: Text.AlignVCenter
                     font.pixelSize: Theme.fontSizeExtraSmall
-
-                    text: {
-                        if(message.media) {
-                            switch(message.media.classType) {
-                                case typeMessageMediaAudio:
-                                    return qsTr("Audio");
-
-                                case typeMessageMediaContact:
-                                    return qsTr("Contact");
-
-                                case typeMessageMediaDocument:
-                                    return qsTr("Document");
-
-                                case typeMessageMediaGeo:
-                                    return qsTr("Geo");
-
-                                case typeMessageMediaPhoto:
-                                    return qsTr("Photo");
-
-                                case typeMessageMediaUnsupported:
-                                    return qsTr("Unsupported Media");
-
-                                case typeMessageMediaVideo:
-                                    return qsTr("Video");
-
-                                default:
-                                    break;
-                            }
-                        }
-
-                        return message.message
-                    }
+                    text: TelegramHelper.messageContent(message)
                 }
 
                 Rectangle

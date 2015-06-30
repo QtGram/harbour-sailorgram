@@ -1,5 +1,6 @@
 import QtQuick 2.1
 import harbour.sailorgram.TelegramQml 1.0
+import "../../../js/TelegramConstants.js" as TelegramConstants
 
 Item
 {
@@ -11,15 +12,15 @@ Item
     readonly property bool hasMedia: message.media ? (message.media.classType !== messageitem.typeMessageMediaEmpty) : false
 
     readonly property string mediaPath: {
-        if(message.media.classType === messageitem.typeMessageMediaPhoto)
+        if(message.media.classType === TelegramConstants.typeMessageMediaPhoto)
             return message.media.photo.sizes.last.location.download.location;
-        else if(message.media.classType === messageitem.typeMessageMediaVideo)
+        else if(message.media.classType === TelegramConstants.typeMessageMediaVideo)
             return message.media.video.thumb.location.download.location;
-        else if(message.media.classType === messageitem.typeMessageMediaAudio)
+        else if(message.media.classType === TelegramConstants.typeMessageMediaAudio)
             return "image://theme/boh"; // FIXME: Audio Thumb
-        else if(message.media.classType === messageitem.typeMessageMediaUnsupported)
+        else if(message.media.classType === TelegramConstants.typeMessageMediaUnsupported)
             return "image://theme/boh"; // FIXME: Unsupported Thumb
-        else if(message.media.classType === messageitem.typeMessageMediaDocument)
+        else if(message.media.classType === TelegramConstants.typeMessageMediaDocument)
             return message.media.document.thumb.location.download.location;
 
         return "";
@@ -40,11 +41,11 @@ Item
         if(!hasMedia)
             return;
 
-        if(message.media.classType === messageitem.typeMessageMediaPhoto)
+        if(message.media.classType === TelegramConstants.typeMessageMediaPhoto)
             telegram.getFile(message.media.photo.sizes.last.location);
-        else if(message.media.classType === messageitem.typeMessageMediaVideo)
+        else if(message.media.classType === TelegramConstants.typeMessageMediaVideo)
             telegram.getFile(message.media.video.thumb.location);
-        else if(message.media.classType === messageitem.typeMessageMediaDocument)
+        else if(message.media.classType === TelegramConstants.typeMessageMediaDocument)
             telegram.getFile(message.media.document.thumb.location);
     }
 }

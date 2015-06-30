@@ -1,6 +1,7 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
+import "../../models"
 import "../../components"
 import "../../items/user"
 import "../../items/messageitem"
@@ -15,10 +16,11 @@ Page
    readonly property real typeUserEmpty: 0x200250ba
    readonly property real typeUserRequest: 0xd9ccc4ef
 
+    property Settings settings
     property Telegram telegram
     property Dialog dialog
     property User user: telegram.user(dialog.peer.userId)
-    property int peerId: dialog.peer.chatId !== 0 ? dialog.peer.chatId : dialog.peer.userId
+    property int peerId: TelegramHelper.peerId(dialog.peer)
     property bool muted: telegram.userData.isMuted(peerId)
 
     id: conversationpage
@@ -29,6 +31,7 @@ Page
             return;
 
         pageStack.pushAttached(Qt.resolvedUrl("../../pages/users/UserPage.qml"), { "telegram": conversationpage.telegram, "user": conversationpage.user, "actionVisible": false });
+        settings.foregroundDialog = conversationpage.dialog;
 
         messagemodel.setReaded();
         messagemodel.telegram = conversationpage.telegram;

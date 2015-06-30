@@ -1,11 +1,13 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
+import "../../models"
 import "../../items/user"
 import "../../menus"
 
 Page
 {
+    property Settings settings
     property Telegram telegram
 
     id: userspage
@@ -31,7 +33,7 @@ Page
                 user: telegram.user(item.userId)
             }
 
-            onClicked: pageStack.replace(Qt.resolvedUrl("../conversations/ConversationPage.qml"), { "telegram": userspage.telegram,  "dialog": userspage.telegram.fakeDialogObject(item.userId, false) } )
+            onClicked: pageStack.replace(Qt.resolvedUrl("../conversations/ConversationPage.qml"), { "settings": userspage.settings, "telegram": userspage.telegram,  "dialog": userspage.telegram.fakeDialogObject(item.userId, false) } )
 
             UserItem {
                 id: useritem

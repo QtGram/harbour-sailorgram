@@ -31,14 +31,23 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
+import "../../models"
 import "../../items"
 
 Page
 {
+    property Settings settings
     property Telegram telegram
 
     id: conversationspage
     allowedOrientations: defaultAllowedOrientations
+
+    onStatusChanged: {
+        if(conversationspage.status !== PageStatus.Active)
+            return;
+
+        settings.foregroundDialog = telegram.nullDialog; // Reset Foreground Dialog
+    }
 
     SilicaListView
     {
@@ -46,7 +55,7 @@ Page
         {
             MenuItem {
                 text: qsTr("Contacts")
-                onClicked: pageStack.push(Qt.resolvedUrl("../users/UsersPage.qml"), { "telegram": telegram })
+                onClicked: pageStack.push(Qt.resolvedUrl("../users/UsersPage.qml"), { "settings": conversationspage.settings, "telegram": conversationspage.telegram })
             }
         }
 
@@ -72,7 +81,7 @@ Page
             id: dialogitem
             contentWidth: parent.width
             contentHeight: Theme.itemSizeSmall
-            onClicked: pageStack.push(Qt.resolvedUrl("ConversationPage.qml"), {"telegram": conversationspage.telegram, "dialog": item })
+            onClicked: pageStack.push(Qt.resolvedUrl("ConversationPage.qml"), { "settings": conversationspage.settings, "telegram": conversationspage.telegram, "dialog": item })
 
             menu: ContextMenu {
                 MenuItem {

@@ -13,7 +13,7 @@
 TARGET = harbour-sailorgram
 
 CONFIG += sailfishapp
-QT += sql
+QT += sql dbus
 
 LIBS += -L$$OUT_PWD/../libqtelegram-ae -L$$OUT_PWD/../telegramqml -lssl -lcrypto -lz -lqtelegram-ae -ltelegramqml
 INCLUDEPATH += $$PWD/../telegramqml
@@ -35,7 +35,8 @@ INSTALLS += server_pub
 
 SOURCES += src/harbour-sailorgram.cpp \
     src/localstorage/telegramlocalstorage.cpp \
-    src/telegramcalendar.cpp
+    src/telegramcalendar.cpp \
+    src/dbus/notifications/notifications.cpp
 
 OTHER_FILES += qml/harbour-sailorgram.qml \
     rpm/harbour-sailorgram.changes.in \
@@ -68,7 +69,8 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/pages/users/UsersPage.qml \
     qml/menus/UserMenu.qml \
     qml/components/ClickableLabel.qml \
-    qml/items/messageitem/media/MessageThumbnail.qml
+    qml/items/messageitem/media/MessageThumbnail.qml \
+    qml/js/TelegramConstants.js
 
 # to disable building translations every time, comment out the
 # following CONFIG line
@@ -82,7 +84,8 @@ TRANSLATIONS += translations/harbour-sailorgram-de.ts
 
 HEADERS += \
     src/localstorage/telegramlocalstorage.h \
-    src/telegramcalendar.h
+    src/telegramcalendar.h \
+    src/dbus/notifications/notifications.h
 
 RESOURCES += \
     resources.qrc
