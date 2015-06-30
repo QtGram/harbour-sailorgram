@@ -41,25 +41,23 @@ Dialog
             Item
             {
                 width: parent.width
-                height: lblsailorgram.contentHeight + imglogo.height + lblinfo.contentHeight + (Theme.paddingLarge * 2)
-
-                Label
-                {
-                    id: lblsailorgram
-                    text: "SailorGram"
-                    font.bold: true
-                    font.pixelSize: Theme.fontSizeHuge
-                    color: Theme.secondaryHighlightColor
-                    anchors { left: parent.left; top: parent.top; right: parent.right }
-                    horizontalAlignment: Text.AlignHCenter
-                    wrapMode: Text.WordWrap
-                }
+                height: imgsailorgram.height + imglogo.height + lblinfo.contentHeight + (Theme.paddingLarge * 2)
 
                 Image
                 {
                     id: imglogo
                     source: "qrc:///res/telegram.png"
-                    anchors { top: lblsailorgram.bottom; topMargin: Theme.paddingLarge; horizontalCenter: parent.horizontalCenter }
+                    anchors { top: parent.top; horizontalCenter: parent.horizontalCenter }
+                }
+
+                Image
+                {
+                    id: imgsailorgram
+                    source: "qrc:///res/sailorgram.png"
+                    fillMode: Image.PreserveAspectFit
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    anchors { top: imglogo.bottom; topMargin: Theme.paddingLarge; horizontalCenter: parent.horizontalCenter }
                 }
 
                 Label
@@ -67,7 +65,7 @@ Dialog
                     id: lblinfo
                     text: qsTr("Insert your phone number and press 'Next'")
                     font.pixelSize: Theme.fontSizeSmall
-                    anchors { left: parent.left; top: imglogo.bottom; right: parent.right; topMargin: Theme.paddingLarge; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
+                    anchors { left: parent.left; top: imgsailorgram.bottom; right: parent.right; topMargin: Theme.paddingLarge; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
                     horizontalAlignment: Text.AlignHCenter
                     wrapMode: Text.WordWrap
                 }

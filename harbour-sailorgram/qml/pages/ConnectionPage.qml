@@ -25,6 +25,16 @@ Page
         telegram.phoneNumber = phonenumber;
     }
 
+    Label
+    {
+        anchors { bottom: indicator.top; topMargin: Theme.paddingMedium }
+        width: parent.width
+        font.pixelSize: Theme.fontSizeExtraLarge
+        horizontalAlignment: Text.AlignHCenter
+        color: Theme.secondaryHighlightColor
+        text: qsTr("Connecting")
+    }
+
     BusyIndicator
     {
         id: indicator
@@ -32,12 +42,4 @@ Page
         running: true
     }
 
-    Label
-    {
-        anchors { top: indicator.bottom; topMargin: Theme.paddingMedium }
-        width: parent.width
-        font.pixelSize: Theme.fontSizeLarge
-        horizontalAlignment: Text.AlignHCenter
-        text: qsTr("Connecting...")
-    }
 }
