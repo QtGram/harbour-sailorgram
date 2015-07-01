@@ -16,7 +16,7 @@ CONFIG += sailfishapp
 QT += sql dbus
 
 LIBS += -L$$OUT_PWD/../libqtelegram-ae -L$$OUT_PWD/../telegramqml -lssl -lcrypto -lz -lqtelegram-ae -ltelegramqml
-INCLUDEPATH += $$PWD/../telegramqml
+INCLUDEPATH += $$PWD/../telegramqml $$PWD/../libqtelegram-ae
 
 # TelegramQml
 libtelegram_qml.files = $$OUT_PWD/../telegramqml/*.so*
@@ -36,7 +36,8 @@ INSTALLS += server_pub
 SOURCES += src/harbour-sailorgram.cpp \
     src/localstorage/telegramlocalstorage.cpp \
     src/telegramcalendar.cpp \
-    src/dbus/notifications/notifications.cpp
+    src/dbus/notifications/notifications.cpp \
+    src/sailorgram.cpp
 
 OTHER_FILES += qml/harbour-sailorgram.qml \
     rpm/harbour-sailorgram.changes.in \
@@ -90,7 +91,8 @@ TRANSLATIONS += translations/harbour-sailorgram-de.ts \
 HEADERS += \
     src/localstorage/telegramlocalstorage.h \
     src/telegramcalendar.h \
-    src/dbus/notifications/notifications.h
+    src/dbus/notifications/notifications.h \
+    src/sailorgram.h
 
 RESOURCES += \
     resources.qrc

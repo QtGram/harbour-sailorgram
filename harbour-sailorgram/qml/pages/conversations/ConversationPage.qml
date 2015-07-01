@@ -135,6 +135,7 @@ Page
             }
 
             delegate: MessageItem {
+                settings: conversationpage.settings
                 telegram: conversationpage.telegram
                 message: item
             }

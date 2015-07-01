@@ -1,6 +1,7 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
+import "../js/TelegramConstants.js" as TelegramConstants
 
 ContextMenu
 {
@@ -35,14 +36,14 @@ ContextMenu
     MenuItem
     {
         text: qsTr("Download")
-        visible: !fileHandler ? false : (fileHandler.filePath.toString().length <= 0) && (message.media && (message.media.classType !== typeMessageMediaEmpty))
+        visible: !fileHandler ? false : (fileHandler.filePath.toString().length <= 0) && (message.media && (message.media.classType !== TelegramConstants.typeMessageMediaEmpty))
         onClicked: downloadRequested()
     }
 
     MenuItem
     {
         text: qsTr("Open");
-        visible: !fileHandler ? false : (fileHandler.filePath.toString().length > 0) && (message.media && (message.media.classType !== typeMessageMediaEmpty))
+        visible: !fileHandler ? false : (fileHandler.filePath.toString().length > 0) && (message.media && (message.media.classType !== TelegramConstants.typeMessageMediaEmpty))
         onClicked: openRequested()
     }
 }

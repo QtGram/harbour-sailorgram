@@ -1,15 +1,17 @@
 import QtQuick 2.1
 import harbour.sailorgram.TelegramQml 1.0
+import "../../../models"
 import "../../../js/TelegramConstants.js" as TelegramConstants
 
 Item
 {
     property alias fileHandler: filehandler
 
+    property Settings settings
     property Telegram telegram
     property Message message
 
-    readonly property bool hasMedia: message.media ? (message.media.classType !== messageitem.typeMessageMediaEmpty) : false
+    readonly property bool hasMedia: message.media ? (message.media.classType !== TelegramConstants.typeMessageMediaEmpty) : false
 
     readonly property string mediaPath: {
         if(message.media.classType === TelegramConstants.typeMessageMediaPhoto)
@@ -33,8 +35,28 @@ Item
     {
         id: filehandler
         telegram: messagemediaitem.telegram
-        target: message
         defaultThumbnail: "image://theme/icon-m-document"
+
+        onTargetTypeChanged: {
+            switch(targetType) {
+                case FileHandler.TypeTargetMediaVideo:
+                case FileHandler.TypeTargetMediaPhoto:
+                case FileHandler.TypeTargetMediaDocument:
+                case FileHandler.TypeTargetMediaAudio:
+                    fileHandler.download();
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        onFilePathChanged: {
+            if((filePath.toString().length <= 0) || (progressPercent < 100))
+                return;
+
+            settings.sailorgram.moveMediaToDownloads(message.media);
+        }
     }
 
     onHasMediaChanged: {

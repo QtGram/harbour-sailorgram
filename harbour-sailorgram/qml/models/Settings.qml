@@ -1,5 +1,6 @@
 import QtQuick 2.1
 import harbour.sailorgram.DBus 1.0
+import harbour.sailorgram.SailorGram 1.0
 import harbour.sailorgram.Telegram 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../js/Settings.js" as Settings
@@ -12,6 +13,10 @@ QtObject
     property TelegramLocalStorage telegramlocalstorage: TelegramLocalStorage { }
     property Notifications notifications: Notifications { }
     property Dialog foregroundDialog: telegram.nullDialog
+
+    property SailorGram sailorgram: SailorGram {
+        telegram: settings.telegram
+    }
 
     property Telegram telegram: Telegram {
         defaultHostAddress: "149.154.167.50"

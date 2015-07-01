@@ -34,6 +34,7 @@
 #include "dbus/notifications/notifications.h"
 #include "localstorage/telegramlocalstorage.h"
 #include "telegramcalendar.h"
+#include "sailorgram.h"
 
 int main(int argc, char *argv[])
 {
@@ -43,6 +44,7 @@ int main(int argc, char *argv[])
 
     TelegramQmlInitializer::init("harbour.sailorgram.TelegramQml");
 
+    qmlRegisterType<SailorGram>("harbour.sailorgram.SailorGram", 1, 0, "SailorGram");
     qmlRegisterType<Notifications>("harbour.sailorgram.DBus", 1, 0, "Notifications");
     qmlRegisterType<TelegramLocalStorage>("harbour.sailorgram.Telegram", 1, 0, "TelegramLocalStorage");
     qmlRegisterSingletonType<TelegramCalendar>("harbour.sailorgram.TelegramCalendar", 1, 0, "TelegramCalendar", &TelegramCalendar::initialize);

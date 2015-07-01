@@ -2,28 +2,20 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import harbour.sailorgram.TelegramCalendar 1.0
+import "../../models"
 import "../../menus"
 import "media"
+import "../../js/TelegramConstants.js" as TelegramConstants
 
 ListItem
 {
+    property Settings settings
     property Telegram telegram
     property Message message
 
     function downloadMedia() {
         messageitem.remorseAction(qsTr("Downloading Media"), function() {
-            switch(loader.item.fileHandler.targetType) {
-                case FileHandler.TypeTargetMediaVideo:
-                case FileHandler.TypeTargetMediaPhoto:
-                case FileHandler.TypeTargetMediaDocument:
-                case FileHandler.TypeTargetMediaAudio:
-                    loader.item.fileHandler.download();
-                    break;
-
-                default:
-                    break;
-            }
-
+            loader.item.fileHandler.target = messageitem.message; // Set Target Object before download
         });
     }
 
@@ -59,6 +51,7 @@ ListItem
         id: documentcomponent
 
         MessageDocument {
+            settings: messageitem.settings
             telegram: messageitem.telegram
             message: messageitem.message
         }
@@ -68,6 +61,7 @@ ListItem
         id: photocomponent
 
         MessagePhoto {
+            settings: messageitem.settings
             telegram: messageitem.telegram
             message: messageitem.message
         }
@@ -85,9 +79,9 @@ ListItem
 
             sourceComponent: {
                 if(message.media) {
-                    if(message.media.classType === messageitem.typeMessageMediaPhoto)
+                    if(message.media.classType === TelegramConstants.typeMessageMediaPhoto)
                         return photocomponent;
-                    else if(message.media.classType === messageitem.typeMessageMediaDocument)
+                    else if(message.media.classType === TelegramConstants.typeMessageMediaDocument)
                         return documentcomponent;
                 }
 
