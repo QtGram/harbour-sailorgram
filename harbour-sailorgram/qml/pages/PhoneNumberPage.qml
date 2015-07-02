@@ -41,7 +41,7 @@ Dialog
             Item
             {
                 width: parent.width
-                height: imgsailorgram.height + imglogo.height + lblinfo.contentHeight + (Theme.paddingLarge * 2)
+                height: imglogo.height + lblinfo.contentHeight + (Theme.paddingLarge * 2)
 
                 Image
                 {
@@ -50,22 +50,12 @@ Dialog
                     anchors { top: parent.top; horizontalCenter: parent.horizontalCenter }
                 }
 
-                Image
-                {
-                    id: imgsailorgram
-                    source: "qrc:///res/sailorgram.png"
-                    fillMode: Image.PreserveAspectFit
-                    width: parent.width
-                    horizontalAlignment: Text.AlignHCenter
-                    anchors { top: imglogo.bottom; topMargin: Theme.paddingLarge; horizontalCenter: parent.horizontalCenter }
-                }
-
                 Label
                 {
                     id: lblinfo
                     text: qsTr("Insert your phone number and press 'Next'")
                     font.pixelSize: Theme.fontSizeSmall
-                    anchors { left: parent.left; top: imgsailorgram.bottom; right: parent.right; topMargin: Theme.paddingLarge; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
+                    anchors { left: parent.left; top: imglogo.bottom; right: parent.right; topMargin: Theme.paddingLarge; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
                     horizontalAlignment: Text.AlignHCenter
                     wrapMode: Text.WordWrap
                 }

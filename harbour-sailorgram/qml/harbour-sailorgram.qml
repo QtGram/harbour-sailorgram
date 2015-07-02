@@ -48,7 +48,7 @@ ApplicationWindow
     cover: undefined
 
     initialPage: Component {
-        ConnectionPage {
+        PhoneNumberPage {
             telegram: settings.telegram
         }
     }
