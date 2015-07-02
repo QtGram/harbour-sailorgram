@@ -59,9 +59,16 @@ rm -rf %{buildroot}
 # >> install pre
 # << install pre
 %qmake5_install
-
 # >> install post
 # << install post
+
+# >> post
+%post -p /sbin/ldconfig
+# << post
+
+# >> postun
+%postun -p /sbin/ldconfig
+# << postun
 
 desktop-file-install --delete-original       \
   --dir %{buildroot}%{_datadir}/applications             \
@@ -69,7 +76,7 @@ desktop-file-install --delete-original       \
 
 %files
 %defattr(-,root,root,-)
-%{_bindir}
+%{_bindir}/harbour-sailorgram
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/86x86/apps/%{name}.png
