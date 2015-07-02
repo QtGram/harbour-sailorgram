@@ -26,6 +26,7 @@ PkgConfigBR:
   - Qt5Qml
   - Qt5Xml
   - Qt5Quick
+  - Qt5DBus
   - Qt5Multimedia
   - openssl
 # Build dependencies without a pkgconfig setup can be listed here
