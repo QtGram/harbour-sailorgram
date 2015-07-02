@@ -1,0 +1,3 @@
+from Config import *
+addFilter("arch-dependent-file-in-usr-share")
+addFilter("filename-too-long-for-joliet")
