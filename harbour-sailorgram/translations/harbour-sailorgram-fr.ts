@@ -53,6 +53,10 @@
         <source>Open</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConversationPage</name>
@@ -102,6 +106,13 @@ Sélectionnez « Contact » à partir du menu descendant</translation>
     <message>
         <source>Deleting History</source>
         <translation>Suppression de l&apos;historique</translation>
+    </message>
+</context>
+<context>
+    <name>FilePickerPage</name>
+    <message>
+        <source>Root</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

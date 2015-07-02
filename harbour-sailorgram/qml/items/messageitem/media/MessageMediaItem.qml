@@ -11,10 +11,35 @@ Item
     property Telegram telegram
     property Message message
 
+    readonly property bool isUpload: message.upload.fileId !== 0
+    readonly property bool transferInProgress: (progressPercent > 0) && (progressPercent < 100)
     readonly property bool hasMedia: message.media ? (message.media.classType !== TelegramConstants.typeMessageMediaEmpty) : false
+    readonly property real progressPercent: isUpload ? (100 * message.upload.uploaded / message.upload.totalSize) : filehandler.progressPercent
+
+    readonly property real mediaSize: {
+        if(isUpload)
+            return message.upload.totalSize;
+
+        if(!message.media)
+            return 0;
+
+        if((message.media.classType === TelegramConstants.typeMessageMediaPhoto) && message.media.photo.sizes.last)
+            return message.media.photo.sizes.last.size;
+        else if(message.media.classType === TelegramConstants.typeMessageMediaVideo)
+            return message.media.video.size;
+        else if(message.media.classType === TelegramConstants.typeMessageMediaAudio)
+            return message.media.audio.size;
+        else if(message.media.classType === TelegramConstants.typeMessageMediaDocument)
+            return message.media.document.size;
+
+        return 0;
+    }
 
     readonly property string mediaPath: {
-        if(message.media.classType === TelegramConstants.typeMessageMediaPhoto)
+        if(!message.media)
+            return "";
+
+        if((message.media.classType === TelegramConstants.typeMessageMediaPhoto) && message.media.photo.sizes.last)
             return message.media.photo.sizes.last.location.download.location;
         else if(message.media.classType === TelegramConstants.typeMessageMediaVideo)
             return message.media.video.thumb.location.download.location;
@@ -26,6 +51,15 @@ Item
             return message.media.document.thumb.location.download.location;
 
         return "";
+    }
+
+    function cancelTransfer() {
+        if(isUpload) {
+            telegram.cancelSendGet(message.upload.fileId);
+            return;
+        }
+
+        filehandler.cancelProgress();
     }
 
     id: messagemediaitem
@@ -63,7 +97,7 @@ Item
         if(!hasMedia)
             return;
 
-        if(message.media.classType === TelegramConstants.typeMessageMediaPhoto)
+        if((message.media.classType === TelegramConstants.typeMessageMediaPhoto) && message.media.photo.sizes.last)
             telegram.getFile(message.media.photo.sizes.last.location);
         else if(message.media.classType === TelegramConstants.typeMessageMediaVideo)
             telegram.getFile(message.media.video.thumb.location);

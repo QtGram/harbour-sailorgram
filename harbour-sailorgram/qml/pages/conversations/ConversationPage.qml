@@ -145,6 +145,9 @@ Page
         {
             id: messagebar
             anchors { left: parent.left; bottom: parent.bottom; right: parent.right }
+            settings: conversationpage.settings
+            telegram: conversationpage.telegram
+            dialog: conversationpage.dialog
         }
     }
 }

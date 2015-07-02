@@ -18,6 +18,19 @@ void SailorGram::setTelegram(TelegramQml *telegram)
     emit telegramChanged();
 }
 
+QString SailorGram::fileName(const QString &filepath)
+{
+    QUrl url(filepath);
+    return url.fileName();
+}
+
+QSize SailorGram::imageSize(const QString &filepath)
+{
+    QUrl url(filepath);
+    QImage img(url.path());
+    return img.size();
+}
+
 void SailorGram::moveMediaToDownloads(MessageMediaObject *messagemediaobject)
 {
     if(!this->_telegram)

@@ -24,7 +24,7 @@ MessageMediaItem
         {
             id: imgpreview
             source: messagedocument.mediaPath || "image://theme/icon-m-document"
-            downloadProgress: fileHandler.progressPercent
+            transferProgress: progressPercent
         }
 
         Column
@@ -40,7 +40,7 @@ MessageMediaItem
                 verticalAlignment: Text.AlignTop
                 horizontalAlignment: Text.AlignLeft
                 font.pixelSize: Theme.fontSizeExtraSmall
-                text: fileLocation.fileName
+                text: isUpload ? settings.sailorgram.fileName(message.upload.location) : fileLocation.fileName
                 wrapMode: Text.NoWrap
                 elide: Text.ElideRight
             }
@@ -55,7 +55,7 @@ MessageMediaItem
                 {
                     id: lblsize
                     font.pixelSize: Theme.fontSizeExtraSmall
-                    text: TelegramHelper.formatBytes(message.media.document.size, 2)
+                    text: TelegramHelper.formatBytes(mediaSize, 2)
                 }
 
                 Label

@@ -53,6 +53,10 @@
         <source>Open</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConversationPage</name>
@@ -101,6 +105,13 @@ Valitse yhteystieto valitsemalla &quot;Yhteystiedot&quot; alasvetovalikosta</tra
     <message>
         <source>Deleting History</source>
         <translation>Poistetaan historia.. </translation>
+    </message>
+</context>
+<context>
+    <name>FilePickerPage</name>
+    <message>
+        <source>Root</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

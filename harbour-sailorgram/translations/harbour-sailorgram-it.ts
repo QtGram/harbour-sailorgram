@@ -53,6 +53,10 @@
         <source>Open</source>
         <translation>Apri</translation>
     </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConversationPage</name>
@@ -102,6 +106,20 @@ Scegli un contatto selezionando &quot;Contatti&quot; dal menu Pull Down</transla
     <message>
         <source>Deleting History</source>
         <translation>Rimozione Cronologia</translation>
+    </message>
+</context>
+<context>
+    <name>FilePickerPage</name>
+    <message>
+        <source>Root</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MediaSelectorPage</name>
+    <message>
+        <source>Photo</source>
+        <translation type="obsolete">Foto</translation>
     </message>
 </context>
 <context>

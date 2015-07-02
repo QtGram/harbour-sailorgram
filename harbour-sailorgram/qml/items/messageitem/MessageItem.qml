@@ -28,6 +28,7 @@ ListItem
         telegram: messageitem.telegram
         message: messageitem.message
 
+        onCancelRequested: loader.item.cancelTransfer()
         onDownloadRequested: downloadMedia()
         onOpenRequested: Qt.openUrlExternally(loader.item.fileHandler.filePath)
     }
@@ -38,8 +39,7 @@ ListItem
 
         var path = loader.item.fileHandler.filePath.toString();
 
-        if(path.length > 0)
-        {
+        if(path.length > 0) {
             Qt.openUrlExternally(loader.item.fileHandler.filePath);
             return;
         }

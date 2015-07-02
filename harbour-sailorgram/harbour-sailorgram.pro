@@ -37,7 +37,8 @@ SOURCES += src/harbour-sailorgram.cpp \
     src/localstorage/telegramlocalstorage.cpp \
     src/telegramcalendar.cpp \
     src/dbus/notifications/notifications.cpp \
-    src/sailorgram.cpp
+    src/sailorgram.cpp \
+    src/filepicker/folderlistmodel.cpp
 
 OTHER_FILES += qml/harbour-sailorgram.qml \
     rpm/harbour-sailorgram.changes.in \
@@ -71,7 +72,9 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/menus/UserMenu.qml \
     qml/components/ClickableLabel.qml \
     qml/items/messageitem/media/MessageThumbnail.qml \
-    qml/js/TelegramConstants.js
+    qml/js/TelegramConstants.js \
+    qml/pages/picker/FilePickerPage.qml \
+    qml/components/pickers/FilePicker.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line
@@ -92,7 +95,8 @@ HEADERS += \
     src/localstorage/telegramlocalstorage.h \
     src/telegramcalendar.h \
     src/dbus/notifications/notifications.h \
-    src/sailorgram.h
+    src/sailorgram.h \
+    src/filepicker/folderlistmodel.h
 
 RESOURCES += \
     resources.qrc
