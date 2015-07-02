@@ -22,6 +22,7 @@ License:    GPL3
 URL:        https://github.com/Dax89/harbour-sailorgram/
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-sailorgram.yaml
+Source101:  harbour-sailorgram-rpmlintrc
 Requires:   sailfishsilica-qt5 >= 0.10.9
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
@@ -59,24 +60,27 @@ rm -rf %{buildroot}
 # >> install pre
 # << install pre
 %qmake5_install
+
 # >> install post
 # << install post
-
-# >> post
-%post -p /sbin/ldconfig
-# << post
-
-# >> postun
-%postun -p /sbin/ldconfig
-# << postun
 
 desktop-file-install --delete-original       \
   --dir %{buildroot}%{_datadir}/applications             \
    %{buildroot}%{_datadir}/applications/*.desktop
 
+%post
+# >> post
+%post -p /sbin/ldconfig
+# << post
+
+%postun
+# >> postun
+%postun -p /sbin/ldconfig
+# << postun
+
 %files
 %defattr(-,root,root,-)
-%{_bindir}/harbour-sailorgram
+%{_bindir}/%{name}
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/86x86/apps/%{name}.png
