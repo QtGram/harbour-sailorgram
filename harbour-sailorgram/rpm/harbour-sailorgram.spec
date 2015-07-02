@@ -68,12 +68,10 @@ desktop-file-install --delete-original       \
   --dir %{buildroot}%{_datadir}/applications             \
    %{buildroot}%{_datadir}/applications/*.desktop
 
-%post
 # >> post
 %post -p /sbin/ldconfig
 # << post
 
-%postun
 # >> postun
 %postun -p /sbin/ldconfig
 # << postun
