@@ -26,10 +26,10 @@ PkgConfigBR:
   - Qt5Qml
   - Qt5Quick
   - Qt5Multimedia
-
+  - openssl
 # Build dependencies without a pkgconfig setup can be listed here
 # PkgBR:
-#   - package-needed-to-build
+#  - openssl-devel
 
 # Runtime dependencies which are not automatically detected
 Requires:
