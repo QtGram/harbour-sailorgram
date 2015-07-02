@@ -24,7 +24,7 @@
     <name>ConnectionPage</name>
     <message>
         <source>Connecting</source>
-        <translation type="unfinished"></translation>
+        <translation>Connexion</translation>
     </message>
 </context>
 <context>
@@ -51,7 +51,7 @@
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -126,7 +126,7 @@ Sélectionnez « Contact » à partir du menu descendant</translation>
     <name>MessageItem</name>
     <message>
         <source>Downloading Media</source>
-        <translation type="unfinished"></translation>
+        <translation>Téléchargement de médias</translation>
     </message>
 </context>
 <context>
@@ -203,31 +203,31 @@ Sélectionnez « Contact » à partir du menu descendant</translation>
     </message>
     <message>
         <source>Document</source>
-        <translation type="unfinished"></translation>
+        <translation>Document</translation>
     </message>
     <message>
         <source>Contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Contact</translation>
     </message>
     <message>
         <source>Video</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidéo</translation>
     </message>
     <message>
         <source>Unsupported</source>
-        <translation type="unfinished"></translation>
+        <translation>Non pris en charge</translation>
     </message>
     <message>
         <source>Audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Audio</translation>
     </message>
     <message>
         <source>Photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Photo</translation>
     </message>
     <message>
         <source>Geo</source>
-        <translation type="unfinished"></translation>
+        <translation>Géo</translation>
     </message>
 </context>
 <context>

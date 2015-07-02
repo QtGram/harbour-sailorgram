@@ -24,7 +24,7 @@
     <name>ConnectionPage</name>
     <message>
         <source>Connecting</source>
-        <translation type="unfinished"></translation>
+        <translation>Conectando</translation>
     </message>
 </context>
 <context>
@@ -91,7 +91,9 @@
         <source>No Chats
 
 Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source>
-        <translation>Selecciona un contacto pulsando en &quot;Contactos&quot; desde el menú desplegable</translation>
+        <translation>No hay conversaciones
+
+Selecciona un contacto pulsando en &quot;Contactos&quot; desde el menú desplegable</translation>
     </message>
     <message>
         <source>Chats</source>
@@ -111,13 +113,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source
     <message>
         <source>Root</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>MediaSelectorPage</name>
-    <message>
-        <source>Photo</source>
-        <translation type="obsolete">Foto</translation>
     </message>
 </context>
 <context>

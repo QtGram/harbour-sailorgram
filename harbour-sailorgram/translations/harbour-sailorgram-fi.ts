@@ -24,7 +24,7 @@
     <name>ConnectionPage</name>
     <message>
         <source>Connecting</source>
-        <translation type="unfinished"></translation>
+        <translation>Yhdistetään</translation>
     </message>
 </context>
 <context>
@@ -51,7 +51,7 @@
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Avaa</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -66,7 +66,7 @@
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation>Ilmoitukset pois</translation>
+        <translation>Ilmoitukset pois käytöstä</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -78,7 +78,7 @@
     </message>
     <message>
         <source>Add to Contacts</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää yhteystietoihin</translation>
     </message>
 </context>
 <context>
@@ -125,7 +125,7 @@ Valitse yhteystieto valitsemalla &quot;Yhteystiedot&quot; alasvetovalikosta</tra
     <name>MessageItem</name>
     <message>
         <source>Downloading Media</source>
-        <translation type="unfinished"></translation>
+        <translation>Ladataan mediaa</translation>
     </message>
 </context>
 <context>
@@ -202,31 +202,31 @@ Valitse yhteystieto valitsemalla &quot;Yhteystiedot&quot; alasvetovalikosta</tra
     </message>
     <message>
         <source>Document</source>
-        <translation type="unfinished"></translation>
+        <translation>Dokumentti</translation>
     </message>
     <message>
         <source>Contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Yhteystieto</translation>
     </message>
     <message>
         <source>Video</source>
-        <translation type="unfinished"></translation>
+        <translation>Video</translation>
     </message>
     <message>
         <source>Unsupported</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuntematon tiedostomuoto</translation>
     </message>
     <message>
         <source>Audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Äänitiedosto</translation>
     </message>
     <message>
         <source>Photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuva</translation>
     </message>
     <message>
         <source>Geo</source>
-        <translation type="unfinished"></translation>
+        <translation>Sijainti</translation>
     </message>
 </context>
 <context>

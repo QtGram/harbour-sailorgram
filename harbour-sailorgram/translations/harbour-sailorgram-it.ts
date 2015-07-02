@@ -55,7 +55,7 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Annulla</translation>
     </message>
 </context>
 <context>
@@ -112,14 +112,7 @@ Scegli un contatto selezionando &quot;Contatti&quot; dal menu Pull Down</transla
     <name>FilePickerPage</name>
     <message>
         <source>Root</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>MediaSelectorPage</name>
-    <message>
-        <source>Photo</source>
-        <translation type="obsolete">Foto</translation>
+        <translation>Root</translation>
     </message>
 </context>
 <context>
@@ -159,27 +152,27 @@ Scegli un contatto selezionando &quot;Contatti&quot; dal menu Pull Down</transla
     <name>SignUpPage</name>
     <message>
         <source>Sign Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Registrati</translation>
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation type="unfinished">Hai inserito un Codice di Autorizzazione errato</translation>
+        <translation>Hai inserito un Codice di Autorizzazione errato</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Atteni l&apos;SMS contenente il Codice di Attivazione e premi &apos;Registrati&apos;</translation>
     </message>
     <message>
         <source>First Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome</translation>
     </message>
     <message>
         <source>Last Name (Optional)</source>
-        <translation type="unfinished"></translation>
+        <translation>Cognome (Opzionale)</translation>
     </message>
     <message>
         <source>Authorization Code</source>
-        <translation type="unfinished">Codice di Autorizzazione</translation>
+        <translation>Codice di Autorizzazione</translation>
     </message>
 </context>
 <context>
