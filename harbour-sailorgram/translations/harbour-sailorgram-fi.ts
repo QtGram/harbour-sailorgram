@@ -148,6 +148,33 @@ Valitse yhteystieto valitsemalla &quot;Yhteystiedot&quot; alasvetovalikosta</tra
     </message>
 </context>
 <context>
+    <name>SignUpPage</name>
+    <message>
+        <source>Sign Up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You have entered a wrong Authorization Code</source>
+        <translation type="unfinished">Olet syöttänyt väärän pääsykoodin</translation>
+    </message>
+    <message>
+        <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last Name (Optional)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Authorization Code</source>
+        <translation type="unfinished">Pääsykoodi</translation>
+    </message>
+</context>
+<context>
     <name>TelegramHelper</name>
     <message>
         <source>Recently</source>

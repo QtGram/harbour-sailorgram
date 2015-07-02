@@ -74,7 +74,8 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/items/messageitem/media/MessageThumbnail.qml \
     qml/js/TelegramConstants.js \
     qml/pages/picker/FilePickerPage.qml \
-    qml/components/pickers/FilePicker.qml
+    qml/components/pickers/FilePicker.qml \
+    qml/pages/SignUpPage.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

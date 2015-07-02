@@ -61,6 +61,15 @@ QtObject
             pageStack.replace(Qt.resolvedUrl("../pages/AuthorizationPage.qml"), { "telegram": settings.telegram, "authError": settings.telegram.authSignInError });
         }
 
+        onAuthSignUpErrorChanged: {
+            if(!settings.telegram.authSignUpError)
+                return;
+
+            pageStack.completeAnimation();
+            pageStack.replace(Qt.resolvedUrl("../pages/SignUpPage.qml"), { "telegram": settings.telegram, "authError": settings.telegram.authSignUpError });
+
+        }
+
         onAuthLoggedInChanged: {
             if(!settings.telegram.authLoggedIn)
                 return;
@@ -71,7 +80,11 @@ QtObject
 
         onAuthCodeRequested: {
             pageStack.completeAnimation();
-            pageStack.replace(Qt.resolvedUrl("../pages/AuthorizationPage.qml"), { "telegram": settings.telegram, "authError": settings.telegram.authSignInError });
+
+            if(settings.telegram.authPhoneRegistered)
+                pageStack.replace(Qt.resolvedUrl("../pages/AuthorizationPage.qml"), { "telegram": settings.telegram, "authError": settings.telegram.authSignInError });
+            else
+                pageStack.replace(Qt.resolvedUrl("../pages/SignUpPage.qml"), { "telegram": settings.telegram, "authError": settings.telegram.authSignUpError });
         }
     }
 }

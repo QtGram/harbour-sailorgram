@@ -9,6 +9,7 @@ Dialog
     property var telegram
 
     id: dlgauthorization
+    allowedOrientations: defaultAllowedOrientations
     canAccept: tfcode.text.length > 0
     acceptDestinationAction: PageStackAction.Replace
     onAccepted: telegram.authSignIn(tfcode.text)
