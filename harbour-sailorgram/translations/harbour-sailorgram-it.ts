@@ -114,6 +114,14 @@ Scegli un contatto selezionando &quot;Contatti&quot; dal menu Pull Down</transla
         <source>Root</source>
         <translation>Root</translation>
     </message>
+    <message>
+        <source>SD Card</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageBar</name>

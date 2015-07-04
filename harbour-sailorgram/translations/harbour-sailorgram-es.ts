@@ -114,6 +114,14 @@ Selecciona un contacto pulsando en &quot;Contactos&quot; desde el menú desplega
         <source>Root</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>SD Card</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageBar</name>

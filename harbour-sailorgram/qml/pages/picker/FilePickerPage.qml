@@ -12,6 +12,10 @@ Page
     signal filePicked(string file)
     signal dismiss()
 
+    function changeDirectory(dir) {
+        foldermodel.directory = dir.length ? dir : foldermodel.homeFolder;
+    }
+
     function pickFile(file) {
         filepickerpageprivate.isFilePicked = true;
         filePicked(file);
@@ -35,6 +39,42 @@ Page
         anchors.fill: parent
 
         PageHeader { id: pageheader }
+
+        PullDownMenu
+        {
+            MenuItem {
+                text: qsTr("SD Card")
+                visible: foldermodel.sdcardFolder.length > 0
+
+                onClicked: {
+                    var rootfppage = pageStack.nextPage(rootPage);
+
+                    if(rootfppage !== filepickerpage) {
+                        rootfppage.changeDirectory(foldermodel.sdcardFolder);
+                        pageStack.pop(rootfppage);
+                        return;
+                    }
+
+                    rootfppage.changeDirectory(foldermodel.sdcardFolder);
+                }
+            }
+
+            MenuItem {
+                text: qsTr("Home");
+
+                onClicked: {
+                    var rootfppage = pageStack.nextPage(rootPage);
+
+                    if(rootfppage !== filepickerpage) {
+                        rootfppage.changeDirectory(foldermodel.homeFolder);
+                        pageStack.pop(rootfppage);
+                        return;
+                    }
+
+                    rootfppage.changeDirectory(foldermodel.homeFolder);
+                }
+            }
+        }
 
         FilePicker
         {
@@ -67,6 +107,6 @@ Page
         if(filter.length)
             foldermodel.filter = filter;
 
-        foldermodel.directory = directory.length ? directory : foldermodel.homeFolder;
+        changeDirectory(filepickerpage.directory);
     }
 }

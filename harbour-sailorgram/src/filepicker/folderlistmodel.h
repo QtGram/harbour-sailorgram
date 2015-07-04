@@ -14,7 +14,8 @@ class FolderListModel : public QAbstractListModel
     Q_OBJECT
 
     Q_PROPERTY(QString directory READ directory WRITE setDirectory NOTIFY directoryChanged)
-    Q_PROPERTY(QString homeFolder READ homeFolder)
+    Q_PROPERTY(QString homeFolder READ homeFolder CONSTANT FINAL)
+    Q_PROPERTY(QString sdcardFolder READ sdcardFolder CONSTANT FINAL)
     Q_PROPERTY(QString mime READ mime WRITE setMime NOTIFY mimeChanged)
     Q_PROPERTY(QString directoryName READ directoryName NOTIFY directoryNameChanged)
 
@@ -26,6 +27,7 @@ class FolderListModel : public QAbstractListModel
         explicit FolderListModel(QObject *parent = 0);
         QString directoryName() const;
         QString homeFolder() const;
+        QString sdcardFolder() const;
         QString directory() const;
         void setDirectory(const QString& dir);
         const QString& mime() const;

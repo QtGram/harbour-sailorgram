@@ -114,6 +114,14 @@ Sélectionnez « Contact » à partir du menu descendant</translation>
         <source>Root</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>SD Card</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageBar</name>
