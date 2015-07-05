@@ -44,7 +44,7 @@ Item
             Label
             {
                 id: lblinfo
-                text: TelegramHelper.isChat(dialog) ? qsTr("%1 members", chat.participantsCount.toString()) : TelegramHelper.userStatus(user)
+                text: TelegramHelper.isChat(dialog) ? qsTr("%1 members").arg(chat.participantsCount.toString()) : TelegramHelper.userStatus(user)
                 font.pixelSize: Theme.fontSizeExtraSmall
                 color: Theme.highlightColor
             }
