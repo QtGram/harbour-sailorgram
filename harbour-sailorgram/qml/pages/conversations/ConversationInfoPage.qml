@@ -5,6 +5,7 @@ import "../../models"
 import "../../components"
 import "../../items/peer"
 import "../../items/user"
+import "../../items/chat"
 import "../../js/TelegramHelper.js" as TelegramHelper
 
 Page
@@ -30,42 +31,47 @@ Page
         }
     }
 
-    SilicaFlickable
+    Component {
+        id: chatinfocomponent
+
+        ChatInfo {
+            settings: conversationinfopage.settings
+            telegram: conversationinfopage.telegram
+            dialog: conversationinfopage.dialog
+            chat: conversationinfopage.chat
+        }
+    }
+
+    Column
     {
-        id: flickable
-        anchors.fill: parent
-        contentHeight: content.height
+        id: content
+        width: parent.width
+        spacing: Theme.paddingMedium
 
-        Column
+        PageHeader { title: TelegramHelper.isChat(dialog) ? chat.title : TelegramHelper.userName(user) }
+
+        PeerItem
         {
-            id: content
-            width: parent.width
-            spacing: Theme.paddingMedium
+            x: Theme.paddingMedium
+            width: parent.width - (x * 2)
+            height: Theme.itemSizeSmall
+            telegram: conversationinfopage.telegram
+            dialog: conversationinfopage.dialog
+            chat: conversationinfopage.chat
+            user: conversationinfopage.user
+        }
+    }
 
-            PageHeader { title: TelegramHelper.isChat(dialog) ? chat.title : TelegramHelper.userName(user) }
+    Loader
+    {
+        id: loader
+        anchors { left: parent.left; top: content.bottom; right: parent.right; bottom: parent.bottom; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
 
-            PeerItem
-            {
-                x: Theme.paddingMedium
-                width: parent.width - (x * 2)
-                height: Theme.itemSizeSmall
-                telegram: conversationinfopage.telegram
-                dialog: conversationinfopage.dialog
-                chat: conversationinfopage.chat
-                user: conversationinfopage.user
-            }
+        sourceComponent: {
+            if(TelegramHelper.isChat(dialog))
+                return chatinfocomponent;
 
-            Loader
-            {
-                width: parent.width
-
-                sourceComponent: {
-                    if(TelegramHelper.isChat(dialog))
-                        return null;
-
-                    return userinfocomponent;
-                }
-            }
+            return userinfocomponent;
         }
     }
 }

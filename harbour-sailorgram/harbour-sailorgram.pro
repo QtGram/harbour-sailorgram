@@ -79,7 +79,8 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/items/peer/PeerItem.qml \
     qml/items/peer/PeerImage.qml \
     qml/pages/conversations/ConversationInfoPage.qml \
-    qml/items/user/UserInfo.qml
+    qml/items/user/UserInfo.qml \
+    qml/items/chat/ChatInfo.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

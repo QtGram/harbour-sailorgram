@@ -21,6 +21,13 @@
     </message>
 </context>
 <context>
+    <name>ChatInfo</name>
+    <message>
+        <source>Members</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ConnectionPage</name>
     <message>
         <source>Connecting</source>
