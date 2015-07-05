@@ -123,11 +123,11 @@ Scegli un contatto selezionando &quot;Contatti&quot; dal menu Pull Down</transla
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished"></translation>
+        <translation>Scheda SD</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Home</translation>
     </message>
 </context>
 <context>
@@ -148,7 +148,7 @@ Scegli un contatto selezionando &quot;Contatti&quot; dal menu Pull Down</transla
     <name>PeerItem</name>
     <message>
         <source>%1 members</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 membri</translation>
     </message>
 </context>
 <context>
@@ -256,15 +256,15 @@ Scegli un contatto selezionando &quot;Contatti&quot; dal menu Pull Down</transla
     <name>UserInfo</name>
     <message>
         <source>Phone Number</source>
-        <translation type="unfinished">Numero di Telefono</translation>
+        <translation>Numero di Telefono</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Azioni</translation>
+        <translation>Azioni</translation>
     </message>
     <message>
         <source>Send Message</source>
-        <translation type="unfinished">Invia Messaggio</translation>
+        <translation>Invia Messaggio</translation>
     </message>
 </context>
 <context>

@@ -17,7 +17,7 @@
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign In&apos;</source>
-        <translation>Espera a recibir el SMS con el código de activación y pulsa en &apos;Siguiente&apos;</translation>
+        <translation>Espera a recibir el SMS con el código de activación y pulsa &apos;Siguiente&apos;</translation>
     </message>
 </context>
 <context>
@@ -62,7 +62,7 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancelar</translation>
     </message>
 </context>
 <context>
@@ -100,7 +100,7 @@
 Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source>
         <translation>No hay conversaciones
 
-Selecciona un contacto pulsando en &quot;Contactos&quot; desde el menú desplegable</translation>
+Elije un contacto pulsando en &quot;Contactos&quot; desde el menú desplegable</translation>
     </message>
     <message>
         <source>Chats</source>
@@ -119,7 +119,7 @@ Selecciona un contacto pulsando en &quot;Contactos&quot; desde el menú desplega
     <name>FilePickerPage</name>
     <message>
         <source>Root</source>
-        <translation type="unfinished"></translation>
+        <translation>Root</translation>
     </message>
     <message>
         <source>SD Card</source>
@@ -167,34 +167,34 @@ Selecciona un contacto pulsando en &quot;Contactos&quot; desde el menú desplega
     </message>
     <message>
         <source>Insert your phone number and press &apos;Next&apos;</source>
-        <translation>Inserta tu número de teléfono y pulsa en &apos;Siguiente&apos;</translation>
+        <translation>Inserta tu número de teléfono y pulsa &apos;Siguiente&apos;</translation>
     </message>
 </context>
 <context>
     <name>SignUpPage</name>
     <message>
         <source>Sign Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Iniciar sesión</translation>
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation type="unfinished">El código de autorización que has introducido no es correcto</translation>
+        <translation>Has introducido un código de autorización erróneo</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Espera a recibir el SMS con el código de activación y pulsa &apos;Iniciar sesión&apos;</translation>
     </message>
     <message>
         <source>First Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre</translation>
     </message>
     <message>
         <source>Last Name (Optional)</source>
-        <translation type="unfinished"></translation>
+        <translation>Apellidos (Opcional)</translation>
     </message>
     <message>
         <source>Authorization Code</source>
-        <translation type="unfinished">Código de autorización</translation>
+        <translation>Código de autorización</translation>
     </message>
 </context>
 <context>

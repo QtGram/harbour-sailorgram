@@ -31,7 +31,7 @@
     <name>ConnectionPage</name>
     <message>
         <source>Connecting</source>
-        <translation type="unfinished"></translation>
+        <translation>Verbinde</translation>
     </message>
 </context>
 <context>
@@ -58,11 +58,11 @@
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Öffnen</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Abbrechen</translation>
     </message>
 </context>
 <context>
@@ -119,7 +119,7 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
     <name>FilePickerPage</name>
     <message>
         <source>Root</source>
-        <translation type="unfinished"></translation>
+        <translation>Root</translation>
     </message>
     <message>
         <source>SD Card</source>
@@ -141,7 +141,7 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
     <name>MessageItem</name>
     <message>
         <source>Downloading Media</source>
-        <translation type="unfinished"></translation>
+        <translation>Lade Media</translation>
     </message>
 </context>
 <context>
@@ -174,27 +174,27 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
     <name>SignUpPage</name>
     <message>
         <source>Sign Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Anmelden</translation>
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation type="unfinished">Du hast einen falschen Authentifizierungs-Code eingegeben.</translation>
+        <translation>Du hast den falschen  Authorization Pin eingegeben </translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Warte auf die SMS mit dem Aktivierungscode und wähle dann &apos;Anmelden&apos;</translation>
     </message>
     <message>
         <source>First Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Vorname</translation>
     </message>
     <message>
         <source>Last Name (Optional)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nachname (Optional) </translation>
     </message>
     <message>
         <source>Authorization Code</source>
-        <translation type="unfinished">Authentifizierungs-Code</translation>
+        <translation>Authorization Pin</translation>
     </message>
 </context>
 <context>
@@ -225,31 +225,31 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
     </message>
     <message>
         <source>Document</source>
-        <translation type="unfinished"></translation>
+        <translation>Dokument</translation>
     </message>
     <message>
         <source>Contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontakt</translation>
     </message>
     <message>
         <source>Video</source>
-        <translation type="unfinished"></translation>
+        <translation>Video</translation>
     </message>
     <message>
         <source>Unsupported</source>
-        <translation type="unfinished"></translation>
+        <translation>Nicht unterstützt</translation>
     </message>
     <message>
         <source>Audio</source>
-        <translation type="unfinished"></translation>
+        <translation>Audio</translation>
     </message>
     <message>
         <source>Photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Foto</translation>
     </message>
     <message>
         <source>Geo</source>
-        <translation type="unfinished"></translation>
+        <translation>Geo</translation>
     </message>
 </context>
 <context>
