@@ -1,6 +1,7 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
+import "../../models"
 import "../../components"
 import "../../items/user"
 import "../../js/TelegramHelper.js" as TelegramHelper
@@ -8,6 +9,7 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 Page
 {
     property bool actionVisible: true
+    property Settings settings
     property Telegram telegram
     property User user
 
@@ -54,7 +56,7 @@ Page
                 width: parent.width
                 height: Theme.itemSizeSmall
                 labelText: qsTr("Send Message")
-                onActionRequested: pageStack.replace(Qt.resolvedUrl("../../pages/conversations/ConversationPage.qml"), { "telegram": telegram,  "dialog": telegram.fakeDialogObject(user.id, false) } )
+                onActionRequested: pageStack.replace(Qt.resolvedUrl("../../pages/conversations/ConversationPage.qml"), { "settings": settings, "telegram": telegram,  "dialog": telegram.fakeDialogObject(user.id, false), "user": user } )
             }
         }
     }

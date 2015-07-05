@@ -138,6 +138,13 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
     </message>
 </context>
 <context>
+    <name>PeerItem</name>
+    <message>
+        <source>%1 members</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PhoneNumberPage</name>
     <message>
         <source>Next</source>
@@ -236,6 +243,21 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
     <message>
         <source>Geo</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UserInfo</name>
+    <message>
+        <source>Phone Number</source>
+        <translation type="unfinished">Telefon-Nummer</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished">Aktionen</translation>
+    </message>
+    <message>
+        <source>Send Message</source>
+        <translation type="unfinished">Nachricht senden</translation>
     </message>
 </context>
 <context>

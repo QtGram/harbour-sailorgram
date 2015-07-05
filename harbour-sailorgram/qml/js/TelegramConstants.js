@@ -10,6 +10,10 @@ var typeMessageMediaAudio = 0xc6b68300;
 var typeMessageMediaPhoto = 0xc8c45a2a;
 var typeMessageMediaGeo = 0x56e0d474;
 
+/* Peer Constants */
+var typePeerUser = 0x9db1bc6d;
+var typePeerChat = 0xbad0e5bb;
+
 /* User Constants */
 var typeUserStatusOffline = 0x8c703f;
 var typeUserStatusEmpty = 0x9d05049;

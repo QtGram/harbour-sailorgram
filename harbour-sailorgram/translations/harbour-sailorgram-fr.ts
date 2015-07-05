@@ -138,6 +138,13 @@ Sélectionnez « Contact » à partir du menu descendant</translation>
     </message>
 </context>
 <context>
+    <name>PeerItem</name>
+    <message>
+        <source>%1 members</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PhoneNumberPage</name>
     <message>
         <source>Next</source>
@@ -236,6 +243,21 @@ Sélectionnez « Contact » à partir du menu descendant</translation>
     <message>
         <source>Geo</source>
         <translation>Géo</translation>
+    </message>
+</context>
+<context>
+    <name>UserInfo</name>
+    <message>
+        <source>Phone Number</source>
+        <translation type="unfinished">Numéro de téléphone</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished">Actions</translation>
+    </message>
+    <message>
+        <source>Send Message</source>
+        <translation type="unfinished">Envoyer le message</translation>
     </message>
 </context>
 <context>

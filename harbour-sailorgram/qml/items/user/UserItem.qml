@@ -1,6 +1,7 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
+import "../peer"
 import "../../js/TelegramHelper.js" as TelegramHelper
 
 Item
@@ -10,7 +11,7 @@ Item
 
     id: contactitem
 
-    UserAvatar
+    PeerImage
     {
         id: useravatar
         anchors { left: parent.left; top: parent.top }

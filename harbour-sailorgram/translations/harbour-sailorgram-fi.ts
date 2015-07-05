@@ -137,6 +137,13 @@ Valitse yhteystieto valitsemalla &quot;Yhteystiedot&quot; alasvetovalikosta</tra
     </message>
 </context>
 <context>
+    <name>PeerItem</name>
+    <message>
+        <source>%1 members</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PhoneNumberPage</name>
     <message>
         <source>Next</source>
@@ -235,6 +242,21 @@ Valitse yhteystieto valitsemalla &quot;Yhteystiedot&quot; alasvetovalikosta</tra
     <message>
         <source>Geo</source>
         <translation>Sijainti</translation>
+    </message>
+</context>
+<context>
+    <name>UserInfo</name>
+    <message>
+        <source>Phone Number</source>
+        <translation type="unfinished">Puhelinnumero</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished">Toiminnot</translation>
+    </message>
+    <message>
+        <source>Send Message</source>
+        <translation type="unfinished">Lähetä viesti</translation>
     </message>
 </context>
 <context>

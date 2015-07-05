@@ -14,12 +14,12 @@ ContextMenu
     MenuItem
     {
         text: qsTr("Send Message")
-        onClicked: pageStack.replace(Qt.resolvedUrl("../pages/conversations/ConversationPage.qml"), { "telegram": usermenu.telegram,  "dialog": usermenu.telegram.fakeDialogObject(usermenu.user.userId, false) } )
+        onClicked: pageStack.replace(Qt.resolvedUrl("../pages/conversations/ConversationPage.qml"), { "settings": settings, "telegram": usermenu.telegram, "dialog": usermenu.telegram.fakeDialogObject(usermenu.user.id, false) } )
     }
 
     MenuItem
     {
         text: qsTr("Profile")
-        onClicked: pageStack.push(Qt.resolvedUrl("../pages/users/UserPage.qml"), {"telegram": usermenu.telegram, "user": usermenu.user })
+        onClicked: pageStack.push(Qt.resolvedUrl("../pages/users/UserPage.qml"), {"settings": settings, "telegram": usermenu.telegram, "user": usermenu.user })
     }
 }

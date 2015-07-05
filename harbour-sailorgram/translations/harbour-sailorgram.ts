@@ -136,6 +136,13 @@ Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source
     </message>
 </context>
 <context>
+    <name>PeerItem</name>
+    <message>
+        <source>%1 members</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PhoneNumberPage</name>
     <message>
         <source>Next</source>
@@ -233,6 +240,21 @@ Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source
     </message>
     <message>
         <source>Geo</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UserInfo</name>
+    <message>
+        <source>Phone Number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send Message</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

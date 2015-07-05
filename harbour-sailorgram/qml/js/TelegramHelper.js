@@ -39,9 +39,20 @@ function userStatus(user)
     return qsTr("Unknown");
 }
 
+function isChat(dialog)
+{
+    if(!dialog)
+        return false;
+
+    return dialog.peer.classType === TelegramConstants.typePeerChat;
+}
+
 function peerId(peer)
 {
-    return (peer.chatId) !== 0 ? peer.chatId : peer.userId;
+    if(peer.classType === TelegramConstants.typePeerChat)
+        return peer.chatId;
+
+    return peer.userId;
 }
 
 function messageContent(message)

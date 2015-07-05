@@ -3,34 +3,36 @@ import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../../models"
 import "../../components"
+import "../../items/peer"
 import "../../items/user"
 import "../../items/messageitem"
 import "../../js/TelegramHelper.js" as TelegramHelper
 
 Page
 {
-   readonly property real typeUserSelf: 0x1c60e608
-   readonly property real typeUserContact: 0xcab35e18
-   readonly property real typeUserDeleted: 0xd6016d7a
-   readonly property real typeUserForeign: 0x75cf7a8
-   readonly property real typeUserEmpty: 0x200250ba
-   readonly property real typeUserRequest: 0xd9ccc4ef
-
     property Settings settings
     property Telegram telegram
     property Dialog dialog
-    property User user: telegram.user(dialog.peer.userId)
+    property Chat chat
+    property User user
     property int peerId: TelegramHelper.peerId(dialog.peer)
     property bool muted: telegram.userData.isMuted(peerId)
 
     id: conversationpage
     allowedOrientations: defaultAllowedOrientations
 
+    Component.onCompleted: {
+        if(TelegramHelper.isChat(dialog))
+            chat = telegram.chat(dialog.peer.chatId);
+        else
+            user = telegram.user(dialog.peer.userId);
+    }
+
     onStatusChanged: {
         if(status !== PageStatus.Active)
             return;
 
-        pageStack.pushAttached(Qt.resolvedUrl("../../pages/users/UserPage.qml"), { "telegram": conversationpage.telegram, "user": conversationpage.user, "actionVisible": false });
+        pageStack.pushAttached(Qt.resolvedUrl("ConversationInfoPage.qml"), { "settings": conversationpage.settings, "telegram": conversationpage.telegram, "dialog": conversationpage.dialog, "chat": conversationpage.chat, "user": conversationpage.user });
         settings.foregroundDialog = conversationpage.dialog;
 
         messagemodel.setReaded();
@@ -98,17 +100,19 @@ Page
 
             MenuItem {
                 text: qsTr("Add to Contacts")
-                visible: !TelegramHelper.isTelegramUser(user) && (user.classType === conversationpage.typeUserRequest)
+                visible: !TelegramHelper.isChat(dialog) && !TelegramHelper.isTelegramUser(user) && (user.classType === conversationpage.typeUserRequest)
                 onClicked: telegram.addContact(user.firstName, user.lastName, user.phone)
             }
         }
 
-        UserItem
+        PeerItem
         {
             id: header
             anchors { left: parent.left; top: parent.top; right: parent.right; leftMargin: Theme.horizontalPageMargin; topMargin: Theme.paddingMedium }
             height: Theme.itemSizeSmall
             telegram: conversationpage.telegram
+            dialog: conversationpage.dialog
+            chat: conversationpage.chat
             user: conversationpage.user
         }
 
