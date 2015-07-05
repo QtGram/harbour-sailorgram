@@ -33,6 +33,7 @@ import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../../models"
 import "../../items/conversation"
+import "../../js/TelegramHelper.js" as TelegramHelper
 
 Page
 {
@@ -89,7 +90,7 @@ Page
 
                     onClicked: {
                         dialogitem.remorseAction(qsTr("Deleting History"), function() {
-                            telegram.messagesDeleteHistory(item.peer.userId);
+                            telegram.messagesDeleteHistory(TelegramHelper.peerId(item.peer));
                         });
                     }
                 }
