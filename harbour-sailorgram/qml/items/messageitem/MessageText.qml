@@ -23,6 +23,7 @@ Item
             color: message.out ? Theme.highlightColor : Theme.primaryColor
             anchors { left: message.out ? parent.left : undefined; right: message.out ? undefined : parent.right }
             width: parent.width
+            font.pixelSize: Theme.fontSizeSmall
             verticalAlignment: Text.AlignTop
             horizontalAlignment: message.out ? Text.AlignLeft : Text.AlignRight
             wrapMode: Text.WordWrap
