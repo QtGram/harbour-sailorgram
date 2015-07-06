@@ -1,6 +1,21 @@
 .pragma library
 
 /* Message Constants */
+var typeMessageEmpty = 0x83e5de54;
+var typeMessageService = 0x1d86f70e;
+var typeMessage = 0xa7ab1991;
+
+/* Message Action Constants */
+var typeMessageActionEmpty = 0xb6aef7b0;
+var typeMessageActionChatDeletePhoto = 0x95e3fbef;
+var typeMessageActionChatCreate = 0xa6638b9a;
+var typeMessageActionChatEditTitle = 0xb5a1ce5a;
+var typeMessageActionChatEditPhoto = 0x7fcb13a8;
+var typeMessageActionGeoChatCreate = 0x6f038ebc;
+var typeMessageActionChatDeleteUser = 0xb2ae9b0c;
+var typeMessageActionChatAddUser = 0x5e3cfc4b;
+
+/* Message Media Constants */
 var typeMessageMediaDocument = 0x2fda2204;
 var typeMessageMediaContact = 0x5e7d2f39;
 var typeMessageMediaEmpty = 0x3ded6320;

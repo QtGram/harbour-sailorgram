@@ -80,7 +80,8 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/items/peer/PeerImage.qml \
     qml/pages/conversations/ConversationInfoPage.qml \
     qml/items/user/UserInfo.qml \
-    qml/items/chat/ChatInfo.qml
+    qml/items/chat/ChatInfo.qml \
+    qml/js/TelegramAction.js
 
 # to disable building translations every time, comment out the
 # following CONFIG line

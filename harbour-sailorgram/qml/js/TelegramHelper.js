@@ -47,6 +47,10 @@ function isChat(dialog)
     return dialog.peer.classType === TelegramConstants.typePeerChat;
 }
 
+function isServiceMessage(message) {
+    return message.classType === TelegramConstants.typeMessageService;
+}
+
 function peerId(peer)
 {
     if(peer.classType === TelegramConstants.typePeerChat)

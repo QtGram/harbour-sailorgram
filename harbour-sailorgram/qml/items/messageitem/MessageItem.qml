@@ -6,6 +6,7 @@ import "../../models"
 import "../../menus"
 import "media"
 import "../../js/TelegramConstants.js" as TelegramConstants
+import "../../js/TelegramHelper.js" as TelegramHelper
 
 ListItem
 {

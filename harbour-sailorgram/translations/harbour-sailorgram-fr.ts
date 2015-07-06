@@ -198,6 +198,17 @@ Sélectionnez « Contact » à partir du menu descendant</translation>
     </message>
 </context>
 <context>
+    <name>TelegramAction</name>
+    <message>
+        <source>%1 has left the group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group created</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>TelegramHelper</name>
     <message>
         <source>Recently</source>

@@ -198,6 +198,17 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
     </message>
 </context>
 <context>
+    <name>TelegramAction</name>
+    <message>
+        <source>%1 has left the group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group created</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>TelegramHelper</name>
     <message>
         <source>Recently</source>

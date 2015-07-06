@@ -2,6 +2,8 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import harbour.sailorgram.TelegramCalendar 1.0
+import "../../js/TelegramHelper.js" as TelegramHelper
+import "../../js/TelegramAction.js" as TelegramAction
 
 Item
 {
@@ -20,15 +22,16 @@ Item
         Label
         {
             id: lbltext
-            color: message.out ? Theme.highlightColor : Theme.primaryColor
             anchors { left: message.out ? parent.left : undefined; right: message.out ? undefined : parent.right }
             width: parent.width
-            font.pixelSize: Theme.fontSizeSmall
+            color: TelegramHelper.isServiceMessage(message) ? Theme.secondaryHighlightColor : (message.out ? Theme.highlightColor : Theme.primaryColor)
+            font.pixelSize: TelegramHelper.isServiceMessage(message) ? Theme.fontSizeExtraSmall : Theme.fontSizeSmall
+            font.italic: TelegramHelper.isServiceMessage(message)
+            horizontalAlignment: TelegramHelper.isServiceMessage(message) ? Text.AlignHCenter : (message.out ? Text.AlignLeft : Text.AlignRight)
+            text: TelegramHelper.isServiceMessage(message) ? TelegramAction.actionType(telegram, message.action) : messageitem.message.message
             verticalAlignment: Text.AlignTop
-            horizontalAlignment: message.out ? Text.AlignLeft : Text.AlignRight
             wrapMode: Text.WordWrap
-            text: message.message
-            visible: message.message.length > 0
+            visible: text.length > 0
         }
 
         Row
