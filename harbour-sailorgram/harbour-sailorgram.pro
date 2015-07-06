@@ -63,7 +63,6 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/items/messageitem/media/MessagePhoto.qml \
     qml/items/messageitem/media/MessageDocument.qml \
     qml/components/PopupMessage.qml \
-    qml/menus/ConversationMenu.qml \
     qml/pages/conversations/ConversationsPage.qml \
     qml/pages/conversations/ConversationPage.qml \
     qml/pages/users/UserPage.qml \
@@ -81,7 +80,12 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/pages/conversations/ConversationInfoPage.qml \
     qml/items/user/UserInfo.qml \
     qml/items/chat/ChatInfo.qml \
-    qml/js/TelegramAction.js
+    qml/js/TelegramAction.js \
+    qml/pages/chat/AddContactsPage.qml \
+    qml/menus/MessageMenu.qml \
+    qml/menus/ConversationMenu.qml \
+    qml/pages/chat/CreateChatPage.qml \
+    qml/menus/ConversationsMenu.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

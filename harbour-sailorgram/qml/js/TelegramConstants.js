@@ -36,3 +36,11 @@ var typeUserStatusOnline = 0xedb93949;
 var typeUserStatusRecently = 0xe26f42f1;
 var typeUserStatusLastWeek = 0x7bf09fc;
 var typeUserStatusLastMonth = 0x77ebc742;
+
+/* User Type Constants */
+var typeUserSelf = 0x1c60e608;
+var typeUserContact = 0xcab35e18;
+var typeUserDeleted = 0xd6016d7a;
+var typeUserForeign = 0x75cf7a8;
+var typeUserEmpty = 0x200250ba;
+var typeUserRequest = 0xd9ccc4ef;

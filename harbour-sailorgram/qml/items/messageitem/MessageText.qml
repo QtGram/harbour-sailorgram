@@ -42,7 +42,7 @@ Item
             Image
             {
                 id: imgstatus
-                visible: message.out
+                visible: message.out && !TelegramHelper.isServiceMessage(message)
                 fillMode: Image.PreserveAspectFit
                 width: lbldate.contentHeight
                 height: lbldate.contentHeight
@@ -64,6 +64,7 @@ Item
                 verticalAlignment: Text.AlignBottom
                 horizontalAlignment: message.out ? Text.AlignLeft : Text.AlignRight
                 text: TelegramCalendar.timeToString(message.date)
+                visible: !TelegramHelper.isServiceMessage(message)
             }
         }
     }

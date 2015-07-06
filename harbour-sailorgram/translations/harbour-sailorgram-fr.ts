@@ -2,6 +2,13 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="fr">
 <context>
+    <name>AddContactsPage</name>
+    <message>
+        <source>Add Chat Member</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AuthorizationPage</name>
     <message>
         <source>Sign In</source>
@@ -38,11 +45,11 @@
     <name>ConversationMenu</name>
     <message>
         <source>Copy</source>
-        <translation>Copier</translation>
+        <translation type="vanished">Copier</translation>
     </message>
     <message>
         <source>Message copied to clipboard</source>
-        <translation>Message copié dans le presse-papier </translation>
+        <translation type="vanished">Message copié dans le presse-papier </translation>
     </message>
     <message>
         <source>Delete</source>
@@ -50,49 +57,76 @@
     </message>
     <message>
         <source>Deleting Message</source>
-        <translation>Suppression du message</translation>
+        <translation type="vanished">Suppression du message</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation>Télécharger</translation>
+        <translation type="vanished">Télécharger</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Ouvrir</translation>
+        <translation type="vanished">Ouvrir</translation>
     </message>
     <message>
-        <source>Cancel</source>
+        <source>Enable Notifications</source>
+        <translation type="unfinished">Activer les notifications</translation>
+    </message>
+    <message>
+        <source>Disable Notifications</source>
+        <translation type="unfinished">Désactiver les notifications</translation>
+    </message>
+    <message>
+        <source>Deleting History</source>
+        <translation type="unfinished">Suppression de l&apos;historique</translation>
+    </message>
+    <message>
+        <source>Add Member</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add to Contacts</source>
+        <translation type="unfinished">Ajouter aux Contacts</translation>
     </message>
 </context>
 <context>
     <name>ConversationPage</name>
     <message>
         <source>Enable Notifications</source>
-        <translation>Activer les notifications</translation>
+        <translation type="vanished">Activer les notifications</translation>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation>Désactiver les notifications</translation>
+        <translation type="vanished">Désactiver les notifications</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Effacer</translation>
+        <translation type="vanished">Effacer</translation>
     </message>
     <message>
         <source>Deleting History</source>
-        <translation>Suppression de l&apos;historique</translation>
+        <translation type="vanished">Suppression de l&apos;historique</translation>
     </message>
     <message>
         <source>Add to Contacts</source>
-        <translation>Ajouter aux Contacts</translation>
+        <translation type="vanished">Ajouter aux Contacts</translation>
+    </message>
+</context>
+<context>
+    <name>ConversationsMenu</name>
+    <message>
+        <source>Create Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contacts</source>
+        <translation type="unfinished">Contacts</translation>
     </message>
 </context>
 <context>
     <name>ConversationsPage</name>
     <message>
         <source>Contacts</source>
-        <translation>Contacts</translation>
+        <translation type="vanished">Contacts</translation>
     </message>
     <message>
         <source>No Chats
@@ -113,6 +147,17 @@ Sélectionnez « Contact » à partir du menu descendant</translation>
     <message>
         <source>Deleting History</source>
         <translation>Suppression de l&apos;historique</translation>
+    </message>
+</context>
+<context>
+    <name>CreateChatPage</name>
+    <message>
+        <source>Create Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group Name</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -142,6 +187,37 @@ Sélectionnez « Contact » à partir du menu descendant</translation>
     <message>
         <source>Downloading Media</source>
         <translation>Téléchargement de médias</translation>
+    </message>
+</context>
+<context>
+    <name>MessageMenu</name>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished">Copier</translation>
+    </message>
+    <message>
+        <source>Message copied to clipboard</source>
+        <translation type="unfinished">Message copié dans le presse-papier </translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Effacer</translation>
+    </message>
+    <message>
+        <source>Deleting Message</source>
+        <translation type="unfinished">Suppression du message</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished">Télécharger</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished">Ouvrir</translation>
     </message>
 </context>
 <context>
@@ -205,6 +281,10 @@ Sélectionnez « Contact » à partir du menu descendant</translation>
     </message>
     <message>
         <source>Group created</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 has joined the group</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -2,6 +2,7 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../../models"
+import "../../menus"
 import "../../components"
 import "../../items/peer"
 import "../../items/user"
@@ -15,8 +16,7 @@ Page
     property Dialog dialog
     property Chat chat
     property User user
-    property int peerId: TelegramHelper.peerId(dialog.peer)
-    property bool muted: telegram.userData.isMuted(peerId)
+    property bool muted: telegram.userData.isMuted(TelegramHelper.peerId(dialog.peer))
 
     id: conversationpage
     allowedOrientations: defaultAllowedOrientations
@@ -62,10 +62,12 @@ Page
         target: telegram.userData
 
         onMuteChanged: {
-            if(id !== conversationpage.peerId)
+            var peerid = TelegramHelper.peerId(dialog.peer);
+
+            if(id !== peerid)
                 return;
 
-            conversationpage.muted = telegram.userData.isMuted(conversationpage.peerId);
+            conversationpage.muted = telegram.userData.isMuted(peerid);
         }
     }
 
@@ -74,35 +76,11 @@ Page
         id: flickable
         anchors.fill: parent
 
-        PullDownMenu
+        ConversationMenu
         {
-            MenuItem {
-                text: conversationpage.muted ? qsTr("Enable Notifications") : qsTr("Disable Notifications")
-
-                onClicked: {
-                    if(conversationpage.muted)
-                        telegram.userData.removeMute(conversationpage.peerId)
-                    else
-                        telegram.userData.addMute(conversationpage.peerId)
-                }
-            }
-
-            MenuItem {
-                text: qsTr("Delete")
-
-                onClicked: {
-                    remorsepopup.execute(qsTr("Deleting History"), function() {
-                        telegram.messagesDeleteHistory(item.peer.userId);
-                        pageStack.pop();
-                    });
-                }
-            }
-
-            MenuItem {
-                text: qsTr("Add to Contacts")
-                visible: !TelegramHelper.isChat(dialog) && !TelegramHelper.isTelegramUser(user) && (user.classType === conversationpage.typeUserRequest)
-                onClicked: telegram.addContact(user.firstName, user.lastName, user.phone)
-            }
+            id: conversationmenu
+            settings: conversationpage.settings
+            dialog: conversationpage.dialog
         }
 
         PeerItem

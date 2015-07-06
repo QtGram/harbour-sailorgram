@@ -11,9 +11,11 @@ function actionType(telegram, action) {
         case TelegramConstants.typeMessageActionChatCreate:
             return qsTr("Group created");
 
+        case TelegramConstants.typeMessageActionChatAddUser:
+            return qsTr("%1 has joined the group").arg(TelegramHelper.userName(telegram.user(action.userId)));
+
         case TelegramConstants.typeMessageActionChatDeleteUser:
-            var user = telegram.user(action.userId);
-            return qsTr("%1 has left the group").arg(TelegramHelper.userName(user));
+            return qsTr("%1 has left the group").arg(TelegramHelper.userName(telegram.user(action.userId)));
 
         default:
             break;

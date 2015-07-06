@@ -2,6 +2,13 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="it">
 <context>
+    <name>AddContactsPage</name>
+    <message>
+        <source>Add Chat Member</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AuthorizationPage</name>
     <message>
         <source>Sign In</source>
@@ -38,11 +45,11 @@
     <name>ConversationMenu</name>
     <message>
         <source>Copy</source>
-        <translation>Copia</translation>
+        <translation type="vanished">Copia</translation>
     </message>
     <message>
         <source>Message copied to clipboard</source>
-        <translation>Messaggio copiato negli Appunti</translation>
+        <translation type="vanished">Messaggio copiato negli Appunti</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -50,49 +57,80 @@
     </message>
     <message>
         <source>Deleting Message</source>
-        <translation>Rimozione messaggio</translation>
+        <translation type="vanished">Rimozione messaggio</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation>Scarica</translation>
+        <translation type="vanished">Scarica</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Apri</translation>
+        <translation type="vanished">Apri</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Annulla</translation>
+        <translation type="vanished">Annulla</translation>
+    </message>
+    <message>
+        <source>Enable Notifications</source>
+        <translation type="unfinished">Abilita Notifiche</translation>
+    </message>
+    <message>
+        <source>Disable Notifications</source>
+        <translation type="unfinished">Disabilita Notifiche</translation>
+    </message>
+    <message>
+        <source>Deleting History</source>
+        <translation type="unfinished">Rimozione Cronologia</translation>
+    </message>
+    <message>
+        <source>Add Member</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add to Contacts</source>
+        <translation type="unfinished">Aggiungi ai Contatti</translation>
     </message>
 </context>
 <context>
     <name>ConversationPage</name>
     <message>
         <source>Enable Notifications</source>
-        <translation>Abilita Notifiche</translation>
+        <translation type="vanished">Abilita Notifiche</translation>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation>Disabilita Notifiche</translation>
+        <translation type="vanished">Disabilita Notifiche</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Elimina</translation>
+        <translation type="vanished">Elimina</translation>
     </message>
     <message>
         <source>Deleting History</source>
-        <translation>Rimozione Cronologia</translation>
+        <translation type="vanished">Rimozione Cronologia</translation>
     </message>
     <message>
         <source>Add to Contacts</source>
-        <translation>Aggiungi ai Contatti</translation>
+        <translation type="vanished">Aggiungi ai Contatti</translation>
+    </message>
+</context>
+<context>
+    <name>ConversationsMenu</name>
+    <message>
+        <source>Create Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contacts</source>
+        <translation type="unfinished">Contatti</translation>
     </message>
 </context>
 <context>
     <name>ConversationsPage</name>
     <message>
         <source>Contacts</source>
-        <translation>Contatti</translation>
+        <translation type="vanished">Contatti</translation>
     </message>
     <message>
         <source>No Chats
@@ -113,6 +151,17 @@ Scegli un contatto selezionando &quot;Contatti&quot; dal menu Pull Down</transla
     <message>
         <source>Deleting History</source>
         <translation>Rimozione Cronologia</translation>
+    </message>
+</context>
+<context>
+    <name>CreateChatPage</name>
+    <message>
+        <source>Create Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group Name</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -142,6 +191,37 @@ Scegli un contatto selezionando &quot;Contatti&quot; dal menu Pull Down</transla
     <message>
         <source>Downloading Media</source>
         <translation>Download file multimediale</translation>
+    </message>
+</context>
+<context>
+    <name>MessageMenu</name>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished">Copia</translation>
+    </message>
+    <message>
+        <source>Message copied to clipboard</source>
+        <translation type="unfinished">Messaggio copiato negli Appunti</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Elimina</translation>
+    </message>
+    <message>
+        <source>Deleting Message</source>
+        <translation type="unfinished">Rimozione messaggio</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Annulla</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished">Scarica</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished">Apri</translation>
     </message>
 </context>
 <context>
@@ -205,6 +285,10 @@ Scegli un contatto selezionando &quot;Contatti&quot; dal menu Pull Down</transla
     </message>
     <message>
         <source>Group created</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 has joined the group</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

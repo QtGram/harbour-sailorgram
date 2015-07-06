@@ -2,6 +2,13 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="fi">
 <context>
+    <name>AddContactsPage</name>
+    <message>
+        <source>Add Chat Member</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AuthorizationPage</name>
     <message>
         <source>Sign In</source>
@@ -38,11 +45,11 @@
     <name>ConversationMenu</name>
     <message>
         <source>Copy</source>
-        <translation>Kopioi</translation>
+        <translation type="vanished">Kopioi</translation>
     </message>
     <message>
         <source>Message copied to clipboard</source>
-        <translation>Viesti kopioitu leikepöydälle</translation>
+        <translation type="vanished">Viesti kopioitu leikepöydälle</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -50,49 +57,76 @@
     </message>
     <message>
         <source>Deleting Message</source>
-        <translation>Poistetaan viesti.. </translation>
+        <translation type="vanished">Poistetaan viesti.. </translation>
     </message>
     <message>
         <source>Download</source>
-        <translation>Lataa</translation>
+        <translation type="vanished">Lataa</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Avaa</translation>
+        <translation type="vanished">Avaa</translation>
     </message>
     <message>
-        <source>Cancel</source>
+        <source>Enable Notifications</source>
+        <translation type="unfinished">Ilmoitukset käyttöön</translation>
+    </message>
+    <message>
+        <source>Disable Notifications</source>
+        <translation type="unfinished">Ilmoitukset pois käytöstä</translation>
+    </message>
+    <message>
+        <source>Deleting History</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add Member</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add to Contacts</source>
+        <translation type="unfinished">Lisää yhteystietoihin</translation>
     </message>
 </context>
 <context>
     <name>ConversationPage</name>
     <message>
         <source>Enable Notifications</source>
-        <translation>Ilmoitukset käyttöön</translation>
+        <translation type="vanished">Ilmoitukset käyttöön</translation>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation>Ilmoitukset pois käytöstä</translation>
+        <translation type="vanished">Ilmoitukset pois käytöstä</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Poista</translation>
+        <translation type="vanished">Poista</translation>
     </message>
     <message>
         <source>Deleting History</source>
-        <translation>Poistetaan historia </translation>
+        <translation type="vanished">Poistetaan historia </translation>
     </message>
     <message>
         <source>Add to Contacts</source>
-        <translation>Lisää yhteystietoihin</translation>
+        <translation type="vanished">Lisää yhteystietoihin</translation>
+    </message>
+</context>
+<context>
+    <name>ConversationsMenu</name>
+    <message>
+        <source>Create Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contacts</source>
+        <translation type="unfinished">Yhteystiedot </translation>
     </message>
 </context>
 <context>
     <name>ConversationsPage</name>
     <message>
         <source>Contacts</source>
-        <translation>Yhteystiedot </translation>
+        <translation type="vanished">Yhteystiedot </translation>
     </message>
     <message>
         <source>No Chats
@@ -112,6 +146,17 @@ Valitse yhteystieto valitsemalla &quot;Yhteystiedot&quot; alasvetovalikosta</tra
     <message>
         <source>Deleting History</source>
         <translation>Poistetaan historia.. </translation>
+    </message>
+</context>
+<context>
+    <name>CreateChatPage</name>
+    <message>
+        <source>Create Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group Name</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -141,6 +186,37 @@ Valitse yhteystieto valitsemalla &quot;Yhteystiedot&quot; alasvetovalikosta</tra
     <message>
         <source>Downloading Media</source>
         <translation>Ladataan mediaa</translation>
+    </message>
+</context>
+<context>
+    <name>MessageMenu</name>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished">Kopioi</translation>
+    </message>
+    <message>
+        <source>Message copied to clipboard</source>
+        <translation type="unfinished">Viesti kopioitu leikepöydälle</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Poista</translation>
+    </message>
+    <message>
+        <source>Deleting Message</source>
+        <translation type="unfinished">Poistetaan viesti.. </translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished">Lataa</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished">Avaa</translation>
     </message>
 </context>
 <context>
@@ -204,6 +280,10 @@ Valitse yhteystieto valitsemalla &quot;Yhteystiedot&quot; alasvetovalikosta</tra
     </message>
     <message>
         <source>Group created</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 has joined the group</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -32,8 +32,10 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../../models"
+import "../../menus"
 import "../../items/conversation"
 import "../../js/TelegramHelper.js" as TelegramHelper
+import "../../js/TelegramConstants.js" as TelegramConstants
 
 Page
 {
@@ -52,12 +54,10 @@ Page
 
     SilicaListView
     {
-        PullDownMenu
+        ConversationsMenu
         {
-            MenuItem {
-                text: qsTr("Contacts")
-                onClicked: pageStack.push(Qt.resolvedUrl("../users/UsersPage.qml"), { "settings": conversationspage.settings, "telegram": conversationspage.telegram })
-            }
+            id: conversationsmenu
+            settings: conversationspage.settings
         }
 
         ViewPlaceholder

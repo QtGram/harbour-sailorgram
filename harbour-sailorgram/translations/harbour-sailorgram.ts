@@ -2,6 +2,13 @@
 <!DOCTYPE TS>
 <TS version="2.1">
 <context>
+    <name>AddContactsPage</name>
+    <message>
+        <source>Add Chat Member</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AuthorizationPage</name>
     <message>
         <source>Sign In</source>
@@ -37,36 +44,9 @@
 <context>
     <name>ConversationMenu</name>
     <message>
-        <source>Copy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Message copied to clipboard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Deleting Message</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Download</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ConversationPage</name>
     <message>
         <source>Enable Notifications</source>
         <translation type="unfinished"></translation>
@@ -76,11 +56,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Delete</source>
+        <source>Deleting History</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Deleting History</source>
+        <source>Add Member</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -89,11 +69,18 @@
     </message>
 </context>
 <context>
-    <name>ConversationsPage</name>
+    <name>ConversationsMenu</name>
+    <message>
+        <source>Create Group</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <source>Contacts</source>
         <translation type="unfinished"></translation>
     </message>
+</context>
+<context>
+    <name>ConversationsPage</name>
     <message>
         <source>No Chats
 
@@ -110,6 +97,17 @@ Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source
     </message>
     <message>
         <source>Deleting History</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CreateChatPage</name>
+    <message>
+        <source>Create Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group Name</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -139,6 +137,37 @@ Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source
     <name>MessageItem</name>
     <message>
         <source>Downloading Media</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MessageMenu</name>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Message copied to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting Message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -203,6 +232,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source
     </message>
     <message>
         <source>Group created</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 has joined the group</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

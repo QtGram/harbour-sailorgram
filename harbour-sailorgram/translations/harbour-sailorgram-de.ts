@@ -2,6 +2,13 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="de">
 <context>
+    <name>AddContactsPage</name>
+    <message>
+        <source>Add Chat Member</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AuthorizationPage</name>
     <message>
         <source>Sign In</source>
@@ -38,11 +45,11 @@
     <name>ConversationMenu</name>
     <message>
         <source>Copy</source>
-        <translation>Kopieren</translation>
+        <translation type="vanished">Kopieren</translation>
     </message>
     <message>
         <source>Message copied to clipboard</source>
-        <translation>Nachricht in die Zwischenablage kopiert</translation>
+        <translation type="vanished">Nachricht in die Zwischenablage kopiert</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -50,49 +57,80 @@
     </message>
     <message>
         <source>Deleting Message</source>
-        <translation>Nachricht Löschen</translation>
+        <translation type="vanished">Nachricht Löschen</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation>Herunterladen</translation>
+        <translation type="vanished">Herunterladen</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Öffnen</translation>
+        <translation type="vanished">Öffnen</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Abbrechen</translation>
+        <translation type="vanished">Abbrechen</translation>
+    </message>
+    <message>
+        <source>Enable Notifications</source>
+        <translation type="unfinished">Benachrichtigungen aktivieren</translation>
+    </message>
+    <message>
+        <source>Disable Notifications</source>
+        <translation type="unfinished">Benachrichtigungen deaktivieren</translation>
+    </message>
+    <message>
+        <source>Deleting History</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add Member</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add to Contacts</source>
+        <translation type="unfinished">zu Kontakten hinzufügen</translation>
     </message>
 </context>
 <context>
     <name>ConversationPage</name>
     <message>
         <source>Enable Notifications</source>
-        <translation>Benachrichtigungen aktivieren</translation>
+        <translation type="vanished">Benachrichtigungen aktivieren</translation>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation>Benachrichtigungen deaktivieren</translation>
+        <translation type="vanished">Benachrichtigungen deaktivieren</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Löschen</translation>
+        <translation type="vanished">Löschen</translation>
     </message>
     <message>
         <source>Deleting History</source>
-        <translation>Verlauf löschen</translation>
+        <translation type="vanished">Verlauf löschen</translation>
     </message>
     <message>
         <source>Add to Contacts</source>
-        <translation>zu Kontakten hinzufügen</translation>
+        <translation type="vanished">zu Kontakten hinzufügen</translation>
+    </message>
+</context>
+<context>
+    <name>ConversationsMenu</name>
+    <message>
+        <source>Create Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contacts</source>
+        <translation type="unfinished">Kontakte</translation>
     </message>
 </context>
 <context>
     <name>ConversationsPage</name>
     <message>
         <source>Contacts</source>
-        <translation>Kontakte</translation>
+        <translation type="vanished">Kontakte</translation>
     </message>
     <message>
         <source>No Chats
@@ -113,6 +151,17 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
     <message>
         <source>Deleting History</source>
         <translation>lösche Verlauf</translation>
+    </message>
+</context>
+<context>
+    <name>CreateChatPage</name>
+    <message>
+        <source>Create Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group Name</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -142,6 +191,37 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
     <message>
         <source>Downloading Media</source>
         <translation>Lade Media</translation>
+    </message>
+</context>
+<context>
+    <name>MessageMenu</name>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished">Kopieren</translation>
+    </message>
+    <message>
+        <source>Message copied to clipboard</source>
+        <translation type="unfinished">Nachricht in die Zwischenablage kopiert</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Löschen</translation>
+    </message>
+    <message>
+        <source>Deleting Message</source>
+        <translation type="unfinished">Nachricht Löschen</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Abbrechen</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished">Herunterladen</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished">Öffnen</translation>
     </message>
 </context>
 <context>
@@ -205,6 +285,10 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
     </message>
     <message>
         <source>Group created</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 has joined the group</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
