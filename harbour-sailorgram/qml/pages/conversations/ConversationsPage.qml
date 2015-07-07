@@ -75,7 +75,7 @@ Page
 
         section.delegate: Component {
             SectionHeader {
-                text: (parseInt(section) === TelegramConstants.typePeerChat) ? qsTr("Chats") : qsTr("Groups")
+                text: (parseInt(section) === TelegramConstants.typePeerChat) ? qsTr("Groups") : qsTr("Conversations")
                 font.pixelSize: Theme.fontSizeSmall
                 height: Theme.itemSizeExtraSmall
             }
