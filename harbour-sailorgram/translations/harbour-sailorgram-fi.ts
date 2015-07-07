@@ -35,6 +35,17 @@
     </message>
 </context>
 <context>
+    <name>ChatInfoMenu</name>
+    <message>
+        <source>Remove from Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removing from group</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ConnectionPage</name>
     <message>
         <source>Connecting</source>

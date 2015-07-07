@@ -65,7 +65,7 @@ Page
     Loader
     {
         id: loader
-        anchors { left: parent.left; top: content.bottom; right: parent.right; bottom: parent.bottom; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
+        anchors { left: parent.left; top: content.bottom; right: parent.right; bottom: parent.bottom; }
 
         sourceComponent: {
             if(TelegramHelper.isChat(dialog))

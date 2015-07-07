@@ -3,14 +3,21 @@ import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../../models"
 import "../user"
+import "../../menus/chat"
+import "../../js/TelegramHelper.js" as TelegramHelper
 
 Item
 {
-    property int oldParticipantsCount: -1
     property Settings settings
     property Telegram telegram
     property Dialog dialog
     property Chat chat
+    property ChatFull chatFull: telegram.chatFull(chat.id)
+    property bool adminMenu: false
+
+    onChatFullChanged: {
+        adminMenu = chatFull.participants.adminId === telegram.me;
+    }
 
     id: chatinfo
 
@@ -38,10 +45,18 @@ Item
             id: liparticipant
             contentWidth: parent.width
             contentHeight: Theme.itemSizeSmall
+            showMenuOnPressAndHold: adminMenu && (user.id !== telegram.me)
+
+            menu: ChatInfoMenu {
+                settings: chatinfo.settings
+                chatParticipantsModel: chatparticipantsmodel
+                dialog: chatinfo.dialog
+                user: liparticipant.user
+            }
 
             UserItem {
                 id: useritem
-                anchors.fill: parent
+                anchors { fill: parent; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
                 telegram: chatinfo.telegram
                 user: liparticipant.user
             }

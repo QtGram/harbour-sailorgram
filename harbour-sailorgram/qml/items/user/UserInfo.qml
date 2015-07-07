@@ -18,7 +18,7 @@ Item
     Column
     {
         id: content
-        width: parent.width
+        anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
 
         SectionHeader { text: qsTr("Phone Number") }
 
