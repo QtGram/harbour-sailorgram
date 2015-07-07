@@ -73,6 +73,20 @@ ListItem
         id: content
         anchors { top: parent.top; left: parent.left; right: parent.right; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
 
+        Label
+        {
+            id: lbluser
+            anchors { left: message.out ? parent.left : undefined; right: message.out ? undefined : parent.right }
+            visible: !TelegramHelper.isServiceMessage(message) && !message.out
+            text: (!TelegramHelper.isServiceMessage(message) && message.out) ? "" : TelegramHelper.userName(telegram.user(message.fromId))
+            font.bold: true
+            font.pixelSize: Theme.fontSizeMedium
+            wrapMode: Text.NoWrap
+            horizontalAlignment: Text.AlignRight
+            verticalAlignment: Text.AlignVCenter
+            color: Theme.secondaryHighlightColor
+        }
+
         Loader
         {
             id: loader

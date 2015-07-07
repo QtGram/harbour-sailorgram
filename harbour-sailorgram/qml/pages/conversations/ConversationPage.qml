@@ -99,7 +99,7 @@ Page
             id: lvconversation
             anchors { left: parent.left; top: header.bottom; right: parent.right; bottom: messagebar.top; topMargin: Theme.paddingSmall }
             verticalLayoutDirection: ListView.BottomToTop
-            spacing: Theme.paddingMedium
+            spacing: Theme.paddingLarge
             clip: true
 
             BusyIndicator {
