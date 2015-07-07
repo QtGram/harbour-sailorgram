@@ -70,18 +70,16 @@ Page
         spacing: Theme.paddingMedium
         anchors.fill: parent
 
-        /*
         section.property: "item.peer.classType"
         section.criteria: ViewSection.FullString
 
         section.delegate: Component {
             SectionHeader {
-                text: (section === TelegramConstants.typePeerChat) ? "true" : "false" //qsTr("Chats") : qsTr("Groups")
+                text: (parseInt(section) === TelegramConstants.typePeerChat) ? qsTr("Chats") : qsTr("Groups")
                 font.pixelSize: Theme.fontSizeSmall
                 height: Theme.itemSizeExtraSmall
-                Component.onCompleted: console.log((section === TelegramConstants.typePeerChat) ? "true" : "false");
             }
-        } */
+        }
 
         header: PageHeader {
             title: qsTr("Chats")

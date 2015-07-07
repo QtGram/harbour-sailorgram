@@ -99,6 +99,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source
         <source>Deleting History</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CreateChatPage</name>

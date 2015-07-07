@@ -148,6 +148,10 @@ Sélectionnez « Contact » à partir du menu descendant</translation>
         <source>Deleting History</source>
         <translation>Suppression de l&apos;historique</translation>
     </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CreateChatPage</name>

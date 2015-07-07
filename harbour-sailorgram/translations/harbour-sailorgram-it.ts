@@ -152,6 +152,10 @@ Scegli un contatto selezionando &quot;Contatti&quot; dal menu Pull Down</transla
         <source>Deleting History</source>
         <translation>Rimozione Cronologia</translation>
     </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CreateChatPage</name>

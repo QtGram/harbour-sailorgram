@@ -152,6 +152,10 @@ Elije un contacto pulsando en &quot;Contactos&quot; desde el menú desplegable</
         <source>Deleting History</source>
         <translation>Borrando Historial</translation>
     </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CreateChatPage</name>
