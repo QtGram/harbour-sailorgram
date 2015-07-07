@@ -49,7 +49,6 @@ Item
 
             menu: ChatInfoMenu {
                 settings: chatinfo.settings
-                chatParticipantsModel: chatparticipantsmodel
                 dialog: chatinfo.dialog
                 user: liparticipant.user
             }
