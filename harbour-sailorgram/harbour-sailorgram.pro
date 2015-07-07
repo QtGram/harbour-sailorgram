@@ -85,7 +85,7 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/menus/MessageMenu.qml \
     qml/menus/ConversationMenu.qml \
     qml/pages/chat/CreateChatPage.qml \
-    qml/menus/ConversationsMenu.qml
+    qml/menus/ConversationsPullDownMenu.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

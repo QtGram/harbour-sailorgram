@@ -91,6 +91,14 @@
         <source>Add to Contacts</source>
         <translation type="unfinished">Aggiungi ai Contatti</translation>
     </message>
+    <message>
+        <source>Leave Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Leaving Group</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConversationPage</name>
@@ -118,12 +126,8 @@
 <context>
     <name>ConversationsMenu</name>
     <message>
-        <source>Create Group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Contacts</source>
-        <translation type="unfinished">Contatti</translation>
+        <translation type="obsolete">Contatti</translation>
     </message>
 </context>
 <context>
@@ -159,6 +163,17 @@ Scegli un contatto selezionando &quot;Contatti&quot; dal menu Pull Down</transla
     <message>
         <source>Conversations</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ConversationsPullDownMenu</name>
+    <message>
+        <source>Create Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contacts</source>
+        <translation type="unfinished">Contatti</translation>
     </message>
 </context>
 <context>

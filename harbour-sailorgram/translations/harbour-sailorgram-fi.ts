@@ -87,6 +87,14 @@
         <source>Add to Contacts</source>
         <translation type="unfinished">Lisää yhteystietoihin</translation>
     </message>
+    <message>
+        <source>Leave Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Leaving Group</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConversationPage</name>
@@ -114,12 +122,8 @@
 <context>
     <name>ConversationsMenu</name>
     <message>
-        <source>Create Group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Contacts</source>
-        <translation type="unfinished">Yhteystiedot </translation>
+        <translation type="obsolete">Yhteystiedot </translation>
     </message>
 </context>
 <context>
@@ -154,6 +158,17 @@ Valitse yhteystieto valitsemalla &quot;Yhteystiedot&quot; alasvetovalikosta</tra
     <message>
         <source>Conversations</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ConversationsPullDownMenu</name>
+    <message>
+        <source>Create Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contacts</source>
+        <translation type="unfinished">Yhteystiedot </translation>
     </message>
 </context>
 <context>

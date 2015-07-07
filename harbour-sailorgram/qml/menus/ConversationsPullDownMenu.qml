@@ -9,18 +9,18 @@ PullDownMenu
 {
     property Settings settings
 
-    id: conversationsmenu
+    id: conversationspulldownmenu
 
     MenuItem
     {
         text: qsTr("Create Group")
-        onClicked: pageStack.push(Qt.resolvedUrl("../pages/chat/CreateChatPage.qml"), { "settings": conversationsmenu.settings })
+        onClicked: pageStack.push(Qt.resolvedUrl("../pages/chat/CreateChatPage.qml"), { "settings": conversationspulldownmenu.settings })
     }
 
     MenuItem
     {
         text: qsTr("Contacts")
-        onClicked: pageStack.push(Qt.resolvedUrl("../pages/users/UsersPage.qml"), { "settings": conversationsmenu.settings, "telegram": conversationsmenu.settings.telegram })
+        onClicked: pageStack.push(Qt.resolvedUrl("../pages/users/UsersPage.qml"), { "settings": conversationspulldownmenu.settings, "telegram": conversationspulldownmenu.settings.telegram })
     }
 
 }

@@ -29,6 +29,7 @@ PullDownMenu
     MenuItem
     {
         text: qsTr("Delete")
+        visible: !TelegramHelper.isChat(dialog)
 
         onClicked: {
             remorsepopup.execute(qsTr("Deleting History"), function() {
@@ -36,6 +37,22 @@ PullDownMenu
                 pageStack.pop();
             });
         }
+    }
+
+    MenuItem
+    {
+        text: qsTr("Leave Group")
+        visible: TelegramHelper.isChat(dialog)
+
+        onClicked: {
+            remorsepopup.execute(qsTr("Leaving Group"), function() {
+                var peerid = TelegramHelper.peerId(dialog.peer);
+                settings.telegram.messagesDeleteChatUser(peerid, settings.telegram.me);
+                settings.telegram.messagesDeleteHistory(peerid);
+                pageStack.pop();
+            });
+        }
+
     }
 
     MenuItem

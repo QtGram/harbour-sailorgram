@@ -54,7 +54,7 @@ Page
 
     SilicaListView
     {
-        ConversationsMenu
+        ConversationsPullDownMenu
         {
             id: conversationsmenu
             settings: conversationspage.settings
