@@ -47,8 +47,14 @@ Item
             return "image://theme/icon-m-sounds";
         else if(message.media.classType === TelegramConstants.typeMessageMediaUnsupported)
             return "image://theme/icon-m-other";
-        else if(message.media.classType === TelegramConstants.typeMessageMediaDocument)
+        else if(message.media.classType === TelegramConstants.typeMessageMediaDocument) {
+            if(telegram.documentIsSticker(message.media.document)) {
+                return "image://theme/icon-m-other";
+                //FIXME: WebP: Not Supported (return filehandler.thumbPath);
+            }
+
             return message.media.document.thumb.location.download.location;
+        }
 
         return "";
     }

@@ -44,7 +44,7 @@ ContextMenu
     MenuItem
     {
         text: qsTr("Download")
-        visible: (!fileHandler || message.out) ? false : (fileHandler.filePath.toString().length <= 0) && (message.media && (message.media.classType !== TelegramConstants.typeMessageMediaEmpty))
+        visible: (!fileHandler || fileHandler.isSticker || message.out) ? false : (fileHandler.filePath.toString().length <= 0) && (message.media && (message.media.classType !== TelegramConstants.typeMessageMediaEmpty))
         onClicked: downloadRequested()
     }
 

@@ -105,6 +105,9 @@ ListItem
 
             onLoaded: {
                 messagemenu.fileHandler = loader.item.fileHandler;
+
+                if((message.media.classType === TelegramConstants.typeMessageMediaDocument) && telegram.documentIsSticker(message.media.document))
+                    loader.item.fileHandler.target = messageitem.message;
             }
         }
 
