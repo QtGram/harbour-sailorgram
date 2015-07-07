@@ -151,6 +151,10 @@ Valitse yhteystieto valitsemalla &quot;Yhteystiedot&quot; alasvetovalikosta</tra
         <source>Groups</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Conversations</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CreateChatPage</name>

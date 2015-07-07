@@ -156,6 +156,10 @@ Elije un contacto pulsando en &quot;Contactos&quot; desde el menú desplegable</
         <source>Groups</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Conversations</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CreateChatPage</name>

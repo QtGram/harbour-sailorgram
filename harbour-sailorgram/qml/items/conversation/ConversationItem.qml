@@ -5,6 +5,7 @@ import harbour.sailorgram.TelegramCalendar 1.0
 import "../../items/peer"
 import "../../items/user"
 import "../../js/TelegramHelper.js" as TelegramHelper
+import "../../js/TelegramAction.js" as TelegramAction
 
 Item
 {
@@ -91,7 +92,8 @@ Item
                     elide: Text.ElideRight
                     verticalAlignment: Text.AlignVCenter
                     font.pixelSize: Theme.fontSizeExtraSmall
-                    text: TelegramHelper.messageContent(message)
+                    font.italic: TelegramHelper.isServiceMessage(message)
+                    text: TelegramHelper.isServiceMessage(message) ? TelegramAction.actionType(telegram, message.action) : TelegramHelper.messageContent(message)
                 }
 
                 Rectangle

@@ -156,6 +156,10 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
         <source>Groups</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Conversations</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CreateChatPage</name>

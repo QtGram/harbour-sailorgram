@@ -152,6 +152,10 @@ Sélectionnez « Contact » à partir du menu descendant</translation>
         <source>Groups</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Conversations</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CreateChatPage</name>

@@ -103,6 +103,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source
         <source>Groups</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Conversations</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CreateChatPage</name>
