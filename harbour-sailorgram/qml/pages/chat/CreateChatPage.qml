@@ -50,6 +50,7 @@ Dialog
         {
             id: lvcontacts
             anchors { left: parent.left; top: tfgroupname.bottom; right: parent.right; bottom: parent.bottom }
+            spacing: Theme.paddingMedium
             clip: true
 
             model: TelegramQml.ContactsModel {
