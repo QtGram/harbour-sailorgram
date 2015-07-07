@@ -21,6 +21,20 @@ Item
 
         Label
         {
+            id: lbluser
+            anchors { left: message.out ? parent.left : undefined; right: message.out ? undefined : parent.right }
+            visible: !TelegramHelper.isServiceMessage(message) && !message.out
+            text: (!TelegramHelper.isServiceMessage(message) && message.out) ? "" : TelegramHelper.userName(telegram.user(message.fromId))
+            font.bold: true
+            font.pixelSize: Theme.fontSizeSmall
+            wrapMode: Text.NoWrap
+            horizontalAlignment: Text.AlignRight
+            verticalAlignment: Text.AlignVCenter
+            color: Theme.secondaryHighlightColor
+        }
+
+        Label
+        {
             id: lbltext
             anchors { left: message.out ? parent.left : undefined; right: message.out ? undefined : parent.right }
             width: parent.width
@@ -28,7 +42,7 @@ Item
             font.pixelSize: TelegramHelper.isServiceMessage(message) ? Theme.fontSizeExtraSmall : Theme.fontSizeSmall
             font.italic: TelegramHelper.isServiceMessage(message)
             horizontalAlignment: TelegramHelper.isServiceMessage(message) ? Text.AlignHCenter : (message.out ? Text.AlignLeft : Text.AlignRight)
-            text: TelegramHelper.isServiceMessage(message) ? TelegramAction.actionType(telegram, message.action) : messageitem.message.message
+            text: TelegramHelper.isServiceMessage(message) ? TelegramAction.actionType(telegram, message) : messageitem.message.message
             verticalAlignment: Text.AlignTop
             wrapMode: Text.WordWrap
             visible: text.length > 0

@@ -318,11 +318,11 @@ Elije un contacto pulsando en &quot;Contactos&quot; desde el menú desplegable</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Group created</source>
+        <source>%1 has joined the group</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 has joined the group</source>
+        <source>Group created by %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

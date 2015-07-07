@@ -93,7 +93,7 @@ Item
                     verticalAlignment: Text.AlignVCenter
                     font.pixelSize: Theme.fontSizeExtraSmall
                     font.italic: TelegramHelper.isServiceMessage(message)
-                    text: TelegramHelper.isServiceMessage(message) ? TelegramAction.actionType(telegram, message.action) : TelegramHelper.messageContent(message)
+                    text: TelegramHelper.isServiceMessage(message) ? TelegramAction.actionType(telegram, message) : TelegramHelper.messageContent(message)
                 }
 
                 Rectangle

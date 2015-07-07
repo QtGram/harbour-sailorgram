@@ -318,11 +318,11 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Group created</source>
+        <source>%1 has joined the group</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 has joined the group</source>
+        <source>Group created by %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
