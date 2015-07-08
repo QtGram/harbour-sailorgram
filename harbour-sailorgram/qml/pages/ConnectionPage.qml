@@ -27,7 +27,7 @@ Page
 
     Label
     {
-        anchors { bottom: indicator.top; topMargin: Theme.paddingMedium }
+        anchors { bottom: indicator.top; bottomMargin: Theme.paddingMedium }
         width: parent.width
         font.pixelSize: Theme.fontSizeExtraLarge
         horizontalAlignment: Text.AlignHCenter
@@ -39,6 +39,7 @@ Page
     {
         id: indicator
         anchors.centerIn: parent
+        size: BusyIndicatorSize.Large
         running: true
     }
 

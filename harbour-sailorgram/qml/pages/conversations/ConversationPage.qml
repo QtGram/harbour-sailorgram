@@ -104,6 +104,7 @@ Page
 
             BusyIndicator {
                 anchors.centerIn: parent
+                size: BusyIndicatorSize.Large
                 running: messagemodel.count <= 0
             }
 
