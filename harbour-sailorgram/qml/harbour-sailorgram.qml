@@ -32,6 +32,7 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import "models"
 import "pages"
+import "cover"
 import "js/Settings.js" as Settings
 
 ApplicationWindow
@@ -45,7 +46,10 @@ ApplicationWindow
     }
 
     id: mainwindow
-    cover: undefined
+
+    cover: CoverPage {
+        settings: mainwindow.settings
+    }
 
     initialPage: Component {
         ConnectionPage {

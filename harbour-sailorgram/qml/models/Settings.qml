@@ -13,6 +13,7 @@ QtObject
     property TelegramLocalStorage telegramlocalstorage: TelegramLocalStorage { }
     property Notifications notifications: Notifications { }
     property Dialog foregroundDialog: telegram.nullDialog
+    property Message lastMessage: telegram.nullMessage
 
     property SailorGram sailorgram: SailorGram {
         telegram: settings.telegram
@@ -41,6 +42,7 @@ QtObject
                 return;
             }
 
+            settings.lastMessage = msg;
             notifications.beep();
         }
 
@@ -73,6 +75,8 @@ QtObject
         onAuthLoggedInChanged: {
             if(!settings.telegram.authLoggedIn)
                 return;
+
+            settings.telegram.online = true;
 
             pageStack.completeAnimation();
             pageStack.replace(Qt.resolvedUrl("../pages/conversations/ConversationsPage.qml"), { "settings": settings, "telegram": settings.telegram });

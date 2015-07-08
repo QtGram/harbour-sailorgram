@@ -188,6 +188,25 @@ Elije un contacto pulsando en &quot;Contactos&quot; desde el menú desplegable</
     </message>
 </context>
 <context>
+    <name>CoverPage</name>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">En línea</translation>
+    </message>
+    <message>
+        <source>Status:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Offline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unread Messages:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CreateChatPage</name>
     <message>
         <source>Create Group</source>

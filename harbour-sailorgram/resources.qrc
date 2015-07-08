@@ -5,5 +5,6 @@
         <file>res/read.png</file>
         <file>res/out.png</file>
         <file>res/sent.png</file>
+        <file>res/telegramcover.png</file>
     </qresource>
 </RCC>
