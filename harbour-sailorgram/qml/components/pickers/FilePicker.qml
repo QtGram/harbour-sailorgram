@@ -22,8 +22,8 @@ SilicaListView
             id: imgicon
             source: (showThumbnails && isimage) ? filepath : fileicon
             anchors { left: parent.left; verticalCenter: lblfilename.verticalCenter }
-            width: (showThumbnails && isimage) ? parent.height : lblfilename.height
-            height: (showThumbnails && isimage) ? parent.height : lblfilename.height
+            width: parent.height
+            height: parent.height
             fillMode: Image.PreserveAspectFit
             asynchronous: true
         }
@@ -35,7 +35,8 @@ SilicaListView
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignLeft
             elide: Text.ElideRight
-            wrapMode: Text.WordWrap
+            wrapMode: Text.NoWrap
+            width: parent.width
             text: filename
         }
 
