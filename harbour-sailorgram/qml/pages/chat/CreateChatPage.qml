@@ -67,7 +67,7 @@ Dialog
 
                 UserItem {
                     id: useritem
-                    anchors { left: parent.left; top: parent.top; right: swselectcontact.right; bottom: parent.bottom }
+                    anchors { left: parent.left; top: parent.top; right: swselectcontact.right; bottom: parent.bottom; leftMargin: Theme.paddingMedium }
                     telegram: settings.telegram
                     user: settings.telegram.user(item.userId)
                 }
@@ -79,7 +79,11 @@ Dialog
 
                     onCheckedChanged: {
                         checked ? count++ : count--
-                        users[index] = item.userId;
+
+                        if(checked)
+                            users[index] = item.userId;
+                        else
+                            delete users[index];
                     }
                 }
             }
