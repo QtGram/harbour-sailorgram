@@ -1,90 +1,88 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="es">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl_NL" version="2.1">
 <context>
     <name>AddContactsPage</name>
     <message>
         <source>Add Chat Member</source>
-        <translation>Añadir miembro al chat</translation>
+        <translation>Chatdeelnemer toevoegen</translation>
     </message>
 </context>
 <context>
     <name>AuthorizationPage</name>
     <message>
         <source>Sign In</source>
-        <translation>Iniciar sesión</translation>
+        <translation>Inloggen</translation>
     </message>
     <message>
         <source>Authorization Code</source>
-        <translation>Código de autorización</translation>
+        <translation>Autorisatiecode</translation>
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation>El código de autorización que has introducido no es correcto</translation>
+        <translation>U heeft een verkeerde autorisatiecode ingevoerd</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign In&apos;</source>
-        <translation>Espera a recibir el SMS con el código de activación y pulsa &apos;Siguiente&apos;</translation>
+        <translation>Wacht op de SMS met activatiecode en klik op &apos;Inloggen&apos;</translation>
     </message>
 </context>
 <context>
     <name>ChatInfo</name>
     <message>
         <source>Members</source>
-        <translation>Miembros</translation>
+        <translation>Deelnemers</translation>
     </message>
 </context>
 <context>
     <name>ChatInfoMenu</name>
     <message>
         <source>Remove from Group</source>
-        <translation>Borrar grupo</translation>
+        <translation>Verwijderen uit groep</translation>
     </message>
     <message>
         <source>Removing from group</source>
-        <translation>Borrando grupo</translation>
+        <translation>Bezig met verwijderen uit de groep</translation>
     </message>
 </context>
 <context>
     <name>ConnectionPage</name>
     <message>
         <source>Connecting</source>
-        <translation>Conectando</translation>
+        <translation>Bezig met verbinden</translation>
     </message>
 </context>
 <context>
     <name>ConversationMenu</name>
     <message>
         <source>Delete</source>
-        <translation>Borrar</translation>
+        <translation>Verwijderen</translation>
     </message>
     <message>
         <source>Enable Notifications</source>
-        <translation>Activar notificaciones</translation>
+        <translation>Meldingen inschakelen</translation>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation>Desactivar notificaciones</translation>
+        <translation>Meldingen uitschakelen</translation>
     </message>
     <message>
         <source>Deleting History</source>
-        <translation>Borrando historial</translation>
+        <translation>Bezig met verwijderen van de geschiedenis</translation>
     </message>
     <message>
         <source>Add Member</source>
-        <translation>Añadir miembro</translation>
+        <translation>Deelnemer toevoegen</translation>
     </message>
     <message>
         <source>Add to Contacts</source>
-        <translation>Añadir a Contactos</translation>
+        <translation>Toevoegen aan contactpersonen</translation>
     </message>
     <message>
         <source>Leave Group</source>
-        <translation>Dejar grupo</translation>
+        <translation>Groep verlaten</translation>
     </message>
     <message>
         <source>Leaving Group</source>
-        <translation>Dejando grupo</translation>
+        <translation>Bezig met het verlaten van de groep</translation>
     </message>
 </context>
 <context>
@@ -93,241 +91,241 @@
         <source>No Chats
 
 Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source>
-        <translation>No hay conversaciones
+        <translation>Geen chatgesprekken
 
-Elije un contacto pulsando en &quot;Contactos&quot; desde el menú desplegable</translation>
+Kies een contactpersoon door te kiezen voor &quot;Contactpersonen&quot; in het trekmenu</translation>
     </message>
     <message>
         <source>Chats</source>
-        <translation>Conversaciones</translation>
+        <translation>Chatgesprekken</translation>
     </message>
     <message>
         <source>Delete History</source>
-        <translation>Borrar historial</translation>
+        <translation>Geschiedenis verwijderen</translation>
     </message>
     <message>
         <source>Deleting History</source>
-        <translation>Borrando Historial</translation>
+        <translation>Bezig met verwijderen van de geschiedenis</translation>
     </message>
     <message>
         <source>Groups</source>
-        <translation>Grupos</translation>
+        <translation>Groepen</translation>
     </message>
     <message>
         <source>Conversations</source>
-        <translation>Conversaciones</translation>
+        <translation>Gesprekken</translation>
     </message>
 </context>
 <context>
     <name>ConversationsPullDownMenu</name>
     <message>
         <source>Create Group</source>
-        <translation>Crear grupo</translation>
+        <translation>Groep creëren</translation>
     </message>
     <message>
         <source>Contacts</source>
-        <translation>Contactos</translation>
+        <translation>Contactpersonen</translation>
     </message>
 </context>
 <context>
     <name>CoverPage</name>
     <message>
         <source>Status:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Online</source>
-        <translation type="unfinished">En línea</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Offline</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Unread Messages:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>CreateChatPage</name>
     <message>
         <source>Create Group</source>
-        <translation>Crear grupo</translation>
+        <translation>Groep creëren</translation>
     </message>
     <message>
         <source>Group Name</source>
-        <translation>Nombre del grupo</translation>
+        <translation>Groepsnaam</translation>
     </message>
 </context>
 <context>
     <name>FilePickerPage</name>
     <message>
         <source>Root</source>
-        <translation>Root</translation>
+        <translation>Bestandssysteem</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation>Tarjeta SD</translation>
+        <translation>SD-kaart</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation>Inicio</translation>
+        <translation>Thuis</translation>
     </message>
 </context>
 <context>
     <name>MessageBar</name>
     <message>
         <source>Message</source>
-        <translation>Mensaje</translation>
+        <translation>Bericht</translation>
     </message>
 </context>
 <context>
     <name>MessageItem</name>
     <message>
         <source>Downloading Media</source>
-        <translation>Descargando multimedia</translation>
+        <translation>Bezig met het downloaden van de media</translation>
     </message>
 </context>
 <context>
     <name>MessageMenu</name>
     <message>
         <source>Copy</source>
-        <translation>Copiar</translation>
+        <translation>Kopiëren</translation>
     </message>
     <message>
         <source>Message copied to clipboard</source>
-        <translation>Mensaje copiado al portapapeles</translation>
+        <translation>Het bericht is gekopieerd naar het klembord</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Borrar</translation>
+        <translation>Verwijderen</translation>
     </message>
     <message>
         <source>Deleting Message</source>
-        <translation>Borrando mensaje</translation>
+        <translation>Bezig met verwijderen van het bericht</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Cancelar</translation>
+        <translation>Annuleren</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation>Descargar</translation>
+        <translation>Downloaden</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Abrir</translation>
+        <translation>Openen</translation>
     </message>
 </context>
 <context>
     <name>PeerItem</name>
     <message>
         <source>%1 members</source>
-        <translation>%1 miembros</translation>
+        <translation>%1 deelnemers</translation>
     </message>
 </context>
 <context>
     <name>PhoneNumberPage</name>
     <message>
         <source>Next</source>
-        <translation>Siguiente</translation>
+        <translation>Volgende</translation>
     </message>
     <message>
         <source>Phone Number</source>
-        <translation>Número de teléfono</translation>
+        <translation>Telefoonnummer</translation>
     </message>
     <message>
         <source>Country Code</source>
-        <translation>Código del país</translation>
+        <translation>Landcode</translation>
     </message>
     <message>
         <source>Insert your phone number and press &apos;Next&apos;</source>
-        <translation>Inserta tu número de teléfono y pulsa &apos;Siguiente&apos;</translation>
+        <translation>Typ uw telefoonnummer en druk op &apos;Volgende&apos;</translation>
     </message>
 </context>
 <context>
     <name>SignUpPage</name>
     <message>
         <source>Sign Up</source>
-        <translation>Iniciar sesión</translation>
+        <translation>Registreren</translation>
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation>Has introducido un código de autorización erróneo</translation>
+        <translation>U heeft een verkeerde autorisatiecode ingevoerd</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
-        <translation>Espera a recibir el SMS con el código de activación y pulsa &apos;Iniciar sesión&apos;</translation>
+        <translation>Wacht op de SMS met activatiecode en klik op &apos;Registreren&apos;</translation>
     </message>
     <message>
         <source>First Name</source>
-        <translation>Nombre</translation>
+        <translation>Voornaam</translation>
     </message>
     <message>
         <source>Last Name (Optional)</source>
-        <translation>Apellidos (Opcional)</translation>
+        <translation>Achternaam (optioneel)</translation>
     </message>
     <message>
         <source>Authorization Code</source>
-        <translation>Código de autorización</translation>
+        <translation>Autorisatiecode</translation>
     </message>
 </context>
 <context>
     <name>TelegramAction</name>
     <message>
         <source>%1 has left the group</source>
-        <translation>%1 ha dejado el grupo</translation>
+        <translation>%1 heeft de groep verlaten</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
-        <translation>%1 se ha unido al grupo</translation>
+        <translation>%1 heeft deelgenomen aan de groep</translation>
     </message>
     <message>
         <source>Group created by %1</source>
-        <translation>Grupo creado por %1</translation>
+        <translation>De groep is gecreëerd door %1</translation>
     </message>
 </context>
 <context>
     <name>TelegramHelper</name>
     <message>
         <source>Recently</source>
-        <translation>Recientemente</translation>
+        <translation>Onlangs</translation>
     </message>
     <message>
         <source>Last Month</source>
-        <translation>Último mes</translation>
+        <translation>Afgelopen maand</translation>
     </message>
     <message>
         <source>Last Week</source>
-        <translation>Última semana</translation>
+        <translation>Afgelopen week</translation>
     </message>
     <message>
         <source>Online</source>
-        <translation>En línea</translation>
+        <translation>Online</translation>
     </message>
     <message>
         <source>Unknown</source>
-        <translation>Desconocido</translation>
+        <translation>Onbekend</translation>
     </message>
     <message>
         <source>Last Seen at %1</source>
-        <translation>Última vez: %1</translation>
+        <translation>Laatst gezien op %1</translation>
     </message>
     <message>
         <source>Document</source>
-        <translation>Documento</translation>
+        <translation>Document</translation>
     </message>
     <message>
         <source>Contact</source>
-        <translation>Contacto</translation>
+        <translation>Contactpersoon</translation>
     </message>
     <message>
         <source>Video</source>
-        <translation>Vídeo</translation>
+        <translation>Video</translation>
     </message>
     <message>
         <source>Unsupported</source>
-        <translation>No soportado</translation>
+        <translation>Niet-ondersteund</translation>
     </message>
     <message>
         <source>Audio</source>
@@ -339,55 +337,55 @@ Elije un contacto pulsando en &quot;Contactos&quot; desde el menú desplegable</
     </message>
     <message>
         <source>Geo</source>
-        <translation>Geo</translation>
+        <translation>Geolocatie</translation>
     </message>
 </context>
 <context>
     <name>UserInfo</name>
     <message>
         <source>Phone Number</source>
-        <translation>Número de teléfono</translation>
+        <translation>Telefoonnummer</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation>Acciones</translation>
+        <translation>Acties</translation>
     </message>
     <message>
         <source>Send Message</source>
-        <translation>Enviar mensaje</translation>
+        <translation>Bericht versturen</translation>
     </message>
 </context>
 <context>
     <name>UserMenu</name>
     <message>
         <source>Send Message</source>
-        <translation>Enviar mensaje</translation>
+        <translation>Bericht versturen</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation>Perfil</translation>
+        <translation>Profiel</translation>
     </message>
 </context>
 <context>
     <name>UserPage</name>
     <message>
         <source>Phone Number</source>
-        <translation>Número de teléfono</translation>
+        <translation>Telefoonnummer</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation>Acciones</translation>
+        <translation>Acties</translation>
     </message>
     <message>
         <source>Send Message</source>
-        <translation>Enviar mensaje</translation>
+        <translation>Bericht versturen</translation>
     </message>
 </context>
 <context>
     <name>UsersPage</name>
     <message>
         <source>Contacts</source>
-        <translation>Contactos</translation>
+        <translation>Contactpersonen</translation>
     </message>
 </context>
 </TS>

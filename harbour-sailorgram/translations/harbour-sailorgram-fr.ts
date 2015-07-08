@@ -5,7 +5,7 @@
     <name>AddContactsPage</name>
     <message>
         <source>Add Chat Member</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter un membre</translation>
     </message>
 </context>
 <context>
@@ -31,18 +31,18 @@
     <name>ChatInfo</name>
     <message>
         <source>Members</source>
-        <translation type="unfinished"></translation>
+        <translation>Participants</translation>
     </message>
 </context>
 <context>
     <name>ChatInfoMenu</name>
     <message>
         <source>Remove from Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Supprimer du groupe</translation>
     </message>
     <message>
         <source>Removing from group</source>
-        <translation type="unfinished"></translation>
+        <translation>Suppression du groupe</translation>
     </message>
 </context>
 <context>
@@ -55,94 +55,40 @@
 <context>
     <name>ConversationMenu</name>
     <message>
-        <source>Copy</source>
-        <translation type="vanished">Copier</translation>
-    </message>
-    <message>
-        <source>Message copied to clipboard</source>
-        <translation type="vanished">Message copié dans le presse-papier </translation>
-    </message>
-    <message>
         <source>Delete</source>
         <translation>Effacer</translation>
     </message>
     <message>
-        <source>Deleting Message</source>
-        <translation type="vanished">Suppression du message</translation>
-    </message>
-    <message>
-        <source>Download</source>
-        <translation type="vanished">Télécharger</translation>
-    </message>
-    <message>
-        <source>Open</source>
-        <translation type="vanished">Ouvrir</translation>
-    </message>
-    <message>
         <source>Enable Notifications</source>
-        <translation type="unfinished">Activer les notifications</translation>
+        <translation>Activer les notifications</translation>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation type="unfinished">Désactiver les notifications</translation>
+        <translation>Désactiver les notifications</translation>
     </message>
     <message>
         <source>Deleting History</source>
-        <translation type="unfinished">Suppression de l&apos;historique</translation>
+        <translation>Supprimer l&apos;historique</translation>
     </message>
     <message>
         <source>Add Member</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter un participant</translation>
     </message>
     <message>
         <source>Add to Contacts</source>
-        <translation type="unfinished">Ajouter aux Contacts</translation>
+        <translation>Ajouter aux contacts</translation>
     </message>
     <message>
         <source>Leave Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Quitter le groupe</translation>
     </message>
     <message>
         <source>Leaving Group</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ConversationPage</name>
-    <message>
-        <source>Enable Notifications</source>
-        <translation type="vanished">Activer les notifications</translation>
-    </message>
-    <message>
-        <source>Disable Notifications</source>
-        <translation type="vanished">Désactiver les notifications</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">Effacer</translation>
-    </message>
-    <message>
-        <source>Deleting History</source>
-        <translation type="vanished">Suppression de l&apos;historique</translation>
-    </message>
-    <message>
-        <source>Add to Contacts</source>
-        <translation type="vanished">Ajouter aux Contacts</translation>
-    </message>
-</context>
-<context>
-    <name>ConversationsMenu</name>
-    <message>
-        <source>Contacts</source>
-        <translation type="obsolete">Contacts</translation>
+        <translation>Quitte le groupe</translation>
     </message>
 </context>
 <context>
     <name>ConversationsPage</name>
-    <message>
-        <source>Contacts</source>
-        <translation type="vanished">Contacts</translation>
-    </message>
     <message>
         <source>No Chats
 
@@ -165,33 +111,33 @@ Sélectionnez « Contact » à partir du menu descendant</translation>
     </message>
     <message>
         <source>Groups</source>
-        <translation type="unfinished"></translation>
+        <translation>Groupes</translation>
     </message>
     <message>
         <source>Conversations</source>
-        <translation type="unfinished"></translation>
+        <translation>Conversations</translation>
     </message>
 </context>
 <context>
     <name>ConversationsPullDownMenu</name>
     <message>
         <source>Create Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Créer un groupe</translation>
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished">Contacts</translation>
+        <translation>Contacts</translation>
     </message>
 </context>
 <context>
     <name>CoverPage</name>
     <message>
-        <source>Online</source>
-        <translation type="unfinished">En ligne</translation>
-    </message>
-    <message>
         <source>Status:</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">En ligne</translation>
     </message>
     <message>
         <source>Offline</source>
@@ -206,26 +152,26 @@ Sélectionnez « Contact » à partir du menu descendant</translation>
     <name>CreateChatPage</name>
     <message>
         <source>Create Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Créer un groupe</translation>
     </message>
     <message>
         <source>Group Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom du groupe</translation>
     </message>
 </context>
 <context>
     <name>FilePickerPage</name>
     <message>
         <source>Root</source>
-        <translation type="unfinished"></translation>
+        <translation>Root</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished"></translation>
+        <translation>Carte SD</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Home</translation>
     </message>
 </context>
 <context>
@@ -246,38 +192,38 @@ Sélectionnez « Contact » à partir du menu descendant</translation>
     <name>MessageMenu</name>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Copier</translation>
+        <translation>Copier</translation>
     </message>
     <message>
         <source>Message copied to clipboard</source>
-        <translation type="unfinished">Message copié dans le presse-papier </translation>
+        <translation>Message copié dans le presse-papier</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Effacer</translation>
+        <translation>Supprimer</translation>
     </message>
     <message>
         <source>Deleting Message</source>
-        <translation type="unfinished">Suppression du message</translation>
+        <translation>Suppression du message</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Annuler</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation type="unfinished">Télécharger</translation>
+        <translation>Télécharger</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished">Ouvrir</translation>
+        <translation>Ouvrir</translation>
     </message>
 </context>
 <context>
     <name>PeerItem</name>
     <message>
         <source>%1 members</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 participants</translation>
     </message>
 </context>
 <context>
@@ -303,42 +249,42 @@ Sélectionnez « Contact » à partir du menu descendant</translation>
     <name>SignUpPage</name>
     <message>
         <source>Sign Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Inscription</translation>
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation type="unfinished">Vous avez saisi un mauvais code d&apos;autorisation</translation>
+        <translation>Code d&apos;autorisation incorrect</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Attendez le message contenant le code d&apos;activation et appuyer sur &quot;Inscription&quot;</translation>
     </message>
     <message>
         <source>First Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Prénom</translation>
     </message>
     <message>
         <source>Last Name (Optional)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom (facultatif)</translation>
     </message>
     <message>
         <source>Authorization Code</source>
-        <translation type="unfinished">Code d&apos;autorisation</translation>
+        <translation>Code d&apos;autorisation</translation>
     </message>
 </context>
 <context>
     <name>TelegramAction</name>
     <message>
         <source>%1 has left the group</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 a quitté le groupe</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
-        <translation type="unfinished"></translation>
+        <translation>%1  a rejoint le groupe</translation>
     </message>
     <message>
         <source>Group created by %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Groupe créé par %1</translation>
     </message>
 </context>
 <context>
@@ -400,15 +346,15 @@ Sélectionnez « Contact » à partir du menu descendant</translation>
     <name>UserInfo</name>
     <message>
         <source>Phone Number</source>
-        <translation type="unfinished">Numéro de téléphone</translation>
+        <translation>Numéro de téléphone</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Actions</translation>
+        <translation>Actions</translation>
     </message>
     <message>
         <source>Send Message</source>
-        <translation type="unfinished">Envoyer le message</translation>
+        <translation>Envoyer le message</translation>
     </message>
 </context>
 <context>

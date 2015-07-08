@@ -5,7 +5,7 @@
     <name>AddContactsPage</name>
     <message>
         <source>Add Chat Member</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi Membro</translation>
     </message>
 </context>
 <context>
@@ -31,18 +31,18 @@
     <name>ChatInfo</name>
     <message>
         <source>Members</source>
-        <translation type="unfinished"></translation>
+        <translation>Membri</translation>
     </message>
 </context>
 <context>
     <name>ChatInfoMenu</name>
     <message>
         <source>Remove from Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Rimovi dal gruppo</translation>
     </message>
     <message>
         <source>Removing from group</source>
-        <translation type="unfinished"></translation>
+        <translation>Rimozione dal gruppo</translation>
     </message>
 </context>
 <context>
@@ -55,98 +55,40 @@
 <context>
     <name>ConversationMenu</name>
     <message>
-        <source>Copy</source>
-        <translation type="vanished">Copia</translation>
-    </message>
-    <message>
-        <source>Message copied to clipboard</source>
-        <translation type="vanished">Messaggio copiato negli Appunti</translation>
-    </message>
-    <message>
         <source>Delete</source>
         <translation>Elimina</translation>
     </message>
     <message>
-        <source>Deleting Message</source>
-        <translation type="vanished">Rimozione messaggio</translation>
-    </message>
-    <message>
-        <source>Download</source>
-        <translation type="vanished">Scarica</translation>
-    </message>
-    <message>
-        <source>Open</source>
-        <translation type="vanished">Apri</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Annulla</translation>
-    </message>
-    <message>
         <source>Enable Notifications</source>
-        <translation type="unfinished">Abilita Notifiche</translation>
+        <translation>Abilita Notifiche</translation>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation type="unfinished">Disabilita Notifiche</translation>
+        <translation>Disabilita Notifiche</translation>
     </message>
     <message>
         <source>Deleting History</source>
-        <translation type="unfinished">Rimozione Cronologia</translation>
+        <translation>Rimozione cronologia</translation>
     </message>
     <message>
         <source>Add Member</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi Membro</translation>
     </message>
     <message>
         <source>Add to Contacts</source>
-        <translation type="unfinished">Aggiungi ai Contatti</translation>
+        <translation>Aggiungi ai Contatti</translation>
     </message>
     <message>
         <source>Leave Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Esci dal gruppo</translation>
     </message>
     <message>
         <source>Leaving Group</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ConversationPage</name>
-    <message>
-        <source>Enable Notifications</source>
-        <translation type="vanished">Abilita Notifiche</translation>
-    </message>
-    <message>
-        <source>Disable Notifications</source>
-        <translation type="vanished">Disabilita Notifiche</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">Elimina</translation>
-    </message>
-    <message>
-        <source>Deleting History</source>
-        <translation type="vanished">Rimozione Cronologia</translation>
-    </message>
-    <message>
-        <source>Add to Contacts</source>
-        <translation type="vanished">Aggiungi ai Contatti</translation>
-    </message>
-</context>
-<context>
-    <name>ConversationsMenu</name>
-    <message>
-        <source>Contacts</source>
-        <translation type="obsolete">Contatti</translation>
+        <translation>Uscita dal gruppo</translation>
     </message>
 </context>
 <context>
     <name>ConversationsPage</name>
-    <message>
-        <source>Contacts</source>
-        <translation type="vanished">Contatti</translation>
-    </message>
     <message>
         <source>No Chats
 
@@ -169,52 +111,52 @@ Scegli un contatto selezionando &quot;Contatti&quot; dal menu Pull Down</transla
     </message>
     <message>
         <source>Groups</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppi</translation>
     </message>
     <message>
         <source>Conversations</source>
-        <translation type="unfinished"></translation>
+        <translation>Conversazioni</translation>
     </message>
 </context>
 <context>
     <name>ConversationsPullDownMenu</name>
     <message>
         <source>Create Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Crea Gruppo</translation>
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished">Contatti</translation>
+        <translation>Contatti</translation>
     </message>
 </context>
 <context>
     <name>CoverPage</name>
     <message>
-        <source>Online</source>
-        <translation type="unfinished">Online</translation>
+        <source>Status:</source>
+        <translation>Stato:</translation>
     </message>
     <message>
-        <source>Status:</source>
-        <translation type="unfinished"></translation>
+        <source>Online</source>
+        <translation>Online</translation>
     </message>
     <message>
         <source>Offline</source>
-        <translation type="unfinished"></translation>
+        <translation>Offline</translation>
     </message>
     <message>
         <source>Unread Messages:</source>
-        <translation type="unfinished"></translation>
+        <translation>Messaggi Non Letti:</translation>
     </message>
 </context>
 <context>
     <name>CreateChatPage</name>
     <message>
         <source>Create Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Crea Gruppo</translation>
     </message>
     <message>
         <source>Group Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome</translation>
     </message>
 </context>
 <context>
@@ -250,31 +192,31 @@ Scegli un contatto selezionando &quot;Contatti&quot; dal menu Pull Down</transla
     <name>MessageMenu</name>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Copia</translation>
+        <translation>Copia</translation>
     </message>
     <message>
         <source>Message copied to clipboard</source>
-        <translation type="unfinished">Messaggio copiato negli Appunti</translation>
+        <translation>Messaggio copiato negli appunti</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Elimina</translation>
+        <translation>Elimina</translation>
     </message>
     <message>
         <source>Deleting Message</source>
-        <translation type="unfinished">Rimozione messaggio</translation>
+        <translation>Rimozione messaggio</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Annulla</translation>
+        <translation>Annulla</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation type="unfinished">Scarica</translation>
+        <translation>Scarica</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished">Apri</translation>
+        <translation>Apri</translation>
     </message>
 </context>
 <context>
@@ -334,15 +276,15 @@ Scegli un contatto selezionando &quot;Contatti&quot; dal menu Pull Down</transla
     <name>TelegramAction</name>
     <message>
         <source>%1 has left the group</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 è uscito dal gruppo</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 si è unito al gruppo</translation>
     </message>
     <message>
         <source>Group created by %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppo creato da %1</translation>
     </message>
 </context>
 <context>
@@ -369,7 +311,7 @@ Scegli un contatto selezionando &quot;Contatti&quot; dal menu Pull Down</transla
     </message>
     <message>
         <source>Last Seen at %1</source>
-        <translation>Visto il %1</translation>
+        <translation>Ultima Visita: %1</translation>
     </message>
     <message>
         <source>Document</source>
