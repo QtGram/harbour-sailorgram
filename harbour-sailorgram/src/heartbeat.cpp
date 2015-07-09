@@ -1,6 +1,6 @@
 #include "heartbeat.h"
 
-HeartBeat::HeartBeat(QObject *parent): QObject(parent), _lastconnected(false), _telegram(NULL)
+HeartBeat::HeartBeat(QObject *parent): QObject(parent), _connected(false), _telegram(NULL)
 {
     this->_hbthread = new QThread(this);
 
@@ -12,11 +12,17 @@ HeartBeat::HeartBeat(QObject *parent): QObject(parent), _lastconnected(false), _
 
     connect(this->_hbthread, SIGNAL(started()), this->_timer, SLOT(start()), Qt::QueuedConnection);
     connect(this->_timer, SIGNAL(timeout()), this, SLOT(checkConnection()), Qt::QueuedConnection);
+    connect(this, SIGNAL(connectionUpdated(bool)), this, SLOT(onConnectionUpdated(bool)), Qt::QueuedConnection);
 }
 
 int HeartBeat::interval() const
 {
     return this->_timer->interval();
+}
+
+bool HeartBeat::connected() const
+{
+    return this->_connected;
 }
 
 TelegramQml *HeartBeat::telegram() const
@@ -45,12 +51,16 @@ void HeartBeat::setInterval(int interval)
 void HeartBeat::beat()
 {
     this->_hbthread->start();
+    this->onConnectionUpdated(this->_telegram->connected());
+}
 
-    if(this->_lastconnected != this->_telegram->connected())
-    {
-        this->_lastconnected = this->_telegram->connected();
-        emit connectedChanged(this->_telegram->connected());
-    }
+void HeartBeat::onConnectionUpdated(bool connected)
+{
+    if(this->_connected == connected)
+        return;
+
+    this->_connected = connected;
+    emit connectedChanged();
 }
 
 void HeartBeat::checkConnection()
@@ -59,12 +69,7 @@ void HeartBeat::checkConnection()
     this->_socket->waitForConnected(this->_timer->interval() / 2);
 
     bool connected = (this->_socket->state() == QAbstractSocket::ConnectedState);
-
-    if(connected != this->_lastconnected)
-    {
-        this->_lastconnected = connected;
-        emit connectedChanged(connected);
-    }
-
     this->_socket->abort();
+
+    emit connectionUpdated(connected);
 }
