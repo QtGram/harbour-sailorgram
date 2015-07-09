@@ -15,6 +15,12 @@ QtObject
     property Dialog foregroundDialog: telegram.nullDialog
     property Message lastMessage: telegram.nullMessage
 
+    property HeartBeat heartbeat: HeartBeat {
+        telegram: settings.telegram
+        interval: 8000
+        onConnectedChanged: connected ? sailorgram.wake() : sailorgram.sleep();
+    }
+
     property SailorGram sailorgram: SailorGram {
         telegram: settings.telegram
     }
@@ -27,6 +33,11 @@ QtObject
         appHash: "5ce096f34c8afab871edce728e6d64c9"
         configPath: telegramlocalstorage.telegramConfigPath
         publicKeyFile: telegramlocalstorage.telegramPublicKey
+
+        onConnectedChanged: {
+            if(connected)
+               settings.heartbeat.beat();
+        }
 
         onIncomingMessage: {
             var userdata = settings.telegram.userData;

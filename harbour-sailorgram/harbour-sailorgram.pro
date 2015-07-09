@@ -38,7 +38,8 @@ SOURCES += src/harbour-sailorgram.cpp \
     src/telegramcalendar.cpp \
     src/dbus/notifications/notifications.cpp \
     src/sailorgram.cpp \
-    src/filepicker/folderlistmodel.cpp
+    src/filepicker/folderlistmodel.cpp \
+    src/heartbeat.cpp
 
 OTHER_FILES += qml/harbour-sailorgram.qml \
     rpm/harbour-sailorgram.changes.in \
@@ -111,7 +112,8 @@ HEADERS += \
     src/telegramcalendar.h \
     src/dbus/notifications/notifications.h \
     src/sailorgram.h \
-    src/filepicker/folderlistmodel.h
+    src/filepicker/folderlistmodel.h \
+    src/heartbeat.h
 
 RESOURCES += \
     resources.qrc

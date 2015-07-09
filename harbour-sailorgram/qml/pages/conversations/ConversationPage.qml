@@ -105,7 +105,7 @@ Page
             BusyIndicator {
                 anchors.centerIn: parent
                 size: BusyIndicatorSize.Large
-                running: messagemodel.count <= 0
+                running: (messagemodel.count <= 0) || messagemodel.refreshing
             }
 
             model: MessagesModel {

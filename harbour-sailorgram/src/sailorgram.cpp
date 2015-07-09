@@ -18,6 +18,16 @@ void SailorGram::setTelegram(TelegramQml *telegram)
     emit telegramChanged();
 }
 
+void SailorGram::sleep()
+{
+    this->_telegram->telegram()->sleep();
+}
+
+void SailorGram::wake()
+{
+    this->_telegram->telegram()->wake();
+}
+
 QString SailorGram::fileName(const QString &filepath)
 {
     QUrl url(filepath);

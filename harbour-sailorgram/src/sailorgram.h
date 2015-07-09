@@ -7,6 +7,7 @@
 #include <QStandardPaths>
 #include <QImage>
 #include <telegramqml.h>
+#include <telegram.h>
 #include <objects/types.h>
 
 class SailorGram : public QObject
@@ -24,6 +25,8 @@ class SailorGram : public QObject
         void telegramChanged();
 
     public slots:
+        void sleep();
+        void wake();
         QString fileName(const QString& filepath);
         QSize imageSize(const QString& filepath);
         void moveMediaToDownloads(MessageMediaObject* messagemediaobject);
