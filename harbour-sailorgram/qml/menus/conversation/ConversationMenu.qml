@@ -1,13 +1,13 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
+import "../../components/telegram"
 import "../../models"
 import "../../js/TelegramHelper.js" as TelegramHelper
 import "../../js/TelegramConstants.js" as TelegramConstants
 
-PullDownMenu
+TelegramPullDownMenu
 {
-    property Context context
     property Dialog dialog
 
     id: conversationmenu

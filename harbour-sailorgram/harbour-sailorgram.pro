@@ -91,7 +91,8 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/components/cover/CoverLabel.qml \
     qml/components/ConnectingLabel.qml \
     qml/components/telegram/TelegramMenuItem.qml \
-    qml/models/Context.qml
+    qml/models/Context.qml \
+    qml/components/telegram/TelegramPullDownMenu.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

@@ -4,8 +4,9 @@ import "../../models"
 
 MenuItem
 {
+    property bool menuVisible: true
     property Context context
 
     id: telegrammenuitem
-    visible: context.heartbeat.connected
+    visible: context.heartbeat.connected && menuVisible
 }
