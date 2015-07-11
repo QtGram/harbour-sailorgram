@@ -36,6 +36,7 @@ Item
             visible: actionVisible
             width: parent.width
             height: Theme.itemSizeSmall
+            labelFont.pixelSize: Theme.fontSizeSmall
             labelText: qsTr("Send Message")
             onActionRequested: pageStack.replace(Qt.resolvedUrl("../../pages/conversations/ConversationPage.qml"), { "context": context, "dialog": telegram.fakeDialogObject(user.id, false) } )
         }

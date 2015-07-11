@@ -4,6 +4,7 @@ import Sailfish.Silica 1.0
 Item
 {
     property alias labelText: lbltext.text
+    property alias labelFont: lbltext.font
     property bool remorseRequired: false
     property string actionMessage
 
