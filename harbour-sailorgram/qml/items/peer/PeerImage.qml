@@ -1,11 +1,12 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
+import "../../models"
 import "../../js/TelegramHelper.js" as TelegramHelper
 
 Image
 {
-    property Telegram telegram
+    property Context context
     property Dialog dialog
     property Chat chat
     property User user
@@ -15,7 +16,7 @@ Image
             return;
 
         if(!user.photo.photoSmall.download.downloaded)
-            telegram.getFile(user.photo.photoSmall);
+            context.telegram.getFile(user.photo.photoSmall);
     }
 
     id: imgpeer

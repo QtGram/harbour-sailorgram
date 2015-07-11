@@ -2,6 +2,7 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import harbour.sailorgram.TelegramCalendar 1.0
+import "../../models"
 import "../../items/peer"
 import "../../items/user"
 import "../../js/TelegramHelper.js" as TelegramHelper
@@ -9,6 +10,7 @@ import "../../js/TelegramAction.js" as TelegramAction
 
 Item
 {
+    property Context context
     property Dialog dialog
     property User user
     property Chat chat
@@ -44,7 +46,7 @@ Item
             id: conversationimage
             width: conversationitem.height
             height: conversationitem.height
-            telegram: conversationspage.telegram
+            context: conversationitem.context
             dialog: conversationitem.dialog
             chat: conversationitem.chat
             user: conversationitem.user

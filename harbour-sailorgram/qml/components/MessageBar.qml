@@ -8,7 +8,6 @@ import "../js/TelegramHelper.js" as TelegramHelper
 Item
 {
     property Context context
-    property Telegram telegram
     property Dialog dialog
 
     id: messagebar
@@ -60,7 +59,7 @@ Item
                 var picker = pageStack.push(Qt.resolvedUrl("../pages/picker/FilePickerPage.qml"), { "rootPage": conversationpage });
 
                 picker.filePicked.connect(function(file) {
-                    telegram.sendFile(TelegramHelper.peerId(dialog.peer), file);
+                    context.telegram.sendFile(TelegramHelper.peerId(dialog.peer), file);
                 });
             }
         }

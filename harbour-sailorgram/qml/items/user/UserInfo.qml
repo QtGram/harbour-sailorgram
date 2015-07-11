@@ -37,7 +37,7 @@ Item
             width: parent.width
             height: Theme.itemSizeSmall
             labelText: qsTr("Send Message")
-            onActionRequested: pageStack.replace(Qt.resolvedUrl("../../pages/conversations/ConversationPage.qml"), { "context": context, "telegram": telegram,  "dialog": telegram.fakeDialogObject(user.id, false) } )
+            onActionRequested: pageStack.replace(Qt.resolvedUrl("../../pages/conversations/ConversationPage.qml"), { "context": context, "dialog": telegram.fakeDialogObject(user.id, false) } )
         }
     }
 }

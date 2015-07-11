@@ -55,7 +55,7 @@ Page
             x: Theme.paddingMedium
             width: parent.width - (x * 2)
             height: Theme.itemSizeSmall
-            telegram: conversationinfopage.telegram
+            context: conversationinfopage.context
             dialog: conversationinfopage.dialog
             chat: conversationinfopage.chat
             user: conversationinfopage.user

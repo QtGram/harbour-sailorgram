@@ -12,31 +12,30 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 Page
 {
     property Context context
-    property Telegram telegram
     property Dialog dialog
     property Chat chat
     property User user
-    property bool muted: telegram.userData.isMuted(TelegramHelper.peerId(dialog.peer))
+    property bool muted: context.telegram.userData.isMuted(TelegramHelper.peerId(dialog.peer))
 
     id: conversationpage
     allowedOrientations: defaultAllowedOrientations
 
     Component.onCompleted: {
         if(TelegramHelper.isChat(dialog))
-            chat = telegram.chat(dialog.peer.chatId);
+            chat = context.telegram.chat(dialog.peer.chatId);
         else
-            user = telegram.user(dialog.peer.userId);
+            user = context.telegram.user(dialog.peer.userId);
     }
 
     onStatusChanged: {
         if(status !== PageStatus.Active)
             return;
 
-        pageStack.pushAttached(Qt.resolvedUrl("ConversationInfoPage.qml"), { "context": conversationpage.context, "telegram": conversationpage.telegram, "dialog": conversationpage.dialog, "chat": conversationpage.chat, "user": conversationpage.user });
+        pageStack.pushAttached(Qt.resolvedUrl("ConversationInfoPage.qml"), { "context": conversationpage.context, "dialog": conversationpage.dialog, "chat": conversationpage.chat, "user": conversationpage.user });
         context.foregroundDialog = conversationpage.dialog;
 
         messagemodel.setReaded();
-        messagemodel.telegram = conversationpage.telegram;
+        messagemodel.telegram = conversationpage.context.telegram;
         messagemodel.dialog = conversationpage.dialog;
     }
 
@@ -59,7 +58,7 @@ Page
 
     Connections
     {
-        target: telegram.userData
+        target: context.telegram.userData
 
         onMuteChanged: {
             var peerid = TelegramHelper.peerId(dialog.peer);
@@ -67,7 +66,7 @@ Page
             if(id !== peerid)
                 return;
 
-            conversationpage.muted = telegram.userData.isMuted(peerid);
+            conversationpage.muted = context.telegram.userData.isMuted(peerid);
         }
     }
 
@@ -88,7 +87,7 @@ Page
             id: header
             anchors { left: parent.left; top: parent.top; right: parent.right; leftMargin: Theme.horizontalPageMargin; topMargin: Theme.paddingMedium }
             height: Theme.itemSizeSmall
-            telegram: conversationpage.telegram
+            context: conversationpage.context
             dialog: conversationpage.dialog
             chat: conversationpage.chat
             user: conversationpage.user
@@ -119,7 +118,6 @@ Page
 
             delegate: MessageItem {
                 context: conversationpage.context
-                telegram: conversationpage.telegram
                 message: item
             }
         }
@@ -129,7 +127,6 @@ Page
             id: messagebar
             anchors { left: parent.left; bottom: parent.bottom; right: parent.right }
             context: conversationpage.context
-            telegram: conversationpage.telegram
             dialog: conversationpage.dialog
         }
     }

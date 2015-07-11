@@ -68,7 +68,7 @@ Dialog
                 UserItem {
                     id: useritem
                     anchors { left: parent.left; top: parent.top; right: swselectcontact.right; bottom: parent.bottom; leftMargin: Theme.paddingMedium }
-                    telegram: context.telegram
+                    context: dlgcreatechat.context
                     user: context.telegram.user(item.userId)
                 }
 

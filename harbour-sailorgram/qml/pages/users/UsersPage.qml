@@ -8,7 +8,6 @@ import "../../menus"
 Page
 {
     property Context context
-    property Telegram telegram
 
     id: userspage
     allowedOrientations: defaultAllowedOrientations
@@ -20,7 +19,7 @@ Page
         header: PageHeader { title: qsTr("Contacts") }
 
         model: ContactsModel {
-            telegram: userspage.telegram
+            telegram: userspage.context.telegram
         }
 
         delegate: ListItem {
@@ -29,17 +28,17 @@ Page
 
             menu: UserMenu {
                 id: usermenu
-                telegram: userspage.telegram
-                user: telegram.user(item.userId)
+                context: userspage.context
+                user: context.telegram.user(item.userId)
             }
 
-            onClicked: pageStack.replace(Qt.resolvedUrl("../conversations/ConversationPage.qml"), { "context": userspage.context, "telegram": userspage.telegram, "dialog": userspage.telegram.fakeDialogObject(item.userId, false) } )
+            onClicked: pageStack.replace(Qt.resolvedUrl("../conversations/ConversationPage.qml"), { "context": userspage.context, "dialog": context.telegram.fakeDialogObject(item.userId, false) } )
 
             UserItem {
                 id: useritem
                 anchors.fill: parent
-                telegram: userspage.telegram
-                user: telegram.user(item.userId)
+                context: userspage.context
+                user: context.telegram.user(item.userId)
             }
         }
     }

@@ -10,7 +10,6 @@ Page
 {
     property bool actionVisible: true
     property Context context
-    property Telegram telegram
     property User user
 
     id: userpage
@@ -35,7 +34,6 @@ Page
                 x: Theme.paddingMedium
                 width: parent.width - (x * 2)
                 height: Theme.itemSizeSmall
-                telegram: userpage.telegram
                 user: userpage.user
             }
 
@@ -56,7 +54,7 @@ Page
                 width: parent.width
                 height: Theme.itemSizeSmall
                 labelText: qsTr("Send Message")
-                onActionRequested: pageStack.replace(Qt.resolvedUrl("../../pages/conversations/ConversationPage.qml"), { "context": context, "telegram": telegram,  "dialog": telegram.fakeDialogObject(user.id, false), "user": user } )
+                onActionRequested: pageStack.replace(Qt.resolvedUrl("../../pages/conversations/ConversationPage.qml"), { "context": context, "dialog": telegram.fakeDialogObject(user.id, false), "user": user } )
             }
         }
     }

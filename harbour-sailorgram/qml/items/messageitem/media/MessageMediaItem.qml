@@ -48,7 +48,7 @@ Item
         else if(message.media.classType === TelegramConstants.typeMessageMediaUnsupported)
             return "image://theme/icon-m-other";
         else if(message.media.classType === TelegramConstants.typeMessageMediaDocument) {
-            if(telegram.documentIsSticker(message.media.document)) {
+            if(context.telegram.documentIsSticker(message.media.document)) {
                 return "image://theme/icon-m-other";
                 //FIXME: WebP: Not Supported (return filehandler.thumbPath);
             }
@@ -104,10 +104,10 @@ Item
             return;
 
         if((message.media.classType === TelegramConstants.typeMessageMediaPhoto) && message.media.photo.sizes.last)
-            telegram.getFile(message.media.photo.sizes.last.location);
+            context.telegram.getFile(message.media.photo.sizes.last.location);
         else if(message.media.classType === TelegramConstants.typeMessageMediaVideo)
-            telegram.getFile(message.media.video.thumb.location);
+            context.telegram.getFile(message.media.video.thumb.location);
         else if(message.media.classType === TelegramConstants.typeMessageMediaDocument)
-            telegram.getFile(message.media.document.thumb.location);
+           context.telegram.getFile(message.media.document.thumb.location);
     }
 }

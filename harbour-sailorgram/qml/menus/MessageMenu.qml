@@ -1,6 +1,7 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
+import "../models"
 import "../js/TelegramConstants.js" as TelegramConstants
 
 ContextMenu
@@ -9,7 +10,7 @@ ContextMenu
     signal downloadRequested()
     signal openRequested()
 
-    property Telegram telegram
+    property Context context
     property Message message
     property FileHandler fileHandler
 
@@ -29,7 +30,7 @@ ContextMenu
 
         onClicked: {
             messageitem.remorseAction(qsTr("Deleting Message"), function () {
-                telegram.deleteMessages([message.id]);
+                context.telegram.deleteMessages([message.id]);
             });
         }
     }

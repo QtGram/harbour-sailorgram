@@ -2,11 +2,12 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import harbour.sailorgram.TelegramCalendar 1.0
+import "../../../models"
 import "../../../js/TelegramHelper.js" as TelegramHelper
 
 MessageMediaItem
 {
-    property FileLocation fileLocation: telegram.locationOfDocument(message.media.document)
+    property FileLocation fileLocation: context.telegram.locationOfDocument(message.media.document)
 
     id: messagedocument
     height: row.height

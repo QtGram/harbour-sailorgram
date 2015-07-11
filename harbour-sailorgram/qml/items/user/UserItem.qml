@@ -1,12 +1,13 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
+import "../../models"
 import "../peer"
 import "../../js/TelegramHelper.js" as TelegramHelper
 
 Item
 {
-    property Telegram telegram
+    property Context context
     property User user
 
     id: contactitem
@@ -17,7 +18,7 @@ Item
         anchors { left: parent.left; top: parent.top }
         width: contactitem.height
         height: contactitem.height
-        telegram: contactitem.telegram
+        context: contactitem.context
         user: contactitem.user
     }
 

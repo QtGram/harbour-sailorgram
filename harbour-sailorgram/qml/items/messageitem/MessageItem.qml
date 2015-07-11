@@ -11,7 +11,6 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 ListItem
 {
     property Context context
-    property Telegram telegram
     property Message message
 
     function downloadMedia() {
@@ -26,7 +25,7 @@ ListItem
 
     menu: MessageMenu {
         id: messagemenu
-        telegram: messageitem.telegram
+        context: messageitem.context
         message: messageitem.message
 
         onCancelRequested: loader.item.cancelTransfer()
@@ -53,7 +52,6 @@ ListItem
 
         MessageDocument {
             context: messageitem.context
-            telegram: messageitem.telegram
             message: messageitem.message
         }
     }
@@ -63,7 +61,6 @@ ListItem
 
         MessagePhoto {
             context: messageitem.context
-            telegram: messageitem.telegram
             message: messageitem.message
         }
     }
@@ -78,7 +75,7 @@ ListItem
             id: lbluser
             anchors { left: message.out ? parent.left : undefined; right: message.out ? undefined : parent.right }
             visible: !TelegramHelper.isServiceMessage(message) && !message.out
-            text: (!TelegramHelper.isServiceMessage(message) && message.out) ? "" : TelegramHelper.userName(telegram.user(message.fromId))
+            text: (!TelegramHelper.isServiceMessage(message) && message.out) ? "" : TelegramHelper.userName(context.telegram.user(message.fromId))
             font.bold: true
             font.pixelSize: Theme.fontSizeMedium
             wrapMode: Text.NoWrap
@@ -106,7 +103,7 @@ ListItem
             onLoaded: {
                 messagemenu.fileHandler = loader.item.fileHandler;
 
-                if((message.media.classType === TelegramConstants.typeMessageMediaDocument) && telegram.documentIsSticker(message.media.document))
+                if((message.media.classType === TelegramConstants.typeMessageMediaDocument) && context.telegram.documentIsSticker(message.media.document))
                     loader.item.fileHandler.target = messageitem.message;
             }
         }

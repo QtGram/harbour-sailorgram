@@ -88,7 +88,7 @@ CoverBackground
 
             onTriggered: {
                 preparePages();
-                pageStack.push(Qt.resolvedUrl("../pages/users/UsersPage.qml"), { "context": context, "telegram": context.telegram }, PageStackAction.Immediate);
+                pageStack.push(Qt.resolvedUrl("../pages/users/UsersPage.qml"), { "context": context }, PageStackAction.Immediate);
                 mainwindow.activate();
             }
         }

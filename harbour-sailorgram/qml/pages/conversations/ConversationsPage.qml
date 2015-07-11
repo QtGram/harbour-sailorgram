@@ -109,6 +109,7 @@ Page
 
             ConversationItem {
                 anchors.fill: parent
+                context: conversationspage.context
                 dialog: item
             }
         }

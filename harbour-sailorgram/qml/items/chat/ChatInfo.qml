@@ -56,7 +56,6 @@ Item
             UserItem {
                 id: useritem
                 anchors { fill: parent; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
-                telegram: chatinfo.telegram
                 user: liparticipant.user
             }
         }
