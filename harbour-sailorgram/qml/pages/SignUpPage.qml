@@ -16,9 +16,7 @@ Dialog
         }
     }
 
-    onAccepted: {
-        telegram
-    }
+    onAccepted: telegram.authSignUp(tfcode.text, tffirstname.text, tfflastname.text)
 
     SilicaFlickable
     {
@@ -55,12 +53,14 @@ Dialog
 
             TextField
             {
+                id: tffirstname
                 anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
                 placeholderText: qsTr("First Name")
             }
 
             TextField
             {
+                id: tfflastname
                 anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
                 placeholderText: qsTr("Last Name (Optional)")
             }
