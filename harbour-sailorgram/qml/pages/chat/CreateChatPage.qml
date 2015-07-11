@@ -7,7 +7,7 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 
 Dialog
 {
-    property Settings settings
+    property Context context
     property int count: 0
     property var users
 
@@ -26,7 +26,7 @@ Dialog
         for(var prop in dlgcreatechat.users)
             userlist.push(dlgcreatechat.users[prop]);
 
-        settings.telegram.messagesCreateChat(userlist, tfgroupname.text);
+        context.telegram.messagesCreateChat(userlist, tfgroupname.text);
     }
 
     SilicaFlickable
@@ -54,7 +54,7 @@ Dialog
             clip: true
 
             model: TelegramQml.ContactsModel {
-                telegram: settings.telegram
+                telegram: context.telegram
             }
 
             delegate: ListItem {
@@ -68,8 +68,8 @@ Dialog
                 UserItem {
                     id: useritem
                     anchors { left: parent.left; top: parent.top; right: swselectcontact.right; bottom: parent.bottom; leftMargin: Theme.paddingMedium }
-                    telegram: settings.telegram
-                    user: settings.telegram.user(item.userId)
+                    telegram: context.telegram
+                    user: context.telegram.user(item.userId)
                 }
 
                 Switch {

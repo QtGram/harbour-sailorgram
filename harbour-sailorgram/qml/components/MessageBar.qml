@@ -7,23 +7,23 @@ import "../js/TelegramHelper.js" as TelegramHelper
 
 Item
 {
-    property Settings settings
+    property Context context
     property Telegram telegram
     property Dialog dialog
 
     id: messagebar
-    height: settings.heartbeat.connected ? textarea.height : Theme.itemSizeSmall
+    height: context.heartbeat.connected ? textarea.height : Theme.itemSizeSmall
 
     ConnectingLabel
     {
         anchors { top: parent.top; bottom: parent.bottom; horizontalCenter: parent.horizontalCenter }
-        settings: messagebar.settings
+        context: messagebar.context
     }
 
     Row
     {
         anchors.fill: parent
-        visible: settings.heartbeat.connected
+        visible: context.heartbeat.connected
 
         TextArea
         {

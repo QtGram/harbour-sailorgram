@@ -8,7 +8,7 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 
 Item
 {
-    property Settings settings
+    property Context context
     property Telegram telegram
     property Dialog dialog
     property Chat chat
@@ -48,7 +48,7 @@ Item
             showMenuOnPressAndHold: adminMenu && (user.id !== telegram.me)
 
             menu: ChatInfoMenu {
-                settings: chatinfo.settings
+                context: chatinfo.context
                 dialog: chatinfo.dialog
                 user: liparticipant.user
             }

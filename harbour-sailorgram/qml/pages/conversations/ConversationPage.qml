@@ -2,7 +2,7 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../../models"
-import "../../menus"
+import "../../menus/conversation"
 import "../../components"
 import "../../items/peer"
 import "../../items/user"
@@ -11,7 +11,7 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 
 Page
 {
-    property Settings settings
+    property Context context
     property Telegram telegram
     property Dialog dialog
     property Chat chat
@@ -32,8 +32,8 @@ Page
         if(status !== PageStatus.Active)
             return;
 
-        pageStack.pushAttached(Qt.resolvedUrl("ConversationInfoPage.qml"), { "settings": conversationpage.settings, "telegram": conversationpage.telegram, "dialog": conversationpage.dialog, "chat": conversationpage.chat, "user": conversationpage.user });
-        settings.foregroundDialog = conversationpage.dialog;
+        pageStack.pushAttached(Qt.resolvedUrl("ConversationInfoPage.qml"), { "context": conversationpage.context, "telegram": conversationpage.telegram, "dialog": conversationpage.dialog, "chat": conversationpage.chat, "user": conversationpage.user });
+        context.foregroundDialog = conversationpage.dialog;
 
         messagemodel.setReaded();
         messagemodel.telegram = conversationpage.telegram;
@@ -79,7 +79,7 @@ Page
         ConversationMenu
         {
             id: conversationmenu
-            settings: conversationpage.settings
+            context: conversationpage.context
             dialog: conversationpage.dialog
         }
 
@@ -105,7 +105,7 @@ Page
             BusyIndicator {
                 anchors.centerIn: parent
                 size: BusyIndicatorSize.Large
-                running: (messagemodel.count <= 0) || messagemodel.refreshing
+                running: messagemodel.count <= 0
             }
 
             model: MessagesModel {
@@ -118,7 +118,7 @@ Page
             }
 
             delegate: MessageItem {
-                settings: conversationpage.settings
+                context: conversationpage.context
                 telegram: conversationpage.telegram
                 message: item
             }
@@ -128,7 +128,7 @@ Page
         {
             id: messagebar
             anchors { left: parent.left; bottom: parent.bottom; right: parent.right }
-            settings: conversationpage.settings
+            context: conversationpage.context
             telegram: conversationpage.telegram
             dialog: conversationpage.dialog
         }

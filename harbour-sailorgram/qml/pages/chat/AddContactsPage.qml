@@ -7,7 +7,7 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 
 Page
 {
-    property Settings settings
+    property Context context
     property Dialog dialog
 
     id: userspage
@@ -24,7 +24,7 @@ Page
         }
 
         model: ContactsModel {
-            telegram: settings.telegram
+            telegram: context.telegram
         }
 
         delegate: ListItem {
@@ -34,12 +34,12 @@ Page
             UserItem {
                 id: useritem
                 anchors.fill: parent
-                telegram: settings.telegram
-                user: settings.telegram.user(item.userId)
+                telegram: context.telegram
+                user: context.telegram.user(item.userId)
             }
 
             onClicked: {
-                settings.telegram.messagesAddChatUser(TelegramHelper.peerId(dialog.peer), item.userId);
+                context.telegram.messagesAddChatUser(TelegramHelper.peerId(dialog.peer), item.userId);
                 pageStack.pop();
             }
         }

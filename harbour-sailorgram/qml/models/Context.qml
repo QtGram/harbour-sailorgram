@@ -8,7 +8,7 @@ import "../js/TelegramHelper.js" as TelegramHelper
 
 QtObject
 {
-    id: settings
+    id: context
 
     property TelegramLocalStorage telegramlocalstorage: TelegramLocalStorage { }
     property Notifications notifications: Notifications { }
@@ -16,13 +16,13 @@ QtObject
     property Message lastMessage: telegram.nullMessage
 
     property HeartBeat heartbeat: HeartBeat {
-        telegram: settings.telegram
+        telegram: context.telegram
         interval: 8000
         onConnectedChanged: connected ? sailorgram.wake() : sailorgram.sleep();
     }
 
     property SailorGram sailorgram: SailorGram {
-        telegram: settings.telegram
+        telegram: context.telegram
     }
 
     property Telegram telegram: Telegram {
@@ -36,24 +36,24 @@ QtObject
 
         onConnectedChanged: {
             if(connected)
-               settings.heartbeat.start();
+               context.heartbeat.start();
         }
 
         onIncomingMessage: {
-            var userdata = settings.telegram.userData;
+            var userdata = context.telegram.userData;
 
             if(userdata.isMuted(msg.fromId)) /* Respect Notification Settings */
                 return;
 
-            var user = settings.telegram.user(msg.fromId);
-            var currentpeerid = foregroundDialog !== settings.telegram.nullDialog ? TelegramHelper.peerId(foregroundDialog.peer) : 0;
+            var user = context.telegram.user(msg.fromId);
+            var currentpeerid = foregroundDialog !== context.telegram.nullDialog ? TelegramHelper.peerId(foregroundDialog.peer) : 0;
 
             if((msg.fromId !== currentpeerid) || (Qt.application.state !== Qt.ApplicationActive)) {
                 notifications.send(TelegramHelper.userName(user), TelegramHelper.messageContent(msg), user.photo.photoSmall.download.location, true, false);
                 return;
             }
 
-            settings.lastMessage = msg;
+            context.lastMessage = msg;
             notifications.beep();
         }
 
@@ -63,43 +63,43 @@ QtObject
             if(phonenumber !== false)
                 return;
 
-            Settings.set("phonenumber", settings.telegram.phoneNumber); // Save Phone Number for fast login
+            Settings.set("phonenumber", context.telegram.phoneNumber); // Save Phone Number for fast login
         }
 
         onAuthSignInErrorChanged: {
-            if(!settings.telegram.authSignInError)
+            if(!context.telegram.authSignInError)
                 return;
 
             pageStack.completeAnimation();
-            pageStack.replace(Qt.resolvedUrl("../pages/AuthorizationPage.qml"), { "telegram": settings.telegram, "authError": settings.telegram.authSignInError });
+            pageStack.replace(Qt.resolvedUrl("../pages/AuthorizationPage.qml"), { "telegram": context.telegram, "authError": context.telegram.authSignInError });
         }
 
         onAuthSignUpErrorChanged: {
-            if(!settings.telegram.authSignUpError)
+            if(!context.telegram.authSignUpError)
                 return;
 
             pageStack.completeAnimation();
-            pageStack.replace(Qt.resolvedUrl("../pages/SignUpPage.qml"), { "telegram": settings.telegram, "authError": settings.telegram.authSignUpError });
+            pageStack.replace(Qt.resolvedUrl("../pages/SignUpPage.qml"), { "telegram": context.telegram, "authError": context.telegram.authSignUpError });
 
         }
 
         onAuthLoggedInChanged: {
-            if(!settings.telegram.authLoggedIn)
+            if(!context.telegram.authLoggedIn)
                 return;
 
-            settings.telegram.online = true;
+            context.telegram.online = true;
 
             pageStack.completeAnimation();
-            pageStack.replace(Qt.resolvedUrl("../pages/conversations/ConversationsPage.qml"), { "settings": settings, "telegram": settings.telegram });
+            pageStack.replace(Qt.resolvedUrl("../pages/conversations/ConversationsPage.qml"), { "context": context, "telegram": context.telegram });
         }
 
         onAuthCodeRequested: {
             pageStack.completeAnimation();
 
-            if(settings.telegram.authPhoneRegistered)
-                pageStack.replace(Qt.resolvedUrl("../pages/AuthorizationPage.qml"), { "telegram": settings.telegram, "authError": settings.telegram.authSignInError });
+            if(context.telegram.authPhoneRegistered)
+                pageStack.replace(Qt.resolvedUrl("../pages/AuthorizationPage.qml"), { "telegram": context.telegram, "authError": context.telegram.authSignInError });
             else
-                pageStack.replace(Qt.resolvedUrl("../pages/SignUpPage.qml"), { "telegram": settings.telegram, "authError": settings.telegram.authSignUpError });
+                pageStack.replace(Qt.resolvedUrl("../pages/SignUpPage.qml"), { "telegram": context.telegram, "authError": context.telegram.authSignUpError });
         }
     }
 }

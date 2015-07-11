@@ -9,7 +9,7 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 Page
 {
     property bool actionVisible: true
-    property Settings settings
+    property Context context
     property Telegram telegram
     property User user
 
@@ -56,7 +56,7 @@ Page
                 width: parent.width
                 height: Theme.itemSizeSmall
                 labelText: qsTr("Send Message")
-                onActionRequested: pageStack.replace(Qt.resolvedUrl("../../pages/conversations/ConversationPage.qml"), { "settings": settings, "telegram": telegram,  "dialog": telegram.fakeDialogObject(user.id, false), "user": user } )
+                onActionRequested: pageStack.replace(Qt.resolvedUrl("../../pages/conversations/ConversationPage.qml"), { "context": context, "telegram": telegram,  "dialog": telegram.fakeDialogObject(user.id, false), "user": user } )
             }
         }
     }

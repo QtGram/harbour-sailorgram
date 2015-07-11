@@ -10,7 +10,7 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 
 ListItem
 {
-    property Settings settings
+    property Context context
     property Telegram telegram
     property Message message
 
@@ -52,7 +52,7 @@ ListItem
         id: documentcomponent
 
         MessageDocument {
-            settings: messageitem.settings
+            context: messageitem.context
             telegram: messageitem.telegram
             message: messageitem.message
         }
@@ -62,7 +62,7 @@ ListItem
         id: photocomponent
 
         MessagePhoto {
-            settings: messageitem.settings
+            context: messageitem.context
             telegram: messageitem.telegram
             message: messageitem.message
         }

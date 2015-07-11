@@ -1,13 +1,13 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
-import "../models"
-import "../js/TelegramHelper.js" as TelegramHelper
-import "../js/TelegramConstants.js" as TelegramConstants
+import "../../models"
+import "../../js/TelegramHelper.js" as TelegramHelper
+import "../../js/TelegramConstants.js" as TelegramConstants
 
 PullDownMenu
 {
-    property Settings settings
+    property Context context
     property Dialog dialog
 
     id: conversationmenu
@@ -20,9 +20,9 @@ PullDownMenu
             var peerid = TelegramHelper.peerId(dialog.peer);
 
             if(conversationpage.muted)
-                settings.telegram.userData.removeMute(peerid);
+                context.telegram.userData.removeMute(peerid);
             else
-                settings.telegram.userData.addMute(peerid);
+                context.telegram.userData.addMute(peerid);
         }
     }
 
@@ -33,7 +33,7 @@ PullDownMenu
 
         onClicked: {
             remorsepopup.execute(qsTr("Deleting History"), function() {
-                settings.telegram.messagesDeleteHistory(TelegramHelper.peerId(dialog.peer));
+                context.telegram.messagesDeleteHistory(TelegramHelper.peerId(dialog.peer));
                 pageStack.pop();
             });
         }
@@ -47,8 +47,8 @@ PullDownMenu
         onClicked: {
             remorsepopup.execute(qsTr("Leaving Group"), function() {
                 var peerid = TelegramHelper.peerId(dialog.peer);
-                settings.telegram.messagesDeleteChatUser(peerid, settings.telegram.me);
-                settings.telegram.messagesDeleteHistory(peerid);
+                context.telegram.messagesDeleteChatUser(peerid, context.telegram.me);
+                context.telegram.messagesDeleteHistory(peerid);
                 pageStack.pop();
             });
         }
@@ -59,14 +59,14 @@ PullDownMenu
     {
         text: qsTr("Add Member")
         visible: TelegramHelper.isChat(dialog)
-        onClicked: pageStack.push(Qt.resolvedUrl("../pages/chat/AddContactsPage.qml"), { "settings": conversationmenu.settings, "dialog": conversationmenu.dialog })
+        onClicked: pageStack.push(Qt.resolvedUrl("../pages/chat/AddContactsPage.qml"), { "context": conversationmenu.context, "dialog": conversationmenu.dialog })
     }
 
     MenuItem
     {
         text: qsTr("Add to Contacts")
         visible: !TelegramHelper.isChat(dialog) && !TelegramHelper.isTelegramUser(user) && (user.classType === TelegramConstants.typeUserRequest)
-        onClicked: settings.telegram.addContact(user.firstName, user.lastName, user.phone)
+        onClicked: context.telegram.addContact(user.firstName, user.lastName, user.phone)
     }
 }
 

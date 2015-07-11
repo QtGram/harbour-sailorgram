@@ -6,7 +6,7 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 
 ContextMenu
 {
-    property Settings settings
+    property Context context
     property Dialog dialog
     property User user
 
@@ -18,7 +18,7 @@ ContextMenu
 
         onClicked: {
             liparticipant.remorseAction(qsTr("Removing from group"), function() {
-                settings.telegram.messagesDeleteChatUser(TelegramHelper.peerId(dialog.peer), user.id);
+                context.telegram.messagesDeleteChatUser(TelegramHelper.peerId(dialog.peer), user.id);
             });
         }
     }

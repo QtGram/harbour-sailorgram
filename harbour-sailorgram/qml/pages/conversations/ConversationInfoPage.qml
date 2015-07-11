@@ -11,7 +11,7 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 Page
 {
     property bool actionVisible: true
-    property Settings settings
+    property Context context
     property Telegram telegram
     property Dialog dialog
     property Chat chat
@@ -25,7 +25,7 @@ Page
 
         UserInfo {
             actionVisible: false
-            settings: conversationinfopage.settings
+            context: conversationinfopage.context
             telegram: conversationinfopage.telegram
             user: conversationinfopage.user
         }
@@ -35,7 +35,7 @@ Page
         id: chatinfocomponent
 
         ChatInfo {
-            settings: conversationinfopage.settings
+            context: conversationinfopage.context
             telegram: conversationinfopage.telegram
             dialog: conversationinfopage.dialog
             chat: conversationinfopage.chat

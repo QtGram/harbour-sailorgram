@@ -4,9 +4,9 @@ import "../models"
 
 Item
 {
-    property Settings settings
+    property Context context
 
-    visible: !settings.heartbeat.connected
+    visible: !context.heartbeat.connected
     width: busyindicator.width + lblconnecting.contentWidth + Theme.paddingMedium
 
     BusyIndicator
@@ -14,7 +14,7 @@ Item
         id: busyindicator
         size: BusyIndicatorSize.Small
         anchors { left: parent.left; verticalCenter: lblconnecting.verticalCenter }
-        running: !settings.heartbeat.connected
+        running: !context.heartbeat.connected
     }
 
     Label

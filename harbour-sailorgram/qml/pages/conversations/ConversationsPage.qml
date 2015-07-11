@@ -32,14 +32,14 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../../models"
-import "../../menus"
+import "../../menus/conversation"
 import "../../items/conversation"
 import "../../js/TelegramHelper.js" as TelegramHelper
 import "../../js/TelegramConstants.js" as TelegramConstants
 
 Page
 {
-    property Settings settings
+    property Context context
     property Telegram telegram
 
     id: conversationspage
@@ -49,7 +49,7 @@ Page
         if(conversationspage.status !== PageStatus.Active)
             return;
 
-        settings.foregroundDialog = telegram.nullDialog; // Reset Foreground Dialog
+        context.foregroundDialog = telegram.nullDialog; // Reset Foreground Dialog
     }
 
     SilicaListView
@@ -57,7 +57,7 @@ Page
         ConversationsPullDownMenu
         {
             id: conversationsmenu
-            settings: conversationspage.settings
+            context: conversationspage.context
         }
 
         ViewPlaceholder
@@ -93,7 +93,7 @@ Page
             id: dialogitem
             contentWidth: parent.width
             contentHeight: Theme.itemSizeSmall
-            onClicked: pageStack.push(Qt.resolvedUrl("ConversationPage.qml"), { "settings": conversationspage.settings, "telegram": conversationspage.telegram, "dialog": item })
+            onClicked: pageStack.push(Qt.resolvedUrl("ConversationPage.qml"), { "context": conversationspage.context, "telegram": conversationspage.telegram, "dialog": item })
 
             menu: ContextMenu {
                 MenuItem {

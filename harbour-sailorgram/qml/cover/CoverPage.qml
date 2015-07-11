@@ -6,11 +6,11 @@ import "../js/TelegramHelper.js" as TelegramHelper
 
 CoverBackground
 {
-    property Settings settings
+    property Context context
 
     function preparePages() /* Remove Current Chat Page, if any */
     {
-        if(settings.foregroundDialog === settings.telegram.nullDialog)
+        if(context.foregroundDialog === context.telegram.nullDialog)
             return;
 
         pageStack.pop();
@@ -39,14 +39,14 @@ CoverBackground
             descriptionText: qsTr("Status:")
 
             valueText: {
-                if(settings.telegram.online)
+                if(context.heartbeat.connected)
                     return qsTr("Online");
 
                 return qsTr("Offline");
             }
 
             valueColor: {
-                if(settings.telegram.online)
+                if(context.heartbeat.connected)
                     return "lime";
 
                 return "red";
@@ -57,23 +57,23 @@ CoverBackground
         {
             id: clunreadmsgs
             descriptionText: qsTr("Unread Messages:")
-            valueText: settings.telegram.unreadCount
-            valueColor: settings.telegram.unreadCount > 0 ? "yellow" : "lime"
+            valueText: context.telegram.unreadCount
+            valueColor: context.telegram.unreadCount > 0 ? "yellow" : "lime"
         }
 
         /*
         CoverLabel
         {
             id: cllastmessageuser
-            //visible: settings.lastMessage !== settings.telegram.nullMessage
+            //visible: context.lastMessage !== context.telegram.nullMessage
             descriptionText: qsTr("Last Message By:")
             valueColor: Theme.secondaryHighlightColor
 
             valueText: {
-                if(settings.lastMessage === settings.telegram.nullMessage)
+                if(context.lastMessage === context.telegram.nullMessage)
                     return "";
 
-                var user = settings.telegram.user(settings.lastMessage.fromId);
+                var user = context.telegram.user(context.lastMessage.fromId);
                 return TelegramHelper.userName(user);
             }
         }
@@ -88,7 +88,7 @@ CoverBackground
 
             onTriggered: {
                 preparePages();
-                pageStack.push(Qt.resolvedUrl("../pages/users/UsersPage.qml"), { "settings": settings, "telegram": settings.telegram }, PageStackAction.Immediate);
+                pageStack.push(Qt.resolvedUrl("../pages/users/UsersPage.qml"), { "context": context, "telegram": context.telegram }, PageStackAction.Immediate);
                 mainwindow.activate();
             }
         }

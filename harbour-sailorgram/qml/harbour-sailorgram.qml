@@ -37,23 +37,23 @@ import "js/Settings.js" as Settings
 
 ApplicationWindow
 {
-    default property alias settings: settings
+    default property alias context: context
 
-    Settings
+    Context
     {
-        id: settings
+        id: context
         Component.onCompleted: Settings.load()
     }
 
     id: mainwindow
 
     cover: CoverPage {
-        settings: mainwindow.settings
+        context: mainwindow.context
     }
 
     initialPage: Component {
         ConnectionPage {
-            telegram: settings.telegram
+            telegram: context.telegram
         }
     }
 }

@@ -7,7 +7,7 @@ Item
 {
     property alias fileHandler: filehandler
 
-    property Settings settings
+    property Context context
     property Telegram telegram
     property Message message
 
@@ -95,7 +95,7 @@ Item
             if((filePath.toString().length <= 0) || (progressPercent < 100))
                 return;
 
-            settings.sailorgram.moveMediaToDownloads(message.media);
+            context.sailorgram.moveMediaToDownloads(message.media);
         }
     }
 
