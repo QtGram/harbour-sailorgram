@@ -38,7 +38,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You can choose an username on Telegram. If you do, other people may contact you without knowinh your phone number.
+        <source>You can choose an username on Telegram. If you do, other people may contact you without knowing your phone number.
 
 You can use a-z, 0-9 and underscores.
 Minimum length is 5 characters.</source>
@@ -118,7 +118,7 @@ Minimum length is 5 characters.</source>
         <source>No Chats
 
 Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source>
-        <translation>Ei keskusteluja.
+        <translation type="vanished">Ei keskusteluja.
 
 Valitse yhteystieto valitsemalla &quot;Yhteystiedot&quot; alasvetovalikosta.</translation>
     </message>
@@ -141,6 +141,12 @@ Valitse yhteystieto valitsemalla &quot;Yhteystiedot&quot; alasvetovalikosta.</tr
     <message>
         <source>Conversations</source>
         <translation>Keskustelut</translation>
+    </message>
+    <message>
+        <source>No Chats
+
+Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -63,7 +63,7 @@ Page
         ViewPlaceholder
         {
             enabled: lvchats.count <= 0
-            text: qsTr("No Chats\n\nPick a contact by selecting \"Contacts\" from the Pull Down Menu")
+            text: qsTr("No Chats\n\nPick a contact by selecting \"Contacts\" from the Menu above")
         }
 
         id: lvchats

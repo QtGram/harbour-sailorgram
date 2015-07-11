@@ -46,7 +46,7 @@ Dialog
                 verticalAlignment: Text.AlignTop
                 font.pixelSize: Theme.fontSizeSmall
                 wrapMode: Text.WordWrap
-                text: qsTr("You can choose an username on Telegram. If you do, other people may contact you without knowinh your phone number.\n\nYou can use a-z, 0-9 and underscores.\nMinimum length is 5 characters.")
+                text: qsTr("You can choose an username on Telegram. If you do, other people may contact you without knowing your phone number.\n\nYou can use a-z, 0-9 and underscores.\nMinimum length is 5 characters.")
             }
         }
     }
