@@ -36,7 +36,7 @@ QtObject
 
         onConnectedChanged: {
             if(connected)
-               settings.heartbeat.beat();
+               settings.heartbeat.start();
         }
 
         onIncomingMessage: {

@@ -46,6 +46,13 @@
     </message>
 </context>
 <context>
+    <name>ConnectingLabel</name>
+    <message>
+        <source>Connecting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ConnectionPage</name>
     <message>
         <source>Connecting</source>

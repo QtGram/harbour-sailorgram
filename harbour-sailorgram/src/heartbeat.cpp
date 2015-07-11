@@ -1,23 +1,13 @@
 #include "heartbeat.h"
 
-HeartBeat::HeartBeat(QObject *parent): QObject(parent), _connected(false), _telegram(NULL)
+HeartBeat::HeartBeat(QObject *parent): QThread(parent), _connected(false), _interval(0), _telegram(NULL)
 {
-    this->_hbthread = new QThread(this);
 
-    this->_timer = new QTimer();
-    this->_timer->moveToThread(this->_hbthread);
-
-    this->_socket = new QTcpSocket();
-    this->_socket->moveToThread(this->_hbthread);
-
-    connect(this->_hbthread, SIGNAL(started()), this->_timer, SLOT(start()), Qt::QueuedConnection);
-    connect(this->_timer, SIGNAL(timeout()), this, SLOT(checkConnection()), Qt::QueuedConnection);
-    connect(this, SIGNAL(connectionUpdated(bool)), this, SLOT(onConnectionUpdated(bool)), Qt::QueuedConnection);
 }
 
 int HeartBeat::interval() const
 {
-    return this->_timer->interval();
+    return this->_interval;
 }
 
 bool HeartBeat::connected() const
@@ -41,35 +31,30 @@ void HeartBeat::setTelegram(TelegramQml *telegram)
 
 void HeartBeat::setInterval(int interval)
 {
-    if(this->_timer->interval() == interval)
+    if(this->_interval == interval)
         return;
 
-    this->_timer->setInterval(interval);
+    this->_interval = interval;
     emit intervalChanged();
 }
 
-void HeartBeat::beat()
+void HeartBeat::run()
 {
-    this->_hbthread->start();
-    this->onConnectionUpdated(this->_telegram->connected());
-}
+    for(; ;)
+    {
+        QTcpSocket socket;
+        socket.connectToHost(this->_telegram->defaultHostAddress(), this->_telegram->defaultHostPort());
+        socket.waitForConnected(this->_interval / 2);
 
-void HeartBeat::onConnectionUpdated(bool connected)
-{
-    if(this->_connected == connected)
-        return;
+        bool connected = (socket.state() == QAbstractSocket::ConnectedState);
+        qDebug() << Q_FUNC_INFO << connected;
 
-    this->_connected = connected;
-    emit connectedChanged();
-}
+        if(this->_connected != connected)
+        {
+            this->_connected = connected;
+            emit connectedChanged();
+        }
 
-void HeartBeat::checkConnection()
-{
-    this->_socket->connectToHost(this->_telegram->defaultHostAddress(), this->_telegram->defaultHostPort());
-    this->_socket->waitForConnected(this->_timer->interval() / 2);
-
-    bool connected = (this->_socket->state() == QAbstractSocket::ConnectedState);
-    this->_socket->abort();
-
-    emit connectionUpdated(connected);
+        QThread::msleep(this->_interval);
+    }
 }

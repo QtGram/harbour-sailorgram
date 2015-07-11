@@ -89,7 +89,8 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/menus/ConversationsPullDownMenu.qml \
     qml/menus/chat/ChatInfoMenu.qml \
     qml/cover/CoverPage.qml \
-    qml/components/cover/CoverLabel.qml
+    qml/components/cover/CoverLabel.qml \
+    qml/components/ConnectingLabel.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

@@ -2,6 +2,7 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../models"
+import "../components"
 import "../js/TelegramHelper.js" as TelegramHelper
 
 Item
@@ -11,11 +12,18 @@ Item
     property Dialog dialog
 
     id: messagebar
-    height: textarea.height
+    height: settings.heartbeat.connected ? textarea.height : Theme.itemSizeSmall
+
+    ConnectingLabel
+    {
+        anchors { top: parent.top; bottom: parent.bottom; horizontalCenter: parent.horizontalCenter }
+        settings: messagebar.settings
+    }
 
     Row
     {
         anchors.fill: parent
+        visible: settings.heartbeat.connected
 
         TextArea
         {

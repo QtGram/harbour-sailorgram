@@ -7,7 +7,7 @@
 #include <QThread>
 #include <telegramqml.h>
 
-class HeartBeat : public QObject
+class HeartBeat : public QThread
 {
     Q_OBJECT
 
@@ -23,25 +23,18 @@ class HeartBeat : public QObject
         void setTelegram(TelegramQml* telegram);
         void setInterval(int interval);
 
-    public slots:
-        void beat();
+    protected:
+        virtual void run();
 
     signals:
-        void connectionUpdated(bool connected);
         void connectedChanged();
         void intervalChanged();
         void telegramChanged();
 
-    private slots:
-        void onConnectionUpdated(bool connected);
-        void checkConnection();
-
     private:
         bool _connected;
-        QThread* _hbthread;
-        QTimer* _timer;
+        int _interval;
         TelegramQml* _telegram;
-        QTcpSocket* _socket;
 };
 
 #endif // HEARTBEAT_H
