@@ -47,7 +47,6 @@ void HeartBeat::run()
         socket.waitForConnected(this->_interval / 2);
 
         bool connected = (socket.state() == QAbstractSocket::ConnectedState);
-        qDebug() << Q_FUNC_INFO << connected;
 
         if(this->_connected != connected)
         {
