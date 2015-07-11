@@ -12,6 +12,12 @@ PullDownMenu
 
     id: conversationspulldownmenu
 
+    MenuItem
+    {
+        text: qsTr("Profile")
+        onClicked: pageStack.push(Qt.resolvedUrl("../../pages/profile/ProfilePage.qml"), { "context": conversationspulldownmenu.context })
+    }
+
     TelegramMenuItem
     {
         text: qsTr("Create Group")

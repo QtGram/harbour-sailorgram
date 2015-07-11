@@ -28,6 +28,24 @@
     </message>
 </context>
 <context>
+    <name>ChangeUsernamePage</name>
+    <message>
+        <source>Change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can choose an username on Telegram. If you do, other people may contact you without knowinh your phone number.
+
+You can use a-z, 0-9 and underscores.
+Minimum length is 5 characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ChatInfo</name>
     <message>
         <source>Members</source>
@@ -134,6 +152,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source
     <message>
         <source>Contacts</source>
         <translation type="unfinished">Επαφές</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished">Προφίλ</translation>
     </message>
 </context>
 <context>
@@ -250,6 +272,33 @@ Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source
     <message>
         <source>Insert your phone number and press &apos;Next&apos;</source>
         <translation>Εισάγετε τον αριθμό του τηλεφώνου σας και πατήστε το πλήκτρο &apos;Επόμενο&apos;</translation>
+    </message>
+</context>
+<context>
+    <name>ProfilePage</name>
+    <message>
+        <source>Change Picture</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Phone number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished">Προφίλ</translation>
+    </message>
+    <message>
+        <source>Change Username</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

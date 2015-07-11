@@ -7,7 +7,7 @@ Page
 {
     property Page rootPage
     property string directory
-    property string filter
+    property string mime
 
     signal filePicked(string file)
     signal dismiss()
@@ -85,6 +85,7 @@ Page
 
             folderModel: FolderListModel {
                 id: foldermodel
+                mime: filepickerpage.mime
 
                 onDirectoryNameChanged: {
                     pageheader.title = ((directory === "/") ? qsTr("Root") : foldermodel.directoryName);
@@ -97,15 +98,15 @@ Page
             }
 
             onFolderSelected: {
-                var page = pageStack.push(Qt.resolvedUrl("FilePickerPage.qml"), { "directory": folderpath, "filter" : filter, "rootPage": rootPage })
+                var page = pageStack.push(Qt.resolvedUrl("FilePickerPage.qml"), { "directory": folderpath, "filter" : mime, "rootPage": rootPage })
                 page.filePicked.connect(pickFile);
             }
         }
     }
 
     Component.onCompleted: {
-        if(filter.length)
-            foldermodel.filter = filter;
+        if(mime.length)
+            foldermodel.mime = mime;
 
         changeDirectory(filepickerpage.directory);
     }
