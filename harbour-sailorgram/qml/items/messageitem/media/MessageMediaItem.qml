@@ -48,10 +48,8 @@ Item
         else if(message.media.classType === TelegramConstants.typeMessageMediaUnsupported)
             return "image://theme/icon-m-other";
         else if(message.media.classType === TelegramConstants.typeMessageMediaDocument) {
-            if(context.telegram.documentIsSticker(message.media.document)) {
-                return "image://theme/icon-m-other";
-                //FIXME: WebP: Not Supported (return filehandler.thumbPath);
-            }
+            if(context.telegram.documentIsSticker(message.media.document))
+                return "image://theme/icon-m-other"; //FIXME: WebP: Not Supported (return filehandler.thumbPath);
 
             return message.media.document.thumb.location.download.location;
         }
@@ -74,15 +72,18 @@ Item
     FileHandler
     {
         id: filehandler
-        telegram: messagemediaitem.telegram
+        telegram: messagemediaitem.context.telegram
         defaultThumbnail: "image://theme/icon-m-document"
 
-        onTargetTypeChanged: {
+        onTargetTypeChanged: { /* Download is triggered when 'target' property is set */
             switch(targetType) {
                 case FileHandler.TypeTargetMediaVideo:
                 case FileHandler.TypeTargetMediaPhoto:
                 case FileHandler.TypeTargetMediaDocument:
                 case FileHandler.TypeTargetMediaAudio:
+                    if(isSticker) /* Don't download stickers */
+                        return;
+
                     fileHandler.download();
                     break;
 
@@ -92,7 +93,10 @@ Item
         }
 
         onFilePathChanged: {
-            if((filePath.toString().length <= 0) || (progressPercent < 100))
+            var filepathstring = filePath.toString();
+
+            /* Do not move Photos in Downloads automatically */
+            if((filepathstring.length <= 0) || (progressPercent < 100) || context.sailorgram.fileIsPhoto(filepathstring))
                 return;
 
             context.sailorgram.moveMediaToDownloads(message.media);

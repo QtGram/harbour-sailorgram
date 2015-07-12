@@ -210,6 +210,17 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
 </context>
 <context>
+    <name>MediaPhotoPage</name>
+    <message>
+        <source>Save in Gallery</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image saved in Gallery</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MessageBar</name>
     <message>
         <source>Message</source>

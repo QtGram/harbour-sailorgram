@@ -18,6 +18,25 @@ void SailorGram::setTelegram(TelegramQml *telegram)
     emit telegramChanged();
 }
 
+void SailorGram::moveMediaTo(FileLocationObject *locationobj, const QString &destination)
+{
+    if(!locationobj)
+        return;
+
+    QString filename = locationobj->fileName();
+    QUrl location(locationobj->download()->location());
+
+    if(filename.isEmpty())
+        filename = location.fileName();
+
+    QString destpath = destination + QDir::separator() + filename;
+
+    if(QFile::exists(destpath)) // Don't overwrite existing files
+        return;
+
+    QFile::copy(location.path(), destpath);
+}
+
 void SailorGram::sleep()
 {
     this->_telegram->telegram()->sleep();
@@ -26,6 +45,16 @@ void SailorGram::sleep()
 void SailorGram::wake()
 {
     this->_telegram->telegram()->wake();
+}
+
+bool SailorGram::fileIsPhoto(const QString &filepath)
+{
+    if(filepath.isEmpty())
+        return false;
+
+    QUrl url(filepath);
+    QMimeType mime = this->_mimedb.mimeTypeForFile(url.path());
+    return mime.isValid() && (mime.name().split("/")[0] == "image");
 }
 
 QString SailorGram::fileName(const QString &filepath)
@@ -41,10 +70,10 @@ QSize SailorGram::imageSize(const QString &filepath)
     return img.size();
 }
 
-void SailorGram::moveMediaToDownloads(MessageMediaObject *messagemediaobject)
+FileLocationObject* SailorGram::mediaLocation(MessageMediaObject *messagemediaobject)
 {
     if(!this->_telegram)
-        return;
+        return NULL;
 
     FileLocationObject* locationobj = NULL;
 
@@ -71,12 +100,25 @@ void SailorGram::moveMediaToDownloads(MessageMediaObject *messagemediaobject)
     }
 
     if(!locationobj)
+        return NULL;
+
+    return locationobj;
+}
+
+void SailorGram::moveMediaToDownloads(MessageMediaObject *messagemediaobject)
+{
+    if(!this->_telegram)
         return;
 
-    QString downloadfile = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation) + QDir::separator() + locationobj->fileName();
+    FileLocationObject* locationobj = this->mediaLocation(messagemediaobject);
+    this->moveMediaTo(locationobj, QStandardPaths::writableLocation(QStandardPaths::DownloadLocation));
+}
 
-    if(QFile::exists(downloadfile)) // Don't overwrite existing files
+void SailorGram::moveMediaToGallery(MessageMediaObject *messagemediaobject)
+{
+    if(!this->_telegram)
         return;
 
-    QFile::copy(QUrl(locationobj->download()->location()).path(), downloadfile);
+    FileLocationObject* locationobj = this->mediaLocation(messagemediaobject);
+    this->moveMediaTo(locationobj, QStandardPaths::writableLocation(QStandardPaths::PicturesLocation));
 }

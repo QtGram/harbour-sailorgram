@@ -19,6 +19,30 @@ ListItem
         });
     }
 
+    function displayMedia() {
+        if(!message.media)
+            return;
+
+        var canbephoto = (message.media.classType === TelegramConstants.typeMessageMediaDocument) || (message.media.classType === TelegramConstants.typeMessageMediaPhoto);
+
+        if(canbephoto)
+            loader.item.fileHandler.target = messageitem.message; // Download Photo
+
+        var path = loader.item.mediaPath;
+
+        if(canbephoto && context.sailorgram.fileIsPhoto(path)) {
+            pageStack.push(Qt.resolvedUrl("../../pages/media/MediaPhotoPage.qml"), { "context": messageitem.context, "message": messageitem.message, "fileHandler": loader.item.fileHandler });
+            return;
+        }
+
+        if(!path.length) {
+            downloadMedia();
+            return;
+        }
+
+        Qt.openUrlExternally(path);
+    }
+
     id: messageitem
     contentWidth: parent.width
     contentHeight: content.height
@@ -30,22 +54,10 @@ ListItem
 
         onCancelRequested: loader.item.cancelTransfer()
         onDownloadRequested: downloadMedia()
-        onOpenRequested: Qt.openUrlExternally(loader.item.fileHandler.filePath)
+        onOpenRequested: displayMedia()
     }
 
-    onClicked: {
-        if(!message.media)
-            return;
-
-        var path = loader.item.fileHandler.filePath.toString();
-
-        if(path.length > 0) {
-            Qt.openUrlExternally(loader.item.fileHandler.filePath);
-            return;
-        }
-
-        downloadMedia();
-    }
+    onClicked: displayMedia()
 
     Component {
         id: documentcomponent
