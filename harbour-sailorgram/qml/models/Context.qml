@@ -10,6 +10,8 @@ QtObject
 {
     id: context
 
+    readonly property string version: "0.6"
+
     property TelegramLocalStorage telegramlocalstorage: TelegramLocalStorage { }
     property ScreenBlank screenblank: ScreenBlank { }
     property Notifications notifications: Notifications { }

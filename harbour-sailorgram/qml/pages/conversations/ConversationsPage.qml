@@ -61,6 +61,22 @@ Page
             context: conversationspage.context
         }
 
+        PushUpMenu
+        {
+            id: appmenu
+
+            MenuItem
+            {
+                text: qsTr("Settings")
+            }
+
+            MenuItem
+            {
+                text: qsTr("About")
+                onClicked: pageStack.push(Qt.resolvedUrl("../AboutPage.qml"), { "context": conversationspage.context })
+            }
+        }
+
         ViewPlaceholder
         {
             enabled: lvchats.count <= 0
