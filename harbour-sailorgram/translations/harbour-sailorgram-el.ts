@@ -256,14 +256,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Download</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>PeerItem</name>

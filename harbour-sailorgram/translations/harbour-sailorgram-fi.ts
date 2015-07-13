@@ -258,11 +258,11 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Download</source>
-        <translation>Lataa</translation>
+        <translation type="vanished">Lataa</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Avaa</translation>
+        <translation type="vanished">Avaa</translation>
     </message>
 </context>
 <context>

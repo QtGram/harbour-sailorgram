@@ -53,8 +53,6 @@ ListItem
         message: messageitem.message
 
         onCancelRequested: loader.item.cancelTransfer()
-        onDownloadRequested: downloadMedia()
-        onOpenRequested: displayMedia()
     }
 
     onClicked: displayMedia()

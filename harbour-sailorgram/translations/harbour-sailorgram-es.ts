@@ -258,11 +258,11 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Download</source>
-        <translation>Descargar</translation>
+        <translation type="vanished">Descargar</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Abrir</translation>
+        <translation type="vanished">Abrir</translation>
     </message>
 </context>
 <context>

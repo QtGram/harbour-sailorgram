@@ -7,8 +7,6 @@ import "../js/TelegramConstants.js" as TelegramConstants
 ContextMenu
 {
     signal cancelRequested()
-    signal downloadRequested()
-    signal openRequested()
 
     property Context context
     property Message message
@@ -40,19 +38,5 @@ ContextMenu
         text: qsTr("Cancel")
         visible: false //FIXME: message.out && loader.item && loader.item.transferInProgress
         onClicked: cancelRequested()
-    }
-
-    MenuItem
-    {
-        text: qsTr("Download")
-        visible: (!fileHandler || fileHandler.isSticker || message.out) ? false : (fileHandler.filePath.toString().length <= 0) && (message.media && (message.media.classType !== TelegramConstants.typeMessageMediaEmpty))
-        onClicked: downloadRequested()
-    }
-
-    MenuItem
-    {
-        text: qsTr("Open");
-        visible: !fileHandler ? false : (fileHandler.filePath.toString().length > 0) && (message.media && (message.media.classType !== TelegramConstants.typeMessageMediaEmpty))
-        onClicked: openRequested()
     }
 }
