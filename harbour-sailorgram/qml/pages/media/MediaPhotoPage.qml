@@ -11,6 +11,7 @@ Page
     property FileHandler fileHandler
 
     id: mediaphotopage
+    allowedOrientations: defaultAllowedOrientations
 
     SilicaFlickable
     {
