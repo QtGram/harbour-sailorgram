@@ -7,6 +7,5 @@ GlassItem
     property Context context
 
     id: connectionstatus
-    enabled: false
     color: context.heartbeat.connected ? "lime" : "red"
 }

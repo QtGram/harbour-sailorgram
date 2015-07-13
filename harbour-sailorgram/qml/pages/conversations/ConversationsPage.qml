@@ -88,7 +88,7 @@ Page
 
             ConnectionStatus {
                 context: conversationspage.context
-                anchors { verticalCenter: parent.verticalCenter; right: pageheader.extraContent.right; topMargin: Theme.paddingSmall }
+                anchors { verticalCenter: pageheader.extraContent.verticalCenter; right: pageheader.extraContent.right; topMargin: Theme.paddingSmall }
             }
         }
 
