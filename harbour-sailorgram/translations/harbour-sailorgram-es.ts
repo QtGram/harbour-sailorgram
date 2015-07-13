@@ -148,6 +148,14 @@ Elije un contacto pulsando en &quot;Contactos&quot; desde el menú desplegable</
 Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Connecting</source>
+        <translation type="obsolete">Conectando</translation>
+    </message>
+    <message>
+        <source>Connecting...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConversationsPullDownMenu</name>

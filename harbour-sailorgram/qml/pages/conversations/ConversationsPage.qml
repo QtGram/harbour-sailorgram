@@ -32,6 +32,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../../models"
+import "../../components"
 import "../../menus/conversation"
 import "../../items/conversation"
 import "../../js/TelegramHelper.js" as TelegramHelper
@@ -82,7 +83,13 @@ Page
         }
 
         header: PageHeader {
-            title: qsTr("Chats")
+            id: pageheader
+            title: context.heartbeat.connected ? qsTr("Chats") : qsTr("Connecting...")
+
+            ConnectionStatus {
+                context: conversationspage.context
+                anchors { verticalCenter: parent.verticalCenter; right: pageheader.extraContent.right; topMargin: Theme.paddingSmall }
+            }
         }
 
         model: DialogsModel {

@@ -104,7 +104,8 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/components/mediaplayer/mediacomponents/MediaPlayerToolBar.qml \
     qml/components/mediaplayer/MediaPlayer.qml \
     qml/pages/media/MediaPlayerPage.qml \
-    qml/components/mediaplayer/mediacomponents/MediaPlayerLoadingBar.qml
+    qml/components/mediaplayer/mediacomponents/MediaPlayerLoadingBar.qml \
+    qml/components/ConnectionStatus.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

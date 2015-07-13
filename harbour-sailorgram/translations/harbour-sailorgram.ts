@@ -115,10 +115,6 @@ Minimum length is 5 characters.</source>
 <context>
     <name>ConversationsPage</name>
     <message>
-        <source>Chats</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Delete History</source>
         <translation type="unfinished"></translation>
     </message>
@@ -138,6 +134,14 @@ Minimum length is 5 characters.</source>
         <source>No Chats
 
 Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chats</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connecting...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
