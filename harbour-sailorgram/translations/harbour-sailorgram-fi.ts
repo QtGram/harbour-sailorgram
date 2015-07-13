@@ -175,19 +175,23 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
 <context>
     <name>CoverPage</name>
     <message>
-        <source>Status:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Online</source>
-        <translation type="unfinished">Paikalla</translation>
+        <translation type="obsolete">Paikalla</translation>
     </message>
     <message>
-        <source>Offline</source>
+        <source>Connected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unread Messages:</source>
+        <source>Disconnected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 unread messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 unread message</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -293,6 +297,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <message>
         <source>%1 members</source>
         <translation>%1 jäsenet</translation>
+    </message>
+    <message>
+        <source>%1 member</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

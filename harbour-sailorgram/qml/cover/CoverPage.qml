@@ -21,63 +21,38 @@ CoverBackground
 
     Column
     {
-        anchors{ fill: parent; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
-        spacing: Theme.paddingMedium
+        anchors{ fill: parent; topMargin: Theme.paddingLarge; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
+        spacing: Theme.paddingLarge
 
         Image
         {
             id: imglogo
             source: "qrc:///res/telegramcover.png"
+            opacity: 0.8
             width: parent.width / 2
-            anchors { horizontalCenter: parent.horizontalCenter }
+            anchors.horizontalCenter: parent.horizontalCenter
             fillMode: Image.PreserveAspectFit
         }
 
-        CoverLabel
+        Label
         {
-            id: clstatus
-            descriptionText: qsTr("Status:")
-
-            valueText: {
-                if(context.heartbeat.connected)
-                    return qsTr("Online");
-
-                return qsTr("Offline");
-            }
-
-            valueColor: {
-                if(context.heartbeat.connected)
-                    return "lime";
-
-                return "red";
-            }
+            width: parent.width
+            text: context.heartbeat.connected ? qsTr("Connected") : qsTr("Disconnected")
+            horizontalAlignment: Text.AlignHCenter
+            opacity: 0.8
         }
 
-        CoverLabel
+        Label
         {
-            id: clunreadmsgs
-            descriptionText: qsTr("Unread Messages:")
-            valueText: context.telegram.unreadCount
-            valueColor: context.telegram.unreadCount > 0 ? "yellow" : "lime"
+            width: parent.width
+            text: (context.telegram.unreadCount == 1) ? qsTr("%1 unread message").arg(context.telegram.unreadCount) : qsTr("%1 unread messages").arg(context.telegram.unreadCount)
+            visible: context.telegram.unreadCount > 0
+            wrapMode: Text.WordWrap
+            elide: Text.ElideRight
+            horizontalAlignment: Text.AlignHCenter
+            font.pixelSize: Theme.fontSizeExtraSmall
+            color: Theme.secondaryColor
         }
-
-        /*
-        CoverLabel
-        {
-            id: cllastmessageuser
-            //visible: context.lastMessage !== context.telegram.nullMessage
-            descriptionText: qsTr("Last Message By:")
-            valueColor: Theme.secondaryHighlightColor
-
-            valueText: {
-                if(context.lastMessage === context.telegram.nullMessage)
-                    return "";
-
-                var user = context.telegram.user(context.lastMessage.fromId);
-                return TelegramHelper.userName(user);
-            }
-        }
-        */
     }
 
     CoverActionList

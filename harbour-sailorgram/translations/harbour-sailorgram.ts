@@ -163,19 +163,19 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
 <context>
     <name>CoverPage</name>
     <message>
-        <source>Status:</source>
+        <source>Connected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Online</source>
+        <source>Disconnected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Offline</source>
+        <source>%1 unread messages</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unread Messages:</source>
+        <source>%1 unread message</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -272,6 +272,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>PeerItem</name>
     <message>
         <source>%1 members</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 member</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -176,19 +176,35 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>CoverPage</name>
     <message>
         <source>Status:</source>
-        <translation>Stato:</translation>
+        <translation type="vanished">Stato:</translation>
     </message>
     <message>
         <source>Online</source>
-        <translation>Online</translation>
+        <translation type="vanished">Online</translation>
     </message>
     <message>
         <source>Offline</source>
-        <translation>Offline</translation>
+        <translation type="vanished">Offline</translation>
     </message>
     <message>
         <source>Unread Messages:</source>
-        <translation>Messaggi Non Letti:</translation>
+        <translation type="vanished">Messaggi Non Letti:</translation>
+    </message>
+    <message>
+        <source>Connected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disconnected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 unread messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 unread message</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -293,6 +309,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <message>
         <source>%1 members</source>
         <translation>%1 membri</translation>
+    </message>
+    <message>
+        <source>%1 member</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
