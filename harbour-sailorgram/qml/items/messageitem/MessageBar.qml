@@ -28,6 +28,7 @@ Item
         {
             id: textarea
             width: parent.width - (btnselectmedia.visible ? btnselectmedia.width : btnsend.width)
+            anchors.verticalCenter: parent.verticalCenter
             placeholderText: qsTr("Message...")
             focusOutBehavior: FocusBehavior.KeepFocus
             font.pixelSize: Theme.fontSizeSmall
