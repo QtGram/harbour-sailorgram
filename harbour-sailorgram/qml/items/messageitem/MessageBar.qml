@@ -11,7 +11,7 @@ Item
     property Dialog dialog
 
     id: messagebar
-    height: context.heartbeat.connected ? textarea.height : Theme.itemSizeSmall
+    height: context.heartbeat.connected ? Math.max(textarea.height, btnselectmedia.height) : Theme.itemSizeSmall
 
     ConnectingLabel
     {
@@ -28,7 +28,7 @@ Item
         {
             id: textarea
             width: parent.width - (btnselectmedia.visible ? btnselectmedia.width : btnsend.width)
-            placeholderText: qsTr("Message") + "..."
+            placeholderText: qsTr("Message...")
             focusOutBehavior: FocusBehavior.KeepFocus
             font.pixelSize: Theme.fontSizeSmall
             labelVisible: false
@@ -57,7 +57,7 @@ Item
             icon.source: "image://theme/icon-m-attach"
 
             onClicked: {
-                var picker = pageStack.push(Qt.resolvedUrl("../pages/picker/FilePickerPage.qml"), { "rootPage": conversationpage });
+                var picker = pageStack.push(Qt.resolvedUrl("../../pages/picker/FilePickerPage.qml"), { "rootPage": conversationpage });
 
                 picker.filePicked.connect(function(file) {
                     context.telegram.sendFile(TelegramHelper.peerId(dialog.peer), file);

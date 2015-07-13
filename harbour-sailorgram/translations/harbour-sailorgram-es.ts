@@ -334,7 +334,11 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>MessageBar</name>
     <message>
         <source>Message</source>
-        <translation>Mensaje</translation>
+        <translation type="vanished">Mensaje</translation>
+    </message>
+    <message>
+        <source>Message...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -317,7 +317,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
 <context>
     <name>MessageBar</name>
     <message>
-        <source>Message</source>
+        <source>Message...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
