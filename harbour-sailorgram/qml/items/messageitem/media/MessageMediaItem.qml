@@ -35,7 +35,7 @@ Item
         return 0;
     }
 
-    readonly property string mediaPath: {
+    readonly property string mediaThumbnail: {
         if(!message.media)
             return "";
 
@@ -51,7 +51,22 @@ Item
             if(context.telegram.documentIsSticker(message.media.document))
                 return "image://theme/icon-m-other"; //FIXME: WebP: Not Supported (return filehandler.thumbPath);
 
-            return message.media.document.thumb.location.download.location;
+            var thumblocation = message.media.document.thumb.location.download.location;
+
+            if(!thumblocation) {
+                var type = message.media.document.mimeType.split("/")[0];
+
+                if(type === "video")
+                    return "image://theme/icon-l-video";
+
+                if(type === "audio")
+                    return "image://theme/icon-m-sounds";
+
+                if(type === "image")
+                    return "image://theme/icon-m-image";
+            }
+
+            return thumblocation;
         }
 
         return "";
@@ -95,8 +110,15 @@ Item
         onFilePathChanged: {
             var filepathstring = filePath.toString();
 
-            /* Do not move Photos in Downloads automatically */
-            if((filepathstring.length <= 0) || (progressPercent < 100) || context.sailorgram.fileIsPhoto(filepathstring))
+            if((filepathstring.length <= 0) || (progressPercent < 100) || isSticker || isUpload)
+                return;
+
+            if(targetType !== FileHandler.TypeTargetMediaDocument)
+                return;
+
+            var type = message.media.document.mimeType.split("/")[0];
+
+            if((type === "audio") || (type === "video") || (type === "image"))
                 return;
 
             context.sailorgram.moveMediaToDownloads(message.media);

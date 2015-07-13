@@ -11,6 +11,7 @@ QtObject
     id: context
 
     property TelegramLocalStorage telegramlocalstorage: TelegramLocalStorage { }
+    property ScreenBlank screenblank: ScreenBlank { }
     property Notifications notifications: Notifications { }
     property Dialog foregroundDialog: telegram.nullDialog
     property Message lastMessage: telegram.nullMessage

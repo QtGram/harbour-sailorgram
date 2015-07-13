@@ -57,6 +57,16 @@ bool SailorGram::fileIsPhoto(const QString &filepath)
     return mime.isValid() && (mime.name().split("/")[0] == "image");
 }
 
+bool SailorGram::fileIsVideo(const QString &filepath)
+{
+    if(filepath.isEmpty())
+        return false;
+
+    QUrl url(filepath);
+    QMimeType mime = this->_mimedb.mimeTypeForFile(url.path());
+    return mime.isValid() && (mime.name().split("/")[0] == "video");
+}
+
 QString SailorGram::fileName(const QString &filepath)
 {
     QUrl url(filepath);
@@ -99,9 +109,6 @@ FileLocationObject* SailorGram::mediaLocation(MessageMediaObject *messagemediaob
             break;
     }
 
-    if(!locationobj)
-        return NULL;
-
     return locationobj;
 }
 
@@ -119,6 +126,21 @@ void SailorGram::moveMediaToGallery(MessageMediaObject *messagemediaobject)
     if(!this->_telegram)
         return;
 
+    QString type;
     FileLocationObject* locationobj = this->mediaLocation(messagemediaobject);
-    this->moveMediaTo(locationobj, QStandardPaths::writableLocation(QStandardPaths::PicturesLocation));
+
+    if(messagemediaobject->classType() == MessageMedia::typeMessageMediaDocument)
+    {
+        QString mime = messagemediaobject->document()->mimeType();
+        type = mime.split("/")[0];
+    }
+
+    if((messagemediaobject->classType() == MessageMedia::typeMessageMediaVideo) || (type == "video"))
+        this->moveMediaTo(locationobj, QStandardPaths::writableLocation(QStandardPaths::MoviesLocation));
+    else if((messagemediaobject->classType() == MessageMedia::typeMessageMediaAudio) || (type == "audio"))
+        this->moveMediaTo(locationobj, QStandardPaths::writableLocation(QStandardPaths::MusicLocation));
+    else if((messagemediaobject->classType() == MessageMedia::typeMessageMediaPhoto) || (type == "image"))
+        this->moveMediaTo(locationobj, QStandardPaths::writableLocation(QStandardPaths::PicturesLocation));
+    else
+        this->moveMediaToDownloads(messagemediaobject); // Fallback to Downloads folder
 }

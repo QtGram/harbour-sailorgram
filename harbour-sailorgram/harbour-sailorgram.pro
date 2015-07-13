@@ -39,7 +39,8 @@ SOURCES += src/harbour-sailorgram.cpp \
     src/dbus/notifications/notifications.cpp \
     src/sailorgram.cpp \
     src/filepicker/folderlistmodel.cpp \
-    src/heartbeat.cpp
+    src/heartbeat.cpp \
+    src/dbus/screenblank.cpp
 
 OTHER_FILES += qml/harbour-sailorgram.qml \
     rpm/harbour-sailorgram.changes.in \
@@ -95,7 +96,15 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/components/telegram/TelegramPullDownMenu.qml \
     qml/pages/profile/ProfilePage.qml \
     qml/pages/profile/ChangeUsernamePage.qml \
-    qml/pages/media/MediaPhotoPage.qml
+    qml/pages/media/MediaPhotoPage.qml \
+    qml/components/mediaplayer/mediacomponents/MediaPlayerCursor.qml \
+    qml/components/mediaplayer/mediacomponents/MediaPlayerProgressBar.qml \
+    qml/components/mediaplayer/mediacomponents/MediaPlayerTimings.qml \
+    qml/components/mediaplayer/mediacomponents/MediaPlayerTitle.qml \
+    qml/components/mediaplayer/mediacomponents/MediaPlayerToolBar.qml \
+    qml/components/mediaplayer/MediaPlayer.qml \
+    qml/pages/media/MediaPlayerPage.qml \
+    qml/components/mediaplayer/mediacomponents/MediaPlayerLoadingBar.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line
@@ -119,7 +128,8 @@ HEADERS += \
     src/dbus/notifications/notifications.h \
     src/sailorgram.h \
     src/filepicker/folderlistmodel.h \
-    src/heartbeat.h
+    src/heartbeat.h \
+    src/dbus/screenblank.h
 
 RESOURCES += \
     resources.qrc

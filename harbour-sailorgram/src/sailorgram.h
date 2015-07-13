@@ -32,6 +32,7 @@ class SailorGram : public QObject
         void sleep();
         void wake();
         bool fileIsPhoto(const QString& filepath);
+        bool fileIsVideo(const QString& filepath);
         QString fileName(const QString& filepath);
         QSize imageSize(const QString& filepath);
         FileLocationObject *mediaLocation(MessageMediaObject* messagemediaobject);

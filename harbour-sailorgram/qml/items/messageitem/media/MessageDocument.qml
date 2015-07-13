@@ -24,7 +24,7 @@ MessageMediaItem
         MessageThumbnail
         {
             id: imgpreview
-            source: messagedocument.mediaPath || "image://theme/icon-m-document"
+            source: messagedocument.mediaThumbnail || "image://theme/icon-m-document"
             transferProgress: progressPercent
         }
 

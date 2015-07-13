@@ -13,34 +13,68 @@ ListItem
     property Context context
     property Message message
 
-    function downloadMedia() {
-        messageitem.remorseAction(qsTr("Downloading Media"), function() {
+    function remorseNeeded(mediatype, type) {
+        if((mediatype === TelegramConstants.typeMessageMediaVideo) || (mediatype === TelegramConstants.typeMessageMediaAudio))
+            return true;
+
+        if((type === "audio") || (type === "video"))
+            return true;
+
+        if((mediatype === TelegramConstants.typeMessageMediaDocument) && (type !== "image"))
+            return true;
+
+        return false;
+    }
+
+    function openOrDownloadMedia(canbeviewed, type) {
+        if(canbeviewed)
+            loader.item.fileHandler.target = messageitem.message; // Download Media
+
+        if((message.media.classType === TelegramConstants.typeMessageMediaPhoto) || (type === "image")) {
+            pageStack.push(Qt.resolvedUrl("../../pages/media/MediaPhotoPage.qml"), { "context": messageitem.context, "message": messageitem.message, "fileHandler": loader.item.fileHandler });
+            return;
+        }
+
+        if((message.media.classType === TelegramConstants.typeMessageMediaVideo) || (message.media.classType === TelegramConstants.typeMessageMediaAudio) || (type === "audio") || (type === "video")) {
+            pageStack.push(Qt.resolvedUrl("../../pages/media/MediaPlayerPage.qml"), { "context": messageitem.context, "message": messageitem.message, "fileHandler": loader.item.fileHandler });
+            return;
+        }
+
+        var path = loader.item.mediaPath;
+
+        if(!path.length) {
             loader.item.fileHandler.target = messageitem.message; // Set Target Object before download
-        });
+            return;
+        }
+
+        Qt.openUrlExternally(path);
     }
 
     function displayMedia() {
         if(!message.media)
             return;
 
-        var canbephoto = (message.media.classType === TelegramConstants.typeMessageMediaDocument) || (message.media.classType === TelegramConstants.typeMessageMediaPhoto);
+        var type = "";
+        var canbeviewed = (message.media.classType === TelegramConstants.typeMessageMediaPhoto) ||
+                          (message.media.classType === TelegramConstants.typeMessageMediaVideo) ||
+                          (message.media.classType === TelegramConstants.typeMessageMediaAudio);
 
-        if(canbephoto)
-            loader.item.fileHandler.target = messageitem.message; // Download Photo
+        if(message.media.classType === TelegramConstants.typeMessageMediaDocument) {
+            var mime = message.media.document.mimeType;
+            type = mime.split("/")[0];
+            canbeviewed = ((type === "video") || (type === "audio") || (type === "image")) ? true : false;
+        }
 
-        var path = loader.item.mediaPath;
+        var remorseneeded = remorseNeeded(message.media.classType, type);
 
-        if(canbephoto && context.sailorgram.fileIsPhoto(path)) {
-            pageStack.push(Qt.resolvedUrl("../../pages/media/MediaPhotoPage.qml"), { "context": messageitem.context, "message": messageitem.message, "fileHandler": loader.item.fileHandler });
+        if(!remorseneeded) {
+            openOrDownloadMedia(canbeviewed, type);
             return;
         }
 
-        if(!path.length) {
-            downloadMedia();
-            return;
-        }
-
-        Qt.openUrlExternally(path);
+        messageitem.remorseAction((canbeviewed ? qsTr("Opening Media") : qsTr("Downloading Media")), function() {
+            openOrDownloadMedia(canbeviewed, type);
+        });
     }
 
     id: messageitem

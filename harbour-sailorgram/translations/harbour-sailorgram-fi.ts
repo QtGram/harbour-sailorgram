@@ -221,6 +221,17 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
 </context>
 <context>
+    <name>MediaPlayerToolBar</name>
+    <message>
+        <source>Downloading media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image saved in Gallery</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MessageBar</name>
     <message>
         <source>Message</source>
@@ -232,6 +243,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <message>
         <source>Downloading Media</source>
         <translation>Ladataan mediaa...</translation>
+    </message>
+    <message>
+        <source>Opening Media</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
