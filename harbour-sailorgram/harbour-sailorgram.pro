@@ -54,7 +54,7 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/js/Settings.js \
     qml/items/user/UserItem.qml \
     qml/js/CountryList.js \
-    qml/components/MessageBar.qml \
+    qml/items/messageitem/MessageBar.qml \
     qml/items/conversation/ConversationItem.qml \
     qml/items/messageitem/MessageItem.qml \
     qml/js/TelegramHelper.js \
