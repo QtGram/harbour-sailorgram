@@ -9,7 +9,6 @@ Item
 {
     property bool actionVisible: false
     property Context context
-    property Telegram telegram
     property User user
 
     id: userinfo
@@ -38,7 +37,7 @@ Item
             height: Theme.itemSizeSmall
             labelFont.pixelSize: Theme.fontSizeSmall
             labelText: qsTr("Send Message")
-            onActionRequested: pageStack.replace(Qt.resolvedUrl("../../pages/conversations/ConversationPage.qml"), { "context": context, "dialog": telegram.fakeDialogObject(user.id, false) } )
+            onActionRequested: pageStack.replace(Qt.resolvedUrl("../../pages/conversations/ConversationPage.qml"), { "context": context, "dialog": context.telegram.fakeDialogObject(user.id, false) } )
         }
     }
 }

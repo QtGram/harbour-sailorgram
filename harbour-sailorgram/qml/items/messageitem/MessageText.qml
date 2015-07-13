@@ -28,7 +28,7 @@ Item
             font.pixelSize: TelegramHelper.isServiceMessage(message) ? Theme.fontSizeExtraSmall : Theme.fontSizeSmall
             font.italic: TelegramHelper.isServiceMessage(message)
             horizontalAlignment: TelegramHelper.isServiceMessage(message) ? Text.AlignHCenter : (message.out ? Text.AlignLeft : Text.AlignRight)
-            text: TelegramHelper.isServiceMessage(message) ? TelegramAction.actionType(telegram, message) : messageitem.message.message
+            text: TelegramHelper.isServiceMessage(message) ? TelegramAction.actionType(context.telegram, message) : messageitem.message.message
             verticalAlignment: Text.AlignTop
             wrapMode: Text.WordWrap
             visible: text.length > 0

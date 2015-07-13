@@ -30,6 +30,7 @@ Item
             width: parent.width - (btnselectmedia.visible ? btnselectmedia.width : btnsend.width)
             placeholderText: qsTr("Message") + "..."
             focusOutBehavior: FocusBehavior.KeepFocus
+            font.pixelSize: Theme.fontSizeSmall
             labelVisible: false
         }
 

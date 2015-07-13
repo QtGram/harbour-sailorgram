@@ -12,7 +12,6 @@ Page
 {
     property bool actionVisible: true
     property Context context
-    property Telegram telegram
     property Dialog dialog
     property Chat chat
     property User user
@@ -26,7 +25,6 @@ Page
         UserInfo {
             actionVisible: false
             context: conversationinfopage.context
-            telegram: conversationinfopage.telegram
             user: conversationinfopage.user
         }
     }
@@ -36,7 +34,6 @@ Page
 
         ChatInfo {
             context: conversationinfopage.context
-            telegram: conversationinfopage.telegram
             dialog: conversationinfopage.dialog
             chat: conversationinfopage.chat
         }

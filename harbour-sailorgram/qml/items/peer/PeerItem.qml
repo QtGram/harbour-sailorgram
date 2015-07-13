@@ -45,9 +45,15 @@ Item
             Label
             {
                 id: lblinfo
-                text: TelegramHelper.isChat(dialog) ? qsTr("%1 members").arg(chat.participantsCount.toString()) : TelegramHelper.userStatus(user)
                 font.pixelSize: Theme.fontSizeExtraSmall
                 color: Theme.highlightColor
+
+                text: {
+                    if(TelegramHelper.isChat(dialog))
+                        return chat.participantsCount === 1 ? qsTr("%1 member").arg(chat.participantsCount) : qsTr("%1 members").arg(chat.participantsCount);
+
+                    return TelegramHelper.userStatus(user);
+                }
             }
         }
     }

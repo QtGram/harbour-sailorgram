@@ -9,14 +9,13 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 Item
 {
     property Context context
-    property Telegram telegram
     property Dialog dialog
     property Chat chat
-    property ChatFull chatFull: telegram.chatFull(chat.id)
+    property ChatFull chatFull: context.telegram.chatFull(chat.id)
     property bool adminMenu: false
 
     onChatFullChanged: {
-        adminMenu = chatFull.participants.adminId === telegram.me;
+        adminMenu = (chatFull.participants.adminId === context.telegram.me);
     }
 
     id: chatinfo
@@ -34,18 +33,18 @@ Item
 
         model: ChatParticipantsModel {
             id: chatparticipantsmodel
-            telegram: chatinfo.telegram
+            telegram: context.telegram
             dialog: chatinfo.dialog
         }
 
         delegate: ListItem {
             property ChatParticipant participant: item
-            property User user: telegram.user(participant.userId)
+            property User user: context.telegram.user(participant.userId)
 
             id: liparticipant
             contentWidth: parent.width
             contentHeight: Theme.itemSizeSmall
-            showMenuOnPressAndHold: adminMenu && (user.id !== telegram.me)
+            showMenuOnPressAndHold: adminMenu && (user.id !== context.telegram.me)
 
             menu: ChatInfoMenu {
                 context: chatinfo.context
@@ -56,6 +55,7 @@ Item
             UserItem {
                 id: useritem
                 anchors { fill: parent; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
+                context: chatinfo.context
                 user: liparticipant.user
             }
         }
