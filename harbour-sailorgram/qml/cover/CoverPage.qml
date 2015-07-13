@@ -37,7 +37,7 @@ CoverBackground
         Label
         {
             width: parent.width
-            text: context.heartbeat.connected ? qsTr("Connected") : qsTr("Disconnected")
+            text: !context.heartbeat.connected ? qsTr("Disconnected") : qsTr("Connected")
             horizontalAlignment: Text.AlignHCenter
             opacity: 0.8
         }
