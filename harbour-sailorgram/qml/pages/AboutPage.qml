@@ -65,7 +65,7 @@ Page
                 anchors.horizontalCenter: parent.horizontalCenter
                 width: 86
                 height: 86
-                source: "qrc:///res/telegramcover.png"
+                source: "qrc:///res/telegram.png"
             }
 
             Label
