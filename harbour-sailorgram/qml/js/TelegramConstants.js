@@ -25,6 +25,13 @@ var typeMessageMediaAudio = 0xc6b68300;
 var typeMessageMediaPhoto = 0xc8c45a2a;
 var typeMessageMediaGeo = 0x56e0d474;
 
+/* Secret Chat Constants */
+var typeEncryptedChatWaiting = 0x3bf703dc;
+var typeEncryptedChatRequested = 0xc878527e;
+var typeEncryptedChatEmpty = 0xab7ec0a0;
+var typeEncryptedChatDiscarded = 0x13d6dd27;
+var typeEncryptedChat = 0xfa56ce36;
+
 /* Peer Constants */
 var typePeerUser = 0x9db1bc6d;
 var typePeerChat = 0xbad0e5bb;

@@ -14,12 +14,12 @@ TelegramPullDownMenu
 
     MenuItem
     {
-        text: conversationpage.muted ? qsTr("Enable Notifications") : qsTr("Disable Notifications")
+        text: secretconversationpage.muted ? qsTr("Enable Notifications") : qsTr("Disable Notifications")
 
         onClicked: {
             var peerid = TelegramHelper.peerId(dialog.peer);
 
-            if(conversationpage.muted)
+            if(secretconversationpage.muted)
                 context.telegram.userData.removeMute(peerid);
             else
                 context.telegram.userData.addMute(peerid);
@@ -32,8 +32,12 @@ TelegramPullDownMenu
         visible: !TelegramHelper.isChat(dialog)
 
         onClicked: {
-            remorsepopup.execute(qsTr("Deleting History"), function() {
-                context.telegram.messagesDeleteHistory(TelegramHelper.peerId(dialog.peer));
+            remorsepopup.execute(dialog.encrypted ? qsTr("Deleting Secret Chat") : qsTr("Deleting History"), function() {
+                if(dialog.encrypted)
+                    context.telegram.messagesDiscardEncryptedChat(dialog.peer.userId);
+                else
+                    context.telegram.messagesDeleteHistory(TelegramHelper.peerId(dialog.peer));
+
                 pageStack.pop();
             });
         }

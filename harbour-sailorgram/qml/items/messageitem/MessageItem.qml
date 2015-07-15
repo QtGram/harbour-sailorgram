@@ -118,8 +118,8 @@ ListItem
         {
             id: lbluser
             anchors { left: message.out ? parent.left : undefined; right: message.out ? undefined : parent.right }
-            visible: !TelegramHelper.isServiceMessage(message) && !message.out
-            text: (!TelegramHelper.isServiceMessage(message) && message.out) ? "" : TelegramHelper.userName(context.telegram.user(message.fromId))
+            visible: !TelegramHelper.isActionMessage(message) && !message.out
+            text: (!TelegramHelper.isActionMessage(message) && message.out) ? "" : TelegramHelper.userName(context.telegram.user(message.fromId))
             font.bold: true
             font.pixelSize: Theme.fontSizeMedium
             wrapMode: Text.NoWrap

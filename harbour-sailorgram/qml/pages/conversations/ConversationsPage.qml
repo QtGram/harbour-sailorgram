@@ -42,6 +42,8 @@ Page
 {
     property Context context
     property Telegram telegram
+    property Component conversationItemComponent
+    property Component secretConversationItemComponent;
 
     id: conversationspage
     allowedOrientations: defaultAllowedOrientations
@@ -116,24 +118,55 @@ Page
             id: dialogitem
             contentWidth: parent.width
             contentHeight: Theme.itemSizeSmall
-            onClicked: pageStack.push(Qt.resolvedUrl("ConversationPage.qml"), { "context": conversationspage.context, "telegram": conversationspage.telegram, "dialog": item })
+
+            onClicked: {
+                if(item.encrypted) {
+                    pageStack.push(Qt.resolvedUrl("../secretconversations/SecretConversationPage.qml"), { "context": conversationspage.context, "telegram": conversationspage.telegram, "dialog": item });
+                    return;
+                }
+
+                pageStack.push(Qt.resolvedUrl("ConversationPage.qml"), { "context": conversationspage.context, "telegram": conversationspage.telegram, "dialog": item })
+            }
 
             menu: ContextMenu {
                 MenuItem {
                     text: qsTr("Delete History")
 
                     onClicked: {
-                        dialogitem.remorseAction(qsTr("Deleting History"), function() {
-                            telegram.messagesDeleteHistory(TelegramHelper.peerId(item.peer));
+                        dialogitem.remorseAction(item.encrypted ? qsTr("Deleting Secret Chat") : qsTr("Deleting History"), function() {
+                            if(item.encrypted)
+                                telegram.messagesDiscardEncryptedChat(item.peer.userId);
+                            else
+                                telegram.messagesDeleteHistory(TelegramHelper.peerId(item.peer));
                         });
                     }
                 }
             }
 
-            ConversationItem {
-                anchors.fill: parent
-                context: conversationspage.context
-                dialog: item
+            Component.onCompleted: {
+                if(!item.encrypted && !conversationItemComponent) {
+                    conversationItemComponent = Qt.createComponent("../../items/conversation/ConversationItem.qml");
+
+                    if(conversationItemComponent.status === Component.Error) {
+                        console.log(conversationItemComponent.errorString());
+                        return;
+                    }
+                }
+                else if(item.encrypted && !secretConversationItemComponent) {
+                    secretConversationItemComponent = Qt.createComponent("../../items/secretconversation/SecretConversationItem.qml");
+
+                    if(secretConversationItemComponent.status === Component.Error) {
+                        console.log(secretConversationItemComponent.errorString());
+                        return;
+                    }
+                }
+
+                var c = !item.encrypted ? conversationItemComponent : secretConversationItemComponent;
+                var obj = c.createObject(dialogitem);
+
+                obj.anchors.fill = dialogitem;
+                obj.context = conversationspage.context;
+                obj.dialog = item;
             }
         }
     }

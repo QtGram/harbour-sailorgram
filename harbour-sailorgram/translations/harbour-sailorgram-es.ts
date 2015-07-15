@@ -190,6 +190,10 @@ Minimum length is 5 characters.</source>
         <source>Leaving Group</source>
         <translation>Dejando grupo</translation>
     </message>
+    <message>
+        <source>Deleting Secret Chat</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConversationsPage</name>
@@ -222,18 +226,8 @@ Elije un contacto pulsando en &quot;Contactos&quot; desde el menú desplegable</
         <translation>Conversaciones</translation>
     </message>
     <message>
-        <source>No Chats
-
-Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Connecting</source>
         <translation type="obsolete">Conectando</translation>
-    </message>
-    <message>
-        <source>Connecting...</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Settings</source>
@@ -243,12 +237,26 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>No Chats
+
+Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connecting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting Secret Chat</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConversationsPullDownMenu</name>
     <message>
         <source>Create Group</source>
-        <translation>Crear grupo</translation>
+        <translation type="vanished">Crear grupo</translation>
     </message>
     <message>
         <source>Contacts</source>
@@ -257,6 +265,14 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <message>
         <source>Profile</source>
         <translation type="unfinished">Perfil</translation>
+    </message>
+    <message>
+        <source>New Secret Chat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New Group</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -286,11 +302,22 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>CreateChatPage</name>
     <message>
         <source>Create Group</source>
-        <translation>Crear grupo</translation>
+        <translation type="vanished">Crear grupo</translation>
     </message>
     <message>
         <source>Group Name</source>
         <translation>Nombre del grupo</translation>
+    </message>
+    <message>
+        <source>New Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CreateSecretChatPage</name>
+    <message>
+        <source>New Secret Chat</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

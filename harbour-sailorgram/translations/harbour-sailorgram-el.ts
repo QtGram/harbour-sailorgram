@@ -190,6 +190,10 @@ Minimum length is 5 characters.</source>
         <source>Leaving Group</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Deleting Secret Chat</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConversationsPage</name>
@@ -214,26 +218,8 @@ Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source
         <translation>Το ιστορικό διαγράφεται</translation>
     </message>
     <message>
-        <source>Groups</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Conversations</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>No Chats
-
-Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Connecting</source>
         <translation type="obsolete">Συνδέοντας</translation>
-    </message>
-    <message>
-        <source>Connecting...</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Settings</source>
@@ -243,13 +229,31 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>No Chats
+
+Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Conversations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connecting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting Secret Chat</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConversationsPullDownMenu</name>
-    <message>
-        <source>Create Group</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Contacts</source>
         <translation type="unfinished">Επαφές</translation>
@@ -257,6 +261,14 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <message>
         <source>Profile</source>
         <translation type="unfinished">Προφίλ</translation>
+    </message>
+    <message>
+        <source>New Secret Chat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New Group</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -285,11 +297,18 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
 <context>
     <name>CreateChatPage</name>
     <message>
-        <source>Create Group</source>
+        <source>Group Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Group Name</source>
+        <source>New Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CreateSecretChatPage</name>
+    <message>
+        <source>New Secret Chat</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

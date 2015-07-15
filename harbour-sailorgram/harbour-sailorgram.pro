@@ -16,7 +16,7 @@ CONFIG += sailfishapp
 QT += sql dbus
 
 LIBS += -L$$OUT_PWD/../libqtelegram-ae -L$$OUT_PWD/../telegramqml -lssl -lcrypto -lz -lqtelegram-ae -ltelegramqml
-INCLUDEPATH += $$PWD/../telegramqml $$PWD/../libqtelegram-ae
+INCLUDEPATH +=  /usr/include/openssl $$PWD/../telegramqml $$PWD/../libqtelegram-ae
 
 # TelegramQml
 libtelegram_qml.files = $$OUT_PWD/../telegramqml/*.so*
@@ -107,7 +107,11 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/components/mediaplayer/mediacomponents/MediaPlayerLoadingBar.qml \
     qml/components/ConnectionStatus.qml \
     qml/pages/AboutPage.qml \
-    qml/components/InfoLabel.qml
+    qml/components/InfoLabel.qml \
+    qml/pages/secretchat/CreateSecretChatPage.qml \
+    qml/pages/secretconversations/SecretConversationPage.qml \
+    qml/items/secretconversation/SecretConversationItem.qml \
+    qml/components/TelegramBackground.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

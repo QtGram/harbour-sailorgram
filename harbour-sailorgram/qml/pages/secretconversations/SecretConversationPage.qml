@@ -13,30 +13,30 @@ Page
 {
     property Context context
     property Dialog dialog
-    property Chat chat
+    property EncryptedChat chat
     property User user
     property bool muted: context.telegram.userData.isMuted(TelegramHelper.peerId(dialog.peer))
 
-    id: conversationpage
+    id: secretconversationpage
     allowedOrientations: defaultAllowedOrientations
 
     Component.onCompleted: {
-        if(TelegramHelper.isChat(dialog))
-            chat = context.telegram.chat(dialog.peer.chatId);
-        else
-            user = context.telegram.user(dialog.peer.userId);
+        chat = context.telegram.encryptedChat(dialog.peer.userId);
+
+        var userid = (chat.adminId === context.telegram.me) ? chat.participantId : chat.adminId;
+        user = context.telegram.user(userid);
     }
 
     onStatusChanged: {
         if(status !== PageStatus.Active)
             return;
 
-        pageStack.pushAttached(Qt.resolvedUrl("ConversationInfoPage.qml"), { "context": conversationpage.context, "dialog": conversationpage.dialog, "chat": conversationpage.chat, "user": conversationpage.user });
-        context.foregroundDialog = conversationpage.dialog;
+        //pageStack.pushAttached(Qt.resolvedUrl("ConversationInfoPage.qml"), { "context": secretconversationpage.context, "dialog": secretconversationpage.dialog, "chat": secretconversationpage.chat, "user": secretconversationpage.user });
+        context.foregroundDialog = secretconversationpage.dialog;
 
         messagemodel.setReaded();
-        messagemodel.telegram = conversationpage.context.telegram;
-        messagemodel.dialog = conversationpage.dialog;
+        messagemodel.telegram = secretconversationpage.context.telegram;
+        messagemodel.dialog = secretconversationpage.dialog;
     }
 
     RemorsePopup { id: remorsepopup }
@@ -66,7 +66,7 @@ Page
             if(id !== peerid)
                 return;
 
-            conversationpage.muted = context.telegram.userData.isMuted(peerid);
+            secretconversationpage.muted = context.telegram.userData.isMuted(peerid);
         }
     }
 
@@ -78,8 +78,8 @@ Page
         ConversationMenu
         {
             id: conversationmenu
-            context: conversationpage.context
-            dialog: conversationpage.dialog
+            context: secretconversationpage.context
+            dialog: secretconversationpage.dialog
         }
 
         PeerItem
@@ -87,10 +87,9 @@ Page
             id: header
             anchors { left: parent.left; top: parent.top; right: parent.right; leftMargin: Theme.horizontalPageMargin; topMargin: Theme.paddingMedium }
             height: Theme.itemSizeSmall
-            context: conversationpage.context
-            dialog: conversationpage.dialog
-            chat: conversationpage.chat
-            user: conversationpage.user
+            context: secretconversationpage.context
+            dialog: secretconversationpage.dialog
+            user: secretconversationpage.user
         }
 
         SilicaListView
@@ -119,7 +118,7 @@ Page
             }
 
             delegate: MessageItem {
-                context: conversationpage.context
+                context: secretconversationpage.context
                 message: item
             }
         }
@@ -128,8 +127,8 @@ Page
         {
             id: messagebar
             anchors { left: parent.left; bottom: parent.bottom; right: parent.right }
-            context: conversationpage.context
-            dialog: conversationpage.dialog
+            context: secretconversationpage.context
+            dialog: secretconversationpage.dialog
         }
     }
 }

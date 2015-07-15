@@ -36,6 +36,7 @@ QtObject
         appHash: "5ce096f34c8afab871edce728e6d64c9"
         configPath: telegramlocalstorage.telegramConfigPath
         publicKeyFile: telegramlocalstorage.telegramPublicKey
+        autoCleanUpMessages: true
 
         onConnectedChanged: {
             if(connected)

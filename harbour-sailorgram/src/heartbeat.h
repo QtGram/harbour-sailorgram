@@ -5,6 +5,7 @@
 #include <QTimer>
 #include <QTcpSocket>
 #include <QThread>
+#include <telegram.h>
 #include <telegramqml.h>
 
 class HeartBeat : public QThread
@@ -32,7 +33,7 @@ class HeartBeat : public QThread
         void telegramChanged();
 
     private:
-        bool _connected;
+        int _connected;
         int _interval;
         TelegramQml* _telegram;
 };

@@ -20,7 +20,14 @@ PullDownMenu
 
     TelegramMenuItem
     {
-        text: qsTr("Create Group")
+        text: qsTr("New Secret Chat")
+        context: conversationspulldownmenu.context
+        onClicked: pageStack.push(Qt.resolvedUrl("../../pages/secretchat/CreateSecretChatPage.qml"), { "context": conversationspulldownmenu.context })
+    }
+
+    TelegramMenuItem
+    {
+        text: qsTr("New Group")
         context: conversationspulldownmenu.context
         onClicked: pageStack.push(Qt.resolvedUrl("../../pages/chat/CreateChatPage.qml"), { "context": conversationspulldownmenu.context })
     }

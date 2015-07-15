@@ -36,7 +36,7 @@ Dialog
         DialogHeader
         {
             id: dlgheader
-            acceptText: qsTr("Create Group")
+            acceptText: qsTr("New Group")
         }
 
         TextField
@@ -67,7 +67,7 @@ Dialog
 
                 UserItem {
                     id: useritem
-                    anchors { left: parent.left; top: parent.top; right: swselectcontact.right; bottom: parent.bottom; leftMargin: Theme.paddingMedium }
+                    anchors { left: parent.left; top: parent.top; right: swselectcontact.right; bottom: parent.bottom; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
                     context: dlgcreatechat.context
                     user: context.telegram.user(item.userId)
                 }

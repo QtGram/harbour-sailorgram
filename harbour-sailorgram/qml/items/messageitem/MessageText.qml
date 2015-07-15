@@ -24,11 +24,11 @@ Item
             id: lbltext
             anchors { left: message.out ? parent.left : undefined; right: message.out ? undefined : parent.right }
             width: parent.width
-            color: TelegramHelper.isServiceMessage(message) ? Theme.secondaryHighlightColor : (message.out ? Theme.highlightColor : Theme.primaryColor)
-            font.pixelSize: TelegramHelper.isServiceMessage(message) ? Theme.fontSizeExtraSmall : Theme.fontSizeSmall
-            font.italic: TelegramHelper.isServiceMessage(message)
-            horizontalAlignment: TelegramHelper.isServiceMessage(message) ? Text.AlignHCenter : (message.out ? Text.AlignLeft : Text.AlignRight)
-            text: TelegramHelper.isServiceMessage(message) ? TelegramAction.actionType(context.telegram, message) : messageitem.message.message
+            color: TelegramHelper.isActionMessage(message) ? Theme.secondaryHighlightColor : (message.out ? Theme.highlightColor : Theme.primaryColor)
+            font.pixelSize: TelegramHelper.isActionMessage(message) ? Theme.fontSizeExtraSmall : Theme.fontSizeSmall
+            font.italic: TelegramHelper.isActionMessage(message)
+            horizontalAlignment: TelegramHelper.isActionMessage(message) ? Text.AlignHCenter : (message.out ? Text.AlignLeft : Text.AlignRight)
+            text: TelegramHelper.isActionMessage(message) ? TelegramAction.actionType(context.telegram, message) : messageitem.message.message
             verticalAlignment: Text.AlignTop
             wrapMode: Text.WordWrap
             visible: text.length > 0
@@ -42,10 +42,11 @@ Item
             Image
             {
                 id: imgstatus
-                visible: message.out && !TelegramHelper.isServiceMessage(message)
+                visible: message.out && !TelegramHelper.isActionMessage(message)
                 fillMode: Image.PreserveAspectFit
                 width: lbldate.contentHeight
                 height: lbldate.contentHeight
+
                 source: {
                     if(!message.unread)
                         return "qrc:///res/read.png";
@@ -64,7 +65,7 @@ Item
                 verticalAlignment: Text.AlignBottom
                 horizontalAlignment: message.out ? Text.AlignLeft : Text.AlignRight
                 text: TelegramCalendar.timeToString(message.date)
-                visible: !TelegramHelper.isServiceMessage(message)
+                visible: !TelegramHelper.isActionMessage(message)
             }
         }
     }

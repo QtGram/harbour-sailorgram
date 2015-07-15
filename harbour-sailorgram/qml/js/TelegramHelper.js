@@ -47,8 +47,14 @@ function isChat(dialog)
     return dialog.peer.classType === TelegramConstants.typePeerChat;
 }
 
-function isServiceMessage(message) {
-    return message.classType === TelegramConstants.typeMessageService;
+function isActionMessage(message) {
+    if(message.classType === TelegramConstants.typeMessageService)
+        return true;
+
+    if(message.action && (message.action.classType !== TelegramConstants.typeMessageActionEmpty))
+        return true;
+
+    return false;
 }
 
 function peerId(peer)

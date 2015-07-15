@@ -7,5 +7,6 @@
         <file>res/sent.png</file>
         <file>res/telegramcover.png</file>
         <file>res/download.png</file>
+        <file>res/telegrambackground.png</file>
     </qresource>
 </RCC>

@@ -1,6 +1,6 @@
 #include "heartbeat.h"
 
-HeartBeat::HeartBeat(QObject *parent): QThread(parent), _connected(false), _interval(0), _telegram(NULL)
+HeartBeat::HeartBeat(QObject *parent): QThread(parent), _connected(-1), _interval(0), _telegram(NULL)
 {
 
 }
@@ -12,6 +12,14 @@ int HeartBeat::interval() const
 
 bool HeartBeat::connected() const
 {
+    if(this->_connected == -1)
+    {
+        if(this->_telegram && this->_telegram->telegram())
+            return this->_telegram->telegram()->isConnected();
+
+        return false;
+    }
+
     return this->_connected;
 }
 
@@ -46,7 +54,7 @@ void HeartBeat::run()
         socket.connectToHost(this->_telegram->defaultHostAddress(), this->_telegram->defaultHostPort());
         socket.waitForConnected(this->_interval / 2);
 
-        bool connected = (socket.state() == QAbstractSocket::ConnectedState);
+        int connected = (socket.state() == QAbstractSocket::ConnectedState);
 
         if(this->_connected != connected)
         {

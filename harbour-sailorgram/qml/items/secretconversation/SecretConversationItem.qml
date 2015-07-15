@@ -7,21 +7,24 @@ import "../../items/peer"
 import "../../items/user"
 import "../../js/TelegramHelper.js" as TelegramHelper
 import "../../js/TelegramAction.js" as TelegramAction
+import "../../js/TelegramConstants.js" as TelegramConstants
 
 Item
 {
     property Context context
     property Dialog dialog
     property User user
-    property Chat chat
+    property EncryptedChat chat
     property Message message
 
     onDialogChanged: {
-        if(TelegramHelper.isChat(dialog))
-            chat = context.telegram.chat(dialog.peer.chatId);
-        else
-            user = context.telegram.user(dialog.peer.userId);
+        chat = context.telegram.encryptedChat(dialog.peer.userId);
 
+        if(chat.classType === TelegramConstants.typeEncryptedChatRequested) /* Emulate Android Client: Auto accept encrypted chats */
+            context.telegram.messagesAcceptEncryptedChat(dialog.peer.userId);
+
+        var userid = (chat.adminId === context.telegram.me) ? chat.participantId : chat.adminId;
+        user = context.telegram.user(userid);
         message = context.telegram.message(dialog.topMessage);
     }
 
@@ -48,7 +51,7 @@ Item
             height: conversationitem.height
             context: conversationitem.context
             dialog: conversationitem.dialog
-            chat: conversationitem.chat
+            //chat: conversationitem.chat
             user: conversationitem.user
         }
 
@@ -65,7 +68,7 @@ Item
                 Label {
                     id: lbluser
                     width: parent.width - lbltime.width
-                    text: TelegramHelper.isChat(dialog) ? chat.title : TelegramHelper.userName(user)
+                    text: TelegramHelper.userName(user)
                     verticalAlignment: Text.AlignVCenter
                     height: parent.height
                     color: Theme.highlightColor
