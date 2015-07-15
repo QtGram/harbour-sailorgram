@@ -57,12 +57,12 @@ function isActionMessage(message) {
     return false;
 }
 
-function peerId(peer)
+function peerId(dialog)
 {
-    if(peer.classType === TelegramConstants.typePeerChat)
-        return peer.chatId;
+    if(dialog.peer.classType === TelegramConstants.typePeerChat)
+        return dialog.peer.chatId;
 
-    return peer.userId;
+    return dialog.peer.userId;
 }
 
 function messageContent(message)

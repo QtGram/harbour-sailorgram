@@ -14,10 +14,10 @@ TelegramPullDownMenu
 
     MenuItem
     {
-        text: secretconversationpage.muted ? qsTr("Enable Notifications") : qsTr("Disable Notifications")
+        text: parent.muted ? qsTr("Enable Notifications") : qsTr("Disable Notifications")
 
         onClicked: {
-            var peerid = TelegramHelper.peerId(dialog.peer);
+            var peerid = TelegramHelper.peerId(dialog);
 
             if(secretconversationpage.muted)
                 context.telegram.userData.removeMute(peerid);
@@ -36,7 +36,7 @@ TelegramPullDownMenu
                 if(dialog.encrypted)
                     context.telegram.messagesDiscardEncryptedChat(dialog.peer.userId);
                 else
-                    context.telegram.messagesDeleteHistory(TelegramHelper.peerId(dialog.peer));
+                    context.telegram.messagesDeleteHistory(TelegramHelper.peerId(dialog));
 
                 pageStack.pop();
             });
@@ -50,7 +50,7 @@ TelegramPullDownMenu
 
         onClicked: {
             remorsepopup.execute(qsTr("Leaving Group"), function() {
-                var peerid = TelegramHelper.peerId(dialog.peer);
+                var peerid = TelegramHelper.peerId(dialog);
                 context.telegram.messagesDeleteChatUser(peerid, context.telegram.me);
                 context.telegram.messagesDeleteHistory(peerid);
                 pageStack.pop();

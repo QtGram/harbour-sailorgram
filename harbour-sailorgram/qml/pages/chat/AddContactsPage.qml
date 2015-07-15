@@ -39,7 +39,7 @@ Page
             }
 
             onClicked: {
-                context.telegram.messagesAddChatUser(TelegramHelper.peerId(dialog.peer), item.userId);
+                context.telegram.messagesAddChatUser(TelegramHelper.peerId(dialog), item.userId);
                 pageStack.pop();
             }
         }

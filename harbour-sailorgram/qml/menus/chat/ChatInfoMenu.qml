@@ -18,7 +18,7 @@ ContextMenu
 
         onClicked: {
             liparticipant.remorseAction(qsTr("Removing from group"), function() {
-                context.telegram.messagesDeleteChatUser(TelegramHelper.peerId(dialog.peer), user.id);
+                context.telegram.messagesDeleteChatUser(TelegramHelper.peerId(dialog), user.id);
             });
         }
     }

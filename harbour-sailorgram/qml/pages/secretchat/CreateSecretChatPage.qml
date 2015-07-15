@@ -36,7 +36,11 @@ Page
             delegate: ListItem {
                 contentWidth: parent.width
                 contentHeight: Theme.itemSizeSmall
-                onClicked: context.telegram.messagesCreateEncryptedChat(item.userId)
+
+                onClicked: {
+                    context.telegram.messagesCreateEncryptedChat(item.userId)
+                    pageStack.pop();
+                }
 
                 UserItem {
                     id: useritem

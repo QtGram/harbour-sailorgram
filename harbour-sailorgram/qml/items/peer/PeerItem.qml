@@ -30,17 +30,34 @@ Item
     {
         anchors { left: peerimage.right; top: parent.top; right: parent.right; leftMargin: Theme.paddingSmall }
 
-        Label
+        Row
         {
-            id: lbltitle
+            id: rowtitle
             width: parent.width
-            elide: Text.ElideRight
-            text: TelegramHelper.isChat(dialog) ? chat.title : TelegramHelper.userName(user)
+            height: lbltitle.contentHeight
+            spacing: Theme.paddingSmall
+
+            Image
+            {
+                id: imgsecure
+                source: "image://theme/icon-s-secure"
+                anchors.verticalCenter: lbltitle.verticalCenter
+                fillMode: Image.PreserveAspectFit
+                visible: peeritem.dialog.encrypted
+            }
+
+            Label
+            {
+                id: lbltitle
+                width: parent.width
+                elide: Text.ElideRight
+                text: TelegramHelper.isChat(dialog) ? chat.title : TelegramHelper.userName(user)
+            }
         }
 
         Row
         {
-            height: peeritem.height - lbltitle.contentHeight
+            height: peeritem.height - rowtitle.height
 
             Label
             {

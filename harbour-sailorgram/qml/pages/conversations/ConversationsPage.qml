@@ -137,7 +137,7 @@ Page
                             if(item.encrypted)
                                 telegram.messagesDiscardEncryptedChat(item.peer.userId);
                             else
-                                telegram.messagesDeleteHistory(TelegramHelper.peerId(item.peer));
+                                telegram.messagesDeleteHistory(TelegramHelper.peerId(item));
                         });
                     }
                 }
@@ -162,11 +162,7 @@ Page
                 }
 
                 var c = !item.encrypted ? conversationItemComponent : secretConversationItemComponent;
-                var obj = c.createObject(dialogitem);
-
-                obj.anchors.fill = dialogitem;
-                obj.context = conversationspage.context;
-                obj.dialog = item;
+                c.createObject(contentItem, {"width": dialogitem.contentWidth, "height": dialogitem.contentHeight, "context": conversationspage.context, "dialog": item });
             }
         }
     }

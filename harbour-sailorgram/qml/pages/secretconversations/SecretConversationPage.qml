@@ -15,7 +15,7 @@ Page
     property Dialog dialog
     property EncryptedChat chat
     property User user
-    property bool muted: context.telegram.userData.isMuted(TelegramHelper.peerId(dialog.peer))
+    property bool muted: context.telegram.userData.isMuted(TelegramHelper.peerId(dialog))
 
     id: secretconversationpage
     allowedOrientations: defaultAllowedOrientations
@@ -61,7 +61,7 @@ Page
         target: context.telegram.userData
 
         onMuteChanged: {
-            var peerid = TelegramHelper.peerId(dialog.peer);
+            var peerid = TelegramHelper.peerId(dialog);
 
             if(id !== peerid)
                 return;

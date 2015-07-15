@@ -64,10 +64,19 @@ Item
             {
                 height: conversationitem.height / 2
                 anchors { left: parent.left; right: parent.right; rightMargin: Theme.paddingMedium }
+                spacing: Theme.paddingSmall
+
+                Image
+                {
+                    id: imgsecure
+                    source: "image://theme/icon-s-secure"
+                    anchors.verticalCenter: parent.verticalCenter
+                    fillMode: Image.PreserveAspectFit
+                }
 
                 Label {
                     id: lbluser
-                    width: parent.width - lbltime.width
+                    width: parent.width - lbltime.width - imgsecure.width - (Theme.paddingSmall * 2)
                     text: TelegramHelper.userName(user)
                     verticalAlignment: Text.AlignVCenter
                     height: parent.height
@@ -98,7 +107,7 @@ Item
                     verticalAlignment: Text.AlignVCenter
                     font.pixelSize: Theme.fontSizeExtraSmall
                     font.italic: TelegramHelper.isActionMessage(message)
-                    text: TelegramHelper.isActionMessage(message) ? TelegramAction.actionType(context.telegram, message) : TelegramHelper.messageContent(message)
+                    text: TelegramHelper.isActionMessage(message) ? TelegramAction.actionType(context.telegram, dialog, message) : TelegramHelper.messageContent(message)
                 }
 
                 Rectangle

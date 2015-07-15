@@ -46,11 +46,20 @@ QtObject
         onIncomingMessage: {
             var userdata = context.telegram.userData;
 
-            if(userdata.isMuted(msg.fromId)) /* Respect Notification Settings */
+            if(userdata.isMuted(msg.fromId) || TelegramHelper.isActionMessage(msg)) /* Respect Notification Settings */
                 return;
 
+            var currentpeerid = 0;
             var user = context.telegram.user(msg.fromId);
-            var currentpeerid = foregroundDialog !== context.telegram.nullDialog ? TelegramHelper.peerId(foregroundDialog.peer) : 0;
+
+            if(foregroundDialog !== context.telegram.nullDialog) {
+                if(foregroundDialog.encrypted) {
+                    var chat = context.telegram.encryptedChat(foregroundDialog.peer.userId);
+                    currentpeerid = (chat.adminId === context.telegram.me) ? chat.participantId : chat.adminId;
+                }
+                else
+                    TelegramHelper.peerId(foregroundDialog);
+            }
 
             if((msg.fromId !== currentpeerid) || (Qt.application.state !== Qt.ApplicationActive)) {
                 notifications.send(TelegramHelper.userName(user), TelegramHelper.messageContent(msg), user.photo.photoSmall.download.location, true, false);

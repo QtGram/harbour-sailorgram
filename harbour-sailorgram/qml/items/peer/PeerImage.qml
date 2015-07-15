@@ -43,4 +43,13 @@ Image
             text: TelegramHelper.isChat(dialog) ? chat.title.slice(0, 1) : user.firstName.slice(0, 1).toUpperCase() + ((user.lastName.length > 0) ? user.lastName.slice(0, 1).toUpperCase(): "");
         }
     }
+
+    Image
+    {
+        id: imgsecure
+        source: "image://theme/icon-s-secure"
+        anchors { bottom: parent.bottom; right: parent.right }
+        fillMode: Image.PreserveAspectFit
+        visible: dialog && dialog.encrypted
+    }
 }
