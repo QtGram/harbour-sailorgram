@@ -41,11 +41,17 @@ void TelegramSearchModel::setTelegram(TelegramQml *tgo)
         disconnect( p->telegram, SIGNAL(searchDone(QList<qint64>)) , this, SLOT(searchDone(QList<qint64>)) );
     }
 
+    if(p->telegram)
+        p->telegram->unregisterSearchModel(this);
+
     p->telegram = tg;
-    emit telegramChanged();
+    if(p->telegram)
+        p->telegram->registerSearchModel(this);
+
+    Q_EMIT telegramChanged();
 
     p->initializing = false;
-    emit initializingChanged();
+    Q_EMIT initializingChanged();
     if( !p->telegram )
         return;
 
@@ -59,7 +65,7 @@ void TelegramSearchModel::setKeyword(const QString &kw)
         return;
 
     p->keyword = kw;
-    emit keywordChanged();
+    Q_EMIT keywordChanged();
     refresh();
 }
 
@@ -115,6 +121,11 @@ bool TelegramSearchModel::initializing() const
     return p->initializing;
 }
 
+QList<qint64> TelegramSearchModel::messages() const
+{
+    return p->messages;
+}
+
 void TelegramSearchModel::refresh()
 {
     searchDone(QList<qint64>());
@@ -132,7 +143,7 @@ void TelegramSearchModel::refresh()
 void TelegramSearchModel::searchDone(const QList<qint64> &messages)
 {
     p->initializing = false;
-    emit initializingChanged();
+    Q_EMIT initializingChanged();
 
     for( int i=0 ; i<p->messages.count() ; i++ )
     {
@@ -182,7 +193,7 @@ void TelegramSearchModel::searchDone(const QList<qint64> &messages)
         endInsertRows();
     }
 
-    emit countChanged();
+    Q_EMIT countChanged();
 }
 
 void TelegramSearchModel::timerEvent(QTimerEvent *e)
@@ -195,19 +206,22 @@ void TelegramSearchModel::timerEvent(QTimerEvent *e)
         if(!p->keyword.isEmpty())
         {
             p->initializing = true;
-            emit initializingChanged();
+            Q_EMIT initializingChanged();
             p->telegram->search(p->keyword);
         }
         else
         {
             p->initializing = false;
-            emit initializingChanged();
+            Q_EMIT initializingChanged();
         }
     }
 }
 
 TelegramSearchModel::~TelegramSearchModel()
 {
+    if(p->telegram)
+        p->telegram->unregisterSearchModel(this);
+
     delete p;
 }
 

@@ -60,16 +60,16 @@ public:
     int count() const;
     bool refreshing() const;
 
-public slots:
+public Q_SLOTS:
     void refresh();
 
-signals:
+Q_SIGNALS:
     void telegramChanged();
     void dialogChanged();
     void countChanged();
     void refreshingChanged();
 
-private slots:
+private Q_SLOTS:
     void chatFullsChanged();
 
 private:

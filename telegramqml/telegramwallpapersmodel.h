@@ -54,12 +54,12 @@ public:
     int count() const;
     bool initializing() const;
 
-signals:
+Q_SIGNALS:
     void telegramChanged();
     void countChanged();
     void initializingChanged();
 
-private slots:
+private Q_SLOTS:
     void wallpapersChanged();
 
 protected:

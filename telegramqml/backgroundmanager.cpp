@@ -29,7 +29,7 @@ void BackgroundManager::setDirectory(const QUrl &path)
     p->directory = path;
 
     QDir().mkpath(p->directory.toLocalFile());
-    emit directoryChanged();
+    Q_EMIT directoryChanged();
 
     refresh();
 }
@@ -45,7 +45,7 @@ void BackgroundManager::setDialog(DialogObject *dialog)
         return;
 
     p->dialog = dialog;
-    emit dialogChanged();
+    Q_EMIT dialogChanged();
 
     refresh();
 }
@@ -79,13 +79,13 @@ void BackgroundManager::setBackground(const QString &filePath)
     if(!dId)
     {
         p->background = QUrl();
-        emit backgroundChanged();
+        Q_EMIT backgroundChanged();
         return;
     }
 
     const QString dIdStr = QString::number(dId);
     const QStringList &files = QDir(p->directory.toLocalFile()).entryList(QDir::Files);
-    foreach(const QString &f, files)
+    Q_FOREACH(const QString &f, files)
     {
         const QString path = p->directory.toLocalFile() + "/" + f;
         QFileInfo info(path);
@@ -110,14 +110,14 @@ void BackgroundManager::refresh()
     if(!dId)
     {
         p->background = QUrl();
-        emit backgroundChanged();
+        Q_EMIT backgroundChanged();
         return;
     }
 
     QString filePath;
     const QString dIdStr = QString::number(dId);
     const QStringList &files = QDir(p->directory.toLocalFile()).entryList(QDir::Files);
-    foreach(const QString &f, files)
+    Q_FOREACH(const QString &f, files)
     {
         const QString path = p->directory.toLocalFile() + "/" + f;
         QFileInfo info(path);
@@ -129,7 +129,7 @@ void BackgroundManager::refresh()
     }
 
     p->background = filePath.isEmpty()? QUrl() : QUrl::fromLocalFile(filePath);
-    emit backgroundChanged();
+    Q_EMIT backgroundChanged();
 }
 
 BackgroundManager::~BackgroundManager()

@@ -50,7 +50,7 @@ void TelegramContactsModel::setTelegram(TelegramQml *tgo)
         return;
 
     p->telegram = tg;
-    emit telegramChanged();
+    Q_EMIT telegramChanged();
     if( !p->telegram )
         return;
 
@@ -114,14 +114,14 @@ void TelegramContactsModel::refresh()
     p->telegram->telegram()->contactsGetContacts();
 
     p->initializing = true;
-    emit initializingChanged();
+    Q_EMIT initializingChanged();
 }
 
 void TelegramContactsModel::contactsChanged()
 {
     const QList<qint64> & contacts_unsort = p->telegram->contacts();
     QMap<QString,qint64> sort_map;
-    foreach( qint64 id, contacts_unsort )
+    Q_FOREACH( qint64 id, contacts_unsort )
     {
         UserObject *user = p->telegram->user(id);
         sort_map.insertMulti( user->firstName() + " " + user->lastName(), id );
@@ -145,7 +145,7 @@ void TelegramContactsModel::contactsChanged()
     }
 
     p->initializing = false;
-    emit initializingChanged();
+    Q_EMIT initializingChanged();
 }
 
 TelegramContactsModel::~TelegramContactsModel()

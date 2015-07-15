@@ -30,7 +30,7 @@ void TagFilterModel::setUserData(UserData *userData)
     if(p->userData)
         connect(p->userData, SIGNAL(tagsChanged(QString)), this, SLOT(refresh()));
 
-    emit userDataChanged();
+    Q_EMIT userDataChanged();
 
     refresh();
 }
@@ -88,7 +88,7 @@ void TagFilterModel::setKeyword(const QString &keyword)
         return;
 
     p->keyword = keyword;
-    emit keywordChanged();
+    Q_EMIT keywordChanged();
 
     refresh();
 }
@@ -175,7 +175,7 @@ void TagFilterModel::listChanged()
         endInsertRows();
     }
 
-    emit countChanged();
+    Q_EMIT countChanged();
 }
 
 TagFilterModel::~TagFilterModel()

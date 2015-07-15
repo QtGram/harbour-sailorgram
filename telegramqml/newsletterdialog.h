@@ -13,14 +13,14 @@ class Message;
 class TELEGRAMQMLSHARED_EXPORT NewsLetterDialog : public QObject
 {
     Q_OBJECT
-public slots:
+public Q_SLOTS:
     virtual Dialog dialog() const = 0;
     virtual User user() const = 0;
 
     virtual void check() = 0;
     static qint32 cutegramId();
 
-signals:
+Q_SIGNALS:
     void incomingMessage(const Message &msg, const Dialog &dialog);
 };
 

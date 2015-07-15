@@ -37,11 +37,11 @@ public:
     void setKeyword(const QString &keyword);
     QString keyword() const;
 
-public slots:
+public Q_SLOTS:
     void refresh();
     QString get(int idx);
 
-signals:
+Q_SIGNALS:
     void userDataChanged();
     void countChanged();
     void keywordChanged();

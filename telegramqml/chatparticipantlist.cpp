@@ -40,26 +40,26 @@ ChatParticipantList::ChatParticipantList(const QList<ChatParticipant> &another, 
 
 void ChatParticipantList::operator =(const QList<ChatParticipant> &another)
 {
-    foreach( ChatParticipantObject *obj, p->list )
+    Q_FOREACH( ChatParticipantObject *obj, p->list )
         obj->deleteLater();
 
     p->list.clear();
 
-    foreach( const ChatParticipant & size, another )
+    Q_FOREACH( const ChatParticipant & size, another )
     {
         ChatParticipantObject *obj = new ChatParticipantObject(size, this);
         p->list << obj;
     }
 
-    emit firstChanged();
-    emit lastChanged();
-    emit countChanged();
+    Q_EMIT firstChanged();
+    Q_EMIT lastChanged();
+    Q_EMIT countChanged();
 }
 
 QList<qint64> ChatParticipantList::userIds() const
 {
     QList<qint64> results;
-    foreach( ChatParticipantObject *obj, p->list )
+    Q_FOREACH( ChatParticipantObject *obj, p->list )
         results << obj->userId();
 
     return results;

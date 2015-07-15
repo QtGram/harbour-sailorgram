@@ -75,7 +75,7 @@
 #include <QObject>
 #include <QList>
 #include <QLoggingCategory>
-#include <openssl/rsa.h>
+#include <rsa.h>
 #include "secret/secretchat.h"
 #include "libqtelegram_global.h"
 

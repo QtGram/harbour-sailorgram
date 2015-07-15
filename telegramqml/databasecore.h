@@ -20,7 +20,7 @@ public:
     DatabaseCore(const QString &path, const QString &configPath, const QString &phoneNumber, QObject *parent = 0);
     ~DatabaseCore();
 
-public slots:
+public Q_SLOTS:
     void reconnect();
     void disconnect();
 
@@ -40,7 +40,7 @@ public slots:
     void deleteDialog(qint64 dlgId);
     void deleteHistory(qint64 dlgId);
 
-signals:
+Q_SIGNALS:
     void userFounded(const DbUser &user);
     void chatFounded(const DbChat &chat);
     void dialogFounded(const DbDialog &dialog, bool encrypted);

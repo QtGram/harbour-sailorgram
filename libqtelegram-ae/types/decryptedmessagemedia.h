@@ -21,6 +21,7 @@
 #define DECRYPTEDMESSAGEMEDIA_H
 
 #include <QByteArray>
+#include "types/types.h"
 
 class DecryptedMessageMedia {
 
@@ -35,7 +36,8 @@ public:
         typeDecryptedMessageMediaDocument = 0xb095434b,
         typeDecryptedMessageMediaAudio_layer8 = 0x6080758f,
         typeDecryptedMessageMediaVideo = 0x524a415d,
-        typeDecryptedMessageMediaAudio = 0x57e0a9cb
+        typeDecryptedMessageMediaAudio = 0x57e0a9cb,
+        typeDecryptedMessageMediaExternalDocument = 0xfa95b0dd
     };
 
     DecryptedMessageMedia(DecryptedMessageMediaType classType = typeDecryptedMessageMediaEmpty) :
@@ -53,7 +55,11 @@ public:
         mLastName(""),
         mUserId(0),
         mFileName(""),
-        mMimeType("") {
+        mMimeType(""),
+        mId(0),
+        mAccessHash(0),
+        mDate(0),
+        mDcId(0) {
     }
 
     QByteArray thumb() const { return mThumb; }
@@ -74,6 +80,12 @@ public:
     QString fileName() const { return mFileName; }
     QString mimeType() const  { return mMimeType; }
     DecryptedMessageMediaType classType() const { return mClassType; }
+    qint32 id() const { return mId; }
+    qint64 accessHash() const { return mAccessHash; }
+    qint64 date() const { return mDate; }
+    PhotoSize thumb23() const { return mThumb23; }
+    qint32 dcId() const { return mDcId; }
+    QList<DocumentAttribute> attributes() const { return mAttributes; }
     void setThumb(QByteArray thumb) { mThumb = thumb; }
     void setThumbW(qint32 thumbW) { mThumbW = thumbW; }
     void setThumbH(qint32 thumbH) { mThumbH = thumbH; }
@@ -92,6 +104,12 @@ public:
     void setFileName(const QString &fileName) { mFileName = fileName; }
     void setMimeType(const QString &mimeType) { mMimeType = mimeType; }
     void setClassType(DecryptedMessageMediaType classType) { mClassType = classType; }
+    void setId(const qint32 &id) { mId = id; }
+    void setAccessHash(const qint64 &accessHash) { mAccessHash = accessHash; }
+    void setDate(const qint64 &date) { mDate = date; }
+    void setThumb23(const PhotoSize &thumb23) { mThumb23 = thumb23; }
+    void setDcId(const qint32 &dcId) { mDcId = dcId; }
+    void setAttributes(const QList<DocumentAttribute> &attributes) { mAttributes = attributes; }
 
 private:
     DecryptedMessageMediaType mClassType;
@@ -112,6 +130,13 @@ private:
     qint32 mUserId;
     QString mFileName;
     QString mMimeType;
+    qint32 mId;
+    qint64 mAccessHash;
+    qint64 mDate;
+    PhotoSize mThumb23;
+    qint32 mDcId;
+    QList<DocumentAttribute> mAttributes;
 };
 
 #endif // DECRYPTEDMESSAGEMEDIA_H
+

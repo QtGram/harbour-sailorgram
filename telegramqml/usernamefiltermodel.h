@@ -43,17 +43,17 @@ public:
     void setKeyword(const QString &keyword);
     QString keyword() const;
 
-public slots:
+public Q_SLOTS:
     void refresh();
     qint64 get(int idx);
 
-signals:
+Q_SIGNALS:
     void telegramChanged();
     void countChanged();
     void keywordChanged();
     void dialogChanged();
 
-private slots:
+private Q_SLOTS:
     void listChanged();
 
 private:

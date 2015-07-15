@@ -52,11 +52,11 @@ public:
 
     int count() const;
 
-signals:
+Q_SIGNALS:
     void telegramChanged();
     void countChanged();
 
-private slots:
+private Q_SLOTS:
     void uploadsChanged();
 
 private:

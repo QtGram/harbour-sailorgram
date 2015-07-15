@@ -62,19 +62,19 @@ public:
     int count() const;
     QStringList keys() const;
 
-public slots:
+public Q_SLOTS:
     class ProfilesModelItem *add( const QString & number );
     bool remove( const QString & number );
     bool containt( const QString & number );
 
     ProfilesModelItem *get( const QString & number );
 
-signals:
+Q_SIGNALS:
     void countChanged();
     void keysChanged();
     void configPathChanged();
 
-private slots:
+private Q_SLOTS:
     void save( const QString & key );
 
 private:
@@ -112,7 +112,7 @@ public:
     bool mute() const;
     void setMute( bool stt );
 
-signals:
+Q_SIGNALS:
     void numberChanged();
     void nameChanged();
     void iconChanged();

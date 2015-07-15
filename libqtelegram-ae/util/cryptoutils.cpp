@@ -23,9 +23,9 @@
 
 #include "core/settings.h"
 #include "utils.h"
-#include <openssl/rand.h>
-#include <openssl/sha.h>
-#include <openssl/md5.h>
+#include <rand.h>
+#include <sha.h>
+#include <md5.h>
 
 CryptoUtils::CryptoUtils(Settings *settings) :
     mSettings(settings)

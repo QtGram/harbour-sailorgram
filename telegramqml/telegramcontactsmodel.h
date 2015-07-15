@@ -54,15 +54,15 @@ public:
     int count() const;
     bool initializing() const;
 
-public slots:
+public Q_SLOTS:
     void refresh();
 
-signals:
+Q_SIGNALS:
     void telegramChanged();
     void countChanged();
     void initializingChanged();
 
-private slots:
+private Q_SLOTS:
     void contactsChanged();
 
 private:

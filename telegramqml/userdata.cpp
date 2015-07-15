@@ -70,7 +70,7 @@ void UserData::setPhoneNumber(const QString &phoneNumber)
     p->phoneNumber = phoneNumber;
     refresh();
 
-    emit phoneNumberChanged();
+    Q_EMIT phoneNumberChanged();
 }
 
 QString UserData::phoneNumber() const
@@ -86,7 +86,7 @@ void UserData::setConfigPath(const QString &path)
     p->configPath = path;
     refresh();
 
-    emit configPathChanged();
+    Q_EMIT configPathChanged();
 }
 
 QString UserData::configPath() const
@@ -140,7 +140,7 @@ void UserData::addMute(int id)
     CHECK_QUERY_ERROR(mute_query);
 
     p->mutes.insert(id,true);
-    emit muteChanged(id);
+    Q_EMIT muteChanged(id);
 }
 
 void UserData::removeMute(int id)
@@ -152,7 +152,7 @@ void UserData::removeMute(int id)
     CHECK_QUERY_ERROR(query);
 
     p->mutes.remove(id);
-    emit muteChanged(id);
+    Q_EMIT muteChanged(id);
 }
 
 QList<int> UserData::mutes() const
@@ -184,7 +184,7 @@ void UserData::addFavorite(int id)
     CHECK_QUERY_ERROR(mute_query);
 
     p->favorites.insert(id,true);
-    emit favoriteChanged(id);
+    Q_EMIT favoriteChanged(id);
 }
 
 void UserData::removeFavorite(int id)
@@ -195,7 +195,7 @@ void UserData::removeFavorite(int id)
     query.exec();
 
     p->favorites.remove(id);
-    emit favoriteChanged(id);
+    Q_EMIT favoriteChanged(id);
 }
 
 QList<int> UserData::favorites() const
@@ -227,7 +227,7 @@ void UserData::addLoadLink(int id)
     CHECK_QUERY_ERROR(mute_query);
 
     p->loadLink.insert(id,true);
-    emit loadLinkChanged(id);
+    Q_EMIT loadLinkChanged(id);
 }
 
 void UserData::removeLoadlink(int id)
@@ -238,7 +238,7 @@ void UserData::removeLoadlink(int id)
     query.exec();
 
     p->loadLink.remove(id);
-    emit loadLinkChanged(id);
+    Q_EMIT loadLinkChanged(id);
 }
 
 QList<int> UserData::loadLinks()
@@ -270,7 +270,7 @@ void UserData::setNotify(int id, int value)
     CHECK_QUERY_ERROR(notify_query);
 
     p->notifies.insert(id,value);
-    emit notifyChanged(id, value);
+    Q_EMIT notifyChanged(id, value);
 }
 
 int UserData::notify(int id)
@@ -291,7 +291,7 @@ void UserData::addTag(const QString &t)
     CHECK_QUERY_ERROR(mute_query);
 
     p->tags.insert(tag, true);
-    emit tagsChanged(tag);
+    Q_EMIT tagsChanged(tag);
 }
 
 QStringList UserData::tags() const
@@ -310,7 +310,7 @@ void UserData::addMessageUpdate(const MessageUpdate &msg)
     CHECK_QUERY_ERROR(mute_query);
 
     p->msg_updates[msg.id] = msg;
-    emit messageUpdateChanged(msg.id);
+    Q_EMIT messageUpdateChanged(msg.id);
 }
 
 void UserData::removeMessageUpdate(int id)
@@ -322,7 +322,7 @@ void UserData::removeMessageUpdate(int id)
     CHECK_QUERY_ERROR(query);
 
     p->msg_updates.remove(id);
-    emit messageUpdateChanged(id);
+    Q_EMIT messageUpdateChanged(id);
 }
 
 QList<quint64> UserData::messageUpdates() const
@@ -345,7 +345,7 @@ void UserData::setValue(const QString &key, const QString &value)
     CHECK_QUERY_ERROR(mute_query);
 
     p->general[key] = value;
-    emit valueChanged(key);
+    Q_EMIT valueChanged(key);
 }
 
 QString UserData::value(const QString &key)
@@ -446,7 +446,7 @@ void UserData::update_db()
         query_list << "CREATE  TABLE IF NOT EXISTS UpdateMessages (id BIGINT NOT NULL ,message TEXT NOT NULL, date BIGINT NOT NULL, PRIMARY KEY (id) );";
         query_list << "COMMIT;";
 
-        foreach( const QString & query_str, query_list )
+        Q_FOREACH( const QString & query_str, query_list )
             QSqlQuery( query_str, p->db ).exec();
 
         setValue("version","3");
@@ -458,7 +458,7 @@ void UserData::update_db()
         query_list << "CREATE  TABLE IF NOT EXISTS Tags (tag TEXT NOT NULL, PRIMARY KEY (tag) );";
         query_list << "COMMIT;";
 
-        foreach( const QString & query_str, query_list )
+        Q_FOREACH( const QString & query_str, query_list )
             QSqlQuery( query_str, p->db ).exec();
 
         setValue("version","4");
@@ -470,7 +470,7 @@ void UserData::update_db()
         query_list << "CREATE  TABLE IF NOT EXISTS NotifySettings (id INT NOT NULL ,value INT NOT NULL, PRIMARY KEY (id) );";
         query_list << "COMMIT;";
 
-        foreach( const QString & query_str, query_list )
+        Q_FOREACH( const QString & query_str, query_list )
             QSqlQuery( query_str, p->db ).exec();
 
         setValue("version","5");
@@ -482,7 +482,7 @@ void UserData::update_db()
         query_list << "CREATE  TABLE IF NOT EXISTS loadLink (id INT NOT NULL ,canLoad INT NOT NULL, PRIMARY KEY (id) );";
         query_list << "COMMIT;";
 
-        foreach( const QString & query_str, query_list )
+        Q_FOREACH( const QString & query_str, query_list )
             QSqlQuery( query_str, p->db ).exec();
 
         setValue("version","6");

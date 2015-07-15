@@ -953,7 +953,8 @@ DocumentAttribute InboundPkt::fetchDocumentAttribute()
     qint32 x = fetchInt();
     ASSERT(x == (qint32)DocumentAttribute::typeAttributeImageSize || x == (qint32)DocumentAttribute::typeAttributeAnimated
            || x == (qint32)DocumentAttribute::typeAttributeSticker || x == (qint32)DocumentAttribute::typeAttributeVideo
-           || x == (qint32)DocumentAttribute::typeAttributeAudio || x == (qint32)DocumentAttribute::typeAttributeFilename);
+           || x == (qint32)DocumentAttribute::typeAttributeAudio || x == (qint32)DocumentAttribute::typeAttributeFilename
+           || x == (qint32)DocumentAttribute::typeAttributeDecryptedSticker );
 
     DocumentAttribute attr(static_cast<DocumentAttribute::DocumentAttributeType>(x));
     switch(x)

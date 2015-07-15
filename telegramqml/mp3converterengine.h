@@ -25,17 +25,17 @@ public:
 
     bool running() const;
 
-public slots:
+public Q_SLOTS:
     void start();
 
-signals:
+Q_SIGNALS:
     void sourceChanged();
     void destinationChanged();
     void finished();
     void error();
     void runningChanged();
 
-private slots:
+private Q_SLOTS:
     void finished_prv();
 
 private:

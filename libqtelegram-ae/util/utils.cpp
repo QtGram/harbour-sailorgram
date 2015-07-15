@@ -20,9 +20,9 @@
  */
 
 #include "utils.h"
-#include <openssl/rand.h>
-#include <openssl/pem.h>
-#include <openssl/err.h>
+#include <rand.h>
+#include <pem.h>
+#include <err.h>
 #include <zlib.h>
 #if (QT_VERSION < QT_VERSION_CHECK(5, 4, 0))
 #include <sys/utsname.h>
@@ -55,10 +55,12 @@ int clock_gettime(int /*clk_id*/, struct timespec* t) {
 //clock_gettime is not implemented on Win
 // took from https://stackoverflow.com/questions/5404277/porting-clock-gettime-to-windows
 
+#ifdef Q_CC_MSVC
 struct timespec {
     long int tv_sec;    /* Seconds.  */
     long int tv_nsec;   /* Nanoseconds.  */
 };
+#endif
 
 LARGE_INTEGER getFILETIMEoffset()
 {

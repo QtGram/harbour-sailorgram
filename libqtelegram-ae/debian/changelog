@@ -1,3 +1,21 @@
+libqtelegram-ae (0.5.0-1aseman1-vivid) vivid; urgency=medium
+
+  * Many bugfix and improvements
+
+ -- Aseman Team <contact@aseman.co>  Wed, 8 Jul 2015 10:30:00 +0330
+ 
+libqtelegram-ae (0.5.0-1aseman1-utopic) utopic; urgency=medium
+
+  * Many bugfix and improvements
+
+ -- Aseman Team <contact@aseman.co>  Wed, 8 Jul 2015 10:30:00 +0330
+ 
+libqtelegram-ae (0.5.0-1aseman1-trusty) trusty; urgency=medium
+
+  * Many bugfix and improvements
+
+ -- Aseman Team <contact@aseman.co>  Wed, 8 Jul 2015 10:30:00 +0330
+ 
 libqtelegram-ae (0.4.1-1aseman1-vivid) vivid; urgency=medium
 
   * Force libqtelegram to use auth file when It's signed in

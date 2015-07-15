@@ -54,8 +54,8 @@ void TelegramWallpapersModel::setTelegram(TelegramQml *tgo)
 
     p->telegram = tg;
     p->initializing = tg;
-    emit telegramChanged();
-    emit initializingChanged();
+    Q_EMIT telegramChanged();
+    Q_EMIT initializingChanged();
     if( !p->telegram )
         return;
 
@@ -115,7 +115,7 @@ bool TelegramWallpapersModel::initializing() const
 void TelegramWallpapersModel::wallpapersChanged()
 {
     p->initializing = false;
-    emit initializingChanged();
+    Q_EMIT initializingChanged();
 
     const QList<qint64> & walls = p->telegram->wallpapers();
 

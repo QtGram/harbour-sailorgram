@@ -42,10 +42,10 @@ public:
 
     int count() const;
 
-public slots:
+public Q_SLOTS:
     void refresh();
 
-signals:
+Q_SIGNALS:
     void telegramChanged();
     void countChanged();
     void dialogChanged();

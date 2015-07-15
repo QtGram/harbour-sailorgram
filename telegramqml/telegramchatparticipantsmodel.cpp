@@ -52,7 +52,7 @@ void TelegramChatParticipantsModel::setTelegram(TelegramQml *tgo)
         return;
 
     p->telegram = tg;
-    emit telegramChanged();
+    Q_EMIT telegramChanged();
     if( !p->telegram )
         return;
 
@@ -71,7 +71,7 @@ void TelegramChatParticipantsModel::setDialog(DialogObject *dlg)
         return;
 
     p->dialog = dlg;
-    emit dialogChanged();
+    Q_EMIT dialogChanged();
 
     beginResetModel();
     p->participants.clear();
@@ -144,7 +144,7 @@ void TelegramChatParticipantsModel::refresh()
     p->telegram->messagesGetFullChat(p->dialog->peer()->chatId());
 
     p->refreshing = true;
-    emit refreshingChanged();
+    Q_EMIT refreshingChanged();
 }
 
 void TelegramChatParticipantsModel::chatFullsChanged()
@@ -169,7 +169,7 @@ void TelegramChatParticipantsModel::chatFullsChanged()
     }
 
     p->refreshing = false;
-    emit refreshingChanged();
+    Q_EMIT refreshingChanged();
 }
 
 TelegramChatParticipantsModel::~TelegramChatParticipantsModel()

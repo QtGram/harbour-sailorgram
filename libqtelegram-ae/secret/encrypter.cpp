@@ -17,8 +17,8 @@
 
 #include "encrypter.h"
 #include "util/utils.h"
-#include "openssl/sha.h"
-#include "openssl/aes.h"
+#include <sha.h>
+#include <aes.h>
 #include "decryptedmessagebuilder.h"
 #include "util/tlvalues.h"
 
