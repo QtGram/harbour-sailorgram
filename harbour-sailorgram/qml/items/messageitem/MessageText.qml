@@ -24,7 +24,7 @@ Item
             id: lbltext
             anchors { left: message.out ? parent.left : undefined; right: message.out ? undefined : parent.right }
             width: parent.width
-            color: TelegramHelper.isActionMessage(message) ? Theme.secondaryHighlightColor : (message.out ? Theme.highlightColor : Theme.primaryColor)
+            color: TelegramHelper.isActionMessage(message) ? Theme.primaryColor : (message.out ? Theme.highlightColor : Theme.primaryColor)
             font.pixelSize: TelegramHelper.isActionMessage(message) ? Theme.fontSizeExtraSmall : Theme.fontSizeSmall
             font.italic: TelegramHelper.isActionMessage(message)
             horizontalAlignment: TelegramHelper.isActionMessage(message) ? Text.AlignHCenter : (message.out ? Text.AlignLeft : Text.AlignRight)

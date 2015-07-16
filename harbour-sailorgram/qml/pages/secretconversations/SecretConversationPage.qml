@@ -33,7 +33,7 @@ Page
         if(status !== PageStatus.Active)
             return;
 
-        //pageStack.pushAttached(Qt.resolvedUrl("ConversationInfoPage.qml"), { "context": secretconversationpage.context, "dialog": secretconversationpage.dialog, "chat": secretconversationpage.chat, "user": secretconversationpage.user });
+        pageStack.pushAttached(Qt.resolvedUrl("../conversations/ConversationInfoPage.qml"), { "context": secretconversationpage.context, "dialog": secretconversationpage.dialog, "user": secretconversationpage.user });
         context.foregroundDialog = secretconversationpage.dialog;
 
         messagemodel.setReaded();
