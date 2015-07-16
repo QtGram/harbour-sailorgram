@@ -53,7 +53,7 @@ ApplicationWindow
 
     initialPage: Component {
         ConnectionPage {
-            telegram: context.telegram
+            context: mainwindow.context
         }
     }
 }

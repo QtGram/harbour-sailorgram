@@ -4,8 +4,9 @@ import "../models"
 
 GlassItem
 {
+    property bool forceActive: false
     property Context context
 
     id: connectionstatus
-    color: context.heartbeat.connected ? "lime" : "red"
+    color: forceActive || context.heartbeat.connected ? "lime" : "red"
 }

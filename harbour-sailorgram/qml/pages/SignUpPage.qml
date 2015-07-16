@@ -1,10 +1,11 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
+import "../models"
 
 Dialog
 {
     property alias authError: tfcode.errorHighlight
-    property var telegram
+    property Context context
 
     id: dlgsignup
     allowedOrientations: defaultAllowedOrientations
@@ -12,11 +13,11 @@ Dialog
 
     acceptDestination: Component {
         ConnectionPage {
-            telegram: dlgsignup.telegram
+            context: dlgsignup.context
         }
     }
 
-    onAccepted: telegram.authSignUp(tfcode.text, tffirstname.text, tfflastname.text)
+    onAccepted: context.telegram.authSignUp(tfcode.text, tffirstname.text, tfflastname.text)
 
     SilicaFlickable
     {

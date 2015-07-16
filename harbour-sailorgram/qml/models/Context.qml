@@ -70,6 +70,10 @@ QtObject
             notifications.beep();
         }
 
+        onIncomingEncryptedMessage: {
+            console.log("Incoming Encrypted Message");
+        }
+
         onPhoneNumberChanged: {
             var phonenumber = Settings.get("phonenumber");
 
@@ -84,7 +88,7 @@ QtObject
                 return;
 
             pageStack.completeAnimation();
-            pageStack.replace(Qt.resolvedUrl("../pages/AuthorizationPage.qml"), { "telegram": context.telegram, "authError": context.telegram.authSignInError });
+            pageStack.replace(Qt.resolvedUrl("../pages/AuthorizationPage.qml"), { "context": context, "authError": context.telegram.authSignInError });
         }
 
         onAuthSignUpErrorChanged: {
@@ -92,7 +96,7 @@ QtObject
                 return;
 
             pageStack.completeAnimation();
-            pageStack.replace(Qt.resolvedUrl("../pages/SignUpPage.qml"), { "telegram": context.telegram, "authError": context.telegram.authSignUpError });
+            pageStack.replace(Qt.resolvedUrl("../pages/SignUpPage.qml"), { "context": context, "authError": context.telegram.authSignUpError });
 
         }
 
@@ -110,9 +114,9 @@ QtObject
             pageStack.completeAnimation();
 
             if(context.telegram.authPhoneRegistered)
-                pageStack.replace(Qt.resolvedUrl("../pages/AuthorizationPage.qml"), { "telegram": context.telegram, "authError": context.telegram.authSignInError });
+                pageStack.replace(Qt.resolvedUrl("../pages/AuthorizationPage.qml"), { "context": context, "authError": context.telegram.authSignInError });
             else
-                pageStack.replace(Qt.resolvedUrl("../pages/SignUpPage.qml"), { "telegram": context.telegram, "authError": context.telegram.authSignUpError });
+                pageStack.replace(Qt.resolvedUrl("../pages/SignUpPage.qml"), { "context": context, "authError": context.telegram.authSignUpError });
         }
     }
 }

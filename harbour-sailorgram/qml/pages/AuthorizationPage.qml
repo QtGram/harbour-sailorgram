@@ -6,17 +6,17 @@ import "../js/Settings.js" as Settings
 Dialog
 {
     property alias authError: tfcode.errorHighlight
-    property var telegram
+    property Context context
 
     id: dlgauthorization
     allowedOrientations: defaultAllowedOrientations
     canAccept: tfcode.text.length > 0
     acceptDestinationAction: PageStackAction.Replace
-    onAccepted: telegram.authSignIn(tfcode.text)
+    onAccepted: context.telegram.authSignIn(tfcode.text)
 
     acceptDestination: Component {
         ConnectionPage {
-            telegram: dlgauthorization.telegram
+            context: dlgauthorization.context
         }
     }
 
@@ -24,6 +24,22 @@ Dialog
     {
         anchors.fill: parent
         contentHeight: dlgheader.height + infocontainer.height + tfcode.height
+
+        RemorsePopup { id: remorsepopup }
+
+        PushUpMenu
+        {
+            MenuItem
+            {
+                text: qsTr("Resend Activation Code")
+
+                onClicked: {
+                    remorsepopup.execute(qsTr("Sending Activation Code"), function() {
+                        context.telegram.authSendCode();
+                    });
+                }
+            }
+        }
 
         DialogHeader
         {
