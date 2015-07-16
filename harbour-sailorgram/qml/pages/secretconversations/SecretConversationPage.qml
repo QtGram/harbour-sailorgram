@@ -6,8 +6,10 @@ import "../../menus/conversation"
 import "../../components"
 import "../../items/peer"
 import "../../items/user"
+import "../../items/secretconversation"
 import "../../items/messageitem"
 import "../../js/TelegramHelper.js" as TelegramHelper
+import "../../js/TelegramConstants.js" as TelegramConstants
 
 Page
 {
@@ -95,7 +97,7 @@ Page
         SilicaListView
         {
             id: lvconversation
-            anchors { left: parent.left; top: header.bottom; right: parent.right; bottom: messagebar.top; topMargin: Theme.paddingSmall }
+            anchors { left: parent.left; top: header.bottom; right: parent.right; bottom: bottomcontainer.top; topMargin: Theme.paddingSmall }
             verticalLayoutDirection: ListView.BottomToTop
             spacing: Theme.paddingLarge
             clip: true
@@ -123,12 +125,33 @@ Page
             }
         }
 
-        MessageBar
+        Item
         {
-            id: messagebar
+            id: bottomcontainer
             anchors { left: parent.left; bottom: parent.bottom; right: parent.right }
-            context: secretconversationpage.context
-            dialog: secretconversationpage.dialog
+            height: messagebar.height
+
+            MessageBar
+            {
+                id: messagebar
+                anchors.fill: parent
+                context: secretconversationpage.context
+                dialog: secretconversationpage.dialog
+                visible: chat && (chat.classType !== TelegramConstants.typeEncryptedChatDiscarded) && (chat.classType !== TelegramConstants.typeEncryptedChatWaiting)
+            }
+
+            SecretChatDiscarded
+            {
+                anchors { fill: parent; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
+                chat: secretconversationpage.chat
+            }
+
+            SecretChatWaiting
+            {
+                anchors { fill: parent; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
+                chat: secretconversationpage.chat
+                user: secretconversationpage.user
+            }
         }
     }
 }

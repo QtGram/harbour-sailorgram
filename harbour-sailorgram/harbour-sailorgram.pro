@@ -111,7 +111,9 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/pages/secretchat/CreateSecretChatPage.qml \
     qml/pages/secretconversations/SecretConversationPage.qml \
     qml/items/secretconversation/SecretConversationItem.qml \
-    qml/components/TelegramBackground.qml
+    qml/components/TelegramBackground.qml \
+    qml/items/secretconversation/SecretChatDiscarded.qml \
+    qml/items/secretconversation/SecretChatWaiting.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

@@ -105,6 +105,14 @@
         <source>Wait for the SMS containing the activation code and press &apos;Sign In&apos;</source>
         <translation>Veillez attendre le SMS contenant le code d&apos;activation et appuyez sur « Se connecter »</translation>
     </message>
+    <message>
+        <source>Resend Activation Code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sending Activation Code</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChangeUsernamePage</name>
@@ -154,6 +162,14 @@ Minimum length is 5 characters.</source>
     <message>
         <source>Connecting</source>
         <translation>Connexion</translation>
+    </message>
+    <message>
+        <source>Login Again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Telegram Status</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -464,6 +480,20 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Username</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SecretChatDiscarded</name>
+    <message>
+        <source>Secret chat cancelled</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SecretChatWaiting</name>
+    <message>
+        <source>Waiting for %1 to get online</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
