@@ -6,7 +6,7 @@ import "../js/TelegramHelper.js" as TelegramHelper
 
 Dialog
 {
-    property var telegram
+    property Context context
 
     id: dlgphonenumber
     allowedOrientations: defaultAllowedOrientations
@@ -15,12 +15,12 @@ Dialog
 
     acceptDestination: Component {
         ConnectionPage {
-            telegram: dlgphonenumber.telegram
+            context: dlgphonenumber.context
         }
     }
 
     onAccepted: {
-        telegram.phoneNumber = TelegramHelper.completePhoneNumber(tfcountrycode.text + tfphonenumber.text);
+        context.telegram.phoneNumber = TelegramHelper.completePhoneNumber(tfcountrycode.text + tfphonenumber.text);
     }
 
     SilicaFlickable

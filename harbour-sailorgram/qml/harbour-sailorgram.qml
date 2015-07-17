@@ -32,24 +32,34 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import "models"
 import "pages"
+import "cover"
 import "js/Settings.js" as Settings
 
 ApplicationWindow
 {
-    default property alias settings: settings
+    default property alias context: context
 
-    Settings
+    Context
     {
-        id: settings
-        Component.onCompleted: Settings.load()
+        id: context
+
+        Component.onCompleted: {
+            Settings.load();
+            context.sendwithreturn = parseInt(Settings.get("sendwithreturn"));
+        }
+
+        Component.onDestruction: context.heartbeat.quit()
     }
 
     id: mainwindow
-    cover: undefined
+
+    cover: CoverPage {
+        context: mainwindow.context
+    }
 
     initialPage: Component {
         ConnectionPage {
-            telegram: settings.telegram
+            context: mainwindow.context
         }
     }
 }

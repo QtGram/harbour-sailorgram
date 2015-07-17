@@ -5,6 +5,6 @@
 
 void TelegramQmlPlugin::registerTypes(const char *uri)
 {
-    // @uri harbour.sailorgram.TelegramQml
+    // @uri com.mycompany.qmlcomponents
     TelegramQmlInitializer::init(uri);
 }

@@ -28,7 +28,7 @@
 #include <QPair>
 #include <QLoggingCategory>
 #include "types/inputuser.h"
-#include "openssl/bn.h"
+#include <bn.h>
 #include "types/encryptedchat.h"
 #include "types/decryptedmessage.h"
 #include "libqtelegram_global.h"

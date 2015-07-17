@@ -48,7 +48,7 @@ void TelegramUploadsModel::setTelegram(TelegramQml *tgo)
         return;
 
     p->telegram = tg;
-    emit telegramChanged();
+    Q_EMIT telegramChanged();
     if( !p->telegram )
         return;
 

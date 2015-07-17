@@ -140,7 +140,7 @@ public:
     qint64 messagesRestoreMessages(const QList<qint32> &ids);
     qint64 messagesReceivedMessages(qint32 maxId);
     qint64 messagesForwardMessage(const InputPeer &peer, qint32 id, qint64 randomId);
-    qint64 messagesForwardMessages(const InputPeer &peer, const QList<qint32> &ids, const QList<qint32> &randomIds);
+    qint64 messagesForwardMessages(const InputPeer &peer, const QList<qint32> &ids, const QList<qint64> &randomIds);
     qint64 messagesSendBroadcast(const QList<InputUser> &contacts, const QString &message, const InputMedia &media);
     // Chats
     qint64 messagesGetChats(const QList<qint32> &chatIds);

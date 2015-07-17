@@ -59,15 +59,15 @@ public:
     Q_INVOKABLE int indexOf(DialogObject *dialog);
     Q_INVOKABLE DialogObject *at(int row);
 
-public slots:
+public Q_SLOTS:
     void refreshDatabase();
 
-signals:
+Q_SIGNALS:
     void telegramChanged();
     void countChanged();
     void initializingChanged();
 
-private slots:
+private Q_SLOTS:
     void dialogsChanged(bool cachedData);
     void dialogsChanged_priv();
     void userDataChanged();

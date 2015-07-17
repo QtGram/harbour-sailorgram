@@ -63,8 +63,8 @@ void TelegramDialogsModel::setTelegram(TelegramQml *tgo)
 
     p->telegram = tg;
     p->initializing = tg;
-    emit telegramChanged();
-    emit initializingChanged();
+    Q_EMIT telegramChanged();
+    Q_EMIT initializingChanged();
     if( !p->telegram )
         return;
 
@@ -166,7 +166,7 @@ void TelegramDialogsModel::dialogsChanged(bool cachedData)
     if(p->initializing)
     {
         p->initializing = false;
-        emit initializingChanged();
+        Q_EMIT initializingChanged();
     }
 
     if(p->refresh_timer)
@@ -227,7 +227,7 @@ void TelegramDialogsModel::dialogsChanged_priv()
         endInsertRows();
     }
 
-    emit countChanged();
+    Q_EMIT countChanged();
 }
 
 void TelegramDialogsModel::userDataChanged()

@@ -307,6 +307,7 @@ enum TLValues {
     TL_DecryptedMessageMediaContact = 0x588a0a97,
     TL_DecryptedMessageMediaAudio_layer8 = 0x6080758f,
     TL_DecryptedMessageMediaAudio = 0x57e0a9cb,
+    TL_DecryptedMessageMediaExternalDocument = 0xfa95b0dd,
     TL_DecryptedMessageActionSetMessageTTL = 0xa1733aec,
     TL_DecryptedMessageActionReadMessages = 0xc4f40be,
     TL_DecryptedMessageActionDeleteMessages = 0x65614304,

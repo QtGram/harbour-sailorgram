@@ -32,12 +32,18 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../../models"
-import "../../items"
+import "../../components"
+import "../../menus/conversation"
+import "../../items/conversation"
+import "../../js/TelegramHelper.js" as TelegramHelper
+import "../../js/TelegramConstants.js" as TelegramConstants
 
 Page
 {
-    property Settings settings
+    property Context context
     property Telegram telegram
+    property Component conversationItemComponent
+    property Component secretConversationItemComponent;
 
     id: conversationspage
     allowedOrientations: defaultAllowedOrientations
@@ -46,31 +52,63 @@ Page
         if(conversationspage.status !== PageStatus.Active)
             return;
 
-        settings.foregroundDialog = telegram.nullDialog; // Reset Foreground Dialog
+        context.foregroundDialog = telegram.nullDialog; // Reset Foreground Dialog
     }
 
     SilicaListView
     {
-        PullDownMenu
+        ConversationsPullDownMenu
         {
-            MenuItem {
-                text: qsTr("Contacts")
-                onClicked: pageStack.push(Qt.resolvedUrl("../users/UsersPage.qml"), { "settings": conversationspage.settings, "telegram": conversationspage.telegram })
+            id: conversationsmenu
+            context: conversationspage.context
+        }
+
+        PushUpMenu
+        {
+            id: appmenu
+
+            MenuItem
+            {
+                text: qsTr("Settings")
+                onClicked: pageStack.push(Qt.resolvedUrl("../settings/SettingsPage.qml"), { "context": conversationspage.context })
+            }
+
+            MenuItem
+            {
+                text: qsTr("About")
+                onClicked: pageStack.push(Qt.resolvedUrl("../AboutPage.qml"), { "context": conversationspage.context })
             }
         }
 
         ViewPlaceholder
         {
             enabled: lvchats.count <= 0
-            text: qsTr("No Chats\n\nPick a contact by selecting \"Contacts\" from the Pull Down Menu")
+            text: qsTr("No Chats\n\nPick a contact by selecting \"Contacts\" from the Menu above")
         }
 
         id: lvchats
         spacing: Theme.paddingMedium
         anchors.fill: parent
 
+        section.property: "item.peer.classType"
+        section.criteria: ViewSection.FullString
+
+        section.delegate: Component {
+            SectionHeader {
+                text: (parseInt(section) === TelegramConstants.typePeerChat) ? qsTr("Groups") : qsTr("Conversations")
+                font.pixelSize: Theme.fontSizeSmall
+                height: Theme.itemSizeExtraSmall
+            }
+        }
+
         header: PageHeader {
-            title: qsTr("Chats")
+            id: pageheader
+            title: context.heartbeat.connected ? qsTr("Chats") : qsTr("Connecting...")
+
+            ConnectionStatus {
+                context: conversationspage.context
+                anchors { verticalCenter: pageheader.extraContent.verticalCenter; right: pageheader.extraContent.right; topMargin: Theme.paddingSmall }
+            }
         }
 
         model: DialogsModel {
@@ -81,23 +119,51 @@ Page
             id: dialogitem
             contentWidth: parent.width
             contentHeight: Theme.itemSizeSmall
-            onClicked: pageStack.push(Qt.resolvedUrl("ConversationPage.qml"), { "settings": conversationspage.settings, "telegram": conversationspage.telegram, "dialog": item })
+
+            onClicked: {
+                if(item.encrypted) {
+                    pageStack.push(Qt.resolvedUrl("../secretconversations/SecretConversationPage.qml"), { "context": conversationspage.context, "telegram": conversationspage.telegram, "dialog": item });
+                    return;
+                }
+
+                pageStack.push(Qt.resolvedUrl("ConversationPage.qml"), { "context": conversationspage.context, "telegram": conversationspage.telegram, "dialog": item })
+            }
 
             menu: ContextMenu {
                 MenuItem {
                     text: qsTr("Delete History")
 
                     onClicked: {
-                        dialogitem.remorseAction(qsTr("Deleting History"), function() {
-                            telegram.messagesDeleteHistory(item.peer.userId);
+                        dialogitem.remorseAction(item.encrypted ? qsTr("Deleting Secret Chat") : qsTr("Deleting History"), function() {
+                            if(item.encrypted)
+                                telegram.messagesDiscardEncryptedChat(item.peer.userId);
+                            else
+                                telegram.messagesDeleteHistory(TelegramHelper.peerId(item));
                         });
                     }
                 }
             }
 
-            ConversationItem {
-                anchors.fill: parent
-                dialog: item
+            Component.onCompleted: {
+                if(!item.encrypted && !conversationItemComponent) {
+                    conversationItemComponent = Qt.createComponent("../../items/conversation/ConversationItem.qml");
+
+                    if(conversationItemComponent.status === Component.Error) {
+                        console.log(conversationItemComponent.errorString());
+                        return;
+                    }
+                }
+                else if(item.encrypted && !secretConversationItemComponent) {
+                    secretConversationItemComponent = Qt.createComponent("../../items/secretconversation/SecretConversationItem.qml");
+
+                    if(secretConversationItemComponent.status === Component.Error) {
+                        console.log(secretConversationItemComponent.errorString());
+                        return;
+                    }
+                }
+
+                var c = !item.encrypted ? conversationItemComponent : secretConversationItemComponent;
+                c.createObject(contentItem, {"width": dialogitem.contentWidth, "height": dialogitem.contentHeight, "context": conversationspage.context, "dialog": item });
             }
         }
     }

@@ -41,16 +41,18 @@ public:
     int count() const;
     bool initializing() const;
 
-public slots:
+    QList<qint64> messages() const;
+
+public Q_SLOTS:
     void refresh();
 
-signals:
+Q_SIGNALS:
     void telegramChanged();
     void countChanged();
     void initializingChanged();
     void keywordChanged();
 
-private slots:
+private Q_SLOTS:
     void searchDone(const QList<qint64> &messages);
 
 protected:

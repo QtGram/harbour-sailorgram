@@ -4,7 +4,7 @@ import Sailfish.Silica 1.0
 Item
 {
     property alias source: image.source
-    property size imageSize: settings.sailorgram.imageSize(image.source);
+    property size imageSize: context.sailorgram.imageSize(image.source);
     property real transferProgress
 
     id: messagethumbnail

@@ -29,7 +29,7 @@ void DialogFilesModel::setTelegram(TelegramQml *tg)
         return;
 
     p->telegram = tg;
-    emit telegramChanged();
+    Q_EMIT telegramChanged();
 
     refresh();
 }
@@ -45,7 +45,7 @@ void DialogFilesModel::setDialog(DialogObject *dlg)
         return;
 
     p->dialog = dlg;
-    emit dialogChanged();
+    Q_EMIT dialogChanged();
 
     refresh();
 }
@@ -161,7 +161,7 @@ void DialogFilesModel::refresh()
         endInsertRows();
     }
 
-    emit countChanged();
+    Q_EMIT countChanged();
 }
 
 QString DialogFilesModel::dirPath() const

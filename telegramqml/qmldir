@@ -1,2 +1,3 @@
-module harbour.sailorgram.TelegramQml
-plugin telegramqml
+module TelegramQml
+plugin TelegramQml
+

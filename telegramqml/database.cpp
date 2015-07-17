@@ -37,7 +37,7 @@ void Database::setPhoneNumber(const QString &phoneNumber)
     p->phoneNumber = phoneNumber;
     refresh();
 
-    emit phoneNumberChanged();
+    Q_EMIT phoneNumberChanged();
 }
 
 QString Database::phoneNumber() const
@@ -53,7 +53,7 @@ void Database::setConfigPath(const QString &path)
     p->configPath = path;
     refresh();
 
-    emit configPathChanged();
+    Q_EMIT configPathChanged();
 }
 
 QString Database::configPath() const
@@ -138,22 +138,22 @@ void Database::deleteHistory(qint64 dlgId)
 
 void Database::userFounded_slt(const DbUser &user)
 {
-    emit userFounded(user.user);
+    Q_EMIT userFounded(user.user);
 }
 
 void Database::chatFounded_slt(const DbChat &chat)
 {
-    emit chatFounded(chat.chat);
+    Q_EMIT chatFounded(chat.chat);
 }
 
 void Database::dialogFounded_slt(const DbDialog &dialog, bool encrypted)
 {
-    emit dialogFounded(dialog.dialog, encrypted);
+    Q_EMIT dialogFounded(dialog.dialog, encrypted);
 }
 
 void Database::messageFounded_slt(const DbMessage &message)
 {
-    emit messageFounded(message.message);
+    Q_EMIT messageFounded(message.message);
 }
 
 void Database::refresh()

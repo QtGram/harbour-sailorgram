@@ -1604,7 +1604,7 @@ void Api::onMessagesForwardMessagesAnswer(Query *q, InboundPkt &inboundPkt) {
     }
 }
 
-qint64 Api::messagesForwardMessages(const InputPeer &peer, const QList<qint32> &ids, const QList<qint32> &randomIds) {
+qint64 Api::messagesForwardMessages(const InputPeer &peer, const QList<qint32> &ids, const QList<qint64> &randomIds) {
     OutboundPkt p(mSettings);
     p.appendInt(TL_MessagesForwardMessages);
     p.appendInputPeer(peer);
@@ -1615,8 +1615,8 @@ qint64 Api::messagesForwardMessages(const InputPeer &peer, const QList<qint32> &
     }
     p.appendInt(TL_Vector);
     p.appendInt(randomIds.length());
-    Q_FOREACH (qint32 id, randomIds) {
-        p.appendInt(id);
+    Q_FOREACH (qint64 id, randomIds) {
+        p.appendLong(id);
     }
     return mMainSession->sendQuery(p, &messagesForwardMessagesMethods, QVariant(), __FUNCTION__ );
 }

@@ -39,9 +39,30 @@ function userStatus(user)
     return qsTr("Unknown");
 }
 
-function peerId(peer)
+function isChat(dialog)
 {
-    return (peer.chatId) !== 0 ? peer.chatId : peer.userId;
+    if(!dialog)
+        return false;
+
+    return dialog.peer.classType === TelegramConstants.typePeerChat;
+}
+
+function isActionMessage(message) {
+    if(message.classType === TelegramConstants.typeMessageService)
+        return true;
+
+    if(message.action && (message.action.classType !== TelegramConstants.typeMessageActionEmpty))
+        return true;
+
+    return false;
+}
+
+function peerId(dialog)
+{
+    if(dialog.peer.classType === TelegramConstants.typePeerChat)
+        return dialog.peer.chatId;
+
+    return dialog.peer.userId;
 }
 
 function messageContent(message)

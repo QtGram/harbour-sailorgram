@@ -27,6 +27,8 @@
 
 #include "telegramqml_global.h"
 
+class TelegramSearchModel;
+class UpdatesState;
 class NewsLetterDialog;
 class DownloadObject;
 class Database;
@@ -88,8 +90,8 @@ class TELEGRAMQMLSHARED_EXPORT TelegramQml : public QObject
     Q_PROPERTY(QString phoneNumber   READ phoneNumber   WRITE setPhoneNumber   NOTIFY phoneNumberChanged  )
     Q_PROPERTY(QString configPath    READ configPath    WRITE setConfigPath    NOTIFY configPathChanged   )
     Q_PROPERTY(QString publicKeyFile READ publicKeyFile WRITE setPublicKeyFile NOTIFY publicKeyFileChanged)
-    Q_PROPERTY(QString downloadPath  READ downloadPath  NOTIFY downloadPathChanged )
-    Q_PROPERTY(QString tempPath      READ tempPath      NOTIFY tempPathChanged     )
+    Q_PROPERTY(QString downloadPath  READ downloadPath  WRITE setDownloadPath  NOTIFY downloadPathChanged )
+    Q_PROPERTY(QString tempPath      READ tempPath      WRITE setTempPath      NOTIFY tempPathChanged     )
 
     Q_PROPERTY(QObject* newsLetterDialog READ newsLetterDialog WRITE setNewsLetterDialog NOTIFY newsLetterDialogChanged     )
     Q_PROPERTY(bool autoCleanUpMessages READ autoCleanUpMessages WRITE setAutoCleanUpMessages NOTIFY autoCleanUpMessagesChanged)
@@ -136,7 +138,10 @@ public:
     void setPhoneNumber( const QString & phone );
 
     QString downloadPath() const;
+    void setDownloadPath( const QString & downloadPath );
+
     QString tempPath() const;
+    void setTempPath( const QString & tempPath );
 
     QString configPath() const;
     void setConfigPath( const QString & conf );
@@ -167,6 +172,9 @@ public:
 
     void registerMessagesModel(TelegramMessagesModel *model);
     void unregisterMessagesModel(TelegramMessagesModel *model);
+
+    void registerSearchModel(TelegramSearchModel *model);
+    void unregisterSearchModel(TelegramSearchModel *model);
 
     UserData *userData() const;
     Database *database() const;
@@ -214,6 +222,7 @@ public:
     Q_INVOKABLE FileLocationObject *locationOfAudio(AudioObject *aud);
 
     Q_INVOKABLE bool documentIsSticker(DocumentObject *doc);
+    Q_INVOKABLE QString documentFileName(DocumentObject *doc);
 
     Q_INVOKABLE DialogObject *fakeDialogObject( qint64 id, bool isChat );
 
@@ -231,6 +240,7 @@ public:
 
     Q_INVOKABLE QString fileLocation( FileLocationObject *location );
     Q_INVOKABLE QString videoThumbLocation( const QString &path );
+    Q_INVOKABLE QString audioThumbLocation( const QString &path );
 
     QList<qint64> dialogs() const;
     QList<qint64> messages(qint64 did, qint64 maxId = 0) const;
@@ -242,7 +252,7 @@ public:
 
     QList<qint64> userIndex(const QString &keyword);
 
-public slots:
+public Q_SLOTS:
     void authLogout();
     void authSendCall();
     void authSendCode();
@@ -287,10 +297,12 @@ public slots:
     void setProfilePhoto( const QString & fileName );
 
     void timerUpdateDialogs( qint32 duration = 1000 );
-    void cleanUp();
     void cleanUpMessages();
 
-signals:
+    void updatesGetState();
+    void updatesGetDifference();
+
+Q_SIGNALS:
     void defaultHostAddressChanged();
     void defaultHostPortChanged();
     void defaultHostDcIdChanged();
@@ -352,7 +364,7 @@ signals:
 protected:
     void try_init();
 
-private slots:
+private Q_SLOTS:
     void authNeeded_slt();
     void authLoggedIn_slt();
     void authLogOut_slt(qint64 id, bool ok);
@@ -379,6 +391,7 @@ private slots:
     void messagesForwardMessage_slt(qint64 id, const Message & message, const QList<Chat> & chats, const QList<User> & users, const QList<ContactsLink> & links, qint32 pts, qint32 pts_count, qint32 seq);
     void messagesForwardMessages_slt(qint64 id, const QList<Message> &messages, const QList<Chat> &chats, const QList<User> &users, const QList<ContactsLink> &links, qint32 pts, qint32 pts_count, qint32 seq);
     void messagesDeleteMessages_slt(qint64 id, const AffectedMessages &deletedMessages);
+    void messagesGetMessages_slt(qint64 id, qint32 sliceCount, const QList<Message> &messages, const QList<Chat> &chats, const QList<User> &users);
 
     void messagesSendMedia_slt(qint64 id, const Message & message, const QList<Chat> & chats, const QList<User> & users, const QList<ContactsLink> & links, qint32 pts, qint32 seq);
     void messagesSendPhoto_slt(qint64 id, const Message & message, const QList<Chat> & chats, const QList<User> & users, const QList<ContactsLink> & links, qint32 pts, qint32 seq);
@@ -412,6 +425,8 @@ private slots:
     void updatesCombined_slt(const QList<Update> & updates, const QList<User> & users, const QList<Chat> & chats, qint32 date, qint32 seqStart, qint32 seq);
     void updates_slt(const QList<Update> & udts, const QList<User> & users, const QList<Chat> & chats, qint32 date, qint32 seq);
     void updateSecretChatMessage_slt(const SecretChatMessage &secretChatMessage, qint32 qts);
+    void updatesGetDifference_slt(qint64 id, const QList<Message> &messages, const QList<SecretChatMessage> &secretChatMessages, const QList<Update> &otherUpdates, const QList<Chat> &chats, const QList<User> &users, const UpdatesState &state, bool isIntermediateState);
+    void updatesGetState_slt(qint64 id, qint32 pts, qint32 qts, qint32 date, qint32 seq, qint32 unreadCount);
 
     void uploadGetFile_slt(qint64 id, const StorageFileType & type, qint32 mtime, const QByteArray & bytes, qint32 partId, qint32 downloaded, qint32 total);
     void uploadSendFile_slt(qint64 fileId, qint32 partId, qint32 uploaded, qint32 totalSize);
@@ -428,11 +443,14 @@ private:
     void insertContact( const Contact & contact );
     void insertEncryptedMessage(const EncryptedMessage & emsg);
     void insertEncryptedChat(const EncryptedChat & c);
+    void insertSecretChatMessage(const SecretChatMessage & sc, bool cachedMsg = false);
 
     QString fileLocation_old( FileLocationObject *location );
+    QString fileLocation_old2( FileLocationObject *location );
 
     static QString localFilesPrePath();
     static bool createVideoThumbnail(const QString &video, const QString &output, QString ffmpegPath = QString());
+    static bool createAudioThumbnail(const QString &audio, const QString &output);
 
 protected:
     void timerEvent(QTimerEvent *e);
@@ -440,8 +458,9 @@ protected:
     SecretChat *getSecretChat(qint64 chatId);
 
     void startGarbageChecker();
+    void insertToGarbeges(QObject *obj);
 
-private slots:
+private Q_SLOTS:
     void dbUserFounded(const User &user);
     void dbChatFounded(const Chat &chat);
     void dbDialogFounded(const Dialog &dialog, bool encrypted);
@@ -461,6 +480,11 @@ private slots:
 
     void objectDestroyed(QObject *obj);
     void cleanUpMessages_prv();
+
+    bool requestReadMessage(qint32 msgId);
+    void requestReadMessage_prv();
+
+    static void removeFiles(const QString &dir);
 
 private:
     TelegramQmlPrivate *p;

@@ -11,7 +11,7 @@ MessageMediaItem
     {
         id: thumb
         anchors { left: parent.left; top: parent.top }
-        source: messagephoto.mediaPath
+        source: messagephoto.mediaThumbnail
         transferProgress: progressPercent
     }
 }

@@ -8,6 +8,16 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
-* ??? ??? ?? 2015 Antonio Davide Trogu <trogu.davide@gmail.com> 0.5-1
+* Wed Jul 08 2015 Antonio Davide Trogu <trogu.davide@gmail.com> 0.6-1
+- Implemented Group Management (Member Management, Group Creation/Deletion/Invite)
+- Conversations and Groups are separated in two different sections
+- Display Telegram's service messages in chat
+- Improved Conversation UI
+- Added Cover Actions
+- Minor Fixes
+- Updated Localizations
+
+* Sun Jul 05 2015 Antonio Davide Trogu <trogu.davide@gmail.com> 0.5-1
+- First Public Release
 
 

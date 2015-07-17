@@ -31,7 +31,7 @@ public:
     void setConfigPath(const QString &path);
     QString configPath() const;
 
-public slots:
+public Q_SLOTS:
     void insertUser(const User &user);
     void insertChat(const Chat &chat);
     void insertDialog(const Dialog &dialog, bool encrypted);
@@ -45,7 +45,7 @@ public slots:
     void deleteDialog(qint64 dlgId);
     void deleteHistory(qint64 dlgId);
 
-signals:
+Q_SIGNALS:
     void userFounded(const User &user);
     void chatFounded(const Chat &chat);
     void dialogFounded(const Dialog &dialog, bool encrypted);
@@ -54,7 +54,7 @@ signals:
     void phoneNumberChanged();
     void configPathChanged();
 
-private slots:
+private Q_SLOTS:
     void userFounded_slt(const DbUser &user);
     void chatFounded_slt(const DbChat &chat);
     void dialogFounded_slt(const DbDialog &dialog, bool encrypted);

@@ -43,10 +43,10 @@ public:
 
     int count() const;
 
-public slots:
+public Q_SLOTS:
     ChatParticipantObject *at( int idx );
 
-signals:
+Q_SIGNALS:
     void firstChanged();
     void lastChanged();
     void countChanged();

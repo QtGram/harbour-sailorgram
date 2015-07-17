@@ -28,10 +28,10 @@ public:
     QUrl background() const;
     qint64 dialogId();
 
-public slots:
+public Q_SLOTS:
     void setBackground(const QString &filePath);
 
-signals:
+Q_SIGNALS:
     void directoryChanged();
     void dialogChanged();
     void backgroundChanged();

@@ -6,16 +6,74 @@ import "../../models"
 import "../../menus"
 import "media"
 import "../../js/TelegramConstants.js" as TelegramConstants
+import "../../js/TelegramHelper.js" as TelegramHelper
 
 ListItem
 {
-    property Settings settings
-    property Telegram telegram
+    property Context context
     property Message message
 
-    function downloadMedia() {
-        messageitem.remorseAction(qsTr("Downloading Media"), function() {
+    function remorseNeeded(mediatype, type) {
+        if((mediatype === TelegramConstants.typeMessageMediaVideo) || (mediatype === TelegramConstants.typeMessageMediaAudio))
+            return true;
+
+        if((type === "audio") || (type === "video"))
+            return true;
+
+        if((mediatype === TelegramConstants.typeMessageMediaDocument) && (type !== "image"))
+            return true;
+
+        return false;
+    }
+
+    function openOrDownloadMedia(canbeviewed, type) {
+        if(canbeviewed)
+            loader.item.fileHandler.target = messageitem.message; // Download Media
+
+        if((message.media.classType === TelegramConstants.typeMessageMediaPhoto) || (type === "image")) {
+            pageStack.push(Qt.resolvedUrl("../../pages/media/MediaPhotoPage.qml"), { "context": messageitem.context, "message": messageitem.message, "fileHandler": loader.item.fileHandler });
+            return;
+        }
+
+        if((message.media.classType === TelegramConstants.typeMessageMediaVideo) || (message.media.classType === TelegramConstants.typeMessageMediaAudio) || (type === "audio") || (type === "video")) {
+            pageStack.push(Qt.resolvedUrl("../../pages/media/MediaPlayerPage.qml"), { "context": messageitem.context, "message": messageitem.message, "fileHandler": loader.item.fileHandler });
+            return;
+        }
+
+        var path = loader.item.mediaPath;
+
+        if(!path.length) {
             loader.item.fileHandler.target = messageitem.message; // Set Target Object before download
+            return;
+        }
+
+        Qt.openUrlExternally(path);
+    }
+
+    function displayMedia() {
+        if(!message.media)
+            return;
+
+        var type = "";
+        var canbeviewed = (message.media.classType === TelegramConstants.typeMessageMediaPhoto) ||
+                          (message.media.classType === TelegramConstants.typeMessageMediaVideo) ||
+                          (message.media.classType === TelegramConstants.typeMessageMediaAudio);
+
+        if(message.media.classType === TelegramConstants.typeMessageMediaDocument) {
+            var mime = message.media.document.mimeType;
+            type = mime.split("/")[0];
+            canbeviewed = ((type === "video") || (type === "audio") || (type === "image")) ? true : false;
+        }
+
+        var remorseneeded = remorseNeeded(message.media.classType, type);
+
+        if(!remorseneeded) {
+            openOrDownloadMedia(canbeviewed, type);
+            return;
+        }
+
+        messageitem.remorseAction((canbeviewed ? qsTr("Opening Media") : qsTr("Downloading Media")), function() {
+            openOrDownloadMedia(canbeviewed, type);
         });
     }
 
@@ -23,36 +81,21 @@ ListItem
     contentWidth: parent.width
     contentHeight: content.height
 
-    menu: ConversationMenu {
+    menu: MessageMenu {
         id: messagemenu
-        telegram: messageitem.telegram
+        context: messageitem.context
         message: messageitem.message
 
         onCancelRequested: loader.item.cancelTransfer()
-        onDownloadRequested: downloadMedia()
-        onOpenRequested: Qt.openUrlExternally(loader.item.fileHandler.filePath)
     }
 
-    onClicked: {
-        if(!message.media)
-            return;
-
-        var path = loader.item.fileHandler.filePath.toString();
-
-        if(path.length > 0) {
-            Qt.openUrlExternally(loader.item.fileHandler.filePath);
-            return;
-        }
-
-        downloadMedia();
-    }
+    onClicked: displayMedia()
 
     Component {
         id: documentcomponent
 
         MessageDocument {
-            settings: messageitem.settings
-            telegram: messageitem.telegram
+            context: messageitem.context
             message: messageitem.message
         }
     }
@@ -61,8 +104,7 @@ ListItem
         id: photocomponent
 
         MessagePhoto {
-            settings: messageitem.settings
-            telegram: messageitem.telegram
+            context: messageitem.context
             message: messageitem.message
         }
     }
@@ -71,6 +113,20 @@ ListItem
     {
         id: content
         anchors { top: parent.top; left: parent.left; right: parent.right; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
+
+        Label
+        {
+            id: lbluser
+            anchors { left: message.out ? parent.left : undefined; right: message.out ? undefined : parent.right }
+            visible: !TelegramHelper.isActionMessage(message) && !message.out
+            text: (!TelegramHelper.isActionMessage(message) && message.out) ? "" : TelegramHelper.userName(context.telegram.user(message.fromId))
+            font.bold: true
+            font.pixelSize: Theme.fontSizeMedium
+            wrapMode: Text.NoWrap
+            horizontalAlignment: Text.AlignRight
+            verticalAlignment: Text.AlignVCenter
+            color: Theme.secondaryHighlightColor
+        }
 
         Loader
         {
@@ -90,6 +146,9 @@ ListItem
 
             onLoaded: {
                 messagemenu.fileHandler = loader.item.fileHandler;
+
+                if((message.media.classType === TelegramConstants.typeMessageMediaDocument) && context.telegram.documentIsSticker(message.media.document))
+                    loader.item.fileHandler.target = messageitem.message;
             }
         }
 

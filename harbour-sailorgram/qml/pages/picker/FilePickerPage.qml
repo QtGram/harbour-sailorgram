@@ -7,10 +7,14 @@ Page
 {
     property Page rootPage
     property string directory
-    property string filter
+    property string mime
 
     signal filePicked(string file)
     signal dismiss()
+
+    function changeDirectory(dir) {
+        foldermodel.directory = dir.length ? dir : foldermodel.homeFolder;
+    }
 
     function pickFile(file) {
         filepickerpageprivate.isFilePicked = true;
@@ -36,6 +40,42 @@ Page
 
         PageHeader { id: pageheader }
 
+        PullDownMenu
+        {
+            MenuItem {
+                text: qsTr("SD Card")
+                visible: foldermodel.sdcardFolder.length > 0
+
+                onClicked: {
+                    var rootfppage = pageStack.nextPage(rootPage);
+
+                    if(rootfppage !== filepickerpage) {
+                        rootfppage.changeDirectory(foldermodel.sdcardFolder);
+                        pageStack.pop(rootfppage);
+                        return;
+                    }
+
+                    rootfppage.changeDirectory(foldermodel.sdcardFolder);
+                }
+            }
+
+            MenuItem {
+                text: qsTr("Home");
+
+                onClicked: {
+                    var rootfppage = pageStack.nextPage(rootPage);
+
+                    if(rootfppage !== filepickerpage) {
+                        rootfppage.changeDirectory(foldermodel.homeFolder);
+                        pageStack.pop(rootfppage);
+                        return;
+                    }
+
+                    rootfppage.changeDirectory(foldermodel.homeFolder);
+                }
+            }
+        }
+
         FilePicker
         {
             id: filepicker
@@ -45,6 +85,7 @@ Page
 
             folderModel: FolderListModel {
                 id: foldermodel
+                mime: filepickerpage.mime
 
                 onDirectoryNameChanged: {
                     pageheader.title = ((directory === "/") ? qsTr("Root") : foldermodel.directoryName);
@@ -57,16 +98,16 @@ Page
             }
 
             onFolderSelected: {
-                var page = pageStack.push(Qt.resolvedUrl("FilePickerPage.qml"), { "directory": folderpath, "filter" : filter, "rootPage": rootPage })
+                var page = pageStack.push(Qt.resolvedUrl("FilePickerPage.qml"), { "directory": folderpath, "filter" : mime, "rootPage": rootPage })
                 page.filePicked.connect(pickFile);
             }
         }
     }
 
     Component.onCompleted: {
-        if(filter.length)
-            foldermodel.filter = filter;
+        if(mime.length)
+            foldermodel.mime = mime;
 
-        foldermodel.directory = directory.length ? directory : foldermodel.homeFolder;
+        changeDirectory(filepickerpage.directory);
     }
 }

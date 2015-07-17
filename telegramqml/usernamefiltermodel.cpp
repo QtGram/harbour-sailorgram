@@ -38,7 +38,7 @@ void UserNameFilterModel::setTelegram(TelegramQml *tgo)
     if(p->telegram)
         connect(p->telegram, SIGNAL(chatFullsChanged()), this, SLOT(refresh()));
 
-    emit telegramChanged();
+    Q_EMIT telegramChanged();
     listChanged();
 }
 
@@ -53,7 +53,7 @@ void UserNameFilterModel::setDialog(DialogObject *dialog)
         return;
 
     p->dialog = dialog;
-    emit dialogChanged();
+    Q_EMIT dialogChanged();
 
     listChanged();
 }
@@ -106,7 +106,7 @@ void UserNameFilterModel::setKeyword(const QString &keyword)
         return;
 
     p->keyword = keyword;
-    emit keywordChanged();
+    Q_EMIT keywordChanged();
 
     listChanged();
 }
@@ -210,7 +210,7 @@ void UserNameFilterModel::listChanged()
         endInsertRows();
     }
 
-    emit countChanged();
+    Q_EMIT countChanged();
 }
 
 UserNameFilterModel::~UserNameFilterModel()

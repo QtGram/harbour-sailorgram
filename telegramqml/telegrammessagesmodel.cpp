@@ -79,8 +79,8 @@ void TelegramMessagesModel::setTelegram(TelegramQml *tgo)
         p->telegram->registerMessagesModel(this);
 
     p->initializing = tg;
-    emit telegramChanged();
-    emit initializingChanged();
+    Q_EMIT telegramChanged();
+    Q_EMIT initializingChanged();
     if( !p->telegram )
         return;
 
@@ -100,7 +100,7 @@ void TelegramMessagesModel::setDialog(DialogObject *dlg)
         return;
 
     p->dialog = dlg;
-    emit dialogChanged();
+    Q_EMIT dialogChanged();
 
     beginResetModel();
     p->messages.clear();
@@ -112,7 +112,7 @@ void TelegramMessagesModel::setDialog(DialogObject *dlg)
         return;
 
     p->unreadCount = p->dialog->unreadCount();
-    emit hasNewMessageChanged();
+    Q_EMIT hasNewMessageChanged();
 
     init();
 }
@@ -123,7 +123,7 @@ void TelegramMessagesModel::setMaxId(int id)
         return;
 
     p->maxId = id;
-    emit maxIdChanged();
+    Q_EMIT maxIdChanged();
 
     init();
 }
@@ -155,7 +155,7 @@ void TelegramMessagesModel::init()
     if(p->dialog->peer()->userId() != NewsLetterDialog::cutegramId())
     {
         p->refreshing = true;
-        emit refreshingChanged();
+        Q_EMIT refreshingChanged();
     }
 }
 
@@ -221,7 +221,7 @@ void TelegramMessagesModel::loadMore(bool force)
 
     p->telegram->database()->readMessages(TelegramMessagesModel::peer(), p->load_count, LOAD_STEP_COUNT);
 
-    emit refreshingChanged();
+    Q_EMIT refreshingChanged();
 }
 
 void TelegramMessagesModel::sendMessage(const QString &msg, int inReplyTo)
@@ -252,7 +252,7 @@ void TelegramMessagesModel::setReaded()
 void TelegramMessagesModel::clearNewMessageFlag()
 {
     p->unreadCount = 0;
-    emit hasNewMessageChanged();
+    Q_EMIT hasNewMessageChanged();
 }
 
 qint64 TelegramMessagesModel::id(const QModelIndex &index) const
@@ -339,7 +339,7 @@ void TelegramMessagesModel::messagesChanged(bool cachedData)
     if(!cachedData && p->refreshing)
     {
         p->refreshing = false;
-        emit refreshingChanged();
+        Q_EMIT refreshingChanged();
     }
 
     if(p->refresh_timer)
@@ -405,14 +405,14 @@ void TelegramMessagesModel::messagesChanged_priv()
         p->messages.insert( i, msgId );
         endInsertRows();
 
-        emit messageAdded(msgId);
+        Q_EMIT messageAdded(msgId);
     }
 
     p->load_count = p->messages.count();
-    emit countChanged();
+    Q_EMIT countChanged();
 
     if(p->refreshing_cache && !p->refreshing)
-        emit focusToNewRequest(p->unreadCount);
+        Q_EMIT focusToNewRequest(p->unreadCount);
 
     p->refreshing_cache = p->refreshing;
 }

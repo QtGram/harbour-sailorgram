@@ -20,8 +20,8 @@
 #include "util/tlvalues.h"
 #include "util/utils.h"
 #include "core/settings.h"
-#include <openssl/sha.h>
-#include <openssl/aes.h>
+#include <sha.h>
+#include <aes.h>
 
 Q_LOGGING_CATEGORY(TG_SECRET_DECRYPTER, "tg.secret.decrypter")
 
@@ -305,13 +305,32 @@ DecryptedMessageMedia Decrypter::fetchDecryptedMessageMedia() {
            x == (qint32)DecryptedMessageMedia::typeDecryptedMessageMediaDocument ||
            x == (qint32)DecryptedMessageMedia::typeDecryptedMessageMediaAudio_layer8 ||
            x == (qint32)DecryptedMessageMedia::typeDecryptedMessageMediaVideo ||
-           x == (qint32)DecryptedMessageMedia::typeDecryptedMessageMediaAudio);
+           x == (qint32)DecryptedMessageMedia::typeDecryptedMessageMediaAudio ||
+           x == (qint32)DecryptedMessageMedia::typeDecryptedMessageMediaExternalDocument);
     DecryptedMessageMedia media((DecryptedMessageMedia::DecryptedMessageMediaType)x);
 
     switch(x) {
     case DecryptedMessageMedia::typeDecryptedMessageMediaEmpty: {
         break;
     }
+    case DecryptedMessageMedia::typeDecryptedMessageMediaExternalDocument: {
+        media.setId(fetchInt());
+        media.setAccessHash(fetchLong());
+        media.setDate(fetchLong());
+        media.setMimeType(fetchQString());
+        media.setSize(fetchInt());
+        media.setThumb23(fetchPhotoSize());
+        media.setDcId(fetchInt());
+
+        ASSERT(fetchInt() == (qint32)TL_Vector);
+        qint32 n = fetchInt();
+        QList<DocumentAttribute> attrs;
+        for (qint32 i = 0; i < n; i++)
+            attrs.append(fetchDocumentAttribute());
+        media.setAttributes(attrs);
+        break;
+    }
+
     case DecryptedMessageMedia::typeDecryptedMessageMediaPhoto: {
         media.setThumb(fetchBytes());
         media.setThumbW(fetchInt());

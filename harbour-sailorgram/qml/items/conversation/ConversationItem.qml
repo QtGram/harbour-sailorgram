@@ -2,18 +2,27 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import harbour.sailorgram.TelegramCalendar 1.0
-import "../items/user"
-import "../js/TelegramHelper.js" as TelegramHelper
+import "../../models"
+import "../../items/peer"
+import "../../items/user"
+import "../../js/TelegramHelper.js" as TelegramHelper
+import "../../js/TelegramAction.js" as TelegramAction
 
 Item
 {
+    property Context context
     property Dialog dialog
     property User user
+    property Chat chat
     property Message message
 
     onDialogChanged: {
-        user = telegram.user(dialog.peer.userId);
-        message = telegram.message(dialog.topMessage);
+        if(TelegramHelper.isChat(dialog))
+            chat = context.telegram.chat(dialog.peer.chatId);
+        else
+            user = context.telegram.user(dialog.peer.userId);
+
+        message = context.telegram.message(dialog.topMessage);
     }
 
     id: conversationitem
@@ -23,7 +32,7 @@ Item
         target: dialog
 
         onTopMessageChanged: {
-            message = telegram.message(dialog.topMessage);
+            message = context.telegram.message(dialog.topMessage);
         }
     }
 
@@ -32,18 +41,20 @@ Item
         anchors { left: parent.left; top: parent.top; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
         spacing: Theme.paddingSmall
 
-        UserAvatar
+        PeerImage
         {
-            id: useravatar
+            id: conversationimage
             width: conversationitem.height
             height: conversationitem.height
-            telegram: conversationspage.telegram
+            context: conversationitem.context
+            dialog: conversationitem.dialog
+            chat: conversationitem.chat
             user: conversationitem.user
         }
 
         Column
         {
-            width: parent.width - useravatar.width
+            width: parent.width - conversationimage.width
             anchors { top: parent.top; bottom: parent.bottom }
 
             Row
@@ -54,7 +65,7 @@ Item
                 Label {
                     id: lbluser
                     width: parent.width - lbltime.width
-                    text: TelegramHelper.userName(user)
+                    text: TelegramHelper.isChat(dialog) ? chat.title : TelegramHelper.userName(user)
                     verticalAlignment: Text.AlignVCenter
                     height: parent.height
                     color: Theme.highlightColor
@@ -83,7 +94,8 @@ Item
                     elide: Text.ElideRight
                     verticalAlignment: Text.AlignVCenter
                     font.pixelSize: Theme.fontSizeExtraSmall
-                    text: TelegramHelper.messageContent(message)
+                    font.italic: TelegramHelper.isActionMessage(message)
+                    text: TelegramHelper.isActionMessage(message) ? TelegramAction.actionType(context.telegram, dialog, message) : TelegramHelper.messageContent(message)
                 }
 
                 Rectangle

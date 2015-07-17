@@ -7,7 +7,7 @@ Item
 {
     property alias fileHandler: filehandler
 
-    property Settings settings
+    property Context context
     property Telegram telegram
     property Message message
 
@@ -35,7 +35,7 @@ Item
         return 0;
     }
 
-    readonly property string mediaPath: {
+    readonly property string mediaThumbnail: {
         if(!message.media)
             return "";
 
@@ -47,8 +47,27 @@ Item
             return "image://theme/icon-m-sounds";
         else if(message.media.classType === TelegramConstants.typeMessageMediaUnsupported)
             return "image://theme/icon-m-other";
-        else if(message.media.classType === TelegramConstants.typeMessageMediaDocument)
-            return message.media.document.thumb.location.download.location;
+        else if(message.media.classType === TelegramConstants.typeMessageMediaDocument) {
+            if(context.telegram.documentIsSticker(message.media.document))
+                return "image://theme/icon-m-other"; //FIXME: WebP: Not Supported (return filehandler.thumbPath);
+
+            var thumblocation = message.media.document.thumb.location.download.location;
+
+            if(!thumblocation) {
+                var type = message.media.document.mimeType.split("/")[0];
+
+                if(type === "video")
+                    return "image://theme/icon-l-video";
+
+                if(type === "audio")
+                    return "image://theme/icon-m-sounds";
+
+                if(type === "image")
+                    return "image://theme/icon-m-image";
+            }
+
+            return thumblocation;
+        }
 
         return "";
     }
@@ -68,15 +87,18 @@ Item
     FileHandler
     {
         id: filehandler
-        telegram: messagemediaitem.telegram
+        telegram: messagemediaitem.context.telegram
         defaultThumbnail: "image://theme/icon-m-document"
 
-        onTargetTypeChanged: {
+        onTargetTypeChanged: { /* Download is triggered when 'target' property is set */
             switch(targetType) {
                 case FileHandler.TypeTargetMediaVideo:
                 case FileHandler.TypeTargetMediaPhoto:
                 case FileHandler.TypeTargetMediaDocument:
                 case FileHandler.TypeTargetMediaAudio:
+                    if(isSticker) /* Don't download stickers */
+                        return;
+
                     fileHandler.download();
                     break;
 
@@ -86,10 +108,20 @@ Item
         }
 
         onFilePathChanged: {
-            if((filePath.toString().length <= 0) || (progressPercent < 100))
+            var filepathstring = filePath.toString();
+
+            if((filepathstring.length <= 0) || (progressPercent < 100) || isSticker || isUpload)
                 return;
 
-            settings.sailorgram.moveMediaToDownloads(message.media);
+            if(targetType !== FileHandler.TypeTargetMediaDocument)
+                return;
+
+            var type = message.media.document.mimeType.split("/")[0];
+
+            if((type === "audio") || (type === "video") || (type === "image"))
+                return;
+
+            context.sailorgram.moveMediaToDownloads(message.media);
         }
     }
 
@@ -98,10 +130,10 @@ Item
             return;
 
         if((message.media.classType === TelegramConstants.typeMessageMediaPhoto) && message.media.photo.sizes.last)
-            telegram.getFile(message.media.photo.sizes.last.location);
+            context.telegram.getFile(message.media.photo.sizes.last.location);
         else if(message.media.classType === TelegramConstants.typeMessageMediaVideo)
-            telegram.getFile(message.media.video.thumb.location);
+            context.telegram.getFile(message.media.video.thumb.location);
         else if(message.media.classType === TelegramConstants.typeMessageMediaDocument)
-            telegram.getFile(message.media.document.thumb.location);
+           context.telegram.getFile(message.media.document.thumb.location);
     }
 }

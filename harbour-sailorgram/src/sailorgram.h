@@ -6,7 +6,9 @@
 #include <QFile>
 #include <QStandardPaths>
 #include <QImage>
+#include <QMimeDatabase>
 #include <telegramqml.h>
+#include <telegram.h>
 #include <objects/types.h>
 
 class SailorGram : public QObject
@@ -20,16 +22,26 @@ class SailorGram : public QObject
         TelegramQml* telegram() const;
         void setTelegram(TelegramQml* telegram);
 
+    private:
+        void moveMediaTo(FileLocationObject* locationobj, const QString& destination);
+
     signals:
         void telegramChanged();
 
     public slots:
+        void sleep();
+        void wake();
+        bool fileIsPhoto(const QString& filepath);
+        bool fileIsVideo(const QString& filepath);
         QString fileName(const QString& filepath);
         QSize imageSize(const QString& filepath);
+        FileLocationObject *mediaLocation(MessageMediaObject* messagemediaobject);
         void moveMediaToDownloads(MessageMediaObject* messagemediaobject);
+        void moveMediaToGallery(MessageMediaObject* messagemediaobject);
 
     private:
         TelegramQml* _telegram;
+        QMimeDatabase _mimedb;
 };
 
 #endif // SAILORGRAM_H

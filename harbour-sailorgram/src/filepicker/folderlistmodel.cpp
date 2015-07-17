@@ -50,6 +50,28 @@ QString FolderListModel::homeFolder() const
     return QStandardPaths::writableLocation(QStandardPaths::HomeLocation);
 }
 
+QString FolderListModel::sdcardFolder() const
+{
+    QString sdcardfolder;
+
+    if(QFile::exists("/media/sdcard"))
+        sdcardfolder = "/media/sdcard";
+
+    if(QFile::exists("/run/user/100000/media/sdcard"))
+        sdcardfolder = "/run/user/100000/media/sdcard";
+
+    if(sdcardfolder.isEmpty())
+        return QString();
+
+    QDir dir(sdcardfolder);
+    QFileInfoList fileinfolist = dir.entryInfoList(QDir::AllDirs | QDir::NoDotAndDotDot | QDir::NoSymLinks, QDir::DirsFirst);
+
+    if(fileinfolist.isEmpty())
+        return QString();
+
+    return fileinfolist.first().filePath();
+}
+
 void FolderListModel::readDirectory()
 {
     this->beginResetModel();

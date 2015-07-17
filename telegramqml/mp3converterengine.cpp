@@ -26,7 +26,7 @@ void MP3ConverterEngine::setSource(const QString &source)
         return;
 
     p->source = source;
-    emit sourceChanged();
+    Q_EMIT sourceChanged();
 }
 
 QString MP3ConverterEngine::source() const
@@ -40,7 +40,7 @@ void MP3ConverterEngine::setDestination(const QString &destination)
         return;
 
     p->destination = destination;
-    emit destinationChanged();
+    Q_EMIT destinationChanged();
 }
 
 QString MP3ConverterEngine::destination() const
@@ -91,7 +91,7 @@ void MP3ConverterEngine::start()
     connect(p->process, SIGNAL(finished(int)), SLOT(finished_prv()));
 
     p->process->start(ffmpegPath, args);
-    emit runningChanged();
+    Q_EMIT runningChanged();
 }
 
 void MP3ConverterEngine::finished_prv()
@@ -99,8 +99,8 @@ void MP3ConverterEngine::finished_prv()
     p->process->deleteLater();
     p->process = 0;
 
-    emit finished();
-    emit runningChanged();
+    Q_EMIT finished();
+    Q_EMIT runningChanged();
 }
 
 MP3ConverterEngine::~MP3ConverterEngine()

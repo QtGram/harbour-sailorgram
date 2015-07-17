@@ -25,7 +25,7 @@
 #include <QObject>
 #include <QByteArray>
 #include <QLoggingCategory>
-#include <openssl/bn.h>
+#include <bn.h>
 #include "util/constants.h"
 #include "settings.h"
 #include "types/inputpeer.h"

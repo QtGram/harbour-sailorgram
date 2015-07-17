@@ -40,7 +40,7 @@ PhotoSizeList::PhotoSizeList(const QList<PhotoSize> & another, QObject *parent) 
 
 void PhotoSizeList::operator =(const QList<PhotoSize> &another)
 {
-    foreach( const PhotoSize & size, another )
+    Q_FOREACH( const PhotoSize & size, another )
     {
         bool containt = false;
         for( int i=0; i<p->list.count(); i++ )
@@ -62,9 +62,9 @@ void PhotoSizeList::operator =(const QList<PhotoSize> &another)
         p->list << obj;
     }
 
-    emit firstChanged();
-    emit lastChanged();
-    emit countChanged();
+    Q_EMIT firstChanged();
+    Q_EMIT lastChanged();
+    Q_EMIT countChanged();
 }
 
 PhotoSizeObject *PhotoSizeList::first() const

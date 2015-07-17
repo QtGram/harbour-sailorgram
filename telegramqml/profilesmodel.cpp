@@ -52,7 +52,7 @@ void ProfilesModel::setConfigPath(const QString &path)
         return;
 
     p->configPath = path;
-    emit configPathChanged();
+    Q_EMIT configPathChanged();
 
     refresh();
 }
@@ -180,8 +180,8 @@ ProfilesModelItem *ProfilesModel::add(const QString &number)
     p->data[number] = item;
     p->numbers.append(number);
 
-    emit countChanged();
-    emit keysChanged();
+    Q_EMIT countChanged();
+    Q_EMIT keysChanged();
 
     save(number);
     endInsertRows();
@@ -201,8 +201,8 @@ bool ProfilesModel::remove(const QString &number)
     ProfilesModelItem *item = p->data.take(number);
     item->deleteLater();
 
-    emit countChanged();
-    emit keysChanged();
+    Q_EMIT countChanged();
+    Q_EMIT keysChanged();
 
     endRemoveRows();
 
@@ -251,8 +251,8 @@ void ProfilesModel::init_buffer()
         endInsertRows();
     }
 
-    emit countChanged();
-    emit keysChanged();
+    Q_EMIT countChanged();
+    Q_EMIT keysChanged();
 }
 
 void ProfilesModel::save(const QString &key)
@@ -333,7 +333,7 @@ void ProfilesModelItem::setNumber(const QString &number)
 
     p->number = number;
     save();
-    emit numberChanged();
+    Q_EMIT numberChanged();
 }
 
 QString ProfilesModelItem::name() const
@@ -348,7 +348,7 @@ void ProfilesModelItem::setName(const QString &name)
 
     p->name = name;
     save();
-    emit nameChanged();
+    Q_EMIT nameChanged();
 }
 
 QString ProfilesModelItem::icon() const
@@ -363,7 +363,7 @@ void ProfilesModelItem::setIcon(const QString &icon)
 
     p->icon = icon;
     save();
-    emit iconChanged();
+    Q_EMIT iconChanged();
 }
 
 bool ProfilesModelItem::mute() const
@@ -378,7 +378,7 @@ void ProfilesModelItem::setMute(bool mute)
 
     p->mute = mute;
     save();
-    emit muteChanged();
+    Q_EMIT muteChanged();
 }
 
 void ProfilesModelItem::save()

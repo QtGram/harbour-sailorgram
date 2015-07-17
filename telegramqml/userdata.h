@@ -58,7 +58,7 @@ public:
     void setConfigPath(const QString &path);
     QString configPath() const;
 
-public slots:
+public Q_SLOTS:
     void addMute( int id );
     void removeMute( int id );
     QList<int> mutes() const;
@@ -91,7 +91,7 @@ public slots:
     void reconnect();
     void disconnect();
 
-signals:
+Q_SIGNALS:
     void muteChanged(int id);
     void favoriteChanged(int id);
     void loadLinkChanged(int id);

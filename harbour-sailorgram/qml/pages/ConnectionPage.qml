@@ -2,32 +2,73 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../models"
+import "../components"
 import "../js/Settings.js" as Settings
 
 Page
 {
-    property Telegram telegram
+    property Context context
 
-    id: pageconnection
+    id: connectionpage
     allowedOrientations: defaultAllowedOrientations
 
     onStatusChanged: {
-        if(pageconnection.status !== PageStatus.Active)
+        if(connectionpage.status !== PageStatus.Active)
             return;
 
         var phonenumber = Settings.get("phonenumber");
 
         if(phonenumber === false) {
-            pageStack.replace(Qt.resolvedUrl("PhoneNumberPage.qml"), { "telegram": pageconnection.telegram});
+            pageStack.replace(Qt.resolvedUrl("PhoneNumberPage.qml"), { "context": connectionpage.context });
             return;
         }
 
-        telegram.phoneNumber = phonenumber;
+        timlogin.restart();
+        timdisplaystatus.restart();
+        context.telegram.phoneNumber = phonenumber;
+    }
+
+    Timer
+    {
+        id: timlogin
+        interval: 30000 // 30s
+        running: true
+    }
+
+    Timer
+    {
+        id: timdisplaystatus
+        interval: context.heartbeat.interval / 2
+        running: true
+    }
+
+    Row
+    {
+        anchors { top: parent.top; right: parent.right }
+        height: csitem.height
+
+        Label
+        {
+            text: qsTr("Telegram Status")
+            anchors.verticalCenter: csitem.verticalCenter
+            horizontalAlignment: Text.AlignRight
+            verticalAlignment: Text.AlignLeft
+            font.family: Theme.fontFamilyHeading
+            font.pixelSize: Theme.fontSizeLarge
+            color: Theme.highlightColor
+        }
+
+        ConnectionStatus
+        {
+            id: csitem
+            context: connectionpage.context
+            forceActive: timdisplaystatus.running
+        }
     }
 
     Label
     {
-        anchors { bottom: indicator.top; topMargin: Theme.paddingMedium }
+        anchors { bottom: indicator.top; bottomMargin: Theme.paddingMedium }
         width: parent.width
         font.pixelSize: Theme.fontSizeExtraLarge
         horizontalAlignment: Text.AlignHCenter
@@ -39,7 +80,14 @@ Page
     {
         id: indicator
         anchors.centerIn: parent
+        size: BusyIndicatorSize.Large
         running: true
     }
 
+    Button
+    {
+        anchors { horizontalCenter: parent.horizontalCenter; bottom: parent.bottom; bottomMargin: Theme.paddingLarge }
+        text: qsTr("Login Again")
+        visible: !timlogin.running
+    }
 }

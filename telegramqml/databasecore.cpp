@@ -309,11 +309,11 @@ void DatabaseCore::readMessages(const DbPeer &dpeer, int offset, int limit)
         DbMessage dmsg;
         dmsg.message = message;
 
-        emit messageFounded(dmsg);
+        Q_EMIT messageFounded(dmsg);
 
         const QPair<QByteArray, QByteArray> & keys = readMediaKey(message.id());
         if(!keys.first.isNull())
-            emit mediaKeyFounded(message.id(), keys.first, keys.second);
+            Q_EMIT mediaKeyFounded(message.id(), keys.first, keys.second);
     }
 }
 
@@ -326,7 +326,7 @@ void DatabaseCore::setValue(const QString &key, const QString &value)
     mute_query.exec();
 
     p->general[key] = value;
-    emit valueChanged(key);
+    Q_EMIT valueChanged(key);
 }
 
 QString DatabaseCore::value(const QString &key) const
@@ -414,7 +414,7 @@ void DatabaseCore::readDialogs()
         }
 
         readMessages(dpeer, 0, 1);
-        emit dialogFounded(ddlg, encrypted );
+        Q_EMIT dialogFounded(ddlg, encrypted );
     }
 }
 
@@ -474,7 +474,7 @@ void DatabaseCore::readUsers()
         DbUser duser;
         duser.user = user;
 
-        emit userFounded(duser);
+        Q_EMIT userFounded(duser);
     }
 }
 
@@ -532,7 +532,7 @@ void DatabaseCore::readChats()
         DbChat dchat;
         dchat.chat = chat;
 
-        emit chatFounded(dchat);
+        Q_EMIT chatFounded(dchat);
     }
 }
 
@@ -605,7 +605,7 @@ void DatabaseCore::update_moveFiles()
 
     const QStringList & av_files = QDir(dpath).entryList(QDir::Files);
     QHash<QString, QString> baseNames;
-    foreach( const QString & f, av_files )
+    Q_FOREACH( const QString & f, av_files )
     {
         QString baseName = QFileInfo(f).baseName();
         int uidx = baseName.indexOf("_");
@@ -623,13 +623,13 @@ void DatabaseCore::update_moveFiles()
         QDir().mkpath(upath);
 
         const QStringList & files = i.value();
-        foreach(const QString &f, files)
+        Q_FOREACH(const QString &f, files)
         {
             if(!baseNames.contains(f))
                 continue;
 
             const QStringList &fileNames = baseNames.values(f);
-            foreach(const QString &fileName, fileNames)
+            Q_FOREACH(const QString &fileName, fileNames)
                 QFile::rename(dpath + "/" + fileName, upath + "/" + fileName );
         }
     }
@@ -702,7 +702,7 @@ QHash<qint64, QStringList> DatabaseCore::userPhotos()
         i.next();
 
         const QStringList & files = i.value();
-        foreach(const QString &f, files)
+        Q_FOREACH(const QString &f, files)
         {
             const qint64 & mediaId = f.toLongLong();
             if(!photos.contains(mediaId))
@@ -744,7 +744,7 @@ QList<qint32> DatabaseCore::stringToUsers(const QString &str)
 {
     QList<qint32> res;
     const QStringList &list = str.split(",", QString::SkipEmptyParts);
-    foreach(const QString &l, list)
+    Q_FOREACH(const QString &l, list)
         res << l.toInt();
 
     return res;
@@ -753,7 +753,7 @@ QList<qint32> DatabaseCore::stringToUsers(const QString &str)
 QString DatabaseCore::usersToString(const QList<qint32> &users)
 {
     QStringList list;
-    foreach(const qint32 u, users)
+    Q_FOREACH(const qint32 u, users)
         list << QString::number(u);
 
     return list.join(",");
@@ -826,7 +826,7 @@ void DatabaseCore::insertDocument(const Document &document)
         return;
 
     QString fileName;
-    QList<DocumentAttribute> attrs;
+    QList<DocumentAttribute> attrs = document.attributes();
     for(int i=0; i<attrs.length(); i++)
         if(attrs.at(i).classType() == DocumentAttribute::typeAttributeFilename)
             fileName = attrs.at(i).filename();
@@ -907,7 +907,7 @@ void DatabaseCore::insertPhoto(const Photo &photo)
 void DatabaseCore::insertPhotoSize(qint64 pid, const QList<PhotoSize> &sizes)
 {
     begin();
-    foreach(const PhotoSize &size, sizes)
+    Q_FOREACH(const PhotoSize &size, sizes)
     {
         if(size.classType() == PhotoSize::typePhotoSizeEmpty)
             continue;

@@ -25,7 +25,7 @@
 #include <QObject>
 #include <QLoggingCategory>
 
-#include <openssl/bn.h>
+#include <bn.h>
 #include "types/dcoption.h"
 #include "types/user.h"
 #include "types/userprofilephoto.h"

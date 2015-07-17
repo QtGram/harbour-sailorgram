@@ -75,14 +75,14 @@ public:
     qint64 peerId() const;
     Peer peer() const;
 
-public slots:
+public Q_SLOTS:
     void refresh();
     void loadMore(bool force = false);
     void sendMessage( const QString & msg, int inReplyTo = 0 );
     void setReaded();
     void clearNewMessageFlag();
 
-signals:
+Q_SIGNALS:
     void telegramChanged();
     void dialogChanged();
     void countChanged();
@@ -93,7 +93,7 @@ signals:
     void hasNewMessageChanged();
     void focusToNewRequest(int unreads);
 
-private slots:
+private Q_SLOTS:
     void messagesChanged(bool cachedData);
     void messagesChanged_priv();
     void init();

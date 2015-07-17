@@ -13,7 +13,8 @@ public:
         typeAttributeSticker = 0x994c9882,
         typeAttributeVideo = 0x5910cccb,
         typeAttributeAudio = 0x51448e5,
-        typeAttributeFilename = 0x15590068
+        typeAttributeFilename = 0x15590068,
+        typeAttributeDecryptedSticker = 0xfb0a5727
     };
 
     DocumentAttribute(DocumentAttributeType type) :
