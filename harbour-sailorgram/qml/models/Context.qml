@@ -111,6 +111,9 @@ QtObject
         }
 
         onAuthCodeRequested: {
+            if(pageStack.currentPage.authorizationPage === true)
+                return;
+
             pageStack.completeAnimation();
 
             if(context.telegram.authPhoneRegistered)

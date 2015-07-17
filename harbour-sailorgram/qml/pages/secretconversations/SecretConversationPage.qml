@@ -114,8 +114,10 @@ Page
                 id: messagemodel
 
                 onCountChanged: {
-                    if(count > 1)
-                        messagemodel.setReaded(); /* We are in this chat, always mark these messages as read */
+                    if(!count)
+                        return;
+
+                    messagemodel.setReaded(); /* We are in this chat, always mark these messages as read */
                 }
             }
 

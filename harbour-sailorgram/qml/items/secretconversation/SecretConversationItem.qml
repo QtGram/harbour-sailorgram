@@ -28,7 +28,7 @@ Item
         message = context.telegram.message(dialog.topMessage);
     }
 
-    id: conversationitem
+    id: secretconversationitem
 
     Connections
     {
@@ -47,12 +47,12 @@ Item
         PeerImage
         {
             id: conversationimage
-            width: conversationitem.height
-            height: conversationitem.height
-            context: conversationitem.context
-            dialog: conversationitem.dialog
+            width: secretconversationitem.height
+            height: secretconversationitem.height
+            context: secretconversationitem.context
+            dialog: secretconversationitem.dialog
             //chat: conversationitem.chat
-            user: conversationitem.user
+            user: secretconversationitem.user
         }
 
         Column
@@ -62,7 +62,7 @@ Item
 
             Row
             {
-                height: conversationitem.height / 2
+                height: secretconversationitem.height / 2
                 anchors { left: parent.left; right: parent.right; rightMargin: Theme.paddingMedium }
                 spacing: Theme.paddingSmall
 
@@ -83,6 +83,7 @@ Item
                     color: Theme.highlightColor
                 }
 
+
                 Label {
                     id: lbltime
                     height: parent.height
@@ -95,7 +96,7 @@ Item
 
             Row
             {
-                height: conversationitem.height / 2
+                height: secretconversationitem.height / 2
                 anchors { left: parent.left; right: parent.right; rightMargin: Theme.paddingMedium }
 
                 Label

@@ -39,23 +39,12 @@ Item
             anchors { right: message.out ? undefined : parent.right; left: message.out ? parent.left : undefined }
             spacing: Theme.paddingSmall
 
-            Image
+            MessageStatus
             {
-                id: imgstatus
-                visible: message.out && !TelegramHelper.isActionMessage(message)
-                fillMode: Image.PreserveAspectFit
+                id: msgstatus
                 width: lbldate.contentHeight
                 height: lbldate.contentHeight
-
-                source: {
-                    if(!message.unread)
-                        return "qrc:///res/read.png";
-
-                    if(message.sent)
-                        return "qrc:///res/sent.png";
-
-                    return "qrc:///res/out.png";
-                }
+                message: messagetext.message
             }
 
             Label

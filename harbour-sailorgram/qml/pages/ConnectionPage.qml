@@ -23,6 +23,8 @@ Page
             return;
         }
 
+        timlogin.restart();
+        timdisplaystatus.restart();
         context.telegram.phoneNumber = phonenumber;
     }
 
@@ -48,9 +50,12 @@ Page
         Label
         {
             text: qsTr("Telegram Status")
+            anchors.verticalCenter: csitem.verticalCenter
             horizontalAlignment: Text.AlignRight
             verticalAlignment: Text.AlignLeft
-            anchors.verticalCenter: csitem.verticalCenter
+            font.family: Theme.fontFamilyHeading
+            font.pixelSize: Theme.fontSizeLarge
+            color: Theme.highlightColor
         }
 
         ConnectionStatus

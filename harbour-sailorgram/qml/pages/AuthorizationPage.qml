@@ -5,6 +5,7 @@ import "../js/Settings.js" as Settings
 
 Dialog
 {
+    readonly property bool authorizationPage: true
     property alias authError: tfcode.errorHighlight
     property Context context
 
