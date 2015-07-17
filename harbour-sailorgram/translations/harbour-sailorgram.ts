@@ -115,6 +115,13 @@
     </message>
 </context>
 <context>
+    <name>ChangeChatTitle</name>
+    <message>
+        <source>Change</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ChangeUsernamePage</name>
     <message>
         <source>Change</source>
@@ -175,10 +182,6 @@ Minimum length is 5 characters.</source>
 <context>
     <name>ConversationMenu</name>
     <message>
-        <source>Delete</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Enable Notifications</source>
         <translation type="unfinished"></translation>
     </message>
@@ -187,15 +190,15 @@ Minimum length is 5 characters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting Secret Chat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Deleting History</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add Member</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add to Contacts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -207,7 +210,15 @@ Minimum length is 5 characters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Deleting Secret Chat</source>
+        <source>Change Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add Member</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add to Contacts</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

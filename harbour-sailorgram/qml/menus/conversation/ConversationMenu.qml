@@ -56,14 +56,20 @@ TelegramPullDownMenu
                 pageStack.pop();
             });
         }
+    }
 
+    MenuItem
+    {
+        text: qsTr("Change Title")
+        visible: TelegramHelper.isChat(dialog)
+        onClicked: pageStack.push(Qt.resolvedUrl("../../pages/chat/ChangeChatTitle.qml"), { "context": conversationmenu.context, "dialog": conversationmenu.dialog })
     }
 
     MenuItem
     {
         text: qsTr("Add Member")
         visible: TelegramHelper.isChat(dialog)
-        onClicked: pageStack.push(Qt.resolvedUrl("../pages/chat/AddContactsPage.qml"), { "context": conversationmenu.context, "dialog": conversationmenu.dialog })
+        onClicked: pageStack.push(Qt.resolvedUrl("../../pages/chat/AddContactsPage.qml"), { "context": conversationmenu.context, "dialog": conversationmenu.dialog })
     }
 
     MenuItem
