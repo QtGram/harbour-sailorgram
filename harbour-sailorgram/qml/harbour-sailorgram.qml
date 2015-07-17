@@ -44,8 +44,8 @@ ApplicationWindow
         id: context
 
         Component.onCompleted: {
-            context.sendwithreturn = Settings.get("sendwithreturn");
             Settings.load();
+            context.sendwithreturn = parseInt(Settings.get("sendwithreturn"));
         }
     }
 
