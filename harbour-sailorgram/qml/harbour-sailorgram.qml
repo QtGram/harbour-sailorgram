@@ -42,7 +42,11 @@ ApplicationWindow
     Context
     {
         id: context
-        Component.onCompleted: Settings.load()
+
+        Component.onCompleted: {
+            context.sendwithreturn = Settings.get("sendwithreturn");
+            Settings.load();
+        }
     }
 
     id: mainwindow

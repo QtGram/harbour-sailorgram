@@ -70,6 +70,7 @@ Page
             MenuItem
             {
                 text: qsTr("Settings")
+                onClicked: pageStack.push(Qt.resolvedUrl("../settings/SettingsPage.qml"), { "context": conversationspage.context })
             }
 
             MenuItem

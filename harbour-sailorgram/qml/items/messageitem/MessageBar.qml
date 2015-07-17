@@ -13,6 +13,13 @@ Item
     id: messagebar
     height: context.heartbeat.connected ? Math.max(textarea.height, btnselectmedia.height) : Theme.itemSizeSmall
 
+    function sendMessage()
+    {
+        Qt.inputMethod.commit();
+        messagemodel.sendMessage(textarea.text, (messagemodel.count > 0 ? true : false));
+        textarea.text = "";
+    }
+
     ConnectingLabel
     {
         anchors { top: parent.top; bottom: parent.bottom; horizontalCenter: parent.horizontalCenter }
@@ -33,28 +40,31 @@ Item
             focusOutBehavior: FocusBehavior.KeepFocus
             font.pixelSize: Theme.fontSizeSmall
             labelVisible: false
+
+            Keys.onReturnPressed: {
+                if(!context.sendwithreturn)
+                    return;
+
+                sendMessage();
+            }
         }
 
         IconButton
         {
             id: btnsend
             anchors.bottom: parent.bottom
-            visible: textarea.text.length > 0;
+            visible: !context.sendwithreturn && textarea.text.length > 0;
+            width: visible ? Theme.itemSizeSmall : 0
             icon.source: "image://theme/icon-m-message"
-
-            onClicked: {
-                Qt.inputMethod.commit();
-                messagemodel.sendMessage(textarea.text, (messagemodel.count > 0 ? true : false));
-                textarea.text = "";
-
-            }
+            onClicked: sendMessage()
         }
 
         IconButton
         {
             id: btnselectmedia
             anchors.bottom: parent.bottom
-            visible: textarea.text.length <= 0;
+            visible: textarea.text.length <= 0
+            width: visible ? Theme.itemSizeSmall : 0
             icon.source: "image://theme/icon-m-attach"
 
             onClicked: {
