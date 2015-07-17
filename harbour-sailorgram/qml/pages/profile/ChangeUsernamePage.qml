@@ -9,7 +9,7 @@ Dialog
     id: dlgchangeusername
     allowedOrientations: defaultAllowedOrientations
     acceptDestinationAction: PageStackAction.Pop
-    canAccept: (tfusername.text.length >= 5) && /[a-zA-Z0-9]+/.test(tfusername.text)
+    canAccept: ((tfusername.text.length >= 5) && /[a-zA-Z0-9_]+/.test(tfusername.text)) || !tfusername.text.length
 
     onAccepted: {
         user.username = tfusername.text;
