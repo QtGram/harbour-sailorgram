@@ -47,6 +47,8 @@ ApplicationWindow
             Settings.load();
             context.sendwithreturn = parseInt(Settings.get("sendwithreturn"));
         }
+
+        Component.onDestruction: context.heartbeat.quit()
     }
 
     id: mainwindow
