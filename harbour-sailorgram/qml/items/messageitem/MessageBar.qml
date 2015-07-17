@@ -69,7 +69,7 @@ Item
             icon.source: "image://theme/icon-m-attach"
 
             onClicked: {
-                var picker = pageStack.push(Qt.resolvedUrl("../../pages/picker/FilePickerPage.qml"), { "rootPage": secretconversationpage });
+                var picker = pageStack.push(Qt.resolvedUrl("../../pages/picker/FilePickerPage.qml"), { "rootPage": pageStack.currentPage });
 
                 picker.filePicked.connect(function(file) {
                     context.telegram.sendFile(TelegramHelper.peerId(dialog), file);
