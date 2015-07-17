@@ -16,7 +16,7 @@ Item
     function sendMessage()
     {
         Qt.inputMethod.commit();
-        messagemodel.sendMessage(textarea.text, (messagemodel.count > 0 ? true : false));
+        messagemodel.sendMessage(textarea.text.trim(), (messagemodel.count > 0 ? true : false));
         textarea.text = "";
     }
 
@@ -40,8 +40,9 @@ Item
             focusOutBehavior: FocusBehavior.KeepFocus
             font.pixelSize: Theme.fontSizeSmall
             labelVisible: false
+            wrapMode: TextEdit.Wrap
 
-            Keys.onReturnPressed: {
+            EnterKey.onClicked: {
                 if(!context.sendwithreturn)
                     return;
 
