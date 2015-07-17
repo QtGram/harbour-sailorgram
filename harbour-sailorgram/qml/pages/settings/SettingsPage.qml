@@ -33,7 +33,7 @@ Dialog
             {
                 id: tssendwithreturn
                 anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
-                text: qsTr("Send Message by pressing Return Key")
+                text: qsTr("Send Messages by pressing Return Key")
                 checked: context.sendwithreturn
             }
         }

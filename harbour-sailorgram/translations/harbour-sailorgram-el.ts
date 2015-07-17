@@ -187,7 +187,7 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Deleting History</source>
-        <translation type="unfinished">Το ιστορικό διαγράφεται</translation>
+        <translation type="obsolete">Το ιστορικό διαγράφεται</translation>
     </message>
     <message>
         <source>Enable Notifications</source>
@@ -219,6 +219,14 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Add to Contacts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting Conversation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting Group</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -495,11 +503,11 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
 <context>
     <name>SettingsPage</name>
     <message>
-        <source>Send Message by pressing Return Key</source>
+        <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Save</source>
+        <source>Send Messages by pressing Return Key</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

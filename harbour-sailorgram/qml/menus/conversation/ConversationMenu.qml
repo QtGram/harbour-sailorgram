@@ -32,7 +32,14 @@ TelegramPullDownMenu
         visible: !TelegramHelper.isChat(dialog)
 
         onClicked: {
-            remorsepopup.execute(dialog.encrypted ? qsTr("Deleting Secret Chat") : qsTr("Deleting History"), function() {
+            var msg = qsTr("Deleting Conversation");
+
+            if(dialog.encrypted)
+                msg = qsTr("Deleting Secret Chat");
+            else if(TelegramHelper.isChat(dialog))
+                msg = qsTr("Deleting Group");
+
+            remorsepopup.execute(msg, function() {
                 if(dialog.encrypted)
                     context.telegram.messagesDiscardEncryptedChat(dialog.peer.userId);
                 else
@@ -57,6 +64,21 @@ TelegramPullDownMenu
             });
         }
     }
+
+    /*
+    MenuItem
+    {
+        text: qsTr("Change Picture")
+        visible: TelegramHelper.isChat(dialog)
+
+        onClicked: {
+            var picker = pageStack.push(Qt.resolvedUrl("../picker/FilePickerPage.qml"), { "rootPage": conversationpage, "mime": "image" })
+
+            picker.filePicked.connect(function(file) {
+            });
+        }
+    }
+    */
 
     MenuItem
     {
