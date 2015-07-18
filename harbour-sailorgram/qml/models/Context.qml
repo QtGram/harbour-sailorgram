@@ -10,7 +10,7 @@ QtObject
 {
     id: context
 
-    readonly property string version: "0.6"
+    readonly property string version: "0.7"
     property bool sendwithreturn: false
 
     property TelegramLocalStorage telegramlocalstorage: TelegramLocalStorage { }

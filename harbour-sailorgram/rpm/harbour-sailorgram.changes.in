@@ -8,6 +8,20 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* ??? Jul ?? 2015 Antonio Davide Trogu <trogu.davide@gmail.com> 0.6-1
+- Implemented Secret Chats (more work needed)
+- Implemented HeartBeat so it is possible to see client and Telegram status
+- Completed Client SignUp procedure (more testing needed)
+- Implemented Integrated Image Viewer
+- Implemented Integrated Audio/Video Player
+- Improved Group Management
+- Basic Profile Management
+- It is possible to send messages using "Enter" key
+- Updated Cutegram Libraries to the latest available version
+- Polished UI
+- Minor Fixes
+- Updated Localziations
+
 * Wed Jul 08 2015 Antonio Davide Trogu <trogu.davide@gmail.com> 0.6-1
 - Implemented Group Management (Member Management, Group Creation/Deletion/Invite)
 - Conversations and Groups are separated in two different sections
