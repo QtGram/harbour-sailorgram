@@ -44,6 +44,9 @@ function isChat(dialog)
     if(!dialog)
         return false;
 
+    if(dialog.encrypted)
+        return false;
+
     return dialog.peer.classType === TelegramConstants.typePeerChat;
 }
 
