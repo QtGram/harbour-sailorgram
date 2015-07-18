@@ -590,7 +590,19 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Group created by %1</source>
-        <translation>Gruppo creato da %1</translation>
+        <translation type="vanished">Gruppo creato da %1</translation>
+    </message>
+    <message>
+        <source>Secret chat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 created by %2</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -662,6 +674,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <source>Send Message</source>
         <translation>Invia Messaggio</translation>
     </message>
+    <message>
+        <source>Begin Secret Chat</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserMenu</name>
@@ -678,15 +694,15 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>UserPage</name>
     <message>
         <source>Phone Number</source>
-        <translation>Numero di Telefono</translation>
+        <translation type="vanished">Numero di Telefono</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation>Azioni</translation>
+        <translation type="vanished">Azioni</translation>
     </message>
     <message>
         <source>Send Message</source>
-        <translation>Invia Messaggio</translation>
+        <translation type="vanished">Invia Messaggio</translation>
     </message>
 </context>
 <context>

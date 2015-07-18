@@ -34,27 +34,17 @@ Page
                 x: Theme.paddingMedium
                 width: parent.width - (x * 2)
                 height: Theme.itemSizeSmall
+                context: userpage.context
                 user: userpage.user
             }
 
-            SectionHeader { text: qsTr("Phone Number") }
-
-            Label
+            UserInfo
             {
                 x: Theme.paddingMedium
                 width: parent.width - (x * 2)
-                text: TelegramHelper.phoneNumber(userpage.user)
-            }
-
-            SectionHeader { text: qsTr("Actions"); visible: actionVisible }
-
-            ClickableLabel
-            {
-                visible: actionVisible
-                width: parent.width
-                height: Theme.itemSizeSmall
-                labelText: qsTr("Send Message")
-                onActionRequested: pageStack.replace(Qt.resolvedUrl("../../pages/conversations/ConversationPage.qml"), { "context": context, "dialog": telegram.fakeDialogObject(user.id, false), "user": user } )
+                actionVisible: true
+                context: userpage.context
+                user: userpage.user
             }
         }
     }

@@ -529,7 +529,15 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Group created by %1</source>
+        <source>Secret chat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 created by %2</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -602,6 +610,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <source>Send Message</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Begin Secret Chat</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserMenu</name>
@@ -611,21 +623,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Profile</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>UserPage</name>
-    <message>
-        <source>Phone Number</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Actions</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Send Message</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

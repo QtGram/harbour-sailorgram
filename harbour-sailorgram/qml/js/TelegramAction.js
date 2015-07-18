@@ -17,7 +17,7 @@ function actionType(telegram, dialog, message) {
            userid = chat.adminId;
        }
 
-       return qsTr("Group created by %1").arg(TelegramHelper.userName(telegram.user(userid)));
+       return qsTr("%1 created by %2").arg(dialog.encrypted ? qsTr("Secret chat") : qsTr("Group")).arg(TelegramHelper.userName(telegram.user(userid)));
    }
 
    if(action.classType === TelegramConstants.typeMessageActionChatAddUser)

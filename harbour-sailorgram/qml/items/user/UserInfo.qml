@@ -17,7 +17,7 @@ Item
     Column
     {
         id: content
-        anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
+        anchors { left: parent.left; top: parent.top; right: parent.right; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
 
         SectionHeader { text: qsTr("Phone Number") }
 
@@ -38,6 +38,22 @@ Item
             labelFont.pixelSize: Theme.fontSizeSmall
             labelText: qsTr("Send Message")
             onActionRequested: pageStack.replace(Qt.resolvedUrl("../../pages/conversations/ConversationPage.qml"), { "context": context, "dialog": context.telegram.fakeDialogObject(user.id, false) } )
+        }
+
+        ClickableLabel
+        {
+            visible: actionVisible
+            width: parent.width
+            height: Theme.itemSizeSmall
+            labelFont.pixelSize: Theme.fontSizeSmall
+            labelText: qsTr("Begin Secret Chat")
+
+            onActionRequested: {
+                context.telegram.messagesCreateEncryptedChat(user.id);
+
+                var ancenstorpage = pageStack.previousPage(pageStack.previousPage());
+                pageStack.pop(ancenstorpage);
+            }
         }
     }
 }
