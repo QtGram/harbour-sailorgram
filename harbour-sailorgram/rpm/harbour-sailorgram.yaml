@@ -24,19 +24,25 @@ PkgConfigBR:
   - sailfishapp >= 1.0.2
   - Qt5Core
   - Qt5Qml
+  - Qt5Xml
   - Qt5Quick
-
+  - Qt5DBus
+  - Qt5Multimedia
+  - openssl
 # Build dependencies without a pkgconfig setup can be listed here
 # PkgBR:
-#   - package-needed-to-build
+#  - openssl-devel
 
 # Runtime dependencies which are not automatically detected
 Requires:
   - sailfishsilica-qt5 >= 0.10.9 
 
+RpmLintIgnore: 
+  - arch-dependent-file-in-usr-share
+  - filename-too-long-for-joliet
 # All installed files
 Files:
-  - '%{_bindir}'
+  - '%{_bindir}/%{name}'
   - '%{_datadir}/%{name}'
   - '%{_datadir}/applications/%{name}.desktop'
   - '%{_datadir}/icons/hicolor/86x86/apps/%{name}.png'
