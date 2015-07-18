@@ -40,6 +40,8 @@ TelegramPullDownMenu
                 msg = qsTr("Deleting Group");
 
             remorsepopup.execute(msg, function() {
+                dialog.unreadCount = 0;
+
                 if(dialog.encrypted)
                     context.telegram.messagesDiscardEncryptedChat(dialog.peer.userId);
                 else

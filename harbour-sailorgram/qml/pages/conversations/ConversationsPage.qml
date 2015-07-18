@@ -142,6 +142,8 @@ Page
                             msg = qsTr("Deleting Group");
 
                         dialogitem.remorseAction(msg, function() {
+                            item.unreadCount = 0;
+
                             if(item.encrypted)
                                 context.telegram.messagesDiscardEncryptedChat(item.peer.userId);
                             else
