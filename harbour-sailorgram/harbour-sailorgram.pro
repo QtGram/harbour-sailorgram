@@ -108,7 +108,7 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/components/ConnectionStatus.qml \
     qml/pages/AboutPage.qml \
     qml/components/InfoLabel.qml \
-    qml/pages/secretchat/CreateSecretChatPage.qml \
+    qml/pages/secretconversations/CreateSecretConversationPage.qml \
     qml/pages/secretconversations/SecretConversationPage.qml \
     qml/items/secretconversation/SecretConversationItem.qml \
     qml/components/TelegramBackground.qml \

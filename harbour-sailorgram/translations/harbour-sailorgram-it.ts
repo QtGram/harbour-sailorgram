@@ -246,11 +246,11 @@ Scegli un contatto selezionando &quot;Contatti&quot; dal menu Pull Down</transla
     </message>
     <message>
         <source>Delete History</source>
-        <translation>Elimina Cronologia</translation>
+        <translation type="vanished">Elimina Cronologia</translation>
     </message>
     <message>
         <source>Deleting History</source>
-        <translation>Rimozione Cronologia</translation>
+        <translation type="vanished">Rimozione Cronologia</translation>
     </message>
     <message>
         <source>Groups</source>
@@ -284,6 +284,18 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Elimina</translation>
+    </message>
+    <message>
+        <source>Deleting Conversation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting Group</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -361,7 +373,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
 </context>
 <context>
-    <name>CreateSecretChatPage</name>
+    <name>CreateSecretConversationPage</name>
     <message>
         <source>New Secret Chat</source>
         <translation type="unfinished"></translation>

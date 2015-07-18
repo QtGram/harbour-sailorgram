@@ -246,11 +246,11 @@ Elije un contacto pulsando en &quot;Contactos&quot; desde el menú desplegable</
     </message>
     <message>
         <source>Delete History</source>
-        <translation>Borrar historial</translation>
+        <translation type="vanished">Borrar historial</translation>
     </message>
     <message>
         <source>Deleting History</source>
-        <translation>Borrando Historial</translation>
+        <translation type="vanished">Borrando Historial</translation>
     </message>
     <message>
         <source>Groups</source>
@@ -284,6 +284,18 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Borrar</translation>
+    </message>
+    <message>
+        <source>Deleting Conversation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting Group</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -349,7 +361,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
 </context>
 <context>
-    <name>CreateSecretChatPage</name>
+    <name>CreateSecretConversationPage</name>
     <message>
         <source>New Secret Chat</source>
         <translation type="unfinished"></translation>

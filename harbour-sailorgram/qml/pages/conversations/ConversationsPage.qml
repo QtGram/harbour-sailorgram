@@ -41,7 +41,6 @@ import "../../js/TelegramConstants.js" as TelegramConstants
 Page
 {
     property Context context
-    property Telegram telegram
     property Component conversationItemComponent
     property Component secretConversationItemComponent;
 
@@ -52,7 +51,7 @@ Page
         if(conversationspage.status !== PageStatus.Active)
             return;
 
-        context.foregroundDialog = telegram.nullDialog; // Reset Foreground Dialog
+        context.foregroundDialog = context.telegram.nullDialog; // Reset Foreground Dialog
     }
 
     SilicaListView
@@ -112,33 +111,41 @@ Page
         }
 
         model: DialogsModel {
-            telegram: conversationspage.telegram
+            telegram: conversationspage.context.telegram
         }
 
         delegate: ListItem {
-            id: dialogitem
-            contentWidth: parent.width
-            contentHeight: Theme.itemSizeSmall
-
-            onClicked: {
+            function displayConversation() {
                 if(item.encrypted) {
-                    pageStack.push(Qt.resolvedUrl("../secretconversations/SecretConversationPage.qml"), { "context": conversationspage.context, "telegram": conversationspage.telegram, "dialog": item });
+                    pageStack.push(Qt.resolvedUrl("../secretconversations/SecretConversationPage.qml"), { "context": conversationspage.context, "dialog": item });
                     return;
                 }
 
-                pageStack.push(Qt.resolvedUrl("ConversationPage.qml"), { "context": conversationspage.context, "telegram": conversationspage.telegram, "dialog": item })
+                pageStack.push(Qt.resolvedUrl("ConversationPage.qml"), { "context": conversationspage.context, "dialog": item })
             }
+
+            id: dialogitem
+            contentWidth: parent.width
+            contentHeight: Theme.itemSizeSmall
+            onClicked: displayConversation()
 
             menu: ContextMenu {
                 MenuItem {
-                    text: qsTr("Delete History")
+                    text: qsTr("Delete")
 
                     onClicked: {
-                        dialogitem.remorseAction(item.encrypted ? qsTr("Deleting Secret Chat") : qsTr("Deleting History"), function() {
+                        var msg = qsTr("Deleting Conversation");
+
+                        if(item.encrypted)
+                            msg = qsTr("Deleting Secret Chat");
+                        else if(TelegramHelper.isChat(item))
+                            msg = qsTr("Deleting Group");
+
+                        dialogitem.remorseAction(msg, function() {
                             if(item.encrypted)
-                                telegram.messagesDiscardEncryptedChat(item.peer.userId);
+                                context.telegram.messagesDiscardEncryptedChat(item.peer.userId);
                             else
-                                telegram.messagesDeleteHistory(TelegramHelper.peerId(item));
+                                context.telegram.messagesDeleteHistory(TelegramHelper.peerId(item));
                         });
                     }
                 }

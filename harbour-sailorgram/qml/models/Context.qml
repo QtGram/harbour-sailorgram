@@ -108,7 +108,7 @@ QtObject
             context.telegram.online = true;
 
             pageStack.completeAnimation();
-            pageStack.replace(Qt.resolvedUrl("../pages/conversations/ConversationsPage.qml"), { "context": context, "telegram": context.telegram });
+            pageStack.replace(Qt.resolvedUrl("../pages/conversations/ConversationsPage.qml"), { "context": context });
         }
 
         onAuthCodeRequested: {

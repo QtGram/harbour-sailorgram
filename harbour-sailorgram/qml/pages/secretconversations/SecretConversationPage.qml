@@ -15,19 +15,12 @@ Page
 {
     property Context context
     property Dialog dialog
-    property EncryptedChat chat
-    property User user
+    property EncryptedChat chat: context.telegram.encryptedChat(dialog.peer.userId)
+    property User user: context.telegram.user((chat.adminId === context.telegram.me) ? chat.participantId : chat.adminId)
     property bool muted: context.telegram.userData.isMuted(TelegramHelper.peerId(dialog))
 
     id: secretconversationpage
     allowedOrientations: defaultAllowedOrientations
-
-    Component.onCompleted: {
-        chat = context.telegram.encryptedChat(dialog.peer.userId);
-
-        var userid = (chat.adminId === context.telegram.me) ? chat.participantId : chat.adminId;
-        user = context.telegram.user(userid);
-    }
 
     onStatusChanged: {
         if(status !== PageStatus.Active)

@@ -246,11 +246,11 @@ Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source
     </message>
     <message>
         <source>Delete History</source>
-        <translation>Διαγραφή Ιστορικού</translation>
+        <translation type="vanished">Διαγραφή Ιστορικού</translation>
     </message>
     <message>
         <source>Deleting History</source>
-        <translation>Το ιστορικό διαγράφεται</translation>
+        <translation type="vanished">Το ιστορικό διαγράφεται</translation>
     </message>
     <message>
         <source>Connecting</source>
@@ -284,6 +284,18 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Διαγραφή</translation>
+    </message>
+    <message>
+        <source>Deleting Conversation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting Group</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -341,7 +353,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
 </context>
 <context>
-    <name>CreateSecretChatPage</name>
+    <name>CreateSecretConversationPage</name>
     <message>
         <source>New Secret Chat</source>
         <translation type="unfinished"></translation>

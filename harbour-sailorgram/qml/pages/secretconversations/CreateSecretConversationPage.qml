@@ -28,6 +28,7 @@ Page
             anchors { left: parent.left; top: pageheader.bottom; right: parent.right; bottom: parent.bottom }
             spacing: Theme.paddingMedium
             clip: true
+            enabled: !busyindicator.running
 
             model: ContactsModel {
                 telegram: context.telegram
@@ -36,11 +37,7 @@ Page
             delegate: ListItem {
                 contentWidth: parent.width
                 contentHeight: Theme.itemSizeSmall
-
-                onClicked: {
-                    context.telegram.messagesCreateEncryptedChat(item.userId)
-                    pageStack.pop();
-                }
+                onClicked: context.telegram.messagesCreateEncryptedChat(item.userId)
 
                 UserItem {
                     id: useritem

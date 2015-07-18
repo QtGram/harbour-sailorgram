@@ -22,7 +22,7 @@ PullDownMenu
     {
         text: qsTr("New Secret Chat")
         context: conversationspulldownmenu.context
-        onClicked: pageStack.push(Qt.resolvedUrl("../../pages/secretchat/CreateSecretChatPage.qml"), { "context": conversationspulldownmenu.context })
+        onClicked: pageStack.push(Qt.resolvedUrl("../../pages/secretconversations/CreateSecretConversationPage.qml"), { "context": conversationspulldownmenu.context })
     }
 
     TelegramMenuItem

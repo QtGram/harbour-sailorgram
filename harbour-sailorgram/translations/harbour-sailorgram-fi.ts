@@ -246,11 +246,11 @@ Valitse yhteystieto valitsemalla &quot;Yhteystiedot&quot; alasvetovalikosta.</tr
     </message>
     <message>
         <source>Delete History</source>
-        <translation>Poista keskusteluhistoria.</translation>
+        <translation type="vanished">Poista keskusteluhistoria.</translation>
     </message>
     <message>
         <source>Deleting History</source>
-        <translation>Poistetaan historia... </translation>
+        <translation type="vanished">Poistetaan historia... </translation>
     </message>
     <message>
         <source>Groups</source>
@@ -284,6 +284,18 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Poista</translation>
+    </message>
+    <message>
+        <source>Deleting Conversation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting Group</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -349,7 +361,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
 </context>
 <context>
-    <name>CreateSecretChatPage</name>
+    <name>CreateSecretConversationPage</name>
     <message>
         <source>New Secret Chat</source>
         <translation type="unfinished"></translation>
