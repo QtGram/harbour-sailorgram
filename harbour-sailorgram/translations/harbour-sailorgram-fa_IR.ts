@@ -1,641 +1,636 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="fr">
+<TS version="2.1" language="fa_IR">
 <context>
     <name>AboutPage</name>
     <message>
         <source>Danish</source>
-        <translation>Danois</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Dutch</source>
-        <translation>Hollandais</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Finnish</source>
-        <translation>Finois</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>German</source>
-        <translation>Allemand</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation>Russe</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Spanish</source>
-        <translation>Espagnol</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Czech</source>
-        <translation>Tchèque</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>French</source>
-        <translation>Français</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Italian</source>
-        <translation>Italien</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Persian</source>
-        <translation>Persan</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Greek</source>
-        <translation>Grec</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>About SailorGram</source>
-        <translation>A propos de SailorGram</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Version</source>
-        <translation>Version</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>An unofficial Telegram Client for SailfishOS</source>
-        <translation>Client Telegram non-officiel pour SailfishOS</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Developer</source>
-        <translation>Développeur</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Icon Designer</source>
-        <translation>Designer de l&apos;icône</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>GitHub Repository</source>
-        <translation>Dépôt GitHub</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Translators</source>
-        <translation>Traducteurs</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Translation Platform</source>
-        <translation>Plateforme de traduction</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>AddContactsPage</name>
     <message>
         <source>Add Chat Member</source>
-        <translation>Ajouter un membre</translation>
+        <translation>افزودن عضو به گپ</translation>
     </message>
 </context>
 <context>
     <name>AuthorizationPage</name>
     <message>
         <source>Sign In</source>
-        <translation>Se connecter</translation>
+        <translation>ورود</translation>
     </message>
     <message>
         <source>Authorization Code</source>
-        <translation>Code d&apos;autorisation</translation>
+        <translation>کد تأیید</translation>
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation>Vous avez saisi un mauvais code d&apos;autorisation</translation>
+        <translation>کد تأیید را اشتباه وارد کرده اید</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign In&apos;</source>
-        <translation>Veillez attendre le SMS contenant le code d&apos;activation et appuyez sur « Se connecter »</translation>
+        <translation>منتظر پیامک حاوی کد فعال‌سازی بمانید، و «ورود» را بزنید </translation>
     </message>
     <message>
         <source>Resend Activation Code</source>
-        <translation>Envoyer à nouveau le Code d&apos;Activation</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Sending Activation Code</source>
-        <translation>Envoi du Code d&apos;Activation</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ChangeChatTitle</name>
     <message>
         <source>Change</source>
-        <translation>Modifier</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ChangeUsernamePage</name>
     <message>
         <source>Change</source>
-        <translation>Modification</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Username</source>
-        <translation>Nom d&apos;utilisateur</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>You can choose an username on Telegram. If you do, other people may contact you without knowing your phone number.
 
 You can use a-z, 0-9 and underscores.
 Minimum length is 5 characters.</source>
-        <translation>Vous pouvez choisir un nom d&apos;utilisateur sur Telegram. Si vous faîtes cela, les autres utilisateurs pourrons vous contacter sans connaître votre numéro de téléphone.
-
-Vous pouvez utiliser a-z, 0-9 et tiret bas.
-Longueur minimum est de 5 caractères.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ChatInfo</name>
     <message>
         <source>Members</source>
-        <translation>Participants</translation>
+        <translation>عضوها</translation>
     </message>
 </context>
 <context>
     <name>ChatInfoMenu</name>
     <message>
         <source>Remove from Group</source>
-        <translation>Supprimer du groupe</translation>
+        <translation>حذف از گروه</translation>
     </message>
     <message>
         <source>Removing from group</source>
-        <translation>Suppression du groupe</translation>
+        <translation>در حال حذف از گروه</translation>
     </message>
 </context>
 <context>
     <name>ConnectingLabel</name>
     <message>
         <source>Connecting...</source>
-        <translation>Connexion en cours ...</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ConnectionPage</name>
     <message>
         <source>Connecting</source>
-        <translation>Connexion</translation>
+        <translation>در حال اتصال</translation>
     </message>
     <message>
         <source>Login Again</source>
-        <translation>Se conecter à nouveau</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Telegram Status</source>
-        <translation>Statut Telegram</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ConversationMenu</name>
     <message>
         <source>Enable Notifications</source>
-        <translation>Activer les notifications</translation>
+        <translation>فعال‌سازی اطلاعیه‌ها</translation>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation>Désactiver les notifications</translation>
+        <translation>غیرفعال‌سازی اطلاعیه‌ها</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Effacer</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation>Suppression de discussion secrète</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Leave Group</source>
-        <translation>Quitter le groupe</translation>
+        <translation>ترک گروه</translation>
     </message>
     <message>
         <source>Leaving Group</source>
-        <translation>Quitte le groupe</translation>
+        <translation>در حال ترک گروه</translation>
     </message>
     <message>
         <source>Change Title</source>
-        <translation>Changer le titre</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Add Member</source>
-        <translation>Ajouter un participant</translation>
+        <translation>افزودن عضو</translation>
     </message>
     <message>
         <source>Add to Contacts</source>
-        <translation>Ajouter aux contacts</translation>
+        <translation>افزودن به آشنایان</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation>Suppression de la conversation</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation>Suppression du groupe</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ConversationsPage</name>
     <message>
         <source>Settings</source>
-        <translation>Paramètres</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>About</source>
-        <translation>A propos</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>No Chats
 
 Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation>Pas de discussion
-
-Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessus</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Groups</source>
-        <translation>Groupes</translation>
+        <translation>گروه‌ها</translation>
     </message>
     <message>
         <source>Conversations</source>
-        <translation>Conversations</translation>
+        <translation>گفت‌وگوها</translation>
     </message>
     <message>
         <source>Chats</source>
-        <translation>Conversations</translation>
+        <translation>گپ‌ها</translation>
     </message>
     <message>
         <source>Connecting...</source>
-        <translation>Connexion en cours ...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation>Suppression de conversation secrète</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Supprimer</translation>
+        <translation type="unfinished">حذف</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation>Suppression de la conversation</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation>Suppression du groupe</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ConversationsPullDownMenu</name>
     <message>
         <source>Contacts</source>
-        <translation>Contacts</translation>
+        <translation>آشنایان</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation>Profil</translation>
+        <translation type="unfinished">نمایه</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation>Nouvelle conversation secrète</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation>Nouveau groupe</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>CoverPage</name>
     <message>
         <source>Connected</source>
-        <translation>Connecté</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation>Déconnecté</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>%1 unread messages</source>
-        <translation>%1 messages non lus</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>%1 unread message</source>
-        <translation>%1 message non lu</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>CreateChatPage</name>
     <message>
         <source>Group Name</source>
-        <translation>Nom du groupe</translation>
+        <translation>نام گروه</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation>Nouveau group</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>CreateSecretConversationPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation>Nouvelle conversation secrète</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>FilePickerPage</name>
     <message>
         <source>Root</source>
-        <translation>Root</translation>
+        <translation>ریشه</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation>Carte SD</translation>
+        <translation>کارت SD</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation>Home</translation>
+        <translation>آغازه</translation>
     </message>
 </context>
 <context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
-        <translation>Enregistrer dans Gallerie</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation>Image enregistrée dans Gallerie</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MediaPlayerToolBar</name>
     <message>
         <source>Downloading media</source>
-        <translation>Téléchargement du média</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation>Image enregistrée dans Gallerie</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MessageBar</name>
     <message>
         <source>Message...</source>
-        <translation>Message ...</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MessageItem</name>
     <message>
         <source>Downloading Media</source>
-        <translation>Téléchargement de médias</translation>
+        <translation>در حال بارگیری رسانه</translation>
     </message>
     <message>
         <source>Opening Media</source>
-        <translation>Ouverture du média</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MessageMenu</name>
     <message>
         <source>Copy</source>
-        <translation>Copier</translation>
+        <translation>رونوشت‌برداری</translation>
     </message>
     <message>
         <source>Message copied to clipboard</source>
-        <translation>Message copié dans le presse-papier</translation>
+        <translation>پیام در بریدان قرار گرفت</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Supprimer</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <source>Deleting Message</source>
-        <translation>Suppression du message</translation>
+        <translation>در حال حذف پیام</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Annuler</translation>
+        <translation>لغو</translation>
     </message>
 </context>
 <context>
     <name>PeerItem</name>
     <message>
         <source>%1 members</source>
-        <translation>%1 participants</translation>
+        <translation>%1 عضو</translation>
     </message>
     <message>
         <source>%1 member</source>
-        <translation>%1 participant</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>PhoneNumberPage</name>
     <message>
         <source>Next</source>
-        <translation>Suivant</translation>
+        <translation>بعدی</translation>
     </message>
     <message>
         <source>Phone Number</source>
-        <translation>Numéro de téléphone</translation>
+        <translation>شماره‌تلفن</translation>
     </message>
     <message>
         <source>Country Code</source>
-        <translation>Indicatif pays</translation>
+        <translation>کد کشور</translation>
     </message>
     <message>
         <source>Insert your phone number and press &apos;Next&apos;</source>
-        <translation>Saisissez votre numéro de téléphone et appuyez sur « Suivant »</translation>
+        <translation>شماره‌تلفن خود را وارد کنید و «بعدی» را بزنید</translation>
     </message>
 </context>
 <context>
     <name>ProfilePage</name>
     <message>
         <source>Change Picture</source>
-        <translation>Changer d&apos;image</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Phone number</source>
-        <translation>Numéro de téléphone</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation>Profil</translation>
+        <translation type="unfinished">نمایه</translation>
     </message>
     <message>
         <source>Change Username</source>
-        <translation>Changer le nom d&apos;utilisateur</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>User</source>
-        <translation>Utilisateur</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Username</source>
-        <translation>Nom d&apos;utilisateur</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SecretChatDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation>Conversation secrète supprimée </translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SecretChatWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>
-        <translation>En attente de connexion de %1</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SettingsPage</name>
     <message>
         <source>Save</source>
-        <translation>Enregistrer</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation>Envoyer les messages en cliquant la touche Retour</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SignUpPage</name>
     <message>
         <source>Sign Up</source>
-        <translation>Inscription</translation>
+        <translation>نام‌نویسی</translation>
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation>Code d&apos;autorisation incorrect</translation>
+        <translation>کد تأیید را اشتباه وارد کرده اید</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
-        <translation>Attendez le message contenant le code d&apos;activation et appuyer sur &quot;Inscription&quot;</translation>
+        <translation>منتظر پیامک حاوی کد فعال‌سازی بمانید، و «نام‌نویسی» را بزنید </translation>
     </message>
     <message>
         <source>First Name</source>
-        <translation>Prénom</translation>
+        <translation>نام کوچک</translation>
     </message>
     <message>
         <source>Last Name (Optional)</source>
-        <translation>Nom (facultatif)</translation>
+        <translation>نام خانوادگی (اختیاری)</translation>
     </message>
     <message>
         <source>Authorization Code</source>
-        <translation>Code d&apos;autorisation</translation>
+        <translation>کد تأیید</translation>
     </message>
 </context>
 <context>
     <name>TelegramAction</name>
     <message>
         <source>%1 has left the group</source>
-        <translation>%1 a quitté le groupe</translation>
+        <translation>%1 گروه را ترک کرده است</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
-        <translation>%1  a rejoint le groupe</translation>
+        <translation>%1 به گروه پیوسته است</translation>
     </message>
     <message>
         <source>Secret chat</source>
-        <translation>Conversation secrète</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Group</source>
-        <translation>Groupe</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>%1 created by %2</source>
-        <translation>%1 créé par %2</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>TelegramHelper</name>
     <message>
         <source>Recently</source>
-        <translation>Dernièrement</translation>
+        <translation>به تازگی</translation>
     </message>
     <message>
         <source>Last Month</source>
-        <translation>Le mois dernier</translation>
+        <translation>ماه پیش</translation>
     </message>
     <message>
         <source>Last Week</source>
-        <translation>La semaine dernière</translation>
+        <translation>هفته‌ی پیش</translation>
     </message>
     <message>
         <source>Online</source>
-        <translation>En ligne</translation>
+        <translation>برخط</translation>
     </message>
     <message>
         <source>Unknown</source>
-        <translation>Inconnu</translation>
+        <translation>نامشخص</translation>
     </message>
     <message>
         <source>Last Seen at %1</source>
-        <translation>Dernière connexion à %1</translation>
+        <translation>آخرین بار %1 دیده شده</translation>
     </message>
     <message>
         <source>Document</source>
-        <translation>Document</translation>
+        <translation>سند</translation>
     </message>
     <message>
         <source>Contact</source>
-        <translation>Contact</translation>
+        <translation>آشنا</translation>
     </message>
     <message>
         <source>Video</source>
-        <translation>Vidéo</translation>
+        <translation>ویدئو</translation>
     </message>
     <message>
         <source>Unsupported</source>
-        <translation>Non pris en charge</translation>
+        <translation>پشتیبانی‌نشده</translation>
     </message>
     <message>
         <source>Audio</source>
-        <translation>Audio</translation>
+        <translation>صوت</translation>
     </message>
     <message>
         <source>Photo</source>
-        <translation>Photo</translation>
+        <translation>عکس</translation>
     </message>
     <message>
         <source>Geo</source>
-        <translation>Géo</translation>
+        <translation>موقعیت</translation>
     </message>
 </context>
 <context>
     <name>UserInfo</name>
     <message>
         <source>Phone Number</source>
-        <translation>Numéro de téléphone</translation>
+        <translation>شماره‌تلفن</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation>Actions</translation>
+        <translation>عملکردها</translation>
     </message>
     <message>
         <source>Send Message</source>
-        <translation>Envoyer le message</translation>
+        <translation>ارسال پیام</translation>
     </message>
     <message>
         <source>Begin Secret Chat</source>
-        <translation>Commencer une conversation secrète</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>UserMenu</name>
     <message>
         <source>Send Message</source>
-        <translation>Envoyer le message</translation>
+        <translation>ارسال پیام</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation>Profil</translation>
+        <translation>نمایه</translation>
     </message>
 </context>
 <context>
     <name>UsersPage</name>
     <message>
         <source>Contacts</source>
-        <translation>Contacts</translation>
+        <translation>آشنایان</translation>
     </message>
 </context>
 </TS>

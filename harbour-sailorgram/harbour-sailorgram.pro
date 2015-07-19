@@ -126,12 +126,17 @@ CONFIG += sailfishapp_i18n
 # planning to localize your app, remember to comment out the
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
-TRANSLATIONS += translations/harbour-sailorgram-de.ts \
+TRANSLATIONS += translations/harbour-sailorgram-cs.ts \
+                translations/harbour-sailorgram-da.ts \
+                translations/harbour-sailorgram-de.ts \
                 translations/harbour-sailorgram-el.ts \
                 translations/harbour-sailorgram-es.ts \
+                translations/harbour-sailorgram-fa_IR.ts \
                 translations/harbour-sailorgram-fi.ts \
                 translations/harbour-sailorgram-fr.ts \
                 translations/harbour-sailorgram-it.ts \
+                translations/harbour-sailorgram-nl_NL.ts \
+                translations/harbour-sailorgram-ru.ts \
                 translations/harbour-sailorgram.ts
 
 HEADERS += \

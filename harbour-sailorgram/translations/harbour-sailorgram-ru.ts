@@ -1,339 +1,339 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="fr">
+<TS version="2.1" language="ru">
 <context>
     <name>AboutPage</name>
     <message>
         <source>Danish</source>
-        <translation>Danois</translation>
+        <translation>Датский</translation>
     </message>
     <message>
         <source>Dutch</source>
-        <translation>Hollandais</translation>
+        <translation>Голландский</translation>
     </message>
     <message>
         <source>Finnish</source>
-        <translation>Finois</translation>
+        <translation>Финский</translation>
     </message>
     <message>
         <source>German</source>
-        <translation>Allemand</translation>
+        <translation>Немецкий</translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation>Russe</translation>
+        <translation>Русский</translation>
     </message>
     <message>
         <source>Spanish</source>
-        <translation>Espagnol</translation>
+        <translation>Испанский</translation>
     </message>
     <message>
         <source>Czech</source>
-        <translation>Tchèque</translation>
+        <translation>Чешский</translation>
     </message>
     <message>
         <source>French</source>
-        <translation>Français</translation>
+        <translation>Французский</translation>
     </message>
     <message>
         <source>Italian</source>
-        <translation>Italien</translation>
+        <translation>Итальянский</translation>
     </message>
     <message>
         <source>Persian</source>
-        <translation>Persan</translation>
+        <translation>Персидский</translation>
     </message>
     <message>
         <source>Greek</source>
-        <translation>Grec</translation>
+        <translation>Греческий</translation>
     </message>
     <message>
         <source>About SailorGram</source>
-        <translation>A propos de SailorGram</translation>
+        <translation>О SailorGram</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation>Version</translation>
+        <translation>Версия</translation>
     </message>
     <message>
         <source>An unofficial Telegram Client for SailfishOS</source>
-        <translation>Client Telegram non-officiel pour SailfishOS</translation>
+        <translation>Неофициальная версия приложения Telegram для  SailfishOS</translation>
     </message>
     <message>
         <source>Developer</source>
-        <translation>Développeur</translation>
+        <translation>Разработчик</translation>
     </message>
     <message>
         <source>Icon Designer</source>
-        <translation>Designer de l&apos;icône</translation>
+        <translation>Дизайнер иконок</translation>
     </message>
     <message>
         <source>GitHub Repository</source>
-        <translation>Dépôt GitHub</translation>
+        <translation>Репозиторий на GitHub</translation>
     </message>
     <message>
         <source>Translators</source>
-        <translation>Traducteurs</translation>
+        <translation>Переводчик</translation>
     </message>
     <message>
         <source>Translation Platform</source>
-        <translation>Plateforme de traduction</translation>
+        <translation>База для перевода</translation>
     </message>
 </context>
 <context>
     <name>AddContactsPage</name>
     <message>
         <source>Add Chat Member</source>
-        <translation>Ajouter un membre</translation>
+        <translation>Добавить собеседника</translation>
     </message>
 </context>
 <context>
     <name>AuthorizationPage</name>
     <message>
         <source>Sign In</source>
-        <translation>Se connecter</translation>
+        <translation>Войти</translation>
     </message>
     <message>
         <source>Authorization Code</source>
-        <translation>Code d&apos;autorisation</translation>
+        <translation>Код авторизации</translation>
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation>Vous avez saisi un mauvais code d&apos;autorisation</translation>
+        <translation>Вы ввели неверный код авторизации</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign In&apos;</source>
-        <translation>Veillez attendre le SMS contenant le code d&apos;activation et appuyez sur « Se connecter »</translation>
+        <translation>Дождитесь SMS с кодом активации и нажмите &apos;Войти&apos;</translation>
     </message>
     <message>
         <source>Resend Activation Code</source>
-        <translation>Envoyer à nouveau le Code d&apos;Activation</translation>
+        <translation>Отправить код активации ещё раз</translation>
     </message>
     <message>
         <source>Sending Activation Code</source>
-        <translation>Envoi du Code d&apos;Activation</translation>
+        <translation>Отправка кода активации</translation>
     </message>
 </context>
 <context>
     <name>ChangeChatTitle</name>
     <message>
         <source>Change</source>
-        <translation>Modifier</translation>
+        <translation>Изменить</translation>
     </message>
 </context>
 <context>
     <name>ChangeUsernamePage</name>
     <message>
         <source>Change</source>
-        <translation>Modification</translation>
+        <translation>Изменить</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation>Nom d&apos;utilisateur</translation>
+        <translation>Юзернейм</translation>
     </message>
     <message>
         <source>You can choose an username on Telegram. If you do, other people may contact you without knowing your phone number.
 
 You can use a-z, 0-9 and underscores.
 Minimum length is 5 characters.</source>
-        <translation>Vous pouvez choisir un nom d&apos;utilisateur sur Telegram. Si vous faîtes cela, les autres utilisateurs pourrons vous contacter sans connaître votre numéro de téléphone.
+        <translation>Вы можете выбрать юзернейм для Telegram, после чего другие пользователи могут связаться с Вами не зная номер телефона
 
-Vous pouvez utiliser a-z, 0-9 et tiret bas.
-Longueur minimum est de 5 caractères.</translation>
+Вы можете использовать латинский алфавит, цифры и подчеркивания
+Минимальная длина - 5 символов.</translation>
     </message>
 </context>
 <context>
     <name>ChatInfo</name>
     <message>
         <source>Members</source>
-        <translation>Participants</translation>
+        <translation>Участники</translation>
     </message>
 </context>
 <context>
     <name>ChatInfoMenu</name>
     <message>
         <source>Remove from Group</source>
-        <translation>Supprimer du groupe</translation>
+        <translation>Исключить</translation>
     </message>
     <message>
         <source>Removing from group</source>
-        <translation>Suppression du groupe</translation>
+        <translation>Исключение</translation>
     </message>
 </context>
 <context>
     <name>ConnectingLabel</name>
     <message>
         <source>Connecting...</source>
-        <translation>Connexion en cours ...</translation>
+        <translation>Подключение...</translation>
     </message>
 </context>
 <context>
     <name>ConnectionPage</name>
     <message>
         <source>Connecting</source>
-        <translation>Connexion</translation>
+        <translation>Подключение</translation>
     </message>
     <message>
         <source>Login Again</source>
-        <translation>Se conecter à nouveau</translation>
+        <translation>Войти ещё раз</translation>
     </message>
     <message>
         <source>Telegram Status</source>
-        <translation>Statut Telegram</translation>
+        <translation>Состояние Telegram</translation>
     </message>
 </context>
 <context>
     <name>ConversationMenu</name>
     <message>
         <source>Enable Notifications</source>
-        <translation>Activer les notifications</translation>
+        <translation>Включить уведомления</translation>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation>Désactiver les notifications</translation>
+        <translation>Отключить уведомления</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Effacer</translation>
+        <translation>Удалить</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation>Suppression de discussion secrète</translation>
+        <translation>Удаление тайного диалога</translation>
     </message>
     <message>
         <source>Leave Group</source>
-        <translation>Quitter le groupe</translation>
+        <translation>Покинуть беседу</translation>
     </message>
     <message>
         <source>Leaving Group</source>
-        <translation>Quitte le groupe</translation>
+        <translation>Выход из беседы</translation>
     </message>
     <message>
         <source>Change Title</source>
-        <translation>Changer le titre</translation>
+        <translation>Изменить название</translation>
     </message>
     <message>
         <source>Add Member</source>
-        <translation>Ajouter un participant</translation>
+        <translation>Добавить собеседника</translation>
     </message>
     <message>
         <source>Add to Contacts</source>
-        <translation>Ajouter aux contacts</translation>
+        <translation>Добавить в контакты</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation>Suppression de la conversation</translation>
+        <translation>Удаление диалога</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation>Suppression du groupe</translation>
+        <translation>Удаление беседы</translation>
     </message>
 </context>
 <context>
     <name>ConversationsPage</name>
     <message>
         <source>Settings</source>
-        <translation>Paramètres</translation>
+        <translation>Настройки</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>A propos</translation>
+        <translation>Информация</translation>
     </message>
     <message>
         <source>No Chats
 
 Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation>Pas de discussion
+        <translation>Диалогов нет
 
-Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessus</translation>
+Выберите контакта из меню &apos;Контакты&apos;</translation>
     </message>
     <message>
         <source>Groups</source>
-        <translation>Groupes</translation>
+        <translation>Беседы</translation>
     </message>
     <message>
         <source>Conversations</source>
-        <translation>Conversations</translation>
+        <translation>Диалоги</translation>
     </message>
     <message>
         <source>Chats</source>
-        <translation>Conversations</translation>
+        <translation>Диалоги</translation>
     </message>
     <message>
         <source>Connecting...</source>
-        <translation>Connexion en cours ...</translation>
+        <translation>Подключение...</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation>Suppression de conversation secrète</translation>
+        <translation>Удаление тайного диалога</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Supprimer</translation>
+        <translation>Удалить</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation>Suppression de la conversation</translation>
+        <translation>Удаление диалога</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation>Suppression du groupe</translation>
+        <translation>Удаление беседы</translation>
     </message>
 </context>
 <context>
     <name>ConversationsPullDownMenu</name>
     <message>
         <source>Contacts</source>
-        <translation>Contacts</translation>
+        <translation>Контакты</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation>Profil</translation>
+        <translation>Профиль</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation>Nouvelle conversation secrète</translation>
+        <translation> Новый тайный диалог</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation>Nouveau groupe</translation>
+        <translation> Начать беседу</translation>
     </message>
 </context>
 <context>
     <name>CoverPage</name>
     <message>
         <source>Connected</source>
-        <translation>Connecté</translation>
+        <translation>Подключено</translation>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation>Déconnecté</translation>
+        <translation>Отключено</translation>
     </message>
     <message>
         <source>%1 unread messages</source>
-        <translation>%1 messages non lus</translation>
+        <translation>%1 непрочитанных сообщений</translation>
     </message>
     <message>
         <source>%1 unread message</source>
-        <translation>%1 message non lu</translation>
+        <translation>%1 непрочитанное сообщение</translation>
     </message>
 </context>
 <context>
     <name>CreateChatPage</name>
     <message>
         <source>Group Name</source>
-        <translation>Nom du groupe</translation>
+        <translation>Название беседы</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation>Nouveau group</translation>
+        <translation>Начать беседу</translation>
     </message>
 </context>
 <context>
     <name>CreateSecretConversationPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation>Nouvelle conversation secrète</translation>
+        <translation>Новый тайный диалог</translation>
     </message>
 </context>
 <context>
@@ -344,298 +344,298 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
     </message>
     <message>
         <source>SD Card</source>
-        <translation>Carte SD</translation>
+        <translation>SD карта</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation>Home</translation>
+        <translation>Главная</translation>
     </message>
 </context>
 <context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
-        <translation>Enregistrer dans Gallerie</translation>
+        <translation>Сохранить в Галлерее</translation>
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation>Image enregistrée dans Gallerie</translation>
+        <translation>Изображение сохранено в Галлерее</translation>
     </message>
 </context>
 <context>
     <name>MediaPlayerToolBar</name>
     <message>
         <source>Downloading media</source>
-        <translation>Téléchargement du média</translation>
+        <translation>Загрузка медиа</translation>
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation>Image enregistrée dans Gallerie</translation>
+        <translation>Изображение сохранено в Галлерее</translation>
     </message>
 </context>
 <context>
     <name>MessageBar</name>
     <message>
         <source>Message...</source>
-        <translation>Message ...</translation>
+        <translation>Сообщение...</translation>
     </message>
 </context>
 <context>
     <name>MessageItem</name>
     <message>
         <source>Downloading Media</source>
-        <translation>Téléchargement de médias</translation>
+        <translation>Загрузка медиа</translation>
     </message>
     <message>
         <source>Opening Media</source>
-        <translation>Ouverture du média</translation>
+        <translation>Открытие медиа</translation>
     </message>
 </context>
 <context>
     <name>MessageMenu</name>
     <message>
         <source>Copy</source>
-        <translation>Copier</translation>
+        <translation>Скопировать</translation>
     </message>
     <message>
         <source>Message copied to clipboard</source>
-        <translation>Message copié dans le presse-papier</translation>
+        <translation>Сообщение скопировано в буфер обмена</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Supprimer</translation>
+        <translation>Удалить</translation>
     </message>
     <message>
         <source>Deleting Message</source>
-        <translation>Suppression du message</translation>
+        <translation>Удаление сообщения</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Annuler</translation>
+        <translation>Отменить</translation>
     </message>
 </context>
 <context>
     <name>PeerItem</name>
     <message>
         <source>%1 members</source>
-        <translation>%1 participants</translation>
+        <translation>%1 участников</translation>
     </message>
     <message>
         <source>%1 member</source>
-        <translation>%1 participant</translation>
+        <translation>%1 участник</translation>
     </message>
 </context>
 <context>
     <name>PhoneNumberPage</name>
     <message>
         <source>Next</source>
-        <translation>Suivant</translation>
+        <translation>Далее</translation>
     </message>
     <message>
         <source>Phone Number</source>
-        <translation>Numéro de téléphone</translation>
+        <translation>Номер телефона</translation>
     </message>
     <message>
         <source>Country Code</source>
-        <translation>Indicatif pays</translation>
+        <translation>Код страны</translation>
     </message>
     <message>
         <source>Insert your phone number and press &apos;Next&apos;</source>
-        <translation>Saisissez votre numéro de téléphone et appuyez sur « Suivant »</translation>
+        <translation>Введите свой номер и нажмите &apos;Далее&apos;</translation>
     </message>
 </context>
 <context>
     <name>ProfilePage</name>
     <message>
         <source>Change Picture</source>
-        <translation>Changer d&apos;image</translation>
+        <translation>Изменить картинку</translation>
     </message>
     <message>
         <source>Phone number</source>
-        <translation>Numéro de téléphone</translation>
+        <translation>Номер телефона</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation>Profil</translation>
+        <translation>Профиль</translation>
     </message>
     <message>
         <source>Change Username</source>
-        <translation>Changer le nom d&apos;utilisateur</translation>
+        <translation>Изменить юзернейм</translation>
     </message>
     <message>
         <source>User</source>
-        <translation>Utilisateur</translation>
+        <translation>Пользователь</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation>Nom d&apos;utilisateur</translation>
+        <translation>Юзернейм</translation>
     </message>
 </context>
 <context>
     <name>SecretChatDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation>Conversation secrète supprimée </translation>
+        <translation>Тайный диалог отменён</translation>
     </message>
 </context>
 <context>
     <name>SecretChatWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>
-        <translation>En attente de connexion de %1</translation>
+        <translation>Ждём появления %1 в онлайн</translation>
     </message>
 </context>
 <context>
     <name>SettingsPage</name>
     <message>
         <source>Save</source>
-        <translation>Enregistrer</translation>
+        <translation>Сохранить</translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation>Envoyer les messages en cliquant la touche Retour</translation>
+        <translation>Отправить сообщения, нажав клавишу ввода</translation>
     </message>
 </context>
 <context>
     <name>SignUpPage</name>
     <message>
         <source>Sign Up</source>
-        <translation>Inscription</translation>
+        <translation>Войти</translation>
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation>Code d&apos;autorisation incorrect</translation>
+        <translation>Вы ввели неверный код авторизации</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
-        <translation>Attendez le message contenant le code d&apos;activation et appuyer sur &quot;Inscription&quot;</translation>
+        <translation>Дождитесь SMS с кодом активации и нажмите &apos;Войти&apos;</translation>
     </message>
     <message>
         <source>First Name</source>
-        <translation>Prénom</translation>
+        <translation>Имя</translation>
     </message>
     <message>
         <source>Last Name (Optional)</source>
-        <translation>Nom (facultatif)</translation>
+        <translation>Фамилия (по желанию)</translation>
     </message>
     <message>
         <source>Authorization Code</source>
-        <translation>Code d&apos;autorisation</translation>
+        <translation>Код авторизации</translation>
     </message>
 </context>
 <context>
     <name>TelegramAction</name>
     <message>
         <source>%1 has left the group</source>
-        <translation>%1 a quitté le groupe</translation>
+        <translation>%1 покинул беседу</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
-        <translation>%1  a rejoint le groupe</translation>
+        <translation>%1 вступил в беседу</translation>
     </message>
     <message>
         <source>Secret chat</source>
-        <translation>Conversation secrète</translation>
+        <translation>Тайный диалог</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation>Groupe</translation>
+        <translation>Беседа</translation>
     </message>
     <message>
         <source>%1 created by %2</source>
-        <translation>%1 créé par %2</translation>
+        <translation>%1 создан(а) %2</translation>
     </message>
 </context>
 <context>
     <name>TelegramHelper</name>
     <message>
         <source>Recently</source>
-        <translation>Dernièrement</translation>
+        <translation>Недавно</translation>
     </message>
     <message>
         <source>Last Month</source>
-        <translation>Le mois dernier</translation>
+        <translation>Последний месяц</translation>
     </message>
     <message>
         <source>Last Week</source>
-        <translation>La semaine dernière</translation>
+        <translation>Последняя неделя</translation>
     </message>
     <message>
         <source>Online</source>
-        <translation>En ligne</translation>
+        <translation>Онлайн</translation>
     </message>
     <message>
         <source>Unknown</source>
-        <translation>Inconnu</translation>
+        <translation>Неизвестный</translation>
     </message>
     <message>
         <source>Last Seen at %1</source>
-        <translation>Dernière connexion à %1</translation>
+        <translation>был в сети %1</translation>
     </message>
     <message>
         <source>Document</source>
-        <translation>Document</translation>
+        <translation>Документ</translation>
     </message>
     <message>
         <source>Contact</source>
-        <translation>Contact</translation>
+        <translation>Контакт</translation>
     </message>
     <message>
         <source>Video</source>
-        <translation>Vidéo</translation>
+        <translation>Видео</translation>
     </message>
     <message>
         <source>Unsupported</source>
-        <translation>Non pris en charge</translation>
+        <translation>Не поддерживается</translation>
     </message>
     <message>
         <source>Audio</source>
-        <translation>Audio</translation>
+        <translation>Аудио</translation>
     </message>
     <message>
         <source>Photo</source>
-        <translation>Photo</translation>
+        <translation>Фото</translation>
     </message>
     <message>
         <source>Geo</source>
-        <translation>Géo</translation>
+        <translation>Местоположение</translation>
     </message>
 </context>
 <context>
     <name>UserInfo</name>
     <message>
         <source>Phone Number</source>
-        <translation>Numéro de téléphone</translation>
+        <translation>Номер телефона</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation>Actions</translation>
+        <translation>Действия</translation>
     </message>
     <message>
         <source>Send Message</source>
-        <translation>Envoyer le message</translation>
+        <translation>Отправить сообщение</translation>
     </message>
     <message>
         <source>Begin Secret Chat</source>
-        <translation>Commencer une conversation secrète</translation>
+        <translation>Начать секретный диалог</translation>
     </message>
 </context>
 <context>
     <name>UserMenu</name>
     <message>
         <source>Send Message</source>
-        <translation>Envoyer le message</translation>
+        <translation>Отправить сообщение</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation>Profil</translation>
+        <translation>Профиль</translation>
     </message>
 </context>
 <context>
     <name>UsersPage</name>
     <message>
         <source>Contacts</source>
-        <translation>Contacts</translation>
+        <translation>Контакты</translation>
     </message>
 </context>
 </TS>

@@ -5,79 +5,79 @@
     <name>AboutPage</name>
     <message>
         <source>Danish</source>
-        <translation type="unfinished"></translation>
+        <translation>Dänisch </translation>
     </message>
     <message>
         <source>Dutch</source>
-        <translation type="unfinished"></translation>
+        <translation>Hol­län­disch</translation>
     </message>
     <message>
         <source>Finnish</source>
-        <translation type="unfinished"></translation>
+        <translation>Finnisch</translation>
     </message>
     <message>
         <source>German</source>
-        <translation type="unfinished"></translation>
+        <translation>Deutsch</translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation type="unfinished"></translation>
+        <translation>Russisch</translation>
     </message>
     <message>
         <source>Spanish</source>
-        <translation type="unfinished"></translation>
+        <translation>Spanisch</translation>
     </message>
     <message>
         <source>Czech</source>
-        <translation type="unfinished"></translation>
+        <translation>Tschechisch</translation>
     </message>
     <message>
         <source>French</source>
-        <translation type="unfinished"></translation>
+        <translation>Französisch</translation>
     </message>
     <message>
         <source>Italian</source>
-        <translation type="unfinished"></translation>
+        <translation>Italienisch</translation>
     </message>
     <message>
         <source>Persian</source>
-        <translation type="unfinished"></translation>
+        <translation>Persisch</translation>
     </message>
     <message>
         <source>Greek</source>
-        <translation type="unfinished"></translation>
+        <translation>Griechisch</translation>
     </message>
     <message>
         <source>About SailorGram</source>
-        <translation type="unfinished"></translation>
+        <translation>Über SailorGram</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Version</translation>
     </message>
     <message>
         <source>An unofficial Telegram Client for SailfishOS</source>
-        <translation type="unfinished"></translation>
+        <translation>Ein inoffizieller Telegram Client für SailfishOS</translation>
     </message>
     <message>
         <source>Developer</source>
-        <translation type="unfinished"></translation>
+        <translation>Entwickler</translation>
     </message>
     <message>
         <source>Icon Designer</source>
-        <translation type="unfinished"></translation>
+        <translation>Icon Designer </translation>
     </message>
     <message>
         <source>GitHub Repository</source>
-        <translation type="unfinished"></translation>
+        <translation>GitHub Repository</translation>
     </message>
     <message>
         <source>Translators</source>
-        <translation type="unfinished"></translation>
+        <translation>Übersetzer</translation>
     </message>
     <message>
         <source>Translation Platform</source>
-        <translation type="unfinished"></translation>
+        <translation>Übersetzungsplatform</translation>
     </message>
 </context>
 <context>
@@ -95,48 +95,51 @@
     </message>
     <message>
         <source>Authorization Code</source>
-        <translation>Authentifizierungs-Code</translation>
+        <translation>Authentifizierungscode</translation>
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation>Du hast einen falschen Authentifizierungs-Code eingegeben.</translation>
+        <translation>Du hast einen falschen Authentifizierungscode eingegeben.</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign In&apos;</source>
-        <translation>Warte auf die SMS mit dem Aktivierungs-Code und drücke &quot;Anmelden&quot;</translation>
+        <translation>Warte auf die SMS mit dem Aktivierungscode und drücke dann &quot;Anmelden&quot;</translation>
     </message>
     <message>
         <source>Resend Activation Code</source>
-        <translation type="unfinished"></translation>
+        <translation>Authentifizierungscode noch senden</translation>
     </message>
     <message>
         <source>Sending Activation Code</source>
-        <translation type="unfinished"></translation>
+        <translation>sende Authentifizierungscode</translation>
     </message>
 </context>
 <context>
     <name>ChangeChatTitle</name>
     <message>
         <source>Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Ändern</translation>
     </message>
 </context>
 <context>
     <name>ChangeUsernamePage</name>
     <message>
         <source>Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Ändern</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation type="unfinished"></translation>
+        <translation>Nutzername</translation>
     </message>
     <message>
         <source>You can choose an username on Telegram. If you do, other people may contact you without knowing your phone number.
 
 You can use a-z, 0-9 and underscores.
 Minimum length is 5 characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Du kannst einen Nutzername für Telegram verwenden. So können die Leute ohne deine Telefonnummer hinzufügen.
+
+Wähle zwischen a-z, 0-9 und Unterstrich.
+ Minimum sind 5 Zeichen.</translation>
     </message>
 </context>
 <context>
@@ -161,7 +164,7 @@ Minimum length is 5 characters.</source>
     <name>ConnectingLabel</name>
     <message>
         <source>Connecting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Verbinden...</translation>
     </message>
 </context>
 <context>
@@ -172,19 +175,15 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Login Again</source>
-        <translation type="unfinished"></translation>
+        <translation>wieder anmelden </translation>
     </message>
     <message>
         <source>Telegram Status</source>
-        <translation type="unfinished"></translation>
+        <translation>Telegram Status</translation>
     </message>
 </context>
 <context>
     <name>ConversationMenu</name>
-    <message>
-        <source>Delete</source>
-        <translation>Löschen</translation>
-    </message>
     <message>
         <source>Enable Notifications</source>
         <translation>Benachrichtigungen aktivieren</translation>
@@ -194,16 +193,12 @@ Minimum length is 5 characters.</source>
         <translation>Benachrichtigungen deaktivieren</translation>
     </message>
     <message>
-        <source>Deleting History</source>
-        <translation type="vanished">Verlauf löschen</translation>
+        <source>Delete</source>
+        <translation>Löschen</translation>
     </message>
     <message>
-        <source>Add Member</source>
-        <translation>Gesprächspartner hinzufügen</translation>
-    </message>
-    <message>
-        <source>Add to Contacts</source>
-        <translation>zu Kontakten hinzufügen</translation>
+        <source>Deleting Secret Chat</source>
+        <translation>Geheime Konversation wird gelöscht</translation>
     </message>
     <message>
         <source>Leave Group</source>
@@ -214,43 +209,43 @@ Minimum length is 5 characters.</source>
         <translation>Gruppe wird verlassen</translation>
     </message>
     <message>
-        <source>Deleting Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <source>Change Title</source>
+        <translation>Titel änderen</translation>
     </message>
     <message>
-        <source>Change Title</source>
-        <translation type="unfinished"></translation>
+        <source>Add Member</source>
+        <translation>Gesprächspartner hinzufügen</translation>
+    </message>
+    <message>
+        <source>Add to Contacts</source>
+        <translation>zu Kontakten hinzufügen</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Unterhaltung löschen</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppe löschen</translation>
     </message>
 </context>
 <context>
     <name>ConversationsPage</name>
     <message>
+        <source>Settings</source>
+        <translation>Einstellungen</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Über</translation>
+    </message>
+    <message>
         <source>No Chats
 
-Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source>
-        <translation type="vanished">Keine Konversationen
+Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
+        <translation>Keine Konversationen
 
 wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
-    </message>
-    <message>
-        <source>Chats</source>
-        <translation>Konversationen</translation>
-    </message>
-    <message>
-        <source>Delete History</source>
-        <translation type="vanished">Verlauf löschen</translation>
-    </message>
-    <message>
-        <source>Deleting History</source>
-        <translation type="vanished">lösche Verlauf</translation>
     </message>
     <message>
         <source>Groups</source>
@@ -261,110 +256,84 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
         <translation>Unterhaltungen</translation>
     </message>
     <message>
-        <source>Connecting</source>
-        <translation type="obsolete">Verbinde</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>No Chats
-
-Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation type="unfinished"></translation>
+        <source>Chats</source>
+        <translation>Konversationen</translation>
     </message>
     <message>
         <source>Connecting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Verbinden...</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Geheime Konversation wird gelöscht</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Löschen</translation>
+        <translation>Löschen</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Unterhaltung löschen</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppe löschen</translation>
     </message>
 </context>
 <context>
     <name>ConversationsPullDownMenu</name>
-    <message>
-        <source>Create Group</source>
-        <translation type="vanished">Gruppe erstellen</translation>
-    </message>
     <message>
         <source>Contacts</source>
         <translation>Kontakte</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation type="unfinished">Profil</translation>
+        <translation>Profil</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Neue geheime Konversation</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Neue Gruppe</translation>
     </message>
 </context>
 <context>
     <name>CoverPage</name>
     <message>
-        <source>Online</source>
-        <translation type="obsolete">Online</translation>
-    </message>
-    <message>
         <source>Connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Verbunden</translation>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation type="unfinished"></translation>
+        <translation>Verbindung getrennt</translation>
     </message>
     <message>
         <source>%1 unread messages</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ungelesene Nachrichten</translation>
     </message>
     <message>
         <source>%1 unread message</source>
-        <translation type="unfinished"></translation>
+        <translation>1% ungelesene Nachricht</translation>
     </message>
 </context>
 <context>
     <name>CreateChatPage</name>
-    <message>
-        <source>Create Group</source>
-        <translation type="vanished">Gruppe anlegen</translation>
-    </message>
     <message>
         <source>Group Name</source>
         <translation>Gruppenname</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Neue Gruppe</translation>
     </message>
 </context>
 <context>
     <name>CreateSecretConversationPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Neue geheime Konversation</translation>
     </message>
 </context>
 <context>
@@ -386,33 +355,30 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>in der Galerie ablegen
+</translation>
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>Bild wurde in der Galerie abgelegt</translation>
     </message>
 </context>
 <context>
     <name>MediaPlayerToolBar</name>
     <message>
         <source>Downloading media</source>
-        <translation type="unfinished"></translation>
+        <translation>Lade Media</translation>
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>Bild wurde in der Galerie abgelegt</translation>
     </message>
 </context>
 <context>
     <name>MessageBar</name>
     <message>
-        <source>Message</source>
-        <translation type="vanished">Nachricht</translation>
-    </message>
-    <message>
         <source>Message...</source>
-        <translation type="unfinished"></translation>
+        <translation>Nachricht...</translation>
     </message>
 </context>
 <context>
@@ -423,7 +389,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Opening Media</source>
-        <translation type="unfinished"></translation>
+        <translation>Öffne Media</translation>
     </message>
 </context>
 <context>
@@ -448,14 +414,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
-    <message>
-        <source>Download</source>
-        <translation type="vanished">Download</translation>
-    </message>
-    <message>
-        <source>Open</source>
-        <translation type="vanished">Öffnen</translation>
-    </message>
 </context>
 <context>
     <name>PeerItem</name>
@@ -465,7 +423,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>%1 member</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Mitglied</translation>
     </message>
 </context>
 <context>
@@ -476,11 +434,11 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Phone Number</source>
-        <translation>Telefon-Nummer</translation>
+        <translation>Telefonnummer</translation>
     </message>
     <message>
         <source>Country Code</source>
-        <translation>Landesvorwahl</translation>
+        <translation>Landeskennzahl </translation>
     </message>
     <message>
         <source>Insert your phone number and press &apos;Next&apos;</source>
@@ -491,52 +449,52 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>ProfilePage</name>
     <message>
         <source>Change Picture</source>
-        <translation type="unfinished"></translation>
+        <translation>Bild ändern</translation>
     </message>
     <message>
         <source>Phone number</source>
-        <translation type="unfinished"></translation>
+        <translation>Telefonnummer</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation type="unfinished">Profil</translation>
+        <translation>Profil</translation>
     </message>
     <message>
         <source>Change Username</source>
-        <translation type="unfinished"></translation>
+        <translation>Nutzernamen ändern </translation>
     </message>
     <message>
         <source>User</source>
-        <translation type="unfinished"></translation>
+        <translation>Nutzer</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuzername</translation>
     </message>
 </context>
 <context>
     <name>SecretChatDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation type="unfinished"></translation>
+        <translation>Geheime Konversation verlassen</translation>
     </message>
 </context>
 <context>
     <name>SecretChatWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>
-        <translation type="unfinished"></translation>
+        <translation>Warte das %1 online ist</translation>
     </message>
 </context>
 <context>
     <name>SettingsPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Sichern</translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Nachricht senden durch, dass drücken der Entertaste </translation>
     </message>
 </context>
 <context>
@@ -547,11 +505,11 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation>Du hast den falschen  Authorization Pin eingegeben </translation>
+        <translation>Du hast einen falschen  Authentifizierungscode eingegeben </translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
-        <translation>Warte auf die SMS mit dem Aktivierungscode und wähle dann &apos;Anmelden&apos;</translation>
+        <translation>Warte auf die SMS mit dem Authentifizierungscode und wähle dann &quot;Anmelden&quot;</translation>
     </message>
     <message>
         <source>First Name</source>
@@ -563,7 +521,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Authorization Code</source>
-        <translation>Authorization Pin</translation>
+        <translation>Authentifizierungscode</translation>
     </message>
 </context>
 <context>
@@ -574,23 +532,19 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>%1 has joined the group</source>
-        <translation>%1 hat die Gruppe betretten</translation>
-    </message>
-    <message>
-        <source>Group created by %1</source>
-        <translation type="vanished">Gruppe erstellt von %1</translation>
+        <translation>%1 hat die Gruppe betreten</translation>
     </message>
     <message>
         <source>Secret chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Geheime Konversation</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppe</translation>
     </message>
     <message>
         <source>%1 created by %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 erstellt bei %2</translation>
     </message>
 </context>
 <context>
@@ -613,7 +567,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Unknown</source>
-        <translation>unbekannt</translation>
+        <translation>Unbekannt</translation>
     </message>
     <message>
         <source>Last Seen at %1</source>
@@ -645,7 +599,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Geo</source>
-        <translation>Geo</translation>
+        <translation>Position</translation>
     </message>
 </context>
 <context>
@@ -664,7 +618,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Begin Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Beginne eine geheime Konversation</translation>
     </message>
 </context>
 <context>
@@ -676,21 +630,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <message>
         <source>Profile</source>
         <translation>Profil</translation>
-    </message>
-</context>
-<context>
-    <name>UserPage</name>
-    <message>
-        <source>Phone Number</source>
-        <translation type="vanished">Telefon-Nummer</translation>
-    </message>
-    <message>
-        <source>Actions</source>
-        <translation type="vanished">Aktionen</translation>
-    </message>
-    <message>
-        <source>Send Message</source>
-        <translation type="vanished">Nachricht senden</translation>
     </message>
 </context>
 <context>

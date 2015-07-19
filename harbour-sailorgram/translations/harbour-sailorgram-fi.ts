@@ -5,93 +5,93 @@
     <name>AboutPage</name>
     <message>
         <source>Danish</source>
-        <translation type="unfinished"></translation>
+        <translation>tanska</translation>
     </message>
     <message>
         <source>Dutch</source>
-        <translation type="unfinished"></translation>
+        <translation>hollanti</translation>
     </message>
     <message>
         <source>Finnish</source>
-        <translation type="unfinished"></translation>
+        <translation>suomi</translation>
     </message>
     <message>
         <source>German</source>
-        <translation type="unfinished"></translation>
+        <translation>saksa</translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation type="unfinished"></translation>
+        <translation>venäjä</translation>
     </message>
     <message>
         <source>Spanish</source>
-        <translation type="unfinished"></translation>
+        <translation>espanja</translation>
     </message>
     <message>
         <source>Czech</source>
-        <translation type="unfinished"></translation>
+        <translation>tsekki</translation>
     </message>
     <message>
         <source>French</source>
-        <translation type="unfinished"></translation>
+        <translation>ranska</translation>
     </message>
     <message>
         <source>Italian</source>
-        <translation type="unfinished"></translation>
+        <translation>italia</translation>
     </message>
     <message>
         <source>Persian</source>
-        <translation type="unfinished"></translation>
+        <translation>persia</translation>
     </message>
     <message>
         <source>Greek</source>
-        <translation type="unfinished"></translation>
+        <translation>kreikka</translation>
     </message>
     <message>
         <source>About SailorGram</source>
-        <translation type="unfinished"></translation>
+        <translation>Tietoa sovelluksesta SailorGram</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Versio</translation>
     </message>
     <message>
         <source>An unofficial Telegram Client for SailfishOS</source>
-        <translation type="unfinished"></translation>
+        <translation>Telegramin epävirallinen asiakassovellus SailfisOS:lle.</translation>
     </message>
     <message>
         <source>Developer</source>
-        <translation type="unfinished"></translation>
+        <translation>Kehittäjä</translation>
     </message>
     <message>
         <source>Icon Designer</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuvan suunnittelija</translation>
     </message>
     <message>
         <source>GitHub Repository</source>
-        <translation type="unfinished"></translation>
+        <translation>GitHub säilytyspaikka</translation>
     </message>
     <message>
         <source>Translators</source>
-        <translation type="unfinished"></translation>
+        <translation>Kääntäjät</translation>
     </message>
     <message>
         <source>Translation Platform</source>
-        <translation type="unfinished"></translation>
+        <translation>Käännösten julkaisualusta</translation>
     </message>
 </context>
 <context>
     <name>AddContactsPage</name>
     <message>
         <source>Add Chat Member</source>
-        <translation>Lisää keskustelujäsen.</translation>
+        <translation>Lisää keskustelujäsen</translation>
     </message>
 </context>
 <context>
     <name>AuthorizationPage</name>
     <message>
         <source>Sign In</source>
-        <translation>Kirjaudu sisään.</translation>
+        <translation>Kirjaudu sisään</translation>
     </message>
     <message>
         <source>Authorization Code</source>
@@ -99,44 +99,47 @@
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation>Olet syöttänyt väärän pääsykoodin</translation>
+        <translation>Olet syöttänyt väärän pääsykoodin.</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign In&apos;</source>
-        <translation>Odota tekstiviestiä, jossa on aktivointikoodi. Paina sitten  &quot;Kirjaudu&quot;.</translation>
+        <translation>Odota tekstiviestiä, jossa on aktivointikoodi. Paina sitten &quot;Kirjaudu&quot;.</translation>
     </message>
     <message>
         <source>Resend Activation Code</source>
-        <translation type="unfinished"></translation>
+        <translation>Lähetä aktivointikoodi uudelleen</translation>
     </message>
     <message>
         <source>Sending Activation Code</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivointikoodia lähetetään...</translation>
     </message>
 </context>
 <context>
     <name>ChangeChatTitle</name>
     <message>
         <source>Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuta</translation>
     </message>
 </context>
 <context>
     <name>ChangeUsernamePage</name>
     <message>
         <source>Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuta</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation type="unfinished"></translation>
+        <translation>Käyttäjänimi</translation>
     </message>
     <message>
         <source>You can choose an username on Telegram. If you do, other people may contact you without knowing your phone number.
 
 You can use a-z, 0-9 and underscores.
 Minimum length is 5 characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Telegramissa sinä voit valita käyttäjänimesi. Jos teet niin, muut voivat ottaa sinuun yhteyttä tietämättä puhelinnumeroasi.
+
+Voit käyttää merkkejä a-z, 0-9 ja alaviivoja.
+Vähimmäispituus on 5 merkkiä.</translation>
     </message>
 </context>
 <context>
@@ -150,7 +153,7 @@ Minimum length is 5 characters.</source>
     <name>ChatInfoMenu</name>
     <message>
         <source>Remove from Group</source>
-        <translation>Poista ryhmästä.</translation>
+        <translation>Poista ryhmästä</translation>
     </message>
     <message>
         <source>Removing from group</source>
@@ -161,30 +164,26 @@ Minimum length is 5 characters.</source>
     <name>ConnectingLabel</name>
     <message>
         <source>Connecting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Yhdistää...</translation>
     </message>
 </context>
 <context>
     <name>ConnectionPage</name>
     <message>
         <source>Connecting</source>
-        <translation>Yhdistetään...</translation>
+        <translation>Yhdistää...</translation>
     </message>
     <message>
         <source>Login Again</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirjaudu uudelleen</translation>
     </message>
     <message>
         <source>Telegram Status</source>
-        <translation type="unfinished"></translation>
+        <translation>Telegramin tila</translation>
     </message>
 </context>
 <context>
     <name>ConversationMenu</name>
-    <message>
-        <source>Delete</source>
-        <translation>Poista</translation>
-    </message>
     <message>
         <source>Enable Notifications</source>
         <translation>Ota ilmoitukset käyttöön</translation>
@@ -194,16 +193,12 @@ Minimum length is 5 characters.</source>
         <translation>Poista ilmoitukset käytöstä</translation>
     </message>
     <message>
-        <source>Deleting History</source>
-        <translation type="vanished">Poistetaan historia...</translation>
+        <source>Delete</source>
+        <translation>Poista</translation>
     </message>
     <message>
-        <source>Add Member</source>
-        <translation>Lisää jäsen.</translation>
-    </message>
-    <message>
-        <source>Add to Contacts</source>
-        <translation>Lisää yhteystietoihin.</translation>
+        <source>Deleting Secret Chat</source>
+        <translation>Poistetaan salainen keskustelu...</translation>
     </message>
     <message>
         <source>Leave Group</source>
@@ -214,43 +209,43 @@ Minimum length is 5 characters.</source>
         <translation>Poistutaan ryhmästä...</translation>
     </message>
     <message>
-        <source>Deleting Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <source>Change Title</source>
+        <translation>Muuta tila</translation>
     </message>
     <message>
-        <source>Change Title</source>
-        <translation type="unfinished"></translation>
+        <source>Add Member</source>
+        <translation>Lisää jäsen</translation>
+    </message>
+    <message>
+        <source>Add to Contacts</source>
+        <translation>Lisää yhteystietoihin</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Poistetaan keskustelu...</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Poistetaan ryhmä...</translation>
     </message>
 </context>
 <context>
     <name>ConversationsPage</name>
     <message>
+        <source>Settings</source>
+        <translation>Asetukset</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Tietoa</translation>
+    </message>
+    <message>
         <source>No Chats
 
-Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source>
-        <translation type="vanished">Ei keskusteluja.
+Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
+        <translation>Ei keskusteluja.
 
-Valitse yhteystieto valitsemalla &quot;Yhteystiedot&quot; alasvetovalikosta.</translation>
-    </message>
-    <message>
-        <source>Chats</source>
-        <translation>Keskustelut </translation>
-    </message>
-    <message>
-        <source>Delete History</source>
-        <translation type="vanished">Poista keskusteluhistoria.</translation>
-    </message>
-    <message>
-        <source>Deleting History</source>
-        <translation type="vanished">Poistetaan historia... </translation>
+Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta valikosta.</translation>
     </message>
     <message>
         <source>Groups</source>
@@ -261,30 +256,16 @@ Valitse yhteystieto valitsemalla &quot;Yhteystiedot&quot; alasvetovalikosta.</tr
         <translation>Keskustelut</translation>
     </message>
     <message>
-        <source>Connecting</source>
-        <translation type="obsolete">Yhdistetään...</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>No Chats
-
-Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation type="unfinished"></translation>
+        <source>Chats</source>
+        <translation>Keskustelut </translation>
     </message>
     <message>
         <source>Connecting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Yhdistää...</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Poistetaan salainen keskustelu...</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -292,86 +273,74 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Poistetaan keskustelu...</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Poistetaan ryhmä...</translation>
     </message>
 </context>
 <context>
     <name>ConversationsPullDownMenu</name>
-    <message>
-        <source>Create Group</source>
-        <translation type="vanished">Luo ryhmä</translation>
-    </message>
     <message>
         <source>Contacts</source>
         <translation>Yhteystiedot</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation type="unfinished">Profiili</translation>
+        <translation>Profiili</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Uusi salainen keskustelu</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Uusi ryhmä</translation>
     </message>
 </context>
 <context>
     <name>CoverPage</name>
     <message>
-        <source>Online</source>
-        <translation type="obsolete">Paikalla</translation>
-    </message>
-    <message>
         <source>Connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Yhdistetty</translation>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation type="unfinished"></translation>
+        <translation>Yhteys katkaistu</translation>
     </message>
     <message>
         <source>%1 unread messages</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 lukematonta viestiä</translation>
     </message>
     <message>
         <source>%1 unread message</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 lukematon viesti</translation>
     </message>
 </context>
 <context>
     <name>CreateChatPage</name>
-    <message>
-        <source>Create Group</source>
-        <translation type="vanished">Luo ryhmä.</translation>
-    </message>
     <message>
         <source>Group Name</source>
         <translation>Ryhmän nimi</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Uusi ryhmä</translation>
     </message>
 </context>
 <context>
     <name>CreateSecretConversationPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Uusi salainen keskustelu</translation>
     </message>
 </context>
 <context>
     <name>FilePickerPage</name>
     <message>
         <source>Root</source>
-        <translation>Root</translation>
+        <translation>Juuri</translation>
     </message>
     <message>
         <source>SD Card</source>
@@ -386,44 +355,40 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallenna galleriaan</translation>
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuva on tallennettu galleriaan</translation>
     </message>
 </context>
 <context>
     <name>MediaPlayerToolBar</name>
     <message>
         <source>Downloading media</source>
-        <translation type="unfinished"></translation>
+        <translation>Ladataan mediatiedostoa...</translation>
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuva on tallennettu galleriaan</translation>
     </message>
 </context>
 <context>
     <name>MessageBar</name>
     <message>
-        <source>Message</source>
-        <translation type="vanished">Viesti</translation>
-    </message>
-    <message>
         <source>Message...</source>
-        <translation type="unfinished"></translation>
+        <translation>Viesti...</translation>
     </message>
 </context>
 <context>
     <name>MessageItem</name>
     <message>
         <source>Downloading Media</source>
-        <translation>Ladataan mediaa...</translation>
+        <translation>Ladataan mediatiedostoa...</translation>
     </message>
     <message>
         <source>Opening Media</source>
-        <translation type="unfinished"></translation>
+        <translation>Avataan mediatiedostoa...</translation>
     </message>
 </context>
 <context>
@@ -434,7 +399,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Message copied to clipboard</source>
-        <translation>Viesti kopioitu leikepöydälle.</translation>
+        <translation>Viesti kopioitu leikepöydälle</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -448,24 +413,16 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <source>Cancel</source>
         <translation>Peruuta</translation>
     </message>
-    <message>
-        <source>Download</source>
-        <translation type="vanished">Lataa</translation>
-    </message>
-    <message>
-        <source>Open</source>
-        <translation type="vanished">Avaa</translation>
-    </message>
 </context>
 <context>
     <name>PeerItem</name>
     <message>
         <source>%1 members</source>
-        <translation>%1 jäsenet</translation>
+        <translation>%1 jäsentä</translation>
     </message>
     <message>
         <source>%1 member</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 jäsen</translation>
     </message>
 </context>
 <context>
@@ -491,59 +448,59 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>ProfilePage</name>
     <message>
         <source>Change Picture</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaihda kuva</translation>
     </message>
     <message>
         <source>Phone number</source>
-        <translation type="unfinished"></translation>
+        <translation>Puhelinnumero</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation type="unfinished">Profiili</translation>
+        <translation>Profiili</translation>
     </message>
     <message>
         <source>Change Username</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuta käyttäjänimi</translation>
     </message>
     <message>
         <source>User</source>
-        <translation type="unfinished"></translation>
+        <translation>Käyttäjä</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation type="unfinished"></translation>
+        <translation>Käyttäjänimi</translation>
     </message>
 </context>
 <context>
     <name>SecretChatDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation type="unfinished"></translation>
+        <translation>Salainen keskustelu peruttu</translation>
     </message>
 </context>
 <context>
     <name>SecretChatWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>
-        <translation type="unfinished"></translation>
+        <translation>Odotetaan henkilöä %1 paikalle</translation>
     </message>
 </context>
 <context>
     <name>SettingsPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallenna</translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Lähetä viestejä koskettamalla paluunäppäintä</translation>
     </message>
 </context>
 <context>
     <name>SignUpPage</name>
     <message>
         <source>Sign Up</source>
-        <translation>Kirjaudu</translation>
+        <translation>Rekisteröidy</translation>
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
@@ -563,22 +520,18 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Authorization Code</source>
-        <translation>Varmistuskoodi</translation>
+        <translation>Pääsykoodi</translation>
     </message>
 </context>
 <context>
     <name>TelegramAction</name>
     <message>
         <source>%1 has left the group</source>
-        <translation>%1 poistui ryhmästä.</translation>
+        <translation>%1 poistui ryhmästä</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
-        <translation>%1 liittyi ryhmään.</translation>
-    </message>
-    <message>
-        <source>Group created by %1</source>
-        <translation type="vanished">%1 loi tämän ryhmän.</translation>
+        <translation>%1 liittyi ryhmään</translation>
     </message>
     <message>
         <source>Secret chat</source>
@@ -676,21 +629,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <message>
         <source>Profile</source>
         <translation>Profiili</translation>
-    </message>
-</context>
-<context>
-    <name>UserPage</name>
-    <message>
-        <source>Phone Number</source>
-        <translation type="vanished">Puhelinnumero</translation>
-    </message>
-    <message>
-        <source>Actions</source>
-        <translation type="vanished">Toiminnot</translation>
-    </message>
-    <message>
-        <source>Send Message</source>
-        <translation type="vanished">Lähetä viesti</translation>
     </message>
 </context>
 <context>

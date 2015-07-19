@@ -1,4 +1,85 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl_NL" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="nl_NL">
+<context>
+    <name>AboutPage</name>
+    <message>
+        <source>Danish</source>
+        <translation>Deens</translation>
+    </message>
+    <message>
+        <source>Dutch</source>
+        <translation>Nederlands</translation>
+    </message>
+    <message>
+        <source>Finnish</source>
+        <translation>Fins</translation>
+    </message>
+    <message>
+        <source>German</source>
+        <translation>Duits</translation>
+    </message>
+    <message>
+        <source>Russian</source>
+        <translation>Russisch</translation>
+    </message>
+    <message>
+        <source>Spanish</source>
+        <translation>Spaans</translation>
+    </message>
+    <message>
+        <source>Czech</source>
+        <translation>Tjechisch</translation>
+    </message>
+    <message>
+        <source>French</source>
+        <translation>Frans</translation>
+    </message>
+    <message>
+        <source>Italian</source>
+        <translation>Italiaans</translation>
+    </message>
+    <message>
+        <source>Persian</source>
+        <translation>Perzisch</translation>
+    </message>
+    <message>
+        <source>Greek</source>
+        <translation>Grieks</translation>
+    </message>
+    <message>
+        <source>About SailorGram</source>
+        <translation>Over SailorGram</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Versie</translation>
+    </message>
+    <message>
+        <source>An unofficial Telegram Client for SailfishOS</source>
+        <translation>Een onofficiële Telegram-app voor SailfishOS</translation>
+    </message>
+    <message>
+        <source>Developer</source>
+        <translation>Ontwikkelaar</translation>
+    </message>
+    <message>
+        <source>Icon Designer</source>
+        <translation>Pictogramontwerper</translation>
+    </message>
+    <message>
+        <source>GitHub Repository</source>
+        <translation>De broncode op GitHub</translation>
+    </message>
+    <message>
+        <source>Translators</source>
+        <translation>Vertalers</translation>
+    </message>
+    <message>
+        <source>Translation Platform</source>
+        <translation>Vertalingsplatform</translation>
+    </message>
+</context>
 <context>
     <name>AddContactsPage</name>
     <message>
@@ -24,6 +105,42 @@
         <source>Wait for the SMS containing the activation code and press &apos;Sign In&apos;</source>
         <translation>Wacht op de SMS met activatiecode en klik op &apos;Inloggen&apos;</translation>
     </message>
+    <message>
+        <source>Resend Activation Code</source>
+        <translation>Activatiecode opnieuw versturen</translation>
+    </message>
+    <message>
+        <source>Sending Activation Code</source>
+        <translation>Bezig met het versturen van de activatiecode</translation>
+    </message>
+</context>
+<context>
+    <name>ChangeChatTitle</name>
+    <message>
+        <source>Change</source>
+        <translation>Wijzigen</translation>
+    </message>
+</context>
+<context>
+    <name>ChangeUsernamePage</name>
+    <message>
+        <source>Change</source>
+        <translation>Wijzigen</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Gebruikersnaam</translation>
+    </message>
+    <message>
+        <source>You can choose an username on Telegram. If you do, other people may contact you without knowing your phone number.
+
+You can use a-z, 0-9 and underscores.
+Minimum length is 5 characters.</source>
+        <translation>U kunt een gebruikersnaam kiezen op Telegram. Als u dit doet zullen anderen u kunnen contacteren zonder uw telefoonnummer te hoeven weten.
+
+U kunt a-z, 09 en liggende streepjes gebruiken.
+De minimale lengte is 5 tekens.</translation>
+    </message>
 </context>
 <context>
     <name>ChatInfo</name>
@@ -44,18 +161,29 @@
     </message>
 </context>
 <context>
+    <name>ConnectingLabel</name>
+    <message>
+        <source>Connecting...</source>
+        <translation>Bezig met verbinden...</translation>
+    </message>
+</context>
+<context>
     <name>ConnectionPage</name>
     <message>
         <source>Connecting</source>
         <translation>Bezig met verbinden</translation>
     </message>
+    <message>
+        <source>Login Again</source>
+        <translation>Opnieuw inloggen</translation>
+    </message>
+    <message>
+        <source>Telegram Status</source>
+        <translation>Telegram-status</translation>
+    </message>
 </context>
 <context>
     <name>ConversationMenu</name>
-    <message>
-        <source>Delete</source>
-        <translation>Verwijderen</translation>
-    </message>
     <message>
         <source>Enable Notifications</source>
         <translation>Meldingen inschakelen</translation>
@@ -65,8 +193,24 @@
         <translation>Meldingen uitschakelen</translation>
     </message>
     <message>
-        <source>Deleting History</source>
-        <translation>Bezig met verwijderen van de geschiedenis</translation>
+        <source>Delete</source>
+        <translation>Verwijderen</translation>
+    </message>
+    <message>
+        <source>Deleting Secret Chat</source>
+        <translation>Bezig met het verwijderen van het geheime chatgesprek</translation>
+    </message>
+    <message>
+        <source>Leave Group</source>
+        <translation>Groep verlaten</translation>
+    </message>
+    <message>
+        <source>Leaving Group</source>
+        <translation>Bezig met het verlaten van de groep</translation>
+    </message>
+    <message>
+        <source>Change Title</source>
+        <translation>Titel wijzigen</translation>
     </message>
     <message>
         <source>Add Member</source>
@@ -77,35 +221,31 @@
         <translation>Toevoegen aan contactpersonen</translation>
     </message>
     <message>
-        <source>Leave Group</source>
-        <translation>Groep verlaten</translation>
+        <source>Deleting Conversation</source>
+        <translation>Bezig met het verwijderen van het gesprek</translation>
     </message>
     <message>
-        <source>Leaving Group</source>
-        <translation>Bezig met het verlaten van de groep</translation>
+        <source>Deleting Group</source>
+        <translation>Bezig met het verwijderen van de groep</translation>
     </message>
 </context>
 <context>
     <name>ConversationsPage</name>
     <message>
+        <source>Settings</source>
+        <translation>Instellingen</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Over</translation>
+    </message>
+    <message>
         <source>No Chats
 
-Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source>
+Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <translation>Geen chatgesprekken
 
-Kies een contactpersoon door te kiezen voor &quot;Contactpersonen&quot; in het trekmenu</translation>
-    </message>
-    <message>
-        <source>Chats</source>
-        <translation>Chatgesprekken</translation>
-    </message>
-    <message>
-        <source>Delete History</source>
-        <translation>Geschiedenis verwijderen</translation>
-    </message>
-    <message>
-        <source>Deleting History</source>
-        <translation>Bezig met verwijderen van de geschiedenis</translation>
+Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het trekmenu</translation>
     </message>
     <message>
         <source>Groups</source>
@@ -115,46 +255,85 @@ Kies een contactpersoon door te kiezen voor &quot;Contactpersonen&quot; in het t
         <source>Conversations</source>
         <translation>Gesprekken</translation>
     </message>
+    <message>
+        <source>Chats</source>
+        <translation>Chatgesprekken</translation>
+    </message>
+    <message>
+        <source>Connecting...</source>
+        <translation>Bezig met verbinden...</translation>
+    </message>
+    <message>
+        <source>Deleting Secret Chat</source>
+        <translation>Bezig met het verwijderen van het geheime chatgesprek</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Verwijderen</translation>
+    </message>
+    <message>
+        <source>Deleting Conversation</source>
+        <translation>Bezig met het verwijderen van het gesprek</translation>
+    </message>
+    <message>
+        <source>Deleting Group</source>
+        <translation>Bezig met het verwijderen van de groep</translation>
+    </message>
 </context>
 <context>
     <name>ConversationsPullDownMenu</name>
     <message>
-        <source>Create Group</source>
-        <translation>Groep creëren</translation>
-    </message>
-    <message>
         <source>Contacts</source>
         <translation>Contactpersonen</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profiel</translation>
+    </message>
+    <message>
+        <source>New Secret Chat</source>
+        <translation>Nieuw geheim chatgesprek</translation>
+    </message>
+    <message>
+        <source>New Group</source>
+        <translation>Nieuwe groep</translation>
     </message>
 </context>
 <context>
     <name>CoverPage</name>
     <message>
-        <source>Status:</source>
-        <translation type="unfinished"/>
+        <source>Connected</source>
+        <translation>Verbonden</translation>
     </message>
     <message>
-        <source>Online</source>
-        <translation type="unfinished"/>
+        <source>Disconnected</source>
+        <translation>Niet verbonden</translation>
     </message>
     <message>
-        <source>Offline</source>
-        <translation type="unfinished"/>
+        <source>%1 unread messages</source>
+        <translation>%1 ongelezen berichten</translation>
     </message>
     <message>
-        <source>Unread Messages:</source>
-        <translation type="unfinished"/>
+        <source>%1 unread message</source>
+        <translation>%1 ongelezen bericht</translation>
     </message>
 </context>
 <context>
     <name>CreateChatPage</name>
     <message>
-        <source>Create Group</source>
-        <translation>Groep creëren</translation>
-    </message>
-    <message>
         <source>Group Name</source>
         <translation>Groepsnaam</translation>
+    </message>
+    <message>
+        <source>New Group</source>
+        <translation>Nieuwe groep</translation>
+    </message>
+</context>
+<context>
+    <name>CreateSecretConversationPage</name>
+    <message>
+        <source>New Secret Chat</source>
+        <translation>Nieuw geheim chatgesprek</translation>
     </message>
 </context>
 <context>
@@ -173,10 +352,32 @@ Kies een contactpersoon door te kiezen voor &quot;Contactpersonen&quot; in het t
     </message>
 </context>
 <context>
+    <name>MediaPhotoPage</name>
+    <message>
+        <source>Save in Gallery</source>
+        <translation>Opslaan naar Galerij</translation>
+    </message>
+    <message>
+        <source>Image saved in Gallery</source>
+        <translation>De afbeelding is opgeslagen naar de Galerij</translation>
+    </message>
+</context>
+<context>
+    <name>MediaPlayerToolBar</name>
+    <message>
+        <source>Downloading media</source>
+        <translation>Bezig met het downloaden van de media</translation>
+    </message>
+    <message>
+        <source>Image saved in Gallery</source>
+        <translation>De afbeelding is opgeslagen naar de Galerij</translation>
+    </message>
+</context>
+<context>
     <name>MessageBar</name>
     <message>
-        <source>Message</source>
-        <translation>Bericht</translation>
+        <source>Message...</source>
+        <translation>Bericht...</translation>
     </message>
 </context>
 <context>
@@ -184,6 +385,10 @@ Kies een contactpersoon door te kiezen voor &quot;Contactpersonen&quot; in het t
     <message>
         <source>Downloading Media</source>
         <translation>Bezig met het downloaden van de media</translation>
+    </message>
+    <message>
+        <source>Opening Media</source>
+        <translation>Bezig met het openen van de media</translation>
     </message>
 </context>
 <context>
@@ -208,20 +413,16 @@ Kies een contactpersoon door te kiezen voor &quot;Contactpersonen&quot; in het t
         <source>Cancel</source>
         <translation>Annuleren</translation>
     </message>
-    <message>
-        <source>Download</source>
-        <translation>Downloaden</translation>
-    </message>
-    <message>
-        <source>Open</source>
-        <translation>Openen</translation>
-    </message>
 </context>
 <context>
     <name>PeerItem</name>
     <message>
         <source>%1 members</source>
         <translation>%1 deelnemers</translation>
+    </message>
+    <message>
+        <source>%1 member</source>
+        <translation>%1 deelnemer</translation>
     </message>
 </context>
 <context>
@@ -241,6 +442,58 @@ Kies een contactpersoon door te kiezen voor &quot;Contactpersonen&quot; in het t
     <message>
         <source>Insert your phone number and press &apos;Next&apos;</source>
         <translation>Typ uw telefoonnummer en druk op &apos;Volgende&apos;</translation>
+    </message>
+</context>
+<context>
+    <name>ProfilePage</name>
+    <message>
+        <source>Change Picture</source>
+        <translation>Afbeelding wijzigen</translation>
+    </message>
+    <message>
+        <source>Phone number</source>
+        <translation>Telefoonnummer</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profiel</translation>
+    </message>
+    <message>
+        <source>Change Username</source>
+        <translation>Gebruikersnaam wijzigen</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Gebruiker</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Gebruikersnaam</translation>
+    </message>
+</context>
+<context>
+    <name>SecretChatDiscarded</name>
+    <message>
+        <source>Secret chat cancelled</source>
+        <translation>Het geheime chatgesprek is geannuleerd</translation>
+    </message>
+</context>
+<context>
+    <name>SecretChatWaiting</name>
+    <message>
+        <source>Waiting for %1 to get online</source>
+        <translation>Bezig met het wachten op %1 om online te komen</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsPage</name>
+    <message>
+        <source>Save</source>
+        <translation>Opslaan</translation>
+    </message>
+    <message>
+        <source>Send Messages by pressing Return Key</source>
+        <translation>Berichten versturen door op de Enter-toets te drukken</translation>
     </message>
 </context>
 <context>
@@ -281,8 +534,16 @@ Kies een contactpersoon door te kiezen voor &quot;Contactpersonen&quot; in het t
         <translation>%1 heeft deelgenomen aan de groep</translation>
     </message>
     <message>
-        <source>Group created by %1</source>
-        <translation>De groep is gecreëerd door %1</translation>
+        <source>Secret chat</source>
+        <translation>Geheim chatgesprek</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Groep</translation>
+    </message>
+    <message>
+        <source>%1 created by %2</source>
+        <translation>%1, gecreëerd door %2</translation>
     </message>
 </context>
 <context>
@@ -354,6 +615,10 @@ Kies een contactpersoon door te kiezen voor &quot;Contactpersonen&quot; in het t
         <source>Send Message</source>
         <translation>Bericht versturen</translation>
     </message>
+    <message>
+        <source>Begin Secret Chat</source>
+        <translation>Geheim chatgesprek beginnen</translation>
+    </message>
 </context>
 <context>
     <name>UserMenu</name>
@@ -364,21 +629,6 @@ Kies een contactpersoon door te kiezen voor &quot;Contactpersonen&quot; in het t
     <message>
         <source>Profile</source>
         <translation>Profiel</translation>
-    </message>
-</context>
-<context>
-    <name>UserPage</name>
-    <message>
-        <source>Phone Number</source>
-        <translation>Telefoonnummer</translation>
-    </message>
-    <message>
-        <source>Actions</source>
-        <translation>Acties</translation>
-    </message>
-    <message>
-        <source>Send Message</source>
-        <translation>Bericht versturen</translation>
     </message>
 </context>
 <context>

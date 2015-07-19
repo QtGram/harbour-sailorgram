@@ -1,290 +1,290 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="fr">
+<TS version="2.1" language="cs">
 <context>
     <name>AboutPage</name>
     <message>
         <source>Danish</source>
-        <translation>Danois</translation>
+        <translation>Dánsky</translation>
     </message>
     <message>
         <source>Dutch</source>
-        <translation>Hollandais</translation>
+        <translation>Holandsky</translation>
     </message>
     <message>
         <source>Finnish</source>
-        <translation>Finois</translation>
+        <translation>Finsky</translation>
     </message>
     <message>
         <source>German</source>
-        <translation>Allemand</translation>
+        <translation>Německy</translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation>Russe</translation>
+        <translation>Rusky</translation>
     </message>
     <message>
         <source>Spanish</source>
-        <translation>Espagnol</translation>
+        <translation>Španělsky</translation>
     </message>
     <message>
         <source>Czech</source>
-        <translation>Tchèque</translation>
+        <translation>Česky</translation>
     </message>
     <message>
         <source>French</source>
-        <translation>Français</translation>
+        <translation>Francousky</translation>
     </message>
     <message>
         <source>Italian</source>
-        <translation>Italien</translation>
+        <translation>Italsky</translation>
     </message>
     <message>
         <source>Persian</source>
-        <translation>Persan</translation>
+        <translation>Persky</translation>
     </message>
     <message>
         <source>Greek</source>
-        <translation>Grec</translation>
+        <translation>Řecky</translation>
     </message>
     <message>
         <source>About SailorGram</source>
-        <translation>A propos de SailorGram</translation>
+        <translation>O SailorGramu</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation>Version</translation>
+        <translation>Verze</translation>
     </message>
     <message>
         <source>An unofficial Telegram Client for SailfishOS</source>
-        <translation>Client Telegram non-officiel pour SailfishOS</translation>
+        <translation>Neoficiální Telegram klient pro SailfishOS</translation>
     </message>
     <message>
         <source>Developer</source>
-        <translation>Développeur</translation>
+        <translation>Vývojář</translation>
     </message>
     <message>
         <source>Icon Designer</source>
-        <translation>Designer de l&apos;icône</translation>
+        <translation>Icon Designer</translation>
     </message>
     <message>
         <source>GitHub Repository</source>
-        <translation>Dépôt GitHub</translation>
+        <translation>GitHub Repository</translation>
     </message>
     <message>
         <source>Translators</source>
-        <translation>Traducteurs</translation>
+        <translation>Překladateli</translation>
     </message>
     <message>
         <source>Translation Platform</source>
-        <translation>Plateforme de traduction</translation>
+        <translation>Překladní Platforma</translation>
     </message>
 </context>
 <context>
     <name>AddContactsPage</name>
     <message>
         <source>Add Chat Member</source>
-        <translation>Ajouter un membre</translation>
+        <translation>Přidat člena k rozhovoru</translation>
     </message>
 </context>
 <context>
     <name>AuthorizationPage</name>
     <message>
         <source>Sign In</source>
-        <translation>Se connecter</translation>
+        <translation>Přihlásit</translation>
     </message>
     <message>
         <source>Authorization Code</source>
-        <translation>Code d&apos;autorisation</translation>
+        <translation>Autorizačný Kód</translation>
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation>Vous avez saisi un mauvais code d&apos;autorisation</translation>
+        <translation>Špatný Autorizačný Kód</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign In&apos;</source>
-        <translation>Veillez attendre le SMS contenant le code d&apos;activation et appuyez sur « Se connecter »</translation>
+        <translation>Počkejte na SMS s aktivačným kódem a stiskněte &apos;Přihlásit&apos;</translation>
     </message>
     <message>
         <source>Resend Activation Code</source>
-        <translation>Envoyer à nouveau le Code d&apos;Activation</translation>
+        <translation>Znovu Poslat Aktivačný Kód</translation>
     </message>
     <message>
         <source>Sending Activation Code</source>
-        <translation>Envoi du Code d&apos;Activation</translation>
+        <translation>Posílám Aktivačný Kód</translation>
     </message>
 </context>
 <context>
     <name>ChangeChatTitle</name>
     <message>
         <source>Change</source>
-        <translation>Modifier</translation>
+        <translation>Změnit</translation>
     </message>
 </context>
 <context>
     <name>ChangeUsernamePage</name>
     <message>
         <source>Change</source>
-        <translation>Modification</translation>
+        <translation>Změnit</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation>Nom d&apos;utilisateur</translation>
+        <translation>Uživatelské jméno</translation>
     </message>
     <message>
         <source>You can choose an username on Telegram. If you do, other people may contact you without knowing your phone number.
 
 You can use a-z, 0-9 and underscores.
 Minimum length is 5 characters.</source>
-        <translation>Vous pouvez choisir un nom d&apos;utilisateur sur Telegram. Si vous faîtes cela, les autres utilisateurs pourrons vous contacter sans connaître votre numéro de téléphone.
+        <translation>Na Telegramu si můžete si vybrat uživatelské jméno. Pokud tak učiníte, ostatní lidé mohou vás kontaktovat , aniž by věděli vaše telefonní číslo.
 
-Vous pouvez utiliser a-z, 0-9 et tiret bas.
-Longueur minimum est de 5 caractères.</translation>
+Můžete používat a-z, 0-9 a &quot;_&quot;.
+Minimální délka je 5 znaků .</translation>
     </message>
 </context>
 <context>
     <name>ChatInfo</name>
     <message>
         <source>Members</source>
-        <translation>Participants</translation>
+        <translation>Členi</translation>
     </message>
 </context>
 <context>
     <name>ChatInfoMenu</name>
     <message>
         <source>Remove from Group</source>
-        <translation>Supprimer du groupe</translation>
+        <translation>Smazat skupinu</translation>
     </message>
     <message>
         <source>Removing from group</source>
-        <translation>Suppression du groupe</translation>
+        <translation>Smazám skupinu</translation>
     </message>
 </context>
 <context>
     <name>ConnectingLabel</name>
     <message>
         <source>Connecting...</source>
-        <translation>Connexion en cours ...</translation>
+        <translation>Připojuji...</translation>
     </message>
 </context>
 <context>
     <name>ConnectionPage</name>
     <message>
         <source>Connecting</source>
-        <translation>Connexion</translation>
+        <translation>Připojuji</translation>
     </message>
     <message>
         <source>Login Again</source>
-        <translation>Se conecter à nouveau</translation>
+        <translation>Znovu Přihlásit</translation>
     </message>
     <message>
         <source>Telegram Status</source>
-        <translation>Statut Telegram</translation>
+        <translation>Status Telegramu</translation>
     </message>
 </context>
 <context>
     <name>ConversationMenu</name>
     <message>
         <source>Enable Notifications</source>
-        <translation>Activer les notifications</translation>
+        <translation>Povolit oznamování</translation>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation>Désactiver les notifications</translation>
+        <translation>Zakázat oznamování</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Effacer</translation>
+        <translation>Smazat</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation>Suppression de discussion secrète</translation>
+        <translation>Smazám Tajný Rozhovor</translation>
     </message>
     <message>
         <source>Leave Group</source>
-        <translation>Quitter le groupe</translation>
+        <translation>Opustit skupinu</translation>
     </message>
     <message>
         <source>Leaving Group</source>
-        <translation>Quitte le groupe</translation>
+        <translation>Opustím skupinu</translation>
     </message>
     <message>
         <source>Change Title</source>
-        <translation>Changer le titre</translation>
+        <translation>Změmit Název</translation>
     </message>
     <message>
         <source>Add Member</source>
-        <translation>Ajouter un participant</translation>
+        <translation>Přidat člena</translation>
     </message>
     <message>
         <source>Add to Contacts</source>
-        <translation>Ajouter aux contacts</translation>
+        <translation>Přidat ke kontaktúm</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation>Suppression de la conversation</translation>
+        <translation>Smazat Konverzaci</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation>Suppression du groupe</translation>
+        <translation>Smazat Skupinu</translation>
     </message>
 </context>
 <context>
     <name>ConversationsPage</name>
     <message>
         <source>Settings</source>
-        <translation>Paramètres</translation>
+        <translation>Nastavení</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>A propos</translation>
+        <translation>O</translation>
     </message>
     <message>
         <source>No Chats
 
 Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation>Pas de discussion
+        <translation>Žádné rozhovory
 
-Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessus</translation>
+Vyberte si kontakt výběrem &quot;Kontakty&quot; z menu</translation>
     </message>
     <message>
         <source>Groups</source>
-        <translation>Groupes</translation>
+        <translation>Skupiny</translation>
     </message>
     <message>
         <source>Conversations</source>
-        <translation>Conversations</translation>
+        <translation>Konverzace</translation>
     </message>
     <message>
         <source>Chats</source>
-        <translation>Conversations</translation>
+        <translation>Rozhovory</translation>
     </message>
     <message>
         <source>Connecting...</source>
-        <translation>Connexion en cours ...</translation>
+        <translation>Připojuji...</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation>Suppression de conversation secrète</translation>
+        <translation>Smazám Tajný Rozhovor</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Supprimer</translation>
+        <translation>Smazat</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation>Suppression de la conversation</translation>
+        <translation>Smazám Rozhovor</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation>Suppression du groupe</translation>
+        <translation>Smazám Skupinu</translation>
     </message>
 </context>
 <context>
     <name>ConversationsPullDownMenu</name>
     <message>
         <source>Contacts</source>
-        <translation>Contacts</translation>
+        <translation>Kontakty</translation>
     </message>
     <message>
         <source>Profile</source>
@@ -292,48 +292,48 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation>Nouvelle conversation secrète</translation>
+        <translation>Nový Tajný Rozhovor</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation>Nouveau groupe</translation>
+        <translation>Nová Skupina</translation>
     </message>
 </context>
 <context>
     <name>CoverPage</name>
     <message>
         <source>Connected</source>
-        <translation>Connecté</translation>
+        <translation>Připojen</translation>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation>Déconnecté</translation>
+        <translation>Odpojen</translation>
     </message>
     <message>
         <source>%1 unread messages</source>
-        <translation>%1 messages non lus</translation>
+        <translation>%1 nepřečtených zpráv</translation>
     </message>
     <message>
         <source>%1 unread message</source>
-        <translation>%1 message non lu</translation>
+        <translation>%1 nepřečtená zpráva</translation>
     </message>
 </context>
 <context>
     <name>CreateChatPage</name>
     <message>
         <source>Group Name</source>
-        <translation>Nom du groupe</translation>
+        <translation>Jméno skupiny</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation>Nouveau group</translation>
+        <translation>Nová Skupina</translation>
     </message>
 </context>
 <context>
     <name>CreateSecretConversationPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation>Nouvelle conversation secrète</translation>
+        <translation>Nový Tajný Rozhovor</translation>
     </message>
 </context>
 <context>
@@ -344,115 +344,115 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
     </message>
     <message>
         <source>SD Card</source>
-        <translation>Carte SD</translation>
+        <translation>SD karta</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation>Home</translation>
+        <translation>Domov</translation>
     </message>
 </context>
 <context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
-        <translation>Enregistrer dans Gallerie</translation>
+        <translation>Uložit v Galerii</translation>
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation>Image enregistrée dans Gallerie</translation>
+        <translation>Obraz uložen v Galerii</translation>
     </message>
 </context>
 <context>
     <name>MediaPlayerToolBar</name>
     <message>
         <source>Downloading media</source>
-        <translation>Téléchargement du média</translation>
+        <translation>Stahovám média</translation>
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation>Image enregistrée dans Gallerie</translation>
+        <translation>Obraz uložen v Galerii</translation>
     </message>
 </context>
 <context>
     <name>MessageBar</name>
     <message>
         <source>Message...</source>
-        <translation>Message ...</translation>
+        <translation>Zpráva...</translation>
     </message>
 </context>
 <context>
     <name>MessageItem</name>
     <message>
         <source>Downloading Media</source>
-        <translation>Téléchargement de médias</translation>
+        <translation>Přesunuji media</translation>
     </message>
     <message>
         <source>Opening Media</source>
-        <translation>Ouverture du média</translation>
+        <translation>Otevíram Media</translation>
     </message>
 </context>
 <context>
     <name>MessageMenu</name>
     <message>
         <source>Copy</source>
-        <translation>Copier</translation>
+        <translation>Kopírovat</translation>
     </message>
     <message>
         <source>Message copied to clipboard</source>
-        <translation>Message copié dans le presse-papier</translation>
+        <translation>Zpráva kopírovana do schránky</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Supprimer</translation>
+        <translation>Smazat</translation>
     </message>
     <message>
         <source>Deleting Message</source>
-        <translation>Suppression du message</translation>
+        <translation>Smazám zprávu</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Annuler</translation>
+        <translation>Anulovat</translation>
     </message>
 </context>
 <context>
     <name>PeerItem</name>
     <message>
         <source>%1 members</source>
-        <translation>%1 participants</translation>
+        <translation>%1 členú</translation>
     </message>
     <message>
         <source>%1 member</source>
-        <translation>%1 participant</translation>
+        <translation>%1 člen</translation>
     </message>
 </context>
 <context>
     <name>PhoneNumberPage</name>
     <message>
         <source>Next</source>
-        <translation>Suivant</translation>
+        <translation>Dále</translation>
     </message>
     <message>
         <source>Phone Number</source>
-        <translation>Numéro de téléphone</translation>
+        <translation>Telefoní číslo</translation>
     </message>
     <message>
         <source>Country Code</source>
-        <translation>Indicatif pays</translation>
+        <translation>Směrovací číslo země</translation>
     </message>
     <message>
         <source>Insert your phone number and press &apos;Next&apos;</source>
-        <translation>Saisissez votre numéro de téléphone et appuyez sur « Suivant »</translation>
+        <translation>Vložte své telefonní číslo a tikněte &apos;Dále&apos;</translation>
     </message>
 </context>
 <context>
     <name>ProfilePage</name>
     <message>
         <source>Change Picture</source>
-        <translation>Changer d&apos;image</translation>
+        <translation>Změnit obrázek</translation>
     </message>
     <message>
         <source>Phone number</source>
-        <translation>Numéro de téléphone</translation>
+        <translation>Telefoní číslo</translation>
     </message>
     <message>
         <source>Profile</source>
@@ -460,133 +460,133 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
     </message>
     <message>
         <source>Change Username</source>
-        <translation>Changer le nom d&apos;utilisateur</translation>
+        <translation>Změnit uživatelské jméno</translation>
     </message>
     <message>
         <source>User</source>
-        <translation>Utilisateur</translation>
+        <translation>Uživatel</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation>Nom d&apos;utilisateur</translation>
+        <translation>Uživatelské jméno</translation>
     </message>
 </context>
 <context>
     <name>SecretChatDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation>Conversation secrète supprimée </translation>
+        <translation>Tajný Rozhovor byl zrušen</translation>
     </message>
 </context>
 <context>
     <name>SecretChatWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>
-        <translation>En attente de connexion de %1</translation>
+        <translation>Čekám pro %1 abych šel online</translation>
     </message>
 </context>
 <context>
     <name>SettingsPage</name>
     <message>
         <source>Save</source>
-        <translation>Enregistrer</translation>
+        <translation>Uložit</translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation>Envoyer les messages en cliquant la touche Retour</translation>
+        <translation>Poslat Zprávu stiskem klávesy Enter</translation>
     </message>
 </context>
 <context>
     <name>SignUpPage</name>
     <message>
         <source>Sign Up</source>
-        <translation>Inscription</translation>
+        <translation>Registrace</translation>
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation>Code d&apos;autorisation incorrect</translation>
+        <translation>Špatný Autorizačný Kód</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
-        <translation>Attendez le message contenant le code d&apos;activation et appuyer sur &quot;Inscription&quot;</translation>
+        <translation>Počkejte na SMS s aktivačným kódem a stiskněte &apos;Registrace&apos;</translation>
     </message>
     <message>
         <source>First Name</source>
-        <translation>Prénom</translation>
+        <translation>Jméno</translation>
     </message>
     <message>
         <source>Last Name (Optional)</source>
-        <translation>Nom (facultatif)</translation>
+        <translation>Příjmení (volitelný)</translation>
     </message>
     <message>
         <source>Authorization Code</source>
-        <translation>Code d&apos;autorisation</translation>
+        <translation>Autorizačný Kód</translation>
     </message>
 </context>
 <context>
     <name>TelegramAction</name>
     <message>
         <source>%1 has left the group</source>
-        <translation>%1 a quitté le groupe</translation>
+        <translation>%1 opustil skupinu</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
-        <translation>%1  a rejoint le groupe</translation>
+        <translation>%1 přistoupil k skupině</translation>
     </message>
     <message>
         <source>Secret chat</source>
-        <translation>Conversation secrète</translation>
+        <translation>Tajný Rozhovor</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation>Groupe</translation>
+        <translation>Skupina</translation>
     </message>
     <message>
         <source>%1 created by %2</source>
-        <translation>%1 créé par %2</translation>
+        <translation>%1 vytvořena od %2</translation>
     </message>
 </context>
 <context>
     <name>TelegramHelper</name>
     <message>
         <source>Recently</source>
-        <translation>Dernièrement</translation>
+        <translation>Nedávno</translation>
     </message>
     <message>
         <source>Last Month</source>
-        <translation>Le mois dernier</translation>
+        <translation>Poslední měsíc</translation>
     </message>
     <message>
         <source>Last Week</source>
-        <translation>La semaine dernière</translation>
+        <translation>Poslední týden</translation>
     </message>
     <message>
         <source>Online</source>
-        <translation>En ligne</translation>
+        <translation>Online</translation>
     </message>
     <message>
         <source>Unknown</source>
-        <translation>Inconnu</translation>
+        <translation>Neznámý</translation>
     </message>
     <message>
         <source>Last Seen at %1</source>
-        <translation>Dernière connexion à %1</translation>
+        <translation>Naposled uviděn v %1</translation>
     </message>
     <message>
         <source>Document</source>
-        <translation>Document</translation>
+        <translation>Dokument</translation>
     </message>
     <message>
         <source>Contact</source>
-        <translation>Contact</translation>
+        <translation>Kontakt</translation>
     </message>
     <message>
         <source>Video</source>
-        <translation>Vidéo</translation>
+        <translation>Video</translation>
     </message>
     <message>
         <source>Unsupported</source>
-        <translation>Non pris en charge</translation>
+        <translation>Nepodporovaný</translation>
     </message>
     <message>
         <source>Audio</source>
@@ -594,37 +594,37 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
     </message>
     <message>
         <source>Photo</source>
-        <translation>Photo</translation>
+        <translation>Fotka</translation>
     </message>
     <message>
         <source>Geo</source>
-        <translation>Géo</translation>
+        <translation>GPS</translation>
     </message>
 </context>
 <context>
     <name>UserInfo</name>
     <message>
         <source>Phone Number</source>
-        <translation>Numéro de téléphone</translation>
+        <translation>Telefoní číslo</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation>Actions</translation>
+        <translation>Akce</translation>
     </message>
     <message>
         <source>Send Message</source>
-        <translation>Envoyer le message</translation>
+        <translation>Poslat zprávu</translation>
     </message>
     <message>
         <source>Begin Secret Chat</source>
-        <translation>Commencer une conversation secrète</translation>
+        <translation>Začít Nový Tajný Rozhovor</translation>
     </message>
 </context>
 <context>
     <name>UserMenu</name>
     <message>
         <source>Send Message</source>
-        <translation>Envoyer le message</translation>
+        <translation>Poslat zprávu</translation>
     </message>
     <message>
         <source>Profile</source>
@@ -635,7 +635,7 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
     <name>UsersPage</name>
     <message>
         <source>Contacts</source>
-        <translation>Contacts</translation>
+        <translation>Kontakty</translation>
     </message>
 </context>
 </TS>

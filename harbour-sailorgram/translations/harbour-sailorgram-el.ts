@@ -182,20 +182,16 @@ Minimum length is 5 characters.</source>
 <context>
     <name>ConversationMenu</name>
     <message>
-        <source>Delete</source>
-        <translation>Διαγραφή</translation>
-    </message>
-    <message>
-        <source>Deleting History</source>
-        <translation type="obsolete">Το ιστορικό διαγράφεται</translation>
-    </message>
-    <message>
         <source>Enable Notifications</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Disable Notifications</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
@@ -233,30 +229,6 @@ Minimum length is 5 characters.</source>
 <context>
     <name>ConversationsPage</name>
     <message>
-        <source>No Chats
-
-Pick a contact by selecting &quot;Contacts&quot; from the Pull Down Menu</source>
-        <translation type="vanished">Δεν υπάρχουν συζητήσεις
-
-Επιλέξτε μια επαφή από την επιλογή &quot;Επαφές&quot; από το αναπτυσσόμενο μενού</translation>
-    </message>
-    <message>
-        <source>Chats</source>
-        <translation>Συνομιλίες</translation>
-    </message>
-    <message>
-        <source>Delete History</source>
-        <translation type="vanished">Διαγραφή Ιστορικού</translation>
-    </message>
-    <message>
-        <source>Deleting History</source>
-        <translation type="vanished">Το ιστορικό διαγράφεται</translation>
-    </message>
-    <message>
-        <source>Connecting</source>
-        <translation type="obsolete">Συνδέοντας</translation>
-    </message>
-    <message>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
@@ -277,6 +249,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <message>
         <source>Conversations</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chats</source>
+        <translation>Συνομιλίες</translation>
     </message>
     <message>
         <source>Connecting...</source>
@@ -320,10 +296,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
 </context>
 <context>
     <name>CoverPage</name>
-    <message>
-        <source>Online</source>
-        <translation type="obsolete">Συνδεδεμένο</translation>
-    </message>
     <message>
         <source>Connected</source>
         <translation type="unfinished"></translation>
@@ -398,10 +370,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
 </context>
 <context>
     <name>MessageBar</name>
-    <message>
-        <source>Message</source>
-        <translation type="vanished">Μήνυμα</translation>
-    </message>
     <message>
         <source>Message...</source>
         <translation type="unfinished"></translation>
@@ -657,21 +625,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <message>
         <source>Profile</source>
         <translation>Προφίλ</translation>
-    </message>
-</context>
-<context>
-    <name>UserPage</name>
-    <message>
-        <source>Phone Number</source>
-        <translation type="vanished"> Αριθμός τηλεφώνου</translation>
-    </message>
-    <message>
-        <source>Actions</source>
-        <translation type="vanished">Ενέργειες</translation>
-    </message>
-    <message>
-        <source>Send Message</source>
-        <translation type="vanished">Αποστολή μηνύματος</translation>
     </message>
 </context>
 <context>
