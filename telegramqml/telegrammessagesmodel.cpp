@@ -245,7 +245,15 @@ void TelegramMessagesModel::setReaded()
     if( p->telegram->invisible() )
         return;
 
-    p->telegram->messagesReadHistory(peerId());
+    qint32 topmessageid = p->dialog->topMessage();
+    const MessageObject* message = p->telegram->message(topmessageid);
+
+    if(!message) {
+        qDebug() << __FUNCTION__ << ": Can't find message with id: " << topmessageid;
+        return;
+    }
+
+    p->telegram->messagesReadHistory(peerId(), message->date());
     p->dialog->setUnreadCount(0);
 }
 
