@@ -3,9 +3,9 @@
 .import harbour.sailorgram.TelegramCalendar 1.0 as TelegramCalendar
 .import "TelegramConstants.js" as TelegramConstants
 
-function userName(user)
+function completeName(user)
 {
-    return ((user.username.length > 0) ? user.username : (user.firstName + " " + user.lastName));
+    return user.firstName + " " + user.lastName;
 }
 
 function phoneNumber(user)

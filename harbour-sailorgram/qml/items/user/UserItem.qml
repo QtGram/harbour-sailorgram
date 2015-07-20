@@ -31,7 +31,7 @@ Item
             id: lblfullname
             width: parent.width
             elide: Text.ElideRight
-            text: TelegramHelper.userName(user)
+            text: TelegramHelper.completeName(user)
         }
 
         Row

@@ -24,7 +24,7 @@ Item
     Label
     {
         id: lblwaiting
-        text: qsTr("Waiting for %1 to get online").arg(TelegramHelper.userName(user))
+        text: qsTr("Waiting for %1 to get online").arg(TelegramHelper.completeName(user))
         anchors { left: busyindicator.right; top: parent.top; bottom: parent.bottom; leftMargin: Theme.paddingMedium }
         color: Theme.secondaryHighlightColor
         verticalAlignment: Text.AlignVCenter

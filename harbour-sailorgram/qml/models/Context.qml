@@ -63,7 +63,7 @@ QtObject
             }
 
             if((msg.fromId !== currentpeerid) || (Qt.application.state !== Qt.ApplicationActive)) {
-                notifications.send(TelegramHelper.userName(user), TelegramHelper.messageContent(msg), user.photo.photoSmall.download.location, true, false);
+                notifications.send(TelegramHelper.completeName(user), TelegramHelper.messageContent(msg), user.photo.photoSmall.download.location, true, false);
                 return;
             }
 

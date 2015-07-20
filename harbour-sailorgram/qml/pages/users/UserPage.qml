@@ -27,7 +27,7 @@ Page
             width: parent.width
             spacing: Theme.paddingMedium
 
-            PageHeader { title: TelegramHelper.userName(user) }
+            PageHeader { title: TelegramHelper.completeName(user) }
 
             UserItem
             {

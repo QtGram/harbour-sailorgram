@@ -65,7 +65,7 @@ Item
                 Label {
                     id: lbluser
                     width: parent.width - lbltime.width
-                    text: TelegramHelper.isChat(dialog) ? chat.title : TelegramHelper.userName(user)
+                    text: TelegramHelper.isChat(dialog) ? chat.title : TelegramHelper.completeName(user)
                     verticalAlignment: Text.AlignVCenter
                     height: parent.height
                     color: Theme.highlightColor

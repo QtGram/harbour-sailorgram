@@ -17,14 +17,14 @@ function actionType(telegram, dialog, message) {
            userid = chat.adminId;
        }
 
-       return qsTr("%1 created by %2").arg(dialog.encrypted ? qsTr("Secret chat") : qsTr("Group")).arg(TelegramHelper.userName(telegram.user(userid)));
+       return qsTr("%1 created by %2").arg(dialog.encrypted ? qsTr("Secret chat") : qsTr("Group")).arg(TelegramHelper.completeName(telegram.user(userid)));
    }
 
    if(action.classType === TelegramConstants.typeMessageActionChatAddUser)
-       return qsTr("%1 has joined the group").arg(TelegramHelper.userName(telegram.user(action.userId)));
+       return qsTr("%1 has joined the group").arg(TelegramHelper.completeName(telegram.user(action.userId)));
 
    if(action.classType === TelegramConstants.typeMessageActionChatDeleteUser)
-       return qsTr("%1 has left the group").arg(TelegramHelper.userName(telegram.user(action.userId)));
+       return qsTr("%1 has left the group").arg(TelegramHelper.completeName(telegram.user(action.userId)));
 
    return "";
 }

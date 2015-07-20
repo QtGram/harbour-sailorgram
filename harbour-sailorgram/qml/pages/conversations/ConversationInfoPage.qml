@@ -45,7 +45,7 @@ Page
         width: parent.width
         spacing: Theme.paddingMedium
 
-        PageHeader { title: TelegramHelper.isChat(dialog) ? chat.title : TelegramHelper.userName(user) }
+        PageHeader { title: TelegramHelper.isChat(dialog) ? chat.title : TelegramHelper.completeName(user) }
 
         PeerItem
         {

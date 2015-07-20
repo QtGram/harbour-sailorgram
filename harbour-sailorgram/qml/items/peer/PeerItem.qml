@@ -51,7 +51,7 @@ Item
                 id: lbltitle
                 width: parent.width
                 elide: Text.ElideRight
-                text: TelegramHelper.isChat(dialog) ? chat.title : TelegramHelper.userName(user)
+                text: TelegramHelper.isChat(dialog) ? chat.title : TelegramHelper.completeName(user)
             }
         }
 

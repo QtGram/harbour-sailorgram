@@ -77,7 +77,7 @@ Item
                 Label {
                     id: lbluser
                     width: parent.width - lbltime.width - imgsecure.width - (Theme.paddingSmall * 2)
-                    text: TelegramHelper.userName(user)
+                    text: TelegramHelper.completeName(user)
                     verticalAlignment: Text.AlignVCenter
                     height: parent.height
                     color: Theme.highlightColor
