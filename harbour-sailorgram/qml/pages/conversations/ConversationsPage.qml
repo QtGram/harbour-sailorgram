@@ -89,24 +89,13 @@ Page
         spacing: Theme.paddingMedium
         anchors.fill: parent
 
-        section.property: "item.peer.classType"
-        section.criteria: ViewSection.FullString
-
-        section.delegate: Component {
-            SectionHeader {
-                text: (parseInt(section) === TelegramConstants.typePeerChat) ? qsTr("Groups") : qsTr("Conversations")
-                font.pixelSize: Theme.fontSizeSmall
-                height: Theme.itemSizeExtraSmall
-            }
-        }
-
         header: PageHeader {
             id: pageheader
             title: context.heartbeat.connected ? qsTr("Chats") : qsTr("Connecting...")
 
             ConnectionStatus {
                 context: conversationspage.context
-                anchors { verticalCenter: pageheader.extraContent.verticalCenter; right: pageheader.extraContent.right; topMargin: Theme.paddingSmall }
+                anchors { verticalCenter: pageheader.extraContent.verticalCenter; left: pageheader.extraContent.left; leftMargin: -Theme.horizontalPageMargin }
             }
         }
 

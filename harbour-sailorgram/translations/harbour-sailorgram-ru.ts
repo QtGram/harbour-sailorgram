@@ -249,11 +249,11 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Groups</source>
-        <translation>Беседы</translation>
+        <translation type="vanished">Беседы</translation>
     </message>
     <message>
         <source>Conversations</source>
-        <translation>Диалоги</translation>
+        <translation type="vanished">Диалоги</translation>
     </message>
     <message>
         <source>Chats</source>
@@ -494,6 +494,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <message>
         <source>Send Messages by pressing Return Key</source>
         <translation>Отправить сообщения, нажав клавишу ввода</translation>
+    </message>
+    <message>
+        <source>Disable background</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

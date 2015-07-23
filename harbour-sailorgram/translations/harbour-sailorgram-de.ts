@@ -249,11 +249,11 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
     </message>
     <message>
         <source>Groups</source>
-        <translation>Gruppen</translation>
+        <translation type="vanished">Gruppen</translation>
     </message>
     <message>
         <source>Conversations</source>
-        <translation>Unterhaltungen</translation>
+        <translation type="vanished">Unterhaltungen</translation>
     </message>
     <message>
         <source>Chats</source>
@@ -495,6 +495,10 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
     <message>
         <source>Send Messages by pressing Return Key</source>
         <translation>Nachricht senden durch, dass drücken der Entertaste </translation>
+    </message>
+    <message>
+        <source>Disable background</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

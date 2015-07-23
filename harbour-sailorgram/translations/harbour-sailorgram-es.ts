@@ -249,11 +249,11 @@ Elije un contacto seleccionando &quot;Contactos&quot; en el menú de desplegable
     </message>
     <message>
         <source>Groups</source>
-        <translation>Grupos</translation>
+        <translation type="vanished">Grupos</translation>
     </message>
     <message>
         <source>Conversations</source>
-        <translation>Conversaciones</translation>
+        <translation type="vanished">Conversaciones</translation>
     </message>
     <message>
         <source>Chats</source>
@@ -494,6 +494,10 @@ Elije un contacto seleccionando &quot;Contactos&quot; en el menú de desplegable
     <message>
         <source>Send Messages by pressing Return Key</source>
         <translation>Enviar mensajes pulsando la tecla de retorno</translation>
+    </message>
+    <message>
+        <source>Disable background</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

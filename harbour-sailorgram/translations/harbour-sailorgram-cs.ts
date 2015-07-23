@@ -249,11 +249,11 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z menu</translation>
     </message>
     <message>
         <source>Groups</source>
-        <translation>Skupiny</translation>
+        <translation type="vanished">Skupiny</translation>
     </message>
     <message>
         <source>Conversations</source>
-        <translation>Konverzace</translation>
+        <translation type="vanished">Konverzace</translation>
     </message>
     <message>
         <source>Chats</source>
@@ -494,6 +494,10 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z menu</translation>
     <message>
         <source>Send Messages by pressing Return Key</source>
         <translation>Poslat Zprávu stiskem klávesy Enter</translation>
+    </message>
+    <message>
+        <source>Disable background</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

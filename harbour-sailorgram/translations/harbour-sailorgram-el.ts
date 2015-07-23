@@ -243,14 +243,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Groups</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Conversations</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Chats</source>
         <translation>Συνομιλίες</translation>
     </message>
@@ -488,6 +480,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable background</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

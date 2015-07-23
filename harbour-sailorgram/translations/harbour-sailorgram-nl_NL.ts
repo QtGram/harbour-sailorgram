@@ -249,11 +249,11 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     </message>
     <message>
         <source>Groups</source>
-        <translation>Groepen</translation>
+        <translation type="vanished">Groepen</translation>
     </message>
     <message>
         <source>Conversations</source>
-        <translation>Gesprekken</translation>
+        <translation type="vanished">Gesprekken</translation>
     </message>
     <message>
         <source>Chats</source>
@@ -494,6 +494,10 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     <message>
         <source>Send Messages by pressing Return Key</source>
         <translation>Berichten versturen door op de Enter-toets te drukken</translation>
+    </message>
+    <message>
+        <source>Disable background</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

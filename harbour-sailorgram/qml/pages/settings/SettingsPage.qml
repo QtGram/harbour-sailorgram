@@ -12,7 +12,9 @@ Dialog
 
     onAccepted: {
         context.sendwithreturn = tssendwithreturn.checked;
+        context.backgrounddisabled = tsdisablebackground.checked;
         Settings.set("sendwithreturn", tssendwithreturn.checked);
+        Settings.set("backgrounddisabled", tsdisablebackground.checked);
     }
 
     SilicaFlickable
@@ -35,6 +37,14 @@ Dialog
                 anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
                 text: qsTr("Send Messages by pressing Return Key")
                 checked: context.sendwithreturn
+            }
+
+            TextSwitch
+            {
+                id: tsdisablebackground
+                anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
+                text: qsTr("Disable background")
+                checked: context.backgrounddisabled
             }
         }
     }

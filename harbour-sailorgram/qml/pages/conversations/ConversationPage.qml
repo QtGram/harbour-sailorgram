@@ -101,7 +101,7 @@ Page
             spacing: Theme.paddingLarge
             clip: true
 
-            TelegramBackground { id: telegrambackground; z: -1 }
+            TelegramBackground { id: telegrambackground; visible: !context.backgrounddisabled; z: -1 }
 
             BusyIndicator {
                 anchors.centerIn: parent

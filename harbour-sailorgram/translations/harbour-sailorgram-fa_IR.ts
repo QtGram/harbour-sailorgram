@@ -244,11 +244,11 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Groups</source>
-        <translation>گروه‌ها</translation>
+        <translation type="vanished">گروه‌ها</translation>
     </message>
     <message>
         <source>Conversations</source>
-        <translation>گفت‌وگوها</translation>
+        <translation type="vanished">گفت‌وگوها</translation>
     </message>
     <message>
         <source>Chats</source>
@@ -488,6 +488,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable background</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -249,11 +249,11 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     </message>
     <message>
         <source>Groups</source>
-        <translation>Ryhmät</translation>
+        <translation type="vanished">Ryhmät</translation>
     </message>
     <message>
         <source>Conversations</source>
-        <translation>Keskustelut</translation>
+        <translation type="vanished">Keskustelut</translation>
     </message>
     <message>
         <source>Chats</source>
@@ -494,6 +494,10 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     <message>
         <source>Send Messages by pressing Return Key</source>
         <translation>Lähetä viestejä koskettamalla paluunäppäintä</translation>
+    </message>
+    <message>
+        <source>Disable background</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

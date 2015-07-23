@@ -249,11 +249,11 @@ Vælg en kontakt fra menuen ovenfor</translation>
     </message>
     <message>
         <source>Groups</source>
-        <translation>Grupper</translation>
+        <translation type="vanished">Grupper</translation>
     </message>
     <message>
         <source>Conversations</source>
-        <translation>Samtaler</translation>
+        <translation type="vanished">Samtaler</translation>
     </message>
     <message>
         <source>Chats</source>
@@ -494,6 +494,10 @@ Vælg en kontakt fra menuen ovenfor</translation>
     <message>
         <source>Send Messages by pressing Return Key</source>
         <translation>Send Meddelelse ved at trykke Retur</translation>
+    </message>
+    <message>
+        <source>Disable background</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

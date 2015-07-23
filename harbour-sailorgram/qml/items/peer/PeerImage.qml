@@ -46,10 +46,22 @@ Image
 
     Image
     {
-        id: imgsecure
-        source: "image://theme/icon-s-secure"
+        id: imgpeertype
         anchors { bottom: parent.bottom; right: parent.right }
         fillMode: Image.PreserveAspectFit
-        visible: dialog && dialog.encrypted
+        visible: dialog && (dialog.encrypted || TelegramHelper.isChat(dialog))
+
+        source: {
+            if(!dialog)
+                return "";
+
+            if(dialog.encrypted)
+                return "image://theme/icon-s-secure"
+
+            if(TelegramHelper.isChat(dialog))
+                return "image://theme/icon-s-chat";
+
+            return "";
+        }
     }
 }

@@ -61,10 +61,19 @@ Item
             {
                 height: conversationitem.height / 2
                 anchors { left: parent.left; right: parent.right; rightMargin: Theme.paddingMedium }
+                spacing: Theme.paddingSmall
+
+                Image {
+                    id: imgchat
+                    visible: TelegramHelper.isChat(dialog)
+                    source: TelegramHelper.isChat(dialog) ? "image://theme/icon-s-chat" : ""
+                    anchors.verticalCenter: parent.verticalCenter
+                    fillMode: Image.PreserveAspectFit
+                }
 
                 Label {
                     id: lbluser
-                    width: parent.width - lbltime.width
+                    width: parent.width - lbltime.width - (imgchat.visible ? (imgchat.width + (Theme.paddingSmall * 2)) : Theme.paddingSmall)
                     text: TelegramHelper.isChat(dialog) ? chat.title : TelegramHelper.completeName(user)
                     verticalAlignment: Text.AlignVCenter
                     height: parent.height

@@ -249,11 +249,11 @@ Per iniziare, seleziona &quot;Contatti&quot; dal Menu che si trova sopra</transl
     </message>
     <message>
         <source>Groups</source>
-        <translation>Gruppi</translation>
+        <translation type="vanished">Gruppi</translation>
     </message>
     <message>
         <source>Conversations</source>
-        <translation>Conversazioni</translation>
+        <translation type="vanished">Conversazioni</translation>
     </message>
     <message>
         <source>Chats</source>
@@ -494,6 +494,10 @@ Per iniziare, seleziona &quot;Contatti&quot; dal Menu che si trova sopra</transl
     <message>
         <source>Send Messages by pressing Return Key</source>
         <translation>Invia i messaggi premendo il tasto Enter</translation>
+    </message>
+    <message>
+        <source>Disable background</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

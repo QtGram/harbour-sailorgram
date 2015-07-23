@@ -12,6 +12,7 @@ QtObject
 
     readonly property string version: "0.7"
     property bool sendwithreturn: false
+    property bool backgrounddisabled: false
 
     property TelegramLocalStorage telegramlocalstorage: TelegramLocalStorage { }
     property ScreenBlank screenblank: ScreenBlank { }
@@ -69,10 +70,6 @@ QtObject
 
             context.lastMessage = msg;
             notifications.beep();
-        }
-
-        onIncomingEncryptedMessage: {
-            console.log("Incoming Encrypted Message");
         }
 
         onPhoneNumberChanged: {

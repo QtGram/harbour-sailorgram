@@ -46,6 +46,7 @@ ApplicationWindow
         Component.onCompleted: {
             Settings.load();
             context.sendwithreturn = parseInt(Settings.get("sendwithreturn"));
+            context.backgrounddisabled = parseInt(Settings.get("backgrounddisabled"));
         }
 
         Component.onDestruction: context.heartbeat.quit()
