@@ -40,7 +40,7 @@ Image
         Label {
             anchors.centerIn: parent
             font.bold: true
-            text: TelegramHelper.isChat(dialog) ? chat.title.slice(0, 1) : user.firstName.slice(0, 1).toUpperCase() + ((user.lastName.length > 0) ? user.lastName.slice(0, 1).toUpperCase(): "");
+            text: TelegramHelper.fallbackText(imgpeer.dialog, TelegramHelper.isChat(imgpeer.dialog) ? imgpeer.chat : imgpeer.user)
         }
     }
 

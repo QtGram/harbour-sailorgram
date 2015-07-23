@@ -13,6 +13,27 @@ function phoneNumber(user)
     return completePhoneNumber(user.phone);
 }
 
+function fallbackText(dialog, chatoruser) {
+    if(isChat(dialog)) {
+        var chat = chatoruser;
+        var splittitle = chat.title.split(" ");
+
+        if(splittitle.length >= 2) {
+            return splittitle[0].slice(0, 1).toUpperCase() + splittitle[1].slice(0, 1).toUpperCase();
+        }
+
+        return splittitle[0][0].toUpperCase();
+    }
+
+    var user = chatoruser;
+    var splitname = user.firstName.slice(0, 1).toUpperCase();
+
+    if(user.lastName.length > 0)
+        splitname += user.lastName.slice(0, 1).toUpperCase();
+
+    return splitname;
+}
+
 function userStatus(user)
 {
     switch(user.status.classType)
