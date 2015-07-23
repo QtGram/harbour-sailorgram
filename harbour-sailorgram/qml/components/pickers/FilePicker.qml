@@ -25,7 +25,6 @@ SilicaListView
             width: parent.height
             height: parent.height
             fillMode: Image.PreserveAspectFit
-            asynchronous: true
         }
 
         Label

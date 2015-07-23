@@ -125,7 +125,24 @@ QVariant FolderListModel::data(const QModelIndex &index, int role) const
     switch(role)
     {
         case FolderListModel::FileIconRole:
-            return (fi.isFile() ? "image://theme/icon-m-document" : "image://theme/icon-m-folder");
+        {
+            if(fi.isDir())
+                return "image://theme/icon-m-folder";
+
+            QMimeType mime = this->_mimedb.mimeTypeForFile(fi.filePath());
+            QString type = mime.name().split("/")[0];
+
+            if(type == "video")
+                return "image://theme/icon-l-video";
+
+            if(type == "audio")
+                return "image://theme/icon-m-sounds";
+
+            if(type == "image")
+                return "image://theme/icon-m-image";
+
+            return "image://theme/icon-m-document";
+        }
 
         case FolderListModel::FileNameRole:
             return fi.fileName();

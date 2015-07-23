@@ -80,7 +80,6 @@ Page
         {
             id: filepicker
             multiSelect: false
-            showThumbnails: true
             anchors { left: parent.left; top: pageheader.bottom; right: parent.right; bottom: parent.bottom }
 
             folderModel: FolderListModel {
