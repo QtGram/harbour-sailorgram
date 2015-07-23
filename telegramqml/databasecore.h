@@ -32,6 +32,8 @@ public Q_SLOTS:
 
     void readFullDialogs();
     void readMessages(const DbPeer &peer, int offset, int limit);
+    void markMessagesAsRead(const QList<qint32>& messages);
+    void markMessagesAsReadFromMaxDate(qint32 chatId, qint32 maxDate);
 
     void setValue(const QString &key, const QString &value);
     QString value(const QString &key) const;
@@ -60,6 +62,8 @@ private:
     QHash<qint64, QStringList> userFilesOf(const QString &mediaColumn);
     QHash<qint64, QStringList> userPhotos();
     QHash<qint64, QStringList> userProfilePhotosOf(const QString &table);
+
+    //bool isMessageIncomingAndUnread(qint32 msgId);
 
     QList<qint32> stringToUsers(const QString &str);
     QString usersToString( const QList<qint32> &users );

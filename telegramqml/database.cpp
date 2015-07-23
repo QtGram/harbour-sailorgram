@@ -109,6 +109,18 @@ void Database::readFullDialogs()
     QMetaObject::invokeMethod(p->core, "readFullDialogs", Qt::QueuedConnection);
 }
 
+void Database::markMessagesAsReadFromMaxDate(qint32 chatId, qint32 maxDate)
+{
+    FIRST_CHECK;
+    QMetaObject::invokeMethod(p->core, "markMessagesAsReadFromMaxDate", Qt::QueuedConnection, Q_ARG(qint32, chatId), Q_ARG(qint32, maxDate));
+}
+
+void Database::markMessagesAsRead(const QList<qint32> &messages)
+{
+    FIRST_CHECK;
+    QMetaObject::invokeMethod(p->core, "markMessagesAsRead", Qt::QueuedConnection, Q_ARG(QList<qint32>, messages));
+}
+
 void Database::readMessages(const Peer &peer, int offset, int limit)
 {
     FIRST_CHECK;
