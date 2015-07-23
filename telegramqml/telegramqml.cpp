@@ -1552,7 +1552,7 @@ void TelegramQml::messagesSetTyping(qint64 peerId, bool stt)
 
 }
 
-void TelegramQml::messagesReadHistory(qint64 peerId, qint32 maxdate)
+void TelegramQml::messagesReadHistory(qint64 peerId, qint32 maxDate)
 {
     if(!p->telegram)
         return;
@@ -1563,7 +1563,7 @@ void TelegramQml::messagesReadHistory(qint64 peerId, qint32 maxdate)
     if(!p->encchats.contains(peerId))
         p->telegram->messagesReadHistory(peer);
     else
-        p->telegram->messagesReadEncryptedHistory(peerId, maxdate);
+        p->telegram->messagesReadEncryptedHistory(peerId, maxDate);
 }
 
 void TelegramQml::messagesCreateEncryptedChat(qint64 userId)

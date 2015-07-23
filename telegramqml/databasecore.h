@@ -63,8 +63,6 @@ private:
     QHash<qint64, QStringList> userPhotos();
     QHash<qint64, QStringList> userProfilePhotosOf(const QString &table);
 
-    //bool isMessageIncomingAndUnread(qint32 msgId);
-
     QList<qint32> stringToUsers(const QString &str);
     QString usersToString( const QList<qint32> &users );
 

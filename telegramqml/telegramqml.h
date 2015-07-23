@@ -277,7 +277,7 @@ public Q_SLOTS:
 
     void messagesDeleteHistory(qint64 peerId);
     void messagesSetTyping(qint64 peerId, bool stt);
-    void messagesReadHistory(qint64 peerId, qint32 maxdate = 0);
+    void messagesReadHistory(qint64 peerId, qint32 maxDate = 0);
 
     void messagesCreateEncryptedChat(qint64 userId);
     void messagesAcceptEncryptedChat(qint32 chatId);

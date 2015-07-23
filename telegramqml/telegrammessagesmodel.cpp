@@ -245,11 +245,11 @@ void TelegramMessagesModel::setReaded()
     if( p->telegram->invisible() )
         return;
 
-    qint32 topmessageid = p->dialog->topMessage();
-    const MessageObject* message = p->telegram->message(topmessageid);
+    qint32 topMessageId = p->dialog->topMessage();
+    const MessageObject* message = p->telegram->message(topMessageId);
 
     if(!message) {
-        qDebug() << __FUNCTION__ << ": Can't find message with id: " << topmessageid;
+        qDebug() << __FUNCTION__ << ": Can't find message with id: " << topMessageId;
         return;
     }
 

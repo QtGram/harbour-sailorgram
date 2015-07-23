@@ -739,29 +739,6 @@ QHash<qint64, QStringList> DatabaseCore::userPhotos()
     return result;
 }
 
-/*
-bool DatabaseCore::isMessageIncomingAndUnread(qint32 msgId)
-{
-    QSqlQuery query(p->db);
-    query.prepare("SELECT unread,out FROM Messages WHERE id=:id");
-    query.bindValue(":id", msgId);
-
-    if(!query.exec()) {
-        qDebug() << query.lastError().text();
-        return false;
-    }
-
-    if(query.next()) {
-        bool unread = query.value("unread").toBool();
-        bool out = query.value("out").toBool();
-        return unread && !out;
-    }
-
-    qDebug() << "Message with id" << msgId << "not found";
-    return false;
-}
-*/
-
 QHash<qint64, QStringList> DatabaseCore::userProfilePhotosOf(const QString &table)
 {
     QHash<qint64, QStringList> result;
