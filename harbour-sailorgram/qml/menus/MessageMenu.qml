@@ -6,6 +6,7 @@ import "../js/TelegramConstants.js" as TelegramConstants
 
 ContextMenu
 {
+    signal downloadRequested()
     signal cancelRequested()
 
     property Context context
@@ -27,8 +28,20 @@ ContextMenu
         text: qsTr("Delete")
 
         onClicked: {
-            messageitem.remorseAction(qsTr("Deleting Message"), function () {
+            messageitem.remorseAction(qsTr("Deleting Message"), function() {
                 context.telegram.deleteMessages([message.id]);
+            });
+        }
+    }
+
+    MenuItem
+    {
+        text: qsTr("Download")
+        visible: message.media && (message.media.classType !== TelegramConstants.typeMessageMediaEmpty);
+
+        onClicked: {
+            messageitem.remorseAction(qsTr("Downloading media"), function() {
+                downloadRequested();
             });
         }
     }

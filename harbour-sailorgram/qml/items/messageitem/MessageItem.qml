@@ -87,6 +87,10 @@ ListItem
         message: messageitem.message
 
         onCancelRequested: loader.item.cancelTransfer()
+
+        onDownloadRequested: {
+            loader.item.fileHandler.target = messageitem.message;
+        }
     }
 
     onClicked: displayMedia()
