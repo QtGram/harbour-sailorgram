@@ -30,7 +30,7 @@ function userStatus(user)
             return qsTr("Online");
 
         case TelegramConstants.typeUserStatusOffline:
-            return qsTr("Last Seen at %1").arg(TelegramCalendar.TelegramCalendar.timeToString(user.status.wasOnline));
+            return qsTr("Last Seen %1").arg(TelegramCalendar.TelegramCalendar.timeToString(user.status.wasOnline));
 
         default:
             break;

@@ -570,7 +570,7 @@ Per iniziare, seleziona &quot;Contatti&quot; dal Menu che si trova sopra</transl
     </message>
     <message>
         <source>Last Seen at %1</source>
-        <translation>Visto il %1</translation>
+        <translation type="vanished">Visto il %1</translation>
     </message>
     <message>
         <source>Document</source>
@@ -599,6 +599,10 @@ Per iniziare, seleziona &quot;Contatti&quot; dal Menu che si trova sopra</transl
     <message>
         <source>Geo</source>
         <translation>Posizione</translation>
+    </message>
+    <message>
+        <source>Last Seen %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

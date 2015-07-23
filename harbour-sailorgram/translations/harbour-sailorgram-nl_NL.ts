@@ -570,7 +570,7 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     </message>
     <message>
         <source>Last Seen at %1</source>
-        <translation>Laatst gezien op %1</translation>
+        <translation type="vanished">Laatst gezien op %1</translation>
     </message>
     <message>
         <source>Document</source>
@@ -599,6 +599,10 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     <message>
         <source>Geo</source>
         <translation>Geolocatie</translation>
+    </message>
+    <message>
+        <source>Last Seen %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

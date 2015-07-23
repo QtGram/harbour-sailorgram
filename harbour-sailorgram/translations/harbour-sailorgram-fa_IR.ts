@@ -565,7 +565,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Last Seen at %1</source>
-        <translation>آخرین بار %1 دیده شده</translation>
+        <translation type="vanished">آخرین بار %1 دیده شده</translation>
     </message>
     <message>
         <source>Document</source>
@@ -594,6 +594,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <message>
         <source>Geo</source>
         <translation>موقعیت</translation>
+    </message>
+    <message>
+        <source>Last Seen %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

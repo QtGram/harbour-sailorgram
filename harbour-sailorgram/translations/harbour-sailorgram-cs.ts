@@ -570,7 +570,7 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z menu</translation>
     </message>
     <message>
         <source>Last Seen at %1</source>
-        <translation>Naposled uviděn v %1</translation>
+        <translation type="vanished">Naposled uviděn v %1</translation>
     </message>
     <message>
         <source>Document</source>
@@ -599,6 +599,10 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z menu</translation>
     <message>
         <source>Geo</source>
         <translation>GPS</translation>
+    </message>
+    <message>
+        <source>Last Seen %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

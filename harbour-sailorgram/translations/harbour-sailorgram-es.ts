@@ -570,7 +570,7 @@ Elije un contacto seleccionando &quot;Contactos&quot; en el menú de desplegable
     </message>
     <message>
         <source>Last Seen at %1</source>
-        <translation>Última vez: %1</translation>
+        <translation type="vanished">Última vez: %1</translation>
     </message>
     <message>
         <source>Document</source>
@@ -599,6 +599,10 @@ Elije un contacto seleccionando &quot;Contactos&quot; en el menú de desplegable
     <message>
         <source>Geo</source>
         <translation>Geo</translation>
+    </message>
+    <message>
+        <source>Last Seen %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

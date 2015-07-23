@@ -571,7 +571,7 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
     </message>
     <message>
         <source>Last Seen at %1</source>
-        <translation>zuletzt gesehen %1</translation>
+        <translation type="vanished">zuletzt gesehen %1</translation>
     </message>
     <message>
         <source>Document</source>
@@ -600,6 +600,10 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
     <message>
         <source>Geo</source>
         <translation>Position</translation>
+    </message>
+    <message>
+        <source>Last Seen %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

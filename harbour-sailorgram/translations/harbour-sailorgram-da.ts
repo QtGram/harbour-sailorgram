@@ -570,7 +570,7 @@ Vælg en kontakt fra menuen ovenfor</translation>
     </message>
     <message>
         <source>Last Seen at %1</source>
-        <translation>Sidst set på %1</translation>
+        <translation type="vanished">Sidst set på %1</translation>
     </message>
     <message>
         <source>Document</source>
@@ -599,6 +599,10 @@ Vælg en kontakt fra menuen ovenfor</translation>
     <message>
         <source>Geo</source>
         <translation>Geo</translation>
+    </message>
+    <message>
+        <source>Last Seen %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

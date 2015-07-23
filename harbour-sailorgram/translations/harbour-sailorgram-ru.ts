@@ -570,7 +570,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Last Seen at %1</source>
-        <translation>был в сети %1</translation>
+        <translation type="vanished">был в сети %1</translation>
     </message>
     <message>
         <source>Document</source>
@@ -599,6 +599,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <message>
         <source>Geo</source>
         <translation>Местоположение</translation>
+    </message>
+    <message>
+        <source>Last Seen %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

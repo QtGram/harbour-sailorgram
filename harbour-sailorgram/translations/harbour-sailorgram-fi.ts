@@ -570,7 +570,7 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     </message>
     <message>
         <source>Last Seen at %1</source>
-        <translation>Viimeksi nähty %1</translation>
+        <translation type="vanished">Viimeksi nähty %1</translation>
     </message>
     <message>
         <source>Document</source>
@@ -599,6 +599,10 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     <message>
         <source>Geo</source>
         <translation>Sijainti</translation>
+    </message>
+    <message>
+        <source>Last Seen %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
