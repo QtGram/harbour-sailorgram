@@ -116,7 +116,9 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/items/secretconversation/SecretChatWaiting.qml \
     qml/items/messageitem/MessageStatus.qml \
     qml/pages/settings/SettingsPage.qml \
-    qml/pages/chat/ChangeChatTitle.qml
+    qml/pages/chat/ChangeChatTitle.qml \
+    qml/items/messageitem/media/MessageAudio.qml \
+    qml/items/messageitem/media/MessageVideo.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

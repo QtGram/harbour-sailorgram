@@ -16,6 +16,7 @@ ContextMenu
     MenuItem
     {
         text: qsTr("Copy")
+        visible: !message.media || (message.media.classType === TelegramConstants.typeMessageMediaEmpty)
 
         onClicked: {
             Clipboard.text = message.message;

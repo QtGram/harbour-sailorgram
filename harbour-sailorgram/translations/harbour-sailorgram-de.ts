@@ -375,6 +375,21 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
     </message>
 </context>
 <context>
+    <name>MessageAudio</name>
+    <message>
+        <source>Duration: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audio recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MessageBar</name>
     <message>
         <source>Message...</source>
@@ -421,6 +436,21 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
     <message>
         <source>Downloading media</source>
         <translation type="unfinished">Lade Media</translation>
+    </message>
+</context>
+<context>
+    <name>MessageVideo</name>
+    <message>
+        <source>Video recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Duration: %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

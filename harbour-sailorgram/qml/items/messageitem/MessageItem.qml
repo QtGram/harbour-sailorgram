@@ -113,6 +113,24 @@ ListItem
         }
     }
 
+    Component {
+        id: audiocomponent
+
+        MessageAudio {
+            context: messageitem.context
+            message: messageitem.message
+        }
+    }
+
+    Component {
+        id: videocomponent
+
+        MessageVideo {
+            context: messageitem.context
+            message: messageitem.message
+        }
+    }
+
     Column
     {
         id: content
@@ -143,6 +161,10 @@ ListItem
                         return photocomponent;
                     else if(message.media.classType === TelegramConstants.typeMessageMediaDocument)
                         return documentcomponent;
+                    else if(message.media.classType === TelegramConstants.typeMessageMediaAudio)
+                        return audiocomponent;
+                    else if(message.media.classType === TelegramConstants.typeMessageMediaVideo)
+                        return videocomponent;
                 }
 
                 return null;

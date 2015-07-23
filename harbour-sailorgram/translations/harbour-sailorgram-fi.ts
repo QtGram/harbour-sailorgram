@@ -374,6 +374,21 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     </message>
 </context>
 <context>
+    <name>MessageAudio</name>
+    <message>
+        <source>Duration: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audio recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MessageBar</name>
     <message>
         <source>Message...</source>
@@ -420,6 +435,21 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     <message>
         <source>Downloading media</source>
         <translation type="unfinished">Ladataan mediatiedostoa...</translation>
+    </message>
+</context>
+<context>
+    <name>MessageVideo</name>
+    <message>
+        <source>Video recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Duration: %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
