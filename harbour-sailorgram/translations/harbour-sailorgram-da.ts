@@ -413,6 +413,14 @@ Vælg en kontakt fra menuen ovenfor</translation>
         <source>Cancel</source>
         <translation>Annuller</translation>
     </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downloading media</source>
+        <translation type="unfinished">Henter medie</translation>
+    </message>
 </context>
 <context>
     <name>PeerItem</name>
@@ -539,15 +547,23 @@ Vælg en kontakt fra menuen ovenfor</translation>
     </message>
     <message>
         <source>Secret chat</source>
-        <translation>Hemmelig chat</translation>
+        <translation type="vanished">Hemmelig chat</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation>Gruppe</translation>
+        <translation type="vanished">Gruppe</translation>
     </message>
     <message>
         <source>%1 created by %2</source>
-        <translation>%1 lavet af %2</translation>
+        <translation type="vanished">%1 lavet af %2</translation>
+    </message>
+    <message>
+        <source>Secret chat created by %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group created by %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

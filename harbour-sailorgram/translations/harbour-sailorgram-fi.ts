@@ -413,6 +413,14 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
         <source>Cancel</source>
         <translation>Peruuta</translation>
     </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downloading media</source>
+        <translation type="unfinished">Ladataan mediatiedostoa...</translation>
+    </message>
 </context>
 <context>
     <name>PeerItem</name>
@@ -538,15 +546,11 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
         <translation>%1 liittyi ryhmään</translation>
     </message>
     <message>
-        <source>Secret chat</source>
+        <source>Secret chat created by %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 created by %2</source>
+        <source>Group created by %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

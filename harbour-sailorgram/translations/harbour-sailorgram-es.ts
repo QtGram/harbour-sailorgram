@@ -413,6 +413,14 @@ Elije un contacto seleccionando &quot;Contactos&quot; en el menú de desplegable
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downloading media</source>
+        <translation type="unfinished">Descargando multimedia</translation>
+    </message>
 </context>
 <context>
     <name>PeerItem</name>
@@ -539,15 +547,23 @@ Elije un contacto seleccionando &quot;Contactos&quot; en el menú de desplegable
     </message>
     <message>
         <source>Secret chat</source>
-        <translation>Chat secreto</translation>
+        <translation type="vanished">Chat secreto</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation>Grupo</translation>
+        <translation type="vanished">Grupo</translation>
     </message>
     <message>
         <source>%1 created by %2</source>
-        <translation>%1 creado por %2</translation>
+        <translation type="vanished">%1 creado por %2</translation>
+    </message>
+    <message>
+        <source>Secret chat created by %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group created by %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

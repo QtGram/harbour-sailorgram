@@ -400,6 +400,14 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downloading media</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PeerItem</name>
@@ -526,15 +534,11 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Secret chat</source>
+        <source>Secret chat created by %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 created by %2</source>
+        <source>Group created by %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

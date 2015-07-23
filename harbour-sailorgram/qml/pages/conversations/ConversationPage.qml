@@ -34,9 +34,9 @@ Page
         pageStack.pushAttached(Qt.resolvedUrl("ConversationInfoPage.qml"), { "context": conversationpage.context, "dialog": conversationpage.dialog, "chat": conversationpage.chat, "user": conversationpage.user });
         context.foregroundDialog = conversationpage.dialog;
 
-        messagemodel.setReaded();
         messagemodel.telegram = conversationpage.context.telegram;
         messagemodel.dialog = conversationpage.dialog;
+        messagemodel.setReaded();
     }
 
     RemorsePopup { id: remorsepopup }

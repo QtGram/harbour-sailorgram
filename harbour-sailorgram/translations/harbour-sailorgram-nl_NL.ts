@@ -413,6 +413,14 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
         <source>Cancel</source>
         <translation>Annuleren</translation>
     </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downloading media</source>
+        <translation type="unfinished">Bezig met het downloaden van de media</translation>
+    </message>
 </context>
 <context>
     <name>PeerItem</name>
@@ -539,15 +547,23 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     </message>
     <message>
         <source>Secret chat</source>
-        <translation>Geheim chatgesprek</translation>
+        <translation type="vanished">Geheim chatgesprek</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation>Groep</translation>
+        <translation type="vanished">Groep</translation>
     </message>
     <message>
         <source>%1 created by %2</source>
-        <translation>%1, gecreëerd door %2</translation>
+        <translation type="vanished">%1, gecreëerd door %2</translation>
+    </message>
+    <message>
+        <source>Secret chat created by %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group created by %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

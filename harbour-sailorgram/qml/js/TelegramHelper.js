@@ -18,9 +18,8 @@ function fallbackText(dialog, chatoruser) {
         var chat = chatoruser;
         var splittitle = chat.title.split(" ");
 
-        if(splittitle.length >= 2) {
+        if(splittitle.length >= 2)
             return splittitle[0].slice(0, 1).toUpperCase() + splittitle[1].slice(0, 1).toUpperCase();
-        }
 
         return splittitle[0][0].toUpperCase();
     }

@@ -413,6 +413,14 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z menu</translation>
         <source>Cancel</source>
         <translation>Anulovat</translation>
     </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downloading media</source>
+        <translation type="unfinished">Stahovám média</translation>
+    </message>
 </context>
 <context>
     <name>PeerItem</name>
@@ -539,15 +547,23 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z menu</translation>
     </message>
     <message>
         <source>Secret chat</source>
-        <translation>Tajný Rozhovor</translation>
+        <translation type="vanished">Tajný Rozhovor</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation>Skupina</translation>
+        <translation type="vanished">Skupina</translation>
     </message>
     <message>
         <source>%1 created by %2</source>
-        <translation>%1 vytvořena od %2</translation>
+        <translation type="vanished">%1 vytvořena od %2</translation>
+    </message>
+    <message>
+        <source>Secret chat created by %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group created by %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

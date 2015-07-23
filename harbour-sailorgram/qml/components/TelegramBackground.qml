@@ -7,5 +7,5 @@ Image
     fillMode: Image.Tile
     horizontalAlignment: Image.AlignLeft
     verticalAlignment: Image.AlignRight
-    opacity: 0.14
+    opacity: 0.10
 }

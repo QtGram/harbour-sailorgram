@@ -413,6 +413,14 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <source>Cancel</source>
         <translation>Отменить</translation>
     </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downloading media</source>
+        <translation type="unfinished">Загрузка медиа</translation>
+    </message>
 </context>
 <context>
     <name>PeerItem</name>
@@ -539,15 +547,23 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Secret chat</source>
-        <translation>Тайный диалог</translation>
+        <translation type="vanished">Тайный диалог</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation>Беседа</translation>
+        <translation type="vanished">Беседа</translation>
     </message>
     <message>
         <source>%1 created by %2</source>
-        <translation>%1 создан(а) %2</translation>
+        <translation type="vanished">%1 создан(а) %2</translation>
+    </message>
+    <message>
+        <source>Secret chat created by %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group created by %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

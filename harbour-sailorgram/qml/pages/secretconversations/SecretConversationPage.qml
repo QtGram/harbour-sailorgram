@@ -29,9 +29,9 @@ Page
         pageStack.pushAttached(Qt.resolvedUrl("../conversations/ConversationInfoPage.qml"), { "context": secretconversationpage.context, "dialog": secretconversationpage.dialog, "user": secretconversationpage.user });
         context.foregroundDialog = secretconversationpage.dialog;
 
-        messagemodel.setReaded();
         messagemodel.telegram = secretconversationpage.context.telegram;
         messagemodel.dialog = secretconversationpage.dialog;
+        messagemodel.setReaded();
     }
 
     RemorsePopup { id: remorsepopup }

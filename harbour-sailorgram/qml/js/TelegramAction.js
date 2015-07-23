@@ -15,9 +15,11 @@ function actionType(telegram, dialog, message) {
        if(dialog.encrypted) {
            var chat = telegram.encryptedChat(dialog.peer.userId);
            userid = chat.adminId;
+
+           return qsTr("Secret chat created by %1").arg(TelegramHelper.completeName(telegram.user(userid)));
        }
 
-       return qsTr("%1 created by %2").arg(dialog.encrypted ? qsTr("Secret chat") : qsTr("Group")).arg(TelegramHelper.completeName(telegram.user(userid)));
+       return qsTr("Group created by %1").arg(TelegramHelper.completeName(telegram.user(userid)));
    }
 
    if(action.classType === TelegramConstants.typeMessageActionChatAddUser)

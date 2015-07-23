@@ -413,6 +413,14 @@ Per iniziare, seleziona &quot;Contatti&quot; dal Menu che si trova sopra</transl
         <source>Cancel</source>
         <translation>Annulla</translation>
     </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downloading media</source>
+        <translation type="unfinished">Scaricamento file multimediale</translation>
+    </message>
 </context>
 <context>
     <name>PeerItem</name>
@@ -539,15 +547,23 @@ Per iniziare, seleziona &quot;Contatti&quot; dal Menu che si trova sopra</transl
     </message>
     <message>
         <source>Secret chat</source>
-        <translation>Chat segreta</translation>
+        <translation type="vanished">Chat segreta</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation>Gruppo</translation>
+        <translation type="vanished">Gruppo</translation>
     </message>
     <message>
         <source>%1 created by %2</source>
-        <translation>%1 creato da %2</translation>
+        <translation type="vanished">%1 creato da %2</translation>
+    </message>
+    <message>
+        <source>Secret chat created by %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group created by %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
