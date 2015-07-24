@@ -8,6 +8,18 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Fri Jul 24 2015 Antonio Davide Trogu <trogu.davide@gmail.com> 0.71-1
+- Always Display FirstName + LastName instead on UserName
+- Improved Conversations Page
+- Restored "Download" menu in during a conversation
+- Implemented pure audio/video message support (testing needed, Sailfish needs some extra codecs)
+- Conversation's background can be disabled
+- BUGFIX: Delete secret chats if ENCRYPTION_ALREADY_DECLINED is triggered (from Aseman's LibQTelegram)
+- BUGFIX: Mark secret chat messages as read (from Aseman's TelegramQML)
+- BUGFIX: Set max_date parameter when calling Telegram's API messages.readEncryptedHistory (from Aseman's TelegramQML)
+- Minor Fixes
+- Updated Localizations
+
 * Sun Jul 19 2015 Antonio Davide Trogu <trogu.davide@gmail.com> 0.7-1
 - Implemented Secret Chats (more work needed)
 - Implemented HeartBeat so it is possible to see client and Telegram status

@@ -10,7 +10,7 @@ QtObject
 {
     id: context
 
-    readonly property string version: "0.7"
+    readonly property string version: "0.71"
     property bool sendwithreturn: false
     property bool backgrounddisabled: false
 
