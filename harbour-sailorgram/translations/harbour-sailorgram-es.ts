@@ -248,14 +248,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
 Elije un contacto seleccionando &quot;Contactos&quot; en el menú de desplegable</translation>
     </message>
     <message>
-        <source>Groups</source>
-        <translation type="vanished">Grupos</translation>
-    </message>
-    <message>
-        <source>Conversations</source>
-        <translation type="vanished">Conversaciones</translation>
-    </message>
-    <message>
         <source>Chats</source>
         <translation>Conversaciones</translation>
     </message>
@@ -377,15 +369,15 @@ Elije un contacto seleccionando &quot;Contactos&quot; en el menú de desplegable
     <name>MessageAudio</name>
     <message>
         <source>Duration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Duración: %1</translation>
     </message>
     <message>
         <source>Audio recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Grabación de audio</translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamaño: %1</translation>
     </message>
 </context>
 <context>
@@ -430,26 +422,26 @@ Elije un contacto seleccionando &quot;Contactos&quot; en el menú de desplegable
     </message>
     <message>
         <source>Download</source>
-        <translation type="unfinished"></translation>
+        <translation>Descargar</translation>
     </message>
     <message>
         <source>Downloading media</source>
-        <translation type="unfinished">Descargando multimedia</translation>
+        <translation>Descargando multimedia</translation>
     </message>
 </context>
 <context>
     <name>MessageVideo</name>
     <message>
         <source>Video recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Grabación de vídeo</translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamaño: %1</translation>
     </message>
     <message>
         <source>Duration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Duración: %1</translation>
     </message>
 </context>
 <context>
@@ -535,7 +527,7 @@ Elije un contacto seleccionando &quot;Contactos&quot; en el menú de desplegable
     </message>
     <message>
         <source>Disable background</source>
-        <translation type="unfinished"></translation>
+        <translation>Desactivar fondo</translation>
     </message>
 </context>
 <context>
@@ -576,24 +568,12 @@ Elije un contacto seleccionando &quot;Contactos&quot; en el menú de desplegable
         <translation>%1 se ha unido al grupo</translation>
     </message>
     <message>
-        <source>Secret chat</source>
-        <translation type="vanished">Chat secreto</translation>
-    </message>
-    <message>
-        <source>Group</source>
-        <translation type="vanished">Grupo</translation>
-    </message>
-    <message>
-        <source>%1 created by %2</source>
-        <translation type="vanished">%1 creado por %2</translation>
-    </message>
-    <message>
         <source>Secret chat created by %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Chat secreto creado por %1</translation>
     </message>
     <message>
         <source>Group created by %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupo creado por %1</translation>
     </message>
 </context>
 <context>
@@ -617,10 +597,6 @@ Elije un contacto seleccionando &quot;Contactos&quot; en el menú de desplegable
     <message>
         <source>Unknown</source>
         <translation>Desconocido</translation>
-    </message>
-    <message>
-        <source>Last Seen at %1</source>
-        <translation type="vanished">Última vez: %1</translation>
     </message>
     <message>
         <source>Document</source>
@@ -652,7 +628,7 @@ Elije un contacto seleccionando &quot;Contactos&quot; en el menú de desplegable
     </message>
     <message>
         <source>Last Seen %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Última vez %1</translation>
     </message>
 </context>
 <context>

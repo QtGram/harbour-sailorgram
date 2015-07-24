@@ -139,6 +139,7 @@ TRANSLATIONS += translations/harbour-sailorgram-cs.ts \
                 translations/harbour-sailorgram-it.ts \
                 translations/harbour-sailorgram-nl_NL.ts \
                 translations/harbour-sailorgram-ru.ts \
+                translations/harbour-sailorgram-sv.ts \
                 translations/harbour-sailorgram.ts
 
 HEADERS += \

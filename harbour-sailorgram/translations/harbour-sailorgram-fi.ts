@@ -49,7 +49,7 @@
     </message>
     <message>
         <source>About SailorGram</source>
-        <translation>Tietoa sovelluksesta SailorGram</translation>
+        <translation>Tietoa SailorGramista:</translation>
     </message>
     <message>
         <source>Version</source>
@@ -61,30 +61,30 @@
     </message>
     <message>
         <source>Developer</source>
-        <translation>Kehittäjä</translation>
+        <translation>Kehittäjä:</translation>
     </message>
     <message>
         <source>Icon Designer</source>
-        <translation>Kuvan suunnittelija</translation>
+        <translation>Kuvan suunnittelija:</translation>
     </message>
     <message>
         <source>GitHub Repository</source>
-        <translation>GitHub säilytyspaikka</translation>
+        <translation>GitHub sijoituspaikka:</translation>
     </message>
     <message>
         <source>Translators</source>
-        <translation>Kääntäjät</translation>
+        <translation>Kääntäjät:</translation>
     </message>
     <message>
         <source>Translation Platform</source>
-        <translation>Käännösten julkaisualusta</translation>
+        <translation>Käännösten julkaisualusta:</translation>
     </message>
 </context>
 <context>
     <name>AddContactsPage</name>
     <message>
         <source>Add Chat Member</source>
-        <translation>Lisää keskustelujäsen</translation>
+        <translation>Lisää jäsen</translation>
     </message>
 </context>
 <context>
@@ -136,7 +136,7 @@
 
 You can use a-z, 0-9 and underscores.
 Minimum length is 5 characters.</source>
-        <translation>Telegramissa sinä voit valita käyttäjänimesi. Jos teet niin, muut voivat ottaa sinuun yhteyttä tietämättä puhelinnumeroasi.
+        <translation>Telegramissa sinä voit valita käyttäjänimesi, jolloin muut voivat ottaa sinuun yhteyttä tietämättä puhelinnumeroasi.
 
 Voit käyttää merkkejä a-z, 0-9 ja alaviivoja.
 Vähimmäispituus on 5 merkkiä.</translation>
@@ -198,7 +198,7 @@ Vähimmäispituus on 5 merkkiä.</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation>Poistetaan salainen keskustelu...</translation>
+        <translation>Poistetaan salainen keskustelu</translation>
     </message>
     <message>
         <source>Leave Group</source>
@@ -248,14 +248,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
 Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta valikosta.</translation>
     </message>
     <message>
-        <source>Groups</source>
-        <translation type="vanished">Ryhmät</translation>
-    </message>
-    <message>
-        <source>Conversations</source>
-        <translation type="vanished">Keskustelut</translation>
-    </message>
-    <message>
         <source>Chats</source>
         <translation>Keskustelut </translation>
     </message>
@@ -269,15 +261,15 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Poista</translation>
+        <translation>Poista</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished">Poistetaan keskustelu...</translation>
+        <translation>Poistetaan keskustelu...</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished">Poistetaan ryhmä...</translation>
+        <translation>Poistetaan ryhmä...</translation>
     </message>
 </context>
 <context>
@@ -333,7 +325,7 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     <name>CreateSecretConversationPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Uusi salainen keskustelu</translation>
+        <translation>Uusi salainen keskustelu</translation>
     </message>
 </context>
 <context>
@@ -498,7 +490,7 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     </message>
     <message>
         <source>Change Username</source>
-        <translation>Muuta käyttäjänimi</translation>
+        <translation>Vaihda käyttäjänimi</translation>
     </message>
     <message>
         <source>User</source>
@@ -531,7 +523,7 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation>Lähetä viestejä koskettamalla paluunäppäintä</translation>
+        <translation>Lähetä viestejä painamalla enter-näppäintä.</translation>
     </message>
     <message>
         <source>Disable background</source>
@@ -607,10 +599,6 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
         <translation>Tuntematon</translation>
     </message>
     <message>
-        <source>Last Seen at %1</source>
-        <translation type="vanished">Viimeksi nähty %1</translation>
-    </message>
-    <message>
         <source>Document</source>
         <translation>Dokumentti</translation>
     </message>
@@ -640,7 +628,7 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     </message>
     <message>
         <source>Last Seen %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Viimeksi paikalla: %1</translation>
     </message>
 </context>
 <context>
@@ -659,7 +647,7 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     </message>
     <message>
         <source>Begin Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Aloita salainen keskustelu</translation>
     </message>
 </context>
 <context>

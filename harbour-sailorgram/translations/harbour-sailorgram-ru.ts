@@ -57,7 +57,7 @@
     </message>
     <message>
         <source>An unofficial Telegram Client for SailfishOS</source>
-        <translation>Неофициальная версия приложения Telegram для  SailfishOS</translation>
+        <translation>Неофициальное приложение Telegram для  Sailfish OS</translation>
     </message>
     <message>
         <source>Developer</source>
@@ -73,11 +73,11 @@
     </message>
     <message>
         <source>Translators</source>
-        <translation>Переводчик</translation>
+        <translation>Переводчики</translation>
     </message>
     <message>
         <source>Translation Platform</source>
-        <translation>База для перевода</translation>
+        <translation>Платформа для перевода</translation>
     </message>
 </context>
 <context>
@@ -248,14 +248,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
 Выберите контакта из меню &apos;Контакты&apos;</translation>
     </message>
     <message>
-        <source>Groups</source>
-        <translation type="vanished">Беседы</translation>
-    </message>
-    <message>
-        <source>Conversations</source>
-        <translation type="vanished">Диалоги</translation>
-    </message>
-    <message>
         <source>Chats</source>
         <translation>Диалоги</translation>
     </message>
@@ -292,11 +284,11 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation> Новый тайный диалог</translation>
+        <translation>Создать тайный диалог</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation> Начать беседу</translation>
+        <translation>Создать беседу</translation>
     </message>
 </context>
 <context>
@@ -326,14 +318,14 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>New Group</source>
-        <translation>Начать беседу</translation>
+        <translation>Создать беседу</translation>
     </message>
 </context>
 <context>
     <name>CreateSecretConversationPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation>Новый тайный диалог</translation>
+        <translation>Создать тайный диалог</translation>
     </message>
 </context>
 <context>
@@ -344,7 +336,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>SD Card</source>
-        <translation>SD карта</translation>
+        <translation>Карта памяти</translation>
     </message>
     <message>
         <source>Home</source>
@@ -430,11 +422,11 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Download</source>
-        <translation type="unfinished"></translation>
+        <translation>Загрузить</translation>
     </message>
     <message>
         <source>Downloading media</source>
-        <translation type="unfinished">Загрузка медиа</translation>
+        <translation>Загрузка медиа</translation>
     </message>
 </context>
 <context>
@@ -531,7 +523,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation>Отправить сообщения, нажав клавишу ввода</translation>
+        <translation>Отправка сообщений клавишей ввода</translation>
     </message>
     <message>
         <source>Disable background</source>
@@ -576,24 +568,12 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <translation>%1 вступил в беседу</translation>
     </message>
     <message>
-        <source>Secret chat</source>
-        <translation type="vanished">Тайный диалог</translation>
-    </message>
-    <message>
-        <source>Group</source>
-        <translation type="vanished">Беседа</translation>
-    </message>
-    <message>
-        <source>%1 created by %2</source>
-        <translation type="vanished">%1 создан(а) %2</translation>
-    </message>
-    <message>
         <source>Secret chat created by %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Group created by %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Группа создал %1</translation>
     </message>
 </context>
 <context>
@@ -617,10 +597,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <message>
         <source>Unknown</source>
         <translation>Неизвестный</translation>
-    </message>
-    <message>
-        <source>Last Seen at %1</source>
-        <translation type="vanished">был в сети %1</translation>
     </message>
     <message>
         <source>Document</source>
@@ -652,7 +628,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Last Seen %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Был в сети в %1</translation>
     </message>
 </context>
 <context>

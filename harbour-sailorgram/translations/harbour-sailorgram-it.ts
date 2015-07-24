@@ -49,7 +49,7 @@
     </message>
     <message>
         <source>About SailorGram</source>
-        <translation>Riguardo SailorGram</translation>
+        <translation>A proposito di SailorGram</translation>
     </message>
     <message>
         <source>Version</source>
@@ -129,16 +129,16 @@
     </message>
     <message>
         <source>Username</source>
-        <translation>Username</translation>
+        <translation>Nome utente</translation>
     </message>
     <message>
         <source>You can choose an username on Telegram. If you do, other people may contact you without knowing your phone number.
 
 You can use a-z, 0-9 and underscores.
 Minimum length is 5 characters.</source>
-        <translation>Puoi scegliere uno username su Telegram. Se lo fai, le altre persone potranno trovarti tramite questo nome utente e contattarti senza conoscere il tuo numero di telefono.
+        <translation>Puoi scegliere un nome utente su Telegram. Se lo fai, le altre persone potranno trovarti tramite questo nome utente e contattarti senza conoscere il tuo numero di telefono.
 
-Puoi usare a-z, 0-9 ed underscore.
+Puoi usare a-z, 0-9 e trattino basso ( _ ).
 La lunghezza minima è di 5 caratteri.</translation>
     </message>
 </context>
@@ -164,7 +164,7 @@ La lunghezza minima è di 5 caratteri.</translation>
     <name>ConnectingLabel</name>
     <message>
         <source>Connecting...</source>
-        <translation>Connessione in corso...</translation>
+        <translation>Connessione...</translation>
     </message>
 </context>
 <context>
@@ -175,7 +175,7 @@ La lunghezza minima è di 5 caratteri.</translation>
     </message>
     <message>
         <source>Login Again</source>
-        <translation>Ripeti Login</translation>
+        <translation>Riesegui l&apos;accesso</translation>
     </message>
     <message>
         <source>Telegram Status</source>
@@ -237,23 +237,15 @@ La lunghezza minima è di 5 caratteri.</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>Info</translation>
+        <translation>Informazioni</translation>
     </message>
     <message>
         <source>No Chats
 
 Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation>Nessuna Chat
+        <translation>Nessuna conversazione
 
-Per iniziare, seleziona &quot;Contatti&quot; dal Menu che si trova sopra</translation>
-    </message>
-    <message>
-        <source>Groups</source>
-        <translation type="vanished">Gruppi</translation>
-    </message>
-    <message>
-        <source>Conversations</source>
-        <translation type="vanished">Conversazioni</translation>
+Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
     </message>
     <message>
         <source>Chats</source>
@@ -261,7 +253,7 @@ Per iniziare, seleziona &quot;Contatti&quot; dal Menu che si trova sopra</transl
     </message>
     <message>
         <source>Connecting...</source>
-        <translation>Connessione in corso...</translation>
+        <translation>Connessione...</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
@@ -377,15 +369,15 @@ Per iniziare, seleziona &quot;Contatti&quot; dal Menu che si trova sopra</transl
     <name>MessageAudio</name>
     <message>
         <source>Duration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Durata: %1</translation>
     </message>
     <message>
         <source>Audio recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Registrazione audio</translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimensione: %1</translation>
     </message>
 </context>
 <context>
@@ -430,26 +422,26 @@ Per iniziare, seleziona &quot;Contatti&quot; dal Menu che si trova sopra</transl
     </message>
     <message>
         <source>Download</source>
-        <translation type="unfinished"></translation>
+        <translation>Scarica</translation>
     </message>
     <message>
         <source>Downloading media</source>
-        <translation type="unfinished">Scaricamento file multimediale</translation>
+        <translation>Scaricamento file multimediale</translation>
     </message>
 </context>
 <context>
     <name>MessageVideo</name>
     <message>
         <source>Video recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Registrazione video</translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimensione: %1</translation>
     </message>
     <message>
         <source>Duration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Durata: %1</translation>
     </message>
 </context>
 <context>
@@ -498,7 +490,7 @@ Per iniziare, seleziona &quot;Contatti&quot; dal Menu che si trova sopra</transl
     </message>
     <message>
         <source>Change Username</source>
-        <translation>Cambia username</translation>
+        <translation>Cambia nome utente</translation>
     </message>
     <message>
         <source>User</source>
@@ -506,7 +498,7 @@ Per iniziare, seleziona &quot;Contatti&quot; dal Menu che si trova sopra</transl
     </message>
     <message>
         <source>Username</source>
-        <translation>Username</translation>
+        <translation>Nome utente</translation>
     </message>
 </context>
 <context>
@@ -535,7 +527,7 @@ Per iniziare, seleziona &quot;Contatti&quot; dal Menu che si trova sopra</transl
     </message>
     <message>
         <source>Disable background</source>
-        <translation type="unfinished"></translation>
+        <translation>Disabilita sfondo</translation>
     </message>
 </context>
 <context>
@@ -576,24 +568,12 @@ Per iniziare, seleziona &quot;Contatti&quot; dal Menu che si trova sopra</transl
         <translation>%1 si è unito al gruppo</translation>
     </message>
     <message>
-        <source>Secret chat</source>
-        <translation type="vanished">Chat segreta</translation>
-    </message>
-    <message>
-        <source>Group</source>
-        <translation type="vanished">Gruppo</translation>
-    </message>
-    <message>
-        <source>%1 created by %2</source>
-        <translation type="vanished">%1 creato da %2</translation>
-    </message>
-    <message>
         <source>Secret chat created by %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Chat segreta creata da %1</translation>
     </message>
     <message>
         <source>Group created by %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppo creato da %1</translation>
     </message>
 </context>
 <context>
@@ -617,10 +597,6 @@ Per iniziare, seleziona &quot;Contatti&quot; dal Menu che si trova sopra</transl
     <message>
         <source>Unknown</source>
         <translation>Sconosciuto</translation>
-    </message>
-    <message>
-        <source>Last Seen at %1</source>
-        <translation type="vanished">Visto il %1</translation>
     </message>
     <message>
         <source>Document</source>
@@ -652,7 +628,7 @@ Per iniziare, seleziona &quot;Contatti&quot; dal Menu che si trova sopra</transl
     </message>
     <message>
         <source>Last Seen %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ultima visita %1</translation>
     </message>
 </context>
 <context>

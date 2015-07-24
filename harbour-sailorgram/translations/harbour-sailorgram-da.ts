@@ -248,14 +248,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
 Vælg en kontakt fra menuen ovenfor</translation>
     </message>
     <message>
-        <source>Groups</source>
-        <translation type="vanished">Grupper</translation>
-    </message>
-    <message>
-        <source>Conversations</source>
-        <translation type="vanished">Samtaler</translation>
-    </message>
-    <message>
         <source>Chats</source>
         <translation>Chats</translation>
     </message>
@@ -377,15 +369,15 @@ Vælg en kontakt fra menuen ovenfor</translation>
     <name>MessageAudio</name>
     <message>
         <source>Duration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Varighed: %1</translation>
     </message>
     <message>
         <source>Audio recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Lydoptagelse</translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Størrelse: %1</translation>
     </message>
 </context>
 <context>
@@ -430,26 +422,26 @@ Vælg en kontakt fra menuen ovenfor</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation type="unfinished"></translation>
+        <translation>Hent</translation>
     </message>
     <message>
         <source>Downloading media</source>
-        <translation type="unfinished">Henter medie</translation>
+        <translation>Henter media</translation>
     </message>
 </context>
 <context>
     <name>MessageVideo</name>
     <message>
         <source>Video recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Videooptagelse</translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Størrelse: %1</translation>
     </message>
     <message>
         <source>Duration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Varighed: %1</translation>
     </message>
 </context>
 <context>
@@ -535,7 +527,7 @@ Vælg en kontakt fra menuen ovenfor</translation>
     </message>
     <message>
         <source>Disable background</source>
-        <translation type="unfinished"></translation>
+        <translation>Deaktivér baggrund</translation>
     </message>
 </context>
 <context>
@@ -576,24 +568,12 @@ Vælg en kontakt fra menuen ovenfor</translation>
         <translation>%1 har sluttet sig til gruppen</translation>
     </message>
     <message>
-        <source>Secret chat</source>
-        <translation type="vanished">Hemmelig chat</translation>
-    </message>
-    <message>
-        <source>Group</source>
-        <translation type="vanished">Gruppe</translation>
-    </message>
-    <message>
-        <source>%1 created by %2</source>
-        <translation type="vanished">%1 lavet af %2</translation>
-    </message>
-    <message>
         <source>Secret chat created by %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Hemmelig chat oprettet af %1</translation>
     </message>
     <message>
         <source>Group created by %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppe oprettet af %1</translation>
     </message>
 </context>
 <context>
@@ -617,10 +597,6 @@ Vælg en kontakt fra menuen ovenfor</translation>
     <message>
         <source>Unknown</source>
         <translation>Ukendt</translation>
-    </message>
-    <message>
-        <source>Last Seen at %1</source>
-        <translation type="vanished">Sidst set på %1</translation>
     </message>
     <message>
         <source>Document</source>
@@ -652,7 +628,7 @@ Vælg en kontakt fra menuen ovenfor</translation>
     </message>
     <message>
         <source>Last Seen %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Sidst Set %1</translation>
     </message>
 </context>
 <context>

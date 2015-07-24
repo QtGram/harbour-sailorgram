@@ -33,7 +33,7 @@
     </message>
     <message>
         <source>French</source>
-        <translation>Francousky</translation>
+        <translation>Francouzky</translation>
     </message>
     <message>
         <source>Italian</source>
@@ -49,7 +49,7 @@
     </message>
     <message>
         <source>About SailorGram</source>
-        <translation>O SailorGramu</translation>
+        <translation>O SailorGram</translation>
     </message>
     <message>
         <source>Version</source>
@@ -65,11 +65,11 @@
     </message>
     <message>
         <source>Icon Designer</source>
-        <translation>Icon Designer</translation>
+        <translation>Icon designer</translation>
     </message>
     <message>
         <source>GitHub Repository</source>
-        <translation>GitHub Repository</translation>
+        <translation>GitHub repository</translation>
     </message>
     <message>
         <source>Translators</source>
@@ -77,7 +77,7 @@
     </message>
     <message>
         <source>Translation Platform</source>
-        <translation>Překladní Platforma</translation>
+        <translation>Překladní platforma</translation>
     </message>
 </context>
 <context>
@@ -95,23 +95,23 @@
     </message>
     <message>
         <source>Authorization Code</source>
-        <translation>Autorizačný Kód</translation>
+        <translation>Autorizační kód</translation>
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation>Špatný Autorizačný Kód</translation>
+        <translation>Falešný autorizační kód</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign In&apos;</source>
-        <translation>Počkejte na SMS s aktivačným kódem a stiskněte &apos;Přihlásit&apos;</translation>
+        <translation>Počkejte na SMS s aktivačním kódem a stiskněte &apos;Přihlásit&apos;</translation>
     </message>
     <message>
         <source>Resend Activation Code</source>
-        <translation>Znovu Poslat Aktivačný Kód</translation>
+        <translation>Znovu poslat aktivační kód</translation>
     </message>
     <message>
         <source>Sending Activation Code</source>
-        <translation>Posílám Aktivačný Kód</translation>
+        <translation>Posílání aktivačního kódu</translation>
     </message>
 </context>
 <context>
@@ -153,11 +153,11 @@ Minimální délka je 5 znaků .</translation>
     <name>ChatInfoMenu</name>
     <message>
         <source>Remove from Group</source>
-        <translation>Smazat skupinu</translation>
+        <translation>Odebrat z skupiny</translation>
     </message>
     <message>
         <source>Removing from group</source>
-        <translation>Smazám skupinu</translation>
+        <translation>Odebrání z skupiny</translation>
     </message>
 </context>
 <context>
@@ -175,7 +175,7 @@ Minimální délka je 5 znaků .</translation>
     </message>
     <message>
         <source>Login Again</source>
-        <translation>Znovu Přihlásit</translation>
+        <translation>Znovu se přihlásit</translation>
     </message>
     <message>
         <source>Telegram Status</source>
@@ -194,11 +194,11 @@ Minimální délka je 5 znaků .</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Smazat</translation>
+        <translation>Vymazat</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation>Smazám Tajný Rozhovor</translation>
+        <translation>Vymazání tajného rozhovoru</translation>
     </message>
     <message>
         <source>Leave Group</source>
@@ -210,7 +210,7 @@ Minimální délka je 5 znaků .</translation>
     </message>
     <message>
         <source>Change Title</source>
-        <translation>Změmit Název</translation>
+        <translation>Změmit název</translation>
     </message>
     <message>
         <source>Add Member</source>
@@ -222,11 +222,11 @@ Minimální délka je 5 znaků .</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation>Smazat Konverzaci</translation>
+        <translation>Vymazání konverzace</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation>Smazat Skupinu</translation>
+        <translation>Vymazání skupiny</translation>
     </message>
 </context>
 <context>
@@ -248,36 +248,28 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
 Vyberte si kontakt výběrem &quot;Kontakty&quot; z menu</translation>
     </message>
     <message>
-        <source>Groups</source>
-        <translation type="vanished">Skupiny</translation>
-    </message>
-    <message>
-        <source>Conversations</source>
-        <translation type="vanished">Konverzace</translation>
-    </message>
-    <message>
         <source>Chats</source>
         <translation>Rozhovory</translation>
     </message>
     <message>
         <source>Connecting...</source>
-        <translation>Připojuji...</translation>
+        <translation>Připojování...</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation>Smazám Tajný Rozhovor</translation>
+        <translation>Vymazání tajného rozhovoru</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Smazat</translation>
+        <translation>Vymazat</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation>Smazám Rozhovor</translation>
+        <translation>Vymazání rozhovoru</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation>Smazám Skupinu</translation>
+        <translation>Vymazání skupiny</translation>
     </message>
 </context>
 <context>
@@ -292,11 +284,11 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z menu</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation>Nový Tajný Rozhovor</translation>
+        <translation>Nový tajný rozhovor</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation>Nová Skupina</translation>
+        <translation>Nová skupina</translation>
     </message>
 </context>
 <context>
@@ -326,14 +318,14 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z menu</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation>Nová Skupina</translation>
+        <translation>Nová skupina</translation>
     </message>
 </context>
 <context>
     <name>CreateSecretConversationPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation>Nový Tajný Rozhovor</translation>
+        <translation>Nový tajný rozhovor</translation>
     </message>
 </context>
 <context>
@@ -355,11 +347,11 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z menu</translation>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
-        <translation>Uložit v Galerii</translation>
+        <translation>Uložit v galerii</translation>
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation>Obraz uložen v Galerii</translation>
+        <translation>Obraz uložen v galerii</translation>
     </message>
 </context>
 <context>
@@ -370,22 +362,22 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z menu</translation>
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation>Obraz uložen v Galerii</translation>
+        <translation>Obraz uložen v galerii</translation>
     </message>
 </context>
 <context>
     <name>MessageAudio</name>
     <message>
         <source>Duration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Trvání: %1</translation>
     </message>
     <message>
         <source>Audio recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Audio záznam</translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Velikost: %1</translation>
     </message>
 </context>
 <context>
@@ -399,11 +391,11 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z menu</translation>
     <name>MessageItem</name>
     <message>
         <source>Downloading Media</source>
-        <translation>Přesunuji media</translation>
+        <translation>Přesunovaní media</translation>
     </message>
     <message>
         <source>Opening Media</source>
-        <translation>Otevíram Media</translation>
+        <translation>Otevírání Media</translation>
     </message>
 </context>
 <context>
@@ -418,11 +410,11 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z menu</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Smazat</translation>
+        <translation>Vymazat</translation>
     </message>
     <message>
         <source>Deleting Message</source>
-        <translation>Smazám zprávu</translation>
+        <translation>Vymazání zprávy</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -430,26 +422,26 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z menu</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation type="unfinished"></translation>
+        <translation>Přesunout</translation>
     </message>
     <message>
         <source>Downloading media</source>
-        <translation type="unfinished">Stahovám média</translation>
+        <translation>Přesunovaní media</translation>
     </message>
 </context>
 <context>
     <name>MessageVideo</name>
     <message>
         <source>Video recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Video záznam</translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Velikost: %1</translation>
     </message>
     <message>
         <source>Duration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Trvání: %1</translation>
     </message>
 </context>
 <context>
@@ -513,7 +505,7 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z menu</translation>
     <name>SecretChatDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation>Tajný Rozhovor byl zrušen</translation>
+        <translation>Tajný rozhovor byl zrušen</translation>
     </message>
 </context>
 <context>
@@ -531,11 +523,11 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z menu</translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation>Poslat Zprávu stiskem klávesy Enter</translation>
+        <translation>Poslat zprávu stiskem klávesy Enter</translation>
     </message>
     <message>
         <source>Disable background</source>
-        <translation type="unfinished"></translation>
+        <translation>Vypnout pozadí</translation>
     </message>
 </context>
 <context>
@@ -546,7 +538,7 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z menu</translation>
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation>Špatný Autorizačný Kód</translation>
+        <translation>Falešný autorizační kód</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
@@ -562,7 +554,7 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z menu</translation>
     </message>
     <message>
         <source>Authorization Code</source>
-        <translation>Autorizačný Kód</translation>
+        <translation>Autorizační kód</translation>
     </message>
 </context>
 <context>
@@ -576,24 +568,12 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z menu</translation>
         <translation>%1 přistoupil k skupině</translation>
     </message>
     <message>
-        <source>Secret chat</source>
-        <translation type="vanished">Tajný Rozhovor</translation>
-    </message>
-    <message>
-        <source>Group</source>
-        <translation type="vanished">Skupina</translation>
-    </message>
-    <message>
-        <source>%1 created by %2</source>
-        <translation type="vanished">%1 vytvořena od %2</translation>
-    </message>
-    <message>
         <source>Secret chat created by %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Tajný rozhovor vytvořen od %1</translation>
     </message>
     <message>
         <source>Group created by %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Skupina vytvořena od %1</translation>
     </message>
 </context>
 <context>
@@ -617,10 +597,6 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z menu</translation>
     <message>
         <source>Unknown</source>
         <translation>Neznámý</translation>
-    </message>
-    <message>
-        <source>Last Seen at %1</source>
-        <translation type="vanished">Naposled uviděn v %1</translation>
     </message>
     <message>
         <source>Document</source>
@@ -652,7 +628,7 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z menu</translation>
     </message>
     <message>
         <source>Last Seen %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Naposled uviděn %1</translation>
     </message>
 </context>
 <context>
@@ -671,7 +647,7 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z menu</translation>
     </message>
     <message>
         <source>Begin Secret Chat</source>
-        <translation>Začít Nový Tajný Rozhovor</translation>
+        <translation>Začít nový tajný rozhovor</translation>
     </message>
 </context>
 <context>

@@ -248,14 +248,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
 Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het trekmenu</translation>
     </message>
     <message>
-        <source>Groups</source>
-        <translation type="vanished">Groepen</translation>
-    </message>
-    <message>
-        <source>Conversations</source>
-        <translation type="vanished">Gesprekken</translation>
-    </message>
-    <message>
         <source>Chats</source>
         <translation>Chatgesprekken</translation>
     </message>
@@ -377,15 +369,15 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     <name>MessageAudio</name>
     <message>
         <source>Duration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Duur: %1</translation>
     </message>
     <message>
         <source>Audio recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Audio-opname</translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Grootte: %1</translation>
     </message>
 </context>
 <context>
@@ -430,26 +422,26 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     </message>
     <message>
         <source>Download</source>
-        <translation type="unfinished"></translation>
+        <translation>Downloaden</translation>
     </message>
     <message>
         <source>Downloading media</source>
-        <translation type="unfinished">Bezig met het downloaden van de media</translation>
+        <translation>Bezig met het downloaden van de media</translation>
     </message>
 </context>
 <context>
     <name>MessageVideo</name>
     <message>
         <source>Video recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Video-opname</translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Grootte: %1</translation>
     </message>
     <message>
         <source>Duration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Duur: %1</translation>
     </message>
 </context>
 <context>
@@ -535,7 +527,7 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     </message>
     <message>
         <source>Disable background</source>
-        <translation type="unfinished"></translation>
+        <translation>Achtergrond uitschakelen</translation>
     </message>
 </context>
 <context>
@@ -576,24 +568,12 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
         <translation>%1 heeft deelgenomen aan de groep</translation>
     </message>
     <message>
-        <source>Secret chat</source>
-        <translation type="vanished">Geheim chatgesprek</translation>
-    </message>
-    <message>
-        <source>Group</source>
-        <translation type="vanished">Groep</translation>
-    </message>
-    <message>
-        <source>%1 created by %2</source>
-        <translation type="vanished">%1, gecreëerd door %2</translation>
-    </message>
-    <message>
         <source>Secret chat created by %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Geheim chatgesprek - gecreëerd door %1</translation>
     </message>
     <message>
         <source>Group created by %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Groep - gecreëerd door %1</translation>
     </message>
 </context>
 <context>
@@ -617,10 +597,6 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     <message>
         <source>Unknown</source>
         <translation>Onbekend</translation>
-    </message>
-    <message>
-        <source>Last Seen at %1</source>
-        <translation type="vanished">Laatst gezien op %1</translation>
     </message>
     <message>
         <source>Document</source>
@@ -652,7 +628,7 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     </message>
     <message>
         <source>Last Seen %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Laatst gezien %1</translation>
     </message>
 </context>
 <context>

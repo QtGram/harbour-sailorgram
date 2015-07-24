@@ -5,79 +5,79 @@
     <name>AboutPage</name>
     <message>
         <source>Danish</source>
-        <translation type="unfinished"></translation>
+        <translation>دانمارکی</translation>
     </message>
     <message>
         <source>Dutch</source>
-        <translation type="unfinished"></translation>
+        <translation>هلندی</translation>
     </message>
     <message>
         <source>Finnish</source>
-        <translation type="unfinished"></translation>
+        <translation>فنلاندی</translation>
     </message>
     <message>
         <source>German</source>
-        <translation type="unfinished"></translation>
+        <translation>آلمانی</translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation type="unfinished"></translation>
+        <translation>روسی</translation>
     </message>
     <message>
         <source>Spanish</source>
-        <translation type="unfinished"></translation>
+        <translation>اسپانیایی</translation>
     </message>
     <message>
         <source>Czech</source>
-        <translation type="unfinished"></translation>
+        <translation>چک</translation>
     </message>
     <message>
         <source>French</source>
-        <translation type="unfinished"></translation>
+        <translation>فرانسوی</translation>
     </message>
     <message>
         <source>Italian</source>
-        <translation type="unfinished"></translation>
+        <translation>ایتالیایی</translation>
     </message>
     <message>
         <source>Persian</source>
-        <translation type="unfinished"></translation>
+        <translation>فارسی</translation>
     </message>
     <message>
         <source>Greek</source>
-        <translation type="unfinished"></translation>
+        <translation>یونانی</translation>
     </message>
     <message>
         <source>About SailorGram</source>
-        <translation type="unfinished"></translation>
+        <translation>درباره‌ی سیلورگرام</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>نسخه</translation>
     </message>
     <message>
         <source>An unofficial Telegram Client for SailfishOS</source>
-        <translation type="unfinished"></translation>
+        <translation>پیام‌رسان غیررسمی تلگرام برای سیلفیش</translation>
     </message>
     <message>
         <source>Developer</source>
-        <translation type="unfinished"></translation>
+        <translation>سازنده</translation>
     </message>
     <message>
         <source>Icon Designer</source>
-        <translation type="unfinished"></translation>
+        <translation>طراح نقشک</translation>
     </message>
     <message>
         <source>GitHub Repository</source>
-        <translation type="unfinished"></translation>
+        <translation>مخزن گیت‌هاب</translation>
     </message>
     <message>
         <source>Translators</source>
-        <translation type="unfinished"></translation>
+        <translation>مترجمان</translation>
     </message>
     <message>
         <source>Translation Platform</source>
-        <translation type="unfinished"></translation>
+        <translation>پایگاه ترجمه</translation>
     </message>
 </context>
 <context>
@@ -107,36 +107,39 @@
     </message>
     <message>
         <source>Resend Activation Code</source>
-        <translation type="unfinished"></translation>
+        <translation>کد فعال‌سازی را دوباره بفرست</translation>
     </message>
     <message>
         <source>Sending Activation Code</source>
-        <translation type="unfinished"></translation>
+        <translation>در حال ارسال کد فعال‌سازی</translation>
     </message>
 </context>
 <context>
     <name>ChangeChatTitle</name>
     <message>
         <source>Change</source>
-        <translation type="unfinished"></translation>
+        <translation>تغییر بده</translation>
     </message>
 </context>
 <context>
     <name>ChangeUsernamePage</name>
     <message>
         <source>Change</source>
-        <translation type="unfinished"></translation>
+        <translation>تغییر بده</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation type="unfinished"></translation>
+        <translation>نام کاربری</translation>
     </message>
     <message>
         <source>You can choose an username on Telegram. If you do, other people may contact you without knowing your phone number.
 
 You can use a-z, 0-9 and underscores.
 Minimum length is 5 characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>می‌توانید در تلگرام نام کاربری داشته باشید. در این صورت، دیگران می‌توانند بدون داشتن شماره‌تلفن شما با شما ارتباط برقرار کنند.
+
+می‌توانید از حروف a-z، شماره‌های ‎0-9 و زیرخط (_) استفاده کنید.
+کمینه‌ی طول آن باید ۵ نویسه باشد.</translation>
     </message>
 </context>
 <context>
@@ -161,7 +164,7 @@ Minimum length is 5 characters.</source>
     <name>ConnectingLabel</name>
     <message>
         <source>Connecting...</source>
-        <translation type="unfinished"></translation>
+        <translation>در حال اتصال…‏</translation>
     </message>
 </context>
 <context>
@@ -172,11 +175,11 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Login Again</source>
-        <translation type="unfinished"></translation>
+        <translation>دوباره وارد شوید</translation>
     </message>
     <message>
         <source>Telegram Status</source>
-        <translation type="unfinished"></translation>
+        <translation>وضعیت تلگرام</translation>
     </message>
 </context>
 <context>
@@ -195,7 +198,7 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>در حال حذف گپ محرمانه</translation>
     </message>
     <message>
         <source>Leave Group</source>
@@ -207,7 +210,7 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Change Title</source>
-        <translation type="unfinished"></translation>
+        <translation>تغییر عنوان</translation>
     </message>
     <message>
         <source>Add Member</source>
@@ -219,36 +222,30 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>در حال حذف گفت‌وگو</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished"></translation>
+        <translation>در حال حذف گروه</translation>
     </message>
 </context>
 <context>
     <name>ConversationsPage</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>تنظیمات</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>درباره</translation>
     </message>
     <message>
         <source>No Chats
 
 Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Groups</source>
-        <translation type="vanished">گروه‌ها</translation>
-    </message>
-    <message>
-        <source>Conversations</source>
-        <translation type="vanished">گفت‌وگوها</translation>
+        <translation>هیچ گپی نیست
+
+بعد از انتخاب «آشنایان» از گزینه‌گان بالا، یکی از آن‌ها را انتخاب کنید</translation>
     </message>
     <message>
         <source>Chats</source>
@@ -256,23 +253,23 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Connecting...</source>
-        <translation type="unfinished"></translation>
+        <translation>در حال اتصال…‏</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>در حال حذف گپ محرمانه</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">حذف</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>در حال حذف گفت‌وگو</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished"></translation>
+        <translation>در حال حذف گروه</translation>
     </message>
 </context>
 <context>
@@ -283,34 +280,34 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Profile</source>
-        <translation type="unfinished">نمایه</translation>
+        <translation>نمایه</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>گپ محرمانه‌ی تازه</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation type="unfinished"></translation>
+        <translation>گروه تازه</translation>
     </message>
 </context>
 <context>
     <name>CoverPage</name>
     <message>
         <source>Connected</source>
-        <translation type="unfinished"></translation>
+        <translation>وصل‌شده</translation>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation type="unfinished"></translation>
+        <translation>قطع‌شده</translation>
     </message>
     <message>
         <source>%1 unread messages</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 پیام خوانده‌نشده</translation>
     </message>
     <message>
         <source>%1 unread message</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 پیام خوانده‌نشده</translation>
     </message>
 </context>
 <context>
@@ -321,14 +318,14 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>New Group</source>
-        <translation type="unfinished"></translation>
+        <translation>گروه تازه</translation>
     </message>
 </context>
 <context>
     <name>CreateSecretConversationPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>گپ محرمانه‌ی تازه</translation>
     </message>
 </context>
 <context>
@@ -350,22 +347,22 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>ذخیره در نگارخانه</translation>
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>تصویر در نگارخانه ذخیره شد</translation>
     </message>
 </context>
 <context>
     <name>MediaPlayerToolBar</name>
     <message>
         <source>Downloading media</source>
-        <translation type="unfinished"></translation>
+        <translation>در حال بارگیری رسانه</translation>
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>تصویر در نگارخانه ذخیره شد</translation>
     </message>
 </context>
 <context>
@@ -387,7 +384,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>MessageBar</name>
     <message>
         <source>Message...</source>
-        <translation type="unfinished"></translation>
+        <translation>پیام…‏</translation>
     </message>
 </context>
 <context>
@@ -398,7 +395,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Opening Media</source>
-        <translation type="unfinished"></translation>
+        <translation>در حال بازکردن رسانه</translation>
     </message>
 </context>
 <context>
@@ -429,7 +426,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Downloading media</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">در حال بارگیری رسانه</translation>
     </message>
 </context>
 <context>
@@ -455,7 +452,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>%1 member</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 عضو</translation>
     </message>
 </context>
 <context>
@@ -481,52 +478,52 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>ProfilePage</name>
     <message>
         <source>Change Picture</source>
-        <translation type="unfinished"></translation>
+        <translation>تغییر تصویر</translation>
     </message>
     <message>
         <source>Phone number</source>
-        <translation type="unfinished"></translation>
+        <translation>شماره‌تلفن</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation type="unfinished">نمایه</translation>
+        <translation>نمایه</translation>
     </message>
     <message>
         <source>Change Username</source>
-        <translation type="unfinished"></translation>
+        <translation>تغییر نام کاربری</translation>
     </message>
     <message>
         <source>User</source>
-        <translation type="unfinished"></translation>
+        <translation>کاربر</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation type="unfinished"></translation>
+        <translation>نام کاربری</translation>
     </message>
 </context>
 <context>
     <name>SecretChatDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation type="unfinished"></translation>
+        <translation>گپ محرمانه لغو شد</translation>
     </message>
 </context>
 <context>
     <name>SecretChatWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>
-        <translation type="unfinished"></translation>
+        <translation>در انتظار %1 برای اتصال</translation>
     </message>
 </context>
 <context>
     <name>SettingsPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>ذخیره</translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation type="unfinished"></translation>
+        <translation>ارسال پیام با زدن کلید ورود</translation>
     </message>
     <message>
         <source>Disable background</source>
@@ -602,10 +599,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <translation>نامشخص</translation>
     </message>
     <message>
-        <source>Last Seen at %1</source>
-        <translation type="vanished">آخرین بار %1 دیده شده</translation>
-    </message>
-    <message>
         <source>Document</source>
         <translation>سند</translation>
     </message>
@@ -654,7 +647,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Begin Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>گپ محرمانه را شروع کنید</translation>
     </message>
 </context>
 <context>

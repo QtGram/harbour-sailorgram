@@ -248,14 +248,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
 wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
     </message>
     <message>
-        <source>Groups</source>
-        <translation type="vanished">Gruppen</translation>
-    </message>
-    <message>
-        <source>Conversations</source>
-        <translation type="vanished">Unterhaltungen</translation>
-    </message>
-    <message>
         <source>Chats</source>
         <translation>Konversationen</translation>
     </message>
@@ -577,18 +569,6 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
         <translation>%1 hat die Gruppe betreten</translation>
     </message>
     <message>
-        <source>Secret chat</source>
-        <translation type="vanished">Geheime Konversation</translation>
-    </message>
-    <message>
-        <source>Group</source>
-        <translation type="vanished">Gruppe</translation>
-    </message>
-    <message>
-        <source>%1 created by %2</source>
-        <translation type="vanished">%1 erstellt bei %2</translation>
-    </message>
-    <message>
         <source>Secret chat created by %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -620,10 +600,6 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
         <translation>Unbekannt</translation>
     </message>
     <message>
-        <source>Last Seen at %1</source>
-        <translation type="vanished">zuletzt gesehen %1</translation>
-    </message>
-    <message>
         <source>Document</source>
         <translation>Dokument</translation>
     </message>
@@ -653,7 +629,7 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
     </message>
     <message>
         <source>Last Seen %1</source>
-        <translation type="unfinished"></translation>
+        <translation>zuletzt gesehen %1</translation>
     </message>
 </context>
 <context>

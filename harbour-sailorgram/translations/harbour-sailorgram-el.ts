@@ -595,10 +595,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <translation>Άγνωστο</translation>
     </message>
     <message>
-        <source>Last Seen at %1</source>
-        <translation type="vanished">Τελευταία Επίσκεψη στις %1</translation>
-    </message>
-    <message>
         <source>Document</source>
         <translation>Κείμενο</translation>
     </message>
