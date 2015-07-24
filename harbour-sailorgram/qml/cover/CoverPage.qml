@@ -28,7 +28,7 @@ CoverBackground
         {
             id: imglogo
             source: "qrc:///res/telegramcover.png"
-            opacity: 0.8
+            opacity: 0.5
             width: parent.width / 2
             anchors.horizontalCenter: parent.horizontalCenter
             fillMode: Image.PreserveAspectFit
@@ -39,7 +39,9 @@ CoverBackground
             width: parent.width
             text: !context.heartbeat.connected ? qsTr("Disconnected") : qsTr("Connected")
             horizontalAlignment: Text.AlignHCenter
-            opacity: 0.8
+            truncationMode: TruncationMode.Fade
+            color: Theme.secondaryColor
+            opacity: 0.7
         }
 
         Label
@@ -48,10 +50,11 @@ CoverBackground
             text: (context.telegram.unreadCount == 1) ? qsTr("%1 unread message").arg(context.telegram.unreadCount) : qsTr("%1 unread messages").arg(context.telegram.unreadCount)
             visible: context.telegram.unreadCount > 0
             wrapMode: Text.WordWrap
-            elide: Text.ElideRight
+            truncationMode: TruncationMode.Fade
             horizontalAlignment: Text.AlignHCenter
             font.pixelSize: Theme.fontSizeExtraSmall
             color: Theme.secondaryColor
+            opacity: 0.5
         }
     }
 
