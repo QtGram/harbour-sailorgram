@@ -60,11 +60,11 @@ QtObject
                     currentpeerid = (chat.adminId === context.telegram.me) ? chat.participantId : chat.adminId;
                 }
                 else
-                    TelegramHelper.peerId(foregroundDialog);
+                    currentpeerid = TelegramHelper.peerId(foregroundDialog);
             }
 
-            if((msg.fromId !== currentpeerid) || (Qt.application.state !== Qt.ApplicationActive)) {
-                notifications.send(TelegramHelper.completeName(user), TelegramHelper.messageContent(msg), user.photo.photoSmall.download.location, true, false);
+            if((msg.fromId !== currentpeerid) || ((msg.fromId === currentpeerid) && (foregroundDialog.encrypted !== msg.encrypted)) || (Qt.application.state !== Qt.ApplicationActive)) {
+                notifications.send(TelegramHelper.completeName(user), TelegramHelper.messageContent(msg), user.photo.photoSmall.download.location, true, (Qt.application.state === Qt.ApplicationActive));
                 return;
             }
 
