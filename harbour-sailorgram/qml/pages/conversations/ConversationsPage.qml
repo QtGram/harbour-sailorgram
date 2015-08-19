@@ -161,7 +161,7 @@ Page
                 }
 
                 var c = !item.encrypted ? conversationItemComponent : secretConversationItemComponent;
-                c.createObject(contentItem, {"width": dialogitem.contentWidth, "height": dialogitem.contentHeight, "context": conversationspage.context, "dialog": item });
+                c.createObject(contentItem, {"anchors.fill": contentItem, "context": conversationspage.context, "dialog": item });
             }
         }
     }
