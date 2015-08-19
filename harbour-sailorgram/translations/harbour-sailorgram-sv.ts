@@ -362,7 +362,11 @@ Välj en kontakt genom att gå till &quot;Kontakter&quot; i ovanstående meny</t
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation>Bild sparad i Galleri</translation>
+        <translation type="vanished">Bild sparad i Galleri</translation>
+    </message>
+    <message>
+        <source>Media saved in Gallery</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

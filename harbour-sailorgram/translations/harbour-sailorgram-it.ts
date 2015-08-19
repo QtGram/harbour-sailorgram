@@ -362,7 +362,11 @@ Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation>Immagine salvata in galleria</translation>
+        <translation type="vanished">Immagine salvata in galleria</translation>
+    </message>
+    <message>
+        <source>Media saved in Gallery</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -363,7 +363,11 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation>Bild wurde in der Galerie abgelegt</translation>
+        <translation type="vanished">Bild wurde in der Galerie abgelegt</translation>
+    </message>
+    <message>
+        <source>Media saved in Gallery</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

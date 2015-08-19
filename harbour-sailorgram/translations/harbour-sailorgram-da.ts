@@ -362,7 +362,11 @@ Vælg en kontakt fra menuen ovenfor</translation>
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation>Billede gemt i Galleri</translation>
+        <translation type="vanished">Billede gemt i Galleri</translation>
+    </message>
+    <message>
+        <source>Media saved in Gallery</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

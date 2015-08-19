@@ -362,7 +362,11 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z menu</translation>
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation>Obraz uložen v galerii</translation>
+        <translation type="vanished">Obraz uložen v galerii</translation>
+    </message>
+    <message>
+        <source>Media saved in Gallery</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

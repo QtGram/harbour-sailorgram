@@ -356,7 +356,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Image saved in Gallery</source>
+        <source>Media saved in Gallery</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

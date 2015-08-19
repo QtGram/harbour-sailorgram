@@ -96,7 +96,7 @@ Rectangle
 
             remorsepopup.execute(qsTr("Downloading media"), function() {
                 context.sailorgram.moveMediaToGallery(message.media);
-                popupmessage.show(qsTr("Image saved in Gallery"));
+                popupmessage.show(qsTr("Media saved in Gallery"));
             });
         }
     }

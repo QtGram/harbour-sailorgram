@@ -362,7 +362,11 @@ Elije un contacto seleccionando &quot;Contactos&quot; en el menú de desplegable
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation>Imagen guardada en la Galería</translation>
+        <translation type="vanished">Imagen guardada en la Galería</translation>
+    </message>
+    <message>
+        <source>Media saved in Gallery</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

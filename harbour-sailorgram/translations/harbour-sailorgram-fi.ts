@@ -362,7 +362,11 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation>Kuva on tallennettu galleriaan</translation>
+        <translation type="vanished">Kuva on tallennettu galleriaan</translation>
+    </message>
+    <message>
+        <source>Media saved in Gallery</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -362,7 +362,11 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation>De afbeelding is opgeslagen naar de Galerij</translation>
+        <translation type="vanished">De afbeelding is opgeslagen naar de Galerij</translation>
+    </message>
+    <message>
+        <source>Media saved in Gallery</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
