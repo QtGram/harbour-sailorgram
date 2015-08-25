@@ -401,6 +401,10 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
         <source>Opening Media</source>
         <translation>Bezig met het openen van de media</translation>
     </message>
+    <message>
+        <source>Opening media</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageMenu</name>

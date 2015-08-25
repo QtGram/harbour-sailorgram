@@ -402,6 +402,10 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
         <source>Opening Media</source>
         <translation>Öffne Media</translation>
     </message>
+    <message>
+        <source>Opening media</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageMenu</name>

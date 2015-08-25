@@ -401,6 +401,10 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z menu</translation>
         <source>Opening Media</source>
         <translation>Otevírání Media</translation>
     </message>
+    <message>
+        <source>Opening media</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageMenu</name>

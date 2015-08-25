@@ -401,6 +401,10 @@ Vælg en kontakt fra menuen ovenfor</translation>
         <source>Opening Media</source>
         <translation>Åbner Medie</translation>
     </message>
+    <message>
+        <source>Opening media</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageMenu</name>

@@ -401,6 +401,10 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
         <source>Opening Media</source>
         <translation>Ouverture du média</translation>
     </message>
+    <message>
+        <source>Opening media</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageMenu</name>

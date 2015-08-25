@@ -392,6 +392,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <source>Opening Media</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Opening media</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageMenu</name>

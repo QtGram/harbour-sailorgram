@@ -401,6 +401,10 @@ Välj en kontakt genom att gå till &quot;Kontakter&quot; i ovanstående meny</t
         <source>Opening Media</source>
         <translation>Öppnar media</translation>
     </message>
+    <message>
+        <source>Opening media</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageMenu</name>

@@ -2,6 +2,7 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../models"
+import "../items/messageitem/media"
 import "../js/TelegramConstants.js" as TelegramConstants
 
 ContextMenu
@@ -11,7 +12,7 @@ ContextMenu
 
     property Context context
     property Message message
-    property FileHandler fileHandler
+    property MessageMediaItem messageMediaItem
 
     MenuItem
     {
@@ -38,7 +39,7 @@ ContextMenu
     MenuItem
     {
         text: qsTr("Download")
-        visible: message.media && (message.media.classType !== TelegramConstants.typeMessageMediaEmpty);
+        visible: message.media && (message.media.classType !== TelegramConstants.typeMessageMediaEmpty) && messageMediaItem && !messageMediaItem.fileHandler.downloaded;
 
         onClicked: {
             messageitem.remorseAction(qsTr("Downloading media"), function() {

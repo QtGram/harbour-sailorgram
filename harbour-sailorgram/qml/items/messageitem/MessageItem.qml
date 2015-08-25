@@ -14,6 +14,9 @@ ListItem
     property Message message
 
     function remorseNeeded(mediatype, type) {
+        if(loader.item.fileHandler.downloaded) // No remorse for downloaded medias
+            return false;
+
         if((mediatype === TelegramConstants.typeMessageMediaVideo) || (mediatype === TelegramConstants.typeMessageMediaAudio))
             return true;
 
@@ -27,8 +30,8 @@ ListItem
     }
 
     function openOrDownloadMedia(canbeviewed, type) {
-        if(canbeviewed)
-            loader.item.fileHandler.target = messageitem.message; // Download Media
+        if(!loader.item.fileHandler.downloaded)
+            loader.item.fileHandler.download();
 
         if((message.media.classType === TelegramConstants.typeMessageMediaPhoto) || (type === "image")) {
             pageStack.push(Qt.resolvedUrl("../../pages/media/MediaPhotoPage.qml"), { "context": messageitem.context, "message": messageitem.message, "fileHandler": loader.item.fileHandler });
@@ -40,14 +43,11 @@ ListItem
             return;
         }
 
-        var path = loader.item.mediaPath;
-
-        if(!path.length) {
-            loader.item.fileHandler.target = messageitem.message; // Set Target Object before download
+        if(!loader.item.fileHandler.downloaded)
             return;
-        }
 
-        Qt.openUrlExternally(path);
+        popupmessage.show(qsTr("Opening media"));
+        Qt.openUrlExternally(loader.item.fileHandler.filePath);
     }
 
     function displayMedia() {
@@ -65,9 +65,7 @@ ListItem
             canbeviewed = ((type === "video") || (type === "audio") || (type === "image")) ? true : false;
         }
 
-        var remorseneeded = remorseNeeded(message.media.classType, type);
-
-        if(!remorseneeded) {
+        if(!remorseNeeded(message.media.classType, type)) {
             openOrDownloadMedia(canbeviewed, type);
             return;
         }
@@ -85,12 +83,10 @@ ListItem
         id: messagemenu
         context: messageitem.context
         message: messageitem.message
+        messageMediaItem: loader.item
 
         onCancelRequested: loader.item.cancelTransfer()
-
-        onDownloadRequested: {
-            loader.item.fileHandler.target = messageitem.message;
-        }
+        onDownloadRequested: loader.item.download()
     }
 
     onClicked: displayMedia()
@@ -171,10 +167,6 @@ ListItem
             }
 
             onLoaded: {
-                messagemenu.fileHandler = loader.item.fileHandler;
-
-                if((message.media.classType === TelegramConstants.typeMessageMediaDocument) && context.telegram.documentIsSticker(message.media.document))
-                    loader.item.fileHandler.target = messageitem.message;
             }
         }
 

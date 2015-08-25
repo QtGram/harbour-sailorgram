@@ -401,6 +401,10 @@ Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
         <source>Opening Media</source>
         <translation>Apertura file multimediale</translation>
     </message>
+    <message>
+        <source>Opening media</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageMenu</name>

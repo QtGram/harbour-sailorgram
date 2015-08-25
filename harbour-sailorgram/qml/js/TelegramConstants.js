@@ -1,5 +1,10 @@
 .pragma library
 
+/* FileHandler Constants */
+var typeProgressEmpty = 0;
+var typeProgressUpload = 1;
+var typeProgressDownload = 2;
+
 /* Message Constants */
 var typeMessageEmpty = 0x83e5de54;
 var typeMessageService = 0x1d86f70e;
