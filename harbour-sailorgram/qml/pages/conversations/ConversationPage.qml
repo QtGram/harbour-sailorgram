@@ -86,7 +86,7 @@ Page
         {
             id: header
             anchors { left: parent.left; top: parent.top; right: parent.right; leftMargin: Theme.horizontalPageMargin; topMargin: Theme.paddingMedium }
-            height: Theme.itemSizeSmall
+            height: conversationpage.isPortrait ? Theme.itemSizeSmall : Theme.itemSizeExtraSmall
             context: conversationpage.context
             dialog: conversationpage.dialog
             chat: conversationpage.chat
