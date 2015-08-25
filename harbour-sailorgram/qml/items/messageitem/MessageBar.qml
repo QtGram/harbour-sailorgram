@@ -7,11 +7,12 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 
 Item
 {
+    readonly property real maxHeight: parent.height / 2
     property Context context
     property Dialog dialog
 
     id: messagebar
-    height: context.heartbeat.connected ? Math.max(textarea.height, btnselectmedia.height) : Theme.itemSizeSmall
+    height: context.heartbeat.connected ? Math.max(Math.min(textarea._contentItem.contentHeight, maxHeight), btnselectmedia.height) : Theme.itemSizeSmall
 
     function sendMessage()
     {
@@ -35,7 +36,7 @@ Item
         {
             id: textarea
             width: parent.width - (btnselectmedia.visible ? btnselectmedia.width : btnsend.width)
-            anchors.verticalCenter: parent.verticalCenter
+            anchors { top: parent.top; bottom: parent.bottom }
             placeholderText: qsTr("Message...")
             focusOutBehavior: FocusBehavior.KeepFocus
             font.pixelSize: Theme.fontSizeSmall
