@@ -361,10 +361,6 @@ Vælg en kontakt fra menuen ovenfor</translation>
         <translation>Henter medie</translation>
     </message>
     <message>
-        <source>Image saved in Gallery</source>
-        <translation type="vanished">Billede gemt i Galleri</translation>
-    </message>
-    <message>
         <source>Media saved in Gallery</source>
         <translation type="unfinished"></translation>
     </message>

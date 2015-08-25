@@ -361,12 +361,8 @@ Välj en kontakt genom att gå till &quot;Kontakter&quot; i ovanstående meny</t
         <translation>Laddar ner media</translation>
     </message>
     <message>
-        <source>Image saved in Gallery</source>
-        <translation type="vanished">Bild sparad i Galleri</translation>
-    </message>
-    <message>
         <source>Media saved in Gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>Media sparat i Galleri</translation>
     </message>
 </context>
 <context>
@@ -486,7 +482,7 @@ Välj en kontakt genom att gå till &quot;Kontakter&quot; i ovanstående meny</t
     <name>ProfilePage</name>
     <message>
         <source>Change Picture</source>
-        <translation>byt bild</translation>
+        <translation>Byt bild</translation>
     </message>
     <message>
         <source>Phone number</source>

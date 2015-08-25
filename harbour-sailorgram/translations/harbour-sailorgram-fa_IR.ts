@@ -361,10 +361,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <translation>در حال بارگیری رسانه</translation>
     </message>
     <message>
-        <source>Image saved in Gallery</source>
-        <translation type="vanished">تصویر در نگارخانه ذخیره شد</translation>
-    </message>
-    <message>
         <source>Media saved in Gallery</source>
         <translation type="unfinished"></translation>
     </message>

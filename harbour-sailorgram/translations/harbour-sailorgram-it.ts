@@ -361,12 +361,8 @@ Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
         <translation>Scaricamento file multimediale</translation>
     </message>
     <message>
-        <source>Image saved in Gallery</source>
-        <translation type="vanished">Immagine salvata in galleria</translation>
-    </message>
-    <message>
         <source>Media saved in Gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>File multimediale salvato in Galleria</translation>
     </message>
 </context>
 <context>

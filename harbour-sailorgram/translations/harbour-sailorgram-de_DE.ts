@@ -1,331 +1,329 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="es">
+<TS version="2.1" language="de_DE">
 <context>
     <name>AboutPage</name>
     <message>
         <source>Danish</source>
-        <translation>Danés</translation>
+        <translation>Dänisch</translation>
     </message>
     <message>
         <source>Dutch</source>
-        <translation>Holandés</translation>
+        <translation>Niederländisch</translation>
     </message>
     <message>
         <source>Finnish</source>
-        <translation>Finés</translation>
+        <translation>Finnisch</translation>
     </message>
     <message>
         <source>German</source>
-        <translation>Alemán</translation>
+        <translation>Deutsch</translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation>Ruso</translation>
+        <translation>Russisch</translation>
     </message>
     <message>
         <source>Spanish</source>
-        <translation>Español</translation>
+        <translation>Spanisch</translation>
     </message>
     <message>
         <source>Czech</source>
-        <translation>Checo</translation>
+        <translation>Tschechisch</translation>
     </message>
     <message>
         <source>French</source>
-        <translation>Francés</translation>
+        <translation>Französisch</translation>
     </message>
     <message>
         <source>Italian</source>
-        <translation>Italiano</translation>
+        <translation>Italienisch</translation>
     </message>
     <message>
         <source>Persian</source>
-        <translation>Persa</translation>
+        <translation>Persisch</translation>
     </message>
     <message>
         <source>Greek</source>
-        <translation>Griego</translation>
+        <translation>Griechisch</translation>
     </message>
     <message>
         <source>About SailorGram</source>
-        <translation>Acerca de SailorGram</translation>
+        <translation>Über SailorGram</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation>Versión</translation>
+        <translation>Version</translation>
     </message>
     <message>
         <source>An unofficial Telegram Client for SailfishOS</source>
-        <translation>Un cliente no oficial de Telegram para SailfishOS</translation>
+        <translation>Ein inoffizieller Telegram Client für SailfishOS</translation>
     </message>
     <message>
         <source>Developer</source>
-        <translation>Desarrollador</translation>
+        <translation>Entwickler</translation>
     </message>
     <message>
         <source>Icon Designer</source>
-        <translation>Diseñador del icono</translation>
+        <translation>Icon Designer</translation>
     </message>
     <message>
         <source>GitHub Repository</source>
-        <translation>Repositorio Github</translation>
+        <translation>GitHub Repository</translation>
     </message>
     <message>
         <source>Translators</source>
-        <translation>Traductores</translation>
+        <translation>Übersetzer</translation>
     </message>
     <message>
         <source>Translation Platform</source>
-        <translation>Plataforma de traducción</translation>
+        <translation>Übersetzungs-Platform</translation>
     </message>
 </context>
 <context>
     <name>AddContactsPage</name>
     <message>
         <source>Add Chat Member</source>
-        <translation>Añadir miembro al chat</translation>
+        <translation>Mitglied hinzufügen</translation>
     </message>
 </context>
 <context>
     <name>AuthorizationPage</name>
     <message>
         <source>Sign In</source>
-        <translation>Iniciar sesión</translation>
+        <translation>Einloggen</translation>
     </message>
     <message>
         <source>Authorization Code</source>
-        <translation>Código de autorización</translation>
+        <translation>Autorisierungscode</translation>
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation>El código de autorización que has introducido no es correcto</translation>
+        <translation>Sie haben einen falschen Autorisierungscode eingegeben</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign In&apos;</source>
-        <translation>Espera a recibir el SMS con el código de activación y pulsa &apos;Siguiente&apos;</translation>
+        <translation>Warten Sie auf die SMS mit dem Aktivierungscode und gehen Sie auf &apos;einloggen&apos;</translation>
     </message>
     <message>
         <source>Resend Activation Code</source>
-        <translation>Reenviar código de activación</translation>
+        <translation>Sende Aktivierungs-Code erneut</translation>
     </message>
     <message>
         <source>Sending Activation Code</source>
-        <translation>Enviando código de activación</translation>
+        <translation>Sende Aktivierungs-Code</translation>
     </message>
 </context>
 <context>
     <name>ChangeChatTitle</name>
     <message>
         <source>Change</source>
-        <translation>Cambiar</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ChangeUsernamePage</name>
     <message>
         <source>Change</source>
-        <translation>Cambiar</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Username</source>
-        <translation>Nombre de usuario</translation>
+        <translation>Nutzername</translation>
     </message>
     <message>
         <source>You can choose an username on Telegram. If you do, other people may contact you without knowing your phone number.
 
 You can use a-z, 0-9 and underscores.
 Minimum length is 5 characters.</source>
-        <translation>Puedes elegir un nombre de usuario en Telegram. Si lo haces, otras personas se pueden poner en contacto contigo sin saber tu número de teléfono.
+        <translation>Du kannst einen Nutzernamen für Telegram wählen. Falls du dich dazu entscheidest, können dich andere Leute kontaktieren ohne deine Telefonnummer zu kennen
 
-Puedes utilizar a-z, 0-9 y guiones bajos.
-La longitud mínima es de 5 caracteres.</translation>
+Erlaubte Zeichen sind a-z, 0-9 und _
+Minimale Länge sind 5 Zeichen</translation>
     </message>
 </context>
 <context>
     <name>ChatInfo</name>
     <message>
         <source>Members</source>
-        <translation>Miembros</translation>
+        <translation>Mitglieder</translation>
     </message>
 </context>
 <context>
     <name>ChatInfoMenu</name>
     <message>
         <source>Remove from Group</source>
-        <translation>Borrar grupo</translation>
+        <translation>Aus der Gruppe entfernen</translation>
     </message>
     <message>
         <source>Removing from group</source>
-        <translation>Borrando grupo</translation>
+        <translation>wird aus der Gruppe entfernt</translation>
     </message>
 </context>
 <context>
     <name>ConnectingLabel</name>
     <message>
         <source>Connecting...</source>
-        <translation>Conectando...</translation>
+        <translation>Verbinde...</translation>
     </message>
 </context>
 <context>
     <name>ConnectionPage</name>
     <message>
         <source>Connecting</source>
-        <translation>Conectando</translation>
+        <translation>Verbinden</translation>
     </message>
     <message>
         <source>Login Again</source>
-        <translation>Acceder de nuevo</translation>
+        <translation>Wieder anmelden</translation>
     </message>
     <message>
         <source>Telegram Status</source>
-        <translation>Estado Telegram</translation>
+        <translation>Telegram Status</translation>
     </message>
 </context>
 <context>
     <name>ConversationMenu</name>
     <message>
         <source>Enable Notifications</source>
-        <translation>Activar notificaciones</translation>
+        <translation>Benachrichtigungen aktivieren</translation>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation>Desactivar notificaciones</translation>
+        <translation>Benachrichtigungen deaktivieren</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Borrar</translation>
+        <translation>löschen</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation>Borrando chat secreto</translation>
+        <translation>Lösche geheimen Chat</translation>
     </message>
     <message>
         <source>Leave Group</source>
-        <translation>Dejar grupo</translation>
+        <translation>Gruppe verlassen</translation>
     </message>
     <message>
         <source>Leaving Group</source>
-        <translation>Dejando grupo</translation>
+        <translation>verlasse die Gruppe</translation>
     </message>
     <message>
         <source>Change Title</source>
-        <translation>Cambiar título</translation>
+        <translation>Ändere Titel</translation>
     </message>
     <message>
         <source>Add Member</source>
-        <translation>Añadir miembro</translation>
+        <translation>Mitglied hinzufügen</translation>
     </message>
     <message>
         <source>Add to Contacts</source>
-        <translation>Añadir a Contactos</translation>
+        <translation>Zu den Kontakten hinzufügen</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation>Borrando conversación</translation>
+        <translation>Lösche Unterhaltung</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation>Borrando grupo</translation>
+        <translation>Lösche Gruppe</translation>
     </message>
 </context>
 <context>
     <name>ConversationsPage</name>
     <message>
         <source>Settings</source>
-        <translation>Ajustes</translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>Acerca de</translation>
+        <translation>Über</translation>
     </message>
     <message>
         <source>No Chats
 
 Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation>No hay conversaciones
-
-Elije un contacto seleccionando &quot;Contactos&quot; en el menú de desplegable</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Chats</source>
-        <translation>Conversaciones</translation>
+        <translation>Chats</translation>
     </message>
     <message>
         <source>Connecting...</source>
-        <translation>Conectando...</translation>
+        <translation>Verbinde…</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation>Borrando chat secreto</translation>
+        <translation type="unfinished">Lösche geheimen Chat</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Borrar</translation>
+        <translation type="unfinished">löschen</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation>Borrando conversación</translation>
+        <translation type="unfinished">Lösche Unterhaltung</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation>Borrando grupo</translation>
+        <translation>lösche Gruppe</translation>
     </message>
 </context>
 <context>
     <name>ConversationsPullDownMenu</name>
     <message>
         <source>Contacts</source>
-        <translation>Contactos</translation>
+        <translation>Kontakte</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation>Perfil</translation>
+        <translation type="unfinished">Profil</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation>Nuevo chat secreto</translation>
+        <translation type="unfinished">Neuer geheimer Chat</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation>Nuevo grupo</translation>
+        <translation>Neue Gruppe erstellen</translation>
     </message>
 </context>
 <context>
     <name>CoverPage</name>
     <message>
         <source>Connected</source>
-        <translation>Conectado</translation>
+        <translation>Verbunden</translation>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation>Desconectado</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>%1 unread messages</source>
-        <translation>%1 mensajes sin leer</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>%1 unread message</source>
-        <translation>%1 mensajes sin leer</translation>
+        <translation>%1 neue Nachrichten</translation>
     </message>
 </context>
 <context>
     <name>CreateChatPage</name>
     <message>
         <source>Group Name</source>
-        <translation>Nombre del grupo</translation>
+        <translation>Gruppenname</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation>Nuevo grupo</translation>
+        <translation>Neue Gruppe</translation>
     </message>
 </context>
 <context>
     <name>CreateSecretConversationPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation>Nuevo chat secreto</translation>
+        <translation>Neuer geheimer Chat</translation>
     </message>
 </context>
 <context>
@@ -336,66 +334,66 @@ Elije un contacto seleccionando &quot;Contactos&quot; en el menú de desplegable
     </message>
     <message>
         <source>SD Card</source>
-        <translation>Tarjeta SD</translation>
+        <translation>SD-Karte</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation>Inicio</translation>
+        <translation>Home</translation>
     </message>
 </context>
 <context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
-        <translation>Guardar en la Galería</translation>
+        <translation>In Galerie speichern</translation>
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation>Imagen guardada en la Galería</translation>
+        <translation>Bild in der Galerie gespeichert</translation>
     </message>
 </context>
 <context>
     <name>MediaPlayerToolBar</name>
     <message>
         <source>Downloading media</source>
-        <translation>Descargando multimedia</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Media saved in Gallery</source>
-        <translation>Multimedia guardado en la Galería</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MessageAudio</name>
     <message>
         <source>Duration: %1</source>
-        <translation>Duración: %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Audio recording</source>
-        <translation>Grabación de audio</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation>Tamaño: %1</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MessageBar</name>
     <message>
         <source>Message...</source>
-        <translation>Mensaje...</translation>
+        <translation>Nachricht…</translation>
     </message>
 </context>
 <context>
     <name>MessageItem</name>
     <message>
         <source>Downloading Media</source>
-        <translation>Descargando multimedia</translation>
+        <translation>Medien werden heruntergeladen </translation>
     </message>
     <message>
         <source>Opening Media</source>
-        <translation>Abrir multimedia</translation>
+        <translation>Öffne Media</translation>
     </message>
     <message>
         <source>Opening media</source>
@@ -406,217 +404,217 @@ Elije un contacto seleccionando &quot;Contactos&quot; en el menú de desplegable
     <name>MessageMenu</name>
     <message>
         <source>Copy</source>
-        <translation>Copiar</translation>
+        <translation>Kopieren</translation>
     </message>
     <message>
         <source>Message copied to clipboard</source>
-        <translation>Mensaje copiado al portapapeles</translation>
+        <translation>Nachricht wurde in die Zwischenablage kopiert</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Borrar</translation>
+        <translation>löschen</translation>
     </message>
     <message>
         <source>Deleting Message</source>
-        <translation>Borrando mensaje</translation>
+        <translation>Nachricht wird gelöscht</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Cancelar</translation>
+        <translation>Abbrechen</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation>Descargar</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Downloading media</source>
-        <translation>Descargando multimedia</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MessageVideo</name>
     <message>
         <source>Video recording</source>
-        <translation>Grabación de vídeo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation>Tamaño: %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Duration: %1</source>
-        <translation>Duración: %1</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>PeerItem</name>
     <message>
         <source>%1 members</source>
-        <translation>%1 miembros</translation>
+        <translation>%1 Mitglieder</translation>
     </message>
     <message>
         <source>%1 member</source>
-        <translation>%1 miembro</translation>
+        <translation>%1 Mitglied</translation>
     </message>
 </context>
 <context>
     <name>PhoneNumberPage</name>
     <message>
         <source>Next</source>
-        <translation>Siguiente</translation>
+        <translation>weiter</translation>
     </message>
     <message>
         <source>Phone Number</source>
-        <translation>Número de teléfono</translation>
+        <translation>Telefonnummer</translation>
     </message>
     <message>
         <source>Country Code</source>
-        <translation>Código del país</translation>
+        <translation>Landesvorwahl</translation>
     </message>
     <message>
         <source>Insert your phone number and press &apos;Next&apos;</source>
-        <translation>Inserta tu número de teléfono y pulsa &apos;Siguiente&apos;</translation>
+        <translation>Trage deine Telefonnummer ein und gehe auf &apos;weiter&apos;</translation>
     </message>
 </context>
 <context>
     <name>ProfilePage</name>
     <message>
         <source>Change Picture</source>
-        <translation>Cambiar foto</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Phone number</source>
-        <translation>Número de teléfono</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation>Perfil</translation>
+        <translation>Profil</translation>
     </message>
     <message>
         <source>Change Username</source>
-        <translation>Cambiar nombre de usuario</translation>
+        <translation>Benutzername ändern</translation>
     </message>
     <message>
         <source>User</source>
-        <translation>Usuario</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Username</source>
-        <translation>Nombre de usuario</translation>
+        <translation type="unfinished">Nutzername</translation>
     </message>
 </context>
 <context>
     <name>SecretChatDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation>Chat secreto cancelado</translation>
+        <translation>Geheimer Chat geschlossen</translation>
     </message>
 </context>
 <context>
     <name>SecretChatWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>
-        <translation>Esperando a que %1 se conecte</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SettingsPage</name>
     <message>
         <source>Save</source>
-        <translation>Guardar</translation>
+        <translation>Speichern</translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation>Enviar mensajes pulsando la tecla de retorno</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Disable background</source>
-        <translation>Desactivar fondo</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SignUpPage</name>
     <message>
         <source>Sign Up</source>
-        <translation>Iniciar sesión</translation>
+        <translation>Registrieren</translation>
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation>Has introducido un código de autorización erróneo</translation>
+        <translation>Sie haben einen falschen Autorisierungscode eingegeben</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
-        <translation>Espera a recibir el SMS con el código de activación y pulsa &apos;Iniciar sesión&apos;</translation>
+        <translation>Warten Sie auf die SMS mit dem Aktivierungscode und gehen Sie auf &apos;einloggen&apos;</translation>
     </message>
     <message>
         <source>First Name</source>
-        <translation>Nombre</translation>
+        <translation>Vorname</translation>
     </message>
     <message>
         <source>Last Name (Optional)</source>
-        <translation>Apellidos (Opcional)</translation>
+        <translation>Nachname (Optional)</translation>
     </message>
     <message>
         <source>Authorization Code</source>
-        <translation>Código de autorización</translation>
+        <translation>Autorisierungscode</translation>
     </message>
 </context>
 <context>
     <name>TelegramAction</name>
     <message>
         <source>%1 has left the group</source>
-        <translation>%1 ha dejado el grupo</translation>
+        <translation>%1 hat die Gruppe verlassen</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
-        <translation>%1 se ha unido al grupo</translation>
+        <translation>%1 ist der Gruppe beigetreten</translation>
     </message>
     <message>
         <source>Secret chat created by %1</source>
-        <translation>Chat secreto creado por %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Group created by %1</source>
-        <translation>Grupo creado por %1</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>TelegramHelper</name>
     <message>
         <source>Recently</source>
-        <translation>Recientemente</translation>
+        <translation>kürzlich</translation>
     </message>
     <message>
         <source>Last Month</source>
-        <translation>Último mes</translation>
+        <translation>letzten Monat</translation>
     </message>
     <message>
         <source>Last Week</source>
-        <translation>Última semana</translation>
+        <translation>letzte Woche</translation>
     </message>
     <message>
         <source>Online</source>
-        <translation>En línea</translation>
+        <translation>Online</translation>
     </message>
     <message>
         <source>Unknown</source>
-        <translation>Desconocido</translation>
+        <translation>Unbekannt</translation>
     </message>
     <message>
         <source>Document</source>
-        <translation>Documento</translation>
+        <translation>Dokument</translation>
     </message>
     <message>
         <source>Contact</source>
-        <translation>Contacto</translation>
+        <translation>Kontakt</translation>
     </message>
     <message>
         <source>Video</source>
-        <translation>Vídeo</translation>
+        <translation>Video</translation>
     </message>
     <message>
         <source>Unsupported</source>
-        <translation>No soportado</translation>
+        <translation>nicht unterstützt</translation>
     </message>
     <message>
         <source>Audio</source>
@@ -624,7 +622,7 @@ Elije un contacto seleccionando &quot;Contactos&quot; en el menú de desplegable
     </message>
     <message>
         <source>Photo</source>
-        <translation>Foto</translation>
+        <translation>Photo</translation>
     </message>
     <message>
         <source>Geo</source>
@@ -632,44 +630,44 @@ Elije un contacto seleccionando &quot;Contactos&quot; en el menú de desplegable
     </message>
     <message>
         <source>Last Seen %1</source>
-        <translation>Última vez %1</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>UserInfo</name>
     <message>
         <source>Phone Number</source>
-        <translation>Número de teléfono</translation>
+        <translation>Telefonnnummer</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation>Acciones</translation>
+        <translation>Aktionen</translation>
     </message>
     <message>
         <source>Send Message</source>
-        <translation>Enviar mensaje</translation>
+        <translation>Nachricht senden</translation>
     </message>
     <message>
         <source>Begin Secret Chat</source>
-        <translation>Iniciar chat secreto</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>UserMenu</name>
     <message>
         <source>Send Message</source>
-        <translation>Enviar mensaje</translation>
+        <translation>Nachricht senden</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation>Perfil</translation>
+        <translation>Profil</translation>
     </message>
 </context>
 <context>
     <name>UsersPage</name>
     <message>
         <source>Contacts</source>
-        <translation>Contactos</translation>
+        <translation>Kontakte</translation>
     </message>
 </context>
 </TS>

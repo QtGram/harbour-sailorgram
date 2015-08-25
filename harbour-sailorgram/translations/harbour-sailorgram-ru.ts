@@ -57,7 +57,7 @@
     </message>
     <message>
         <source>An unofficial Telegram Client for SailfishOS</source>
-        <translation>Неофициальное приложение Telegram для  Sailfish OS</translation>
+        <translation>Неофициальное приложение Telegram для Sailfish OS</translation>
     </message>
     <message>
         <source>Developer</source>
@@ -347,11 +347,11 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
-        <translation>Сохранить в Галлерее</translation>
+        <translation>Сохранить в Галерее</translation>
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation>Изображение сохранено в Галлерее</translation>
+        <translation>Изображение сохранено в Галерее</translation>
     </message>
 </context>
 <context>
@@ -361,27 +361,23 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <translation>Загрузка медиа</translation>
     </message>
     <message>
-        <source>Image saved in Gallery</source>
-        <translation type="vanished">Изображение сохранено в Галлерее</translation>
-    </message>
-    <message>
         <source>Media saved in Gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>Медиа сохранено в Галерее</translation>
     </message>
 </context>
 <context>
     <name>MessageAudio</name>
     <message>
         <source>Duration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Длительность: %1</translation>
     </message>
     <message>
         <source>Audio recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Аудиозапись</translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Размер: %1</translation>
     </message>
 </context>
 <context>
@@ -441,15 +437,15 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>MessageVideo</name>
     <message>
         <source>Video recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Видеозапись</translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Размер: %1</translation>
     </message>
     <message>
         <source>Duration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Длительность: %1</translation>
     </message>
 </context>
 <context>
@@ -520,7 +516,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>SecretChatWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>
-        <translation>Ждём появления %1 в онлайн</translation>
+        <translation>Ждём появления %1 в сети</translation>
     </message>
 </context>
 <context>
@@ -535,7 +531,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Disable background</source>
-        <translation type="unfinished"></translation>
+        <translation>Отключить фоновый рисунок</translation>
     </message>
 </context>
 <context>
@@ -577,11 +573,11 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Secret chat created by %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 создал(а) секретный диалог</translation>
     </message>
     <message>
         <source>Group created by %1</source>
-        <translation>Группа создал %1</translation>
+        <translation>%1 создал(а) беседу</translation>
     </message>
 </context>
 <context>

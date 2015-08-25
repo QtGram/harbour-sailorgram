@@ -61,15 +61,15 @@
     </message>
     <message>
         <source>Developer</source>
-        <translation>Kehittäjä:</translation>
+        <translation>Kehittäjä</translation>
     </message>
     <message>
         <source>Icon Designer</source>
-        <translation>Kuvan suunnittelija:</translation>
+        <translation>Kuvan suunnittelija</translation>
     </message>
     <message>
         <source>GitHub Repository</source>
-        <translation>GitHub sijoituspaikka:</translation>
+        <translation>GitHub sijoituspaikka</translation>
     </message>
     <message>
         <source>Translators</source>
@@ -77,7 +77,7 @@
     </message>
     <message>
         <source>Translation Platform</source>
-        <translation>Käännösten julkaisualusta:</translation>
+        <translation>Käännösten julkaisualusta</translation>
     </message>
 </context>
 <context>
@@ -361,27 +361,23 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
         <translation>Ladataan mediatiedostoa...</translation>
     </message>
     <message>
-        <source>Image saved in Gallery</source>
-        <translation type="vanished">Kuva on tallennettu galleriaan</translation>
-    </message>
-    <message>
         <source>Media saved in Gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>Mediatiedosto tallennettu galleriaan</translation>
     </message>
 </context>
 <context>
     <name>MessageAudio</name>
     <message>
         <source>Duration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kesto: %1</translation>
     </message>
     <message>
         <source>Audio recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Äänitallenne</translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Koko: %1</translation>
     </message>
 </context>
 <context>
@@ -430,26 +426,26 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     </message>
     <message>
         <source>Download</source>
-        <translation type="unfinished"></translation>
+        <translation>Lataa</translation>
     </message>
     <message>
         <source>Downloading media</source>
-        <translation type="unfinished">Ladataan mediatiedostoa...</translation>
+        <translation>Ladataan mediatiedostoa</translation>
     </message>
 </context>
 <context>
     <name>MessageVideo</name>
     <message>
         <source>Video recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Videotallenne</translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Koko: %1</translation>
     </message>
     <message>
         <source>Duration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kesto: %1</translation>
     </message>
 </context>
 <context>
@@ -535,7 +531,7 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     </message>
     <message>
         <source>Disable background</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista taustakuva käytöstä</translation>
     </message>
 </context>
 <context>
@@ -577,11 +573,11 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     </message>
     <message>
         <source>Secret chat created by %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 loi salaisen keskustelun</translation>
     </message>
     <message>
         <source>Group created by %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 loi tämän ryhmän</translation>
     </message>
 </context>
 <context>

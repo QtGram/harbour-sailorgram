@@ -245,7 +245,7 @@ Wähle zwischen a-z, 0-9 und Unterstrich.
 Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <translation>Keine Konversationen
 
-wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
+wähle einen Kontakt über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
     </message>
     <message>
         <source>Chats</source>
@@ -307,7 +307,7 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
     </message>
     <message>
         <source>%1 unread message</source>
-        <translation>1% ungelesene Nachricht</translation>
+        <translation>%1 ungelesene Nachricht</translation>
     </message>
 </context>
 <context>
@@ -362,27 +362,23 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
         <translation>Lade Media</translation>
     </message>
     <message>
-        <source>Image saved in Gallery</source>
-        <translation type="vanished">Bild wurde in der Galerie abgelegt</translation>
-    </message>
-    <message>
         <source>Media saved in Gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>Medien wurden in der Galerie abgelegt</translation>
     </message>
 </context>
 <context>
     <name>MessageAudio</name>
     <message>
         <source>Duration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Dauer: %1</translation>
     </message>
     <message>
         <source>Audio recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Tonaufnahme</translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Größe: %1</translation>
     </message>
 </context>
 <context>
@@ -431,26 +427,26 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
     </message>
     <message>
         <source>Download</source>
-        <translation type="unfinished"></translation>
+        <translation>Herunterladen</translation>
     </message>
     <message>
         <source>Downloading media</source>
-        <translation type="unfinished">Lade Media</translation>
+        <translation>Lade Media</translation>
     </message>
 </context>
 <context>
     <name>MessageVideo</name>
     <message>
         <source>Video recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Videoaufnahme</translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Größe: %1</translation>
     </message>
     <message>
         <source>Duration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Dauer: %1</translation>
     </message>
 </context>
 <context>
@@ -532,11 +528,11 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation>Nachricht senden durch, dass drücken der Entertaste </translation>
+        <translation>Nachricht durch Drücken der Entertaste senden</translation>
     </message>
     <message>
         <source>Disable background</source>
-        <translation type="unfinished"></translation>
+        <translation>Hintergrund deaktivieren.</translation>
     </message>
 </context>
 <context>
@@ -578,11 +574,11 @@ wähle einen Kontakte über &quot;Kontakte&quot; im Pull-Down-Menü</translation
     </message>
     <message>
         <source>Secret chat created by %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Geheime Konversation gestartet von %1</translation>
     </message>
     <message>
         <source>Group created by %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppe erstellt von %1</translation>
     </message>
 </context>
 <context>

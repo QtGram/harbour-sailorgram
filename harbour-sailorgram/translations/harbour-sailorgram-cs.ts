@@ -245,7 +245,7 @@ Minimální délka je 5 znaků .</translation>
 Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <translation>Žádné rozhovory
 
-Vyberte si kontakt výběrem &quot;Kontakty&quot; z menu</translation>
+Přidejte osobu výběrem &quot;Kontakty&quot; z menu</translation>
     </message>
     <message>
         <source>Chats</source>
@@ -361,12 +361,8 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z menu</translation>
         <translation>Stahovám média</translation>
     </message>
     <message>
-        <source>Image saved in Gallery</source>
-        <translation type="vanished">Obraz uložen v galerii</translation>
-    </message>
-    <message>
         <source>Media saved in Gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>Média uložena v galerii</translation>
     </message>
 </context>
 <context>

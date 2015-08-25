@@ -84,7 +84,7 @@
     <name>AddContactsPage</name>
     <message>
         <source>Add Chat Member</source>
-        <translation>Ajouter un membre</translation>
+        <translation>Ajouter un participant</translation>
     </message>
 </context>
 <context>
@@ -136,10 +136,10 @@
 
 You can use a-z, 0-9 and underscores.
 Minimum length is 5 characters.</source>
-        <translation>Vous pouvez choisir un nom d&apos;utilisateur sur Telegram. Si vous faîtes cela, les autres utilisateurs pourrons vous contacter sans connaître votre numéro de téléphone.
+        <translation>Vous pouvez choisir un nom d&apos;utilisateur sur Telegram. Si vous faites cela, les autres utilisateurs pourront vous contacter sans connaître votre numéro de téléphone.
 
 Vous pouvez utiliser a-z, 0-9 et tiret bas.
-Longueur minimum est de 5 caractères.</translation>
+La longueur minimum est de 5 caractères.</translation>
     </message>
 </context>
 <context>
@@ -175,7 +175,7 @@ Longueur minimum est de 5 caractères.</translation>
     </message>
     <message>
         <source>Login Again</source>
-        <translation>Se conecter à nouveau</translation>
+        <translation>Se connecter à nouveau</translation>
     </message>
     <message>
         <source>Telegram Status</source>
@@ -318,7 +318,7 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
     </message>
     <message>
         <source>New Group</source>
-        <translation>Nouveau group</translation>
+        <translation>Nouveau groupe</translation>
     </message>
 </context>
 <context>
@@ -347,11 +347,11 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
-        <translation>Enregistrer dans Gallerie</translation>
+        <translation>Enregistrer dans la galerie</translation>
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation>Image enregistrée dans Gallerie</translation>
+        <translation>Image enregistrée dans la galerie</translation>
     </message>
 </context>
 <context>
@@ -359,10 +359,6 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
     <message>
         <source>Downloading media</source>
         <translation>Téléchargement du média</translation>
-    </message>
-    <message>
-        <source>Image saved in Gallery</source>
-        <translation type="vanished">Image enregistrée dans Gallerie</translation>
     </message>
     <message>
         <source>Media saved in Gallery</source>
@@ -373,15 +369,15 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
     <name>MessageAudio</name>
     <message>
         <source>Duration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Durée : %1</translation>
     </message>
     <message>
         <source>Audio recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrement audio</translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Taille : %1</translation>
     </message>
 </context>
 <context>
@@ -430,26 +426,26 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
     </message>
     <message>
         <source>Download</source>
-        <translation type="unfinished"></translation>
+        <translation>Téléchargement</translation>
     </message>
     <message>
         <source>Downloading media</source>
-        <translation type="unfinished">Téléchargement du média</translation>
+        <translation>Téléchargement du média</translation>
     </message>
 </context>
 <context>
     <name>MessageVideo</name>
     <message>
         <source>Video recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrement vidéo</translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Taille : %1</translation>
     </message>
     <message>
         <source>Duration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Durée : %1</translation>
     </message>
 </context>
 <context>
@@ -535,7 +531,7 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
     </message>
     <message>
         <source>Disable background</source>
-        <translation type="unfinished"></translation>
+        <translation>Supprimer le fond d&apos;écran</translation>
     </message>
 </context>
 <context>
@@ -577,11 +573,11 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
     </message>
     <message>
         <source>Secret chat created by %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Conversation secrète créée par %1</translation>
     </message>
     <message>
         <source>Group created by %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Groupe créé par %1</translation>
     </message>
 </context>
 <context>
@@ -636,7 +632,7 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
     </message>
     <message>
         <source>Last Seen %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Dernière connexion : %1</translation>
     </message>
 </context>
 <context>
@@ -651,7 +647,7 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
     </message>
     <message>
         <source>Send Message</source>
-        <translation>Envoyer le message</translation>
+        <translation>Envoyer un message</translation>
     </message>
     <message>
         <source>Begin Secret Chat</source>

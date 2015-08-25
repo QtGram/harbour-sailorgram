@@ -361,12 +361,8 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
         <translation>Bezig met het downloaden van de media</translation>
     </message>
     <message>
-        <source>Image saved in Gallery</source>
-        <translation type="vanished">De afbeelding is opgeslagen naar de Galerij</translation>
-    </message>
-    <message>
         <source>Media saved in Gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>Media opgeslagen naar Galerij</translation>
     </message>
 </context>
 <context>
