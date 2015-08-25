@@ -393,6 +393,7 @@ void TelegramFileHandler::refresh()
         {
             p->telegram->getFileJustCheck(p->location);
             p->location->download()->locationChanged();
+            p->location->download()->downloadedChanged();
         }
         if(p->thumb_location)
         {
@@ -455,6 +456,12 @@ void TelegramFileHandler::dwl_locationChanged()
 
 void TelegramFileHandler::dwl_downloadedChanged()
 {
+    if(p->location && p->downloaded != p->location->download()->downloaded())
+    {
+        p->downloaded = p->location->download()->downloaded();
+        Q_EMIT downloadedChanged();
+    }
+
     Q_EMIT progressCurrentByteChanged();
     Q_EMIT progressPercentChanged();
 }

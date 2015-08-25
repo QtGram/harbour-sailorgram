@@ -823,8 +823,8 @@ void DatabaseCore::insertVideo(const Video &video)
 
     query.bindValue(":id", video.id());
     query.bindValue(":dcId", video.dcId());
-    query.bindValue(":caption", video.caption());
-    query.bindValue(":mimeType", video.mimeType());
+    query.bindValue(":caption", QString());
+    query.bindValue(":mimeType", QString());
     query.bindValue(":date", video.date());
     query.bindValue(":duration", video.duration());
     query.bindValue(":h", video.h());
@@ -913,7 +913,7 @@ void DatabaseCore::insertPhoto(const Photo &photo)
                   "VALUES (:id, :caption, :date, :accessHash, :userId);");
 
     query.bindValue(":id", photo.id());
-    query.bindValue(":caption", photo.caption());
+    query.bindValue(":caption", QString());
     query.bindValue(":date", photo.date());
     query.bindValue(":accessHash", photo.accessHash());
     query.bindValue(":userId", photo.userId());
