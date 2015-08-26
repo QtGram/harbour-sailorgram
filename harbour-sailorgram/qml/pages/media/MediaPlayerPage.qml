@@ -5,12 +5,8 @@ import "../../models"
 import "../../components"
 import "../../components/mediaplayer"
 
-Page
+MediaPage
 {
-    property Context context
-    property Message message
-    property FileHandler fileHandler
-
     id: mediaplayerpage
     allowedOrientations: defaultAllowedOrientations
 

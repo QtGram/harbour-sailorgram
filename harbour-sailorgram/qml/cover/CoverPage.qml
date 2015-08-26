@@ -60,6 +60,8 @@ CoverBackground
 
     CoverActionList
     {
+        enabled: pageStack.currentPage.isMediaPage !== true
+
         CoverAction
         {
             iconSource: "image://theme/icon-cover-message"

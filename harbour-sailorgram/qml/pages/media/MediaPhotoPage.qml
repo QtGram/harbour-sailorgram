@@ -4,12 +4,8 @@ import harbour.sailorgram.TelegramQml 1.0
 import "../../models"
 import "../../components"
 
-Page
+MediaPage
 {
-    property Context context
-    property Message message
-    property FileHandler fileHandler
-
     id: mediaphotopage
     allowedOrientations: defaultAllowedOrientations
 
