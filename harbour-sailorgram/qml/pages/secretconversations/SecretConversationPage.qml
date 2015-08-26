@@ -17,7 +17,7 @@ Page
     property Dialog dialog
     property EncryptedChat chat: context.telegram.encryptedChat(dialog.peer.userId)
     property User user: context.telegram.user((chat.adminId === context.telegram.me) ? chat.participantId : chat.adminId)
-    property bool muted: context.telegram.userData.isMuted(TelegramHelper.peerId(dialog))
+    property bool muted: context.telegram.userData.isMuted(TelegramHelper.conversationId(dialog, context))
 
     id: secretconversationpage
     allowedOrientations: defaultAllowedOrientations
@@ -56,12 +56,7 @@ Page
         target: context.telegram.userData
 
         onMuteChanged: {
-            var peerid = TelegramHelper.peerId(dialog);
-
-            if(id !== peerid)
-                return;
-
-            secretconversationpage.muted = context.telegram.userData.isMuted(peerid);
+            secretconversationpage.muted = context.telegram.userData.isMuted(TelegramHelper.conversationId(dialog, context));
         }
     }
 
@@ -73,6 +68,7 @@ Page
         ConversationMenu
         {
             id: conversationmenu
+            page: secretconversationpage
             context: secretconversationpage.context
             dialog: secretconversationpage.dialog
         }
@@ -129,7 +125,7 @@ Page
             MessageBar
             {
                 id: messagebar
-                anchors.fill: parent
+                anchors { left: parent.left; bottom: parent.bottom; right: parent.right }
                 context: secretconversationpage.context
                 dialog: secretconversationpage.dialog
                 visible: chat && (chat.classType !== TelegramConstants.typeEncryptedChatDiscarded) && (chat.classType !== TelegramConstants.typeEncryptedChatWaiting)

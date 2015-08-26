@@ -8,21 +8,25 @@ import "../../js/TelegramConstants.js" as TelegramConstants
 
 TelegramPullDownMenu
 {
+    property Page page
     property Dialog dialog
 
     id: conversationmenu
 
     MenuItem
     {
-        text: parent.muted ? qsTr("Enable Notifications") : qsTr("Disable Notifications")
+        text: page.muted ? qsTr("Enable Notifications") : qsTr("Disable Notifications")
 
         onClicked: {
-            var peerid = TelegramHelper.peerId(dialog);
+            var conversationid = TelegramHelper.conversationId(dialog, context);
 
-            if(secretconversationpage.muted)
-                context.telegram.userData.removeMute(peerid);
+            if(!conversationid)
+                return;
+
+            if(page.muted)
+                context.telegram.userData.removeMute(conversationid);
             else
-                context.telegram.userData.addMute(peerid);
+                context.telegram.userData.addMute(conversationid);
         }
     }
 

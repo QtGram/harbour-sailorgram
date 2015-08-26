@@ -15,7 +15,7 @@ Page
     property Dialog dialog
     property Chat chat
     property User user
-    property bool muted: context.telegram.userData.isMuted(TelegramHelper.peerId(dialog))
+    property bool muted: context.telegram.userData.isMuted(TelegramHelper.conversationId(dialog, context))
 
     id: conversationpage
     allowedOrientations: defaultAllowedOrientations
@@ -61,12 +61,7 @@ Page
         target: context.telegram.userData
 
         onMuteChanged: {
-            var peerid = TelegramHelper.peerId(dialog);
-
-            if(id !== peerid)
-                return;
-
-            conversationpage.muted = context.telegram.userData.isMuted(peerid);
+            conversationpage.muted = context.telegram.userData.isMuted(TelegramHelper.conversationId(dialog, context));
         }
     }
 
@@ -78,6 +73,7 @@ Page
         ConversationMenu
         {
             id: conversationmenu
+            page: conversationpage
             context: conversationpage.context
             dialog: conversationpage.dialog
         }

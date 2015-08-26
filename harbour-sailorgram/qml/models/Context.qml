@@ -18,7 +18,6 @@ QtObject
     property ScreenBlank screenblank: ScreenBlank { }
     property Notifications notifications: Notifications { }
     property Dialog foregroundDialog: telegram.nullDialog
-    property Message lastMessage: telegram.nullMessage
 
     property HeartBeat heartbeat: HeartBeat {
         telegram: context.telegram
@@ -48,28 +47,21 @@ QtObject
         onIncomingMessage: {
             var userdata = context.telegram.userData;
 
-            if(userdata.isMuted(msg.fromId) || TelegramHelper.isActionMessage(msg)) /* Respect Notification Settings */
+            if(TelegramHelper.isActionMessage(msg)) /* Do not notify for Action Messages */
                 return;
 
-            var currentpeerid = 0;
+            var dialog = context.telegram.messageDialog(msg.id);
+            var conversationid = TelegramHelper.conversationId(dialog, context);
+
+            if(userdata.isMuted(conversationid))
+                return;
+
             var user = context.telegram.user(msg.fromId);
 
-            if(foregroundDialog !== context.telegram.nullDialog) {
-                if(foregroundDialog.encrypted) {
-                    var chat = context.telegram.encryptedChat(foregroundDialog.peer.userId);
-                    currentpeerid = (chat.adminId === context.telegram.me) ? chat.participantId : chat.adminId;
-                }
-                else
-                    currentpeerid = TelegramHelper.peerId(foregroundDialog);
-            }
-
-            if((msg.fromId !== currentpeerid) || ((msg.fromId === currentpeerid) && (foregroundDialog.encrypted !== msg.encrypted)) || (Qt.application.state !== Qt.ApplicationActive)) {
+            if((dialog !== foregroundDialog) || (Qt.application.state !== Qt.ApplicationActive))
                 notifications.send(TelegramHelper.completeName(user), TelegramHelper.messageContent(msg), user.photo.photoSmall.download.location, true, (Qt.application.state === Qt.ApplicationActive));
-                return;
-            }
-
-            context.lastMessage = msg;
-            notifications.beep();
+            else
+                notifications.beep();
         }
 
         onPhoneNumberChanged: {
