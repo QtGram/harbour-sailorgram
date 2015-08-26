@@ -94,6 +94,7 @@ class TELEGRAMQMLSHARED_EXPORT TelegramQml : public QObject
     Q_PROPERTY(QString tempPath      READ tempPath      WRITE setTempPath      NOTIFY tempPathChanged     )
 
     Q_PROPERTY(QObject* newsLetterDialog READ newsLetterDialog WRITE setNewsLetterDialog NOTIFY newsLetterDialogChanged     )
+    Q_PROPERTY(bool autoAcceptEncrypted READ autoAcceptEncrypted WRITE setAutoAcceptEncrypted NOTIFY autoAcceptEncryptedChanged)
     Q_PROPERTY(bool autoCleanUpMessages READ autoCleanUpMessages WRITE setAutoCleanUpMessages NOTIFY autoCleanUpMessagesChanged)
 
     Q_PROPERTY(bool  online               READ online WRITE setOnline NOTIFY onlineChanged)
@@ -167,6 +168,9 @@ public:
     void setNewsLetterDialog(QObject *dialog);
     QObject *newsLetterDialog() const;
 
+    void setAutoAcceptEncrypted(bool stt);
+    bool autoAcceptEncrypted() const;
+
     void setAutoCleanUpMessages(bool stt);
     bool autoCleanUpMessages() const;
 
@@ -203,6 +207,14 @@ public:
     QString authSignUpError() const;
     QString authSignInError() const;
     QString error() const;
+
+    Q_INVOKABLE void authCheckPhone(const QString &phone);
+
+    Q_INVOKABLE void mute(qint64 peerId);
+    Q_INVOKABLE void unmute(qint64 peerId);
+    void accountUpdateNotifySettings(qint64 peerId, qint32 muteUntil);
+
+    Q_INVOKABLE void helpGetInviteText(const QString &langCode);
 
     Q_INVOKABLE DialogObject *dialog(qint64 id) const;
     Q_INVOKABLE MessageObject *message(qint64 id) const;
@@ -254,17 +266,25 @@ public:
 
 public Q_SLOTS:
     void authLogout();
+    void authResetAuthorizations();
     void authSendCall();
     void authSendCode();
     void authSendInvites(const QStringList &phoneNumbers, const QString &inviteText);
     void authSignIn(const QString &code);
     void authSignUp(const QString &code, const QString &firstName, const QString &lastName);
 
+    void accountRegisterDevice(const QString &token, const QString &appVersion = QString::null);
+    void accountUnregisterDevice(const QString &token);
+    void accountUpdateProfile(const QString &firstName, const QString &lastName);
+    void accountCheckUsername(const QString &username);
+    void accountUpdateUsername(const QString &username);
+
     void sendMessage( qint64 dialogId, const QString & msg, int replyTo = 0 );
     bool sendMessageAsDocument( qint64 dialogId, const QString & msg );
     void sendGeo(qint64 dialogId, qreal latitude, qreal longitude, int replyTo = 0);
 
     void addContact(const QString &firstName, const QString &lastName, const QString &phoneNumber);
+    void addContacts(const QVariantList &vcontacts);
 
     void forwardMessages( QList<int> msgIds, qint64 peerId );
     void deleteMessages(QList<int> msgIds );
@@ -274,6 +294,7 @@ public Q_SLOTS:
     void messagesAddChatUser(qint64 chatId, qint64 userId, qint32 fwdLimit = 0);
     void messagesDeleteChatUser(qint64 chatId, qint64 userId);
     void messagesEditChatTitle(qint32 chatId, const QString &title);
+    void messagesEditChatPhoto(qint32 chatId, const QString &filePath);
 
     void messagesDeleteHistory(qint64 peerId);
     void messagesSetTyping(qint64 peerId, bool stt);
@@ -297,6 +318,7 @@ public Q_SLOTS:
     void setProfilePhoto( const QString & fileName );
 
     void timerUpdateDialogs( qint32 duration = 1000 );
+    void timerUpdateContacts( qint32 duration = 1000 );
     void cleanUpMessages();
 
     void updatesGetState();
@@ -313,6 +335,7 @@ Q_SIGNALS:
     void configPathChanged();
     void publicKeyFileChanged();
     void telegramChanged();
+    void autoAcceptEncryptedChanged();
     void autoCleanUpMessagesChanged();
     void userDataChanged();
     void onlineChanged();
@@ -338,6 +361,7 @@ Q_SIGNALS:
     void authPhoneRegisteredChanged();
     void authPhoneInvitedChanged();
     void authPhoneCheckedChanged();
+    void phoneChecked(QString phone, bool phoneRegistered);
     void authPasswordProtectedError();
     void connectedChanged();
 
@@ -348,8 +372,14 @@ Q_SIGNALS:
     void authCallRequested( bool ok );
     void authInvitesSent( bool ok );
 
+    void accountUsernameChecked(bool ok);
+
     void userBecomeOnline(qint64 userId);
     void userStartTyping(qint64 userId, qint64 dId);
+
+    void contactsImportedContacts(qint32 importedCount, qint32 retryCount);
+
+    void helpGetInviteTextAnswer(qint64 id, QString message);
 
     void errorChanged();
     void meChanged();
@@ -360,6 +390,8 @@ Q_SIGNALS:
 
     void searchDone(const QList<qint64> &messages);
     void contactsFounded(const QList<qint32> &contacts);
+
+    void errorSignal(qint64 id, qint32 errorCode, QString functionName, QString errorText);
 
 protected:
     void try_init();
@@ -375,10 +407,12 @@ private Q_SLOTS:
     void authCheckPhone_slt(qint64 id, bool phoneRegistered);
     void authSignInError_slt(qint64 id, qint32 errorCode, QString errorText);
     void authSignUpError_slt(qint64 id, qint32 errorCode, QString errorText);
-    void error(qint64 id, qint32 errorCode, QString functionName, QString errorText);
+    void error_slt(qint64 id, qint32 errorCode, QString errorText, QString functionName);
 
     void accountGetPassword_slt(qint64 msgId, const AccountPassword &password);
     void accountGetWallPapers_slt(qint64 id, const QList<WallPaper> & wallPapers);
+    void accountCheckUsername_slt(qint64 id, bool ok);
+    void accountUpdateUsername_slt(qint64 id, const User &user);
     void photosUploadProfilePhoto_slt(qint64 id, const Photo & photo, const QList<User> & users);
     void photosUpdateProfilePhoto_slt(qint64 id, const UserProfilePhoto & userProfilePhoto);
     void contactsImportContacts_slt(qint64 id, const QList<ImportedContact> &importedContacts, const QList<qint64> &retryContacts, const QList<User> &users);

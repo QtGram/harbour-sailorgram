@@ -15,6 +15,8 @@
 #include "tagfiltermodel.h"
 #include "telegramchatparticipantsmodel.h"
 #include "telegramcontactsmodel.h"
+#include "telegramdetailedcontactsmodel.h"
+#include "telegramcontactsfiltermodel.h"
 #include "telegramdialogsmodel.h"
 #include "telegramfilehandler.h"
 #include "telegrammessagesmodel.h"
@@ -45,6 +47,8 @@ void TelegramQmlInitializer::init(const char *uri)
     qmlRegisterType<TagFilterModel>(uri, 1, 0, "TagFilterModel");
     qmlRegisterType<TelegramChatParticipantsModel>(uri, 1, 0, "ChatParticipantsModel");
     qmlRegisterType<TelegramContactsModel>(uri, 1, 0, "ContactsModel");
+    qmlRegisterType<TelegramContactsFilterModel>(uri, 1, 0, "ContactsFilterModel");
+    qmlRegisterType<TelegramDetailedContactsModel>(uri, 1, 0, "DetailedContactsModel");
     qmlRegisterType<TelegramDialogsModel>(uri, 1, 0, "DialogsModel");
     qmlRegisterType<TelegramFileHandler>(uri, 1, 0, "FileHandler");
     qmlRegisterType<TelegramMessagesModel>(uri, 1, 0, "MessagesModel");

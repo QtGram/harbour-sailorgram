@@ -69,8 +69,12 @@ To build TelegramQml in the plugin mode run:
 and to build in the library mode run:
 
     qmake -r .. PREFIX=/usr BUILD_MODE+=lib
+
+To make use of thumbnailer on the Ubuntu phone (which does not ship with ffmpeg), add the following to the qmake commands above:
+
+    LIBS+=-lthumbnailer DEFINES+=UBUNTU_PHONE
     
-then start build process:
+Then start build process:
     
     make
     make install

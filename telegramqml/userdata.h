@@ -59,6 +59,9 @@ public:
     QString configPath() const;
 
 public Q_SLOTS:
+    void setPushToken(const QString &token);
+    QString pushToken() const;
+
     void addMute( int id );
     void removeMute( int id );
     QList<int> mutes() const;
@@ -86,7 +89,7 @@ public Q_SLOTS:
     MessageUpdate messageUpdateItem(int id);
 
     void setValue( const QString & key, const QString & value );
-    QString value( const QString & key );
+    QString value( const QString & key ) const;
 
     void reconnect();
     void disconnect();

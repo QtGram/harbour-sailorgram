@@ -1017,8 +1017,8 @@ Video DatabaseCore::readVideo(qint64 id)
 
     video.setId( record.value("id").toLongLong() );
     video.setDcId( record.value("dcId").toLongLong() );
-    video.setMimeType( record.value("mimeType").toString() );
-    video.setCaption( record.value("caption").toString() );
+//    video.setMimeType( record.value("mimeType").toString() );
+//    video.setCaption( record.value("caption").toString() );
     video.setDate( record.value("date").toLongLong() );
     video.setDuration( record.value("duration").toLongLong() );
     video.setSize( record.value("size").toLongLong() );
@@ -1131,7 +1131,7 @@ Photo DatabaseCore::readPhoto(qint64 id)
     const QSqlRecord &record = query.record();
 
     photo.setId( record.value("id").toLongLong() );
-    photo.setCaption( record.value("caption").toString() );
+//    photo.setCaption( record.value("caption").toString() );
     photo.setDate( record.value("date").toLongLong() );
     photo.setAccessHash( record.value("accessHash").toLongLong() );
     photo.setUserId( record.value("userId").toLongLong() );

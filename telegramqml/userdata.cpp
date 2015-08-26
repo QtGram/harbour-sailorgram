@@ -130,6 +130,19 @@ void UserData::reconnect()
     update_db();
 }
 
+// WARNING: Push notifications supported for one account only!
+void UserData::setPushToken(const QString &token)
+{
+    QString key = QString("push%1").arg(p->phoneNumber);
+    setValue(key, token);
+}
+
+QString UserData::pushToken() const
+{
+    QString key = QString("push%1").arg(p->phoneNumber);
+    return value(key);
+}
+
 void UserData::addMute(int id)
 {
     QSqlQuery mute_query(p->db);
@@ -348,7 +361,7 @@ void UserData::setValue(const QString &key, const QString &value)
     Q_EMIT valueChanged(key);
 }
 
-QString UserData::value(const QString &key)
+QString UserData::value(const QString &key) const
 {
     return p->general.value(key);
 }
