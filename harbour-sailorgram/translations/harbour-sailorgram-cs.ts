@@ -141,6 +141,10 @@ Minimum length is 5 characters.</source>
 Můžete používat a-z, 0-9 a &quot;_&quot;.
 Minimální délka je 5 znaků .</translation>
     </message>
+    <message>
+        <source>This username is already occupied</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChatInfo</name>

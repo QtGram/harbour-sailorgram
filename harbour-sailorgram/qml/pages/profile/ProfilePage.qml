@@ -27,7 +27,7 @@ Page
             MenuItem
             {
                 text: qsTr("Change Username")
-                onClicked: pageStack.push(Qt.resolvedUrl("ChangeUsernamePage.qml"), { "user": profilepage.user } )
+                onClicked: pageStack.push(Qt.resolvedUrl("ChangeUsernamePage.qml"), { "context": profilepage.context, "user": profilepage.user } )
             }
 
             MenuItem

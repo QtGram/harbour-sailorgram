@@ -141,6 +141,10 @@ Minimum length is 5 characters.</source>
 Du kan bruge a-z, 0-9 og understregninger.
 Minimumslængde er fem tegn.</translation>
     </message>
+    <message>
+        <source>This username is already occupied</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChatInfo</name>

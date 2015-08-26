@@ -138,6 +138,10 @@ You can use a-z, 0-9 and underscores.
 Minimum length is 5 characters.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>This username is already occupied</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChatInfo</name>

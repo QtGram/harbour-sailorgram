@@ -141,6 +141,10 @@ Minimum length is 5 characters.</source>
 می‌توانید از حروف a-z، شماره‌های ‎0-9 و زیرخط (_) استفاده کنید.
 کمینه‌ی طول آن باید ۵ نویسه باشد.</translation>
     </message>
+    <message>
+        <source>This username is already occupied</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChatInfo</name>

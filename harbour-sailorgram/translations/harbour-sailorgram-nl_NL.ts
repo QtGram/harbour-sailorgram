@@ -141,6 +141,10 @@ Minimum length is 5 characters.</source>
 U kunt a-z, 09 en liggende streepjes gebruiken.
 De minimale lengte is 5 tekens.</translation>
     </message>
+    <message>
+        <source>This username is already occupied</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChatInfo</name>

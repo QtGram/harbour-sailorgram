@@ -141,6 +141,10 @@ Minimum length is 5 characters.</source>
 Puedes utilizar a-z, 0-9 y guiones bajos.
 La longitud mínima es de 5 caracteres.</translation>
     </message>
+    <message>
+        <source>This username is already occupied</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChatInfo</name>
