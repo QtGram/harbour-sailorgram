@@ -34,7 +34,7 @@ Page
             UserItem {
                 id: useritem
                 anchors.fill: parent
-                context: context.telegram
+                context: userspage.context
                 user: context.telegram.user(item.userId)
             }
 
