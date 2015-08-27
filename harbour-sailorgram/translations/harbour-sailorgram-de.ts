@@ -178,6 +178,10 @@ Wähle zwischen a-z, 0-9 und Unterstrich.
         <source>Disable background</source>
         <translation type="unfinished">Hintergrund deaktivieren.</translation>
     </message>
+    <message>
+        <source>Hide chat header</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConnectingLabel</name>

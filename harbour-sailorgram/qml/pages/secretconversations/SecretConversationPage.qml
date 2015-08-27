@@ -76,8 +76,9 @@ Page
         PeerItem
         {
             id: header
+            visible: !context.chatheaderhidden
             anchors { left: parent.left; top: parent.top; right: parent.right; leftMargin: Theme.horizontalPageMargin; topMargin: Theme.paddingMedium }
-            height: Theme.itemSizeSmall
+            height: context.chatheaderhidden ? 0 : Theme.itemSizeSmall
             context: secretconversationpage.context
             dialog: secretconversationpage.dialog
             user: secretconversationpage.user

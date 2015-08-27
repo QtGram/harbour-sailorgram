@@ -178,6 +178,10 @@ Minimilängd är 5 tecken.</translation>
         <source>Disable background</source>
         <translation type="unfinished">Inaktivera bakgrund</translation>
     </message>
+    <message>
+        <source>Hide chat header</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConnectingLabel</name>

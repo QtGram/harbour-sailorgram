@@ -178,6 +178,10 @@ Minimální délka je 5 znaků .</translation>
         <source>Disable background</source>
         <translation type="unfinished">Vypnout pozadí</translation>
     </message>
+    <message>
+        <source>Hide chat header</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConnectingLabel</name>

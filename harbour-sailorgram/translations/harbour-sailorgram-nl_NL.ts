@@ -178,6 +178,10 @@ De minimale lengte is 5 tekens.</translation>
         <source>Disable background</source>
         <translation type="unfinished">Achtergrond uitschakelen</translation>
     </message>
+    <message>
+        <source>Hide chat header</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConnectingLabel</name>

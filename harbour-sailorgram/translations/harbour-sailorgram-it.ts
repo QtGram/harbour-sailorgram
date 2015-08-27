@@ -178,6 +178,10 @@ La lunghezza minima è di 5 caratteri.</translation>
         <source>Disable background</source>
         <translation type="unfinished">Disabilita sfondo</translation>
     </message>
+    <message>
+        <source>Hide chat header</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConnectingLabel</name>

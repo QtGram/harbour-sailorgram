@@ -13,6 +13,7 @@ QtObject
     readonly property string version: "0.71"
     property bool sendwithreturn: false
     property bool backgrounddisabled: false
+    property bool chatheaderhidden: false
 
     property TelegramLocalStorage telegramlocalstorage: TelegramLocalStorage { }
     property ScreenBlank screenblank: ScreenBlank { }

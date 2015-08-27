@@ -11,10 +11,15 @@ function openDatabase(version)
     return Storage.LocalStorage.openDatabaseSync("SailorGram", version, "SailorGram Settings", 2000000);  /* DB Size: 2MB */
 }
 
-function load()
+function load(fn)
 {
     instance().transaction(function(tx) {
          tx.executeSql("CREATE TABLE IF NOT EXISTS Settings(name TEXT PRIMARY KEY, value TEXT)");
+
+         if(!fn)
+             return;
+
+         fn(tx);
      });
 }
 

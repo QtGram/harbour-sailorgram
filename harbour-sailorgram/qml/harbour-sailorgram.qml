@@ -44,9 +44,11 @@ ApplicationWindow
         id: context
 
         Component.onCompleted: {
-            Settings.load();
-            context.sendwithreturn = parseInt(Settings.get("sendwithreturn"));
-            context.backgrounddisabled = parseInt(Settings.get("backgrounddisabled"));
+            Settings.load(function(tx) {
+                context.sendwithreturn = parseInt(Settings.transactionGet(tx, "sendwithreturn"));
+                context.backgrounddisabled = parseInt(Settings.transactionGet(tx, "backgrounddisabled"));
+                context.chatheaderhidden = parseInt(Settings.transactionGet(tx, "chatheaderhidden"));
+            });
         }
 
         Component.onDestruction: context.heartbeat.quit()
