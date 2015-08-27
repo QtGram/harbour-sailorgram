@@ -79,6 +79,18 @@
         <source>Translation Platform</source>
         <translation>Vertalingsplatform</translation>
     </message>
+    <message>
+        <source>Swedish</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Galician</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Belaruian</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AddContactsPage</name>

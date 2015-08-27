@@ -7,35 +7,44 @@ Page
 {
     property Context context
 
-    property list<QtObject> translatormodel: [ QtObject { readonly property string language: qsTr("Danish");
+    property list<QtObject> translatormodel: [ QtObject { readonly property string language: qsTr("Czech");
+                                                          readonly property string translators: "PawelSpoon"; },
+
+                                               QtObject { readonly property string language: qsTr("Danish");
                                                           readonly property string translators: "flywheeldk"; },
 
                                                QtObject { readonly property string language: qsTr("Dutch");
                                                           readonly property string translators: "Vistaus"; },
 
                                                QtObject { readonly property string language: qsTr("Finnish");
-                                                          readonly property string translators: "tattuh, ari_jarvio"; },
+                                                          readonly property string translators: "tattuh, ari_jarvio, reviewjolla"; },
+
+                                               QtObject { readonly property string language: qsTr("French");
+                                                          readonly property string translators: "Kwentin, Jordi, objectifnul, Nerfiaux, milamber"; },
 
                                                QtObject { readonly property string language: qsTr("German");
                                                           readonly property string translators: "Mee_Germany_Go, PawelSpoon, jupaja, kormarun, mdosch, nightmare, yoru, flacer"; },
-
-                                               QtObject { readonly property string language: qsTr("Russian");
-                                                          readonly property string translators: "gri4994"; },
-
-                                               QtObject { readonly property string language: qsTr("Spanish");
-                                                          readonly property string translators: "carmenfdezb"; },
-
-                                               QtObject { readonly property string language: qsTr("Czech");
-                                                          readonly property string translators: "PawelSpoon"; },
-
-                                               QtObject { readonly property string language: qsTr("French");
-                                                          readonly property string translators: "Kwentin, Jordi, milamber"; },
 
                                                QtObject { readonly property string language: qsTr("Italian");
                                                           readonly property string translators: "Watchmaker, Dax89, dallo28, koenigseggCCGT, massimo.grigolin"; },
 
                                                QtObject { readonly property string language: qsTr("Persian");
                                                           readonly property string translators: "najafi"; },
+
+                                               QtObject { readonly property string language: qsTr("Swedish");
+                                                          readonly property string translators: "eson"; },
+
+                                               QtObject { readonly property string language: qsTr("Galician");
+                                                          readonly property string translators: "pakoR"; },
+
+                                               QtObject { readonly property string language: qsTr("Russian");
+                                                          readonly property string translators: "gri4994, lewa, iKozzz"; },
+
+                                               QtObject { readonly property string language: qsTr("Belaruian");
+                                                          readonly property string translators: "iKozzz"; },
+
+                                               QtObject { readonly property string language: qsTr("Spanish");
+                                                          readonly property string translators: "carmenfdezb, massimo.grigolin"; },
 
                                                QtObject { readonly property string language: qsTr("Greek");
                                                           readonly property string translators: "pmelas"; } ]
