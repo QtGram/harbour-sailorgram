@@ -165,6 +165,21 @@ De minimale lengte is 5 tekens.</translation>
     </message>
 </context>
 <context>
+    <name>ChatSettingsPage</name>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished">Opslaan</translation>
+    </message>
+    <message>
+        <source>Send Messages by pressing Return Key</source>
+        <translation type="unfinished">Berichten versturen door op de Enter-toets te drukken</translation>
+    </message>
+    <message>
+        <source>Disable background</source>
+        <translation type="unfinished">Achtergrond uitschakelen</translation>
+    </message>
+</context>
+<context>
     <name>ConnectingLabel</name>
     <message>
         <source>Connecting...</source>
@@ -330,6 +345,72 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     <message>
         <source>New Secret Chat</source>
         <translation>Nieuw geheim chatgesprek</translation>
+    </message>
+</context>
+<context>
+    <name>DebugSettingsPage</name>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contacts</source>
+        <translation type="obsolete">Contactpersonen</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contacts:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Heartbeat:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connected</source>
+        <translation type="unfinished">Verbonden</translation>
+    </message>
+    <message>
+        <source>Error log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not Connected</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ErrorsPage</name>
+    <message>
+        <source>Clear errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error log is empty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error code:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Function:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Message:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -527,15 +608,27 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     <name>SettingsPage</name>
     <message>
         <source>Save</source>
-        <translation>Opslaan</translation>
+        <translation type="vanished">Opslaan</translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation>Berichten versturen door op de Enter-toets te drukken</translation>
+        <translation type="vanished">Berichten versturen door op de Enter-toets te drukken</translation>
     </message>
     <message>
         <source>Disable background</source>
-        <translation>Achtergrond uitschakelen</translation>
+        <translation type="vanished">Achtergrond uitschakelen</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Instellingen</translation>
+    </message>
+    <message>
+        <source>Chats</source>
+        <translation type="unfinished">Chatgesprekken</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

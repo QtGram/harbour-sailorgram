@@ -165,6 +165,21 @@ La longueur minimum est de 5 caractères.</translation>
     </message>
 </context>
 <context>
+    <name>ChatSettingsPage</name>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished">Enregistrer</translation>
+    </message>
+    <message>
+        <source>Send Messages by pressing Return Key</source>
+        <translation type="unfinished">Envoyer les messages en cliquant la touche Retour</translation>
+    </message>
+    <message>
+        <source>Disable background</source>
+        <translation type="unfinished">Supprimer le fond d&apos;écran</translation>
+    </message>
+</context>
+<context>
     <name>ConnectingLabel</name>
     <message>
         <source>Connecting...</source>
@@ -330,6 +345,72 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
     <message>
         <source>New Secret Chat</source>
         <translation>Nouvelle conversation secrète</translation>
+    </message>
+</context>
+<context>
+    <name>DebugSettingsPage</name>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contacts</source>
+        <translation type="obsolete">Contacts</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contacts:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Heartbeat:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connected</source>
+        <translation type="unfinished">Connecté</translation>
+    </message>
+    <message>
+        <source>Error log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not Connected</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ErrorsPage</name>
+    <message>
+        <source>Clear errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error log is empty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error code:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Function:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Message:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -527,15 +608,27 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
     <name>SettingsPage</name>
     <message>
         <source>Save</source>
-        <translation>Enregistrer</translation>
+        <translation type="vanished">Enregistrer</translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation>Envoyer les messages en cliquant la touche Retour</translation>
+        <translation type="vanished">Envoyer les messages en cliquant la touche Retour</translation>
     </message>
     <message>
         <source>Disable background</source>
-        <translation>Supprimer le fond d&apos;écran</translation>
+        <translation type="vanished">Supprimer le fond d&apos;écran</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Paramètres</translation>
+    </message>
+    <message>
+        <source>Chats</source>
+        <translation type="unfinished">Conversations</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

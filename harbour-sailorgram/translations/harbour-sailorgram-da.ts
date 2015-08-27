@@ -165,6 +165,21 @@ Minimumslængde er fem tegn.</translation>
     </message>
 </context>
 <context>
+    <name>ChatSettingsPage</name>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished">Gem</translation>
+    </message>
+    <message>
+        <source>Send Messages by pressing Return Key</source>
+        <translation type="unfinished">Send Meddelelse ved at trykke Retur</translation>
+    </message>
+    <message>
+        <source>Disable background</source>
+        <translation type="unfinished">Deaktivér baggrund</translation>
+    </message>
+</context>
+<context>
     <name>ConnectingLabel</name>
     <message>
         <source>Connecting...</source>
@@ -330,6 +345,72 @@ Vælg en kontakt fra menuen ovenfor</translation>
     <message>
         <source>New Secret Chat</source>
         <translation>Ny Hemmelig Chat</translation>
+    </message>
+</context>
+<context>
+    <name>DebugSettingsPage</name>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contacts</source>
+        <translation type="obsolete">Kontakter</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contacts:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Heartbeat:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connected</source>
+        <translation type="unfinished">Forbundet</translation>
+    </message>
+    <message>
+        <source>Error log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not Connected</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ErrorsPage</name>
+    <message>
+        <source>Clear errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error log is empty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error code:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Function:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Message:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -527,15 +608,27 @@ Vælg en kontakt fra menuen ovenfor</translation>
     <name>SettingsPage</name>
     <message>
         <source>Save</source>
-        <translation>Gem</translation>
+        <translation type="vanished">Gem</translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation>Send Meddelelse ved at trykke Retur</translation>
+        <translation type="vanished">Send Meddelelse ved at trykke Retur</translation>
     </message>
     <message>
         <source>Disable background</source>
-        <translation>Deaktivér baggrund</translation>
+        <translation type="vanished">Deaktivér baggrund</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Indstillinger</translation>
+    </message>
+    <message>
+        <source>Chats</source>
+        <translation type="unfinished">Chats</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

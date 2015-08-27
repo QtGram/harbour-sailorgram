@@ -165,6 +165,21 @@ La lunghezza minima è di 5 caratteri.</translation>
     </message>
 </context>
 <context>
+    <name>ChatSettingsPage</name>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished">Salva</translation>
+    </message>
+    <message>
+        <source>Send Messages by pressing Return Key</source>
+        <translation type="unfinished">Invia i messaggi premendo il tasto Enter</translation>
+    </message>
+    <message>
+        <source>Disable background</source>
+        <translation type="unfinished">Disabilita sfondo</translation>
+    </message>
+</context>
+<context>
     <name>ConnectingLabel</name>
     <message>
         <source>Connecting...</source>
@@ -330,6 +345,72 @@ Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
     <message>
         <source>New Secret Chat</source>
         <translation>Nuova chat segreta</translation>
+    </message>
+</context>
+<context>
+    <name>DebugSettingsPage</name>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contacts</source>
+        <translation type="obsolete">Contatti</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contacts:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Heartbeat:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connected</source>
+        <translation type="unfinished">Connesso</translation>
+    </message>
+    <message>
+        <source>Error log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not Connected</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ErrorsPage</name>
+    <message>
+        <source>Clear errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error log is empty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error code:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Function:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Message:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -527,15 +608,27 @@ Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
     <name>SettingsPage</name>
     <message>
         <source>Save</source>
-        <translation>Salva</translation>
+        <translation type="vanished">Salva</translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation>Invia i messaggi premendo il tasto Enter</translation>
+        <translation type="vanished">Invia i messaggi premendo il tasto Enter</translation>
     </message>
     <message>
         <source>Disable background</source>
-        <translation>Disabilita sfondo</translation>
+        <translation type="vanished">Disabilita sfondo</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Impostazioni</translation>
+    </message>
+    <message>
+        <source>Chats</source>
+        <translation type="unfinished">Conversazioni</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

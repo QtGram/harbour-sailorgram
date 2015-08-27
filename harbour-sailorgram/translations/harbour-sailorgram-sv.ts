@@ -165,6 +165,21 @@ Minimilängd är 5 tecken.</translation>
     </message>
 </context>
 <context>
+    <name>ChatSettingsPage</name>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished">Spara</translation>
+    </message>
+    <message>
+        <source>Send Messages by pressing Return Key</source>
+        <translation type="unfinished">Skicka meddelande med returtangenten</translation>
+    </message>
+    <message>
+        <source>Disable background</source>
+        <translation type="unfinished">Inaktivera bakgrund</translation>
+    </message>
+</context>
+<context>
     <name>ConnectingLabel</name>
     <message>
         <source>Connecting...</source>
@@ -330,6 +345,72 @@ Välj en kontakt genom att gå till &quot;Kontakter&quot; i ovanstående meny</t
     <message>
         <source>New Secret Chat</source>
         <translation>Ny hemlig chatt</translation>
+    </message>
+</context>
+<context>
+    <name>DebugSettingsPage</name>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contacts</source>
+        <translation type="obsolete">Kontakter</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contacts:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Heartbeat:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connected</source>
+        <translation type="unfinished">Ansluten</translation>
+    </message>
+    <message>
+        <source>Error log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not Connected</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ErrorsPage</name>
+    <message>
+        <source>Clear errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error log is empty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error code:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Function:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Message:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -527,15 +608,27 @@ Välj en kontakt genom att gå till &quot;Kontakter&quot; i ovanstående meny</t
     <name>SettingsPage</name>
     <message>
         <source>Save</source>
-        <translation>Spara</translation>
+        <translation type="vanished">Spara</translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation>Skicka meddelande med returtangenten</translation>
+        <translation type="vanished">Skicka meddelande med returtangenten</translation>
     </message>
     <message>
         <source>Disable background</source>
-        <translation>Inaktivera bakgrund</translation>
+        <translation type="vanished">Inaktivera bakgrund</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Inställningar</translation>
+    </message>
+    <message>
+        <source>Chats</source>
+        <translation type="unfinished">Chattar</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

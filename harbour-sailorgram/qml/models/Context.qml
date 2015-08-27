@@ -17,6 +17,8 @@ QtObject
     property TelegramLocalStorage telegramlocalstorage: TelegramLocalStorage { }
     property ScreenBlank screenblank: ScreenBlank { }
     property Notifications notifications: Notifications { }
+    property ContactsModel contacts: ContactsModel { }
+    property ErrorsModel errors: ErrorsModel { }
     property Dialog foregroundDialog: telegram.nullDialog
 
     property HeartBeat heartbeat: HeartBeat {
@@ -39,9 +41,13 @@ QtObject
         publicKeyFile: telegramlocalstorage.telegramPublicKey
         autoCleanUpMessages: true
 
+        onErrorSignal: errors.addError(errorCode, functionName, errorText)
+
         onConnectedChanged: {
-            if(connected)
+            if(connected) {
                context.heartbeat.start();
+               context.contacts.telegram = context.telegram;
+            }
         }
 
         onIncomingMessage: {

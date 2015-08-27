@@ -1,50 +1,46 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
+import "../../components"
 import "../../models"
-import "../../js/Settings.js" as Settings
 
-Dialog
+Page
 {
     property Context context
 
+    id: settingspage
     allowedOrientations: defaultAllowedOrientations
-    acceptDestinationAction: PageStackAction.Pop
-
-    onAccepted: {
-        context.sendwithreturn = tssendwithreturn.checked;
-        context.backgrounddisabled = tsdisablebackground.checked;
-        Settings.set("sendwithreturn", tssendwithreturn.checked);
-        Settings.set("backgrounddisabled", tsdisablebackground.checked);
-    }
 
     SilicaFlickable
     {
         anchors.fill: parent
+        contentHeight: content.height
 
         Column
         {
             id: content
             width: parent.width
 
-            DialogHeader
+            PageHeader
             {
-                acceptText: qsTr("Save")
+                title: qsTr("Settings")
             }
 
-            TextSwitch
+            SettingLabel
             {
-                id: tssendwithreturn
-                anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
-                text: qsTr("Send Messages by pressing Return Key")
-                checked: context.sendwithreturn
+                width: parent.width
+                height: Theme.itemSizeSmall
+                icon: "image://theme/icon-s-message"
+                text: qsTr("Chats")
+                onActionRequested: pageStack.push(Qt.resolvedUrl("ChatSettingsPage.qml"), { "context": settingspage.context })
             }
 
-            TextSwitch
+            SettingLabel
             {
-                id: tsdisablebackground
-                anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
-                text: qsTr("Disable background")
-                checked: context.backgrounddisabled
+                width: parent.width
+                height: Theme.itemSizeSmall
+                icon: "qrc:///res/debug.png"
+                text: qsTr("Debug")
+                onActionRequested: pageStack.push(Qt.resolvedUrl("DebugSettingsPage.qml"), { "context": settingspage.context })
             }
         }
     }

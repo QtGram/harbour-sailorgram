@@ -17,10 +17,7 @@ Page
         anchors.fill: parent
         spacing: Theme.paddingMedium
         header: PageHeader { title: qsTr("Contacts") }
-
-        model: ContactsModel {
-            telegram: userspage.context.telegram
-        }
+        model: context.contacts
 
         delegate: ListItem {
             contentWidth: parent.width
