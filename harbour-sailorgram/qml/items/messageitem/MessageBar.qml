@@ -7,7 +7,7 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 
 Item
 {
-    readonly property real maxHeight: parent.height / 2
+    readonly property real maxHeight: pageStack.currentPage.height / 2
     property Context context
     property Dialog dialog
 
