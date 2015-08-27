@@ -155,7 +155,7 @@ Minimální délka je 5 znaků .</translation>
     </message>
     <message>
         <source>This username is already occupied</source>
-        <translation type="unfinished"></translation>
+        <translation>Toto uživatelské jméno je již obsazeno</translation>
     </message>
 </context>
 <context>
@@ -366,19 +366,15 @@ Přidejte osobu výběrem &quot;Kontakty&quot; z menu</translation>
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Debug</source>
+        <source>Error log</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Contacts</source>
-        <translation type="obsolete">Kontakty</translation>
     </message>
     <message>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Contacts:</source>
+        <source>Debug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -390,11 +386,11 @@ Přidejte osobu výběrem &quot;Kontakty&quot; z menu</translation>
         <translation type="unfinished">Připojen</translation>
     </message>
     <message>
-        <source>Error log</source>
+        <source>Not Connected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Not Connected</source>
+        <source>Contacts:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -402,6 +398,10 @@ Přidejte osobu výběrem &quot;Kontakty&quot; z menu</translation>
     <name>ErrorsPage</name>
     <message>
         <source>Clear errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -418,10 +418,6 @@ Přidejte osobu výběrem &quot;Kontakty&quot; z menu</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -496,11 +492,11 @@ Přidejte osobu výběrem &quot;Kontakty&quot; z menu</translation>
     </message>
     <message>
         <source>Opening Media</source>
-        <translation>Otevírání Media</translation>
+        <translation>Otevírání media</translation>
     </message>
     <message>
         <source>Opening media</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevírání media</translation>
     </message>
 </context>
 <context>

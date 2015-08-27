@@ -155,7 +155,7 @@ Minimumslængde er fem tegn.</translation>
     </message>
     <message>
         <source>This username is already occupied</source>
-        <translation type="unfinished"></translation>
+        <translation>Dette brugernavn er allerede optaget</translation>
     </message>
 </context>
 <context>
@@ -366,19 +366,15 @@ Vælg en kontakt fra menuen ovenfor</translation>
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Debug</source>
+        <source>Error log</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Contacts</source>
-        <translation type="obsolete">Kontakter</translation>
     </message>
     <message>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Contacts:</source>
+        <source>Debug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -390,11 +386,11 @@ Vælg en kontakt fra menuen ovenfor</translation>
         <translation type="unfinished">Forbundet</translation>
     </message>
     <message>
-        <source>Error log</source>
+        <source>Not Connected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Not Connected</source>
+        <source>Contacts:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -402,6 +398,10 @@ Vælg en kontakt fra menuen ovenfor</translation>
     <name>ErrorsPage</name>
     <message>
         <source>Clear errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -418,10 +418,6 @@ Vælg en kontakt fra menuen ovenfor</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -463,7 +459,7 @@ Vælg en kontakt fra menuen ovenfor</translation>
     </message>
     <message>
         <source>Media saved in Gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>Medie gemt i Galleri</translation>
     </message>
 </context>
 <context>
@@ -500,7 +496,7 @@ Vælg en kontakt fra menuen ovenfor</translation>
     </message>
     <message>
         <source>Opening media</source>
-        <translation type="unfinished"></translation>
+        <translation>Åbner medie</translation>
     </message>
 </context>
 <context>

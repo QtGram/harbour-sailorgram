@@ -155,7 +155,7 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>This username is already occupied</source>
-        <translation type="unfinished"></translation>
+        <translation>Этот логин уже занят</translation>
     </message>
 </context>
 <context>
@@ -366,19 +366,15 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Debug</source>
+        <source>Error log</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Contacts</source>
-        <translation type="obsolete">Контакты</translation>
     </message>
     <message>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Contacts:</source>
+        <source>Debug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -390,11 +386,11 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <translation type="unfinished">Подключено</translation>
     </message>
     <message>
-        <source>Error log</source>
+        <source>Not Connected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Not Connected</source>
+        <source>Contacts:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -402,6 +398,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>ErrorsPage</name>
     <message>
         <source>Clear errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -418,10 +418,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -500,7 +496,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Opening media</source>
-        <translation type="unfinished"></translation>
+        <translation>Открытие медиа</translation>
     </message>
 </context>
 <context>

@@ -155,7 +155,7 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>This username is already occupied</source>
-        <translation type="unfinished"></translation>
+        <translation>این نام کاربری قبلا تصاحب شده</translation>
     </message>
 </context>
 <context>
@@ -188,7 +188,7 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Disable background</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">غیرفعال‌کردن پس‌زمینه</translation>
     </message>
     <message>
         <source>Hide chat header</source>
@@ -366,19 +366,15 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Debug</source>
+        <source>Error log</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Contacts</source>
-        <translation type="obsolete">آشنایان</translation>
     </message>
     <message>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Contacts:</source>
+        <source>Debug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -390,11 +386,11 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <translation type="unfinished">وصل‌شده</translation>
     </message>
     <message>
-        <source>Error log</source>
+        <source>Not Connected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Not Connected</source>
+        <source>Contacts:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -402,6 +398,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>ErrorsPage</name>
     <message>
         <source>Clear errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -418,10 +418,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -463,22 +459,22 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Media saved in Gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>رسانه در نگارخانه ذخیره شد</translation>
     </message>
 </context>
 <context>
     <name>MessageAudio</name>
     <message>
         <source>Duration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>مدت: %1</translation>
     </message>
     <message>
         <source>Audio recording</source>
-        <translation type="unfinished"></translation>
+        <translation>صدای ضبط‌شده</translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>اندازه: %1</translation>
     </message>
 </context>
 <context>
@@ -500,7 +496,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Opening media</source>
-        <translation type="unfinished"></translation>
+        <translation>در حال بازکردن رسانه</translation>
     </message>
 </context>
 <context>
@@ -527,26 +523,26 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Download</source>
-        <translation type="unfinished"></translation>
+        <translation>بارگیری</translation>
     </message>
     <message>
         <source>Downloading media</source>
-        <translation type="unfinished">در حال بارگیری رسانه</translation>
+        <translation>در حال بارگیری رسانه</translation>
     </message>
 </context>
 <context>
     <name>MessageVideo</name>
     <message>
         <source>Video recording</source>
-        <translation type="unfinished"></translation>
+        <translation>ویدئوی ضبط‌شده</translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>اندازه: %1</translation>
     </message>
     <message>
         <source>Duration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>مدت: %1</translation>
     </message>
 </context>
 <context>
@@ -631,6 +627,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <translation type="vanished">ارسال پیام با زدن کلید ورود</translation>
     </message>
     <message>
+        <source>Disable background</source>
+        <translation type="vanished">غیرفعال‌کردن پس‌زمینه</translation>
+    </message>
+    <message>
         <source>Settings</source>
         <translation type="unfinished">تنظیمات</translation>
     </message>
@@ -674,19 +674,19 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>TelegramAction</name>
     <message>
         <source>%1 has left the group</source>
-        <translation>%1 گروه را ترک کرده است</translation>
+        <translation>%1 گروه را ترک کرد</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
-        <translation>%1 به گروه پیوسته است</translation>
+        <translation>%1 به گروه پیوست</translation>
     </message>
     <message>
         <source>Secret chat created by %1</source>
-        <translation type="unfinished"></translation>
+        <translation>گپ محرمانه را %1 آغاز کرد</translation>
     </message>
     <message>
         <source>Group created by %1</source>
-        <translation type="unfinished"></translation>
+        <translation>گروه را %1 ساخت</translation>
     </message>
 </context>
 <context>
@@ -741,7 +741,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Last Seen %1</source>
-        <translation type="unfinished"></translation>
+        <translation>آخرین بار %1 دیده شده</translation>
     </message>
 </context>
 <context>
@@ -760,7 +760,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Begin Secret Chat</source>
-        <translation>گپ محرمانه را شروع کنید</translation>
+        <translation>گپ محرمانه را آغاز کنید</translation>
     </message>
 </context>
 <context>

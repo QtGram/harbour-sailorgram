@@ -155,7 +155,7 @@ Minimilängd är 5 tecken.</translation>
     </message>
     <message>
         <source>This username is already occupied</source>
-        <translation type="unfinished"></translation>
+        <translation>Det här användarnamnet är upptaget</translation>
     </message>
 </context>
 <context>
@@ -366,19 +366,15 @@ Välj en kontakt genom att gå till &quot;Kontakter&quot; i ovanstående meny</t
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Debug</source>
+        <source>Error log</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Contacts</source>
-        <translation type="obsolete">Kontakter</translation>
     </message>
     <message>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Contacts:</source>
+        <source>Debug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -390,11 +386,11 @@ Välj en kontakt genom att gå till &quot;Kontakter&quot; i ovanstående meny</t
         <translation type="unfinished">Ansluten</translation>
     </message>
     <message>
-        <source>Error log</source>
+        <source>Not Connected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Not Connected</source>
+        <source>Contacts:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -402,6 +398,10 @@ Välj en kontakt genom att gå till &quot;Kontakter&quot; i ovanstående meny</t
     <name>ErrorsPage</name>
     <message>
         <source>Clear errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -418,10 +418,6 @@ Välj en kontakt genom att gå till &quot;Kontakter&quot; i ovanstående meny</t
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -500,7 +496,7 @@ Välj en kontakt genom att gå till &quot;Kontakter&quot; i ovanstående meny</t
     </message>
     <message>
         <source>Opening media</source>
-        <translation type="unfinished"></translation>
+        <translation>Öppnar media</translation>
     </message>
 </context>
 <context>

@@ -123,7 +123,7 @@
     </message>
     <message>
         <source>Sending Activation Code</source>
-        <translation>Aktivointikoodia lähetetään...</translation>
+        <translation>Aktivointikoodia lähetetään</translation>
     </message>
 </context>
 <context>
@@ -155,7 +155,7 @@ Vähimmäispituus on 5 merkkiä.</translation>
     </message>
     <message>
         <source>This username is already occupied</source>
-        <translation type="unfinished"></translation>
+        <translation>Käyttäjänimi on jo varattu.</translation>
     </message>
 </context>
 <context>
@@ -173,7 +173,7 @@ Vähimmäispituus on 5 merkkiä.</translation>
     </message>
     <message>
         <source>Removing from group</source>
-        <translation>Poistetaan ryhmästä...</translation>
+        <translation>Poistetaan ryhmästä</translation>
     </message>
 </context>
 <context>
@@ -206,7 +206,7 @@ Vähimmäispituus on 5 merkkiä.</translation>
     <name>ConnectionPage</name>
     <message>
         <source>Connecting</source>
-        <translation>Yhdistää...</translation>
+        <translation>Yhdistää</translation>
     </message>
     <message>
         <source>Login Again</source>
@@ -241,7 +241,7 @@ Vähimmäispituus on 5 merkkiä.</translation>
     </message>
     <message>
         <source>Leaving Group</source>
-        <translation>Poistutaan ryhmästä...</translation>
+        <translation>Poistutaan ryhmästä</translation>
     </message>
     <message>
         <source>Change Title</source>
@@ -257,11 +257,11 @@ Vähimmäispituus on 5 merkkiä.</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation>Poistetaan keskustelu...</translation>
+        <translation>Poistetaan keskustelu</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation>Poistetaan ryhmä...</translation>
+        <translation>Poistetaan ryhmä</translation>
     </message>
 </context>
 <context>
@@ -292,7 +292,7 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation>Poistetaan salainen keskustelu...</translation>
+        <translation>Poistetaan salainen keskustelu</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -300,11 +300,11 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation>Poistetaan keskustelu...</translation>
+        <translation>Poistetaan keskustelu</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation>Poistetaan ryhmä...</translation>
+        <translation>Poistetaan ryhmä</translation>
     </message>
 </context>
 <context>
@@ -366,19 +366,15 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Debug</source>
+        <source>Error log</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Contacts</source>
-        <translation type="obsolete">Yhteystiedot</translation>
     </message>
     <message>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Contacts:</source>
+        <source>Debug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -390,11 +386,11 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
         <translation type="unfinished">Yhdistetty</translation>
     </message>
     <message>
-        <source>Error log</source>
+        <source>Not Connected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Not Connected</source>
+        <source>Contacts:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -402,6 +398,10 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     <name>ErrorsPage</name>
     <message>
         <source>Clear errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -421,10 +421,6 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Deleting errors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Message:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -441,7 +437,7 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     </message>
     <message>
         <source>Home</source>
-        <translation>Pääsivu</translation>
+        <translation>Puhelimen muisti</translation>
     </message>
 </context>
 <context>
@@ -459,7 +455,7 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     <name>MediaPlayerToolBar</name>
     <message>
         <source>Downloading media</source>
-        <translation>Ladataan mediatiedostoa...</translation>
+        <translation>Ladataan mediatiedostoa</translation>
     </message>
     <message>
         <source>Media saved in Gallery</source>
@@ -492,15 +488,15 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     <name>MessageItem</name>
     <message>
         <source>Downloading Media</source>
-        <translation>Ladataan mediatiedostoa...</translation>
+        <translation>Ladataan mediatiedostoa</translation>
     </message>
     <message>
         <source>Opening Media</source>
-        <translation>Avataan mediatiedostoa...</translation>
+        <translation>Avataan mediatiedostoa</translation>
     </message>
     <message>
         <source>Opening media</source>
-        <translation type="unfinished"></translation>
+        <translation>Avataan mediatiedostoa</translation>
     </message>
 </context>
 <context>
@@ -519,7 +515,7 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     </message>
     <message>
         <source>Deleting Message</source>
-        <translation>Poistetaan viestiä...</translation>
+        <translation>Poistetaan viestiä</translation>
     </message>
     <message>
         <source>Cancel</source>

@@ -155,7 +155,7 @@ La lunghezza minima è di 5 caratteri.</translation>
     </message>
     <message>
         <source>This username is already occupied</source>
-        <translation type="unfinished"></translation>
+        <translation>Username già preso</translation>
     </message>
 </context>
 <context>
@@ -366,19 +366,15 @@ Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Debug</source>
+        <source>Error log</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Contacts</source>
-        <translation type="obsolete">Contatti</translation>
     </message>
     <message>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Contacts:</source>
+        <source>Debug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -390,11 +386,11 @@ Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
         <translation type="unfinished">Connesso</translation>
     </message>
     <message>
-        <source>Error log</source>
+        <source>Not Connected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Not Connected</source>
+        <source>Contacts:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -402,6 +398,10 @@ Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
     <name>ErrorsPage</name>
     <message>
         <source>Clear errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -418,10 +418,6 @@ Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -500,7 +496,7 @@ Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
     </message>
     <message>
         <source>Opening media</source>
-        <translation type="unfinished"></translation>
+        <translation>Apertura file multimediale</translation>
     </message>
 </context>
 <context>

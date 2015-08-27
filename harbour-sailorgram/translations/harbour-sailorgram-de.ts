@@ -148,14 +148,14 @@
 
 You can use a-z, 0-9 and underscores.
 Minimum length is 5 characters.</source>
-        <translation>Du kannst einen Nutzername für Telegram verwenden. So können die Leute ohne deine Telefonnummer hinzufügen.
+        <translation>Du kannst bei Telegram einen Nutzernamen verwenden. So können dich Leute kontaktieren ohne deine Telefonnummer zu kennen.
 
-Wähle zwischen a-z, 0-9 und Unterstrich.
- Minimum sind 5 Zeichen.</translation>
+Erlaubt sind a-z, 0-9 und Unterstrich.
+Minimum sind 5 Zeichen.</translation>
     </message>
     <message>
         <source>This username is already occupied</source>
-        <translation type="unfinished"></translation>
+        <translation>Dieser Nutzername wird bereits verwendet</translation>
     </message>
 </context>
 <context>
@@ -366,19 +366,15 @@ wähle einen Kontakt über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Debug</source>
+        <source>Error log</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Contacts</source>
-        <translation type="obsolete">Kontakte</translation>
     </message>
     <message>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Contacts:</source>
+        <source>Debug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -390,11 +386,11 @@ wähle einen Kontakt über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
         <translation type="unfinished">Verbunden</translation>
     </message>
     <message>
-        <source>Error log</source>
+        <source>Not Connected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Not Connected</source>
+        <source>Contacts:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -402,6 +398,10 @@ wähle einen Kontakt über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
     <name>ErrorsPage</name>
     <message>
         <source>Clear errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -418,10 +418,6 @@ wähle einen Kontakt über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -501,7 +497,7 @@ wähle einen Kontakt über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
     </message>
     <message>
         <source>Opening media</source>
-        <translation type="unfinished"></translation>
+        <translation>Öffne Media</translation>
     </message>
 </context>
 <context>
@@ -604,7 +600,7 @@ wähle einen Kontakt über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation>Nuzername</translation>
+        <translation>Nutzername</translation>
     </message>
 </context>
 <context>

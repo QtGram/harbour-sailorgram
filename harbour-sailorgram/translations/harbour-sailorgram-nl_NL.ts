@@ -155,7 +155,7 @@ De minimale lengte is 5 tekens.</translation>
     </message>
     <message>
         <source>This username is already occupied</source>
-        <translation type="unfinished"></translation>
+        <translation>De gebruikersnaam is niet beschikbaar</translation>
     </message>
 </context>
 <context>
@@ -366,19 +366,15 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Debug</source>
+        <source>Error log</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Contacts</source>
-        <translation type="obsolete">Contactpersonen</translation>
     </message>
     <message>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Contacts:</source>
+        <source>Debug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -390,11 +386,11 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
         <translation type="unfinished">Verbonden</translation>
     </message>
     <message>
-        <source>Error log</source>
+        <source>Not Connected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Not Connected</source>
+        <source>Contacts:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -402,6 +398,10 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     <name>ErrorsPage</name>
     <message>
         <source>Clear errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -418,10 +418,6 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -500,7 +496,7 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     </message>
     <message>
         <source>Opening media</source>
-        <translation type="unfinished"></translation>
+        <translation>Bezig met het openen van de media</translation>
     </message>
 </context>
 <context>

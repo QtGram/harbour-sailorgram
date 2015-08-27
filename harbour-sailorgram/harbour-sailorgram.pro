@@ -135,7 +135,8 @@ CONFIG += sailfishapp_i18n
 # planning to localize your app, remember to comment out the
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
-TRANSLATIONS += translations/harbour-sailorgram-cs.ts \
+TRANSLATIONS += translations/harbour-sailorgram-be.ts \
+                translations/harbour-sailorgram-cs.ts \
                 translations/harbour-sailorgram-da.ts \
                 translations/harbour-sailorgram-de.ts \
                 translations/harbour-sailorgram-de_DE.ts \

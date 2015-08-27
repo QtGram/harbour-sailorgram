@@ -155,7 +155,7 @@ La longueur minimum est de 5 caractères.</translation>
     </message>
     <message>
         <source>This username is already occupied</source>
-        <translation type="unfinished"></translation>
+        <translation>Ce nom d&apos;utilisateur est déjà pris.</translation>
     </message>
 </context>
 <context>
@@ -366,19 +366,15 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Debug</source>
+        <source>Error log</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Contacts</source>
-        <translation type="obsolete">Contacts</translation>
     </message>
     <message>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Contacts:</source>
+        <source>Debug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -390,11 +386,11 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
         <translation type="unfinished">Connecté</translation>
     </message>
     <message>
-        <source>Error log</source>
+        <source>Not Connected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Not Connected</source>
+        <source>Contacts:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -402,6 +398,10 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
     <name>ErrorsPage</name>
     <message>
         <source>Clear errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -418,10 +418,6 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -463,7 +459,7 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
     </message>
     <message>
         <source>Media saved in Gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>Média enregistré dans la galerie</translation>
     </message>
 </context>
 <context>
@@ -500,7 +496,7 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
     </message>
     <message>
         <source>Opening media</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouverture du média</translation>
     </message>
 </context>
 <context>
