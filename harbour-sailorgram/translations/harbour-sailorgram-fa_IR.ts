@@ -237,7 +237,7 @@ Minimum length is 5 characters.</source>
     <name>ConversationInfoPage</name>
     <message>
         <source>Enable Notifications</source>
-        <translation type="unfinished">فعال‌سازی اطلاعیه‌ها</translation>
+        <translation type="obsolete">فعال‌سازی اطلاعیه‌ها</translation>
     </message>
     <message>
         <source>Actions</source>
@@ -269,10 +269,18 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation type="unfinished">غیرفعال‌سازی اطلاعیه‌ها</translation>
+        <translation type="obsolete">غیرفعال‌سازی اطلاعیه‌ها</translation>
     </message>
     <message>
         <source>Add to contacts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable notifications</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -280,47 +288,47 @@ Minimum length is 5 characters.</source>
     <name>ConversationMenu</name>
     <message>
         <source>Enable Notifications</source>
-        <translation>فعال‌سازی اطلاعیه‌ها</translation>
+        <translation type="vanished">فعال‌سازی اطلاعیه‌ها</translation>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation>غیرفعال‌سازی اطلاعیه‌ها</translation>
+        <translation type="vanished">غیرفعال‌سازی اطلاعیه‌ها</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>حذف</translation>
+        <translation type="vanished">حذف</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation>در حال حذف گپ محرمانه</translation>
+        <translation type="vanished">در حال حذف گپ محرمانه</translation>
     </message>
     <message>
         <source>Leave Group</source>
-        <translation>ترک گروه</translation>
+        <translation type="vanished">ترک گروه</translation>
     </message>
     <message>
         <source>Leaving Group</source>
-        <translation>در حال ترک گروه</translation>
+        <translation type="vanished">در حال ترک گروه</translation>
     </message>
     <message>
         <source>Change Title</source>
-        <translation>تغییر عنوان</translation>
+        <translation type="vanished">تغییر عنوان</translation>
     </message>
     <message>
         <source>Add Member</source>
-        <translation>افزودن عضو</translation>
+        <translation type="vanished">افزودن عضو</translation>
     </message>
     <message>
         <source>Add to Contacts</source>
-        <translation>افزودن به آشنایان</translation>
+        <translation type="vanished">افزودن به آشنایان</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation>در حال حذف گفت‌وگو</translation>
+        <translation type="vanished">در حال حذف گفت‌وگو</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation>در حال حذف گروه</translation>
+        <translation type="vanished">در حال حذف گروه</translation>
     </message>
 </context>
 <context>

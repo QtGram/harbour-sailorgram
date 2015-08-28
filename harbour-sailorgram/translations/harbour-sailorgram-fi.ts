@@ -237,7 +237,7 @@ Vähimmäispituus on 5 merkkiä.</translation>
     <name>ConversationInfoPage</name>
     <message>
         <source>Enable Notifications</source>
-        <translation type="unfinished">Ota ilmoitukset käyttöön</translation>
+        <translation type="obsolete">Ota ilmoitukset käyttöön</translation>
     </message>
     <message>
         <source>Actions</source>
@@ -269,10 +269,18 @@ Vähimmäispituus on 5 merkkiä.</translation>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation type="unfinished">Poista ilmoitukset käytöstä</translation>
+        <translation type="obsolete">Poista ilmoitukset käytöstä</translation>
     </message>
     <message>
         <source>Add to contacts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable notifications</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -280,47 +288,47 @@ Vähimmäispituus on 5 merkkiä.</translation>
     <name>ConversationMenu</name>
     <message>
         <source>Enable Notifications</source>
-        <translation>Ota ilmoitukset käyttöön</translation>
+        <translation type="vanished">Ota ilmoitukset käyttöön</translation>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation>Poista ilmoitukset käytöstä</translation>
+        <translation type="vanished">Poista ilmoitukset käytöstä</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Poista</translation>
+        <translation type="vanished">Poista</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation>Poistetaan salainen keskustelu</translation>
+        <translation type="vanished">Poistetaan salainen keskustelu</translation>
     </message>
     <message>
         <source>Leave Group</source>
-        <translation>Poistu ryhmästä</translation>
+        <translation type="vanished">Poistu ryhmästä</translation>
     </message>
     <message>
         <source>Leaving Group</source>
-        <translation>Poistutaan ryhmästä</translation>
+        <translation type="vanished">Poistutaan ryhmästä</translation>
     </message>
     <message>
         <source>Change Title</source>
-        <translation>Muuta tila</translation>
+        <translation type="vanished">Muuta tila</translation>
     </message>
     <message>
         <source>Add Member</source>
-        <translation>Lisää jäsen</translation>
+        <translation type="vanished">Lisää jäsen</translation>
     </message>
     <message>
         <source>Add to Contacts</source>
-        <translation>Lisää yhteystietoihin</translation>
+        <translation type="vanished">Lisää yhteystietoihin</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation>Poistetaan keskustelu</translation>
+        <translation type="vanished">Poistetaan keskustelu</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation>Poistetaan ryhmä</translation>
+        <translation type="vanished">Poistetaan ryhmä</translation>
     </message>
 </context>
 <context>

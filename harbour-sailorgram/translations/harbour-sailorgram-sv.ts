@@ -237,7 +237,7 @@ Minimilängd är 5 tecken.</translation>
     <name>ConversationInfoPage</name>
     <message>
         <source>Enable Notifications</source>
-        <translation type="unfinished">Aktivera aviseringar</translation>
+        <translation type="obsolete">Aktivera aviseringar</translation>
     </message>
     <message>
         <source>Actions</source>
@@ -269,10 +269,18 @@ Minimilängd är 5 tecken.</translation>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation type="unfinished">Inaktivera aviseringar</translation>
+        <translation type="obsolete">Inaktivera aviseringar</translation>
     </message>
     <message>
         <source>Add to contacts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable notifications</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -280,47 +288,47 @@ Minimilängd är 5 tecken.</translation>
     <name>ConversationMenu</name>
     <message>
         <source>Enable Notifications</source>
-        <translation>Aktivera aviseringar</translation>
+        <translation type="vanished">Aktivera aviseringar</translation>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation>Inaktivera aviseringar</translation>
+        <translation type="vanished">Inaktivera aviseringar</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Ta bort</translation>
+        <translation type="vanished">Ta bort</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation>Tar bort hemlig chatt</translation>
+        <translation type="vanished">Tar bort hemlig chatt</translation>
     </message>
     <message>
         <source>Leave Group</source>
-        <translation>Lämna gruppen</translation>
+        <translation type="vanished">Lämna gruppen</translation>
     </message>
     <message>
         <source>Leaving Group</source>
-        <translation>Lämnar grupp</translation>
+        <translation type="vanished">Lämnar grupp</translation>
     </message>
     <message>
         <source>Change Title</source>
-        <translation>Ändra titel</translation>
+        <translation type="vanished">Ändra titel</translation>
     </message>
     <message>
         <source>Add Member</source>
-        <translation>Lägg till medlem</translation>
+        <translation type="vanished">Lägg till medlem</translation>
     </message>
     <message>
         <source>Add to Contacts</source>
-        <translation>Lägg till i kontakter</translation>
+        <translation type="vanished">Lägg till i kontakter</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation>Tar bort konversation</translation>
+        <translation type="vanished">Tar bort konversation</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation>Tar bort grupp</translation>
+        <translation type="vanished">Tar bort grupp</translation>
     </message>
 </context>
 <context>

@@ -237,7 +237,7 @@ Minimum length is 5 characters.</source>
     <name>ConversationInfoPage</name>
     <message>
         <source>Enable Notifications</source>
-        <translation type="unfinished">Включить уведомления</translation>
+        <translation type="obsolete">Включить уведомления</translation>
     </message>
     <message>
         <source>Actions</source>
@@ -269,10 +269,18 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation type="unfinished">Отключить уведомления</translation>
+        <translation type="obsolete">Отключить уведомления</translation>
     </message>
     <message>
         <source>Add to contacts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable notifications</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -280,47 +288,47 @@ Minimum length is 5 characters.</source>
     <name>ConversationMenu</name>
     <message>
         <source>Enable Notifications</source>
-        <translation>Включить уведомления</translation>
+        <translation type="vanished">Включить уведомления</translation>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation>Отключить уведомления</translation>
+        <translation type="vanished">Отключить уведомления</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Удалить</translation>
+        <translation type="vanished">Удалить</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation>Удаление тайного диалога</translation>
+        <translation type="vanished">Удаление тайного диалога</translation>
     </message>
     <message>
         <source>Leave Group</source>
-        <translation>Покинуть беседу</translation>
+        <translation type="vanished">Покинуть беседу</translation>
     </message>
     <message>
         <source>Leaving Group</source>
-        <translation>Выход из беседы</translation>
+        <translation type="vanished">Выход из беседы</translation>
     </message>
     <message>
         <source>Change Title</source>
-        <translation>Изменить название</translation>
+        <translation type="vanished">Изменить название</translation>
     </message>
     <message>
         <source>Add Member</source>
-        <translation>Добавить собеседника</translation>
+        <translation type="vanished">Добавить собеседника</translation>
     </message>
     <message>
         <source>Add to Contacts</source>
-        <translation>Добавить в контакты</translation>
+        <translation type="vanished">Добавить в контакты</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation>Удаление диалога</translation>
+        <translation type="vanished">Удаление диалога</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation>Удаление беседы</translation>
+        <translation type="vanished">Удаление беседы</translation>
     </message>
 </context>
 <context>

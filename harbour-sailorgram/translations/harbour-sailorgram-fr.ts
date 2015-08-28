@@ -237,7 +237,7 @@ La longueur minimum est de 5 caractères.</translation>
     <name>ConversationInfoPage</name>
     <message>
         <source>Enable Notifications</source>
-        <translation type="unfinished">Activer les notifications</translation>
+        <translation type="obsolete">Activer les notifications</translation>
     </message>
     <message>
         <source>Actions</source>
@@ -269,10 +269,18 @@ La longueur minimum est de 5 caractères.</translation>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation type="unfinished">Désactiver les notifications</translation>
+        <translation type="obsolete">Désactiver les notifications</translation>
     </message>
     <message>
         <source>Add to contacts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable notifications</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -280,47 +288,47 @@ La longueur minimum est de 5 caractères.</translation>
     <name>ConversationMenu</name>
     <message>
         <source>Enable Notifications</source>
-        <translation>Activer les notifications</translation>
+        <translation type="vanished">Activer les notifications</translation>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation>Désactiver les notifications</translation>
+        <translation type="vanished">Désactiver les notifications</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Effacer</translation>
+        <translation type="vanished">Effacer</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation>Suppression de discussion secrète</translation>
+        <translation type="vanished">Suppression de discussion secrète</translation>
     </message>
     <message>
         <source>Leave Group</source>
-        <translation>Quitter le groupe</translation>
+        <translation type="vanished">Quitter le groupe</translation>
     </message>
     <message>
         <source>Leaving Group</source>
-        <translation>Quitte le groupe</translation>
+        <translation type="vanished">Quitte le groupe</translation>
     </message>
     <message>
         <source>Change Title</source>
-        <translation>Changer le titre</translation>
+        <translation type="vanished">Changer le titre</translation>
     </message>
     <message>
         <source>Add Member</source>
-        <translation>Ajouter un participant</translation>
+        <translation type="vanished">Ajouter un participant</translation>
     </message>
     <message>
         <source>Add to Contacts</source>
-        <translation>Ajouter aux contacts</translation>
+        <translation type="vanished">Ajouter aux contacts</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation>Suppression de la conversation</translation>
+        <translation type="vanished">Suppression de la conversation</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation>Suppression du groupe</translation>
+        <translation type="vanished">Suppression du groupe</translation>
     </message>
 </context>
 <context>

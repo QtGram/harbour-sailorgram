@@ -237,7 +237,7 @@ Minimale Länge sind 5 Zeichen</translation>
     <name>ConversationInfoPage</name>
     <message>
         <source>Enable Notifications</source>
-        <translation type="unfinished">Benachrichtigungen aktivieren</translation>
+        <translation type="obsolete">Benachrichtigungen aktivieren</translation>
     </message>
     <message>
         <source>Actions</source>
@@ -269,10 +269,18 @@ Minimale Länge sind 5 Zeichen</translation>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation type="unfinished">Benachrichtigungen deaktivieren</translation>
+        <translation type="obsolete">Benachrichtigungen deaktivieren</translation>
     </message>
     <message>
         <source>Add to contacts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable notifications</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -280,47 +288,47 @@ Minimale Länge sind 5 Zeichen</translation>
     <name>ConversationMenu</name>
     <message>
         <source>Enable Notifications</source>
-        <translation>Benachrichtigungen aktivieren</translation>
+        <translation type="vanished">Benachrichtigungen aktivieren</translation>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation>Benachrichtigungen deaktivieren</translation>
+        <translation type="vanished">Benachrichtigungen deaktivieren</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>löschen</translation>
+        <translation type="vanished">löschen</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation>Lösche geheimen Chat</translation>
+        <translation type="vanished">Lösche geheimen Chat</translation>
     </message>
     <message>
         <source>Leave Group</source>
-        <translation>Gruppe verlassen</translation>
+        <translation type="vanished">Gruppe verlassen</translation>
     </message>
     <message>
         <source>Leaving Group</source>
-        <translation>verlasse die Gruppe</translation>
+        <translation type="vanished">verlasse die Gruppe</translation>
     </message>
     <message>
         <source>Change Title</source>
-        <translation>Ändere Titel</translation>
+        <translation type="vanished">Ändere Titel</translation>
     </message>
     <message>
         <source>Add Member</source>
-        <translation>Mitglied hinzufügen</translation>
+        <translation type="vanished">Mitglied hinzufügen</translation>
     </message>
     <message>
         <source>Add to Contacts</source>
-        <translation>Zu den Kontakten hinzufügen</translation>
+        <translation type="vanished">Zu den Kontakten hinzufügen</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation>Lösche Unterhaltung</translation>
+        <translation type="vanished">Lösche Unterhaltung</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation>Lösche Gruppe</translation>
+        <translation type="vanished">Lösche Gruppe</translation>
     </message>
 </context>
 <context>

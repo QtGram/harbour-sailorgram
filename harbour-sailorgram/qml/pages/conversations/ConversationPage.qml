@@ -15,7 +15,6 @@ Page
     property Dialog dialog
     property Chat chat
     property User user
-    property bool muted: context.telegram.userData.isMuted(TelegramHelper.conversationId(dialog, context))
 
     id: conversationpage
     allowedOrientations: defaultAllowedOrientations
@@ -54,15 +53,6 @@ Page
     {
         id: popupmessage
         anchors { left: parent.left; top: parent.top; right: parent.right }
-    }
-
-    Connections
-    {
-        target: context.telegram.userData
-
-        onMuteChanged: {
-            conversationpage.muted = context.telegram.userData.isMuted(TelegramHelper.conversationId(dialog, context));
-        }
     }
 
     SilicaFlickable

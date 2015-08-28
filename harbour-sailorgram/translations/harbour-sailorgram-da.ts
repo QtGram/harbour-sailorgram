@@ -237,7 +237,7 @@ Minimumslængde er fem tegn.</translation>
     <name>ConversationInfoPage</name>
     <message>
         <source>Enable Notifications</source>
-        <translation type="unfinished">Aktiver Påmindelser</translation>
+        <translation type="obsolete">Aktiver Påmindelser</translation>
     </message>
     <message>
         <source>Actions</source>
@@ -269,10 +269,18 @@ Minimumslængde er fem tegn.</translation>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation type="unfinished">Deaktiver Påmindelser</translation>
+        <translation type="obsolete">Deaktiver Påmindelser</translation>
     </message>
     <message>
         <source>Add to contacts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable notifications</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -280,47 +288,47 @@ Minimumslængde er fem tegn.</translation>
     <name>ConversationMenu</name>
     <message>
         <source>Enable Notifications</source>
-        <translation>Aktiver Påmindelser</translation>
+        <translation type="vanished">Aktiver Påmindelser</translation>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation>Deaktiver Påmindelser</translation>
+        <translation type="vanished">Deaktiver Påmindelser</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Slet</translation>
+        <translation type="vanished">Slet</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation>Sletter Hemmelig Chat</translation>
+        <translation type="vanished">Sletter Hemmelig Chat</translation>
     </message>
     <message>
         <source>Leave Group</source>
-        <translation>Forlad Gruppe</translation>
+        <translation type="vanished">Forlad Gruppe</translation>
     </message>
     <message>
         <source>Leaving Group</source>
-        <translation>Forlader Gruppen</translation>
+        <translation type="vanished">Forlader Gruppen</translation>
     </message>
     <message>
         <source>Change Title</source>
-        <translation>Skift Titel</translation>
+        <translation type="vanished">Skift Titel</translation>
     </message>
     <message>
         <source>Add Member</source>
-        <translation>Tilføj Medlem</translation>
+        <translation type="vanished">Tilføj Medlem</translation>
     </message>
     <message>
         <source>Add to Contacts</source>
-        <translation>Tilføj til Kontakter</translation>
+        <translation type="vanished">Tilføj til Kontakter</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation>Sletter Samtale</translation>
+        <translation type="vanished">Sletter Samtale</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation>Sletter Gruppe</translation>
+        <translation type="vanished">Sletter Gruppe</translation>
     </message>
 </context>
 <context>

@@ -233,10 +233,6 @@ Minimum length is 5 characters.</source>
 <context>
     <name>ConversationInfoPage</name>
     <message>
-        <source>Enable Notifications</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Actions</source>
         <translation type="unfinished">Ενέργειες</translation>
     </message>
@@ -265,59 +261,23 @@ Minimum length is 5 characters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Disable Notifications</source>
+        <source>Add to contacts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Add to contacts</source>
+        <source>Enable notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable notifications</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ConversationMenu</name>
     <message>
-        <source>Enable Notifications</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Disable Notifications</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Delete</source>
-        <translation>Διαγραφή</translation>
-    </message>
-    <message>
-        <source>Deleting Secret Chat</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Leave Group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Leaving Group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Change Title</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add Member</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add to Contacts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deleting Conversation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deleting Group</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Διαγραφή</translation>
     </message>
 </context>
 <context>

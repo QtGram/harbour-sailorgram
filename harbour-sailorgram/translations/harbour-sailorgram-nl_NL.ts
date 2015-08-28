@@ -237,7 +237,7 @@ De minimale lengte is 5 tekens.</translation>
     <name>ConversationInfoPage</name>
     <message>
         <source>Enable Notifications</source>
-        <translation type="unfinished">Meldingen inschakelen</translation>
+        <translation type="obsolete">Meldingen inschakelen</translation>
     </message>
     <message>
         <source>Actions</source>
@@ -269,10 +269,18 @@ De minimale lengte is 5 tekens.</translation>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation type="unfinished">Meldingen uitschakelen</translation>
+        <translation type="obsolete">Meldingen uitschakelen</translation>
     </message>
     <message>
         <source>Add to contacts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable notifications</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -280,47 +288,47 @@ De minimale lengte is 5 tekens.</translation>
     <name>ConversationMenu</name>
     <message>
         <source>Enable Notifications</source>
-        <translation>Meldingen inschakelen</translation>
+        <translation type="vanished">Meldingen inschakelen</translation>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation>Meldingen uitschakelen</translation>
+        <translation type="vanished">Meldingen uitschakelen</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Verwijderen</translation>
+        <translation type="vanished">Verwijderen</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation>Bezig met het verwijderen van het geheime chatgesprek</translation>
+        <translation type="vanished">Bezig met het verwijderen van het geheime chatgesprek</translation>
     </message>
     <message>
         <source>Leave Group</source>
-        <translation>Groep verlaten</translation>
+        <translation type="vanished">Groep verlaten</translation>
     </message>
     <message>
         <source>Leaving Group</source>
-        <translation>Bezig met het verlaten van de groep</translation>
+        <translation type="vanished">Bezig met het verlaten van de groep</translation>
     </message>
     <message>
         <source>Change Title</source>
-        <translation>Titel wijzigen</translation>
+        <translation type="vanished">Titel wijzigen</translation>
     </message>
     <message>
         <source>Add Member</source>
-        <translation>Deelnemer toevoegen</translation>
+        <translation type="vanished">Deelnemer toevoegen</translation>
     </message>
     <message>
         <source>Add to Contacts</source>
-        <translation>Toevoegen aan contactpersonen</translation>
+        <translation type="vanished">Toevoegen aan contactpersonen</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation>Bezig met het verwijderen van het gesprek</translation>
+        <translation type="vanished">Bezig met het verwijderen van het gesprek</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation>Bezig met het verwijderen van de groep</translation>
+        <translation type="vanished">Bezig met het verwijderen van de groep</translation>
     </message>
 </context>
 <context>

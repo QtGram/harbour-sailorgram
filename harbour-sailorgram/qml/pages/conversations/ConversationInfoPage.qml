@@ -11,6 +11,7 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 
 Page
 {
+    property bool muted: context.telegram.userData.isMuted(TelegramHelper.peerId(conversationinfopage.dialog))
     property bool actionVisible: true
     property Context context
     property Dialog dialog
@@ -88,18 +89,35 @@ Page
 
             ClickableLabel
             {
-                labelText: context.telegram.userData.isMuted(TelegramHelper.conversationId(conversationinfopage.dialog, conversationinfopage.context)) ? qsTr("Disable Notifications") : qsTr("Enable Notifications")
+                labelText: conversationinfopage.muted ? qsTr("Enable notifications") : qsTr("Disable notifications")
                 labelFont.pixelSize: Theme.fontSizeSmall
                 width: parent.width
                 height: Theme.itemSizeSmall
 
                 onActionRequested: {
-                    var conversationid = TelegramHelper.conversationId(conversationinfopage.dialog, conversationinfopage.context);
+                    if(conversationinfopage.dialog.encrypted) { // Secret chats are P2P
+                        if(context.telegram.userData.isMuted(conversationinfopage.dialog.peer.userId)) {
+                            context.telegram.userData.removeMute(conversationinfopage.dialog.peer.userId);
+                            conversationinfopage.muted = false;
+                        }
+                        else {
+                            context.telegram.userData.addMute(conversationinfopage.dialog.peer.userId);
+                            conversationinfopage.muted = true;
+                        }
 
-                    if(context.telegram.userData.isMuted(conversationid))
-                        context.telegram.unmute(conversationid);
-                    else
-                        context.telegram.mute(conversationid);
+                        return;
+                    }
+
+                    var peerid = TelegramHelper.peerId(conversationinfopage.dialog);
+
+                    if(context.telegram.userData.isMuted(peerid)) {
+                        context.telegram.unmute(peerid);
+                        conversationinfopage.muted = false;
+                    }
+                    else {
+                        context.telegram.mute(peerid);
+                        conversationinfopage.muted = true;
+                    }
                 }
             }
 

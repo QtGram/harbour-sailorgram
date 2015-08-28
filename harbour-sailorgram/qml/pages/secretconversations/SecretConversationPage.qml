@@ -17,7 +17,6 @@ Page
     property Dialog dialog
     property EncryptedChat chat: context.telegram.encryptedChat(dialog.peer.userId)
     property User user: context.telegram.user((chat.adminId === context.telegram.me) ? chat.participantId : chat.adminId)
-    property bool muted: context.telegram.userData.isMuted(TelegramHelper.conversationId(dialog, context))
 
     id: secretconversationpage
     allowedOrientations: defaultAllowedOrientations
@@ -49,15 +48,6 @@ Page
     {
         id: popupmessage
         anchors { left: parent.left; top: parent.top; right: parent.right }
-    }
-
-    Connections
-    {
-        target: context.telegram.userData
-
-        onMuteChanged: {
-            secretconversationpage.muted = context.telegram.userData.isMuted(TelegramHelper.conversationId(dialog, context));
-        }
     }
 
     SilicaFlickable

@@ -237,7 +237,7 @@ Minimální délka je 5 znaků .</translation>
     <name>ConversationInfoPage</name>
     <message>
         <source>Enable Notifications</source>
-        <translation type="unfinished">Povolit oznamování</translation>
+        <translation type="obsolete">Povolit oznamování</translation>
     </message>
     <message>
         <source>Actions</source>
@@ -269,10 +269,18 @@ Minimální délka je 5 znaků .</translation>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation type="unfinished">Zakázat oznamování</translation>
+        <translation type="obsolete">Zakázat oznamování</translation>
     </message>
     <message>
         <source>Add to contacts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable notifications</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -280,47 +288,47 @@ Minimální délka je 5 znaků .</translation>
     <name>ConversationMenu</name>
     <message>
         <source>Enable Notifications</source>
-        <translation>Povolit oznamování</translation>
+        <translation type="vanished">Povolit oznamování</translation>
     </message>
     <message>
         <source>Disable Notifications</source>
-        <translation>Zakázat oznamování</translation>
+        <translation type="vanished">Zakázat oznamování</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Vymazat</translation>
+        <translation type="vanished">Vymazat</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation>Vymazání tajného rozhovoru</translation>
+        <translation type="vanished">Vymazání tajného rozhovoru</translation>
     </message>
     <message>
         <source>Leave Group</source>
-        <translation>Opustit skupinu</translation>
+        <translation type="vanished">Opustit skupinu</translation>
     </message>
     <message>
         <source>Leaving Group</source>
-        <translation>Opustím skupinu</translation>
+        <translation type="vanished">Opustím skupinu</translation>
     </message>
     <message>
         <source>Change Title</source>
-        <translation>Změmit název</translation>
+        <translation type="vanished">Změmit název</translation>
     </message>
     <message>
         <source>Add Member</source>
-        <translation>Přidat člena</translation>
+        <translation type="vanished">Přidat člena</translation>
     </message>
     <message>
         <source>Add to Contacts</source>
-        <translation>Přidat ke kontaktúm</translation>
+        <translation type="vanished">Přidat ke kontaktúm</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation>Vymazání konverzace</translation>
+        <translation type="vanished">Vymazání konverzace</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation>Vymazání skupiny</translation>
+        <translation type="vanished">Vymazání skupiny</translation>
     </message>
 </context>
 <context>
