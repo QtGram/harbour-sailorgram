@@ -84,7 +84,6 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/js/TelegramAction.js \
     qml/pages/chat/AddContactsPage.qml \
     qml/menus/MessageMenu.qml \
-    qml/menus/conversation/ConversationMenu.qml \
     qml/pages/chat/CreateChatPage.qml \
     qml/menus/conversation/ConversationsPullDownMenu.qml \
     qml/menus/chat/ChatInfoMenu.qml \
