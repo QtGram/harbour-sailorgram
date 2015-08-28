@@ -164,6 +164,22 @@ Vähimmäispituus on 5 merkkiä.</translation>
         <source>Members</source>
         <translation>Jäsenet</translation>
     </message>
+    <message>
+        <source>Leave group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Leaving group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add member</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChatInfoMenu</name>
@@ -215,6 +231,49 @@ Vähimmäispituus on 5 merkkiä.</translation>
     <message>
         <source>Telegram Status</source>
         <translation>Telegramin tila</translation>
+    </message>
+</context>
+<context>
+    <name>ConversationInfoPage</name>
+    <message>
+        <source>Enable Notifications</source>
+        <translation type="unfinished">Ota ilmoitukset käyttöön</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished">Toiminnot</translation>
+    </message>
+    <message>
+        <source>Delete secret chat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete conversation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting secret chat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting conversation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable Notifications</source>
+        <translation type="unfinished">Poista ilmoitukset käytöstä</translation>
+    </message>
+    <message>
+        <source>Add to contacts</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -752,7 +811,7 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     </message>
     <message>
         <source>Actions</source>
-        <translation>Toiminnot</translation>
+        <translation type="vanished">Toiminnot</translation>
     </message>
     <message>
         <source>Send Message</source>

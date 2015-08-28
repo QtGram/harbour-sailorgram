@@ -6,7 +6,7 @@ Item
     property alias labelText: lbltext.text
     property alias labelFont: lbltext.font
     property bool remorseRequired: false
-    property string actionMessage
+    property string remorseMessage
 
     signal actionRequested()
 
@@ -20,8 +20,7 @@ Item
         Label
         {
             id: lbltext
-            anchors.fill: parent
-            anchors.leftMargin: Theme.paddingLarge
+            anchors { fill: parent; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
             verticalAlignment: Text.AlignVCenter
         }
 
@@ -31,7 +30,7 @@ Item
                 return;
             }
 
-            remorseitem.execute(backgrounditem, actionMessage,
+            remorseitem.execute(backgrounditem, remorseMessage,
                                     function() {
                                         actionRequested();
                                     });

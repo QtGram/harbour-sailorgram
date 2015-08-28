@@ -164,6 +164,22 @@ Minimální délka je 5 znaků .</translation>
         <source>Members</source>
         <translation>Členi</translation>
     </message>
+    <message>
+        <source>Leave group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Leaving group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add member</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChatInfoMenu</name>
@@ -215,6 +231,49 @@ Minimální délka je 5 znaků .</translation>
     <message>
         <source>Telegram Status</source>
         <translation>Status Telegramu</translation>
+    </message>
+</context>
+<context>
+    <name>ConversationInfoPage</name>
+    <message>
+        <source>Enable Notifications</source>
+        <translation type="unfinished">Povolit oznamování</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished">Akce</translation>
+    </message>
+    <message>
+        <source>Delete secret chat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete conversation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting secret chat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting conversation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable Notifications</source>
+        <translation type="unfinished">Zakázat oznamování</translation>
+    </message>
+    <message>
+        <source>Add to contacts</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -752,7 +811,7 @@ Přidejte osobu výběrem &quot;Kontakty&quot; z menu</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation>Akce</translation>
+        <translation type="vanished">Akce</translation>
     </message>
     <message>
         <source>Send Message</source>

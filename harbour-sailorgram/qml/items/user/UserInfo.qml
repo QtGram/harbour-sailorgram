@@ -7,32 +7,23 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 
 Item
 {
+    property bool allowSendMessage: true
     property bool actionVisible: false
     property Context context
     property User user
 
     id: userinfo
-    height: content.height
+    width: content.width
+    height: column.height
 
     Column
     {
-        id: content
-        anchors { left: parent.left; top: parent.top; right: parent.right; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
-
-        SectionHeader { text: qsTr("Phone Number") }
-
-        Label
-        {
-            x: Theme.paddingMedium
-            width: parent.width - (x * 2)
-            text: TelegramHelper.phoneNumber(user)
-        }
-
-        SectionHeader { text: qsTr("Actions"); visible: actionVisible }
+        id: column
+        anchors { left: parent.left; top: parent.top; right: parent.right }
 
         ClickableLabel
         {
-            visible: actionVisible
+            visible: allowSendMessage && actionVisible
             width: parent.width
             height: Theme.itemSizeSmall
             labelFont.pixelSize: Theme.fontSizeSmall
@@ -54,6 +45,15 @@ Item
                 var ancenstorpage = pageStack.previousPage(pageStack.previousPage());
                 pageStack.pop(ancenstorpage);
             }
+        }
+
+        SectionHeader { text: qsTr("Phone Number") }
+
+        Label
+        {
+            x: Theme.paddingMedium
+            width: parent.width - (x * 2)
+            text: TelegramHelper.phoneNumber(user)
         }
     }
 }

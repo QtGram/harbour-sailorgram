@@ -164,6 +164,22 @@ La longitud mínima es de 5 caracteres.</translation>
         <source>Members</source>
         <translation>Miembros</translation>
     </message>
+    <message>
+        <source>Leave group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Leaving group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add member</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChatInfoMenu</name>
@@ -215,6 +231,49 @@ La longitud mínima es de 5 caracteres.</translation>
     <message>
         <source>Telegram Status</source>
         <translation>Estado Telegram</translation>
+    </message>
+</context>
+<context>
+    <name>ConversationInfoPage</name>
+    <message>
+        <source>Enable Notifications</source>
+        <translation type="unfinished">Activar notificaciones</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished">Acciones</translation>
+    </message>
+    <message>
+        <source>Delete secret chat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete conversation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting secret chat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting conversation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable Notifications</source>
+        <translation type="unfinished">Desactivar notificaciones</translation>
+    </message>
+    <message>
+        <source>Add to contacts</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -752,7 +811,7 @@ Elije un contacto seleccionando &quot;Contactos&quot; en el menú de desplegable
     </message>
     <message>
         <source>Actions</source>
-        <translation>Acciones</translation>
+        <translation type="vanished">Acciones</translation>
     </message>
     <message>
         <source>Send Message</source>

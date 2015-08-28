@@ -164,6 +164,22 @@ Minimumslængde er fem tegn.</translation>
         <source>Members</source>
         <translation>Medlemmer</translation>
     </message>
+    <message>
+        <source>Leave group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Leaving group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add member</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChatInfoMenu</name>
@@ -215,6 +231,49 @@ Minimumslængde er fem tegn.</translation>
     <message>
         <source>Telegram Status</source>
         <translation>Telegramstatus</translation>
+    </message>
+</context>
+<context>
+    <name>ConversationInfoPage</name>
+    <message>
+        <source>Enable Notifications</source>
+        <translation type="unfinished">Aktiver Påmindelser</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished">Handlinger</translation>
+    </message>
+    <message>
+        <source>Delete secret chat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete conversation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting secret chat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting conversation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable Notifications</source>
+        <translation type="unfinished">Deaktiver Påmindelser</translation>
+    </message>
+    <message>
+        <source>Add to contacts</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -752,7 +811,7 @@ Vælg en kontakt fra menuen ovenfor</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation>Handlinger</translation>
+        <translation type="vanished">Handlinger</translation>
     </message>
     <message>
         <source>Send Message</source>

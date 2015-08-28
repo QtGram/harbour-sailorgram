@@ -70,14 +70,6 @@ Page
         id: flickable
         anchors.fill: parent
 
-        ConversationMenu
-        {
-            id: conversationmenu
-            page: conversationpage
-            context: conversationpage.context
-            dialog: conversationpage.dialog
-        }
-
         PeerItem
         {
             id: header
