@@ -15,6 +15,7 @@ Item
     property User user
     property Chat chat
     property Message message
+    property bool muted: false
 
     onDialogChanged: {
         if(TelegramHelper.isChat(dialog))
@@ -23,6 +24,7 @@ Item
             user = context.telegram.user(dialog.peer.userId);
 
         message = context.telegram.message(dialog.topMessage);
+        muted = context.telegram.userData.isMuted(TelegramHelper.peerId(dialog));
     }
 
     id: conversationitem
@@ -33,6 +35,18 @@ Item
 
         onTopMessageChanged: {
             message = context.telegram.message(dialog.topMessage);
+        }
+    }
+
+    Connections
+    {
+        target: context.telegram.userData
+
+        onMuteChanged: {
+            if(id !== user.id)
+                return;
+
+            conversationitem.muted = context.telegram.userData.isMuted(id);
         }
     }
 
@@ -65,6 +79,8 @@ Item
 
                 Image {
                     id: imgchat
+                    width: lbluser.contentHeight
+                    height: lbluser.contentHeight
                     visible: TelegramHelper.isChat(dialog)
                     source: TelegramHelper.isChat(dialog) ? "image://theme/icon-s-chat" : ""
                     anchors.verticalCenter: parent.verticalCenter
@@ -73,11 +89,21 @@ Item
 
                 Label {
                     id: lbluser
-                    width: parent.width - lbltime.width - (imgchat.visible ? (imgchat.width + (Theme.paddingSmall * 2)) : Theme.paddingSmall)
                     text: TelegramHelper.isChat(dialog) ? chat.title : TelegramHelper.completeName(user)
                     verticalAlignment: Text.AlignVCenter
                     height: parent.height
                     color: Theme.highlightColor
+
+                }
+
+                Image {
+                    id: imgmute
+                    width: Theme.iconSizeSmall
+                    height: Theme.iconSizeSmall
+                    visible: conversationitem.muted
+                    source: "image://theme/icon-m-speaker-mute"
+                    anchors.verticalCenter: parent.verticalCenter
+                    fillMode: Image.PreserveAspectFit
                 }
 
                 Label {
@@ -87,6 +113,23 @@ Item
                     verticalAlignment: Text.AlignVCenter
                     horizontalAlignment: Text.AlignRight
                     text: TelegramCalendar.timeToString(message.date)
+
+                    width: {
+                        var w = parent.width - lbluser.contentWidth;
+
+                        if(imgchat.visible)
+                            w -= imgchat.width + (Theme.paddingSmall * 2);
+                        else
+                            w -= Theme.paddingSmall;
+
+                        if(imgmute.visible)
+                            w -= imgmute.width + (Theme.paddingSmall * 2);
+                        else
+                            w -= Theme.paddingSmall;
+
+                        return w;
+                    }
+
                 }
             }
 

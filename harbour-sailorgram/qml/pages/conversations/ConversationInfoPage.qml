@@ -18,6 +18,18 @@ Page
     property Chat chat
     property User user
 
+    Connections
+    {
+        target: context.telegram.userData
+
+        onMuteChanged: {
+            if(id !== user.id)
+                return;
+
+            conversationinfopage.muted = context.telegram.userData.isMuted(id);
+        }
+    }
+
     id: conversationinfopage
     allowedOrientations: defaultAllowedOrientations
 
