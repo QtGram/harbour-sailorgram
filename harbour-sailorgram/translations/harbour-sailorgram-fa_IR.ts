@@ -81,15 +81,15 @@
     </message>
     <message>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>سوئدی</translation>
     </message>
     <message>
         <source>Galician</source>
-        <translation type="unfinished"></translation>
+        <translation>گالیسی</translation>
     </message>
     <message>
         <source>Belaruian</source>
-        <translation type="unfinished"></translation>
+        <translation>بلاروسی</translation>
     </message>
 </context>
 <context>
@@ -166,19 +166,19 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Leave group</source>
-        <translation type="unfinished"></translation>
+        <translation>ترک گروه</translation>
     </message>
     <message>
         <source>Leaving group</source>
-        <translation type="unfinished"></translation>
+        <translation>در حال ترک گروه</translation>
     </message>
     <message>
         <source>Change title</source>
-        <translation type="unfinished"></translation>
+        <translation>تغییر عنوان</translation>
     </message>
     <message>
         <source>Add member</source>
-        <translation type="unfinished"></translation>
+        <translation>افزودن عضو</translation>
     </message>
 </context>
 <context>
@@ -196,19 +196,19 @@ Minimum length is 5 characters.</source>
     <name>ChatSettingsPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished">ذخیره</translation>
+        <translation>ذخیره</translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation type="unfinished">ارسال پیام با زدن کلید ورود</translation>
+        <translation>ارسال پیام با زدن کلید ورود</translation>
     </message>
     <message>
         <source>Disable background</source>
-        <translation type="unfinished">غیرفعال‌کردن پس‌زمینه</translation>
+        <translation>غیرفعال‌کردن پس‌زمینه</translation>
     </message>
     <message>
         <source>Hide chat header</source>
-        <translation type="unfinished"></translation>
+        <translation>پنهان‌کردن سربرگ گپ‌ها</translation>
     </message>
 </context>
 <context>
@@ -236,99 +236,44 @@ Minimum length is 5 characters.</source>
 <context>
     <name>ConversationInfoPage</name>
     <message>
-        <source>Enable Notifications</source>
-        <translation type="obsolete">فعال‌سازی اطلاعیه‌ها</translation>
-    </message>
-    <message>
         <source>Actions</source>
-        <translation type="unfinished">عملکردها</translation>
+        <translation>عملکردها</translation>
     </message>
     <message>
         <source>Delete secret chat</source>
-        <translation type="unfinished"></translation>
+        <translation>حذف گپ محرمانه</translation>
     </message>
     <message>
         <source>Delete group</source>
-        <translation type="unfinished"></translation>
+        <translation>حذف گروه</translation>
     </message>
     <message>
         <source>Delete conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>حذف گفت‌وگو</translation>
     </message>
     <message>
         <source>Deleting secret chat</source>
-        <translation type="unfinished"></translation>
+        <translation>در حال حذف گپ محرمانه</translation>
     </message>
     <message>
         <source>Deleting group</source>
-        <translation type="unfinished"></translation>
+        <translation>در حال حذف گروه</translation>
     </message>
     <message>
         <source>Deleting conversation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Disable Notifications</source>
-        <translation type="obsolete">غیرفعال‌سازی اطلاعیه‌ها</translation>
+        <translation>در حال حذف گفت‌وگو</translation>
     </message>
     <message>
         <source>Add to contacts</source>
-        <translation type="unfinished"></translation>
+        <translation>افزودن به آشنایان</translation>
     </message>
     <message>
         <source>Enable notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>فعال‌سازی اطلاعیه‌ها</translation>
     </message>
     <message>
         <source>Disable notifications</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ConversationMenu</name>
-    <message>
-        <source>Enable Notifications</source>
-        <translation type="vanished">فعال‌سازی اطلاعیه‌ها</translation>
-    </message>
-    <message>
-        <source>Disable Notifications</source>
-        <translation type="vanished">غیرفعال‌سازی اطلاعیه‌ها</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">حذف</translation>
-    </message>
-    <message>
-        <source>Deleting Secret Chat</source>
-        <translation type="vanished">در حال حذف گپ محرمانه</translation>
-    </message>
-    <message>
-        <source>Leave Group</source>
-        <translation type="vanished">ترک گروه</translation>
-    </message>
-    <message>
-        <source>Leaving Group</source>
-        <translation type="vanished">در حال ترک گروه</translation>
-    </message>
-    <message>
-        <source>Change Title</source>
-        <translation type="vanished">تغییر عنوان</translation>
-    </message>
-    <message>
-        <source>Add Member</source>
-        <translation type="vanished">افزودن عضو</translation>
-    </message>
-    <message>
-        <source>Add to Contacts</source>
-        <translation type="vanished">افزودن به آشنایان</translation>
-    </message>
-    <message>
-        <source>Deleting Conversation</source>
-        <translation type="vanished">در حال حذف گفت‌وگو</translation>
-    </message>
-    <message>
-        <source>Deleting Group</source>
-        <translation type="vanished">در حال حذف گروه</translation>
+        <translation>غیرفعال‌سازی اطلاعیه‌ها</translation>
     </message>
 </context>
 <context>
@@ -433,63 +378,63 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <source>Debug</source>
+        <translation>اشکال‌زدایی</translation>
     </message>
     <message>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Debug</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Heartbeat:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Connected</source>
-        <translation type="unfinished">وصل‌شده</translation>
-    </message>
-    <message>
-        <source>Not Connected</source>
-        <translation type="unfinished"></translation>
+        <translation>بازآوری</translation>
     </message>
     <message>
         <source>Contacts:</source>
-        <translation type="unfinished"></translation>
+        <translation>آشنایان:</translation>
+    </message>
+    <message>
+        <source>Heartbeat:</source>
+        <translation>هارت‌بیت:</translation>
+    </message>
+    <message>
+        <source>Connected</source>
+        <translation>وصل‌شده</translation>
+    </message>
+    <message>
+        <source>Error log</source>
+        <translation>نگاره‌ی خطا</translation>
+    </message>
+    <message>
+        <source>Not Connected</source>
+        <translation>وصل‌نشده</translation>
     </message>
 </context>
 <context>
     <name>ErrorsPage</name>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
-        <translation type="unfinished"></translation>
+        <translation>پاک‌کردن خطاها</translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>نگاره‌ی خطا خالی است</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <translation>نگاره‌ی خطا</translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished"></translation>
+        <translation>کد خطا:</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished"></translation>
+        <translation>عملکرد:</translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
+        <translation>در حال حذف خطاها</translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished"></translation>
+        <translation>پیام:</translation>
     </message>
 </context>
 <context>
@@ -686,28 +631,16 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
 <context>
     <name>SettingsPage</name>
     <message>
-        <source>Save</source>
-        <translation type="vanished">ذخیره</translation>
-    </message>
-    <message>
-        <source>Send Messages by pressing Return Key</source>
-        <translation type="vanished">ارسال پیام با زدن کلید ورود</translation>
-    </message>
-    <message>
-        <source>Disable background</source>
-        <translation type="vanished">غیرفعال‌کردن پس‌زمینه</translation>
-    </message>
-    <message>
         <source>Settings</source>
-        <translation type="unfinished">تنظیمات</translation>
+        <translation>تنظیمات</translation>
     </message>
     <message>
         <source>Chats</source>
-        <translation type="unfinished">گپ‌ها</translation>
+        <translation>گپ‌ها</translation>
     </message>
     <message>
         <source>Debug</source>
-        <translation type="unfinished"></translation>
+        <translation>اشکال‌زدایی</translation>
     </message>
 </context>
 <context>
@@ -814,20 +747,16 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
 <context>
     <name>UserInfo</name>
     <message>
-        <source>Phone Number</source>
-        <translation>شماره‌تلفن</translation>
-    </message>
-    <message>
-        <source>Actions</source>
-        <translation type="vanished">عملکردها</translation>
-    </message>
-    <message>
         <source>Send Message</source>
         <translation>ارسال پیام</translation>
     </message>
     <message>
         <source>Begin Secret Chat</source>
         <translation>گپ محرمانه را آغاز کنید</translation>
+    </message>
+    <message>
+        <source>Phone Number</source>
+        <translation>شماره‌تلفن</translation>
     </message>
 </context>
 <context>

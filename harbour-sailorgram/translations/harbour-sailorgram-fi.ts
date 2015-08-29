@@ -196,15 +196,15 @@ Vähimmäispituus on 5 merkkiä.</translation>
     <name>ChatSettingsPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Tallenna</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation type="unfinished">Lähetä viestejä painamalla enter-näppäintä.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Disable background</source>
-        <translation type="unfinished">Poista taustakuva käytöstä</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Hide chat header</source>
@@ -236,12 +236,8 @@ Vähimmäispituus on 5 merkkiä.</translation>
 <context>
     <name>ConversationInfoPage</name>
     <message>
-        <source>Enable Notifications</source>
-        <translation type="obsolete">Ota ilmoitukset käyttöön</translation>
-    </message>
-    <message>
         <source>Actions</source>
-        <translation type="unfinished">Toiminnot</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Delete secret chat</source>
@@ -268,10 +264,6 @@ Vähimmäispituus on 5 merkkiä.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Disable Notifications</source>
-        <translation type="obsolete">Poista ilmoitukset käytöstä</translation>
-    </message>
-    <message>
         <source>Add to contacts</source>
         <translation type="unfinished"></translation>
     </message>
@@ -282,53 +274,6 @@ Vähimmäispituus on 5 merkkiä.</translation>
     <message>
         <source>Disable notifications</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ConversationMenu</name>
-    <message>
-        <source>Enable Notifications</source>
-        <translation type="vanished">Ota ilmoitukset käyttöön</translation>
-    </message>
-    <message>
-        <source>Disable Notifications</source>
-        <translation type="vanished">Poista ilmoitukset käytöstä</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">Poista</translation>
-    </message>
-    <message>
-        <source>Deleting Secret Chat</source>
-        <translation type="vanished">Poistetaan salainen keskustelu</translation>
-    </message>
-    <message>
-        <source>Leave Group</source>
-        <translation type="vanished">Poistu ryhmästä</translation>
-    </message>
-    <message>
-        <source>Leaving Group</source>
-        <translation type="vanished">Poistutaan ryhmästä</translation>
-    </message>
-    <message>
-        <source>Change Title</source>
-        <translation type="vanished">Muuta tila</translation>
-    </message>
-    <message>
-        <source>Add Member</source>
-        <translation type="vanished">Lisää jäsen</translation>
-    </message>
-    <message>
-        <source>Add to Contacts</source>
-        <translation type="vanished">Lisää yhteystietoihin</translation>
-    </message>
-    <message>
-        <source>Deleting Conversation</source>
-        <translation type="vanished">Poistetaan keskustelu</translation>
-    </message>
-    <message>
-        <source>Deleting Group</source>
-        <translation type="vanished">Poistetaan ryhmä</translation>
     </message>
 </context>
 <context>
@@ -433,7 +378,7 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Error log</source>
+        <source>Debug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -441,7 +386,7 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Debug</source>
+        <source>Contacts:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -453,11 +398,11 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
         <translation type="unfinished">Yhdistetty</translation>
     </message>
     <message>
-        <source>Not Connected</source>
+        <source>Error log</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Contacts:</source>
+        <source>Not Connected</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -465,10 +410,6 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     <name>ErrorsPage</name>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -485,6 +426,10 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     </message>
     <message>
         <source>Function:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -686,18 +631,6 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
 <context>
     <name>SettingsPage</name>
     <message>
-        <source>Save</source>
-        <translation type="vanished">Tallenna</translation>
-    </message>
-    <message>
-        <source>Send Messages by pressing Return Key</source>
-        <translation type="vanished">Lähetä viestejä painamalla enter-näppäintä.</translation>
-    </message>
-    <message>
-        <source>Disable background</source>
-        <translation type="vanished">Poista taustakuva käytöstä</translation>
-    </message>
-    <message>
         <source>Settings</source>
         <translation type="unfinished">Asetukset</translation>
     </message>
@@ -814,20 +747,16 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
 <context>
     <name>UserInfo</name>
     <message>
-        <source>Phone Number</source>
-        <translation>Puhelinnumero</translation>
-    </message>
-    <message>
-        <source>Actions</source>
-        <translation type="vanished">Toiminnot</translation>
-    </message>
-    <message>
         <source>Send Message</source>
         <translation>Lähetä viesti</translation>
     </message>
     <message>
         <source>Begin Secret Chat</source>
         <translation>Aloita salainen keskustelu</translation>
+    </message>
+    <message>
+        <source>Phone Number</source>
+        <translation>Puhelinnumero</translation>
     </message>
 </context>
 <context>

@@ -81,15 +81,15 @@
     </message>
     <message>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>Шведский</translation>
     </message>
     <message>
         <source>Galician</source>
-        <translation type="unfinished"></translation>
+        <translation>Галисийский</translation>
     </message>
     <message>
         <source>Belaruian</source>
-        <translation type="unfinished"></translation>
+        <translation>Беларусский</translation>
     </message>
 </context>
 <context>
@@ -166,19 +166,19 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Leave group</source>
-        <translation type="unfinished"></translation>
+        <translation>Покинуть беседу</translation>
     </message>
     <message>
         <source>Leaving group</source>
-        <translation type="unfinished"></translation>
+        <translation>Выход из беседы</translation>
     </message>
     <message>
         <source>Change title</source>
-        <translation type="unfinished"></translation>
+        <translation>Изменить название</translation>
     </message>
     <message>
         <source>Add member</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить участника</translation>
     </message>
 </context>
 <context>
@@ -196,19 +196,19 @@ Minimum length is 5 characters.</source>
     <name>ChatSettingsPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Сохранить</translation>
+        <translation>Сохранить</translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation type="unfinished">Отправка сообщений клавишей ввода</translation>
+        <translation>Отправка сообщений клавишей ввода</translation>
     </message>
     <message>
         <source>Disable background</source>
-        <translation type="unfinished">Отключить фоновый рисунок</translation>
+        <translation>Отключить фоновый рисунок</translation>
     </message>
     <message>
         <source>Hide chat header</source>
-        <translation type="unfinished"></translation>
+        <translation>Убрать заголовок диалога</translation>
     </message>
 </context>
 <context>
@@ -236,99 +236,44 @@ Minimum length is 5 characters.</source>
 <context>
     <name>ConversationInfoPage</name>
     <message>
-        <source>Enable Notifications</source>
-        <translation type="obsolete">Включить уведомления</translation>
-    </message>
-    <message>
         <source>Actions</source>
-        <translation type="unfinished">Действия</translation>
+        <translation>Действия</translation>
     </message>
     <message>
         <source>Delete secret chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить тайный диалог</translation>
     </message>
     <message>
         <source>Delete group</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить беседу</translation>
     </message>
     <message>
         <source>Delete conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить диалог</translation>
     </message>
     <message>
         <source>Deleting secret chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Удаление тайного диалога</translation>
     </message>
     <message>
         <source>Deleting group</source>
-        <translation type="unfinished"></translation>
+        <translation>Удаление беседы</translation>
     </message>
     <message>
         <source>Deleting conversation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Disable Notifications</source>
-        <translation type="obsolete">Отключить уведомления</translation>
+        <translation>Удаление диалога</translation>
     </message>
     <message>
         <source>Add to contacts</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить в контакты</translation>
     </message>
     <message>
         <source>Enable notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Включить уведомления</translation>
     </message>
     <message>
         <source>Disable notifications</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ConversationMenu</name>
-    <message>
-        <source>Enable Notifications</source>
-        <translation type="vanished">Включить уведомления</translation>
-    </message>
-    <message>
-        <source>Disable Notifications</source>
-        <translation type="vanished">Отключить уведомления</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">Удалить</translation>
-    </message>
-    <message>
-        <source>Deleting Secret Chat</source>
-        <translation type="vanished">Удаление тайного диалога</translation>
-    </message>
-    <message>
-        <source>Leave Group</source>
-        <translation type="vanished">Покинуть беседу</translation>
-    </message>
-    <message>
-        <source>Leaving Group</source>
-        <translation type="vanished">Выход из беседы</translation>
-    </message>
-    <message>
-        <source>Change Title</source>
-        <translation type="vanished">Изменить название</translation>
-    </message>
-    <message>
-        <source>Add Member</source>
-        <translation type="vanished">Добавить собеседника</translation>
-    </message>
-    <message>
-        <source>Add to Contacts</source>
-        <translation type="vanished">Добавить в контакты</translation>
-    </message>
-    <message>
-        <source>Deleting Conversation</source>
-        <translation type="vanished">Удаление диалога</translation>
-    </message>
-    <message>
-        <source>Deleting Group</source>
-        <translation type="vanished">Удаление беседы</translation>
+        <translation>Отключить уведомления</translation>
     </message>
 </context>
 <context>
@@ -433,63 +378,63 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <source>Debug</source>
+        <translation>Отладка</translation>
     </message>
     <message>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Debug</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Heartbeat:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Connected</source>
-        <translation type="unfinished">Подключено</translation>
-    </message>
-    <message>
-        <source>Not Connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Обновить</translation>
     </message>
     <message>
         <source>Contacts:</source>
-        <translation type="unfinished"></translation>
+        <translation>Контакты:</translation>
+    </message>
+    <message>
+        <source>Heartbeat:</source>
+        <translation>Состояние:</translation>
+    </message>
+    <message>
+        <source>Connected</source>
+        <translation>Подключено</translation>
+    </message>
+    <message>
+        <source>Error log</source>
+        <translation>Журнал ошибок</translation>
+    </message>
+    <message>
+        <source>Not Connected</source>
+        <translation>Нет подключения</translation>
     </message>
 </context>
 <context>
     <name>ErrorsPage</name>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Очистить ошибки</translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>Журнал ошибок пуст</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <translation>Журнал ошибок</translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished"></translation>
+        <translation>Код ошибки:</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished"></translation>
+        <translation>Функция:</translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
+        <translation>Удаление ошибок</translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished"></translation>
+        <translation>Сообщение:</translation>
     </message>
 </context>
 <context>
@@ -686,28 +631,16 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
 <context>
     <name>SettingsPage</name>
     <message>
-        <source>Save</source>
-        <translation type="vanished">Сохранить</translation>
-    </message>
-    <message>
-        <source>Send Messages by pressing Return Key</source>
-        <translation type="vanished">Отправка сообщений клавишей ввода</translation>
-    </message>
-    <message>
-        <source>Disable background</source>
-        <translation type="vanished">Отключить фоновый рисунок</translation>
-    </message>
-    <message>
         <source>Settings</source>
-        <translation type="unfinished">Настройки</translation>
+        <translation>Настройки</translation>
     </message>
     <message>
         <source>Chats</source>
-        <translation type="unfinished">Диалоги</translation>
+        <translation>Диалоги</translation>
     </message>
     <message>
         <source>Debug</source>
-        <translation type="unfinished"></translation>
+        <translation>Отладка</translation>
     </message>
 </context>
 <context>
@@ -814,20 +747,16 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
 <context>
     <name>UserInfo</name>
     <message>
-        <source>Phone Number</source>
-        <translation>Номер телефона</translation>
-    </message>
-    <message>
-        <source>Actions</source>
-        <translation type="vanished">Действия</translation>
-    </message>
-    <message>
         <source>Send Message</source>
         <translation>Отправить сообщение</translation>
     </message>
     <message>
         <source>Begin Secret Chat</source>
         <translation>Начать секретный диалог</translation>
+    </message>
+    <message>
+        <source>Phone Number</source>
+        <translation>Номер телефона</translation>
     </message>
 </context>
 <context>

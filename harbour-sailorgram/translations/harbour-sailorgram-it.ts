@@ -81,15 +81,15 @@
     </message>
     <message>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>Svedese</translation>
     </message>
     <message>
         <source>Galician</source>
-        <translation type="unfinished"></translation>
+        <translation>Galiziano</translation>
     </message>
     <message>
         <source>Belaruian</source>
-        <translation type="unfinished"></translation>
+        <translation>Bielorusso</translation>
     </message>
 </context>
 <context>
@@ -166,19 +166,19 @@ La lunghezza minima è di 5 caratteri.</translation>
     </message>
     <message>
         <source>Leave group</source>
-        <translation type="unfinished"></translation>
+        <translation>Esci dal gruppo</translation>
     </message>
     <message>
         <source>Leaving group</source>
-        <translation type="unfinished"></translation>
+        <translation>Uscita dal gruppo</translation>
     </message>
     <message>
         <source>Change title</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambia titolo</translation>
     </message>
     <message>
         <source>Add member</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi membro</translation>
     </message>
 </context>
 <context>
@@ -196,19 +196,19 @@ La lunghezza minima è di 5 caratteri.</translation>
     <name>ChatSettingsPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Salva</translation>
+        <translation>Salva</translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation type="unfinished">Invia i messaggi premendo il tasto Enter</translation>
+        <translation>Invia i messaggi premendo il tasto Invio</translation>
     </message>
     <message>
         <source>Disable background</source>
-        <translation type="unfinished">Disabilita sfondo</translation>
+        <translation>Disabilita sfondo</translation>
     </message>
     <message>
         <source>Hide chat header</source>
-        <translation type="unfinished"></translation>
+        <translation>Nascondi l&apos;intestazione della chat</translation>
     </message>
 </context>
 <context>
@@ -236,99 +236,44 @@ La lunghezza minima è di 5 caratteri.</translation>
 <context>
     <name>ConversationInfoPage</name>
     <message>
-        <source>Enable Notifications</source>
-        <translation type="obsolete">Abilita notifiche</translation>
-    </message>
-    <message>
         <source>Actions</source>
-        <translation type="unfinished">Azioni</translation>
+        <translation>Azioni</translation>
     </message>
     <message>
         <source>Delete secret chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimina chat segreta</translation>
     </message>
     <message>
         <source>Delete group</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimina gruppo</translation>
     </message>
     <message>
         <source>Delete conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimina conversazione</translation>
     </message>
     <message>
         <source>Deleting secret chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Rimozione chat segreta</translation>
     </message>
     <message>
         <source>Deleting group</source>
-        <translation type="unfinished"></translation>
+        <translation>Rimozione gruppo</translation>
     </message>
     <message>
         <source>Deleting conversation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Disable Notifications</source>
-        <translation type="obsolete">Disabilita notifiche</translation>
+        <translation>Rimozione conversazione</translation>
     </message>
     <message>
         <source>Add to contacts</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi ai contatti</translation>
     </message>
     <message>
         <source>Enable notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Abilita notifiche</translation>
     </message>
     <message>
         <source>Disable notifications</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ConversationMenu</name>
-    <message>
-        <source>Enable Notifications</source>
-        <translation type="vanished">Abilita notifiche</translation>
-    </message>
-    <message>
-        <source>Disable Notifications</source>
-        <translation type="vanished">Disabilita notifiche</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">Elimina</translation>
-    </message>
-    <message>
-        <source>Deleting Secret Chat</source>
-        <translation type="vanished">Rimozione chat segreta</translation>
-    </message>
-    <message>
-        <source>Leave Group</source>
-        <translation type="vanished">Esci dal gruppo</translation>
-    </message>
-    <message>
-        <source>Leaving Group</source>
-        <translation type="vanished">Uscita dal gruppo</translation>
-    </message>
-    <message>
-        <source>Change Title</source>
-        <translation type="vanished">Cambia titolo</translation>
-    </message>
-    <message>
-        <source>Add Member</source>
-        <translation type="vanished">Aggiungi membro</translation>
-    </message>
-    <message>
-        <source>Add to Contacts</source>
-        <translation type="vanished">Aggiungi ai contatti</translation>
-    </message>
-    <message>
-        <source>Deleting Conversation</source>
-        <translation type="vanished">Rimozione conversazione</translation>
-    </message>
-    <message>
-        <source>Deleting Group</source>
-        <translation type="vanished">Rimozione gruppo</translation>
+        <translation>Disabilita notifiche</translation>
     </message>
 </context>
 <context>
@@ -433,63 +378,63 @@ Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <source>Debug</source>
+        <translation>Debug</translation>
     </message>
     <message>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Debug</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Heartbeat:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Connected</source>
-        <translation type="unfinished">Connesso</translation>
-    </message>
-    <message>
-        <source>Not Connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiorna</translation>
     </message>
     <message>
         <source>Contacts:</source>
-        <translation type="unfinished"></translation>
+        <translation>Contatti:</translation>
+    </message>
+    <message>
+        <source>Heartbeat:</source>
+        <translation>Heartbeat:</translation>
+    </message>
+    <message>
+        <source>Connected</source>
+        <translation>Connesso</translation>
+    </message>
+    <message>
+        <source>Error log</source>
+        <translation>Log degli errori</translation>
+    </message>
+    <message>
+        <source>Not Connected</source>
+        <translation>Non connesso</translation>
     </message>
 </context>
 <context>
     <name>ErrorsPage</name>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancella gli errori</translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>Il log degli errori è vuoto</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <translation>Log degli errori</translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished"></translation>
+        <translation>Codice d&apos;errore:</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished"></translation>
+        <translation>Funzione:</translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
+        <translation>Rimozione errori:</translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished"></translation>
+        <translation>Messaggi:</translation>
     </message>
 </context>
 <context>
@@ -686,28 +631,16 @@ Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
 <context>
     <name>SettingsPage</name>
     <message>
-        <source>Save</source>
-        <translation type="vanished">Salva</translation>
-    </message>
-    <message>
-        <source>Send Messages by pressing Return Key</source>
-        <translation type="vanished">Invia i messaggi premendo il tasto Enter</translation>
-    </message>
-    <message>
-        <source>Disable background</source>
-        <translation type="vanished">Disabilita sfondo</translation>
-    </message>
-    <message>
         <source>Settings</source>
-        <translation type="unfinished">Impostazioni</translation>
+        <translation>Impostazioni</translation>
     </message>
     <message>
         <source>Chats</source>
-        <translation type="unfinished">Conversazioni</translation>
+        <translation>Chat</translation>
     </message>
     <message>
         <source>Debug</source>
-        <translation type="unfinished"></translation>
+        <translation>Debug</translation>
     </message>
 </context>
 <context>
@@ -814,20 +747,16 @@ Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
 <context>
     <name>UserInfo</name>
     <message>
-        <source>Phone Number</source>
-        <translation>Numero di telefono</translation>
-    </message>
-    <message>
-        <source>Actions</source>
-        <translation type="vanished">Azioni</translation>
-    </message>
-    <message>
         <source>Send Message</source>
         <translation>Invia messaggio</translation>
     </message>
     <message>
         <source>Begin Secret Chat</source>
         <translation>Inizia chat segreta</translation>
+    </message>
+    <message>
+        <source>Phone Number</source>
+        <translation>Numero di telefono</translation>
     </message>
 </context>
 <context>

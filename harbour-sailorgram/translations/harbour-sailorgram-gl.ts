@@ -196,15 +196,15 @@ A lonxitude mínima é de 5 caracteres.</translation>
     <name>ChatSettingsPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Gardar</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation type="unfinished">Mandar mensaxes ao premer a tecla de retorno</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Disable background</source>
-        <translation type="unfinished">Desactivar fondo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Hide chat header</source>
@@ -236,12 +236,8 @@ A lonxitude mínima é de 5 caracteres.</translation>
 <context>
     <name>ConversationInfoPage</name>
     <message>
-        <source>Enable Notifications</source>
-        <translation type="obsolete">Activar notificacións</translation>
-    </message>
-    <message>
         <source>Actions</source>
-        <translation type="unfinished">Accións</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Delete secret chat</source>
@@ -268,10 +264,6 @@ A lonxitude mínima é de 5 caracteres.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Disable Notifications</source>
-        <translation type="obsolete">Desactivar notificacións</translation>
-    </message>
-    <message>
         <source>Add to contacts</source>
         <translation type="unfinished"></translation>
     </message>
@@ -282,53 +274,6 @@ A lonxitude mínima é de 5 caracteres.</translation>
     <message>
         <source>Disable notifications</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ConversationMenu</name>
-    <message>
-        <source>Enable Notifications</source>
-        <translation type="vanished">Activar notificacións</translation>
-    </message>
-    <message>
-        <source>Disable Notifications</source>
-        <translation type="vanished">Desactivar notificacións</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">Borrar</translation>
-    </message>
-    <message>
-        <source>Deleting Secret Chat</source>
-        <translation type="vanished">Borrando chat segredo</translation>
-    </message>
-    <message>
-        <source>Leave Group</source>
-        <translation type="vanished">Deixar grupo</translation>
-    </message>
-    <message>
-        <source>Leaving Group</source>
-        <translation type="vanished">Deixando grupo</translation>
-    </message>
-    <message>
-        <source>Change Title</source>
-        <translation type="vanished">Cambiar título</translation>
-    </message>
-    <message>
-        <source>Add Member</source>
-        <translation type="vanished">Engadir membro</translation>
-    </message>
-    <message>
-        <source>Add to Contacts</source>
-        <translation type="vanished">Engadir a contactos</translation>
-    </message>
-    <message>
-        <source>Deleting Conversation</source>
-        <translation type="vanished">Borrando conversa</translation>
-    </message>
-    <message>
-        <source>Deleting Group</source>
-        <translation type="vanished">Borrando grupo</translation>
     </message>
 </context>
 <context>
@@ -433,7 +378,7 @@ Elixa un contacto seleccionando &quot;Contactos&quot; no menu despregable</trans
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Error log</source>
+        <source>Debug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -441,7 +386,7 @@ Elixa un contacto seleccionando &quot;Contactos&quot; no menu despregable</trans
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Debug</source>
+        <source>Contacts:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -453,11 +398,11 @@ Elixa un contacto seleccionando &quot;Contactos&quot; no menu despregable</trans
         <translation type="unfinished">Conectado</translation>
     </message>
     <message>
-        <source>Not Connected</source>
+        <source>Error log</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Contacts:</source>
+        <source>Not Connected</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -465,10 +410,6 @@ Elixa un contacto seleccionando &quot;Contactos&quot; no menu despregable</trans
     <name>ErrorsPage</name>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -485,6 +426,10 @@ Elixa un contacto seleccionando &quot;Contactos&quot; no menu despregable</trans
     </message>
     <message>
         <source>Function:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -686,18 +631,6 @@ Elixa un contacto seleccionando &quot;Contactos&quot; no menu despregable</trans
 <context>
     <name>SettingsPage</name>
     <message>
-        <source>Save</source>
-        <translation type="vanished">Gardar</translation>
-    </message>
-    <message>
-        <source>Send Messages by pressing Return Key</source>
-        <translation type="vanished">Mandar mensaxes ao premer a tecla de retorno</translation>
-    </message>
-    <message>
-        <source>Disable background</source>
-        <translation type="vanished">Desactivar fondo</translation>
-    </message>
-    <message>
         <source>Settings</source>
         <translation type="unfinished">Axustes</translation>
     </message>
@@ -814,20 +747,16 @@ Elixa un contacto seleccionando &quot;Contactos&quot; no menu despregable</trans
 <context>
     <name>UserInfo</name>
     <message>
-        <source>Phone Number</source>
-        <translation>Número de teléfono</translation>
-    </message>
-    <message>
-        <source>Actions</source>
-        <translation type="vanished">Accións</translation>
-    </message>
-    <message>
         <source>Send Message</source>
         <translation>Mandar mensaxe</translation>
     </message>
     <message>
         <source>Begin Secret Chat</source>
         <translation>Iniciar chat segredo</translation>
+    </message>
+    <message>
+        <source>Phone Number</source>
+        <translation>Número de teléfono</translation>
     </message>
 </context>
 <context>

@@ -81,15 +81,15 @@
     </message>
     <message>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>Zweeds</translation>
     </message>
     <message>
         <source>Galician</source>
-        <translation type="unfinished"></translation>
+        <translation>Galisch</translation>
     </message>
     <message>
         <source>Belaruian</source>
-        <translation type="unfinished"></translation>
+        <translation>Wit-Russisch</translation>
     </message>
 </context>
 <context>
@@ -166,19 +166,19 @@ De minimale lengte is 5 tekens.</translation>
     </message>
     <message>
         <source>Leave group</source>
-        <translation type="unfinished"></translation>
+        <translation>Groep verlaten</translation>
     </message>
     <message>
         <source>Leaving group</source>
-        <translation type="unfinished"></translation>
+        <translation>Bezig met het verlaten van de groep</translation>
     </message>
     <message>
         <source>Change title</source>
-        <translation type="unfinished"></translation>
+        <translation>Titel wijzigen</translation>
     </message>
     <message>
         <source>Add member</source>
-        <translation type="unfinished"></translation>
+        <translation>Deelnemer toevoegen</translation>
     </message>
 </context>
 <context>
@@ -196,19 +196,19 @@ De minimale lengte is 5 tekens.</translation>
     <name>ChatSettingsPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Opslaan</translation>
+        <translation>Opslaan</translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation type="unfinished">Berichten versturen door op de Enter-toets te drukken</translation>
+        <translation>Berichten versturen door op de Enter-toets te drukken</translation>
     </message>
     <message>
         <source>Disable background</source>
-        <translation type="unfinished">Achtergrond uitschakelen</translation>
+        <translation>Achtergrond uitschakelen</translation>
     </message>
     <message>
         <source>Hide chat header</source>
-        <translation type="unfinished"></translation>
+        <translation>Chatkop verbergen</translation>
     </message>
 </context>
 <context>
@@ -236,99 +236,44 @@ De minimale lengte is 5 tekens.</translation>
 <context>
     <name>ConversationInfoPage</name>
     <message>
-        <source>Enable Notifications</source>
-        <translation type="obsolete">Meldingen inschakelen</translation>
-    </message>
-    <message>
         <source>Actions</source>
-        <translation type="unfinished">Acties</translation>
+        <translation>Acties</translation>
     </message>
     <message>
         <source>Delete secret chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Geheim chatgesprek verwijderen</translation>
     </message>
     <message>
         <source>Delete group</source>
-        <translation type="unfinished"></translation>
+        <translation>Groep verwijderen</translation>
     </message>
     <message>
         <source>Delete conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Gesprek verwijderen</translation>
     </message>
     <message>
         <source>Deleting secret chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Bezig met het verwijderen van het geheime chatgesprek</translation>
     </message>
     <message>
         <source>Deleting group</source>
-        <translation type="unfinished"></translation>
+        <translation>Bezig met het verwijderen van de groep</translation>
     </message>
     <message>
         <source>Deleting conversation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Disable Notifications</source>
-        <translation type="obsolete">Meldingen uitschakelen</translation>
+        <translation>Bezig met het verwijderen van het gesprek</translation>
     </message>
     <message>
         <source>Add to contacts</source>
-        <translation type="unfinished"></translation>
+        <translation>Toevoegen aan contactpersonen</translation>
     </message>
     <message>
         <source>Enable notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Meldingen inschakelen</translation>
     </message>
     <message>
         <source>Disable notifications</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ConversationMenu</name>
-    <message>
-        <source>Enable Notifications</source>
-        <translation type="vanished">Meldingen inschakelen</translation>
-    </message>
-    <message>
-        <source>Disable Notifications</source>
-        <translation type="vanished">Meldingen uitschakelen</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">Verwijderen</translation>
-    </message>
-    <message>
-        <source>Deleting Secret Chat</source>
-        <translation type="vanished">Bezig met het verwijderen van het geheime chatgesprek</translation>
-    </message>
-    <message>
-        <source>Leave Group</source>
-        <translation type="vanished">Groep verlaten</translation>
-    </message>
-    <message>
-        <source>Leaving Group</source>
-        <translation type="vanished">Bezig met het verlaten van de groep</translation>
-    </message>
-    <message>
-        <source>Change Title</source>
-        <translation type="vanished">Titel wijzigen</translation>
-    </message>
-    <message>
-        <source>Add Member</source>
-        <translation type="vanished">Deelnemer toevoegen</translation>
-    </message>
-    <message>
-        <source>Add to Contacts</source>
-        <translation type="vanished">Toevoegen aan contactpersonen</translation>
-    </message>
-    <message>
-        <source>Deleting Conversation</source>
-        <translation type="vanished">Bezig met het verwijderen van het gesprek</translation>
-    </message>
-    <message>
-        <source>Deleting Group</source>
-        <translation type="vanished">Bezig met het verwijderen van de groep</translation>
+        <translation>Meldingen uitschakelen</translation>
     </message>
 </context>
 <context>
@@ -433,63 +378,63 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <source>Debug</source>
+        <translation>Foutopsporing </translation>
     </message>
     <message>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Debug</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Heartbeat:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Connected</source>
-        <translation type="unfinished">Verbonden</translation>
-    </message>
-    <message>
-        <source>Not Connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Herladen</translation>
     </message>
     <message>
         <source>Contacts:</source>
-        <translation type="unfinished"></translation>
+        <translation>Contactpersonen:</translation>
+    </message>
+    <message>
+        <source>Heartbeat:</source>
+        <translation>Hartslag:</translation>
+    </message>
+    <message>
+        <source>Connected</source>
+        <translation>Verbonden</translation>
+    </message>
+    <message>
+        <source>Error log</source>
+        <translation>Foutenlogbestand</translation>
+    </message>
+    <message>
+        <source>Not Connected</source>
+        <translation>Niet verbonden</translation>
     </message>
 </context>
 <context>
     <name>ErrorsPage</name>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Fouten wissen</translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>Het foutenlogbestand is leeg</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <translation>Foutenlogbestand</translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished"></translation>
+        <translation>Foutcode:</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished"></translation>
+        <translation>Functie:</translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
+        <translation>Bezig met het verwijderen van de fouten</translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bericht:</translation>
     </message>
 </context>
 <context>
@@ -686,28 +631,16 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
 <context>
     <name>SettingsPage</name>
     <message>
-        <source>Save</source>
-        <translation type="vanished">Opslaan</translation>
-    </message>
-    <message>
-        <source>Send Messages by pressing Return Key</source>
-        <translation type="vanished">Berichten versturen door op de Enter-toets te drukken</translation>
-    </message>
-    <message>
-        <source>Disable background</source>
-        <translation type="vanished">Achtergrond uitschakelen</translation>
-    </message>
-    <message>
         <source>Settings</source>
-        <translation type="unfinished">Instellingen</translation>
+        <translation>Instellingen</translation>
     </message>
     <message>
         <source>Chats</source>
-        <translation type="unfinished">Chatgesprekken</translation>
+        <translation>Chatgesprekken </translation>
     </message>
     <message>
         <source>Debug</source>
-        <translation type="unfinished"></translation>
+        <translation>Foutopsporing</translation>
     </message>
 </context>
 <context>
@@ -814,20 +747,16 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
 <context>
     <name>UserInfo</name>
     <message>
-        <source>Phone Number</source>
-        <translation>Telefoonnummer</translation>
-    </message>
-    <message>
-        <source>Actions</source>
-        <translation type="vanished">Acties</translation>
-    </message>
-    <message>
         <source>Send Message</source>
         <translation>Bericht versturen</translation>
     </message>
     <message>
         <source>Begin Secret Chat</source>
         <translation>Geheim chatgesprek beginnen</translation>
+    </message>
+    <message>
+        <source>Phone Number</source>
+        <translation>Telefoonnummer</translation>
     </message>
 </context>
 <context>

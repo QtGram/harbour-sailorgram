@@ -196,15 +196,15 @@ La longueur minimum est de 5 caractères.</translation>
     <name>ChatSettingsPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Enregistrer</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation type="unfinished">Envoyer les messages en cliquant la touche Retour</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Disable background</source>
-        <translation type="unfinished">Supprimer le fond d&apos;écran</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Hide chat header</source>
@@ -236,12 +236,8 @@ La longueur minimum est de 5 caractères.</translation>
 <context>
     <name>ConversationInfoPage</name>
     <message>
-        <source>Enable Notifications</source>
-        <translation type="obsolete">Activer les notifications</translation>
-    </message>
-    <message>
         <source>Actions</source>
-        <translation type="unfinished">Actions</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Delete secret chat</source>
@@ -268,10 +264,6 @@ La longueur minimum est de 5 caractères.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Disable Notifications</source>
-        <translation type="obsolete">Désactiver les notifications</translation>
-    </message>
-    <message>
         <source>Add to contacts</source>
         <translation type="unfinished"></translation>
     </message>
@@ -282,53 +274,6 @@ La longueur minimum est de 5 caractères.</translation>
     <message>
         <source>Disable notifications</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ConversationMenu</name>
-    <message>
-        <source>Enable Notifications</source>
-        <translation type="vanished">Activer les notifications</translation>
-    </message>
-    <message>
-        <source>Disable Notifications</source>
-        <translation type="vanished">Désactiver les notifications</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">Effacer</translation>
-    </message>
-    <message>
-        <source>Deleting Secret Chat</source>
-        <translation type="vanished">Suppression de discussion secrète</translation>
-    </message>
-    <message>
-        <source>Leave Group</source>
-        <translation type="vanished">Quitter le groupe</translation>
-    </message>
-    <message>
-        <source>Leaving Group</source>
-        <translation type="vanished">Quitte le groupe</translation>
-    </message>
-    <message>
-        <source>Change Title</source>
-        <translation type="vanished">Changer le titre</translation>
-    </message>
-    <message>
-        <source>Add Member</source>
-        <translation type="vanished">Ajouter un participant</translation>
-    </message>
-    <message>
-        <source>Add to Contacts</source>
-        <translation type="vanished">Ajouter aux contacts</translation>
-    </message>
-    <message>
-        <source>Deleting Conversation</source>
-        <translation type="vanished">Suppression de la conversation</translation>
-    </message>
-    <message>
-        <source>Deleting Group</source>
-        <translation type="vanished">Suppression du groupe</translation>
     </message>
 </context>
 <context>
@@ -433,7 +378,7 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Error log</source>
+        <source>Debug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -441,7 +386,7 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Debug</source>
+        <source>Contacts:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -453,11 +398,11 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
         <translation type="unfinished">Connecté</translation>
     </message>
     <message>
-        <source>Not Connected</source>
+        <source>Error log</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Contacts:</source>
+        <source>Not Connected</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -465,10 +410,6 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
     <name>ErrorsPage</name>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -485,6 +426,10 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
     </message>
     <message>
         <source>Function:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -686,18 +631,6 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
 <context>
     <name>SettingsPage</name>
     <message>
-        <source>Save</source>
-        <translation type="vanished">Enregistrer</translation>
-    </message>
-    <message>
-        <source>Send Messages by pressing Return Key</source>
-        <translation type="vanished">Envoyer les messages en cliquant la touche Retour</translation>
-    </message>
-    <message>
-        <source>Disable background</source>
-        <translation type="vanished">Supprimer le fond d&apos;écran</translation>
-    </message>
-    <message>
         <source>Settings</source>
         <translation type="unfinished">Paramètres</translation>
     </message>
@@ -814,20 +747,16 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
 <context>
     <name>UserInfo</name>
     <message>
-        <source>Phone Number</source>
-        <translation>Numéro de téléphone</translation>
-    </message>
-    <message>
-        <source>Actions</source>
-        <translation type="vanished">Actions</translation>
-    </message>
-    <message>
         <source>Send Message</source>
         <translation>Envoyer un message</translation>
     </message>
     <message>
         <source>Begin Secret Chat</source>
         <translation>Commencer une conversation secrète</translation>
+    </message>
+    <message>
+        <source>Phone Number</source>
+        <translation>Numéro de téléphone</translation>
     </message>
 </context>
 <context>

@@ -196,15 +196,15 @@ Minimální délka je 5 znaků .</translation>
     <name>ChatSettingsPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Uložit</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation type="unfinished">Poslat zprávu stiskem klávesy Enter</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Disable background</source>
-        <translation type="unfinished">Vypnout pozadí</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Hide chat header</source>
@@ -236,12 +236,8 @@ Minimální délka je 5 znaků .</translation>
 <context>
     <name>ConversationInfoPage</name>
     <message>
-        <source>Enable Notifications</source>
-        <translation type="obsolete">Povolit oznamování</translation>
-    </message>
-    <message>
         <source>Actions</source>
-        <translation type="unfinished">Akce</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Delete secret chat</source>
@@ -268,10 +264,6 @@ Minimální délka je 5 znaků .</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Disable Notifications</source>
-        <translation type="obsolete">Zakázat oznamování</translation>
-    </message>
-    <message>
         <source>Add to contacts</source>
         <translation type="unfinished"></translation>
     </message>
@@ -282,53 +274,6 @@ Minimální délka je 5 znaků .</translation>
     <message>
         <source>Disable notifications</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ConversationMenu</name>
-    <message>
-        <source>Enable Notifications</source>
-        <translation type="vanished">Povolit oznamování</translation>
-    </message>
-    <message>
-        <source>Disable Notifications</source>
-        <translation type="vanished">Zakázat oznamování</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">Vymazat</translation>
-    </message>
-    <message>
-        <source>Deleting Secret Chat</source>
-        <translation type="vanished">Vymazání tajného rozhovoru</translation>
-    </message>
-    <message>
-        <source>Leave Group</source>
-        <translation type="vanished">Opustit skupinu</translation>
-    </message>
-    <message>
-        <source>Leaving Group</source>
-        <translation type="vanished">Opustím skupinu</translation>
-    </message>
-    <message>
-        <source>Change Title</source>
-        <translation type="vanished">Změmit název</translation>
-    </message>
-    <message>
-        <source>Add Member</source>
-        <translation type="vanished">Přidat člena</translation>
-    </message>
-    <message>
-        <source>Add to Contacts</source>
-        <translation type="vanished">Přidat ke kontaktúm</translation>
-    </message>
-    <message>
-        <source>Deleting Conversation</source>
-        <translation type="vanished">Vymazání konverzace</translation>
-    </message>
-    <message>
-        <source>Deleting Group</source>
-        <translation type="vanished">Vymazání skupiny</translation>
     </message>
 </context>
 <context>
@@ -433,7 +378,7 @@ Přidejte osobu výběrem &quot;Kontakty&quot; z menu</translation>
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Error log</source>
+        <source>Debug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -441,7 +386,7 @@ Přidejte osobu výběrem &quot;Kontakty&quot; z menu</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Debug</source>
+        <source>Contacts:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -453,11 +398,11 @@ Přidejte osobu výběrem &quot;Kontakty&quot; z menu</translation>
         <translation type="unfinished">Připojen</translation>
     </message>
     <message>
-        <source>Not Connected</source>
+        <source>Error log</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Contacts:</source>
+        <source>Not Connected</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -465,10 +410,6 @@ Přidejte osobu výběrem &quot;Kontakty&quot; z menu</translation>
     <name>ErrorsPage</name>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -485,6 +426,10 @@ Přidejte osobu výběrem &quot;Kontakty&quot; z menu</translation>
     </message>
     <message>
         <source>Function:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -686,18 +631,6 @@ Přidejte osobu výběrem &quot;Kontakty&quot; z menu</translation>
 <context>
     <name>SettingsPage</name>
     <message>
-        <source>Save</source>
-        <translation type="vanished">Uložit</translation>
-    </message>
-    <message>
-        <source>Send Messages by pressing Return Key</source>
-        <translation type="vanished">Poslat zprávu stiskem klávesy Enter</translation>
-    </message>
-    <message>
-        <source>Disable background</source>
-        <translation type="vanished">Vypnout pozadí</translation>
-    </message>
-    <message>
         <source>Settings</source>
         <translation type="unfinished">Nastavení</translation>
     </message>
@@ -814,20 +747,16 @@ Přidejte osobu výběrem &quot;Kontakty&quot; z menu</translation>
 <context>
     <name>UserInfo</name>
     <message>
-        <source>Phone Number</source>
-        <translation>Telefoní číslo</translation>
-    </message>
-    <message>
-        <source>Actions</source>
-        <translation type="vanished">Akce</translation>
-    </message>
-    <message>
         <source>Send Message</source>
         <translation>Poslat zprávu</translation>
     </message>
     <message>
         <source>Begin Secret Chat</source>
         <translation>Začít nový tajný rozhovor</translation>
+    </message>
+    <message>
+        <source>Phone Number</source>
+        <translation>Telefoní číslo</translation>
     </message>
 </context>
 <context>

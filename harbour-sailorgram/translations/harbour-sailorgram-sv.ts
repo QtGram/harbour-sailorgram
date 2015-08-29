@@ -81,15 +81,15 @@
     </message>
     <message>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>Svenska</translation>
     </message>
     <message>
         <source>Galician</source>
-        <translation type="unfinished"></translation>
+        <translation>Galiciska</translation>
     </message>
     <message>
         <source>Belaruian</source>
-        <translation type="unfinished"></translation>
+        <translation>Vitryska</translation>
     </message>
 </context>
 <context>
@@ -166,19 +166,19 @@ Minimilängd är 5 tecken.</translation>
     </message>
     <message>
         <source>Leave group</source>
-        <translation type="unfinished"></translation>
+        <translation>Lämna gruppen</translation>
     </message>
     <message>
         <source>Leaving group</source>
-        <translation type="unfinished"></translation>
+        <translation>Lämnar grupp</translation>
     </message>
     <message>
         <source>Change title</source>
-        <translation type="unfinished"></translation>
+        <translation>Ändra titel</translation>
     </message>
     <message>
         <source>Add member</source>
-        <translation type="unfinished"></translation>
+        <translation>Lägg till medlem</translation>
     </message>
 </context>
 <context>
@@ -196,19 +196,19 @@ Minimilängd är 5 tecken.</translation>
     <name>ChatSettingsPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Spara</translation>
+        <translation>Spara</translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation type="unfinished">Skicka meddelande med returtangenten</translation>
+        <translation>Skicka meddelanden med returtangenten</translation>
     </message>
     <message>
         <source>Disable background</source>
-        <translation type="unfinished">Inaktivera bakgrund</translation>
+        <translation>Inaktivera bakgrund</translation>
     </message>
     <message>
         <source>Hide chat header</source>
-        <translation type="unfinished"></translation>
+        <translation>Dölj chattrubrik</translation>
     </message>
 </context>
 <context>
@@ -236,99 +236,44 @@ Minimilängd är 5 tecken.</translation>
 <context>
     <name>ConversationInfoPage</name>
     <message>
-        <source>Enable Notifications</source>
-        <translation type="obsolete">Aktivera aviseringar</translation>
-    </message>
-    <message>
         <source>Actions</source>
-        <translation type="unfinished">Åtgärder</translation>
+        <translation>Åtgärder</translation>
     </message>
     <message>
         <source>Delete secret chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta bort hemlig chatt</translation>
     </message>
     <message>
         <source>Delete group</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta bort grupp</translation>
     </message>
     <message>
         <source>Delete conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta bort konversation</translation>
     </message>
     <message>
         <source>Deleting secret chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Tar bort hemlig chatt</translation>
     </message>
     <message>
         <source>Deleting group</source>
-        <translation type="unfinished"></translation>
+        <translation>Tar bort grupp</translation>
     </message>
     <message>
         <source>Deleting conversation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Disable Notifications</source>
-        <translation type="obsolete">Inaktivera aviseringar</translation>
+        <translation>Tar bort konversation</translation>
     </message>
     <message>
         <source>Add to contacts</source>
-        <translation type="unfinished"></translation>
+        <translation>Lägg till i kontakter</translation>
     </message>
     <message>
         <source>Enable notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivera aviseringar</translation>
     </message>
     <message>
         <source>Disable notifications</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ConversationMenu</name>
-    <message>
-        <source>Enable Notifications</source>
-        <translation type="vanished">Aktivera aviseringar</translation>
-    </message>
-    <message>
-        <source>Disable Notifications</source>
-        <translation type="vanished">Inaktivera aviseringar</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">Ta bort</translation>
-    </message>
-    <message>
-        <source>Deleting Secret Chat</source>
-        <translation type="vanished">Tar bort hemlig chatt</translation>
-    </message>
-    <message>
-        <source>Leave Group</source>
-        <translation type="vanished">Lämna gruppen</translation>
-    </message>
-    <message>
-        <source>Leaving Group</source>
-        <translation type="vanished">Lämnar grupp</translation>
-    </message>
-    <message>
-        <source>Change Title</source>
-        <translation type="vanished">Ändra titel</translation>
-    </message>
-    <message>
-        <source>Add Member</source>
-        <translation type="vanished">Lägg till medlem</translation>
-    </message>
-    <message>
-        <source>Add to Contacts</source>
-        <translation type="vanished">Lägg till i kontakter</translation>
-    </message>
-    <message>
-        <source>Deleting Conversation</source>
-        <translation type="vanished">Tar bort konversation</translation>
-    </message>
-    <message>
-        <source>Deleting Group</source>
-        <translation type="vanished">Tar bort grupp</translation>
+        <translation>Inaktivera aviseringar</translation>
     </message>
 </context>
 <context>
@@ -433,63 +378,63 @@ Välj en kontakt genom att gå till &quot;Kontakter&quot; i ovanstående meny</t
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <source>Debug</source>
+        <translation>Felsök</translation>
     </message>
     <message>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Debug</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Heartbeat:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Connected</source>
-        <translation type="unfinished">Ansluten</translation>
-    </message>
-    <message>
-        <source>Not Connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Uppdatera</translation>
     </message>
     <message>
         <source>Contacts:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontakter:</translation>
+    </message>
+    <message>
+        <source>Heartbeat:</source>
+        <translation>Status:</translation>
+    </message>
+    <message>
+        <source>Connected</source>
+        <translation>Ansluten</translation>
+    </message>
+    <message>
+        <source>Error log</source>
+        <translation>Fellogg</translation>
+    </message>
+    <message>
+        <source>Not Connected</source>
+        <translation>Ej ansluten</translation>
     </message>
 </context>
 <context>
     <name>ErrorsPage</name>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Rensa felloggen</translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>Felloggen är tom</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <translation>Fellogg</translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished"></translation>
+        <translation>Felkod:</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished"></translation>
+        <translation>Funktion:</translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
+        <translation>Tar bort fel</translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished"></translation>
+        <translation>Meddelande:</translation>
     </message>
 </context>
 <context>
@@ -686,28 +631,16 @@ Välj en kontakt genom att gå till &quot;Kontakter&quot; i ovanstående meny</t
 <context>
     <name>SettingsPage</name>
     <message>
-        <source>Save</source>
-        <translation type="vanished">Spara</translation>
-    </message>
-    <message>
-        <source>Send Messages by pressing Return Key</source>
-        <translation type="vanished">Skicka meddelande med returtangenten</translation>
-    </message>
-    <message>
-        <source>Disable background</source>
-        <translation type="vanished">Inaktivera bakgrund</translation>
-    </message>
-    <message>
         <source>Settings</source>
-        <translation type="unfinished">Inställningar</translation>
+        <translation>Inställningar</translation>
     </message>
     <message>
         <source>Chats</source>
-        <translation type="unfinished">Chattar</translation>
+        <translation>Chattar</translation>
     </message>
     <message>
         <source>Debug</source>
-        <translation type="unfinished"></translation>
+        <translation>Felsök</translation>
     </message>
 </context>
 <context>
@@ -814,20 +747,16 @@ Välj en kontakt genom att gå till &quot;Kontakter&quot; i ovanstående meny</t
 <context>
     <name>UserInfo</name>
     <message>
-        <source>Phone Number</source>
-        <translation>Telefonnummer</translation>
-    </message>
-    <message>
-        <source>Actions</source>
-        <translation type="vanished">Åtgärder</translation>
-    </message>
-    <message>
         <source>Send Message</source>
         <translation>Skicka meddelande</translation>
     </message>
     <message>
         <source>Begin Secret Chat</source>
         <translation>Starta hemlig chatt</translation>
+    </message>
+    <message>
+        <source>Phone Number</source>
+        <translation>Telefonnummer</translation>
     </message>
 </context>
 <context>

@@ -5,524 +5,529 @@
     <name>AboutPage</name>
     <message>
         <source>Danish</source>
-        <translation type="unfinished"></translation>
+        <translation>Дацкая мова</translation>
     </message>
     <message>
         <source>Dutch</source>
-        <translation type="unfinished"></translation>
+        <translation>Галанская мова</translation>
     </message>
     <message>
         <source>Finnish</source>
-        <translation type="unfinished"></translation>
+        <translation>Фінская мова</translation>
     </message>
     <message>
         <source>German</source>
-        <translation type="unfinished"></translation>
+        <translation>Нямецкая мова</translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation type="unfinished"></translation>
+        <translation>Руская мова</translation>
     </message>
     <message>
         <source>Spanish</source>
-        <translation type="unfinished"></translation>
+        <translation>Іспанская мова</translation>
     </message>
     <message>
         <source>Czech</source>
-        <translation type="unfinished"></translation>
+        <translation>Чэшская мова</translation>
     </message>
     <message>
         <source>French</source>
-        <translation type="unfinished"></translation>
+        <translation>Французкая мова</translation>
     </message>
     <message>
         <source>Italian</source>
-        <translation type="unfinished"></translation>
+        <translation>Італьянская мова</translation>
     </message>
     <message>
         <source>Persian</source>
-        <translation type="unfinished"></translation>
+        <translation>Персіцкая мова</translation>
     </message>
     <message>
         <source>Greek</source>
-        <translation type="unfinished"></translation>
+        <translation>Грэцкая мова</translation>
     </message>
     <message>
         <source>About SailorGram</source>
-        <translation type="unfinished"></translation>
+        <translation>Пра SailorGram</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Версія</translation>
     </message>
     <message>
         <source>An unofficial Telegram Client for SailfishOS</source>
-        <translation type="unfinished"></translation>
+        <translation>Неафіцыйны кліент Telegram для SailfishOS</translation>
     </message>
     <message>
         <source>Developer</source>
-        <translation type="unfinished"></translation>
+        <translation>Распрацоўвальнік</translation>
     </message>
     <message>
         <source>Icon Designer</source>
-        <translation type="unfinished"></translation>
+        <translation>Дызайнер абразак</translation>
     </message>
     <message>
         <source>GitHub Repository</source>
-        <translation type="unfinished"></translation>
+        <translation>Рэпазіторый GitHub</translation>
     </message>
     <message>
         <source>Translators</source>
-        <translation type="unfinished"></translation>
+        <translation>Перакладчыкі</translation>
     </message>
     <message>
         <source>Translation Platform</source>
-        <translation type="unfinished"></translation>
+        <translation>Платформа перакладу</translation>
     </message>
     <message>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>Швецкая мова</translation>
     </message>
     <message>
         <source>Galician</source>
-        <translation type="unfinished"></translation>
+        <translation>Галіцыйская мова</translation>
     </message>
     <message>
         <source>Belaruian</source>
-        <translation type="unfinished"></translation>
+        <translation>Беларуская мова</translation>
     </message>
 </context>
 <context>
     <name>AddContactsPage</name>
     <message>
         <source>Add Chat Member</source>
-        <translation type="unfinished"></translation>
+        <translation>Дадаць удзельніка гаворкі</translation>
     </message>
 </context>
 <context>
     <name>AuthorizationPage</name>
     <message>
         <source>Sign In</source>
-        <translation type="unfinished"></translation>
+        <translation>Увайсці</translation>
     </message>
     <message>
         <source>Authorization Code</source>
-        <translation type="unfinished">Код аўтарызацыі</translation>
+        <translation>Код аўтарызацыі</translation>
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation type="unfinished">Вы ўвелі няверны код аўтарызацыі</translation>
+        <translation>Уведзены памылковы код аўтарызацыі</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign In&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Дачакайцеся SMS з кодам актывацыі і націсьніце &quot;Увайсьці&quot;</translation>
     </message>
     <message>
         <source>Resend Activation Code</source>
-        <translation type="unfinished"></translation>
+        <translation>Адправіць код аўтарызацыі зноў</translation>
     </message>
     <message>
         <source>Sending Activation Code</source>
-        <translation type="unfinished"></translation>
+        <translation>Адсыл кода аўтарызацыі</translation>
     </message>
 </context>
 <context>
     <name>ChangeChatTitle</name>
     <message>
         <source>Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Змяніць</translation>
     </message>
 </context>
 <context>
     <name>ChangeUsernamePage</name>
     <message>
         <source>Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Змяніць</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation type="unfinished">Імя карыстальніка</translation>
+        <translation>Імя карыстальніка</translation>
     </message>
     <message>
         <source>You can choose an username on Telegram. If you do, other people may contact you without knowing your phone number.
 
 You can use a-z, 0-9 and underscores.
 Minimum length is 5 characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы здольны выбраць імя карыстальніка Telegram. Такім чынам, другія людзі змогуць размаўляць з вамі, нават не ведаючы вашага нумара тэлефона.
+
+Вам дазволена выкарыстовываць: &quot;a-z&quot;, &quot;0-9&quot;, і падкрэсліванні.
+Мінімальная даўжыня: 5 сімвалаў.</translation>
     </message>
     <message>
         <source>This username is already occupied</source>
-        <translation type="unfinished"></translation>
+        <translation>Гэта імя карыстальніка ўжо існуе</translation>
     </message>
 </context>
 <context>
     <name>ChatInfo</name>
     <message>
         <source>Members</source>
-        <translation type="unfinished"></translation>
+        <translation>Удзельнікі</translation>
     </message>
     <message>
         <source>Leave group</source>
-        <translation type="unfinished"></translation>
+        <translation>Выйсці з групы</translation>
     </message>
     <message>
         <source>Leaving group</source>
-        <translation type="unfinished"></translation>
+        <translation>Выхад з групы</translation>
     </message>
     <message>
         <source>Change title</source>
-        <translation type="unfinished"></translation>
+        <translation>Змяніць назву</translation>
     </message>
     <message>
         <source>Add member</source>
-        <translation type="unfinished"></translation>
+        <translation>Дадаць удзельніка</translation>
     </message>
 </context>
 <context>
     <name>ChatInfoMenu</name>
     <message>
         <source>Remove from Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Выдаліць з групы</translation>
     </message>
     <message>
         <source>Removing from group</source>
-        <translation type="unfinished"></translation>
+        <translation>Выдаленне з групы</translation>
     </message>
 </context>
 <context>
     <name>ChatSettingsPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Захаваць</translation>
+        <translation>Захаваць</translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation type="unfinished">Паслаць паведамленне націснўшы кнопку ўвода</translation>
+        <translation>Паслаць паведамленні націскам кнопкі ўвод</translation>
     </message>
     <message>
         <source>Disable background</source>
-        <translation type="unfinished">Схаваць фон</translation>
+        <translation>Схаваць фон</translation>
     </message>
     <message>
         <source>Hide chat header</source>
-        <translation type="unfinished"></translation>
+        <translation>Схаваць загаловак гаворкі</translation>
     </message>
 </context>
 <context>
     <name>ConnectingLabel</name>
     <message>
         <source>Connecting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Злучэнне...</translation>
     </message>
 </context>
 <context>
     <name>ConnectionPage</name>
     <message>
         <source>Connecting</source>
-        <translation type="unfinished"></translation>
+        <translation>Злучэнне</translation>
     </message>
     <message>
         <source>Login Again</source>
-        <translation type="unfinished"></translation>
+        <translation>Увайсці зноў</translation>
     </message>
     <message>
         <source>Telegram Status</source>
-        <translation type="unfinished"></translation>
+        <translation>Стан Telegram</translation>
     </message>
 </context>
 <context>
     <name>ConversationInfoPage</name>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Дзеянні</translation>
+        <translation>Дзеянні</translation>
     </message>
     <message>
         <source>Delete secret chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Выдаліць сакрэтную гаворку</translation>
     </message>
     <message>
         <source>Delete group</source>
-        <translation type="unfinished"></translation>
+        <translation>Выдаліць групу</translation>
     </message>
     <message>
         <source>Delete conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Выдаленне размовы</translation>
     </message>
     <message>
         <source>Deleting secret chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Выдаленне сакрэтнай гаворкі</translation>
     </message>
     <message>
         <source>Deleting group</source>
-        <translation type="unfinished"></translation>
+        <translation>Выдаленне групы</translation>
     </message>
     <message>
         <source>Deleting conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Выдаленне размовы</translation>
     </message>
     <message>
         <source>Add to contacts</source>
-        <translation type="unfinished"></translation>
+        <translation>Дадаць у кантакты</translation>
     </message>
     <message>
         <source>Enable notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Уключыць апавяшчэньні</translation>
     </message>
     <message>
         <source>Disable notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Адключыць апавяшчэньні</translation>
     </message>
 </context>
 <context>
     <name>ConversationsPage</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Наладкі</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Інфармацыя</translation>
     </message>
     <message>
         <source>No Chats
 
 Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation type="unfinished"></translation>
+        <translation>Няма гаворак
+
+Абярыце кантакт з меню Кантакты уверсе</translation>
     </message>
     <message>
         <source>Chats</source>
-        <translation type="unfinished"></translation>
+        <translation>Гаворкі</translation>
     </message>
     <message>
         <source>Connecting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Злучэнне...</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Выдаленне сакрэтнай гаворкі</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Выдаліць</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Выдаленне размовы</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Выдаленне групы</translation>
     </message>
 </context>
 <context>
     <name>ConversationsPullDownMenu</name>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished">Кантакты</translation>
+        <translation>Кантакты</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation type="unfinished">Профіль</translation>
+        <translation>Профіль</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Новая сакрэтная гаворка</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Новая група</translation>
     </message>
 </context>
 <context>
     <name>CoverPage</name>
     <message>
         <source>Connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Падключана</translation>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation type="unfinished"></translation>
+        <translation>Разлучана</translation>
     </message>
     <message>
         <source>%1 unread messages</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 непрачытаных паведамленняў</translation>
     </message>
     <message>
         <source>%1 unread message</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 непрачытанае паведамленне</translation>
     </message>
 </context>
 <context>
     <name>CreateChatPage</name>
     <message>
         <source>Group Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Імя групы</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Новая група</translation>
     </message>
 </context>
 <context>
     <name>CreateSecretConversationPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Новая сакрэтная гаворка</translation>
     </message>
 </context>
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <source>Debug</source>
+        <translation>Адладка</translation>
     </message>
     <message>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Debug</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Heartbeat:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Connected</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Not Connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Абнавіць</translation>
     </message>
     <message>
         <source>Contacts:</source>
-        <translation type="unfinished"></translation>
+        <translation>Кантакты:</translation>
+    </message>
+    <message>
+        <source>Heartbeat:</source>
+        <translation>Стан:</translation>
+    </message>
+    <message>
+        <source>Connected</source>
+        <translation>Падключана</translation>
+    </message>
+    <message>
+        <source>Error log</source>
+        <translation>Дзённік памылак</translation>
+    </message>
+    <message>
+        <source>Not Connected</source>
+        <translation>Няма злучэння</translation>
     </message>
 </context>
 <context>
     <name>ErrorsPage</name>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Ачысьціць памылкі</translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>Дзённік памылак пусты</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <translation>Дзённік памылак</translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished"></translation>
+        <translation>Код памылкі:</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished"></translation>
+        <translation>Функцыя:</translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
+        <translation>Выдаленне памылак</translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished"></translation>
+        <translation>Паведамленне:</translation>
     </message>
 </context>
 <context>
     <name>FilePickerPage</name>
     <message>
         <source>Root</source>
-        <translation type="unfinished"></translation>
+        <translation>Каранёвая дырэкторыя</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished"></translation>
+        <translation>Картка памяці</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Дамашняя дырэкторыя</translation>
     </message>
 </context>
 <context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>Захаваць ў Галерэі</translation>
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>Карцінка захавана ў Галерэі</translation>
     </message>
 </context>
 <context>
     <name>MediaPlayerToolBar</name>
     <message>
         <source>Downloading media</source>
-        <translation type="unfinished">Медыя выпампоўваецца</translation>
+        <translation>Медыя выпампоўваецца</translation>
     </message>
     <message>
         <source>Media saved in Gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>Медыя захавана ў Галерэі</translation>
     </message>
 </context>
 <context>
     <name>MessageAudio</name>
     <message>
         <source>Duration: %1</source>
-        <translation type="unfinished">Працягласць: %1</translation>
+        <translation>Працягласць: %1</translation>
     </message>
     <message>
         <source>Audio recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Аўдыё запісваецца</translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation type="unfinished">Велічыня: %1</translation>
+        <translation>Велічыня: %1</translation>
     </message>
 </context>
 <context>
     <name>MessageBar</name>
     <message>
         <source>Message...</source>
-        <translation type="unfinished"></translation>
+        <translation>Паведамленне...</translation>
     </message>
 </context>
 <context>
     <name>MessageItem</name>
     <message>
         <source>Downloading Media</source>
-        <translation type="unfinished"></translation>
+        <translation>Медыя выпампоўваецца</translation>
     </message>
     <message>
         <source>Opening Media</source>
-        <translation type="unfinished"></translation>
+        <translation>Адкрыванне медыя</translation>
     </message>
     <message>
         <source>Opening media</source>
-        <translation type="unfinished"></translation>
+        <translation>Адкрыванне медыя</translation>
     </message>
 </context>
 <context>
     <name>MessageMenu</name>
     <message>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Капіраваць</translation>
     </message>
     <message>
         <source>Message copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Паведамленне скапіравана ў буфер</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Выдаліць</translation>
     </message>
     <message>
         <source>Deleting Message</source>
-        <translation type="unfinished"></translation>
+        <translation>Выдаленне паведамлення</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -626,28 +631,16 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
 <context>
     <name>SettingsPage</name>
     <message>
-        <source>Save</source>
-        <translation type="vanished">Захаваць</translation>
-    </message>
-    <message>
-        <source>Send Messages by pressing Return Key</source>
-        <translation type="vanished">Паслаць паведамленне націснўшы кнопку ўвода</translation>
-    </message>
-    <message>
-        <source>Disable background</source>
-        <translation type="vanished">Схаваць фон</translation>
-    </message>
-    <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Наладкі</translation>
     </message>
     <message>
         <source>Chats</source>
-        <translation type="unfinished"></translation>
+        <translation>Гаворкі</translation>
     </message>
     <message>
         <source>Debug</source>
-        <translation type="unfinished"></translation>
+        <translation>Адладка</translation>
     </message>
 </context>
 <context>
@@ -754,20 +747,16 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
 <context>
     <name>UserInfo</name>
     <message>
-        <source>Phone Number</source>
-        <translation>Нумар тэлефона</translation>
-    </message>
-    <message>
-        <source>Actions</source>
-        <translation type="vanished">Дзеянні</translation>
-    </message>
-    <message>
         <source>Send Message</source>
         <translation>Паслаць паведамленне</translation>
     </message>
     <message>
         <source>Begin Secret Chat</source>
         <translation>Пачаць сакрэтную гаворку</translation>
+    </message>
+    <message>
+        <source>Phone Number</source>
+        <translation>Нумар тэлефона</translation>
     </message>
 </context>
 <context>
