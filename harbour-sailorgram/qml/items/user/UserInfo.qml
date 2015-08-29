@@ -42,8 +42,12 @@ Item
             onActionRequested: {
                 context.telegram.messagesCreateEncryptedChat(user.id);
 
-                var ancenstorpage = pageStack.previousPage(pageStack.previousPage());
-                pageStack.pop(ancenstorpage);
+                var firstpage = pageStack.currentPage;
+
+                for(var i = pageStack.depth; i > 1; i--)
+                    firstpage = pageStack.previousPage(firstpage);
+
+                pageStack.pop(firstpage);
             }
         }
 
