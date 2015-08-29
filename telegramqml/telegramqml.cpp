@@ -3559,6 +3559,9 @@ void TelegramQml::insertDialog(const Dialog &d, bool encrypted, bool fromDb)
         obj->setEncrypted(encrypted);
     }
 
+    if(d.notifySettings().muteUntil() > 0)
+        p->userdata->addMute(did);
+
     p->dialogs_list = p->dialogs.keys();
 
     telegramp_qml_tmp = p;
