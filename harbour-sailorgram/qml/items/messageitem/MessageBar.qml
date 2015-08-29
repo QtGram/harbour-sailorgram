@@ -12,7 +12,7 @@ Item
     property Dialog dialog
 
     id: messagebar
-    height: context.heartbeat.connected ? Math.max(Math.min(textarea._contentItem.contentHeight, maxHeight), btnselectmedia.height) : Theme.itemSizeSmall
+    height: context.heartbeat.connected ? (Math.max(Math.min(textarea._contentItem.contentHeight, maxHeight), btnselectmedia.height) + lbltime.contentHeight) : Theme.itemSizeSmall
 
     function sendMessage()
     {
@@ -27,9 +27,22 @@ Item
         context: messagebar.context
     }
 
+    Timer
+    {
+        interval: 60000
+        triggeredOnStart: true
+        repeat: true
+        running: (Qt.application.state === Qt.ApplicationActive)
+
+        onTriggered: {
+            var date = new Date();
+            lbltime.text = Format.formatDate(date, Formatter.TimeValue);
+        }
+    }
+
     Row
     {
-        anchors.fill: parent
+        anchors { left: parent.left; top: parent.top; right: parent.right; bottom: lbltime.top }
         visible: context.heartbeat.connected
 
         TextArea
@@ -55,7 +68,7 @@ Item
         {
             id: btnsend
             anchors.bottom: parent.bottom
-            visible: !context.sendwithreturn && textarea.text.length > 0;
+            visible: !context.sendwithreturn && textarea.text.length > 0
             width: visible ? Theme.itemSizeSmall : 0
             icon.source: "image://theme/icon-m-message"
             onClicked: sendMessage()
@@ -77,5 +90,14 @@ Item
                 });
             }
         }
+    }
+
+    Label
+    {
+        id: lbltime
+        anchors { left: parent.left; right: parent.right; bottom: parent.bottom; leftMargin: Theme.horizontalPageMargin; bottomMargin: Theme.paddingSmall }
+        color: Theme.highlightColor
+        font.pixelSize: Theme.fontSizeTiny
+        width: parent.width
     }
 }
