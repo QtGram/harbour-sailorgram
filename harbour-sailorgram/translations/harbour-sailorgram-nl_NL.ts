@@ -280,11 +280,11 @@ De minimale lengte is 5 tekens.</translation>
     <name>ConversationsPage</name>
     <message>
         <source>Settings</source>
-        <translation>Instellingen</translation>
+        <translation type="vanished">Instellingen</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>Over</translation>
+        <translation type="vanished">Over</translation>
     </message>
     <message>
         <source>No Chats
@@ -641,6 +641,10 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     <message>
         <source>Debug</source>
         <translation>Foutopsporing</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation type="unfinished">Over</translation>
     </message>
 </context>
 <context>

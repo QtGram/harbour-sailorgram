@@ -15,6 +15,15 @@ Page
         anchors.fill: parent
         contentHeight: content.height
 
+        PullDownMenu
+        {
+            MenuItem
+            {
+                text: qsTr("About")
+                onClicked: pageStack.push(Qt.resolvedUrl("../AboutPage.qml"), { "context": settingspage.context })
+            }
+        }
+
         Column
         {
             id: content

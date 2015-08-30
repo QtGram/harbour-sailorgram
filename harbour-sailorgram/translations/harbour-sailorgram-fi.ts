@@ -280,11 +280,11 @@ Vähimmäispituus on 5 merkkiä.</translation>
     <name>ConversationsPage</name>
     <message>
         <source>Settings</source>
-        <translation>Asetukset</translation>
+        <translation type="vanished">Asetukset</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>Tietoa</translation>
+        <translation type="vanished">Tietoa</translation>
     </message>
     <message>
         <source>No Chats
@@ -641,6 +641,10 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     <message>
         <source>Debug</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation type="unfinished">Tietoa</translation>
     </message>
 </context>
 <context>

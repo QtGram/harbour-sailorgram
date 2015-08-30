@@ -280,11 +280,11 @@ Minimum length is 5 characters.</source>
     <name>ConversationsPage</name>
     <message>
         <source>Settings</source>
-        <translation>Наладкі</translation>
+        <translation type="vanished">Наладкі</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>Інфармацыя</translation>
+        <translation type="vanished">Інфармацыя</translation>
     </message>
     <message>
         <source>No Chats
@@ -641,6 +641,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <message>
         <source>Debug</source>
         <translation>Адладка</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation type="unfinished">Інфармацыя</translation>
     </message>
 </context>
 <context>

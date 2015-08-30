@@ -280,11 +280,11 @@ A lonxitude mínima é de 5 caracteres.</translation>
     <name>ConversationsPage</name>
     <message>
         <source>Settings</source>
-        <translation>Axustes</translation>
+        <translation type="vanished">Axustes</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>Acerca de</translation>
+        <translation type="vanished">Acerca de</translation>
     </message>
     <message>
         <source>No Chats
@@ -641,6 +641,10 @@ Elixa un contacto seleccionando &quot;Contactos&quot; no menu despregable</trans
     <message>
         <source>Debug</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation type="unfinished">Acerca de</translation>
     </message>
 </context>
 <context>

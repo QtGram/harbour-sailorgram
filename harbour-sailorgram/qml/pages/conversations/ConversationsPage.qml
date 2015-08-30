@@ -51,6 +51,7 @@ Page
         if(conversationspage.status !== PageStatus.Active)
             return;
 
+        pageStack.pushAttached(Qt.resolvedUrl("../settings/SettingsPage.qml"), { "context": conversationspage.context });
         context.foregroundDialog = context.telegram.nullDialog; // Reset Foreground Dialog
     }
 
@@ -60,23 +61,6 @@ Page
         {
             id: conversationsmenu
             context: conversationspage.context
-        }
-
-        PushUpMenu
-        {
-            id: appmenu
-
-            MenuItem
-            {
-                text: qsTr("Settings")
-                onClicked: pageStack.push(Qt.resolvedUrl("../settings/SettingsPage.qml"), { "context": conversationspage.context })
-            }
-
-            MenuItem
-            {
-                text: qsTr("About")
-                onClicked: pageStack.push(Qt.resolvedUrl("../AboutPage.qml"), { "context": conversationspage.context })
-            }
         }
 
         ViewPlaceholder

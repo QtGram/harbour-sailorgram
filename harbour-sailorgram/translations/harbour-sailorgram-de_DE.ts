@@ -280,11 +280,11 @@ Minimale Länge sind 5 Zeichen</translation>
     <name>ConversationsPage</name>
     <message>
         <source>Settings</source>
-        <translation>Einstellungen</translation>
+        <translation type="vanished">Einstellungen</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>Über</translation>
+        <translation type="vanished">Über</translation>
     </message>
     <message>
         <source>No Chats
@@ -639,6 +639,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <message>
         <source>Debug</source>
         <translation type="unfinished">Debug</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation type="unfinished">Über</translation>
     </message>
 </context>
 <context>

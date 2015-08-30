@@ -280,11 +280,11 @@ Minimilängd är 5 tecken.</translation>
     <name>ConversationsPage</name>
     <message>
         <source>Settings</source>
-        <translation>Inställningar</translation>
+        <translation type="vanished">Inställningar</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>Om</translation>
+        <translation type="vanished">Om</translation>
     </message>
     <message>
         <source>No Chats
@@ -641,6 +641,10 @@ Välj en kontakt genom att gå till &quot;Kontakter&quot; i ovanstående meny</t
     <message>
         <source>Debug</source>
         <translation>Felsök</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation type="unfinished">Om</translation>
     </message>
 </context>
 <context>

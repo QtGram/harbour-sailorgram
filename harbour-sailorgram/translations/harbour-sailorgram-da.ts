@@ -280,11 +280,11 @@ Minimumslængde er fem tegn.</translation>
     <name>ConversationsPage</name>
     <message>
         <source>Settings</source>
-        <translation>Indstillinger</translation>
+        <translation type="vanished">Indstillinger</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>Om</translation>
+        <translation type="vanished">Om</translation>
     </message>
     <message>
         <source>No Chats
@@ -641,6 +641,10 @@ Vælg en kontakt fra menuen ovenfor</translation>
     <message>
         <source>Debug</source>
         <translation>Debug</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation type="unfinished">Om</translation>
     </message>
 </context>
 <context>

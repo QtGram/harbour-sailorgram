@@ -280,11 +280,11 @@ La lunghezza minima è di 5 caratteri.</translation>
     <name>ConversationsPage</name>
     <message>
         <source>Settings</source>
-        <translation>Impostazioni</translation>
+        <translation type="vanished">Impostazioni</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>Informazioni</translation>
+        <translation type="vanished">Informazioni</translation>
     </message>
     <message>
         <source>No Chats
@@ -641,6 +641,10 @@ Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
     <message>
         <source>Debug</source>
         <translation>Debug</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation type="unfinished">Informazioni</translation>
     </message>
 </context>
 <context>
