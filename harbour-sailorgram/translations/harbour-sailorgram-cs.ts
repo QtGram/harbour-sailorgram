@@ -277,6 +277,13 @@ Minimální délka je 5 znaků .</translation>
     </message>
 </context>
 <context>
+    <name>ConversationPage</name>
+    <message>
+        <source>Load more messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ConversationsPage</name>
     <message>
         <source>Settings</source>

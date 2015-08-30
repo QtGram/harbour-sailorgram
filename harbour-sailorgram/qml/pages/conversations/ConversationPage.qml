@@ -60,6 +60,15 @@ Page
         id: flickable
         anchors.fill: parent
 
+        PullDownMenu
+        {
+            MenuItem
+            {
+                text: qsTr("Load more messages")
+                onClicked: messagemodel.loadMore()
+            }
+        }
+
         PeerItem
         {
             id: header
