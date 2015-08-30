@@ -64,7 +64,7 @@ Page
         {
             id: header
             visible: !context.chatheaderhidden
-            anchors { left: parent.left; top: parent.top; right: parent.right; leftMargin: Theme.horizontalPageMargin; topMargin: Theme.paddingMedium }
+            anchors { left: parent.left; top: parent.top; right: parent.right; leftMargin: Theme.horizontalPageMargin; topMargin: context.chatheaderhidden ? 0 : Theme.paddingMedium }
             height: context.chatheaderhidden ? 0 : (conversationpage.isPortrait ? Theme.itemSizeSmall : Theme.itemSizeExtraSmall)
             context: conversationpage.context
             dialog: conversationpage.dialog
