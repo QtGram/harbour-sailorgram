@@ -29,9 +29,6 @@ Page
         context.telegram.phoneNumber = phonenumber;
     }
 
-    Component.onCompleted: {
-    }
-
     Timer
     {
         id: timlogin
