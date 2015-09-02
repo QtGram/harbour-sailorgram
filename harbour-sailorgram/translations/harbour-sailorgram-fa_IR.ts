@@ -284,7 +284,7 @@ Minimum length is 5 characters.</source>
     <name>ConversationPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>بارگیری پیام‌های بیش‌تر</translation>
     </message>
 </context>
 <context>
@@ -647,7 +647,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished">درباره</translation>
+        <translation>درباره</translation>
     </message>
 </context>
 <context>

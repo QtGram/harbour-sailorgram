@@ -81,15 +81,15 @@
     </message>
     <message>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>ruotsi</translation>
     </message>
     <message>
         <source>Galician</source>
-        <translation type="unfinished"></translation>
+        <translation>galicia</translation>
     </message>
     <message>
         <source>Belaruian</source>
-        <translation type="unfinished"></translation>
+        <translation>valkovenäjä</translation>
     </message>
 </context>
 <context>
@@ -166,19 +166,19 @@ Vähimmäispituus on 5 merkkiä.</translation>
     </message>
     <message>
         <source>Leave group</source>
-        <translation type="unfinished"></translation>
+        <translation>Poistu ryhmästä</translation>
     </message>
     <message>
         <source>Leaving group</source>
-        <translation type="unfinished"></translation>
+        <translation>Poistutaan ryhmästä</translation>
     </message>
     <message>
         <source>Change title</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuta tila</translation>
     </message>
     <message>
         <source>Add member</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää jäsen</translation>
     </message>
 </context>
 <context>
@@ -196,19 +196,19 @@ Vähimmäispituus on 5 merkkiä.</translation>
     <name>ChatSettingsPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallenna</translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Lähetä viestejä painamalla Enter -näppäintä.</translation>
     </message>
     <message>
         <source>Disable background</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista taustakuva käytöstä</translation>
     </message>
     <message>
         <source>Hide chat header</source>
-        <translation type="unfinished"></translation>
+        <translation>Piilota keskustelun ylätunniste</translation>
     </message>
 </context>
 <context>
@@ -234,57 +234,57 @@ Vähimmäispituus on 5 merkkiä.</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Virheloki</translation>
     </message>
 </context>
 <context>
     <name>ConversationInfoPage</name>
     <message>
         <source>Actions</source>
-        <translation type="unfinished"></translation>
+        <translation>Toiminnot</translation>
     </message>
     <message>
         <source>Delete secret chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista salainen keskustelu</translation>
     </message>
     <message>
         <source>Delete group</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista ryhmä</translation>
     </message>
     <message>
         <source>Delete conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista keskustelu</translation>
     </message>
     <message>
         <source>Deleting secret chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Salainen keskustelu poistetaan</translation>
     </message>
     <message>
         <source>Deleting group</source>
-        <translation type="unfinished"></translation>
+        <translation>Ryhmä poistetaan</translation>
     </message>
     <message>
         <source>Deleting conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Keskustelu poistetaan</translation>
     </message>
     <message>
         <source>Add to contacts</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää yhteyshenkilöihin</translation>
     </message>
     <message>
         <source>Enable notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Ota ilmoitukset käyttöön</translation>
     </message>
     <message>
         <source>Disable notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista ilmoitukset käytöstä</translation>
     </message>
 </context>
 <context>
     <name>ConversationPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Lataa lisää viestejä</translation>
     </message>
 </context>
 <context>
@@ -307,7 +307,7 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation>Poistetaan salainen keskustelu</translation>
+        <translation>Salainen keskustelu poistetaan</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -315,18 +315,18 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation>Poistetaan keskustelu</translation>
+        <translation>Keskustelu poistetaan</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation>Poistetaan ryhmä</translation>
+        <translation>Ryhmä poistetaan</translation>
     </message>
 </context>
 <context>
     <name>ConversationsPullDownMenu</name>
     <message>
         <source>Contacts</source>
-        <translation>Yhteystiedot</translation>
+        <translation>Yhteyshenkilöt</translation>
     </message>
     <message>
         <source>Profile</source>
@@ -382,62 +382,62 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     <name>DebugSettingsPage</name>
     <message>
         <source>Debug</source>
-        <translation type="unfinished"></translation>
+        <translation>Korjaa virheet</translation>
     </message>
     <message>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivitä</translation>
     </message>
     <message>
         <source>Contacts:</source>
-        <translation type="unfinished"></translation>
+        <translation>Yhteyshenkilöt:</translation>
     </message>
     <message>
         <source>Heartbeat:</source>
-        <translation type="unfinished"></translation>
+        <translation>Syke:</translation>
     </message>
     <message>
         <source>Connected</source>
-        <translation type="unfinished">Yhdistetty</translation>
+        <translation>Yhdistetty</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <translation>Virheloki</translation>
     </message>
     <message>
         <source>Not Connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei yhdistetty</translation>
     </message>
 </context>
 <context>
     <name>ErrorsPage</name>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Pyyhi virheet</translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>Virheloki on tyhjä</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <translation>Virheloki</translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhekoodi:</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished"></translation>
+        <translation>Toiminnot:</translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Virheet poistetaan</translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished"></translation>
+        <translation>Viesti:</translation>
     </message>
 </context>
 <context>
@@ -530,7 +530,7 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     </message>
     <message>
         <source>Deleting Message</source>
-        <translation>Poistetaan viestiä</translation>
+        <translation>Viesti poistetaan</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -635,19 +635,19 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     <name>SettingsPage</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Asetukset</translation>
+        <translation>Asetukset</translation>
     </message>
     <message>
         <source>Chats</source>
-        <translation type="unfinished">Keskustelut </translation>
+        <translation>Keskustelut</translation>
     </message>
     <message>
         <source>Debug</source>
-        <translation type="unfinished"></translation>
+        <translation>Korjaa virheet</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished">Tietoa</translation>
+        <translation>Tietoa</translation>
     </message>
 </context>
 <context>
@@ -724,7 +724,7 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     </message>
     <message>
         <source>Contact</source>
-        <translation>Yhteystieto</translation>
+        <translation>Yhteyshenkilö</translation>
     </message>
     <message>
         <source>Video</source>
@@ -781,7 +781,7 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     <name>UsersPage</name>
     <message>
         <source>Contacts</source>
-        <translation>Yhteystiedot</translation>
+        <translation>Yhteyshenkilöt</translation>
     </message>
 </context>
 </TS>

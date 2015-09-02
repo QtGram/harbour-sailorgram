@@ -284,7 +284,7 @@ Minimilängd är 5 tecken.</translation>
     <name>ConversationPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Läs in fler meddelanden</translation>
     </message>
 </context>
 <context>
@@ -647,7 +647,7 @@ Välj en kontakt genom att gå till &quot;Kontakter&quot; i ovanstående meny</t
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished">Om</translation>
+        <translation>Om</translation>
     </message>
 </context>
 <context>

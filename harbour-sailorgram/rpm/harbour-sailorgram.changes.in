@@ -8,6 +8,22 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Wed Sep 02 2015 Antonio Davide Trogu <trogu.davide@gmail.com> 0.72-1
+- Added check for username availability
+- Added setting for show/hide chat header
+- Added an option that allows to load more messages from history
+- Fixed missing cover action issue
+- Redesigned settings UI
+- Initial support for Debugging tools (useful when reporting bugs)
+- Improved SignIn procedure with debugging tools (useful when reporting bugs)
+- Complete rewrite of notification management (fixes notifications issue for groups)
+- Fixed the UI in landscape mode
+- Adjusted TextArea's height when pasting long messages
+- Heavy bugfix and improvements in media management
+- Updated Cutegram libraries
+- Updated Localizations
+- Minor Fixes
+
 * Fri Jul 24 2015 Antonio Davide Trogu <trogu.davide@gmail.com> 0.71-1
 - Always Display FirstName + LastName instead on UserName
 - Improved Conversations Page

@@ -284,7 +284,7 @@ De minimale lengte is 5 tekens.</translation>
     <name>ConversationPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Meer berichten laden</translation>
     </message>
 </context>
 <context>
@@ -647,7 +647,7 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished">Over</translation>
+        <translation>Over</translation>
     </message>
 </context>
 <context>

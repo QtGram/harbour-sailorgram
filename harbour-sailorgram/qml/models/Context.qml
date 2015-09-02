@@ -10,7 +10,7 @@ QtObject
 {
     id: context
 
-    readonly property string version: "0.71"
+    readonly property string version: "0.72"
     property bool sendwithreturn: false
     property bool backgrounddisabled: false
     property bool chatheaderhidden: false

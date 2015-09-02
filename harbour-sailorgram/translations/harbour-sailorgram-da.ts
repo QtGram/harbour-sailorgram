@@ -284,7 +284,7 @@ Minimumslængde er fem tegn.</translation>
     <name>ConversationPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Indlæs flere meddelelser</translation>
     </message>
 </context>
 <context>
@@ -647,7 +647,7 @@ Vælg en kontakt fra menuen ovenfor</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished">Om</translation>
+        <translation>Om</translation>
     </message>
 </context>
 <context>

@@ -647,7 +647,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished">Інфармацыя</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

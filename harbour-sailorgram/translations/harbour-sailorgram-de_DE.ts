@@ -633,7 +633,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>SettingsPage</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Einstellungen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Chats</source>
@@ -645,7 +645,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished">Über</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

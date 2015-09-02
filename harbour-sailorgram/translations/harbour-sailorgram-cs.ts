@@ -635,7 +635,7 @@ Přidejte osobu výběrem &quot;Kontakty&quot; z menu</translation>
     <name>SettingsPage</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Nastavení</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Chats</source>
@@ -647,7 +647,7 @@ Přidejte osobu výběrem &quot;Kontakty&quot; z menu</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished">O</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

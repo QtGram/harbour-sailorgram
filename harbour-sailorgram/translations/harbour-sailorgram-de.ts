@@ -636,7 +636,7 @@ wähle einen Kontakt über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
     <name>SettingsPage</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Einstellungen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Chats</source>
@@ -648,7 +648,7 @@ wähle einen Kontakt über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished">Über</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

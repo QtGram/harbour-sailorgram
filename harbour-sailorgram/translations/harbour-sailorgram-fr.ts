@@ -13,7 +13,7 @@
     </message>
     <message>
         <source>Finnish</source>
-        <translation>Finois</translation>
+        <translation>Finnois</translation>
     </message>
     <message>
         <source>German</source>
@@ -81,15 +81,15 @@
     </message>
     <message>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>Suédois</translation>
     </message>
     <message>
         <source>Galician</source>
-        <translation type="unfinished"></translation>
+        <translation>Galicien</translation>
     </message>
     <message>
         <source>Belaruian</source>
-        <translation type="unfinished"></translation>
+        <translation>Biélorusse</translation>
     </message>
 </context>
 <context>
@@ -166,19 +166,19 @@ La longueur minimum est de 5 caractères.</translation>
     </message>
     <message>
         <source>Leave group</source>
-        <translation type="unfinished"></translation>
+        <translation>Quitter le groupe</translation>
     </message>
     <message>
         <source>Leaving group</source>
-        <translation type="unfinished"></translation>
+        <translation>Quitte le groupe</translation>
     </message>
     <message>
         <source>Change title</source>
-        <translation type="unfinished"></translation>
+        <translation>Changer le titre</translation>
     </message>
     <message>
         <source>Add member</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter un participant</translation>
     </message>
 </context>
 <context>
@@ -196,19 +196,19 @@ La longueur minimum est de 5 caractères.</translation>
     <name>ChatSettingsPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrer</translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Envoyer les messages en cliquant la touche Retour</translation>
     </message>
     <message>
         <source>Disable background</source>
-        <translation type="unfinished"></translation>
+        <translation>Supprimer le fond d&apos;écran</translation>
     </message>
     <message>
         <source>Hide chat header</source>
-        <translation type="unfinished"></translation>
+        <translation>Masquer l&apos;entête de conversation</translation>
     </message>
 </context>
 <context>
@@ -234,57 +234,57 @@ La longueur minimum est de 5 caractères.</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Journal d&apos;erreur</translation>
     </message>
 </context>
 <context>
     <name>ConversationInfoPage</name>
     <message>
         <source>Actions</source>
-        <translation type="unfinished"></translation>
+        <translation>Actions</translation>
     </message>
     <message>
         <source>Delete secret chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Supprimer la discussion secrète</translation>
     </message>
     <message>
         <source>Delete group</source>
-        <translation type="unfinished"></translation>
+        <translation>Supprimer le groupe</translation>
     </message>
     <message>
         <source>Delete conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Supprimer la conversation</translation>
     </message>
     <message>
         <source>Deleting secret chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Suppression de la discussion secrète</translation>
     </message>
     <message>
         <source>Deleting group</source>
-        <translation type="unfinished"></translation>
+        <translation>Suppression du groupe</translation>
     </message>
     <message>
         <source>Deleting conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Suppression de la conversation</translation>
     </message>
     <message>
         <source>Add to contacts</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter aux Contacts</translation>
     </message>
     <message>
         <source>Enable notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Activer les notifications</translation>
     </message>
     <message>
         <source>Disable notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Désactiver les notifications</translation>
     </message>
 </context>
 <context>
     <name>ConversationPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Charger plus de messages</translation>
     </message>
 </context>
 <context>
@@ -382,62 +382,62 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
     <name>DebugSettingsPage</name>
     <message>
         <source>Debug</source>
-        <translation type="unfinished"></translation>
+        <translation>Déboguer</translation>
     </message>
     <message>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualiser</translation>
     </message>
     <message>
         <source>Contacts:</source>
-        <translation type="unfinished"></translation>
+        <translation>Contacts :</translation>
     </message>
     <message>
         <source>Heartbeat:</source>
-        <translation type="unfinished"></translation>
+        <translation>Heartbeat :</translation>
     </message>
     <message>
         <source>Connected</source>
-        <translation type="unfinished">Connecté</translation>
+        <translation>Connecté</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <translation>Journal d&apos;erreur</translation>
     </message>
     <message>
         <source>Not Connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Non connecté</translation>
     </message>
 </context>
 <context>
     <name>ErrorsPage</name>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Supprimer les erreurs</translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>Le journal d&apos;erreur est vide</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <translation>Journal d&apos;erreur</translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished"></translation>
+        <translation>Code d&apos;erreur</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fonction :</translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Suppression des erreurs</translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished"></translation>
+        <translation>Message :</translation>
     </message>
 </context>
 <context>
@@ -635,19 +635,19 @@ Choississez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessu
     <name>SettingsPage</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Paramètres</translation>
+        <translation>Paramètres</translation>
     </message>
     <message>
         <source>Chats</source>
-        <translation type="unfinished">Conversations</translation>
+        <translation>Conversations</translation>
     </message>
     <message>
         <source>Debug</source>
-        <translation type="unfinished"></translation>
+        <translation>Déboguer</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished">A propos</translation>
+        <translation>A propos</translation>
     </message>
 </context>
 <context>

@@ -284,7 +284,7 @@ La lunghezza minima è di 5 caratteri.</translation>
     <name>ConversationPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Carica altri messaggi</translation>
     </message>
 </context>
 <context>
@@ -647,7 +647,7 @@ Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished">Informazioni</translation>
+        <translation>Crediti</translation>
     </message>
 </context>
 <context>
