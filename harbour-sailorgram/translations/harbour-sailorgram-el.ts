@@ -229,6 +229,10 @@ Minimum length is 5 characters.</source>
         <source>Telegram Status</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Error log</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConversationInfoPage</name>
@@ -271,13 +275,6 @@ Minimum length is 5 characters.</source>
     <message>
         <source>Disable notifications</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ConversationMenu</name>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">Διαγραφή</translation>
     </message>
 </context>
 <context>
@@ -755,10 +752,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <message>
         <source>Phone Number</source>
         <translation>Αριθμός τηλεφώνου</translation>
-    </message>
-    <message>
-        <source>Actions</source>
-        <translation type="vanished">Ενέργειες</translation>
     </message>
     <message>
         <source>Send Message</source>

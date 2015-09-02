@@ -232,6 +232,10 @@ Minimum length is 5 characters.</source>
         <source>Telegram Status</source>
         <translation>وضعیت تلگرام</translation>
     </message>
+    <message>
+        <source>Error log</source>
+        <translation type="unfinished">نگاره‌ی خطا</translation>
+    </message>
 </context>
 <context>
     <name>ConversationInfoPage</name>
@@ -285,14 +289,6 @@ Minimum length is 5 characters.</source>
 </context>
 <context>
     <name>ConversationsPage</name>
-    <message>
-        <source>Settings</source>
-        <translation type="vanished">تنظیمات</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">درباره</translation>
-    </message>
     <message>
         <source>No Chats
 

@@ -232,6 +232,10 @@ Minimilängd är 5 tecken.</translation>
         <source>Telegram Status</source>
         <translation>Telegram-status</translation>
     </message>
+    <message>
+        <source>Error log</source>
+        <translation type="unfinished">Fellogg</translation>
+    </message>
 </context>
 <context>
     <name>ConversationInfoPage</name>
@@ -285,14 +289,6 @@ Minimilängd är 5 tecken.</translation>
 </context>
 <context>
     <name>ConversationsPage</name>
-    <message>
-        <source>Settings</source>
-        <translation type="vanished">Inställningar</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">Om</translation>
-    </message>
     <message>
         <source>No Chats
 

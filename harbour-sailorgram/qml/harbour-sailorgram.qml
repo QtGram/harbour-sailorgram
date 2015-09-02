@@ -31,7 +31,7 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import "models"
-import "pages"
+import "pages/login"
 import "cover"
 import "js/Settings.js" as Settings
 

@@ -232,6 +232,10 @@ De minimale lengte is 5 tekens.</translation>
         <source>Telegram Status</source>
         <translation>Telegram-status</translation>
     </message>
+    <message>
+        <source>Error log</source>
+        <translation type="unfinished">Foutenlogbestand</translation>
+    </message>
 </context>
 <context>
     <name>ConversationInfoPage</name>
@@ -285,14 +289,6 @@ De minimale lengte is 5 tekens.</translation>
 </context>
 <context>
     <name>ConversationsPage</name>
-    <message>
-        <source>Settings</source>
-        <translation type="vanished">Instellingen</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">Over</translation>
-    </message>
     <message>
         <source>No Chats
 

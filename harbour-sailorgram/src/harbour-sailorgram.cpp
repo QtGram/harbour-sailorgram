@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 {
     QScopedPointer<QGuiApplication> application(SailfishApp::application(argc, argv));
     application->setApplicationName("harbour-sailorgram");
-    application->setApplicationVersion("0.5");
+    application->setApplicationVersion("0.7");
 
     TelegramQmlInitializer::init("harbour.sailorgram.TelegramQml");
 

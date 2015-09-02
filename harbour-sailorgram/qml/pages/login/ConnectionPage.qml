@@ -1,19 +1,20 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
-import "../models"
-import "../components"
-import "../js/Settings.js" as Settings
+import "../../models"
+import "../../components"
+import "../../js/Settings.js" as Settings
 
 Page
 {
     property Context context
+    property bool initialized: false
 
     id: connectionpage
     allowedOrientations: defaultAllowedOrientations
 
     onStatusChanged: {
-        if(connectionpage.status !== PageStatus.Active)
+        if(forwardNavigation || (connectionpage.status !== PageStatus.Active))
             return;
 
         var phonenumber = Settings.get("phonenumber");
@@ -28,10 +29,13 @@ Page
         context.telegram.phoneNumber = phonenumber;
     }
 
+    Component.onCompleted: {
+    }
+
     Timer
     {
         id: timlogin
-        interval: 30000 // 30s
+        interval: 10000 // 10s
         running: true
     }
 
@@ -84,10 +88,33 @@ Page
         running: true
     }
 
-    Button
+    Row
     {
         anchors { horizontalCenter: parent.horizontalCenter; bottom: parent.bottom; bottomMargin: Theme.paddingLarge }
-        text: qsTr("Login Again")
-        visible: !timlogin.running
+
+        Button
+        {
+            text: qsTr("Login Again")
+            visible: !timlogin.running
+
+            onClicked: {
+                if(context.telegram.phoneNumber.length > 0) {
+                    pageStack.replace(Qt.resolvedUrl("AuthorizationPage.qml"), { "context": connectionpage.context, "resendCode": true });
+                }
+                else
+                    pageStack.replace(Qt.resolvedUrl("PhoneNumberPage.qml"), { "context": connectionpage.context });
+            }
+        }
+
+        Button
+        {
+            text: qsTr("Error log")
+            visible: !timlogin.running
+
+            onClicked: {
+                pageStack.pushAttached(Qt.resolvedUrl("../settings/DebugSettingsPage.qml"), { "context": connectionpage.context });
+                pageStack.navigateForward(PageStackAction.Animated);
+            }
+        }
     }
 }

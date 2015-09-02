@@ -1,11 +1,12 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import "../models"
-import "../js/Settings.js" as Settings
+import "../../models"
+import "../../js/Settings.js" as Settings
 
 Dialog
 {
     readonly property bool authorizationPage: true
+    property bool resendCode: false
     property alias authError: tfcode.errorHighlight
     property Context context
 
@@ -14,6 +15,11 @@ Dialog
     canAccept: tfcode.text.length > 0
     acceptDestinationAction: PageStackAction.Replace
     onAccepted: context.telegram.authSignIn(tfcode.text)
+
+    onResendCodeChanged: {
+        if(dlgauthorization.resendCode)
+            context.telegram.authSendCode();
+    }
 
     acceptDestination: Component {
         ConnectionPage {

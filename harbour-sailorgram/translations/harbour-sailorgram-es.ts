@@ -232,6 +232,10 @@ La longitud mínima es de 5 caracteres.</translation>
         <source>Telegram Status</source>
         <translation>Estado Telegram</translation>
     </message>
+    <message>
+        <source>Error log</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConversationInfoPage</name>
@@ -285,14 +289,6 @@ La longitud mínima es de 5 caracteres.</translation>
 </context>
 <context>
     <name>ConversationsPage</name>
-    <message>
-        <source>Settings</source>
-        <translation type="vanished">Ajustes</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">Acerca de</translation>
-    </message>
     <message>
         <source>No Chats
 

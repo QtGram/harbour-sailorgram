@@ -1,8 +1,8 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import "../models"
-import "../js/CountryList.js" as CountryList
-import "../js/TelegramHelper.js" as TelegramHelper
+import "../../models"
+import "../../js/CountryList.js" as CountryList
+import "../../js/TelegramHelper.js" as TelegramHelper
 
 Dialog
 {

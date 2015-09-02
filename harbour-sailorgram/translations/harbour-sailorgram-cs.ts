@@ -232,6 +232,10 @@ Minimální délka je 5 znaků .</translation>
         <source>Telegram Status</source>
         <translation>Status Telegramu</translation>
     </message>
+    <message>
+        <source>Error log</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConversationInfoPage</name>
@@ -285,14 +289,6 @@ Minimální délka je 5 znaků .</translation>
 </context>
 <context>
     <name>ConversationsPage</name>
-    <message>
-        <source>Settings</source>
-        <translation type="vanished">Nastavení</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">O</translation>
-    </message>
     <message>
         <source>No Chats
 

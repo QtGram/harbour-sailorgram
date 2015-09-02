@@ -232,6 +232,10 @@ Minimum sind 5 Zeichen.</translation>
         <source>Telegram Status</source>
         <translation>Telegram Status</translation>
     </message>
+    <message>
+        <source>Error log</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConversationInfoPage</name>
@@ -285,14 +289,6 @@ Minimum sind 5 Zeichen.</translation>
 </context>
 <context>
     <name>ConversationsPage</name>
-    <message>
-        <source>Settings</source>
-        <translation type="vanished">Einstellungen</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">Über</translation>
-    </message>
     <message>
         <source>No Chats
 

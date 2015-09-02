@@ -232,6 +232,10 @@ Vähimmäispituus on 5 merkkiä.</translation>
         <source>Telegram Status</source>
         <translation>Telegramin tila</translation>
     </message>
+    <message>
+        <source>Error log</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConversationInfoPage</name>
@@ -285,14 +289,6 @@ Vähimmäispituus on 5 merkkiä.</translation>
 </context>
 <context>
     <name>ConversationsPage</name>
-    <message>
-        <source>Settings</source>
-        <translation type="vanished">Asetukset</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">Tietoa</translation>
-    </message>
     <message>
         <source>No Chats
 

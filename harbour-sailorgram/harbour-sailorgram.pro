@@ -48,10 +48,10 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     rpm/harbour-sailorgram.yaml \
     translations/*.ts \
     harbour-sailorgram.desktop \
-    qml/pages/ConnectionPage.qml \
+    qml/pages/login/ConnectionPage.qml \
     server.pub \
-    qml/pages/PhoneNumberPage.qml \
-    qml/pages/AuthorizationPage.qml \
+    qml/pages/login/PhoneNumberPage.qml \
+    qml/pages/login/AuthorizationPage.qml \
     qml/js/Settings.js \
     qml/items/user/UserItem.qml \
     qml/js/CountryList.js \
@@ -74,7 +74,7 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/js/TelegramConstants.js \
     qml/pages/picker/FilePickerPage.qml \
     qml/components/pickers/FilePicker.qml \
-    qml/pages/SignUpPage.qml \
+    qml/pages/login/SignUpPage.qml \
     qml/items/conversation/ConversationImage.qml \
     qml/items/peer/PeerItem.qml \
     qml/items/peer/PeerImage.qml \

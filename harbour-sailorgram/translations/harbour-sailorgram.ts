@@ -229,6 +229,10 @@ Minimum length is 5 characters.</source>
         <source>Telegram Status</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Error log</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConversationInfoPage</name>
