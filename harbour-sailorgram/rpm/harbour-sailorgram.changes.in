@@ -8,6 +8,10 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sun Oct 11 2015 Antonio Davide Trogu <trogu.davide@gmail.com> 0.72-2
+- Bug fixes in chat's background settings
+- i486 support (tablet)
+
 * Wed Sep 02 2015 Antonio Davide Trogu <trogu.davide@gmail.com> 0.72-1
 - Added check for username availability
 - Added setting for show/hide chat header
