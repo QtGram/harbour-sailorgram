@@ -15,6 +15,7 @@ Dialog
         context.sendwithreturn = tssendwithreturn.checked;
         context.backgrounddisabled = tsdisablebackground.checked;
         context.chatheaderhidden = tshideheader.checked
+        Settings.set("backgrounddisabled", tsdisablebackground.checked);
         Settings.set("sendwithreturn", tssendwithreturn.checked);
         Settings.set("chatheaderhidden", tshideheader.checked);
     }
