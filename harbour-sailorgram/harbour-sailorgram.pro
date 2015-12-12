@@ -163,3 +163,5 @@ HEADERS += \
 RESOURCES += \
     resources.qrc
 
+DISTFILES += \
+    qml/pages/users/AddUserPage.qml
