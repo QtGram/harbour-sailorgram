@@ -14,6 +14,23 @@ Page
 
     SilicaListView
     {
+        PullDownMenu
+        {
+            property Context context
+
+            id: userspulldownmenu
+
+            MenuItem
+            {
+                text: qsTr("Add Contact")
+                onClicked:
+                {
+                    pageStack.push(Qt.resolvedUrl("./AddUserPage.qml"),
+                                   {"context": context})
+                }
+            }
+        }
+
         anchors.fill: parent
         spacing: Theme.paddingMedium
         header: PageHeader { title: qsTr("Contacts") }

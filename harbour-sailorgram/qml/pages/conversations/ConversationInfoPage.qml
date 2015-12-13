@@ -157,6 +157,7 @@ Page
             ClickableLabel
             {
                 labelText: qsTr("Add to contacts")
+                labelFont.pixelSize: Theme.fontSizeSmall
                 visible: !TelegramHelper.isChat(dialog) && !TelegramHelper.isTelegramUser(user) && (user.classType === TelegramConstants.typeUserRequest)
                 width: parent.width
                 height: Theme.itemSizeSmall
