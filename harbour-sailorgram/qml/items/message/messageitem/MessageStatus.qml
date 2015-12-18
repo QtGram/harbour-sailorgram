@@ -1,13 +1,13 @@
 import QtQuick 2.1
 import harbour.sailorgram.TelegramQml 1.0
-import "../../js/TelegramHelper.js" as TelegramHelper
+import "../../../js/TelegramHelper.js" as TelegramHelper
 
 Image
 {
     property Message message
 
     id: messagestatus
-    visible: message.out && !TelegramHelper.isActionMessage(message)
+    visible: message.out && !TelegramHelper.isServiceMessage(message)
     fillMode: Image.PreserveAspectFit
 
     source: {

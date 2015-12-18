@@ -93,6 +93,25 @@
     </message>
 </context>
 <context>
+    <name>AddContactPage</name>
+    <message>
+        <source>Add Contact</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First Name</source>
+        <translation type="unfinished">Etunimi</translation>
+    </message>
+    <message>
+        <source>Last Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Telephone Number</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AddContactsPage</name>
     <message>
         <source>Add Chat Member</source>
@@ -238,107 +257,14 @@ Vähimmäispituus on 5 merkkiä.</translation>
     </message>
 </context>
 <context>
-    <name>ConversationInfoPage</name>
+    <name>ContactsPage</name>
     <message>
-        <source>Actions</source>
-        <translation>Toiminnot</translation>
+        <source>Add Contact</source>
+        <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Delete secret chat</source>
-        <translation>Poista salainen keskustelu</translation>
-    </message>
-    <message>
-        <source>Delete group</source>
-        <translation>Poista ryhmä</translation>
-    </message>
-    <message>
-        <source>Delete conversation</source>
-        <translation>Poista keskustelu</translation>
-    </message>
-    <message>
-        <source>Deleting secret chat</source>
-        <translation>Salainen keskustelu poistetaan</translation>
-    </message>
-    <message>
-        <source>Deleting group</source>
-        <translation>Ryhmä poistetaan</translation>
-    </message>
-    <message>
-        <source>Deleting conversation</source>
-        <translation>Keskustelu poistetaan</translation>
-    </message>
-    <message>
-        <source>Add to contacts</source>
-        <translation>Lisää yhteyshenkilöihin</translation>
-    </message>
-    <message>
-        <source>Enable notifications</source>
-        <translation>Ota ilmoitukset käyttöön</translation>
-    </message>
-    <message>
-        <source>Disable notifications</source>
-        <translation>Poista ilmoitukset käytöstä</translation>
-    </message>
-</context>
-<context>
-    <name>ConversationPage</name>
-    <message>
-        <source>Load more messages</source>
-        <translation>Lataa lisää viestejä</translation>
-    </message>
-</context>
-<context>
-    <name>ConversationsPage</name>
-    <message>
-        <source>No Chats
-
-Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation>Ei keskusteluja.
-
-Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta valikosta.</translation>
-    </message>
-    <message>
-        <source>Chats</source>
-        <translation>Keskustelut </translation>
-    </message>
-    <message>
-        <source>Connecting...</source>
-        <translation>Yhdistää...</translation>
-    </message>
-    <message>
-        <source>Deleting Secret Chat</source>
-        <translation>Salainen keskustelu poistetaan</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Poista</translation>
-    </message>
-    <message>
-        <source>Deleting Conversation</source>
-        <translation>Keskustelu poistetaan</translation>
-    </message>
-    <message>
-        <source>Deleting Group</source>
-        <translation>Ryhmä poistetaan</translation>
-    </message>
-</context>
-<context>
-    <name>ConversationsPullDownMenu</name>
     <message>
         <source>Contacts</source>
-        <translation>Yhteyshenkilöt</translation>
-    </message>
-    <message>
-        <source>Profile</source>
-        <translation>Profiili</translation>
-    </message>
-    <message>
-        <source>New Secret Chat</source>
-        <translation>Uusi salainen keskustelu</translation>
-    </message>
-    <message>
-        <source>New Group</source>
-        <translation>Uusi ryhmä</translation>
+        <translation type="unfinished">Yhteyshenkilöt</translation>
     </message>
 </context>
 <context>
@@ -372,10 +298,10 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     </message>
 </context>
 <context>
-    <name>CreateSecretConversationPage</name>
+    <name>CreateSecretDialogPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation>Uusi salainen keskustelu</translation>
+        <translation type="unfinished">Uusi salainen keskustelu</translation>
     </message>
 </context>
 <context>
@@ -407,6 +333,117 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     <message>
         <source>Not Connected</source>
         <translation>Ei yhdistetty</translation>
+    </message>
+</context>
+<context>
+    <name>DialogInfoPage</name>
+    <message>
+        <source>Delete secret chat</source>
+        <translation type="unfinished">Poista salainen keskustelu</translation>
+    </message>
+    <message>
+        <source>Delete group</source>
+        <translation type="unfinished">Poista ryhmä</translation>
+    </message>
+    <message>
+        <source>Delete conversation</source>
+        <translation type="unfinished">Poista keskustelu</translation>
+    </message>
+    <message>
+        <source>Deleting secret chat</source>
+        <translation type="unfinished">Salainen keskustelu poistetaan</translation>
+    </message>
+    <message>
+        <source>Deleting group</source>
+        <translation type="unfinished">Ryhmä poistetaan</translation>
+    </message>
+    <message>
+        <source>Deleting conversation</source>
+        <translation type="unfinished">Keskustelu poistetaan</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished">Toiminnot</translation>
+    </message>
+    <message>
+        <source>Enable notifications</source>
+        <translation type="unfinished">Ota ilmoitukset käyttöön</translation>
+    </message>
+    <message>
+        <source>Disable notifications</source>
+        <translation type="unfinished">Poista ilmoitukset käytöstä</translation>
+    </message>
+    <message>
+        <source>Add to contacts</source>
+        <translation type="unfinished">Lisää yhteyshenkilöihin</translation>
+    </message>
+</context>
+<context>
+    <name>DialogItem</name>
+    <message>
+        <source>You:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DialogTextInput</name>
+    <message>
+        <source>Message...</source>
+        <translation type="unfinished">Viesti...</translation>
+    </message>
+</context>
+<context>
+    <name>DialogsPage</name>
+    <message>
+        <source>No Chats
+
+Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
+        <translation type="unfinished">Ei keskusteluja.
+
+Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta valikosta.</translation>
+    </message>
+    <message>
+        <source>Chats</source>
+        <translation type="unfinished">Keskustelut</translation>
+    </message>
+    <message>
+        <source>Connecting...</source>
+        <translation type="unfinished">Yhdistää...</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Poista</translation>
+    </message>
+    <message>
+        <source>Deleting Conversation</source>
+        <translation type="unfinished">Keskustelu poistetaan</translation>
+    </message>
+    <message>
+        <source>Deleting Secret Chat</source>
+        <translation type="unfinished">Salainen keskustelu poistetaan</translation>
+    </message>
+    <message>
+        <source>Deleting Group</source>
+        <translation type="unfinished">Ryhmä poistetaan</translation>
+    </message>
+</context>
+<context>
+    <name>DialogsPullDownMenu</name>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished">Profiili</translation>
+    </message>
+    <message>
+        <source>New Secret Chat</source>
+        <translation type="unfinished">Uusi salainen keskustelu</translation>
+    </message>
+    <message>
+        <source>New Group</source>
+        <translation type="unfinished">Uusi ryhmä</translation>
+    </message>
+    <message>
+        <source>Contacts</source>
+        <translation type="unfinished">Yhteyshenkilöt</translation>
     </message>
 </context>
 <context>
@@ -490,13 +527,6 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     <message>
         <source>Size: %1</source>
         <translation>Koko: %1</translation>
-    </message>
-</context>
-<context>
-    <name>MessageBar</name>
-    <message>
-        <source>Message...</source>
-        <translation>Viesti...</translation>
     </message>
 </context>
 <context>
@@ -618,17 +648,17 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     </message>
 </context>
 <context>
-    <name>SecretChatDiscarded</name>
+    <name>SecretDialogDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation>Salainen keskustelu peruttu</translation>
+        <translation type="unfinished">Salainen keskustelu peruttu</translation>
     </message>
 </context>
 <context>
-    <name>SecretChatWaiting</name>
+    <name>SecretDialogWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>
-        <translation>Odotetaan henkilöä %1 paikalle</translation>
+        <translation type="unfinished">Odotetaan henkilöä %1 paikalle</translation>
     </message>
 </context>
 <context>
@@ -694,6 +724,10 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     <message>
         <source>Group created by %1</source>
         <translation>%1 loi tämän ryhmän</translation>
+    </message>
+    <message>
+        <source>%1 changed group name to ��%2��</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -775,13 +809,6 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteystiedot&quot; yläpuolella olevasta v
     <message>
         <source>Profile</source>
         <translation>Profiili</translation>
-    </message>
-</context>
-<context>
-    <name>UsersPage</name>
-    <message>
-        <source>Contacts</source>
-        <translation>Yhteyshenkilöt</translation>
     </message>
 </context>
 </TS>

@@ -93,6 +93,25 @@
     </message>
 </context>
 <context>
+    <name>AddContactPage</name>
+    <message>
+        <source>Add Contact</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First Name</source>
+        <translation type="unfinished">Voornaam</translation>
+    </message>
+    <message>
+        <source>Last Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Telephone Number</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AddContactsPage</name>
     <message>
         <source>Add Chat Member</source>
@@ -238,107 +257,14 @@ De minimale lengte is 5 tekens.</translation>
     </message>
 </context>
 <context>
-    <name>ConversationInfoPage</name>
+    <name>ContactsPage</name>
     <message>
-        <source>Actions</source>
-        <translation>Acties</translation>
+        <source>Add Contact</source>
+        <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Delete secret chat</source>
-        <translation>Geheim chatgesprek verwijderen</translation>
-    </message>
-    <message>
-        <source>Delete group</source>
-        <translation>Groep verwijderen</translation>
-    </message>
-    <message>
-        <source>Delete conversation</source>
-        <translation>Gesprek verwijderen</translation>
-    </message>
-    <message>
-        <source>Deleting secret chat</source>
-        <translation>Bezig met het verwijderen van het geheime chatgesprek</translation>
-    </message>
-    <message>
-        <source>Deleting group</source>
-        <translation>Bezig met het verwijderen van de groep</translation>
-    </message>
-    <message>
-        <source>Deleting conversation</source>
-        <translation>Bezig met het verwijderen van het gesprek</translation>
-    </message>
-    <message>
-        <source>Add to contacts</source>
-        <translation>Toevoegen aan contactpersonen</translation>
-    </message>
-    <message>
-        <source>Enable notifications</source>
-        <translation>Meldingen inschakelen</translation>
-    </message>
-    <message>
-        <source>Disable notifications</source>
-        <translation>Meldingen uitschakelen</translation>
-    </message>
-</context>
-<context>
-    <name>ConversationPage</name>
-    <message>
-        <source>Load more messages</source>
-        <translation>Meer berichten laden</translation>
-    </message>
-</context>
-<context>
-    <name>ConversationsPage</name>
-    <message>
-        <source>No Chats
-
-Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation>Geen chatgesprekken
-
-Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het trekmenu</translation>
-    </message>
-    <message>
-        <source>Chats</source>
-        <translation>Chatgesprekken</translation>
-    </message>
-    <message>
-        <source>Connecting...</source>
-        <translation>Bezig met verbinden...</translation>
-    </message>
-    <message>
-        <source>Deleting Secret Chat</source>
-        <translation>Bezig met het verwijderen van het geheime chatgesprek</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Verwijderen</translation>
-    </message>
-    <message>
-        <source>Deleting Conversation</source>
-        <translation>Bezig met het verwijderen van het gesprek</translation>
-    </message>
-    <message>
-        <source>Deleting Group</source>
-        <translation>Bezig met het verwijderen van de groep</translation>
-    </message>
-</context>
-<context>
-    <name>ConversationsPullDownMenu</name>
     <message>
         <source>Contacts</source>
-        <translation>Contactpersonen</translation>
-    </message>
-    <message>
-        <source>Profile</source>
-        <translation>Profiel</translation>
-    </message>
-    <message>
-        <source>New Secret Chat</source>
-        <translation>Nieuw geheim chatgesprek</translation>
-    </message>
-    <message>
-        <source>New Group</source>
-        <translation>Nieuwe groep</translation>
+        <translation type="unfinished">Contactpersonen</translation>
     </message>
 </context>
 <context>
@@ -372,10 +298,10 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     </message>
 </context>
 <context>
-    <name>CreateSecretConversationPage</name>
+    <name>CreateSecretDialogPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation>Nieuw geheim chatgesprek</translation>
+        <translation type="unfinished">Nieuw geheim chatgesprek</translation>
     </message>
 </context>
 <context>
@@ -407,6 +333,117 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     <message>
         <source>Not Connected</source>
         <translation>Niet verbonden</translation>
+    </message>
+</context>
+<context>
+    <name>DialogInfoPage</name>
+    <message>
+        <source>Delete secret chat</source>
+        <translation type="unfinished">Geheim chatgesprek verwijderen</translation>
+    </message>
+    <message>
+        <source>Delete group</source>
+        <translation type="unfinished">Groep verwijderen</translation>
+    </message>
+    <message>
+        <source>Delete conversation</source>
+        <translation type="unfinished">Gesprek verwijderen</translation>
+    </message>
+    <message>
+        <source>Deleting secret chat</source>
+        <translation type="unfinished">Bezig met het verwijderen van het geheime chatgesprek</translation>
+    </message>
+    <message>
+        <source>Deleting group</source>
+        <translation type="unfinished">Bezig met het verwijderen van de groep</translation>
+    </message>
+    <message>
+        <source>Deleting conversation</source>
+        <translation type="unfinished">Bezig met het verwijderen van het gesprek</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished">Acties</translation>
+    </message>
+    <message>
+        <source>Enable notifications</source>
+        <translation type="unfinished">Meldingen inschakelen</translation>
+    </message>
+    <message>
+        <source>Disable notifications</source>
+        <translation type="unfinished">Meldingen uitschakelen</translation>
+    </message>
+    <message>
+        <source>Add to contacts</source>
+        <translation type="unfinished">Toevoegen aan contactpersonen</translation>
+    </message>
+</context>
+<context>
+    <name>DialogItem</name>
+    <message>
+        <source>You:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DialogTextInput</name>
+    <message>
+        <source>Message...</source>
+        <translation type="unfinished">Bericht...</translation>
+    </message>
+</context>
+<context>
+    <name>DialogsPage</name>
+    <message>
+        <source>No Chats
+
+Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
+        <translation type="unfinished">Geen chatgesprekken
+
+Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het trekmenu</translation>
+    </message>
+    <message>
+        <source>Chats</source>
+        <translation type="unfinished">Chatgesprekken </translation>
+    </message>
+    <message>
+        <source>Connecting...</source>
+        <translation type="unfinished">Bezig met verbinden...</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Verwijderen</translation>
+    </message>
+    <message>
+        <source>Deleting Conversation</source>
+        <translation type="unfinished">Bezig met het verwijderen van het gesprek</translation>
+    </message>
+    <message>
+        <source>Deleting Secret Chat</source>
+        <translation type="unfinished">Bezig met het verwijderen van het geheime chatgesprek</translation>
+    </message>
+    <message>
+        <source>Deleting Group</source>
+        <translation type="unfinished">Bezig met het verwijderen van de groep</translation>
+    </message>
+</context>
+<context>
+    <name>DialogsPullDownMenu</name>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished">Profiel</translation>
+    </message>
+    <message>
+        <source>New Secret Chat</source>
+        <translation type="unfinished">Nieuw geheim chatgesprek</translation>
+    </message>
+    <message>
+        <source>New Group</source>
+        <translation type="unfinished">Nieuwe groep</translation>
+    </message>
+    <message>
+        <source>Contacts</source>
+        <translation type="unfinished">Contactpersonen</translation>
     </message>
 </context>
 <context>
@@ -490,13 +527,6 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     <message>
         <source>Size: %1</source>
         <translation>Grootte: %1</translation>
-    </message>
-</context>
-<context>
-    <name>MessageBar</name>
-    <message>
-        <source>Message...</source>
-        <translation>Bericht...</translation>
     </message>
 </context>
 <context>
@@ -618,17 +648,17 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     </message>
 </context>
 <context>
-    <name>SecretChatDiscarded</name>
+    <name>SecretDialogDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation>Het geheime chatgesprek is geannuleerd</translation>
+        <translation type="unfinished">Het geheime chatgesprek is geannuleerd</translation>
     </message>
 </context>
 <context>
-    <name>SecretChatWaiting</name>
+    <name>SecretDialogWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>
-        <translation>Bezig met het wachten op %1 om online te komen</translation>
+        <translation type="unfinished">Bezig met het wachten op %1 om online te komen</translation>
     </message>
 </context>
 <context>
@@ -694,6 +724,10 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     <message>
         <source>Group created by %1</source>
         <translation>Groep - gecreëerd door %1</translation>
+    </message>
+    <message>
+        <source>%1 changed group name to ��%2��</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -775,13 +809,6 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     <message>
         <source>Profile</source>
         <translation>Profiel</translation>
-    </message>
-</context>
-<context>
-    <name>UsersPage</name>
-    <message>
-        <source>Contacts</source>
-        <translation>Contactpersonen</translation>
     </message>
 </context>
 </TS>

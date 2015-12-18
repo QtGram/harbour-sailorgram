@@ -93,6 +93,25 @@
     </message>
 </context>
 <context>
+    <name>AddContactPage</name>
+    <message>
+        <source>Add Contact</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First Name</source>
+        <translation type="unfinished">نام کوچک</translation>
+    </message>
+    <message>
+        <source>Last Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Telephone Number</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AddContactsPage</name>
     <message>
         <source>Add Chat Member</source>
@@ -238,107 +257,14 @@ Minimum length is 5 characters.</source>
     </message>
 </context>
 <context>
-    <name>ConversationInfoPage</name>
+    <name>ContactsPage</name>
     <message>
-        <source>Actions</source>
-        <translation>عملکردها</translation>
+        <source>Add Contact</source>
+        <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Delete secret chat</source>
-        <translation>حذف گپ محرمانه</translation>
-    </message>
-    <message>
-        <source>Delete group</source>
-        <translation>حذف گروه</translation>
-    </message>
-    <message>
-        <source>Delete conversation</source>
-        <translation>حذف گفت‌وگو</translation>
-    </message>
-    <message>
-        <source>Deleting secret chat</source>
-        <translation>در حال حذف گپ محرمانه</translation>
-    </message>
-    <message>
-        <source>Deleting group</source>
-        <translation>در حال حذف گروه</translation>
-    </message>
-    <message>
-        <source>Deleting conversation</source>
-        <translation>در حال حذف گفت‌وگو</translation>
-    </message>
-    <message>
-        <source>Add to contacts</source>
-        <translation>افزودن به آشنایان</translation>
-    </message>
-    <message>
-        <source>Enable notifications</source>
-        <translation>فعال‌سازی اطلاعیه‌ها</translation>
-    </message>
-    <message>
-        <source>Disable notifications</source>
-        <translation>غیرفعال‌سازی اطلاعیه‌ها</translation>
-    </message>
-</context>
-<context>
-    <name>ConversationPage</name>
-    <message>
-        <source>Load more messages</source>
-        <translation>بارگیری پیام‌های بیش‌تر</translation>
-    </message>
-</context>
-<context>
-    <name>ConversationsPage</name>
-    <message>
-        <source>No Chats
-
-Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation>هیچ گپی نیست
-
-بعد از انتخاب «آشنایان» از گزینه‌گان بالا، یکی از آن‌ها را انتخاب کنید</translation>
-    </message>
-    <message>
-        <source>Chats</source>
-        <translation>گپ‌ها</translation>
-    </message>
-    <message>
-        <source>Connecting...</source>
-        <translation>در حال اتصال…‏</translation>
-    </message>
-    <message>
-        <source>Deleting Secret Chat</source>
-        <translation>در حال حذف گپ محرمانه</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>حذف</translation>
-    </message>
-    <message>
-        <source>Deleting Conversation</source>
-        <translation>در حال حذف گفت‌وگو</translation>
-    </message>
-    <message>
-        <source>Deleting Group</source>
-        <translation>در حال حذف گروه</translation>
-    </message>
-</context>
-<context>
-    <name>ConversationsPullDownMenu</name>
     <message>
         <source>Contacts</source>
-        <translation>آشنایان</translation>
-    </message>
-    <message>
-        <source>Profile</source>
-        <translation>نمایه</translation>
-    </message>
-    <message>
-        <source>New Secret Chat</source>
-        <translation>گپ محرمانه‌ی تازه</translation>
-    </message>
-    <message>
-        <source>New Group</source>
-        <translation>گروه تازه</translation>
+        <translation type="unfinished">آشنایان</translation>
     </message>
 </context>
 <context>
@@ -372,10 +298,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
 </context>
 <context>
-    <name>CreateSecretConversationPage</name>
+    <name>CreateSecretDialogPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation>گپ محرمانه‌ی تازه</translation>
+        <translation type="unfinished">گپ محرمانه‌ی تازه</translation>
     </message>
 </context>
 <context>
@@ -407,6 +333,117 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <message>
         <source>Not Connected</source>
         <translation>وصل‌نشده</translation>
+    </message>
+</context>
+<context>
+    <name>DialogInfoPage</name>
+    <message>
+        <source>Delete secret chat</source>
+        <translation type="unfinished">حذف گپ محرمانه</translation>
+    </message>
+    <message>
+        <source>Delete group</source>
+        <translation type="unfinished">حذف گروه</translation>
+    </message>
+    <message>
+        <source>Delete conversation</source>
+        <translation type="unfinished">حذف گفت‌وگو</translation>
+    </message>
+    <message>
+        <source>Deleting secret chat</source>
+        <translation type="unfinished">در حال حذف گپ محرمانه</translation>
+    </message>
+    <message>
+        <source>Deleting group</source>
+        <translation type="unfinished">در حال حذف گروه</translation>
+    </message>
+    <message>
+        <source>Deleting conversation</source>
+        <translation type="unfinished">در حال حذف گفت‌وگو</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished">عملکردها</translation>
+    </message>
+    <message>
+        <source>Enable notifications</source>
+        <translation type="unfinished">فعال‌سازی اطلاعیه‌ها</translation>
+    </message>
+    <message>
+        <source>Disable notifications</source>
+        <translation type="unfinished">غیرفعال‌سازی اطلاعیه‌ها</translation>
+    </message>
+    <message>
+        <source>Add to contacts</source>
+        <translation type="unfinished">افزودن به آشنایان</translation>
+    </message>
+</context>
+<context>
+    <name>DialogItem</name>
+    <message>
+        <source>You:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DialogTextInput</name>
+    <message>
+        <source>Message...</source>
+        <translation type="unfinished">پیام…‏</translation>
+    </message>
+</context>
+<context>
+    <name>DialogsPage</name>
+    <message>
+        <source>No Chats
+
+Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
+        <translation type="unfinished">هیچ گپی نیست
+
+بعد از انتخاب «آشنایان» از گزینه‌گان بالا، یکی از آن‌ها را انتخاب کنید</translation>
+    </message>
+    <message>
+        <source>Chats</source>
+        <translation type="unfinished">گپ‌ها</translation>
+    </message>
+    <message>
+        <source>Connecting...</source>
+        <translation type="unfinished">در حال اتصال…‏</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">حذف</translation>
+    </message>
+    <message>
+        <source>Deleting Conversation</source>
+        <translation type="unfinished">در حال حذف گفت‌وگو</translation>
+    </message>
+    <message>
+        <source>Deleting Secret Chat</source>
+        <translation type="unfinished">در حال حذف گپ محرمانه</translation>
+    </message>
+    <message>
+        <source>Deleting Group</source>
+        <translation type="unfinished">در حال حذف گروه</translation>
+    </message>
+</context>
+<context>
+    <name>DialogsPullDownMenu</name>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished">نمایه</translation>
+    </message>
+    <message>
+        <source>New Secret Chat</source>
+        <translation type="unfinished">گپ محرمانه‌ی تازه</translation>
+    </message>
+    <message>
+        <source>New Group</source>
+        <translation type="unfinished">گروه تازه</translation>
+    </message>
+    <message>
+        <source>Contacts</source>
+        <translation type="unfinished">آشنایان</translation>
     </message>
 </context>
 <context>
@@ -490,13 +527,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <message>
         <source>Size: %1</source>
         <translation>اندازه: %1</translation>
-    </message>
-</context>
-<context>
-    <name>MessageBar</name>
-    <message>
-        <source>Message...</source>
-        <translation>پیام…‏</translation>
     </message>
 </context>
 <context>
@@ -618,17 +648,17 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
 </context>
 <context>
-    <name>SecretChatDiscarded</name>
+    <name>SecretDialogDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation>گپ محرمانه لغو شد</translation>
+        <translation type="unfinished">گپ محرمانه لغو شد</translation>
     </message>
 </context>
 <context>
-    <name>SecretChatWaiting</name>
+    <name>SecretDialogWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>
-        <translation>در انتظار %1 برای اتصال</translation>
+        <translation type="unfinished">در انتظار %1 برای اتصال</translation>
     </message>
 </context>
 <context>
@@ -694,6 +724,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <message>
         <source>Group created by %1</source>
         <translation>گروه را %1 ساخت</translation>
+    </message>
+    <message>
+        <source>%1 changed group name to ��%2��</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -775,13 +809,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <message>
         <source>Profile</source>
         <translation>نمایه</translation>
-    </message>
-</context>
-<context>
-    <name>UsersPage</name>
-    <message>
-        <source>Contacts</source>
-        <translation>آشنایان</translation>
     </message>
 </context>
 </TS>

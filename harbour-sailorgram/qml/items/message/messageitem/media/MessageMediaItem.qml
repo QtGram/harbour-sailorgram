@@ -1,7 +1,7 @@
 import QtQuick 2.1
 import harbour.sailorgram.TelegramQml 1.0
-import "../../../models"
-import "../../../js/TelegramConstants.js" as TelegramConstants
+import "../../../../models"
+import "../../../../js/TelegramConstants.js" as TelegramConstants
 
 Item
 {

@@ -7,7 +7,7 @@ Item
 {
     property EncryptedChat chat
 
-    id: secretchatdiscarded
+    id: secretdialogdiscarded
     visible: chat && (chat.classType === TelegramConstants.typeEncryptedChatDiscarded);
 
     Label

@@ -28,7 +28,7 @@ Item
             height: Theme.itemSizeSmall
             labelFont.pixelSize: Theme.fontSizeSmall
             labelText: qsTr("Send Message")
-            onActionRequested: pageStack.replace(Qt.resolvedUrl("../../pages/conversations/ConversationPage.qml"), { "context": context, "dialog": context.telegram.fakeDialogObject(user.id, false) } )
+            onActionRequested: pageStack.replace(Qt.resolvedUrl("../../pages/dialogs/DialogPage.qml"), { "context": context, "dialog": context.telegram.fakeDialogObject(user.id, false) } )
         }
 
         ClickableLabel

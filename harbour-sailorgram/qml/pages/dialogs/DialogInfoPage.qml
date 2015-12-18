@@ -11,7 +11,7 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 
 Page
 {
-    property bool muted: context.telegram.userData.isMuted(TelegramHelper.peerId(conversationinfopage.dialog))
+    property bool muted: context.telegram.userData.isMuted(TelegramHelper.peerId(dialoginfopage.dialog))
     property bool actionVisible: true
     property Context context
     property Dialog dialog
@@ -26,11 +26,11 @@ Page
             if(id !== user.id)
                 return;
 
-            conversationinfopage.muted = context.telegram.userData.isMuted(id);
+            dialoginfopage.muted = context.telegram.userData.isMuted(id);
         }
     }
 
-    id: conversationinfopage
+    id: dialoginfopage
     allowedOrientations: defaultAllowedOrientations
 
     function conversationTypeMessage() {
@@ -59,8 +59,8 @@ Page
         UserInfo {
             actionVisible: true
             allowSendMessage: false
-            context: conversationinfopage.context
-            user: conversationinfopage.user
+            context: dialoginfopage.context
+            user: dialoginfopage.user
         }
     }
 
@@ -68,9 +68,9 @@ Page
         id: chatinfocomponent
 
         ChatInfo {
-            context: conversationinfopage.context
-            dialog: conversationinfopage.dialog
-            chat: conversationinfopage.chat
+            context: dialoginfopage.context
+            dialog: dialoginfopage.dialog
+            chat: dialoginfopage.chat
         }
     }
 
@@ -91,44 +91,44 @@ Page
                 x: Theme.paddingMedium
                 width: parent.width - (x * 2)
                 height: Theme.itemSizeSmall
-                context: conversationinfopage.context
-                dialog: conversationinfopage.dialog
-                chat: conversationinfopage.chat
-                user: conversationinfopage.user
+                context: dialoginfopage.context
+                dialog: dialoginfopage.dialog
+                chat: dialoginfopage.chat
+                user: dialoginfopage.user
             }
 
             SectionHeader { text: qsTr("Actions") }
 
             ClickableLabel
             {
-                labelText: conversationinfopage.muted ? qsTr("Enable notifications") : qsTr("Disable notifications")
+                labelText: dialoginfopage.muted ? qsTr("Enable notifications") : qsTr("Disable notifications")
                 labelFont.pixelSize: Theme.fontSizeSmall
                 width: parent.width
                 height: Theme.itemSizeSmall
 
                 onActionRequested: {
-                    if(conversationinfopage.dialog.encrypted) { // Secret chats are P2P
-                        if(context.telegram.userData.isMuted(conversationinfopage.dialog.peer.userId)) {
-                            context.telegram.userData.removeMute(conversationinfopage.dialog.peer.userId);
-                            conversationinfopage.muted = false;
+                    if(dialoginfopage.dialog.encrypted) { // Secret chats are P2P
+                        if(context.telegram.userData.isMuted(dialoginfopage.dialog.peer.userId)) {
+                            context.telegram.userData.removeMute(dialoginfopage.dialog.peer.userId);
+                            dialoginfopage.muted = false;
                         }
                         else {
-                            context.telegram.userData.addMute(conversationinfopage.dialog.peer.userId);
-                            conversationinfopage.muted = true;
+                            context.telegram.userData.addMute(dialoginfopage.dialog.peer.userId);
+                            dialoginfopage.muted = true;
                         }
 
                         return;
                     }
 
-                    var peerid = TelegramHelper.peerId(conversationinfopage.dialog);
+                    var peerid = TelegramHelper.peerId(dialoginfopage.dialog);
 
                     if(context.telegram.userData.isMuted(peerid)) {
                         context.telegram.unmute(peerid);
-                        conversationinfopage.muted = false;
+                        dialoginfopage.muted = false;
                     }
                     else {
                         context.telegram.mute(peerid);
-                        conversationinfopage.muted = true;
+                        dialoginfopage.muted = true;
                     }
                 }
             }

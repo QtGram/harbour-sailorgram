@@ -9,7 +9,7 @@ Page
 {
     property Context context
 
-    id: createsecretchatpage
+    id: createsecretdialogpage
     allowedOrientations: defaultAllowedOrientations
 
     SilicaFlickable
@@ -45,7 +45,7 @@ Page
                 UserItem {
                     id: useritem
                     anchors { fill: parent; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
-                    context: createsecretchatpage.context
+                    context: createsecretdialogpage.context
                     user: context.telegram.user(item.userId)
                 }
             }

@@ -70,7 +70,7 @@ function isChat(dialog)
     return dialog.peer.classType === TelegramConstants.typePeerChat;
 }
 
-function isActionMessage(message)
+function isServiceMessage(message)
 {
     if(message.classType === TelegramConstants.typeMessageService)
         return true;

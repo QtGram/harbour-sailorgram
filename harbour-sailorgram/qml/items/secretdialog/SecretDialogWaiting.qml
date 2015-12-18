@@ -9,7 +9,7 @@ Item
     property User user
     property EncryptedChat chat
 
-    id: secretchatwaiting
+    id: secretdialogwaiting
     visible: user && chat && (chat.classType === TelegramConstants.typeEncryptedChatWaiting)
     width: busyindicator.width + lblwaiting.contentWidth + Theme.paddingMedium
 
@@ -18,7 +18,7 @@ Item
         id: busyindicator
         size: BusyIndicatorSize.Small
         anchors { left: parent.left; verticalCenter: lblwaiting.verticalCenter }
-        running: secretchatwaiting.visible
+        running: secretdialogwaiting.visible
     }
 
     Label

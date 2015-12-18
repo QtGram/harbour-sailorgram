@@ -93,6 +93,25 @@
     </message>
 </context>
 <context>
+    <name>AddContactPage</name>
+    <message>
+        <source>Add Contact</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First Name</source>
+        <translation type="unfinished">Vorname</translation>
+    </message>
+    <message>
+        <source>Last Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Telephone Number</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AddContactsPage</name>
     <message>
         <source>Add Chat Member</source>
@@ -238,107 +257,14 @@ Minimum sind 5 Zeichen.</translation>
     </message>
 </context>
 <context>
-    <name>ConversationInfoPage</name>
+    <name>ContactsPage</name>
     <message>
-        <source>Actions</source>
+        <source>Add Contact</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Delete secret chat</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Delete group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Delete conversation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deleting secret chat</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deleting group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deleting conversation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add to contacts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enable notifications</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Disable notifications</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ConversationPage</name>
-    <message>
-        <source>Load more messages</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ConversationsPage</name>
-    <message>
-        <source>No Chats
-
-Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation>Keine Konversationen
-
-wähle einen Kontakt über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
-    </message>
-    <message>
-        <source>Chats</source>
-        <translation>Konversationen</translation>
-    </message>
-    <message>
-        <source>Connecting...</source>
-        <translation>Verbinden...</translation>
-    </message>
-    <message>
-        <source>Deleting Secret Chat</source>
-        <translation>Geheime Konversation wird gelöscht</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Löschen</translation>
-    </message>
-    <message>
-        <source>Deleting Conversation</source>
-        <translation>Unterhaltung löschen</translation>
-    </message>
-    <message>
-        <source>Deleting Group</source>
-        <translation>Gruppe löschen</translation>
-    </message>
-</context>
-<context>
-    <name>ConversationsPullDownMenu</name>
     <message>
         <source>Contacts</source>
-        <translation>Kontakte</translation>
-    </message>
-    <message>
-        <source>Profile</source>
-        <translation>Profil</translation>
-    </message>
-    <message>
-        <source>New Secret Chat</source>
-        <translation>Neue geheime Konversation</translation>
-    </message>
-    <message>
-        <source>New Group</source>
-        <translation>Neue Gruppe</translation>
+        <translation type="unfinished">Kontakte</translation>
     </message>
 </context>
 <context>
@@ -372,10 +298,10 @@ wähle einen Kontakt über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
     </message>
 </context>
 <context>
-    <name>CreateSecretConversationPage</name>
+    <name>CreateSecretDialogPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation>Neue geheime Konversation</translation>
+        <translation type="unfinished">Neue geheime Konversation</translation>
     </message>
 </context>
 <context>
@@ -407,6 +333,117 @@ wähle einen Kontakt über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
     <message>
         <source>Not Connected</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DialogInfoPage</name>
+    <message>
+        <source>Delete secret chat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete conversation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting secret chat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting conversation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add to contacts</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DialogItem</name>
+    <message>
+        <source>You:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DialogTextInput</name>
+    <message>
+        <source>Message...</source>
+        <translation type="unfinished">Nachricht...</translation>
+    </message>
+</context>
+<context>
+    <name>DialogsPage</name>
+    <message>
+        <source>No Chats
+
+Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
+        <translation type="unfinished">Keine Konversationen
+
+wähle einen Kontakt über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
+    </message>
+    <message>
+        <source>Chats</source>
+        <translation type="unfinished">Konversationen</translation>
+    </message>
+    <message>
+        <source>Connecting...</source>
+        <translation type="unfinished">Verbinden...</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Löschen</translation>
+    </message>
+    <message>
+        <source>Deleting Conversation</source>
+        <translation type="unfinished">Unterhaltung löschen</translation>
+    </message>
+    <message>
+        <source>Deleting Secret Chat</source>
+        <translation type="unfinished">Geheime Konversation wird gelöscht</translation>
+    </message>
+    <message>
+        <source>Deleting Group</source>
+        <translation type="unfinished">Gruppe löschen</translation>
+    </message>
+</context>
+<context>
+    <name>DialogsPullDownMenu</name>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished">Profil</translation>
+    </message>
+    <message>
+        <source>New Secret Chat</source>
+        <translation type="unfinished">Neue geheime Konversation</translation>
+    </message>
+    <message>
+        <source>New Group</source>
+        <translation type="unfinished">Neue Gruppe</translation>
+    </message>
+    <message>
+        <source>Contacts</source>
+        <translation type="unfinished">Kontakte</translation>
     </message>
 </context>
 <context>
@@ -491,13 +528,6 @@ wähle einen Kontakt über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
     <message>
         <source>Size: %1</source>
         <translation>Größe: %1</translation>
-    </message>
-</context>
-<context>
-    <name>MessageBar</name>
-    <message>
-        <source>Message...</source>
-        <translation>Nachricht...</translation>
     </message>
 </context>
 <context>
@@ -619,17 +649,17 @@ wähle einen Kontakt über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
     </message>
 </context>
 <context>
-    <name>SecretChatDiscarded</name>
+    <name>SecretDialogDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation>Geheime Konversation verlassen</translation>
+        <translation type="unfinished">Geheime Konversation verlassen</translation>
     </message>
 </context>
 <context>
-    <name>SecretChatWaiting</name>
+    <name>SecretDialogWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>
-        <translation>Warte das %1 online ist</translation>
+        <translation type="unfinished">Warte das %1 online ist</translation>
     </message>
 </context>
 <context>
@@ -695,6 +725,10 @@ wähle einen Kontakt über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
     <message>
         <source>Group created by %1</source>
         <translation>Gruppe erstellt von %1</translation>
+    </message>
+    <message>
+        <source>%1 changed group name to ��%2��</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -776,13 +810,6 @@ wähle einen Kontakt über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
     <message>
         <source>Profile</source>
         <translation>Profil</translation>
-    </message>
-</context>
-<context>
-    <name>UsersPage</name>
-    <message>
-        <source>Contacts</source>
-        <translation>Kontakte</translation>
     </message>
 </context>
 </TS>

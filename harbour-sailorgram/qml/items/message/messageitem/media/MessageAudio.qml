@@ -1,14 +1,14 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
-import "../../../components/mediaplayer/mediacomponents"
-import "../../../js/TelegramHelper.js" as TelegramHelper
+import "../../../../components/mediaplayer/mediacomponents"
+import "../../../../js/TelegramHelper.js" as TelegramHelper
 
 MessageMediaItem
 {
-    property FileLocation fileLocation: context.telegram.locationOfVideo(message.media.video)
+    property FileLocation fileLocation: context.telegram.locationOfAudio(message.media.audio)
 
-    id: messagevideo
+    id: messageaudio
     height: row.height
     width: Math.min(messageitem.width, row.width)
 
@@ -25,7 +25,7 @@ MessageMediaItem
         MessageThumbnail
         {
             id: imgpreview
-            source: messagevideo.mediaThumbnail || "image://theme/icon-l-video"
+            source: messageaudio.mediaThumbnail || "image://theme/icon-m-sounds"
             transferProgress: progressPercent
         }
 
@@ -42,7 +42,7 @@ MessageMediaItem
                 verticalAlignment: Text.AlignTop
                 horizontalAlignment: Text.AlignLeft
                 font.pixelSize: Theme.fontSizeExtraSmall
-                text: qsTr("Video recording")
+                text: qsTr("Audio recording")
                 wrapMode: Text.NoWrap
                 elide: Text.ElideRight
             }
@@ -60,7 +60,7 @@ MessageMediaItem
                 id: lblduration
                 height: parent.height / 3
                 font.pixelSize: Theme.fontSizeExtraSmall
-                text: qsTr("Duration: %1").arg(mediaplayertimings.displayDuration(message.media.video.duration))
+                text: qsTr("Duration: %1").arg(mediaplayertimings.displayDuration(message.media.audio.duration))
             }
         }
     }

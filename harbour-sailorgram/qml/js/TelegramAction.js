@@ -28,5 +28,8 @@ function actionType(telegram, dialog, message) {
    if(action.classType === TelegramConstants.typeMessageActionChatDeleteUser)
        return qsTr("%1 has left the group").arg(TelegramHelper.completeName(telegram.user(action.userId)));
 
-   return "";
+   if(action.classType === TelegramConstants.typeMessageActionChatEditTitle)
+       return qsTr("%1 changed group name to «%2»").arg(TelegramHelper.completeName(telegram.user(action.userId))).arg(action.title);
+
+   return "???";
 }

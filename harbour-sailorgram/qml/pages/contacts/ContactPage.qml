@@ -12,7 +12,7 @@ Page
     property Context context
     property User user
 
-    id: userpage
+    id: contactpage
     allowedOrientations: defaultAllowedOrientations
 
     SilicaFlickable
@@ -34,8 +34,8 @@ Page
                 x: Theme.paddingMedium
                 width: parent.width - (x * 2)
                 height: Theme.itemSizeSmall
-                context: userpage.context
-                user: userpage.user
+                context: contactpage.context
+                user: contactpage.user
             }
 
             UserInfo
@@ -43,8 +43,8 @@ Page
                 x: Theme.paddingMedium
                 width: parent.width - (x * 2)
                 actionVisible: true
-                context: userpage.context
-                user: userpage.user
+                context: contactpage.context
+                user: contactpage.user
             }
         }
     }

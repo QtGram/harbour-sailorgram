@@ -93,6 +93,25 @@
     </message>
 </context>
 <context>
+    <name>AddContactPage</name>
+    <message>
+        <source>Add Contact</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First Name</source>
+        <translation type="unfinished">Имя</translation>
+    </message>
+    <message>
+        <source>Last Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Telephone Number</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AddContactsPage</name>
     <message>
         <source>Add Chat Member</source>
@@ -238,107 +257,14 @@ Minimum length is 5 characters.</source>
     </message>
 </context>
 <context>
-    <name>ConversationInfoPage</name>
+    <name>ContactsPage</name>
     <message>
-        <source>Actions</source>
-        <translation>Действия</translation>
-    </message>
-    <message>
-        <source>Delete secret chat</source>
-        <translation>Удалить тайный диалог</translation>
-    </message>
-    <message>
-        <source>Delete group</source>
-        <translation>Удалить беседу</translation>
-    </message>
-    <message>
-        <source>Delete conversation</source>
-        <translation>Удалить диалог</translation>
-    </message>
-    <message>
-        <source>Deleting secret chat</source>
-        <translation>Удаление тайного диалога</translation>
-    </message>
-    <message>
-        <source>Deleting group</source>
-        <translation>Удаление беседы</translation>
-    </message>
-    <message>
-        <source>Deleting conversation</source>
-        <translation>Удаление диалога</translation>
-    </message>
-    <message>
-        <source>Add to contacts</source>
-        <translation>Добавить в контакты</translation>
-    </message>
-    <message>
-        <source>Enable notifications</source>
-        <translation>Включить уведомления</translation>
-    </message>
-    <message>
-        <source>Disable notifications</source>
-        <translation>Отключить уведомления</translation>
-    </message>
-</context>
-<context>
-    <name>ConversationPage</name>
-    <message>
-        <source>Load more messages</source>
+        <source>Add Contact</source>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>ConversationsPage</name>
-    <message>
-        <source>No Chats
-
-Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation>Диалогов нет
-
-Выберите контакта из меню &apos;Контакты&apos;</translation>
-    </message>
-    <message>
-        <source>Chats</source>
-        <translation>Диалоги</translation>
-    </message>
-    <message>
-        <source>Connecting...</source>
-        <translation>Подключение...</translation>
-    </message>
-    <message>
-        <source>Deleting Secret Chat</source>
-        <translation>Удаление тайного диалога</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Удалить</translation>
-    </message>
-    <message>
-        <source>Deleting Conversation</source>
-        <translation>Удаление диалога</translation>
-    </message>
-    <message>
-        <source>Deleting Group</source>
-        <translation>Удаление беседы</translation>
-    </message>
-</context>
-<context>
-    <name>ConversationsPullDownMenu</name>
     <message>
         <source>Contacts</source>
-        <translation>Контакты</translation>
-    </message>
-    <message>
-        <source>Profile</source>
-        <translation>Профиль</translation>
-    </message>
-    <message>
-        <source>New Secret Chat</source>
-        <translation>Создать тайный диалог</translation>
-    </message>
-    <message>
-        <source>New Group</source>
-        <translation>Создать беседу</translation>
+        <translation type="unfinished">Контакты</translation>
     </message>
 </context>
 <context>
@@ -372,10 +298,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
 </context>
 <context>
-    <name>CreateSecretConversationPage</name>
+    <name>CreateSecretDialogPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation>Создать тайный диалог</translation>
+        <translation type="unfinished">Создать тайный диалог</translation>
     </message>
 </context>
 <context>
@@ -407,6 +333,117 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <message>
         <source>Not Connected</source>
         <translation>Нет подключения</translation>
+    </message>
+</context>
+<context>
+    <name>DialogInfoPage</name>
+    <message>
+        <source>Delete secret chat</source>
+        <translation type="unfinished">Удалить тайный диалог</translation>
+    </message>
+    <message>
+        <source>Delete group</source>
+        <translation type="unfinished">Удалить беседу</translation>
+    </message>
+    <message>
+        <source>Delete conversation</source>
+        <translation type="unfinished">Удалить диалог</translation>
+    </message>
+    <message>
+        <source>Deleting secret chat</source>
+        <translation type="unfinished">Удаление тайного диалога</translation>
+    </message>
+    <message>
+        <source>Deleting group</source>
+        <translation type="unfinished">Удаление беседы</translation>
+    </message>
+    <message>
+        <source>Deleting conversation</source>
+        <translation type="unfinished">Удаление диалога</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished">Действия</translation>
+    </message>
+    <message>
+        <source>Enable notifications</source>
+        <translation type="unfinished">Включить уведомления</translation>
+    </message>
+    <message>
+        <source>Disable notifications</source>
+        <translation type="unfinished">Отключить уведомления</translation>
+    </message>
+    <message>
+        <source>Add to contacts</source>
+        <translation type="unfinished">Добавить в контакты</translation>
+    </message>
+</context>
+<context>
+    <name>DialogItem</name>
+    <message>
+        <source>You:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DialogTextInput</name>
+    <message>
+        <source>Message...</source>
+        <translation type="unfinished">Сообщение...</translation>
+    </message>
+</context>
+<context>
+    <name>DialogsPage</name>
+    <message>
+        <source>No Chats
+
+Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
+        <translation type="unfinished">Диалогов нет
+
+Выберите контакта из меню &apos;Контакты&apos;</translation>
+    </message>
+    <message>
+        <source>Chats</source>
+        <translation type="unfinished">Диалоги</translation>
+    </message>
+    <message>
+        <source>Connecting...</source>
+        <translation type="unfinished">Подключение...</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Удалить</translation>
+    </message>
+    <message>
+        <source>Deleting Conversation</source>
+        <translation type="unfinished">Удаление диалога</translation>
+    </message>
+    <message>
+        <source>Deleting Secret Chat</source>
+        <translation type="unfinished">Удаление тайного диалога</translation>
+    </message>
+    <message>
+        <source>Deleting Group</source>
+        <translation type="unfinished">Удаление беседы</translation>
+    </message>
+</context>
+<context>
+    <name>DialogsPullDownMenu</name>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished">Профиль</translation>
+    </message>
+    <message>
+        <source>New Secret Chat</source>
+        <translation type="unfinished">Создать тайный диалог</translation>
+    </message>
+    <message>
+        <source>New Group</source>
+        <translation type="unfinished">Создать беседу</translation>
+    </message>
+    <message>
+        <source>Contacts</source>
+        <translation type="unfinished">Контакты</translation>
     </message>
 </context>
 <context>
@@ -490,13 +527,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <message>
         <source>Size: %1</source>
         <translation>Размер: %1</translation>
-    </message>
-</context>
-<context>
-    <name>MessageBar</name>
-    <message>
-        <source>Message...</source>
-        <translation>Сообщение...</translation>
     </message>
 </context>
 <context>
@@ -618,17 +648,17 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
 </context>
 <context>
-    <name>SecretChatDiscarded</name>
+    <name>SecretDialogDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation>Тайный диалог отменён</translation>
+        <translation type="unfinished">Тайный диалог отменён</translation>
     </message>
 </context>
 <context>
-    <name>SecretChatWaiting</name>
+    <name>SecretDialogWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>
-        <translation>Ждём появления %1 в сети</translation>
+        <translation type="unfinished">Ждём появления %1 в сети</translation>
     </message>
 </context>
 <context>
@@ -694,6 +724,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <message>
         <source>Group created by %1</source>
         <translation>%1 создал(а) беседу</translation>
+    </message>
+    <message>
+        <source>%1 changed group name to ��%2��</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -775,13 +809,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <message>
         <source>Profile</source>
         <translation>Профиль</translation>
-    </message>
-</context>
-<context>
-    <name>UsersPage</name>
-    <message>
-        <source>Contacts</source>
-        <translation>Контакты</translation>
     </message>
 </context>
 </TS>

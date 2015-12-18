@@ -2,11 +2,11 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import harbour.sailorgram.TelegramCalendar 1.0
-import "../../models"
-import "../../menus"
+import "../../../models"
+import "../../../menus"
 import "media"
-import "../../js/TelegramConstants.js" as TelegramConstants
-import "../../js/TelegramHelper.js" as TelegramHelper
+import "../../../js/TelegramConstants.js" as TelegramConstants
+import "../../../js/TelegramHelper.js" as TelegramHelper
 
 ListItem
 {
@@ -34,12 +34,12 @@ ListItem
             loader.item.fileHandler.download();
 
         if((message.media.classType === TelegramConstants.typeMessageMediaPhoto) || (type === "image")) {
-            pageStack.push(Qt.resolvedUrl("../../pages/media/MediaPhotoPage.qml"), { "context": messageitem.context, "message": messageitem.message, "fileHandler": loader.item.fileHandler });
+            pageStack.push(Qt.resolvedUrl("../../../pages/media/MediaPhotoPage.qml"), { "context": messageitem.context, "message": messageitem.message, "fileHandler": loader.item.fileHandler });
             return;
         }
 
         if((message.media.classType === TelegramConstants.typeMessageMediaVideo) || (message.media.classType === TelegramConstants.typeMessageMediaAudio) || (type === "audio") || (type === "video")) {
-            pageStack.push(Qt.resolvedUrl("../../pages/media/MediaPlayerPage.qml"), { "context": messageitem.context, "message": messageitem.message, "fileHandler": loader.item.fileHandler });
+            pageStack.push(Qt.resolvedUrl("../../../pages/media/MediaPlayerPage.qml"), { "context": messageitem.context, "message": messageitem.message, "fileHandler": loader.item.fileHandler });
             return;
         }
 
@@ -136,8 +136,8 @@ ListItem
         {
             id: lbluser
             anchors { left: message.out ? parent.left : undefined; right: message.out ? undefined : parent.right }
-            visible: !TelegramHelper.isActionMessage(message) && !message.out
-            text: (!TelegramHelper.isActionMessage(message) && message.out) ? "" : TelegramHelper.completeName(context.telegram.user(message.fromId))
+            visible: !TelegramHelper.isServiceMessage(message) && !message.out
+            text: (!TelegramHelper.isServiceMessage(message) && message.out) ? "" : TelegramHelper.completeName(context.telegram.user(message.fromId))
             font.bold: true
             font.pixelSize: Theme.fontSizeMedium
             wrapMode: Text.NoWrap

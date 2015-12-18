@@ -21,11 +21,11 @@ LIBS += -L$$LIBQTELEGRAM_LIB_DIR -L$$TELEGRAMQML_LIB_DIR -lqtelegram-ae -ltelegr
 INCLUDEPATH += $$LIBQTELEGRAM_INCLUDE_PATH $$TELEGRAMQML_INCLUDE_PATH
 
 # TelegramQml
-libtelegram_qml.files = $$OUT_PWD/../telegramqml/*.so*
+libtelegram_qml.files = $$OUT_PWD/../TelegramQML/*.so*
 libtelegram_qml.path = /usr/share/$$TARGET/lib
 INSTALLS += libtelegram_qml
 
-# LibQTelegram-AE
+# LibQTelegram-ae
 libqtelegram_ae.files = $$OUT_PWD/../libqtelegram-aseman-edition/*.so*
 libqtelegram_ae.path = /usr/share/$$TARGET/lib
 INSTALLS += libqtelegram_ae
@@ -57,37 +57,28 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/js/Settings.js \
     qml/items/user/UserItem.qml \
     qml/js/CountryList.js \
-    qml/items/messageitem/MessageBar.qml \
-    qml/items/conversation/ConversationItem.qml \
-    qml/items/messageitem/MessageItem.qml \
+    qml/items/message/messageitem/MessageItem.qml \
     qml/js/TelegramHelper.js \
-    qml/items/messageitem/MessageText.qml \
-    qml/items/messageitem/media/MessageMediaItem.qml \
-    qml/items/messageitem/media/MessagePhoto.qml \
-    qml/items/messageitem/media/MessageDocument.qml \
+    qml/items/message/messageitem/MessageText.qml \
+    qml/items/message/messageitem/media/MessageMediaItem.qml \
+    qml/items/message/messageitem/media/MessagePhoto.qml \
+    qml/items/message/messageitem/media/MessageDocument.qml \
     qml/components/PopupMessage.qml \
-    qml/pages/conversations/ConversationsPage.qml \
-    qml/pages/conversations/ConversationPage.qml \
-    qml/pages/users/UserPage.qml \
-    qml/pages/users/UsersPage.qml \
     qml/menus/UserMenu.qml \
     qml/components/ClickableLabel.qml \
-    qml/items/messageitem/media/MessageThumbnail.qml \
+    qml/items/message/messageitem/media/MessageThumbnail.qml \
     qml/js/TelegramConstants.js \
     qml/pages/picker/FilePickerPage.qml \
     qml/components/pickers/FilePicker.qml \
     qml/pages/login/SignUpPage.qml \
-    qml/items/conversation/ConversationImage.qml \
     qml/items/peer/PeerItem.qml \
     qml/items/peer/PeerImage.qml \
-    qml/pages/conversations/ConversationInfoPage.qml \
     qml/items/user/UserInfo.qml \
     qml/items/chat/ChatInfo.qml \
     qml/js/TelegramAction.js \
     qml/pages/chat/AddContactsPage.qml \
     qml/menus/MessageMenu.qml \
     qml/pages/chat/CreateChatPage.qml \
-    qml/menus/conversation/ConversationsPullDownMenu.qml \
     qml/menus/chat/ChatInfoMenu.qml \
     qml/cover/CoverPage.qml \
     qml/components/cover/CoverLabel.qml \
@@ -109,17 +100,11 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/components/ConnectionStatus.qml \
     qml/pages/AboutPage.qml \
     qml/components/InfoLabel.qml \
-    qml/pages/secretconversations/CreateSecretConversationPage.qml \
-    qml/pages/secretconversations/SecretConversationPage.qml \
-    qml/items/secretconversation/SecretConversationItem.qml \
-    qml/components/TelegramBackground.qml \
-    qml/items/secretconversation/SecretChatDiscarded.qml \
-    qml/items/secretconversation/SecretChatWaiting.qml \
-    qml/items/messageitem/MessageStatus.qml \
+    qml/items/message/messageitem/MessageStatus.qml \
     qml/pages/settings/SettingsPage.qml \
     qml/pages/chat/ChangeChatTitle.qml \
-    qml/items/messageitem/media/MessageAudio.qml \
-    qml/items/messageitem/media/MessageVideo.qml \
+    qml/items/message/messageitem/media/MessageAudio.qml \
+    qml/items/message/messageitem/media/MessageVideo.qml \
     qml/pages/media/MediaPage.qml \
     qml/components/SettingLabel.qml \
     qml/pages/settings/ChatSettingsPage.qml \
@@ -166,4 +151,19 @@ RESOURCES += \
     resources.qrc
 
 DISTFILES += \
-    qml/pages/users/AddUserPage.qml
+    qml/menus/dialog/DialogsPullDownMenu.qml \
+    qml/items/dialog/DialogItem.qml \
+    qml/pages/dialogs/DialogsPage.qml \
+    qml/items/secretdialog/SecretDialogDiscarded.qml \
+    qml/items/secretdialog/SecretDialogItem.qml \
+    qml/pages/dialogs/DialogInfoPage.qml \
+    qml/pages/dialogs/DialogPage.qml \
+    qml/items/message/MessageView.qml \
+    qml/components/telegram/TelegramBackground.qml \
+    qml/items/dialog/DialogTextInput.qml \
+    qml/pages/secretdialogs/SecretDialogPage.qml \
+    qml/pages/secretdialogs/CreateSecretDialogPage.qml \
+    qml/items/secretdialog/SecretDialogWaiting.qml \
+    qml/pages/contacts/ContactsPage.qml \
+    qml/pages/contacts/ContactPage.qml \
+    qml/pages/contacts/AddContactPage.qml

@@ -68,7 +68,7 @@ CoverBackground
 
             onTriggered: {
                 preparePages();
-                pageStack.push(Qt.resolvedUrl("../pages/users/UsersPage.qml"), { "context": context }, PageStackAction.Immediate);
+                pageStack.push(Qt.resolvedUrl("../pages/contacts/ContactsPage.qml"), { "context": context }, PageStackAction.Immediate);
                 mainwindow.activate();
             }
         }

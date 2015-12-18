@@ -9,7 +9,7 @@ Page
 {
     property Context context
 
-    id: userspage
+    id: contactspage
     allowedOrientations: defaultAllowedOrientations
 
     SilicaListView
@@ -23,11 +23,7 @@ Page
             MenuItem
             {
                 text: qsTr("Add Contact")
-                onClicked:
-                {
-                    pageStack.push(Qt.resolvedUrl("./AddUserPage.qml"),
-                                   {"context": context})
-                }
+                onClicked: pageStack.push(Qt.resolvedUrl("AddContactPage.qml"), { "context": context });
             }
         }
 
@@ -42,16 +38,16 @@ Page
 
             menu: UserMenu {
                 id: usermenu
-                context: userspage.context
+                context: contactspage.context
                 user: context.telegram.user(item.userId)
             }
 
-            onClicked: pageStack.replace(Qt.resolvedUrl("../conversations/ConversationPage.qml"), { "context": userspage.context, "dialog": context.telegram.fakeDialogObject(item.userId, false) } )
+            onClicked: pageStack.replace(Qt.resolvedUrl("../dialogs/DialogPage.qml"), { "context": contactspage.context, "dialog": context.telegram.fakeDialogObject(item.userId, false) } )
 
             UserItem {
                 id: useritem
                 anchors.fill: parent
-                context: userspage.context
+                context: contactspage.context
                 user: context.telegram.user(item.userId)
             }
         }

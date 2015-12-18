@@ -93,6 +93,25 @@
     </message>
 </context>
 <context>
+    <name>AddContactPage</name>
+    <message>
+        <source>Add Contact</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First Name</source>
+        <translation type="unfinished">Förnamn</translation>
+    </message>
+    <message>
+        <source>Last Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Telephone Number</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AddContactsPage</name>
     <message>
         <source>Add Chat Member</source>
@@ -238,107 +257,14 @@ Minimilängd är 5 tecken.</translation>
     </message>
 </context>
 <context>
-    <name>ConversationInfoPage</name>
+    <name>ContactsPage</name>
     <message>
-        <source>Actions</source>
-        <translation>Åtgärder</translation>
+        <source>Add Contact</source>
+        <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Delete secret chat</source>
-        <translation>Ta bort hemlig chatt</translation>
-    </message>
-    <message>
-        <source>Delete group</source>
-        <translation>Ta bort grupp</translation>
-    </message>
-    <message>
-        <source>Delete conversation</source>
-        <translation>Ta bort konversation</translation>
-    </message>
-    <message>
-        <source>Deleting secret chat</source>
-        <translation>Tar bort hemlig chatt</translation>
-    </message>
-    <message>
-        <source>Deleting group</source>
-        <translation>Tar bort grupp</translation>
-    </message>
-    <message>
-        <source>Deleting conversation</source>
-        <translation>Tar bort konversation</translation>
-    </message>
-    <message>
-        <source>Add to contacts</source>
-        <translation>Lägg till i kontakter</translation>
-    </message>
-    <message>
-        <source>Enable notifications</source>
-        <translation>Aktivera aviseringar</translation>
-    </message>
-    <message>
-        <source>Disable notifications</source>
-        <translation>Inaktivera aviseringar</translation>
-    </message>
-</context>
-<context>
-    <name>ConversationPage</name>
-    <message>
-        <source>Load more messages</source>
-        <translation>Läs in fler meddelanden</translation>
-    </message>
-</context>
-<context>
-    <name>ConversationsPage</name>
-    <message>
-        <source>No Chats
-
-Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation>Ingen chatt
-
-Välj en kontakt genom att gå till &quot;Kontakter&quot; i ovanstående meny</translation>
-    </message>
-    <message>
-        <source>Chats</source>
-        <translation>Chattar</translation>
-    </message>
-    <message>
-        <source>Connecting...</source>
-        <translation>Ansluter...</translation>
-    </message>
-    <message>
-        <source>Deleting Secret Chat</source>
-        <translation>Tar bort hemlig chatt</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Ta bort</translation>
-    </message>
-    <message>
-        <source>Deleting Conversation</source>
-        <translation>Tar bort konversation</translation>
-    </message>
-    <message>
-        <source>Deleting Group</source>
-        <translation>Tar bort grupp</translation>
-    </message>
-</context>
-<context>
-    <name>ConversationsPullDownMenu</name>
     <message>
         <source>Contacts</source>
-        <translation>Kontakter</translation>
-    </message>
-    <message>
-        <source>Profile</source>
-        <translation>Profil</translation>
-    </message>
-    <message>
-        <source>New Secret Chat</source>
-        <translation>Ny hemlig chatt</translation>
-    </message>
-    <message>
-        <source>New Group</source>
-        <translation>Ny grupp</translation>
+        <translation type="unfinished">Kontakter</translation>
     </message>
 </context>
 <context>
@@ -372,10 +298,10 @@ Välj en kontakt genom att gå till &quot;Kontakter&quot; i ovanstående meny</t
     </message>
 </context>
 <context>
-    <name>CreateSecretConversationPage</name>
+    <name>CreateSecretDialogPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation>Ny hemlig chatt</translation>
+        <translation type="unfinished">Ny hemlig chatt</translation>
     </message>
 </context>
 <context>
@@ -407,6 +333,117 @@ Välj en kontakt genom att gå till &quot;Kontakter&quot; i ovanstående meny</t
     <message>
         <source>Not Connected</source>
         <translation>Ej ansluten</translation>
+    </message>
+</context>
+<context>
+    <name>DialogInfoPage</name>
+    <message>
+        <source>Delete secret chat</source>
+        <translation type="unfinished">Ta bort hemlig chatt</translation>
+    </message>
+    <message>
+        <source>Delete group</source>
+        <translation type="unfinished">Ta bort grupp</translation>
+    </message>
+    <message>
+        <source>Delete conversation</source>
+        <translation type="unfinished">Ta bort konversation</translation>
+    </message>
+    <message>
+        <source>Deleting secret chat</source>
+        <translation type="unfinished">Tar bort hemlig chatt</translation>
+    </message>
+    <message>
+        <source>Deleting group</source>
+        <translation type="unfinished">Tar bort grupp</translation>
+    </message>
+    <message>
+        <source>Deleting conversation</source>
+        <translation type="unfinished">Tar bort konversation</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished">Åtgärder</translation>
+    </message>
+    <message>
+        <source>Enable notifications</source>
+        <translation type="unfinished">Aktivera aviseringar</translation>
+    </message>
+    <message>
+        <source>Disable notifications</source>
+        <translation type="unfinished">Inaktivera aviseringar</translation>
+    </message>
+    <message>
+        <source>Add to contacts</source>
+        <translation type="unfinished">Lägg till i kontakter</translation>
+    </message>
+</context>
+<context>
+    <name>DialogItem</name>
+    <message>
+        <source>You:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DialogTextInput</name>
+    <message>
+        <source>Message...</source>
+        <translation type="unfinished">Meddelande...</translation>
+    </message>
+</context>
+<context>
+    <name>DialogsPage</name>
+    <message>
+        <source>No Chats
+
+Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
+        <translation type="unfinished">Ingen chatt
+
+Välj en kontakt genom att gå till &quot;Kontakter&quot; i ovanstående meny</translation>
+    </message>
+    <message>
+        <source>Chats</source>
+        <translation type="unfinished">Chattar</translation>
+    </message>
+    <message>
+        <source>Connecting...</source>
+        <translation type="unfinished">Ansluter...</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Ta bort</translation>
+    </message>
+    <message>
+        <source>Deleting Conversation</source>
+        <translation type="unfinished">Tar bort konversation</translation>
+    </message>
+    <message>
+        <source>Deleting Secret Chat</source>
+        <translation type="unfinished">Tar bort hemlig chatt</translation>
+    </message>
+    <message>
+        <source>Deleting Group</source>
+        <translation type="unfinished">Tar bort grupp</translation>
+    </message>
+</context>
+<context>
+    <name>DialogsPullDownMenu</name>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished">Profil</translation>
+    </message>
+    <message>
+        <source>New Secret Chat</source>
+        <translation type="unfinished">Ny hemlig chatt</translation>
+    </message>
+    <message>
+        <source>New Group</source>
+        <translation type="unfinished">Ny grupp</translation>
+    </message>
+    <message>
+        <source>Contacts</source>
+        <translation type="unfinished">Kontakter</translation>
     </message>
 </context>
 <context>
@@ -490,13 +527,6 @@ Välj en kontakt genom att gå till &quot;Kontakter&quot; i ovanstående meny</t
     <message>
         <source>Size: %1</source>
         <translation>Storlek: %1</translation>
-    </message>
-</context>
-<context>
-    <name>MessageBar</name>
-    <message>
-        <source>Message...</source>
-        <translation>Meddelande...</translation>
     </message>
 </context>
 <context>
@@ -618,17 +648,17 @@ Välj en kontakt genom att gå till &quot;Kontakter&quot; i ovanstående meny</t
     </message>
 </context>
 <context>
-    <name>SecretChatDiscarded</name>
+    <name>SecretDialogDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation>Hemlig chatt avbruten</translation>
+        <translation type="unfinished">Hemlig chatt avbruten</translation>
     </message>
 </context>
 <context>
-    <name>SecretChatWaiting</name>
+    <name>SecretDialogWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>
-        <translation>Väntar på att %1 skall ansluta</translation>
+        <translation type="unfinished">Väntar på att %1 skall ansluta</translation>
     </message>
 </context>
 <context>
@@ -694,6 +724,10 @@ Välj en kontakt genom att gå till &quot;Kontakter&quot; i ovanstående meny</t
     <message>
         <source>Group created by %1</source>
         <translation>Grupp skapad av %1</translation>
+    </message>
+    <message>
+        <source>%1 changed group name to ��%2��</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -775,13 +809,6 @@ Välj en kontakt genom att gå till &quot;Kontakter&quot; i ovanstående meny</t
     <message>
         <source>Profile</source>
         <translation>Profil</translation>
-    </message>
-</context>
-<context>
-    <name>UsersPage</name>
-    <message>
-        <source>Contacts</source>
-        <translation>Kontakter</translation>
     </message>
 </context>
 </TS>

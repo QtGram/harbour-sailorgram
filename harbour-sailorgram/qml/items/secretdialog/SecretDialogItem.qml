@@ -30,7 +30,7 @@ Item
         muted = context.telegram.userData.isMuted(dialog.peer.userId);
     }
 
-    id: secretconversationitem
+    id: secretdialogitem
 
     Connections
     {
@@ -49,7 +49,7 @@ Item
             if(id !== dialog.peer.userId)
                 return;
 
-            secretconversationitem.muted = context.telegram.userData.isMuted(id);
+            secretdialogitem.muted = context.telegram.userData.isMuted(id);
         }
     }
 
@@ -61,12 +61,12 @@ Item
         PeerImage
         {
             id: conversationimage
-            width: secretconversationitem.height
-            height: secretconversationitem.height
-            context: secretconversationitem.context
-            dialog: secretconversationitem.dialog
+            width: secretdialogitem.height
+            height: secretdialogitem.height
+            context: secretdialogitem.context
+            dialog: secretdialogitem.dialog
             //chat: conversationitem.chat
-            user: secretconversationitem.user
+            user: secretdialogitem.user
         }
 
         Column
@@ -76,7 +76,7 @@ Item
 
             Row
             {
-                height: secretconversationitem.height / 2
+                height: secretdialogitem.height / 2
                 anchors { left: parent.left; right: parent.right; rightMargin: Theme.paddingMedium }
                 spacing: Theme.paddingSmall
 
@@ -99,7 +99,7 @@ Item
                     id: imgmute
                     width: Theme.iconSizeSmall
                     height: Theme.iconSizeSmall
-                    visible: secretconversationitem.muted
+                    visible: secretdialogitem.muted
                     source: "image://theme/icon-m-speaker-mute"
                     anchors.verticalCenter: parent.verticalCenter
                     fillMode: Image.PreserveAspectFit
@@ -128,7 +128,7 @@ Item
 
             Row
             {
-                height: secretconversationitem.height / 2
+                height: secretdialogitem.height / 2
                 anchors { left: parent.left; right: parent.right; rightMargin: Theme.paddingMedium }
 
                 Label
@@ -139,8 +139,8 @@ Item
                     elide: Text.ElideRight
                     verticalAlignment: Text.AlignVCenter
                     font.pixelSize: Theme.fontSizeExtraSmall
-                    font.italic: TelegramHelper.isActionMessage(message)
-                    text: TelegramHelper.isActionMessage(message) ? TelegramAction.actionType(context.telegram, dialog, message) : TelegramHelper.messageContent(message)
+                    font.italic: TelegramHelper.isServiceMessage(message)
+                    text: TelegramHelper.isServiceMessage(message) ? TelegramAction.actionType(context.telegram, dialog, message) : TelegramHelper.messageContent(message)
                 }
 
                 Rectangle

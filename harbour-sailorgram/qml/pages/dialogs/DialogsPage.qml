@@ -33,7 +33,7 @@ import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../../models"
 import "../../components"
-import "../../menus/conversation"
+import "../../menus/dialog"
 import "../../items/conversation"
 import "../../js/TelegramHelper.js" as TelegramHelper
 import "../../js/TelegramConstants.js" as TelegramConstants
@@ -44,32 +44,32 @@ Page
     property Component conversationItemComponent
     property Component secretConversationItemComponent;
 
-    id: conversationspage
+    id: dialogspage
     allowedOrientations: defaultAllowedOrientations
 
     onStatusChanged: {
-        if(conversationspage.status !== PageStatus.Active)
+        if(dialogspage.status !== PageStatus.Active)
             return;
 
-        pageStack.pushAttached(Qt.resolvedUrl("../settings/SettingsPage.qml"), { "context": conversationspage.context });
+        pageStack.pushAttached(Qt.resolvedUrl("../settings/SettingsPage.qml"), { "context": dialogspage.context });
         context.foregroundDialog = context.telegram.nullDialog; // Reset Foreground Dialog
     }
 
     SilicaListView
     {
-        ConversationsPullDownMenu
+        DialogsPullDownMenu
         {
-            id: conversationsmenu
-            context: conversationspage.context
+            id: dialogsmenu
+            context: dialogspage.context
         }
 
         ViewPlaceholder
         {
-            enabled: lvchats.count <= 0
+            enabled: lvdialogs.count <= 0
             text: qsTr("No Chats\n\nPick a contact by selecting \"Contacts\" from the Menu above")
         }
 
-        id: lvchats
+        id: lvdialogs
         spacing: Theme.paddingMedium
         anchors.fill: parent
 
@@ -78,23 +78,23 @@ Page
             title: context.heartbeat.connected ? qsTr("Chats") : qsTr("Connecting...")
 
             ConnectionStatus {
-                context: conversationspage.context
+                context: dialogspage.context
                 anchors { verticalCenter: pageheader.extraContent.verticalCenter; left: pageheader.extraContent.left; leftMargin: -Theme.horizontalPageMargin }
             }
         }
 
         model: DialogsModel {
-            telegram: conversationspage.context.telegram
+            telegram: dialogspage.context.telegram
         }
 
         delegate: ListItem {
             function displayConversation() {
                 if(item.encrypted) {
-                    pageStack.push(Qt.resolvedUrl("../secretconversations/SecretConversationPage.qml"), { "context": conversationspage.context, "dialog": item });
+                    pageStack.push(Qt.resolvedUrl("../secretdialogs/SecretDialogPage.qml"), { "context": dialogspage.context, "dialog": item });
                     return;
                 }
 
-                pageStack.push(Qt.resolvedUrl("ConversationPage.qml"), { "context": conversationspage.context, "dialog": item })
+                pageStack.push(Qt.resolvedUrl("DialogPage.qml"), { "context": dialogspage.context, "dialog": item })
             }
 
             id: dialogitem
@@ -128,7 +128,7 @@ Page
 
             Component.onCompleted: {
                 if(!item.encrypted && !conversationItemComponent) {
-                    conversationItemComponent = Qt.createComponent("../../items/conversation/ConversationItem.qml");
+                    conversationItemComponent = Qt.createComponent("../../items/dialog/DialogItem.qml");
 
                     if(conversationItemComponent.status === Component.Error) {
                         console.log(conversationItemComponent.errorString());
@@ -136,7 +136,7 @@ Page
                     }
                 }
                 else if(item.encrypted && !secretConversationItemComponent) {
-                    secretConversationItemComponent = Qt.createComponent("../../items/secretconversation/SecretConversationItem.qml");
+                    secretConversationItemComponent = Qt.createComponent("../../items/secretdialog/SecretDialogItem.qml");
 
                     if(secretConversationItemComponent.status === Component.Error) {
                         console.log(secretConversationItemComponent.errorString());
@@ -145,7 +145,7 @@ Page
                 }
 
                 var c = !item.encrypted ? conversationItemComponent : secretConversationItemComponent;
-                c.createObject(contentItem, {"anchors.fill": contentItem, "context": conversationspage.context, "dialog": item });
+                c.createObject(contentItem, {"anchors.fill": contentItem, "context": dialogspage.context, "dialog": item });
             }
         }
     }

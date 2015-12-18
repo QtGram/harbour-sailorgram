@@ -54,7 +54,7 @@ QtObject
         onIncomingMessage: {
             var userdata = context.telegram.userData;
 
-            if(TelegramHelper.isActionMessage(msg)) /* Do not notify for Action Messages */
+            if(TelegramHelper.isServiceMessage(msg)) /* Do not notify for Action Messages */
                 return;
 
             var dialog = context.telegram.messageDialog(msg.id);
@@ -104,7 +104,7 @@ QtObject
             context.telegram.online = true;
 
             pageStack.completeAnimation();
-            pageStack.replace(Qt.resolvedUrl("../pages/conversations/ConversationsPage.qml"), { "context": context });
+            pageStack.replace(Qt.resolvedUrl("../pages/dialogs/DialogsPage.qml"), { "context": context });
         }
 
         onAuthCodeRequested: {
