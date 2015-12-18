@@ -5,8 +5,10 @@ import harbour.sailorgram.TelegramCalendar 1.0
 import "../../models"
 import "../../items/peer"
 import "../../items/user"
+import "../../items/message/messageitem"
 import "../../js/TelegramHelper.js" as TelegramHelper
 import "../../js/TelegramAction.js" as TelegramAction
+import "../../js/TelegramConstants.js" as TelegramConstants
 
 Item
 {
@@ -173,7 +175,7 @@ Item
                     }
                 }
 
-                Label
+                MessageTextContent
                 {
                     id: lbllastmessage
                     width: parent.width - rectunread.width - lblfrom.width
@@ -181,8 +183,28 @@ Item
                     elide: Text.ElideRight
                     verticalAlignment: Text.AlignVCenter
                     font.pixelSize: Theme.fontSizeExtraSmall
-                    font.italic: TelegramHelper.isServiceMessage(message)
-                    text: TelegramHelper.isServiceMessage(message) ? TelegramAction.actionType(context.telegram, dialog, message) : TelegramHelper.messageContent(message)
+                    emojiPath: context.sailorgram.emojiPath
+                    color: TelegramHelper.isServiceMessage(message) ? Theme.highlightColor : Theme.primaryColor
+
+                    font.italic: {
+                        if(TelegramHelper.isServiceMessage(message))
+                            return true;
+
+                        if(TelegramHelper.isMediaMessage(message) && (message.media.classType === TelegramConstants.typeMessageMediaDocument) && context.telegram.documentIsSticker(message.media.document))
+                            return true;
+
+                        return false;
+                    }
+
+                    rawText: {
+                        if(!message)
+                            return "";
+
+                        if(TelegramHelper.isServiceMessage(message))
+                            return TelegramAction.actionType(context.telegram, dialog, message);
+
+                        return TelegramHelper.messageContent(message);
+                    }
                 }
 
                 Rectangle

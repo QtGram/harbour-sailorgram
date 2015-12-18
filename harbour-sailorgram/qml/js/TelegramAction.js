@@ -16,14 +16,17 @@ function actionType(telegram, dialog, message) {
            var chat = telegram.encryptedChat(dialog.peer.userId);
            userid = chat.adminId;
 
-           return qsTr("Secret chat created by %1").arg(TelegramHelper.completeName(telegram.user(userid)));
+           return qsTr("Secret chat created by «%1»").arg(TelegramHelper.completeName(telegram.user(userid)));
        }
 
-       return qsTr("Group created by %1").arg(TelegramHelper.completeName(telegram.user(userid)));
+       return qsTr("Group created by «%1»").arg(TelegramHelper.completeName(telegram.user(userid)));
    }
 
    if(action.classType === TelegramConstants.typeMessageActionChatAddUser)
        return qsTr("%1 has joined the group").arg(TelegramHelper.completeName(telegram.user(action.userId)));
+
+   if(action.classType === TelegramConstants.typeMessageActionChatJoinedByLink)
+       return qsTr("%1 has joined the group via invite link").arg(TelegramHelper.completeName(telegram.user(action.userId)));
 
    if(action.classType === TelegramConstants.typeMessageActionChatDeleteUser)
        return qsTr("%1 has left the group").arg(TelegramHelper.completeName(telegram.user(action.userId)));

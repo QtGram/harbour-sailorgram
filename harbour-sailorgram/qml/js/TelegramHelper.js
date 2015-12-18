@@ -70,6 +70,25 @@ function isChat(dialog)
     return dialog.peer.classType === TelegramConstants.typePeerChat;
 }
 
+function printableDate(timestamp)
+{
+    var date = new Date(timestamp * 1000);
+    var now = new Date(Date.now());
+
+    if(now === date)
+        return Qt.formatDateTime(date, "HH:mm");
+
+    var MS_PER_DAY = 1000 * 60 * 60 * 24;
+    var daydiff = (now - date) / MS_PER_DAY;
+
+    if(daydiff < 7)
+        return Qt.formatDateTime(date, "ddd HH:mm");
+    else if(date.getYear() === now.getYear())
+        return Qt.formatDateTime(date, "dd MMM");
+
+    return Qt.formatDateTime(date, "dd MMM yy");
+}
+
 function isServiceMessage(message)
 {
     if(message.classType === TelegramConstants.typeMessageService)
@@ -79,6 +98,17 @@ function isServiceMessage(message)
         return true;
 
     return false;
+}
+
+function isMediaMessage(message)
+{
+    if(!message.media)
+        return false;
+
+    if(message.media.classType === TelegramConstants.typeMessageMediaEmpty)
+        return false;
+
+    return true;
 }
 
 function peerId(dialog)

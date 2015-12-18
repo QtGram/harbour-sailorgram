@@ -543,6 +543,10 @@ Přidejte osobu výběrem &quot;Kontakty&quot; z menu</translation>
         <source>Opening media</source>
         <translation>Otevírání media</translation>
     </message>
+    <message>
+        <source>You</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageMenu</name>
@@ -718,15 +722,19 @@ Přidejte osobu výběrem &quot;Kontakty&quot; z menu</translation>
         <translation>%1 přistoupil k skupině</translation>
     </message>
     <message>
-        <source>Secret chat created by %1</source>
-        <translation>Tajný rozhovor vytvořen od %1</translation>
-    </message>
-    <message>
-        <source>Group created by %1</source>
-        <translation>Skupina vytvořena od %1</translation>
-    </message>
-    <message>
         <source>%1 changed group name to ��%2��</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 has joined the group via invite link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Secret chat created by ��%1��</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group created by ��%1��</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -2,9 +2,6 @@
     <qresource prefix="/">
         <file>res/telegram.png</file>
         <file>res/waiting.png</file>
-        <file>res/read.png</file>
-        <file>res/out.png</file>
-        <file>res/sent.png</file>
         <file>res/telegramcover.png</file>
         <file>res/download.png</file>
         <file>res/telegrambackground.png</file>

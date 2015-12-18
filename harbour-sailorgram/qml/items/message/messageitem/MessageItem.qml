@@ -127,6 +127,53 @@ ListItem
         }
     }
 
+    Rectangle
+    {
+        anchors {
+            left: message.out ? parent.left : undefined;
+            right: message.out ? undefined : parent.right
+            leftMargin: message.out ? Theme.paddingMedium : 0
+            rightMargin: message.out ? 0 : Theme.paddingMedium
+        }
+
+        radius: 10
+
+        width: {
+            if(TelegramHelper.isServiceMessage(message))
+                return 0;
+
+            var w = Math.max(lbluser.width, messagetext.calculatedWidth);
+
+            if(TelegramHelper.isMediaMessage(message))
+                w = Math.max(w, loader.width);
+
+            return w + Theme.paddingMedium;
+
+        }
+
+        height: {
+            if(TelegramHelper.isServiceMessage(message))
+                return 0;
+
+            var h = lbluser.height + messagetext.height + Theme.paddingSmall;
+
+            if(TelegramHelper.isMediaMessage(message))
+                h += loader.height;
+
+            return h;
+        }
+
+        color: {
+            if(TelegramHelper.isServiceMessage(message))
+                return "transparent"
+
+            if(message.out)
+                return Theme.secondaryColor;
+
+            return Theme.rgba(Qt.tint(Theme.secondaryHighlightColor, Theme.rgba(Theme.highlightDimmerColor, 0.3)), 0.7);
+        }
+    }
+
     Column
     {
         id: content
@@ -136,14 +183,30 @@ ListItem
         {
             id: lbluser
             anchors { left: message.out ? parent.left : undefined; right: message.out ? undefined : parent.right }
-            visible: !TelegramHelper.isServiceMessage(message) && !message.out
-            text: (!TelegramHelper.isServiceMessage(message) && message.out) ? "" : TelegramHelper.completeName(context.telegram.user(message.fromId))
+            visible: !TelegramHelper.isServiceMessage(message)
             font.bold: true
             font.pixelSize: Theme.fontSizeMedium
             wrapMode: Text.NoWrap
             horizontalAlignment: Text.AlignRight
             verticalAlignment: Text.AlignVCenter
-            color: Theme.secondaryHighlightColor
+
+            color: {
+                if(message.out)
+                    return Theme.rgba(Theme.highlightDimmerColor, 1.0);
+
+                return Theme.rgba(Theme.secondaryColor, 1.0);
+            }
+
+            text: {
+
+                if(TelegramHelper.isServiceMessage(message))
+                    return "";
+
+                if(message.out)
+                    return qsTr("You");
+
+                return TelegramHelper.completeName(context.telegram.user(message.fromId))
+            }
         }
 
         Loader
@@ -174,6 +237,7 @@ ListItem
         {
             id: messagetext
             width: parent.width
+            context: messageitem.context
             message: messageitem.message
         }
     }

@@ -543,6 +543,10 @@ Välj en kontakt genom att gå till &quot;Kontakter&quot; i ovanstående meny</t
         <source>Opening media</source>
         <translation>Öppnar media</translation>
     </message>
+    <message>
+        <source>You</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageMenu</name>
@@ -718,15 +722,19 @@ Välj en kontakt genom att gå till &quot;Kontakter&quot; i ovanstående meny</t
         <translation>%1 har anslutit till gruppen</translation>
     </message>
     <message>
-        <source>Secret chat created by %1</source>
-        <translation>Hemlig chatt skapad av %1</translation>
-    </message>
-    <message>
-        <source>Group created by %1</source>
-        <translation>Grupp skapad av %1</translation>
-    </message>
-    <message>
         <source>%1 changed group name to ��%2��</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 has joined the group via invite link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Secret chat created by ��%1��</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group created by ��%1��</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

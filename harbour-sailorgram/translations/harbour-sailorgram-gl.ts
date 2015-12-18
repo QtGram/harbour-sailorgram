@@ -543,6 +543,10 @@ Elixa un contacto seleccionando &quot;Contactos&quot; no menu despregable</trans
         <source>Opening media</source>
         <translation>Abrindo media</translation>
     </message>
+    <message>
+        <source>You</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageMenu</name>
@@ -718,15 +722,19 @@ Elixa un contacto seleccionando &quot;Contactos&quot; no menu despregable</trans
         <translation>%1 uneuse ao grupo</translation>
     </message>
     <message>
-        <source>Secret chat created by %1</source>
-        <translation>Chat segredo creado por %1</translation>
-    </message>
-    <message>
-        <source>Group created by %1</source>
-        <translation>Grupo creado por %1</translation>
-    </message>
-    <message>
         <source>%1 changed group name to ��%2��</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 has joined the group via invite link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Secret chat created by ��%1��</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group created by ��%1��</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

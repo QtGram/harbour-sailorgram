@@ -19,16 +19,19 @@ var typeMessageActionChatEditPhoto = 0x7fcb13a8;
 var typeMessageActionGeoChatCreate = 0x6f038ebc;
 var typeMessageActionChatDeleteUser = 0xb2ae9b0c;
 var typeMessageActionChatAddUser = 0x5e3cfc4b;
+var typeMessageActionChatJoinedByLink = 0xf89cf5e8;
 
 /* Message Media Constants */
-var typeMessageMediaDocument = 0x2fda2204;
-var typeMessageMediaContact = 0x5e7d2f39;
 var typeMessageMediaEmpty = 0x3ded6320;
-var typeMessageMediaVideo = 0xa2d24290;
-var typeMessageMediaUnsupported = 0x9f84f49e;
-var typeMessageMediaAudio = 0xc6b68300;
-var typeMessageMediaPhoto = 0xc8c45a2a;
+var typeMessageMediaPhoto = 0x3d8ce53d;
+var typeMessageMediaVideo = 0x5bcf1675;
 var typeMessageMediaGeo = 0x56e0d474;
+var typeMessageMediaContact = 0x5e7d2f39;
+var typeMessageMediaUnsupported = 0x9f84f49e;
+var typeMessageMediaDocument = 0x2fda2204;
+var typeMessageMediaAudio = 0xc6b68300;
+var typeMessageMediaWebPage = 0xa32dd600;
+var typeMessageMediaVenue = 0x7912b71;
 
 /* Secret Chat Constants */
 var typeEncryptedChatWaiting = 0x3bf703dc;

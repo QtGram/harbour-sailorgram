@@ -16,9 +16,11 @@ class SailorGram : public QObject
     Q_OBJECT
 
     Q_PROPERTY(TelegramQml* telegram READ telegram WRITE setTelegram NOTIFY telegramChanged)
+    Q_PROPERTY(QString emojiPath READ emojiPath CONSTANT FINAL)
 
     public:
         explicit SailorGram(QObject *parent = 0);
+        QString emojiPath() const;
         TelegramQml* telegram() const;
         void setTelegram(TelegramQml* telegram);
 
@@ -42,6 +44,9 @@ class SailorGram : public QObject
     private:
         TelegramQml* _telegram;
         QMimeDatabase _mimedb;
+
+    private:
+        static const QString EMOJI_FOLDER;
 };
 
 #endif // SAILORGRAM_H

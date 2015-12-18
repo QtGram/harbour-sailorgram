@@ -543,6 +543,10 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
         <source>Opening media</source>
         <translation>Bezig met het openen van de media</translation>
     </message>
+    <message>
+        <source>You</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageMenu</name>
@@ -718,15 +722,19 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
         <translation>%1 heeft deelgenomen aan de groep</translation>
     </message>
     <message>
-        <source>Secret chat created by %1</source>
-        <translation>Geheim chatgesprek - gecreëerd door %1</translation>
-    </message>
-    <message>
-        <source>Group created by %1</source>
-        <translation>Groep - gecreëerd door %1</translation>
-    </message>
-    <message>
         <source>%1 changed group name to ��%2��</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 has joined the group via invite link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Secret chat created by ��%1��</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group created by ��%1��</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

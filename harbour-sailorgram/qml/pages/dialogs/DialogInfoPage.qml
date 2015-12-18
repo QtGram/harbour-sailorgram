@@ -23,7 +23,7 @@ Page
         target: context.telegram.userData
 
         onMuteChanged: {
-            if(id !== user.id)
+            if(user && (id !== user.id))
                 return;
 
             dialoginfopage.muted = context.telegram.userData.isMuted(id);

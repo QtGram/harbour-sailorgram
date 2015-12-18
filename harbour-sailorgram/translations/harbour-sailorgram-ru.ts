@@ -543,6 +543,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <source>Opening media</source>
         <translation>Открытие медиа</translation>
     </message>
+    <message>
+        <source>You</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageMenu</name>
@@ -718,15 +722,19 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <translation>%1 вступил в беседу</translation>
     </message>
     <message>
-        <source>Secret chat created by %1</source>
-        <translation>%1 создал(а) секретный диалог</translation>
-    </message>
-    <message>
-        <source>Group created by %1</source>
-        <translation>%1 создал(а) беседу</translation>
-    </message>
-    <message>
         <source>%1 changed group name to ��%2��</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 has joined the group via invite link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Secret chat created by ��%1��</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group created by ��%1��</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

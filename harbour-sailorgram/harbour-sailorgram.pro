@@ -35,6 +35,11 @@ server_pub.files = $$PWD/server.pub
 server_pub.path = /usr/share/$$TARGET
 INSTALLS += server_pub
 
+# Emoji Set
+emoji.files = $$PWD/res/emoji/*.png
+emoji.path = /usr/share/$$TARGET/emoji
+INSTALLS += emoji
+
 SOURCES += src/harbour-sailorgram.cpp \
     src/localstorage/telegramlocalstorage.cpp \
     src/telegramcalendar.cpp \
@@ -166,4 +171,6 @@ DISTFILES += \
     qml/items/secretdialog/SecretDialogWaiting.qml \
     qml/pages/contacts/ContactsPage.qml \
     qml/pages/contacts/ContactPage.qml \
-    qml/pages/contacts/AddContactPage.qml
+    qml/pages/contacts/AddContactPage.qml \
+    qml/js/TextElaborator.js \
+    qml/items/message/messageitem/MessageTextContent.qml

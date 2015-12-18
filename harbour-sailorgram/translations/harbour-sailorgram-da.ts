@@ -543,6 +543,10 @@ Vælg en kontakt fra menuen ovenfor</translation>
         <source>Opening media</source>
         <translation>Åbner medie</translation>
     </message>
+    <message>
+        <source>You</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageMenu</name>
@@ -718,15 +722,19 @@ Vælg en kontakt fra menuen ovenfor</translation>
         <translation>%1 har sluttet sig til gruppen</translation>
     </message>
     <message>
-        <source>Secret chat created by %1</source>
-        <translation>Hemmelig chat oprettet af %1</translation>
-    </message>
-    <message>
-        <source>Group created by %1</source>
-        <translation>Gruppe oprettet af %1</translation>
-    </message>
-    <message>
         <source>%1 changed group name to ��%2��</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 has joined the group via invite link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Secret chat created by ��%1��</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group created by ��%1��</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

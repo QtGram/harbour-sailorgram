@@ -1,7 +1,14 @@
 #include "sailorgram.h"
 
+const QString SailorGram::EMOJI_FOLDER = "emoji";
+
 SailorGram::SailorGram(QObject *parent): QObject(parent), _telegram(NULL)
 {
+}
+
+QString SailorGram::emojiPath() const
+{
+    return qApp->applicationDirPath() + QDir::separator() + "../share/" + qApp->applicationName() + QDir::separator() + SailorGram::EMOJI_FOLDER + QDir::separator();
 }
 
 TelegramQml *SailorGram::telegram() const

@@ -1,22 +1,28 @@
 import QtQuick 2.1
+import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../../../js/TelegramHelper.js" as TelegramHelper
 
-Image
+Label
 {
     property Message message
 
     id: messagestatus
     visible: message.out && !TelegramHelper.isServiceMessage(message)
-    fillMode: Image.PreserveAspectFit
+    verticalAlignment: Text.AlignVCenter
+    font.bold: true
 
-    source: {
+    color: {
+        if(!message.sent)
+            return "gray";
+
+        return Theme.highlightDimmerColor;
+    }
+
+    text: {
         if(!message.unread)
-            return "qrc:///res/read.png";
+            return " ✓✓";
 
-        if(message.sent)
-            return "qrc:///res/sent.png";
-
-        return "qrc:///res/out.png";
+        return " ✓";
     }
 }

@@ -544,6 +544,10 @@ wähle einen Kontakt über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
         <source>Opening media</source>
         <translation>Öffne Media</translation>
     </message>
+    <message>
+        <source>You</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageMenu</name>
@@ -719,15 +723,19 @@ wähle einen Kontakt über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
         <translation>%1 hat die Gruppe betreten</translation>
     </message>
     <message>
-        <source>Secret chat created by %1</source>
-        <translation>Geheime Konversation gestartet von %1</translation>
-    </message>
-    <message>
-        <source>Group created by %1</source>
-        <translation>Gruppe erstellt von %1</translation>
-    </message>
-    <message>
         <source>%1 changed group name to ��%2��</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 has joined the group via invite link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Secret chat created by ��%1��</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group created by ��%1��</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
