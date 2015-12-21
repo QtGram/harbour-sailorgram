@@ -1,5 +1,7 @@
 #include "notifications.h"
 
+const QString Notifications::APPLICATION_PRETTY_NAME = "Sailorgram";
+
 Notifications::Notifications(QObject *parent): QObject(parent)
 {
 
@@ -28,7 +30,7 @@ void Notifications::send(const QString &summary, const QString &body, const QStr
     if(!body.isEmpty())
         hints["x-nemo-preview-body"] = body;
 
-    args << qApp->applicationName();
+    args << Notifications::APPLICATION_PRETTY_NAME;
     args << 0u;
     args << QString();
 
