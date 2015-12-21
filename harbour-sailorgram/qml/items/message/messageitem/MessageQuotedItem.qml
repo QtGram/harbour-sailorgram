@@ -71,6 +71,7 @@ Item
                 width: parent.width
                 horizontalAlignment: Text.AlignLeft
                 emojiPath: context.sailorgram.emojiPath
+                linkColor: replyToMessage.out ? Theme.secondaryHighlightColor : Theme.secondaryColor
                 rawText: TelegramHelper.isServiceMessage(replyToMessage) ? TelegramAction.actionType(context.telegram, dialog, replyToMessage) : replyToMessage.message
                 verticalAlignment: Text.AlignTop
                 wrapMode: Text.Wrap

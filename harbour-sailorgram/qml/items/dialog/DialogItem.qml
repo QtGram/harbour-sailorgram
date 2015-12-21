@@ -183,6 +183,7 @@ Item
                     verticalAlignment: Text.AlignVCenter
                     font.pixelSize: Theme.fontSizeExtraSmall
                     emojiPath: context.sailorgram.emojiPath
+                    linkColor: message.out ? Theme.secondaryHighlightColor : Theme.secondaryColor
                     color: TelegramHelper.isServiceMessage(message) ? Theme.highlightColor : Theme.primaryColor
 
                     font.italic: {
