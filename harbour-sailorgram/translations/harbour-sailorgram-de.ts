@@ -386,6 +386,13 @@ Minimum sind 5 Zeichen.</translation>
     </message>
 </context>
 <context>
+    <name>DialogPage</name>
+    <message>
+        <source>Load more messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DialogTextInput</name>
     <message>
         <source>Message...</source>
@@ -581,6 +588,13 @@ wähle einen Kontakt über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
     </message>
 </context>
 <context>
+    <name>MessageQuotedItem</name>
+    <message>
+        <source>You</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MessageVideo</name>
     <message>
         <source>Video recording</source>
@@ -723,10 +737,6 @@ wähle einen Kontakt über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
         <translation>%1 hat die Gruppe betreten</translation>
     </message>
     <message>
-        <source>%1 changed group name to ��%2��</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>%1 has joined the group via invite link</source>
         <translation type="unfinished"></translation>
     </message>
@@ -736,6 +746,10 @@ wähle einen Kontakt über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
     </message>
     <message>
         <source>Group created by ��%1��</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group name changed to ��%1��</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -386,6 +386,13 @@ Minimumslængde er fem tegn.</translation>
     </message>
 </context>
 <context>
+    <name>DialogPage</name>
+    <message>
+        <source>Load more messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DialogTextInput</name>
     <message>
         <source>Message...</source>
@@ -580,6 +587,13 @@ Vælg en kontakt fra menuen ovenfor</translation>
     </message>
 </context>
 <context>
+    <name>MessageQuotedItem</name>
+    <message>
+        <source>You</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MessageVideo</name>
     <message>
         <source>Video recording</source>
@@ -722,10 +736,6 @@ Vælg en kontakt fra menuen ovenfor</translation>
         <translation>%1 har sluttet sig til gruppen</translation>
     </message>
     <message>
-        <source>%1 changed group name to ��%2��</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>%1 has joined the group via invite link</source>
         <translation type="unfinished"></translation>
     </message>
@@ -735,6 +745,10 @@ Vælg en kontakt fra menuen ovenfor</translation>
     </message>
     <message>
         <source>Group created by ��%1��</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group name changed to ��%1��</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

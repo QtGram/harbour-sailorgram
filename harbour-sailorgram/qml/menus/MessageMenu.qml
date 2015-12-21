@@ -2,7 +2,7 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../models"
-import "../items/messageitem/media"
+import "../items/message/messageitem/media"
 import "../js/TelegramConstants.js" as TelegramConstants
 
 ContextMenu

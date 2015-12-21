@@ -19,15 +19,26 @@ Image
             context.telegram.getFile(user.photo.photoSmall);
     }
 
+    onChatChanged: {
+        if(!chat)
+            return;
+
+        if(!chat.photo.photoSmall.download.downloaded)
+            context.telegram.getFile(chat.photo.photoSmall);
+    }
+
     id: imgpeer
     fillMode: Image.PreserveAspectFit
     asynchronous: true
 
     source: {
-        if(TelegramHelper.isChat(dialog))
-            return "";
+        if(user)
+            return user.photo.photoSmall.download.location;
 
-        return user.photo.photoSmall.download.location;
+        if(chat)
+            return chat.photo.photoSmall.download.location;
+
+        return "";
     }
 
     Rectangle {
@@ -35,7 +46,7 @@ Image
         anchors.fill: parent
         color: Theme.secondaryHighlightColor
         radius: imgpeer.width * 0.5
-        visible: TelegramHelper.isChat(dialog) || (user.photo.photoSmall.download.location.length <= 0)
+        visible: (source.toString().length <= 0) || (imgpeer.status === Image.Error)
 
         Label {
             anchors.centerIn: parent

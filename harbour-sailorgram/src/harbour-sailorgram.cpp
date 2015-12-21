@@ -35,7 +35,6 @@
 #include "dbus/notifications/notifications.h"
 #include "filepicker/folderlistmodel.h"
 #include "localstorage/telegramlocalstorage.h"
-#include "telegramcalendar.h"
 #include "heartbeat.h"
 #include "sailorgram.h"
 
@@ -53,7 +52,6 @@ int main(int argc, char *argv[])
     qmlRegisterType<Notifications>("harbour.sailorgram.DBus", 1, 0, "Notifications");
     qmlRegisterType<FolderListModel>("harbour.sailorgram.Pickers", 1, 0, "FolderListModel");
     qmlRegisterType<TelegramLocalStorage>("harbour.sailorgram.Telegram", 1, 0, "TelegramLocalStorage");
-    qmlRegisterSingletonType<TelegramCalendar>("harbour.sailorgram.TelegramCalendar", 1, 0, "TelegramCalendar", &TelegramCalendar::initialize);
 
     QScopedPointer<QQuickView> view(SailfishApp::createView());
     QQmlEngine* engine = view->engine();

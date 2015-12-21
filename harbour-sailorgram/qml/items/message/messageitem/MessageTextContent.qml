@@ -11,4 +11,5 @@ Label
     clip: true
     textFormat: Text.StyledText
     text: TextElaborator.elaborate(rawText, emojiPath)
+    onLinkActivated: Qt.openUrlExternally(link)
 }

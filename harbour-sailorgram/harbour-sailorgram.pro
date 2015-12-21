@@ -42,7 +42,6 @@ INSTALLS += emoji
 
 SOURCES += src/harbour-sailorgram.cpp \
     src/localstorage/telegramlocalstorage.cpp \
-    src/telegramcalendar.cpp \
     src/dbus/notifications/notifications.cpp \
     src/sailorgram.cpp \
     src/filepicker/folderlistmodel.cpp \
@@ -145,7 +144,6 @@ TRANSLATIONS += translations/harbour-sailorgram-be.ts \
 
 HEADERS += \
     src/localstorage/telegramlocalstorage.h \
-    src/telegramcalendar.h \
     src/dbus/notifications/notifications.h \
     src/sailorgram.h \
     src/filepicker/folderlistmodel.h \
@@ -173,4 +171,5 @@ DISTFILES += \
     qml/pages/contacts/ContactPage.qml \
     qml/pages/contacts/AddContactPage.qml \
     qml/js/TextElaborator.js \
-    qml/items/message/messageitem/MessageTextContent.qml
+    qml/items/message/messageitem/MessageTextContent.qml \
+    qml/items/message/messageitem/MessageQuotedItem.qml

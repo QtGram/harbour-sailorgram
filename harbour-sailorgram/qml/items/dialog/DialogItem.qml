@@ -1,7 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
-import harbour.sailorgram.TelegramCalendar 1.0
 import "../../models"
 import "../../items/peer"
 import "../../items/user"
@@ -114,7 +113,7 @@ Item
                     font.pixelSize: Theme.fontSizeTiny
                     verticalAlignment: Text.AlignVCenter
                     horizontalAlignment: Text.AlignRight
-                    text: TelegramCalendar.timeToString(message.date)
+                    text: TelegramHelper.printableDate(message.date)
 
                     width: {
                         var w = parent.width - lbltitle.contentWidth;

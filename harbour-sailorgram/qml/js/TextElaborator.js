@@ -29,6 +29,28 @@ function emojify(s, emojipath)
                      });
 }
 
+function linkify(s)
+{
+    //URLs starting with http://, https://, or ftp://
+    var rgxhttpurl = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim;
+    s = s.replace(rgxhttpurl, '<a href="$1" target="_blank">$1</a>');
+
+    //URLs starting with "www." (without // before it, or it'd re-link the ones done above).
+    var rgxwwwurl = /(^|[^\/])(www\.[\S]+(\b|$))/gim;
+    s = s.replace(rgxwwwurl, '$1<a href="http://$2" target="_blank">$2</a>');
+
+    //Change email addresses to mailto:: links.
+    var rgxmailto = /(([a-zA-Z0-9\-\_\.])+@[a-zA-Z\_]+?(\.[a-zA-Z]{2,6})+)/gim;
+    s = s.replace(rgxmailto, '<a href="mailto:$1">$1</a>');
+
+    return s;
+}
+
+function replaceLtGt(s)
+{
+    return s.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
 function replaceNewlines(s)
 {
     return s.replace(/(?:\r\n|\r|\n)/g, "<br/>");
@@ -36,7 +58,9 @@ function replaceNewlines(s)
 
 function elaborate(s, emojipath)
 {
-    var res = replaceNewlines(s);
+    var res = replaceLtGt(s);
+    res = replaceNewlines(res);
     res = emojify(res, emojipath);
-    return res;
+    res = linkify(res);
+    return "<span>" + res + "</span>";
 }

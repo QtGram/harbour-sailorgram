@@ -26,13 +26,13 @@ function actionType(telegram, dialog, message) {
        return qsTr("%1 has joined the group").arg(TelegramHelper.completeName(telegram.user(action.userId)));
 
    if(action.classType === TelegramConstants.typeMessageActionChatJoinedByLink)
-       return qsTr("%1 has joined the group via invite link").arg(TelegramHelper.completeName(telegram.user(action.userId)));
+       return qsTr("%1 has joined the group via invite link").arg(TelegramHelper.completeName(telegram.user(action.inviterId)));
 
    if(action.classType === TelegramConstants.typeMessageActionChatDeleteUser)
        return qsTr("%1 has left the group").arg(TelegramHelper.completeName(telegram.user(action.userId)));
 
    if(action.classType === TelegramConstants.typeMessageActionChatEditTitle)
-       return qsTr("%1 changed group name to «%2»").arg(TelegramHelper.completeName(telegram.user(action.userId))).arg(action.title);
+       return qsTr("Group name changed to «%1»").arg(action.title);
 
    return "???";
 }

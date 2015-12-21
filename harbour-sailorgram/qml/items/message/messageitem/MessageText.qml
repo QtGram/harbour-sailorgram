@@ -24,7 +24,14 @@ Item
         MessageTextContent
         {
             id: mtctextcontent
-            anchors { left: message.out ? parent.left : undefined; right: message.out ? undefined : parent.right }
+
+            anchors {
+                left: message.out ? parent.left : undefined;
+                right: message.out ? undefined : parent.right;
+                leftMargin: message.out ? Theme.paddingSmall : undefined
+                rightMargin: message.out ? undefined : Theme.paddingSmall
+            }
+
             width: parent.width
             font.pixelSize: TelegramHelper.isServiceMessage(message) ? Theme.fontSizeExtraSmall : Theme.fontSizeSmall
             font.italic: TelegramHelper.isServiceMessage(message)
@@ -32,7 +39,7 @@ Item
             emojiPath: context.sailorgram.emojiPath
             rawText: TelegramHelper.isServiceMessage(message) ? TelegramAction.actionType(context.telegram, dialog, message) : messageitem.message.message
             verticalAlignment: Text.AlignTop
-            wrapMode: Text.WrapAnywhere
+            wrapMode: Text.Wrap
             visible: text.length > 0
 
             color: {
@@ -48,7 +55,12 @@ Item
 
         Row
         {
-            anchors { right: message.out ? undefined : parent.right; left: message.out ? parent.left : undefined }
+            anchors {
+                right: message.out ? undefined : parent.right;
+                left: message.out ? parent.left : undefined
+                leftMargin: message.out ? Theme.paddingSmall : undefined
+                rightMargin: message.out ? undefined : Theme.paddingSmall
+            }
 
             Label
             {

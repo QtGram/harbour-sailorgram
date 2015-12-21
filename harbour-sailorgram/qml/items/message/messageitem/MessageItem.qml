@@ -1,7 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
-import harbour.sailorgram.TelegramCalendar 1.0
 import "../../../models"
 import "../../../menus"
 import "media"
@@ -92,6 +91,15 @@ ListItem
     onClicked: displayMedia()
 
     Component {
+        id: messagequoteditem
+
+        MessageQuotedItem {
+            context: messageitem.context
+            message: messageitem.message
+        }
+    }
+
+    Component {
         id: documentcomponent
 
         MessageDocument {
@@ -129,14 +137,15 @@ ListItem
 
     Rectangle
     {
-        anchors {
-            left: message.out ? parent.left : undefined;
-            right: message.out ? undefined : parent.right
-            leftMargin: message.out ? Theme.paddingMedium : 0
-            rightMargin: message.out ? 0 : Theme.paddingMedium
-        }
-
+        id: bubble
         radius: 10
+
+        anchors {
+            left: message.out ? parent.left : undefined
+            right: message.out ? undefined : parent.right
+            leftMargin: Theme.paddingMedium
+            rightMargin: Theme.paddingMedium
+        }
 
         width: {
             if(TelegramHelper.isServiceMessage(message))
@@ -144,11 +153,13 @@ ListItem
 
             var w = Math.max(lbluser.width, messagetext.calculatedWidth);
 
+            if(quotedloader.item)
+                w = Math.max(w, quotedloader.width);
+
             if(TelegramHelper.isMediaMessage(message))
                 w = Math.max(w, loader.width);
 
             return w + Theme.paddingMedium;
-
         }
 
         height: {
@@ -156,6 +167,9 @@ ListItem
                 return 0;
 
             var h = lbluser.height + messagetext.height + Theme.paddingSmall;
+
+            if(quotedloader.item)
+                h += quotedloader.height;
 
             if(TelegramHelper.isMediaMessage(message))
                 h += loader.height;
@@ -182,12 +196,18 @@ ListItem
         Label
         {
             id: lbluser
-            anchors { left: message.out ? parent.left : undefined; right: message.out ? undefined : parent.right }
+
+            anchors {
+                left: message.out ? parent.left : undefined;
+                right: message.out ? undefined : parent.right
+                leftMargin: message.out ? Theme.paddingSmall : undefined
+                rightMargin: message.out ? undefined : Theme.paddingSmall
+            }
+
             visible: !TelegramHelper.isServiceMessage(message)
             font.bold: true
             font.pixelSize: Theme.fontSizeMedium
             wrapMode: Text.NoWrap
-            horizontalAlignment: Text.AlignRight
             verticalAlignment: Text.AlignVCenter
 
             color: {
@@ -211,8 +231,27 @@ ListItem
 
         Loader
         {
+            id: quotedloader
+            anchors { left: parent.left; right: parent.right }
+
+            sourceComponent: {
+                if(message.replyToMsgId)
+                     return messagequoteditem;
+
+                return null;
+            }
+        }
+
+        Loader
+        {
             id: loader
-            anchors { left: message.out ? parent.left : undefined; right: message.out ? undefined : parent.right }
+
+            anchors {
+                left: message.out ? parent.left : undefined;
+                right: message.out ? undefined : parent.right
+                leftMargin: message.out ? Theme.paddingSmall : undefined
+                rightMargin: message.out ? undefined : Theme.paddingSmall
+            }
 
             sourceComponent: {
                 if(message.media) {
@@ -227,9 +266,6 @@ ListItem
                 }
 
                 return null;
-            }
-
-            onLoaded: {
             }
         }
 

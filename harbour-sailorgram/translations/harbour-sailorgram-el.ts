@@ -383,6 +383,13 @@ Minimum length is 5 characters.</source>
     </message>
 </context>
 <context>
+    <name>DialogPage</name>
+    <message>
+        <source>Load more messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DialogTextInput</name>
     <message>
         <source>Message...</source>
@@ -575,6 +582,13 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
 </context>
 <context>
+    <name>MessageQuotedItem</name>
+    <message>
+        <source>You</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MessageVideo</name>
     <message>
         <source>Video recording</source>
@@ -718,10 +732,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 changed group name to ��%2��</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>%1 has joined the group via invite link</source>
         <translation type="unfinished"></translation>
     </message>
@@ -731,6 +741,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Group created by ��%1��</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group name changed to ��%1��</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
