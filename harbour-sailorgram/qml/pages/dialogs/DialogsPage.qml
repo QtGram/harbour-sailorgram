@@ -120,7 +120,7 @@ Page
                             if(item.encrypted)
                                 context.telegram.messagesDiscardEncryptedChat(item.peer.userId);
                             else
-                                context.telegram.messagesDeleteHistory(TelegramHelper.peerId(item));
+                                context.telegram.messagesDeleteHistory(TelegramHelper.peerId(item), true);
                         });
                     }
                 }

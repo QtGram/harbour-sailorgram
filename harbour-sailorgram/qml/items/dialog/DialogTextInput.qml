@@ -1,16 +1,18 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
+import harbour.sailorgram.TelegramQml 1.0
 import "../../models"
 import "../../components"
 
 InverseMouseArea
 {
+    property MessagesModel messagesModel
     property Context context
     property var dialog
 
     function sendMessage() {
+        messagesModel.sendMessage(textarea.text.trim());
         Qt.inputMethod.commit();
-        context.telegram.sendMessage(dialog.id, textarea.text.trim());
         textarea.text = "";
     }
 

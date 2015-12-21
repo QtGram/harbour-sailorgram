@@ -34,100 +34,87 @@ Page
         pageStack.pushAttached(Qt.resolvedUrl("DialogInfoPage.qml"), { "context": dialogpage.context, "dialog": dialogpage.dialog, "chat": dialogpage.chat, "user": dialogpage.user });
         context.foregroundDialog = dialogpage.dialog;
 
-        messagemodel.telegram = dialogpage.context.telegram;
-        messagemodel.dialog = dialogpage.dialog;
-        messagemodel.setReaded();
+        messagesmodel.telegram = dialogpage.context.telegram;
+        messagesmodel.dialog = dialogpage.dialog;
+        messagesmodel.setReaded();
     }
 
-    SilicaFlickable
+    RemorsePopup { id: remorsepopup }
+
+    Timer
     {
-        anchors.fill: parent
+        id: refreshtimer
+        repeat: true
+        interval: 10000
+        onTriggered: messagesmodel.refresh()
+        Component.onCompleted: start()
+    }
 
-        PullDownMenu
-        {
-            MenuItem
-            {
-                text: qsTr("Load more messages")
-                onClicked: messagemodel.loadMore()
+    PopupMessage
+    {
+        id: popupmessage
+        anchors { left: parent.left; top: parent.top; right: parent.right }
+    }
+
+    BusyIndicator
+    {
+        anchors.centerIn: parent
+        size: BusyIndicatorSize.Large
+        running: messagesmodel.refreshing
+        z: running ? 2 : 0
+    }
+
+    PeerItem
+    {
+        id: header
+        visible: !context.chatheaderhidden
+        anchors { left: parent.left; top: parent.top; right: parent.right; leftMargin: Theme.horizontalPageMargin; topMargin: context.chatheaderhidden ? 0 : Theme.paddingMedium }
+        height: context.chatheaderhidden ? 0 : (dialogpage.isPortrait ? Theme.itemSizeSmall : Theme.itemSizeExtraSmall)
+        context: dialogpage.context
+        dialog: dialogpage.dialog
+        chat: dialogpage.chat
+        user: dialogpage.user
+    }
+
+    MessageView
+    {
+        id: messageview
+        anchors { left: parent.left; top: header.bottom; right: parent.right; bottom: parent.bottom }
+        context: dialogpage.context
+
+        model: MessagesModel {
+            id: messagesmodel
+
+            onCountChanged: {
+                if(!count)
+                    return;
+
+                messagesmodel.setReaded(); /* We are in this chat, always mark these messages as read */
             }
         }
 
-        RemorsePopup { id: remorsepopup }
-
-        Timer
-        {
-            id: refreshtimer
-            repeat: true
-            interval: 10000
-            onTriggered: messagemodel.refresh()
-            Component.onCompleted: start()
-        }
-
-        PopupMessage
-        {
-            id: popupmessage
-            anchors { left: parent.left; top: parent.top; right: parent.right }
-        }
-
-        BusyIndicator
-        {
-            anchors.centerIn: parent
-            size: BusyIndicatorSize.Large
-            running: messagemodel.refreshing
-            z: running ? 2 : 0
-        }
-
-        PeerItem
-        {
-            id: header
-            visible: !context.chatheaderhidden
-            anchors { left: parent.left; top: parent.top; right: parent.right; leftMargin: Theme.horizontalPageMargin; topMargin: context.chatheaderhidden ? 0 : Theme.paddingMedium }
-            height: context.chatheaderhidden ? 0 : (dialogpage.isPortrait ? Theme.itemSizeSmall : Theme.itemSizeExtraSmall)
+        delegate: MessageItem {
             context: dialogpage.context
-            dialog: dialogpage.dialog
-            chat: dialogpage.chat
-            user: dialogpage.user
+            message: item
         }
 
-        MessageView
-        {
-            id: messageview
-            anchors { left: parent.left; top: header.bottom; right: parent.right; bottom: parent.bottom }
-            context: dialogpage.context
+        header: Item {
+            width: messageview.width
+            height: dialogtextinput.height
+        }
 
-            model: MessagesModel {
-                id: messagemodel
+        Column {
+            id: headerarea
+            y: messageview.headerItem.y
+            parent: messageview.contentItem
+            width: parent.width
 
-                onCountChanged: {
-                    if(!count)
-                        return;
-
-                    messagemodel.setReaded(); /* We are in this chat, always mark these messages as read */
-                }
-            }
-
-            delegate: MessageItem {
-                context: dialogpage.context
-                message: item
-            }
-
-            header: Item {
-                width: messageview.width
-                height: dialogtextinput.height
-            }
-
-            Column {
-                id: headerarea
-                y: messageview.headerItem.y
-                parent: messageview.contentItem
+            DialogTextInput {
+                id: dialogtextinput
                 width: parent.width
-
-                DialogTextInput {
-                    id: dialogtextinput
-                    width: parent.width
-                    context: dialogpage.context
-                    dialog: dialogpage.dialog
-                }
+                messagesModel: messagesmodel
+                context: dialogpage.context
+                dialog: dialogpage.dialog
             }
         }
     }

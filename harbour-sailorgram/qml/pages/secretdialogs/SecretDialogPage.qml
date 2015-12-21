@@ -28,9 +28,9 @@ Page
         pageStack.pushAttached(Qt.resolvedUrl("../dialogs/DialogInfoPage.qml"), { "context": secretconversationpage.context, "dialog": secretconversationpage.dialog, "user": secretconversationpage.user });
         context.foregroundDialog = secretconversationpage.dialog;
 
-        messagemodel.telegram = secretconversationpage.context.telegram;
-        messagemodel.dialog = secretconversationpage.dialog;
-        messagemodel.setReaded();
+        messagesmodel.telegram = secretconversationpage.context.telegram;
+        messagesmodel.dialog = secretconversationpage.dialog;
+        messagesmodel.setReaded();
     }
 
     RemorsePopup { id: remorsepopup }
@@ -40,7 +40,7 @@ Page
         id: refreshtimer
         repeat: true
         interval: 10000
-        onTriggered: messagemodel.refresh()
+        onTriggered: messagesmodel.refresh()
         Component.onCompleted: start()
     }
 
@@ -54,7 +54,7 @@ Page
     {
         anchors.centerIn: parent
         size: BusyIndicatorSize.Large
-        running: messagemodel.refreshing
+        running: messagesmodel.refreshing
     }
 
     PeerItem
@@ -75,13 +75,13 @@ Page
         context: secretconversationpage.context
 
         model: MessagesModel {
-            id: messagemodel
+            id: messagesmodel
 
             onCountChanged: {
                 if(!count)
                     return;
 
-                messagemodel.setReaded(); /* We are in this chat, always mark these messages as read */
+                messagesmodel.setReaded(); /* We are in this chat, always mark these messages as read */
             }
         }
 
@@ -104,6 +104,7 @@ Page
             DialogTextInput {
                 id: dialogtextinput
                 width: parent.width
+                messagesModel: messagesmodel
                 context: dialogpage.context
                 dialog: dialogpage.dialog
                 visible: chat && (chat.classType !== TelegramConstants.typeEncryptedChatDiscarded) && (chat.classType !== TelegramConstants.typeEncryptedChatWaiting)
