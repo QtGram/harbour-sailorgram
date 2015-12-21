@@ -46,7 +46,7 @@ Item
                 verticalAlignment: Text.AlignVCenter
 
                 color: {
-                    if(replyToMessage.out)
+                    if(message.out)
                         return Theme.rgba(Theme.highlightDimmerColor, 1.0);
 
                     return Theme.rgba(Theme.secondaryColor, 1.0);
@@ -56,7 +56,7 @@ Item
                     if(TelegramHelper.isServiceMessage(replyToMessage))
                         return "";
 
-                    if(replyToMessage.out)
+                    if(message.out)
                         return qsTr("You");
 
                     return TelegramHelper.completeName(context.telegram.user(replyToMessage.fromId))
@@ -71,17 +71,17 @@ Item
                 width: parent.width
                 horizontalAlignment: Text.AlignLeft
                 emojiPath: context.sailorgram.emojiPath
-                linkColor: replyToMessage.out ? Theme.secondaryHighlightColor : Theme.secondaryColor
+                linkColor: message.out ? Theme.secondaryHighlightColor : Theme.secondaryColor
                 rawText: TelegramHelper.isServiceMessage(replyToMessage) ? TelegramAction.actionType(context.telegram, dialog, replyToMessage) : replyToMessage.message
                 verticalAlignment: Text.AlignTop
                 wrapMode: Text.Wrap
                 visible: text.length > 0
 
                 color: {
-                    if(TelegramHelper.isServiceMessage(replyToMessage))
+                    if(TelegramHelper.isServiceMessage(message))
                         return Theme.secondaryHighlightColor;
 
-                    if(replyToMessage.out)
+                    if(message.out)
                         return Theme.highlightDimmerColor;
 
                     return Theme.primaryColor;

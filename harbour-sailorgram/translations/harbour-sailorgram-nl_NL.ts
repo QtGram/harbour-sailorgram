@@ -229,6 +229,10 @@ De minimale lengte is 5 tekens.</translation>
         <source>Hide chat header</source>
         <translation>Chatkop verbergen</translation>
     </message>
+    <message>
+        <source>Hide Bubbles</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConnectingLabel</name>

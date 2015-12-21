@@ -229,6 +229,10 @@ Minimilängd är 5 tecken.</translation>
         <source>Hide chat header</source>
         <translation>Dölj chattrubrik</translation>
     </message>
+    <message>
+        <source>Hide Bubbles</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConnectingLabel</name>

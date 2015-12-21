@@ -229,6 +229,10 @@ Vähimmäispituus on 5 merkkiä.</translation>
         <source>Hide chat header</source>
         <translation>Piilota keskustelun ylätunniste</translation>
     </message>
+    <message>
+        <source>Hide Bubbles</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConnectingLabel</name>

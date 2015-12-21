@@ -229,6 +229,10 @@ La longitud mínima es de 5 caracteres.</translation>
         <source>Hide chat header</source>
         <translation>Ocultar cabecera de la conversación</translation>
     </message>
+    <message>
+        <source>Hide Bubbles</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConnectingLabel</name>

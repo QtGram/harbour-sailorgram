@@ -6,8 +6,6 @@
 Name:       harbour-sailorgram
 
 # >> macros
-%define __provides_exclude_from ^%{_datadir}/.*$
-%define __requires_exclude ^libqtelegram-ae|libtelegramqml.*$
 # << macros
 
 %{!?qtc_qmake:%define qtc_qmake %qmake}
@@ -16,7 +14,7 @@ Name:       harbour-sailorgram
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    SailorGram
 Version:    0.72
-Release:    2
+Release:    10
 Group:      Qt/Qt
 License:    GPL3
 URL:        https://github.com/Dax89/harbour-sailorgram/
@@ -50,7 +48,7 @@ An unofficial Telegram Client for SailfishOS
 
 %qtc_qmake5 
 
-%qtc_make #%{?_smp_mflags}
+%qtc_make %{?_smp_mflags}
 
 # >> build post
 # << build post
@@ -67,14 +65,6 @@ rm -rf %{buildroot}
 desktop-file-install --delete-original       \
   --dir %{buildroot}%{_datadir}/applications             \
    %{buildroot}%{_datadir}/applications/*.desktop
-
-# >> post
-%post -p /sbin/ldconfig
-# << post
-
-# >> postun
-%postun -p /sbin/ldconfig
-# << postun
 
 %files
 %defattr(-,root,root,-)
