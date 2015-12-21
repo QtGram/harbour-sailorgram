@@ -48,6 +48,7 @@ ApplicationWindow
                 context.sendwithreturn = parseInt(Settings.transactionGet(tx, "sendwithreturn"));
                 context.backgrounddisabled = parseInt(Settings.transactionGet(tx, "backgrounddisabled"));
                 context.chatheaderhidden = parseInt(Settings.transactionGet(tx, "chatheaderhidden"));
+                context.hidebubbles = parseInt(Settings.transactionGet(tx, "hidebubbles"));
             });
         }
 

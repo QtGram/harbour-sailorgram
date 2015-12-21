@@ -14,6 +14,7 @@ QtObject
     property bool sendwithreturn: false
     property bool backgrounddisabled: false
     property bool chatheaderhidden: false
+    property bool hidebubbles: false
 
     property TelegramLocalStorage telegramlocalstorage: TelegramLocalStorage { }
     property ScreenBlank screenblank: ScreenBlank { }

@@ -15,9 +15,11 @@ Dialog
         context.sendwithreturn = tssendwithreturn.checked;
         context.backgrounddisabled = tsdisablebackground.checked;
         context.chatheaderhidden = tshideheader.checked
+        context.hidebubbles = tshidebubbles.checked
         Settings.set("backgrounddisabled", tsdisablebackground.checked);
         Settings.set("sendwithreturn", tssendwithreturn.checked);
         Settings.set("chatheaderhidden", tshideheader.checked);
+        Settings.set("hidebubbles", tshidebubbles.checked);
     }
 
     SilicaFlickable
@@ -59,6 +61,13 @@ Dialog
                 checked: context.chatheaderhidden
             }
 
+            TextSwitch
+            {
+                id: tshidebubbles
+                anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
+                text: qsTr("Hide Bubbles")
+                checked: context.hidebubbles
+            }
         }
     }
 }
