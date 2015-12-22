@@ -70,7 +70,7 @@ Item
                 rawText: TelegramHelper.isServiceMessage(replyToMessage) ? TelegramAction.actionType(context.telegram, dialog, replyToMessage) : replyToMessage.message
                 verticalAlignment: Text.AlignTop
                 wrapMode: Text.Wrap
-                elide: Text.AlignRight
+                elide: Text.ElideRight
                 maximumLineCount: 3
                 visible: text.length > 0
                 color: ColorScheme.colorize(message, context)
