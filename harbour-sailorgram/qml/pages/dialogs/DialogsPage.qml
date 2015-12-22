@@ -34,7 +34,7 @@ import harbour.sailorgram.TelegramQml 1.0
 import "../../models"
 import "../../components"
 import "../../menus/dialog"
-import "../../items/conversation"
+import "../../items/dialog"
 import "../../js/TelegramHelper.js" as TelegramHelper
 import "../../js/TelegramConstants.js" as TelegramConstants
 
