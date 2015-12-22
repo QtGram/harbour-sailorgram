@@ -257,7 +257,7 @@ A lonxitude mínima é de 5 caracteres.</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished">Log de errores</translation>
+        <translation>Rexistro de errores</translation>
     </message>
 </context>
 <context>
@@ -268,7 +268,7 @@ A lonxitude mínima é de 5 caracteres.</translation>
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished">Contactos</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -305,7 +305,7 @@ A lonxitude mínima é de 5 caracteres.</translation>
     <name>CreateSecretDialogPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Novo chat segredo</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -324,7 +324,7 @@ A lonxitude mínima é de 5 caracteres.</translation>
     </message>
     <message>
         <source>Heartbeat:</source>
-        <translation type="unfinished"></translation>
+        <translation>Heartbeat:</translation>
     </message>
     <message>
         <source>Connected</source>
@@ -343,43 +343,43 @@ A lonxitude mínima é de 5 caracteres.</translation>
     <name>DialogInfoPage</name>
     <message>
         <source>Delete secret chat</source>
-        <translation type="unfinished">Borrar conversa segreda</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Delete group</source>
-        <translation type="unfinished">Borrar grupo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Delete conversation</source>
-        <translation type="unfinished">Borrar conversa</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting secret chat</source>
-        <translation type="unfinished">Borrando conversa segreda</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting group</source>
-        <translation type="unfinished">Borrando grupo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting conversation</source>
-        <translation type="unfinished">Borrando conversa</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Accións</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Enable notifications</source>
-        <translation type="unfinished">Activar notificacións</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Disable notifications</source>
-        <translation type="unfinished">Desactivar notificacións</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Add to contacts</source>
-        <translation type="unfinished">Engadir a contactos</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -393,7 +393,7 @@ A lonxitude mínima é de 5 caracteres.</translation>
     <name>DialogTextInput</name>
     <message>
         <source>Message...</source>
-        <translation type="unfinished">Mensaxe...</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -402,9 +402,7 @@ A lonxitude mínima é de 5 caracteres.</translation>
         <source>No Chats
 
 Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation type="unfinished">Non hai conversas
-
-Elixa un contacto seleccionando &quot;Contactos&quot; no menu despregable</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Chats</source>
@@ -420,15 +418,15 @@ Elixa un contacto seleccionando &quot;Contactos&quot; no menu despregable</trans
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished">Borrando conversa</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished">Borrando chat segredo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished">Borrando grupo</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -439,7 +437,7 @@ Elixa un contacto seleccionando &quot;Contactos&quot; no menu despregable</trans
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Novo chat segredo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>New Group</source>
@@ -447,7 +445,7 @@ Elixa un contacto seleccionando &quot;Contactos&quot; no menu despregable</trans
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished">Contactos</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -666,14 +664,14 @@ Elixa un contacto seleccionando &quot;Contactos&quot; no menu despregable</trans
     <name>SecretDialogDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation type="unfinished">Chat segredo cancelado</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SecretDialogWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>
-        <translation type="unfinished">Agardando que %1 se conecte</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

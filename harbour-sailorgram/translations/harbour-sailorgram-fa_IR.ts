@@ -257,7 +257,7 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished">نگاره‌ی خطا</translation>
+        <translation>خطانگاره</translation>
     </message>
 </context>
 <context>
@@ -268,7 +268,7 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished">آشنایان</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -305,7 +305,7 @@ Minimum length is 5 characters.</source>
     <name>CreateSecretDialogPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">گپ محرمانه‌ی تازه</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -332,7 +332,7 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Error log</source>
-        <translation>نگاره‌ی خطا</translation>
+        <translation>خطانگاره</translation>
     </message>
     <message>
         <source>Not Connected</source>
@@ -343,43 +343,43 @@ Minimum length is 5 characters.</source>
     <name>DialogInfoPage</name>
     <message>
         <source>Delete secret chat</source>
-        <translation type="unfinished">حذف گپ محرمانه</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Delete group</source>
-        <translation type="unfinished">حذف گروه</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Delete conversation</source>
-        <translation type="unfinished">حذف گفت‌وگو</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting secret chat</source>
-        <translation type="unfinished">در حال حذف گپ محرمانه</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting group</source>
-        <translation type="unfinished">در حال حذف گروه</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting conversation</source>
-        <translation type="unfinished">در حال حذف گفت‌وگو</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">عملکردها</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Enable notifications</source>
-        <translation type="unfinished">فعال‌سازی اطلاعیه‌ها</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Disable notifications</source>
-        <translation type="unfinished">غیرفعال‌سازی اطلاعیه‌ها</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Add to contacts</source>
-        <translation type="unfinished">افزودن به آشنایان</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -393,7 +393,7 @@ Minimum length is 5 characters.</source>
     <name>DialogTextInput</name>
     <message>
         <source>Message...</source>
-        <translation type="unfinished">پیام…‏</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -402,9 +402,7 @@ Minimum length is 5 characters.</source>
         <source>No Chats
 
 Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation type="unfinished">هیچ گپی نیست
-
-بعد از انتخاب «آشنایان» از گزینه‌گان بالا، یکی از آن‌ها را انتخاب کنید</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Chats</source>
@@ -420,15 +418,15 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished">در حال حذف گفت‌وگو</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished">در حال حذف گپ محرمانه</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished">در حال حذف گروه</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -439,7 +437,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">گپ محرمانه‌ی تازه</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>New Group</source>
@@ -447,7 +445,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished">آشنایان</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -458,11 +456,11 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation>نگاره‌ی خطا خالی است</translation>
+        <translation>خطانگاره خالی است</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation>نگاره‌ی خطا</translation>
+        <translation>خطانگاره</translation>
     </message>
     <message>
         <source>Error code:</source>
@@ -666,14 +664,14 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>SecretDialogDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation type="unfinished">گپ محرمانه لغو شد</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SecretDialogWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>
-        <translation type="unfinished">در انتظار %1 برای اتصال</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -89,26 +89,26 @@
     </message>
     <message>
         <source>Belaruian</source>
-        <translation>Беларусский</translation>
+        <translation>Белорусский</translation>
     </message>
 </context>
 <context>
     <name>AddContactPage</name>
     <message>
         <source>Add Contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить контакт</translation>
     </message>
     <message>
         <source>First Name</source>
-        <translation type="unfinished">Имя</translation>
+        <translation>Имя</translation>
     </message>
     <message>
         <source>Last Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Фамилия</translation>
     </message>
     <message>
         <source>Telephone Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Номер телефона</translation>
     </message>
 </context>
 <context>
@@ -174,7 +174,7 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>This username is already occupied</source>
-        <translation>Этот логин уже занят</translation>
+        <translation>Этот юзернейм уже занят</translation>
     </message>
 </context>
 <context>
@@ -257,29 +257,29 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished">Журнал ошибок</translation>
+        <translation>Журнал ошибок</translation>
     </message>
 </context>
 <context>
     <name>ContactsPage</name>
     <message>
         <source>Add Contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить контакт</translation>
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished">Контакты</translation>
+        <translation>Контакты</translation>
     </message>
 </context>
 <context>
     <name>CoverPage</name>
     <message>
         <source>Connected</source>
-        <translation>Подключено</translation>
+        <translation>В сети</translation>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation>Отключено</translation>
+        <translation>Не в сети</translation>
     </message>
     <message>
         <source>%1 unread messages</source>
@@ -305,7 +305,7 @@ Minimum length is 5 characters.</source>
     <name>CreateSecretDialogPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Создать тайный диалог</translation>
+        <translation>Начать тайный разговор</translation>
     </message>
 </context>
 <context>
@@ -328,7 +328,7 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Connected</source>
-        <translation>Подключено</translation>
+        <translation>В сети</translation>
     </message>
     <message>
         <source>Error log</source>
@@ -336,64 +336,64 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Not Connected</source>
-        <translation>Нет подключения</translation>
+        <translation>Не в сети</translation>
     </message>
 </context>
 <context>
     <name>DialogInfoPage</name>
     <message>
         <source>Delete secret chat</source>
-        <translation type="unfinished">Удалить тайный диалог</translation>
+        <translation>Удалить тайный диалог</translation>
     </message>
     <message>
         <source>Delete group</source>
-        <translation type="unfinished">Удалить беседу</translation>
+        <translation>Удалить беседу</translation>
     </message>
     <message>
         <source>Delete conversation</source>
-        <translation type="unfinished">Удалить диалог</translation>
+        <translation>Удалить диалог</translation>
     </message>
     <message>
         <source>Deleting secret chat</source>
-        <translation type="unfinished">Удаление тайного диалога</translation>
+        <translation>Удаление тайного диалога</translation>
     </message>
     <message>
         <source>Deleting group</source>
-        <translation type="unfinished">Удаление беседы</translation>
+        <translation>Удаление беседы</translation>
     </message>
     <message>
         <source>Deleting conversation</source>
-        <translation type="unfinished">Удаление диалога</translation>
+        <translation>Удаление диалога</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Действия</translation>
+        <translation>Действия</translation>
     </message>
     <message>
         <source>Enable notifications</source>
-        <translation type="unfinished">Включить уведомления</translation>
+        <translation>Включить уведомления</translation>
     </message>
     <message>
         <source>Disable notifications</source>
-        <translation type="unfinished">Отключить уведомления</translation>
+        <translation>Отключить уведомления</translation>
     </message>
     <message>
         <source>Add to contacts</source>
-        <translation type="unfinished">Добавить в контакты</translation>
+        <translation>Добавить в контакты</translation>
     </message>
 </context>
 <context>
     <name>DialogItem</name>
     <message>
         <source>You:</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы:</translation>
     </message>
 </context>
 <context>
     <name>DialogTextInput</name>
     <message>
         <source>Message...</source>
-        <translation type="unfinished">Сообщение...</translation>
+        <translation>Сообщение...</translation>
     </message>
 </context>
 <context>
@@ -402,52 +402,52 @@ Minimum length is 5 characters.</source>
         <source>No Chats
 
 Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation type="unfinished">Диалогов нет
+        <translation>Диалогов нет
 
 Выберите контакта из меню &apos;Контакты&apos;</translation>
     </message>
     <message>
         <source>Chats</source>
-        <translation type="unfinished">Диалоги</translation>
+        <translation>Диалоги</translation>
     </message>
     <message>
         <source>Connecting...</source>
-        <translation type="unfinished">Подключение...</translation>
+        <translation>Подключение...</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Удалить</translation>
+        <translation>Удалить</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished">Удаление диалога</translation>
+        <translation>Удаление диалога</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished">Удаление тайного диалога</translation>
+        <translation>Удаление тайного диалога</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished">Удаление беседы</translation>
+        <translation>Удаление беседы</translation>
     </message>
 </context>
 <context>
     <name>DialogsPullDownMenu</name>
     <message>
         <source>Profile</source>
-        <translation type="unfinished">Профиль</translation>
+        <translation>Профиль</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Создать тайный диалог</translation>
+        <translation>Начать тайный разговор</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation type="unfinished">Создать беседу</translation>
+        <translation>Создать беседу</translation>
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished">Контакты</translation>
+        <translation>Контакты</translation>
     </message>
 </context>
 <context>
@@ -549,7 +549,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>You</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы:</translation>
     </message>
 </context>
 <context>
@@ -587,7 +587,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>MessageQuotedItem</name>
     <message>
         <source>You</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Вы:</translation>
     </message>
 </context>
 <context>
@@ -666,14 +666,14 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>SecretDialogDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation type="unfinished">Тайный диалог отменён</translation>
+        <translation>Тайный диалог отменён</translation>
     </message>
 </context>
 <context>
     <name>SecretDialogWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>
-        <translation type="unfinished">Ждём появления %1 в сети</translation>
+        <translation>Ждём появления %1 в сети</translation>
     </message>
 </context>
 <context>
@@ -692,7 +692,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>О программе</translation>
     </message>
 </context>
 <context>
@@ -734,15 +734,15 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>%1 has joined the group via invite link</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 вступил в беседу по ссылке</translation>
     </message>
     <message>
         <source>Secret chat created by ��%1��</source>
-        <translation type="unfinished"></translation>
+        <translation>��%1�� создал(а) тайный диалог</translation>
     </message>
     <message>
         <source>Group created by ��%1��</source>
-        <translation type="unfinished"></translation>
+        <translation>��%1�� создал(а) беседу</translation>
     </message>
     <message>
         <source>Group name changed to ��%1��</source>

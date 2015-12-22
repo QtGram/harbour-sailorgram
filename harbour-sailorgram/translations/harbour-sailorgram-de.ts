@@ -81,15 +81,15 @@
     </message>
     <message>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>Schwedisch</translation>
     </message>
     <message>
         <source>Galician</source>
-        <translation type="unfinished"></translation>
+        <translation>Galicisch</translation>
     </message>
     <message>
         <source>Belaruian</source>
-        <translation type="unfinished"></translation>
+        <translation>Weißrussisch</translation>
     </message>
 </context>
 <context>
@@ -185,19 +185,19 @@ Minimum sind 5 Zeichen.</translation>
     </message>
     <message>
         <source>Leave group</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppe verlassen</translation>
     </message>
     <message>
         <source>Leaving group</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppe wird verlassen</translation>
     </message>
     <message>
         <source>Change title</source>
-        <translation type="unfinished"></translation>
+        <translation>Titel änderen</translation>
     </message>
     <message>
         <source>Add member</source>
-        <translation type="unfinished"></translation>
+        <translation>Gesprächspartner hinzufügen</translation>
     </message>
 </context>
 <context>
@@ -215,19 +215,19 @@ Minimum sind 5 Zeichen.</translation>
     <name>ChatSettingsPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Sichern</translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Nachricht durch Drücken der Entertaste senden</translation>
     </message>
     <message>
         <source>Disable background</source>
-        <translation type="unfinished"></translation>
+        <translation>Hintergrund deaktivieren.</translation>
     </message>
     <message>
         <source>Hide chat header</source>
-        <translation type="unfinished"></translation>
+        <translation>Konversationsüberschrift ausblenden</translation>
     </message>
     <message>
         <source>Hide Bubbles</source>
@@ -257,7 +257,7 @@ Minimum sind 5 Zeichen.</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <translation>Error log</translation>
     </message>
 </context>
 <context>
@@ -268,7 +268,7 @@ Minimum sind 5 Zeichen.</translation>
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished">Kontakte</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -305,38 +305,38 @@ Minimum sind 5 Zeichen.</translation>
     <name>CreateSecretDialogPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Neue geheime Konversation</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>DebugSettingsPage</name>
     <message>
         <source>Debug</source>
-        <translation type="unfinished"></translation>
+        <translation>Debug</translation>
     </message>
     <message>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Refresh</translation>
     </message>
     <message>
         <source>Contacts:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontakte:</translation>
     </message>
     <message>
         <source>Heartbeat:</source>
-        <translation type="unfinished"></translation>
+        <translation>Heartbeat:</translation>
     </message>
     <message>
         <source>Connected</source>
-        <translation type="unfinished">Verbunden</translation>
+        <translation>Verbunden</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <translation>Error log</translation>
     </message>
     <message>
         <source>Not Connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Nicht verbunden</translation>
     </message>
 </context>
 <context>
@@ -393,7 +393,7 @@ Minimum sind 5 Zeichen.</translation>
     <name>DialogTextInput</name>
     <message>
         <source>Message...</source>
-        <translation type="unfinished">Nachricht...</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -402,9 +402,7 @@ Minimum sind 5 Zeichen.</translation>
         <source>No Chats
 
 Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation type="unfinished">Keine Konversationen
-
-wähle einen Kontakt über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Chats</source>
@@ -420,15 +418,15 @@ wähle einen Kontakt über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished">Unterhaltung löschen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished">Geheime Konversation wird gelöscht</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished">Gruppe löschen</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -439,7 +437,7 @@ wähle einen Kontakt über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Neue geheime Konversation</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>New Group</source>
@@ -447,38 +445,38 @@ wähle einen Kontakt über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished">Kontakte</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ErrorsPage</name>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler löschen</translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>Error log ist leer</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <translation>Error log</translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler code:</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished"></translation>
+        <translation>Funktion:</translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler löschen</translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nachricht:</translation>
     </message>
 </context>
 <context>
@@ -667,33 +665,33 @@ wähle einen Kontakt über &quot;Kontakte&quot; im Pull-Down-Menü</translation>
     <name>SecretDialogDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation type="unfinished">Geheime Konversation verlassen</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SecretDialogWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>
-        <translation type="unfinished">Warte das %1 online ist</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SettingsPage</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <source>Chats</source>
-        <translation type="unfinished">Konversationen</translation>
+        <translation>Konversationen</translation>
     </message>
     <message>
         <source>Debug</source>
-        <translation type="unfinished"></translation>
+        <translation>Debug</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Über</translation>
     </message>
 </context>
 <context>

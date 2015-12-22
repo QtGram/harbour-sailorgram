@@ -77,7 +77,7 @@
     </message>
     <message>
         <source>Translation Platform</source>
-        <translation>Vertalingsplatform</translation>
+        <translation>Vertaalplatform</translation>
     </message>
     <message>
         <source>Swedish</source>
@@ -96,19 +96,19 @@
     <name>AddContactPage</name>
     <message>
         <source>Add Contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Contactpersoon toevoegen</translation>
     </message>
     <message>
         <source>First Name</source>
-        <translation type="unfinished">Voornaam</translation>
+        <translation>Voornaam</translation>
     </message>
     <message>
         <source>Last Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Achternaam</translation>
     </message>
     <message>
         <source>Telephone Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Telefoonnummer</translation>
     </message>
 </context>
 <context>
@@ -130,11 +130,11 @@
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation>U heeft een verkeerde autorisatiecode ingevoerd</translation>
+        <translation>U heeft een verkeerde autorisatiecode ingevuld</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign In&apos;</source>
-        <translation>Wacht op de SMS met activatiecode en klik op &apos;Inloggen&apos;</translation>
+        <translation>Wacht op de SMS die de activatiecode bevat en klik daarna op &apos;Inloggen&apos;</translation>
     </message>
     <message>
         <source>Resend Activation Code</source>
@@ -167,14 +167,14 @@
 
 You can use a-z, 0-9 and underscores.
 Minimum length is 5 characters.</source>
-        <translation>U kunt een gebruikersnaam kiezen op Telegram. Als u dit doet zullen anderen u kunnen contacteren zonder uw telefoonnummer te hoeven weten.
+        <translation>U kunt een gebruikersnaam kiezen op Telegram. Als u ervoor kiest om dit te doen, zullen anderen contact met u kunnen opnemen zonder uw telefoonnummer te kennen.
 
-U kunt a-z, 09 en liggende streepjes gebruiken.
+U kunt a-z, 0-9 en liggende streepjes gebruiken.
 De minimale lengte is 5 tekens.</translation>
     </message>
     <message>
         <source>This username is already occupied</source>
-        <translation>De gebruikersnaam is niet beschikbaar</translation>
+        <translation>Deze gebruikersnaam is niet beschikbaar</translation>
     </message>
 </context>
 <context>
@@ -227,7 +227,7 @@ De minimale lengte is 5 tekens.</translation>
     </message>
     <message>
         <source>Hide chat header</source>
-        <translation>Chatkop verbergen</translation>
+        <translation>Chatomslag verbergen</translation>
     </message>
     <message>
         <source>Hide Bubbles</source>
@@ -257,18 +257,18 @@ De minimale lengte is 5 tekens.</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished">Foutenlogbestand</translation>
+        <translation>Foutenlogbestand</translation>
     </message>
 </context>
 <context>
     <name>ContactsPage</name>
     <message>
         <source>Add Contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Contactpersoon toevoegen</translation>
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished">Contactpersonen</translation>
+        <translation>Contactpersonen</translation>
     </message>
 </context>
 <context>
@@ -305,14 +305,14 @@ De minimale lengte is 5 tekens.</translation>
     <name>CreateSecretDialogPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Nieuw geheim chatgesprek</translation>
+        <translation>Nieuw geheim chatgesprek</translation>
     </message>
 </context>
 <context>
     <name>DebugSettingsPage</name>
     <message>
         <source>Debug</source>
-        <translation>Foutopsporing </translation>
+        <translation>Foutopsporing</translation>
     </message>
     <message>
         <source>Refresh</source>
@@ -343,57 +343,57 @@ De minimale lengte is 5 tekens.</translation>
     <name>DialogInfoPage</name>
     <message>
         <source>Delete secret chat</source>
-        <translation type="unfinished">Geheim chatgesprek verwijderen</translation>
+        <translation>Geheim chatgesprek verwijderen</translation>
     </message>
     <message>
         <source>Delete group</source>
-        <translation type="unfinished">Groep verwijderen</translation>
+        <translation>Groep verwijderen</translation>
     </message>
     <message>
         <source>Delete conversation</source>
-        <translation type="unfinished">Gesprek verwijderen</translation>
+        <translation>Gesprek verwijderen</translation>
     </message>
     <message>
         <source>Deleting secret chat</source>
-        <translation type="unfinished">Bezig met het verwijderen van het geheime chatgesprek</translation>
+        <translation>Bezig met verwijderen van geheim chatgesprek</translation>
     </message>
     <message>
         <source>Deleting group</source>
-        <translation type="unfinished">Bezig met het verwijderen van de groep</translation>
+        <translation>Bezig met verwijderen van groep</translation>
     </message>
     <message>
         <source>Deleting conversation</source>
-        <translation type="unfinished">Bezig met het verwijderen van het gesprek</translation>
+        <translation>Bezig met verwijderen van gesprek</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Acties</translation>
+        <translation>Acties</translation>
     </message>
     <message>
         <source>Enable notifications</source>
-        <translation type="unfinished">Meldingen inschakelen</translation>
+        <translation>Meldingen inschakelen</translation>
     </message>
     <message>
         <source>Disable notifications</source>
-        <translation type="unfinished">Meldingen uitschakelen</translation>
+        <translation>Meldingen uitschakelen</translation>
     </message>
     <message>
         <source>Add to contacts</source>
-        <translation type="unfinished">Toevoegen aan contactpersonen</translation>
+        <translation>Toevoegen aan contactpersonen</translation>
     </message>
 </context>
 <context>
     <name>DialogItem</name>
     <message>
         <source>You:</source>
-        <translation type="unfinished"></translation>
+        <translation>U:</translation>
     </message>
 </context>
 <context>
     <name>DialogTextInput</name>
     <message>
         <source>Message...</source>
-        <translation type="unfinished">Bericht...</translation>
+        <translation>Bericht...</translation>
     </message>
 </context>
 <context>
@@ -402,52 +402,52 @@ De minimale lengte is 5 tekens.</translation>
         <source>No Chats
 
 Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation type="unfinished">Geen chatgesprekken
+        <translation>Geen chatgesprekken
 
-Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het trekmenu</translation>
+Selecteer een contactpersoon door te kiezen voor &quot;Contactpersonen&quot; in het menu hierboven</translation>
     </message>
     <message>
         <source>Chats</source>
-        <translation type="unfinished">Chatgesprekken </translation>
+        <translation>Chatgesprekken</translation>
     </message>
     <message>
         <source>Connecting...</source>
-        <translation type="unfinished">Bezig met verbinden...</translation>
+        <translation>Bezig met verbinden...</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Verwijderen</translation>
+        <translation>Verwijderen</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished">Bezig met het verwijderen van het gesprek</translation>
+        <translation>Bezig met verwijderen van gesprek</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished">Bezig met het verwijderen van het geheime chatgesprek</translation>
+        <translation>Bezig met verwijderen van geheim chatgesprek</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished">Bezig met het verwijderen van de groep</translation>
+        <translation>Bezig met verwijderen van groep</translation>
     </message>
 </context>
 <context>
     <name>DialogsPullDownMenu</name>
     <message>
         <source>Profile</source>
-        <translation type="unfinished">Profiel</translation>
+        <translation>Profiel</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Nieuw geheim chatgesprek</translation>
+        <translation>Nieuw geheim chatgesprek</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation type="unfinished">Nieuwe groep</translation>
+        <translation>Nieuwe groep</translation>
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished">Contactpersonen</translation>
+        <translation>Contactpersonen</translation>
     </message>
 </context>
 <context>
@@ -493,7 +493,7 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     </message>
     <message>
         <source>Home</source>
-        <translation>Thuis</translation>
+        <translation>Persoonlijke map</translation>
     </message>
 </context>
 <context>
@@ -515,7 +515,7 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     </message>
     <message>
         <source>Media saved in Gallery</source>
-        <translation>Media opgeslagen naar Galerij</translation>
+        <translation>De media is opgeslagen naar de Galerij</translation>
     </message>
 </context>
 <context>
@@ -549,7 +549,7 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     </message>
     <message>
         <source>You</source>
-        <translation type="unfinished"></translation>
+        <translation>U</translation>
     </message>
 </context>
 <context>
@@ -587,7 +587,7 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     <name>MessageQuotedItem</name>
     <message>
         <source>You</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">U</translation>
     </message>
 </context>
 <context>
@@ -666,14 +666,14 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     <name>SecretDialogDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation type="unfinished">Het geheime chatgesprek is geannuleerd</translation>
+        <translation>Geheim chatgesprek geannuleerd</translation>
     </message>
 </context>
 <context>
     <name>SecretDialogWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>
-        <translation type="unfinished">Bezig met het wachten op %1 om online te komen</translation>
+        <translation>Bezig met wachten op %1; hij/zij is momenteel offline</translation>
     </message>
 </context>
 <context>
@@ -703,11 +703,11 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation>U heeft een verkeerde autorisatiecode ingevoerd</translation>
+        <translation>U heeft een verkeerde autorisatiecode ingevuld</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
-        <translation>Wacht op de SMS met activatiecode en klik op &apos;Registreren&apos;</translation>
+        <translation>Wacht op de SMS die de activatiecode bevat en klik daarna op &apos;Inloggen&apos;</translation>
     </message>
     <message>
         <source>First Name</source>
@@ -734,15 +734,15 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     </message>
     <message>
         <source>%1 has joined the group via invite link</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 heeft deelgenomen aan de groep middels een uitnodiging</translation>
     </message>
     <message>
         <source>Secret chat created by ��%1��</source>
-        <translation type="unfinished"></translation>
+        <translation>Het geheime chatgesprek is gecreëerd door ��%1��</translation>
     </message>
     <message>
         <source>Group created by ��%1��</source>
-        <translation type="unfinished"></translation>
+        <translation>De groep is gecreëerd door ��%1��</translation>
     </message>
     <message>
         <source>Group name changed to ��%1��</source>
@@ -797,7 +797,7 @@ Kies een contactpersoon door &quot;Contactpersonen&quot; te selecteren in het tr
     </message>
     <message>
         <source>Geo</source>
-        <translation>Geolocatie</translation>
+        <translation>Locatie</translation>
     </message>
     <message>
         <source>Last Seen %1</source>

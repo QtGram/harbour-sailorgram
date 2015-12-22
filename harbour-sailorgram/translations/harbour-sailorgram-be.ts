@@ -257,7 +257,7 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished">Дзённік памылак</translation>
+        <translation>Журнал памылак</translation>
     </message>
 </context>
 <context>
@@ -268,7 +268,7 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished">Кантакты</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -305,7 +305,7 @@ Minimum length is 5 characters.</source>
     <name>CreateSecretDialogPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Новая сакрэтная гаворка</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -343,43 +343,43 @@ Minimum length is 5 characters.</source>
     <name>DialogInfoPage</name>
     <message>
         <source>Delete secret chat</source>
-        <translation type="unfinished">Выдаліць сакрэтную гаворку</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Delete group</source>
-        <translation type="unfinished">Выдаліць групу</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Delete conversation</source>
-        <translation type="unfinished">Выдаленне размовы</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting secret chat</source>
-        <translation type="unfinished">Выдаленне сакрэтнай гаворкі</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting group</source>
-        <translation type="unfinished">Выдаленне групы</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting conversation</source>
-        <translation type="unfinished">Выдаленне размовы</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Дзеянні</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Enable notifications</source>
-        <translation type="unfinished">Уключыць апавяшчэньні</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Disable notifications</source>
-        <translation type="unfinished">Адключыць апавяшчэньні</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Add to contacts</source>
-        <translation type="unfinished">Дадаць у кантакты</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -393,7 +393,7 @@ Minimum length is 5 characters.</source>
     <name>DialogTextInput</name>
     <message>
         <source>Message...</source>
-        <translation type="unfinished">Паведамленне...</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -402,9 +402,7 @@ Minimum length is 5 characters.</source>
         <source>No Chats
 
 Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation type="unfinished">Няма гаворак
-
-Абярыце кантакт з меню Кантакты уверсе</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Chats</source>
@@ -420,15 +418,15 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished">Выдаленне размовы</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished">Выдаленне сакрэтнай гаворкі</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished">Выдаленне групы</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -439,7 +437,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Новая сакрэтная гаворка</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>New Group</source>
@@ -447,7 +445,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished">Кантакты</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -666,14 +664,14 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>SecretDialogDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation type="unfinished">Сакрэтная гаворка адменена</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SecretDialogWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>
-        <translation type="unfinished">Чакаем калі %1 з&apos;явіцца онлайн</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -692,7 +690,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Інфармацыя</translation>
     </message>
 </context>
 <context>

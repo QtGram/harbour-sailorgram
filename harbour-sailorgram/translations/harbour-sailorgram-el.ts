@@ -265,7 +265,7 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished">Επαφές</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -308,7 +308,7 @@ Minimum length is 5 characters.</source>
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Error log</source>
+        <source>Debug</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -316,7 +316,7 @@ Minimum length is 5 characters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Debug</source>
+        <source>Contacts:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -328,11 +328,11 @@ Minimum length is 5 characters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Not Connected</source>
+        <source>Error log</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Contacts:</source>
+        <source>Not Connected</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -364,7 +364,7 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Ενέργειες</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Enable notifications</source>
@@ -403,7 +403,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Chats</source>
-        <translation type="unfinished">Συνομιλίες</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Connecting...</source>
@@ -411,7 +411,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
@@ -442,17 +442,13 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished">Επαφές</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ErrorsPage</name>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -469,6 +465,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Function:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -559,7 +559,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Message</source>
@@ -679,7 +679,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Chats</source>
-        <translation type="unfinished">Συνομιλίες</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Debug</source>
@@ -803,16 +803,16 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
 <context>
     <name>UserInfo</name>
     <message>
-        <source>Phone Number</source>
-        <translation>Αριθμός τηλεφώνου</translation>
-    </message>
-    <message>
         <source>Send Message</source>
         <translation>Αποστολή μηνύματος</translation>
     </message>
     <message>
         <source>Begin Secret Chat</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Phone Number</source>
+        <translation>Αριθμός τηλεφώνου</translation>
     </message>
 </context>
 <context>

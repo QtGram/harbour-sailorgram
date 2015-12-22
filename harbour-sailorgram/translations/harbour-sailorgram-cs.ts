@@ -81,34 +81,34 @@
     </message>
     <message>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>Švédsky</translation>
     </message>
     <message>
         <source>Galician</source>
-        <translation type="unfinished"></translation>
+        <translation>Galícky</translation>
     </message>
     <message>
         <source>Belaruian</source>
-        <translation type="unfinished"></translation>
+        <translation>Bělorusky</translation>
     </message>
 </context>
 <context>
     <name>AddContactPage</name>
     <message>
         <source>Add Contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat kontakt</translation>
     </message>
     <message>
         <source>First Name</source>
-        <translation type="unfinished">Jméno</translation>
+        <translation>Jméno</translation>
     </message>
     <message>
         <source>Last Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Příjmení </translation>
     </message>
     <message>
         <source>Telephone Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Telefoní číslo</translation>
     </message>
 </context>
 <context>
@@ -185,19 +185,19 @@ Minimální délka je 5 znaků .</translation>
     </message>
     <message>
         <source>Leave group</source>
-        <translation type="unfinished"></translation>
+        <translation>Opustit skupinu</translation>
     </message>
     <message>
         <source>Leaving group</source>
-        <translation type="unfinished"></translation>
+        <translation>Opustím skupinu</translation>
     </message>
     <message>
         <source>Change title</source>
-        <translation type="unfinished"></translation>
+        <translation>Změmit název</translation>
     </message>
     <message>
         <source>Add member</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat člena</translation>
     </message>
 </context>
 <context>
@@ -215,15 +215,15 @@ Minimální délka je 5 znaků .</translation>
     <name>ChatSettingsPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Uložit</translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Poslat zprávu stiskem klávesy Enter</translation>
     </message>
     <message>
         <source>Disable background</source>
-        <translation type="unfinished"></translation>
+        <translation>Vypnout pozadí</translation>
     </message>
     <message>
         <source>Hide chat header</source>
@@ -257,18 +257,18 @@ Minimální délka je 5 znaků .</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <translation>Chybní protokol</translation>
     </message>
 </context>
 <context>
     <name>ContactsPage</name>
     <message>
         <source>Add Contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat kontakt</translation>
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished">Kontakty</translation>
+        <translation>Kontakty</translation>
     </message>
 </context>
 <context>
@@ -305,7 +305,7 @@ Minimální délka je 5 znaků .</translation>
     <name>CreateSecretDialogPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Nový tajný rozhovor</translation>
+        <translation>Nový tajný rozhovor</translation>
     </message>
 </context>
 <context>
@@ -320,7 +320,7 @@ Minimální délka je 5 znaků .</translation>
     </message>
     <message>
         <source>Contacts:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontakty:</translation>
     </message>
     <message>
         <source>Heartbeat:</source>
@@ -328,72 +328,72 @@ Minimální délka je 5 znaků .</translation>
     </message>
     <message>
         <source>Connected</source>
-        <translation type="unfinished">Připojen</translation>
+        <translation>Připojen</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <translation>Chybní protokol</translation>
     </message>
     <message>
         <source>Not Connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Nespojen</translation>
     </message>
 </context>
 <context>
     <name>DialogInfoPage</name>
     <message>
         <source>Delete secret chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Vymazat tajný rozhovor</translation>
     </message>
     <message>
         <source>Delete group</source>
-        <translation type="unfinished"></translation>
+        <translation>Vymazat skupinu</translation>
     </message>
     <message>
         <source>Delete conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Vymazat konverzaci</translation>
     </message>
     <message>
         <source>Deleting secret chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Vymazání tajného rozhovoru</translation>
     </message>
     <message>
         <source>Deleting group</source>
-        <translation type="unfinished"></translation>
+        <translation>Vymazání skupiny</translation>
     </message>
     <message>
         <source>Deleting conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Vymazání konverzace</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished"></translation>
+        <translation>Akce</translation>
     </message>
     <message>
         <source>Enable notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Povolit oznamování</translation>
     </message>
     <message>
         <source>Disable notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Zakázat oznamování</translation>
     </message>
     <message>
         <source>Add to contacts</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat ke kontaktúm</translation>
     </message>
 </context>
 <context>
     <name>DialogItem</name>
     <message>
         <source>You:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ty:</translation>
     </message>
 </context>
 <context>
     <name>DialogTextInput</name>
     <message>
         <source>Message...</source>
-        <translation type="unfinished">Zpráva...</translation>
+        <translation>Zpráva...</translation>
     </message>
 </context>
 <context>
@@ -402,83 +402,81 @@ Minimální délka je 5 znaků .</translation>
         <source>No Chats
 
 Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation type="unfinished">Žádné rozhovory
-
-Přidejte osobu výběrem &quot;Kontakty&quot; z menu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Chats</source>
-        <translation type="unfinished">Rozhovory</translation>
+        <translation>Rozhovory</translation>
     </message>
     <message>
         <source>Connecting...</source>
-        <translation type="unfinished">Připojuji...</translation>
+        <translation>Připojování...</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Vymazat</translation>
+        <translation>Vymazat</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished">Vymazání rozhovoru</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished">Vymazání tajného rozhovoru</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished">Vymazání skupiny</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>DialogsPullDownMenu</name>
     <message>
         <source>Profile</source>
-        <translation type="unfinished">Profil</translation>
+        <translation>Profil</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Nový tajný rozhovor</translation>
+        <translation>Nový tajný rozhovor</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation type="unfinished">Nová skupina</translation>
+        <translation>Nová skupina</translation>
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished">Kontakty</translation>
+        <translation>Kontakty</translation>
     </message>
 </context>
 <context>
     <name>ErrorsPage</name>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Vymazat chyby</translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>Chybní protokol je prázdný</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <translation>Chybný protokol</translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kód chyby</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished"></translation>
+        <translation>Funkce:</translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Vymazání chyb</translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zpráva:</translation>
     </message>
 </context>
 <context>
@@ -549,7 +547,7 @@ Přidejte osobu výběrem &quot;Kontakty&quot; z menu</translation>
     </message>
     <message>
         <source>You</source>
-        <translation type="unfinished"></translation>
+        <translation>Ty</translation>
     </message>
 </context>
 <context>
@@ -587,7 +585,7 @@ Přidejte osobu výběrem &quot;Kontakty&quot; z menu</translation>
     <name>MessageQuotedItem</name>
     <message>
         <source>You</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ty</translation>
     </message>
 </context>
 <context>
@@ -666,25 +664,25 @@ Přidejte osobu výběrem &quot;Kontakty&quot; z menu</translation>
     <name>SecretDialogDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation type="unfinished">Tajný rozhovor byl zrušen</translation>
+        <translation>Tajný rozhovor byl zrušen</translation>
     </message>
 </context>
 <context>
     <name>SecretDialogWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>
-        <translation type="unfinished">Čekám pro %1 abych šel online</translation>
+        <translation>Čekám pro %1 abych šel online</translation>
     </message>
 </context>
 <context>
     <name>SettingsPage</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení</translation>
     </message>
     <message>
         <source>Chats</source>
-        <translation type="unfinished">Rozhovory</translation>
+        <translation>Rozhovory</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -692,7 +690,7 @@ Přidejte osobu výběrem &quot;Kontakty&quot; z menu</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>O</translation>
     </message>
 </context>
 <context>
@@ -734,15 +732,15 @@ Přidejte osobu výběrem &quot;Kontakty&quot; z menu</translation>
     </message>
     <message>
         <source>%1 has joined the group via invite link</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 přistoupil k skupině přes pozvání</translation>
     </message>
     <message>
         <source>Secret chat created by ��%1��</source>
-        <translation type="unfinished"></translation>
+        <translation>Tajný rozhovor vytvořen od ��%1��</translation>
     </message>
     <message>
         <source>Group created by ��%1��</source>
-        <translation type="unfinished"></translation>
+        <translation>Skupina vytvořena od ��%1��</translation>
     </message>
     <message>
         <source>Group name changed to ��%1��</source>

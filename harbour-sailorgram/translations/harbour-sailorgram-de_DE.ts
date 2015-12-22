@@ -185,15 +185,15 @@ Minimale Länge sind 5 Zeichen</translation>
     </message>
     <message>
         <source>Leave group</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppe verlassen</translation>
     </message>
     <message>
         <source>Leaving group</source>
-        <translation type="unfinished"></translation>
+        <translation>Verlasse Gruppe</translation>
     </message>
     <message>
         <source>Change title</source>
-        <translation type="unfinished"></translation>
+        <translation>Titel ändern</translation>
     </message>
     <message>
         <source>Add member</source>
@@ -268,7 +268,7 @@ Minimale Länge sind 5 Zeichen</translation>
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished">Kontakte</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -305,7 +305,7 @@ Minimale Länge sind 5 Zeichen</translation>
     <name>CreateSecretDialogPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Neuer geheimer Chat</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -316,7 +316,7 @@ Minimale Länge sind 5 Zeichen</translation>
     </message>
     <message>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualisieren</translation>
     </message>
     <message>
         <source>Contacts:</source>
@@ -393,7 +393,7 @@ Minimale Länge sind 5 Zeichen</translation>
     <name>DialogTextInput</name>
     <message>
         <source>Message...</source>
-        <translation type="unfinished">Nachricht…</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -426,7 +426,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished">lösche Gruppe</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -437,7 +437,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Neuer geheimer Chat</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>New Group</source>
@@ -445,14 +445,14 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished">Kontakte</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ErrorsPage</name>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler löschen</translation>
     </message>
     <message>
         <source>Error log is empty</source>
@@ -476,7 +476,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nachricht:</translation>
     </message>
 </context>
 <context>
@@ -520,11 +520,11 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>MessageAudio</name>
     <message>
         <source>Duration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Länge: %1</translation>
     </message>
     <message>
         <source>Audio recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Audioaufnahme</translation>
     </message>
     <message>
         <source>Size: %1</source>
@@ -543,7 +543,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Opening media</source>
-        <translation type="unfinished"></translation>
+        <translation>Öffne Mediendatei</translation>
     </message>
     <message>
         <source>You</source>
@@ -600,7 +600,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Duration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Länge: %1</translation>
     </message>
 </context>
 <context>
@@ -653,18 +653,18 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>User</source>
-        <translation type="unfinished"></translation>
+        <translation>Benutzer</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation type="unfinished">Nutzername</translation>
+        <translation>Benutzername</translation>
     </message>
 </context>
 <context>
     <name>SecretDialogDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation type="unfinished">Geheimer Chat geschlossen</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -682,7 +682,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Chats</source>
-        <translation type="unfinished">Chats</translation>
+        <translation>Chats</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -690,7 +690,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Über</translation>
     </message>
 </context>
 <context>
@@ -799,7 +799,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Last Seen %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Zuletzt gesehen %1</translation>
     </message>
 </context>
 <context>
@@ -810,7 +810,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Begin Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Neuer geheimer Chat</translation>
     </message>
     <message>
         <source>Phone Number</source>

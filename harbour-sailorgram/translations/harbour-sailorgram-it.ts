@@ -96,19 +96,19 @@
     <name>AddContactPage</name>
     <message>
         <source>Add Contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi contatto</translation>
     </message>
     <message>
         <source>First Name</source>
-        <translation type="unfinished">Nome</translation>
+        <translation>Nome</translation>
     </message>
     <message>
         <source>Last Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Cognome</translation>
     </message>
     <message>
         <source>Telephone Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero di telefono</translation>
     </message>
 </context>
 <context>
@@ -257,18 +257,18 @@ La lunghezza minima è di 5 caratteri.</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished">Log degli errori</translation>
+        <translation>Log errore</translation>
     </message>
 </context>
 <context>
     <name>ContactsPage</name>
     <message>
         <source>Add Contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Aggiungi contatto</translation>
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished">Contatti</translation>
+        <translation>Contatti</translation>
     </message>
 </context>
 <context>
@@ -305,7 +305,7 @@ La lunghezza minima è di 5 caratteri.</translation>
     <name>CreateSecretDialogPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Nuova chat segreta</translation>
+        <translation>Nuova chat segreta</translation>
     </message>
 </context>
 <context>
@@ -343,57 +343,57 @@ La lunghezza minima è di 5 caratteri.</translation>
     <name>DialogInfoPage</name>
     <message>
         <source>Delete secret chat</source>
-        <translation type="unfinished">Elimina chat segreta</translation>
+        <translation>Elimina chat segreta</translation>
     </message>
     <message>
         <source>Delete group</source>
-        <translation type="unfinished">Elimina gruppo</translation>
+        <translation>Elimina gruppo</translation>
     </message>
     <message>
         <source>Delete conversation</source>
-        <translation type="unfinished">Elimina conversazione</translation>
+        <translation>Elimina conversazione</translation>
     </message>
     <message>
         <source>Deleting secret chat</source>
-        <translation type="unfinished">Rimozione chat segreta</translation>
+        <translation>Elimina chat segreta</translation>
     </message>
     <message>
         <source>Deleting group</source>
-        <translation type="unfinished">Rimozione gruppo</translation>
+        <translation>Elimina gruppo</translation>
     </message>
     <message>
         <source>Deleting conversation</source>
-        <translation type="unfinished">Rimozione conversazione</translation>
+        <translation>Rimozione conversazione</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Azioni</translation>
+        <translation>Azioni</translation>
     </message>
     <message>
         <source>Enable notifications</source>
-        <translation type="unfinished">Abilita notifiche</translation>
+        <translation>Abilita notifiche</translation>
     </message>
     <message>
         <source>Disable notifications</source>
-        <translation type="unfinished">Disabilita notifiche</translation>
+        <translation>Disabilita notifiche</translation>
     </message>
     <message>
         <source>Add to contacts</source>
-        <translation type="unfinished">Aggiungi ai contatti</translation>
+        <translation>Aggiungi ai contatti</translation>
     </message>
 </context>
 <context>
     <name>DialogItem</name>
     <message>
         <source>You:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tu</translation>
     </message>
 </context>
 <context>
     <name>DialogTextInput</name>
     <message>
         <source>Message...</source>
-        <translation type="unfinished">Messaggio...</translation>
+        <translation>Messaggio...</translation>
     </message>
 </context>
 <context>
@@ -402,52 +402,52 @@ La lunghezza minima è di 5 caratteri.</translation>
         <source>No Chats
 
 Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation type="unfinished">Nessuna conversazione
+        <translation>Nessuna conversazione
 
 Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
     </message>
     <message>
         <source>Chats</source>
-        <translation type="unfinished">Chat</translation>
+        <translation>Conversazioni</translation>
     </message>
     <message>
         <source>Connecting...</source>
-        <translation type="unfinished">Connessione...</translation>
+        <translation>Connessione in corso...</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Elimina</translation>
+        <translation>Elimina</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished">Rimozione conversazione</translation>
+        <translation>Rimozione conversazione</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished">Rimozione chat segreta</translation>
+        <translation>Rimozione chat segreta</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished">Rimozione gruppo</translation>
+        <translation>Rimozione gruppo</translation>
     </message>
 </context>
 <context>
     <name>DialogsPullDownMenu</name>
     <message>
         <source>Profile</source>
-        <translation type="unfinished">Profilo</translation>
+        <translation>Profilo</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Nuova chat segreta</translation>
+        <translation>Nuova chat segreta</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation type="unfinished">Nuovo gruppo</translation>
+        <translation>Nuovo gruppo</translation>
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished">Contatti</translation>
+        <translation>Contatti</translation>
     </message>
 </context>
 <context>
@@ -549,7 +549,7 @@ Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
     </message>
     <message>
         <source>You</source>
-        <translation type="unfinished"></translation>
+        <translation>Tu</translation>
     </message>
 </context>
 <context>
@@ -587,7 +587,7 @@ Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
     <name>MessageQuotedItem</name>
     <message>
         <source>You</source>
-        <translation type="unfinished"></translation>
+        <translation>Tu</translation>
     </message>
 </context>
 <context>
@@ -666,14 +666,14 @@ Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
     <name>SecretDialogDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation type="unfinished">Chat segreta rimossa</translation>
+        <translation>Chat segreta rimossa</translation>
     </message>
 </context>
 <context>
     <name>SecretDialogWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>
-        <translation type="unfinished">Attendo che %1 si colleghi</translation>
+        <translation>Attendo che %1 si colleghi</translation>
     </message>
 </context>
 <context>
@@ -734,19 +734,19 @@ Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
     </message>
     <message>
         <source>%1 has joined the group via invite link</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 si è unito al gruppo tramite link d&apos;invito</translation>
     </message>
     <message>
         <source>Secret chat created by ��%1��</source>
-        <translation type="unfinished"></translation>
+        <translation>Chat segreta creata da «%1»</translation>
     </message>
     <message>
         <source>Group created by ��%1��</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppo creato da «%1»</translation>
     </message>
     <message>
         <source>Group name changed to ��%1��</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome del gruppo cambiato in «%1»</translation>
     </message>
 </context>
 <context>
