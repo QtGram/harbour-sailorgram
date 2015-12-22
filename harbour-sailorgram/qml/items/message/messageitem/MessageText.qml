@@ -2,6 +2,7 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../../../models"
+import "../../../js/ColorScheme.js" as ColorScheme
 import "../../../js/TelegramHelper.js" as TelegramHelper
 import "../../../js/TelegramAction.js" as TelegramAction
 
@@ -42,16 +43,7 @@ Item
             verticalAlignment: Text.AlignTop
             wrapMode: Text.Wrap
             visible: text.length > 0
-
-            color: {
-                if(TelegramHelper.isServiceMessage(message))
-                    return Theme.secondaryHighlightColor;
-
-                if(message.out)
-                    return Theme.highlightDimmerColor;
-
-                return Theme.primaryColor;
-            }
+            color: ColorScheme.colorize(message, context)
         }
 
         Row
@@ -72,19 +64,14 @@ Item
                 text: TelegramHelper.printableDate(message.date)
                 visible: !TelegramHelper.isServiceMessage(message)
                 width: messagetext.calculatedWidth - msgstatus.paintedWidth
-
-                color: {
-                    if(message.out || TelegramHelper.isServiceMessage(message))
-                        return Theme.highlightDimmerColor;
-
-                    return Theme.primaryColor;
-                }
+                color: ColorScheme.colorize(message, context)
             }
 
             MessageStatus
             {
                 id: msgstatus
                 height: lbldate.paintedHeight
+                context: messagetext.context
                 message: messagetext.message
             }
         }

@@ -2,6 +2,7 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../../../models"
+import "../../../js/ColorScheme.js" as ColorScheme
 import "../../../js/TelegramHelper.js" as TelegramHelper
 import "../../../js/TelegramAction.js" as TelegramAction
 
@@ -44,13 +45,7 @@ Item
                 wrapMode: Text.NoWrap
                 horizontalAlignment: Text.AlignLeft
                 verticalAlignment: Text.AlignVCenter
-
-                color: {
-                    if(message.out)
-                        return Theme.rgba(Theme.highlightDimmerColor, 1.0);
-
-                    return Theme.rgba(Theme.secondaryColor, 1.0);
-                }
+                color: ColorScheme.colorize(message, context)
 
                 text: {
                     if(TelegramHelper.isServiceMessage(replyToMessage))
@@ -75,17 +70,10 @@ Item
                 rawText: TelegramHelper.isServiceMessage(replyToMessage) ? TelegramAction.actionType(context.telegram, dialog, replyToMessage) : replyToMessage.message
                 verticalAlignment: Text.AlignTop
                 wrapMode: Text.Wrap
+                elide: Text.AlignRight
+                maximumLineCount: 3
                 visible: text.length > 0
-
-                color: {
-                    if(TelegramHelper.isServiceMessage(message))
-                        return Theme.secondaryHighlightColor;
-
-                    if(message.out)
-                        return Theme.highlightDimmerColor;
-
-                    return Theme.primaryColor;
-                }
+                color: ColorScheme.colorize(message, context)
             }
         }
     }

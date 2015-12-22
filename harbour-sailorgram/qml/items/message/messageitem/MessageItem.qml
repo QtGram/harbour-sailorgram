@@ -4,6 +4,7 @@ import harbour.sailorgram.TelegramQml 1.0
 import "../../../models"
 import "../../../menus"
 import "media"
+import "../../../js/ColorScheme.js" as ColorScheme
 import "../../../js/TelegramConstants.js" as TelegramConstants
 import "../../../js/TelegramHelper.js" as TelegramHelper
 
@@ -139,7 +140,8 @@ ListItem
     {
         id: bubble
         radius: 10
-        visible: context.bubbleshidden
+        visible: !context.bubbleshidden
+        color: ColorScheme.colorizeBubble(message, context)
 
         anchors {
             left: message.out ? parent.left : undefined
@@ -177,16 +179,6 @@ ListItem
 
             return h;
         }
-
-        color: {
-            if(TelegramHelper.isServiceMessage(message))
-                return "transparent"
-
-            if(message.out)
-                return Theme.secondaryColor;
-
-            return Theme.rgba(Qt.tint(Theme.secondaryHighlightColor, Theme.rgba(Theme.highlightDimmerColor, 0.3)), 0.7);
-        }
     }
 
     Column
@@ -210,16 +202,9 @@ ListItem
             font.pixelSize: Theme.fontSizeMedium
             wrapMode: Text.NoWrap
             verticalAlignment: Text.AlignVCenter
-
-            color: {
-                if(message.out)
-                    return Theme.rgba(Theme.highlightDimmerColor, 1.0);
-
-                return Theme.rgba(Theme.secondaryColor, 1.0);
-            }
+            color: ColorScheme.colorize(message, context)
 
             text: {
-
                 if(TelegramHelper.isServiceMessage(message))
                     return "";
 

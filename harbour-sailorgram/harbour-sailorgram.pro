@@ -172,4 +172,5 @@ DISTFILES += \
     qml/pages/contacts/AddContactPage.qml \
     qml/js/TextElaborator.js \
     qml/items/message/messageitem/MessageTextContent.qml \
-    qml/items/message/messageitem/MessageQuotedItem.qml
+    qml/items/message/messageitem/MessageQuotedItem.qml \
+    qml/js/ColorScheme.js
