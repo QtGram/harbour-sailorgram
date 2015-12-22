@@ -39,11 +39,11 @@ Item
             horizontalAlignment: TelegramHelper.isServiceMessage(message) ? Text.AlignHCenter : (message.out ? Text.AlignLeft : Text.AlignRight)
             emojiPath: context.sailorgram.emojiPath
             rawText: TelegramHelper.isServiceMessage(message) ? TelegramAction.actionType(context.telegram, dialog, message) : messageitem.message.message
-            linkColor: message.out ? Theme.secondaryHighlightColor : Theme.secondaryColor
             verticalAlignment: Text.AlignTop
             wrapMode: Text.Wrap
             visible: text.length > 0
             color: ColorScheme.colorize(message, context)
+            linkColor: ColorScheme.colorizeLink(message, context)
         }
 
         Row

@@ -94,7 +94,19 @@ Item
                     verticalAlignment: Text.AlignVCenter
                     height: parent.height
                     color: Theme.highlightColor
+                    elide: Text.ElideRight
 
+                    width: {
+                        var w = parent.width - lbltime.contentWidth;
+
+                        if(imgchat.visible)
+                            w -= imgchat.width + Theme.paddingSmall;
+
+                        if(imgmute.visible)
+                            w -= imgmute.width + Theme.paddingSmall;
+
+                        return w;
+                    }
                 }
 
                 Image {
@@ -114,22 +126,6 @@ Item
                     verticalAlignment: Text.AlignVCenter
                     horizontalAlignment: Text.AlignRight
                     text: TelegramHelper.printableDate(message.date)
-
-                    width: {
-                        var w = parent.width - lbltitle.contentWidth;
-
-                        if(imgchat.visible)
-                            w -= imgchat.width + (Theme.paddingSmall * 2);
-                        else
-                            w -= Theme.paddingSmall;
-
-                        if(imgmute.visible)
-                            w -= imgmute.width + (Theme.paddingSmall * 2);
-                        else
-                            w -= Theme.paddingSmall;
-
-                        return w;
-                    }
                 }
             }
 

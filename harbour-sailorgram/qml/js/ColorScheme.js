@@ -45,3 +45,9 @@ function colorizeBubble(message, context)
 
     return Silica.Theme.rgba(Qt.tint(Silica.Theme.secondaryHighlightColor, Silica.Theme.rgba(Silica.Theme.highlightDimmerColor, 0.3)), 0.7);
 }
+
+function colorizeLink(message, context)
+{
+    var bubblecolor = Silica.Theme.rgba(colorizeBubble(message,  context), 1.0);
+    return Qt.rgba(1.0 - bubblecolor.r, 1.0 - bubblecolor.g, 1.0 - bubblecolor.b, 1.0);
+}
