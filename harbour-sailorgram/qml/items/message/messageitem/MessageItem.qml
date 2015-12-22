@@ -139,6 +139,7 @@ ListItem
     {
         id: bubble
         radius: 10
+        visible: context.bubbleshidden
 
         anchors {
             left: message.out ? parent.left : undefined

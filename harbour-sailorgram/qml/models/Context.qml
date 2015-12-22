@@ -1,7 +1,7 @@
 import QtQuick 2.1
 import harbour.sailorgram.DBus 1.0
 import harbour.sailorgram.SailorGram 1.0
-import harbour.sailorgram.Telegram 1.0
+import harbour.sailorgram.TelegramLocalStorage 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../js/Settings.js" as Settings
 import "../js/TelegramHelper.js" as TelegramHelper
@@ -14,7 +14,7 @@ QtObject
     property bool sendwithreturn: false
     property bool backgrounddisabled: false
     property bool chatheaderhidden: false
-    property bool hidebubbles: false
+    property bool bubbleshidden: false
 
     property TelegramLocalStorage telegramlocalstorage: TelegramLocalStorage { }
     property ScreenBlank screenblank: ScreenBlank { }

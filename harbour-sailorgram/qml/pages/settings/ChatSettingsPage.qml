@@ -15,7 +15,7 @@ Dialog
         context.sendwithreturn = tssendwithreturn.checked;
         context.backgrounddisabled = tsdisablebackground.checked;
         context.chatheaderhidden = tshideheader.checked
-        context.hidebubbles = tshidebubbles.checked
+        context.bubbleshidden = tshidebubbles.checked
         Settings.set("backgrounddisabled", tsdisablebackground.checked);
         Settings.set("sendwithreturn", tssendwithreturn.checked);
         Settings.set("chatheaderhidden", tshideheader.checked);
@@ -66,7 +66,7 @@ Dialog
                 id: tshidebubbles
                 anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
                 text: qsTr("Hide Bubbles")
-                checked: context.hidebubbles
+                checked: context.bubbleshidden
             }
         }
     }
