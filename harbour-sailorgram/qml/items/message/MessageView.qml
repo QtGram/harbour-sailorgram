@@ -11,8 +11,7 @@ SilicaListView
     currentIndex: -1
     verticalLayoutDirection: ListView.BottomToTop
     spacing: Theme.paddingLarge
-    cacheBuffer: height * 2
-    pressDelay: 0
+    cacheBuffer: (dialogpage.isPortrait ? Screen.height : Screen.width) * 2
     clip: true
 
     VerticalScrollDecorator { flickable:  messageview }
