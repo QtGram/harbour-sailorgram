@@ -386,7 +386,7 @@ La lunghezza minima è di 5 caratteri.</translation>
     <name>DialogItem</name>
     <message>
         <source>You:</source>
-        <translation>Tu</translation>
+        <translation>Tu:</translation>
     </message>
 </context>
 <context>

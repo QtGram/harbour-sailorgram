@@ -371,7 +371,7 @@ Minimumslængde er fem tegn.</translation>
     </message>
     <message>
         <source>Enable notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivér påmindelser</translation>
     </message>
     <message>
         <source>Disable notifications</source>
@@ -585,7 +585,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>MessageQuotedItem</name>
     <message>
         <source>You</source>
-        <translation type="unfinished">Dig</translation>
+        <translation>Dig</translation>
     </message>
 </context>
 <context>
@@ -671,7 +671,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>SecretDialogWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>
-        <translation type="unfinished"></translation>
+        <translation>Venter på at %1 bliver tilgængelig</translation>
     </message>
 </context>
 <context>
@@ -732,7 +732,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>%1 has joined the group via invite link</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 er kommet med i gruppen efter invitation</translation>
     </message>
     <message>
         <source>Secret chat created by ��%1��</source>
