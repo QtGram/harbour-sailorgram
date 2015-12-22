@@ -61,7 +61,7 @@ QtObject
             var dialog = context.telegram.messageDialog(msg.id);
             var peerid = TelegramHelper.peerId(dialog);
 
-            if(userdata.isMuted(peerid) || (peerid === context.telegram.myUser.id)) // Don't notify myself!
+            if(userdata.isMuted(peerid) || (msg.fromId === context.telegram.me)) // Don't notify myself!
                 return;
 
             var user = context.telegram.user(msg.fromId);
