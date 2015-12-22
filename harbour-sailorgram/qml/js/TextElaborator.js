@@ -46,6 +46,14 @@ function linkify(s)
     return s;
 }
 
+function mentionify(s, highlightcolor)
+{
+    return s.replace(/\B@[a-zA-Z0-9_]+/gi,
+                     function(match) {
+                         return "<font color=\"" + highlightcolor + "\">" + match + "</font>";
+                     });
+}
+
 function replaceLtGt(s)
 {
     return s.replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -56,11 +64,12 @@ function replaceNewlines(s)
     return s.replace(/(?:\r\n|\r|\n)/g, "<br/>");
 }
 
-function elaborate(s, emojipath)
+function elaborate(s, emojipath, highlightcolor)
 {
     var res = replaceLtGt(s);
     res = replaceNewlines(res);
     res = emojify(res, emojipath);
     res = linkify(res);
+    res = mentionify(res, highlightcolor);
     return "<span>" + res + "</span>";
 }

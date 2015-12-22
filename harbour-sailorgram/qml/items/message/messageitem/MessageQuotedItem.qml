@@ -68,7 +68,7 @@ Item
                 emojiPath: context.sailorgram.emojiPath
                 rawText: TelegramHelper.isServiceMessage(replyToMessage) ? TelegramAction.actionType(context.telegram, dialog, replyToMessage) : replyToMessage.message
                 verticalAlignment: Text.AlignTop
-                wrapMode: Text.Wrap
+                wrapMode: Text.WordWrap
                 elide: Text.ElideRight
                 maximumLineCount: 3
                 visible: text.length > 0

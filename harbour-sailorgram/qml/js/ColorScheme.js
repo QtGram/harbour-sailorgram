@@ -41,13 +41,13 @@ function colorizeBubble(message, context)
         return "transparent"
 
     if(message.out)
-        return Silica.Theme.secondaryColor;
+        return Silica.Theme.rgba(Silica.Theme.secondaryColor, 1.0);
 
-    return Silica.Theme.rgba(Qt.tint(Silica.Theme.secondaryHighlightColor, Silica.Theme.rgba(Silica.Theme.highlightDimmerColor, 0.3)), 0.7);
+    return Silica.Theme.rgba(Qt.tint(Silica.Theme.secondaryHighlightColor, Silica.Theme.rgba(Silica.Theme.highlightDimmerColor, 0.3)), 1.0);
 }
 
 function colorizeLink(message, context)
 {
     var bubblecolor = Silica.Theme.rgba(colorizeBubble(message,  context), 1.0);
-    return Qt.rgba(1.0 - bubblecolor.r, 1.0 - bubblecolor.g, 1.0 - bubblecolor.b, 1.0);
+    return Qt.lighter(Qt.rgba(1.0 - bubblecolor.r, 1.0 - bubblecolor.g, 1.0 - bubblecolor.b, 1.0), 1.5);
 }

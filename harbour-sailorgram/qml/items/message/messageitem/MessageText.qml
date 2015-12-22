@@ -40,7 +40,7 @@ Item
             emojiPath: context.sailorgram.emojiPath
             rawText: TelegramHelper.isServiceMessage(message) ? TelegramAction.actionType(context.telegram, dialog, message) : messageitem.message.message
             verticalAlignment: Text.AlignTop
-            wrapMode: Text.Wrap
+            wrapMode: Text.WordWrap
             visible: text.length > 0
             color: ColorScheme.colorize(message, context)
             linkColor: ColorScheme.colorizeLink(message, context)
