@@ -75,7 +75,7 @@ Page
         context: secretconversationpage.context
 
         onAtYBeginningChanged: {
-            if(!atYBeginning || messagesmodel.refreshing || (messageview.count <= 0))
+            if(!atYBeginning || messagesmodel.refreshing || (messageview.count <= 0) || !draggingVertically)
                 return;
 
             messagesmodel.loadMore();
