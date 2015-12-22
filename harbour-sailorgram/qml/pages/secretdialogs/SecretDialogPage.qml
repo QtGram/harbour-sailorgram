@@ -74,6 +74,13 @@ Page
         anchors { left: parent.left; top: header.bottom; right: parent.right; bottom: bottomcontainer.top; topMargin: Theme.paddingSmall }
         context: secretconversationpage.context
 
+        onAtYBeginningChanged: {
+            if(!atYBeginning || messagesmodel.refreshing || (messageview.count <= 0))
+                return;
+
+            messagesmodel.loadMore();
+        }
+
         model: MessagesModel {
             id: messagesmodel
 
