@@ -49,6 +49,13 @@ InverseMouseArea
             top: parent.top
             topMargin: Theme.paddingMedium
         }
+
+        EnterKey.onClicked: {
+            if(!context.sendwithreturn)
+                return;
+
+            sendMessage();
+        }
     }
 
     Row
