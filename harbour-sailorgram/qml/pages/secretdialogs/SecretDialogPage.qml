@@ -50,82 +50,92 @@ Page
         anchors { left: parent.left; top: parent.top; right: parent.right }
     }
 
-    BusyIndicator
+    SilicaFlickable
     {
-        anchors.centerIn: parent
-        size: BusyIndicatorSize.Large
-        running: messagesmodel.refreshing
-    }
+        anchors.fill: parent
 
-    PeerItem
-    {
-        id: header
-        visible: !context.chatheaderhidden
-        anchors { left: parent.left; top: parent.top; right: parent.right; leftMargin: Theme.horizontalPageMargin; topMargin: Theme.paddingMedium }
-        height: context.chatheaderhidden ? 0 : Theme.itemSizeSmall
-        context: secretconversationpage.context
-        dialog: secretconversationpage.dialog
-        user: secretconversationpage.user
-    }
+        PullDownMenu
+        {
+            id: pulldownmenu
+            enabled: messageview.atYBeginning && !messagesmodel.refreshing && (messageview.count > 0)
 
-    MessageView
-    {
-        id: messageview
-        anchors { left: parent.left; top: header.bottom; right: parent.right; bottom: bottomcontainer.top; topMargin: Theme.paddingSmall }
-        context: secretconversationpage.context
-
-        onAtYBeginningChanged: {
-            if(!atYBeginning || messagesmodel.refreshing || (messageview.count <= 0) || !draggingVertically)
-                return;
-
-            messagesmodel.loadMore();
-        }
-
-        model: MessagesModel {
-            id: messagesmodel
-
-            onCountChanged: {
-                if(!count)
-                    return;
-
-                messagesmodel.setReaded(); /* We are in this chat, always mark these messages as read */
+            MenuItem
+            {
+                text: qsTr("Load more messages")
+                onClicked: messagesmodel.loadMore();
             }
         }
 
-        delegate: MessageItem {
+        BusyIndicator
+        {
+            anchors.centerIn: parent
+            size: BusyIndicatorSize.Large
+            running: messagesmodel.refreshing
+        }
+
+        PeerItem
+        {
+            id: header
+            visible: !context.chatheaderhidden
+            anchors { left: parent.left; top: parent.top; right: parent.right; leftMargin: Theme.horizontalPageMargin; topMargin: Theme.paddingMedium }
+            height: context.chatheaderhidden ? 0 : Theme.itemSizeSmall
             context: secretconversationpage.context
-            message: item
+            dialog: secretconversationpage.dialog
+            user: secretconversationpage.user
         }
 
-        header: Item {
-            width: messageview.width
-            height: dialogtextinput.visible ? dialogtextinput.height : Theme.itemSizeSmall
-        }
+        MessageView
+        {
+            id: messageview
+            anchors { left: parent.left; top: header.bottom; right: parent.right; bottom: bottomcontainer.top; topMargin: Theme.paddingSmall }
+            context: secretconversationpage.context
 
-        Column {
-            id: headerarea
-            y: messageview.headerItem.y
-            parent: messageview.contentItem
-            width: parent.width
+            model: MessagesModel {
+                id: messagesmodel
 
-            DialogTextInput {
-                id: dialogtextinput
-                width: parent.width
-                messagesModel: messagesmodel
-                context: dialogpage.context
-                dialog: dialogpage.dialog
-                visible: chat && (chat.classType !== TelegramConstants.typeEncryptedChatDiscarded) && (chat.classType !== TelegramConstants.typeEncryptedChatWaiting)
+                onCountChanged: {
+                    if(!count)
+                        return;
+
+                    messagesmodel.setReaded(); /* We are in this chat, always mark these messages as read */
+                }
             }
 
-            SecretDialogDiscarded {
-                width: parent.width
-                chat: secretconversationpage.chat
+            delegate: MessageItem {
+                context: secretconversationpage.context
+                message: item
             }
 
-            SecretDialogWaiting {
+            header: Item {
+                width: messageview.width
+                height: dialogtextinput.visible ? dialogtextinput.height : Theme.itemSizeSmall
+            }
+
+            Column {
+                id: headerarea
+                y: messageview.headerItem.y
+                parent: messageview.contentItem
                 width: parent.width
-                chat: secretconversationpage.chat
-                user: secretconversationpage.user
+
+                DialogTextInput {
+                    id: dialogtextinput
+                    width: parent.width
+                    messagesModel: messagesmodel
+                    context: dialogpage.context
+                    dialog: dialogpage.dialog
+                    visible: chat && (chat.classType !== TelegramConstants.typeEncryptedChatDiscarded) && (chat.classType !== TelegramConstants.typeEncryptedChatWaiting)
+                }
+
+                SecretDialogDiscarded {
+                    width: parent.width
+                    chat: secretconversationpage.chat
+                }
+
+                SecretDialogWaiting {
+                    width: parent.width
+                    chat: secretconversationpage.chat
+                    user: secretconversationpage.user
+                }
             }
         }
     }

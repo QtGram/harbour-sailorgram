@@ -390,6 +390,13 @@ Minimumslængde er fem tegn.</translation>
     </message>
 </context>
 <context>
+    <name>DialogPage</name>
+    <message>
+        <source>Load more messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DialogTextInput</name>
     <message>
         <source>Message...</source>
