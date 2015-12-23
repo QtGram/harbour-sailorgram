@@ -44,7 +44,7 @@ Item
         target: context.telegram.userData
 
         onMuteChanged: {
-            if(user && (id !== user.id))
+            if(id !== TelegramHelper.peerId(dialog))
                 return;
 
             dialogitem.muted = context.telegram.userData.isMuted(id);
