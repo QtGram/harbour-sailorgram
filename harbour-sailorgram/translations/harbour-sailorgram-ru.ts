@@ -547,10 +547,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <source>Opening media</source>
         <translation>Открытие медиа</translation>
     </message>
-    <message>
-        <source>You</source>
-        <translation>Вы:</translation>
-    </message>
 </context>
 <context>
     <name>MessageMenu</name>

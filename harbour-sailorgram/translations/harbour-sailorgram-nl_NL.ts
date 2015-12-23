@@ -547,10 +547,6 @@ Selecteer een contactpersoon door te kiezen voor &quot;Contactpersonen&quot; in 
         <source>Opening media</source>
         <translation>Bezig met het openen van de media</translation>
     </message>
-    <message>
-        <source>You</source>
-        <translation>U</translation>
-    </message>
 </context>
 <context>
     <name>MessageMenu</name>

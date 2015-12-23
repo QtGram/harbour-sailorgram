@@ -1,10 +1,11 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
+import "../../../../js/TelegramMedia.js" as TelegramMedia
 
 Item
 {
     property alias source: image.source
-    property size imageSize: context.sailorgram.imageSize(image.source);
+    property alias imageSize: image.sourceSize
     property real transferProgress
 
     id: messagethumbnail
@@ -16,11 +17,8 @@ Item
         id: image
         smooth: true
         asynchronous: true
-        fillMode: Image.PreserveAspectFit
-        height: Theme.iconSizeLarge
-        width: height ? (height * imageSize.width / imageSize.height) : Theme.iconSizeLarge
-        sourceSize: Qt.size(width, height)
         visible: !progresscircle.visible && (image.status === Image.Ready)
+        sourceSize: TelegramMedia.thumbnailSize(imageSize)
     }
 
     BusyIndicator

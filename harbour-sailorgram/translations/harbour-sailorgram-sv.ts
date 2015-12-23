@@ -547,10 +547,6 @@ Välj en kontakt från &quot;Kontakter&quot; i ovanstående menu</translation>
         <source>Opening media</source>
         <translation>Öppnar media</translation>
     </message>
-    <message>
-        <source>You</source>
-        <translation>Du</translation>
-    </message>
 </context>
 <context>
     <name>MessageMenu</name>

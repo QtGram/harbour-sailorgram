@@ -14,7 +14,7 @@ ListItem
     property Message message
 
     function remorseNeeded(mediatype, type) {
-        if(loader.item.fileHandler.downloaded) // No remorse for downloaded medias
+        if(medialoader.item.fileHandler.downloaded) // No remorse for downloaded medias
             return false;
 
         if((mediatype === TelegramConstants.typeMessageMediaVideo) || (mediatype === TelegramConstants.typeMessageMediaAudio))
@@ -30,24 +30,24 @@ ListItem
     }
 
     function openOrDownloadMedia(canbeviewed, type) {
-        if(!loader.item.fileHandler.downloaded)
-            loader.item.fileHandler.download();
+        if(!medialoader.item.fileHandler.downloaded)
+            medialoader.item.fileHandler.download();
 
         if((message.media.classType === TelegramConstants.typeMessageMediaPhoto) || (type === "image")) {
-            pageStack.push(Qt.resolvedUrl("../../../pages/media/MediaPhotoPage.qml"), { "context": messageitem.context, "message": messageitem.message, "fileHandler": loader.item.fileHandler });
+            pageStack.push(Qt.resolvedUrl("../../../pages/media/MediaPhotoPage.qml"), { "context": messageitem.context, "message": messageitem.message, "fileHandler": medialoader.item.fileHandler });
             return;
         }
 
         if((message.media.classType === TelegramConstants.typeMessageMediaVideo) || (message.media.classType === TelegramConstants.typeMessageMediaAudio) || (type === "audio") || (type === "video")) {
-            pageStack.push(Qt.resolvedUrl("../../../pages/media/MediaPlayerPage.qml"), { "context": messageitem.context, "message": messageitem.message, "fileHandler": loader.item.fileHandler });
+            pageStack.push(Qt.resolvedUrl("../../../pages/media/MediaPlayerPage.qml"), { "context": messageitem.context, "message": messageitem.message, "fileHandler": medialoader.item.fileHandler });
             return;
         }
 
-        if(!loader.item.fileHandler.downloaded)
+        if(!medialoader.item.fileHandler.downloaded)
             return;
 
         popupmessage.show(qsTr("Opening media"));
-        Qt.openUrlExternally(loader.item.fileHandler.filePath);
+        Qt.openUrlExternally(medialoader.item.fileHandler.filePath);
     }
 
     function displayMedia() {
@@ -83,10 +83,10 @@ ListItem
         id: messagemenu
         context: messageitem.context
         message: messageitem.message
-        messageMediaItem: loader.item
+        messageMediaItem: medialoader.item
 
-        onCancelRequested: loader.item.cancelTransfer()
-        onDownloadRequested: loader.item.download()
+        onCancelRequested: medialoader.item.cancelTransfer()
+        onDownloadRequested: medialoader.item.download()
     }
 
     onClicked: displayMedia()
@@ -142,6 +142,20 @@ ListItem
         radius: 10
         visible: !context.bubbleshidden
         color: ColorScheme.colorizeBubble(message, context)
+        width: content.width
+        height: content.height
+
+        anchors {
+            left: message.out ? parent.left : undefined
+            right: message.out ? undefined : parent.right
+            leftMargin: Theme.paddingMedium
+            rightMargin: Theme.paddingMedium
+        }
+    }
+
+    Column
+    {
+        id: content
 
         anchors {
             left: message.out ? parent.left : undefined
@@ -151,65 +165,68 @@ ListItem
         }
 
         width: {
-            if(TelegramHelper.isServiceMessage(message))
-                return 0;
+            var w = messagetext.calculatedWidth;
 
-            var w = Math.max(lbluser.width, messagetext.calculatedWidth);
+            if(lbluser.visible)
+                w = Math.max(w, lbluser.contentWidth);
 
             if(quotedloader.item)
-                w = Math.max(w, quotedloader.width);
+                w = Math.max(w, quotedloader.item.calculatedWidth);
 
-            if(TelegramHelper.isMediaMessage(message))
-                w = Math.max(w, loader.width);
+            if(medialoader.item)
+                w = Math.max(w, medialoader.width);
+
+            var maxw = messageitem.width - (Theme.paddingMedium * 2);
+
+            if(w >= maxw)
+                return maxw;
 
             return w + Theme.paddingMedium;
         }
 
         height: {
-            if(TelegramHelper.isServiceMessage(message))
-                return 0;
+            var h = padding.height + messagetext.height + Theme.paddingSmall;
 
-            var h = lbluser.height + messagetext.height + Theme.paddingSmall;
+            if(lbluser.visible)
+                h += lbluser.contentHeight;
 
             if(quotedloader.item)
                 h += quotedloader.height;
 
-            if(TelegramHelper.isMediaMessage(message))
-                h += loader.height;
+            if(medialoader.item)
+                h += medialoader.height;
 
             return h;
         }
-    }
 
-    Column
-    {
-        id: content
-        anchors { top: parent.top; left: parent.left; right: parent.right; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
+        Item
+        {
+            id: padding
+            width: parent.width
+            height: Theme.paddingMedium
+        }
 
         Label
         {
             id: lbluser
 
-            anchors {
-                left: message.out ? parent.left : undefined;
-                right: message.out ? undefined : parent.right
-                leftMargin: message.out ? Theme.paddingSmall : undefined
-                rightMargin: message.out ? undefined : Theme.paddingSmall
+            anchors  {
+                left: parent.left
+                right: parent.right
+                leftMargin: Theme.paddingMedium
+                rightMargin: Theme.paddingMedium
             }
 
-            visible: !TelegramHelper.isServiceMessage(message)
-            font.bold: true
-            font.pixelSize: Theme.fontSizeMedium
-            wrapMode: Text.NoWrap
-            verticalAlignment: Text.AlignVCenter
             color: ColorScheme.colorize(message, context)
+            visible: !TelegramHelper.isServiceMessage(message) && !message.out
+            verticalAlignment: Text.AlignVCenter
+            font.pixelSize: Theme.fontSizeMedium
+            font.bold: true
+            wrapMode: Text.NoWrap
 
             text: {
-                if(TelegramHelper.isServiceMessage(message))
+                if(TelegramHelper.isServiceMessage(message) || message.out)
                     return "";
-
-                if(message.out)
-                    return qsTr("You");
 
                 return TelegramHelper.completeName(context.telegram.user(message.fromId))
             }
@@ -218,7 +235,13 @@ ListItem
         Loader
         {
             id: quotedloader
-            anchors { left: parent.left; right: parent.right }
+
+            anchors  {
+                left: parent.left
+                right: parent.right
+                leftMargin: Theme.paddingMedium
+                rightMargin: Theme.paddingMedium
+            }
 
             sourceComponent: {
                 if(message.replyToMsgId)
@@ -230,14 +253,8 @@ ListItem
 
         Loader
         {
-            id: loader
-
-            anchors {
-                left: message.out ? parent.left : undefined;
-                right: message.out ? undefined : parent.right
-                leftMargin: message.out ? Theme.paddingSmall : undefined
-                rightMargin: message.out ? undefined : Theme.paddingSmall
-            }
+            id: medialoader
+            anchors.horizontalCenter: parent.horizontalCenter
 
             sourceComponent: {
                 if(message.media) {
@@ -258,6 +275,14 @@ ListItem
         MessageText
         {
             id: messagetext
+
+            anchors  {
+                left: parent.left
+                right: parent.right
+                leftMargin: Theme.paddingMedium
+                rightMargin: Theme.paddingMedium
+            }
+
             width: parent.width
             context: messageitem.context
             message: messageitem.message

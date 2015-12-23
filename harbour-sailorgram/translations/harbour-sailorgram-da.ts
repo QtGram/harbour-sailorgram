@@ -545,10 +545,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <source>Opening media</source>
         <translation>Åbner medie</translation>
     </message>
-    <message>
-        <source>You</source>
-        <translation>Dig</translation>
-    </message>
 </context>
 <context>
     <name>MessageMenu</name>

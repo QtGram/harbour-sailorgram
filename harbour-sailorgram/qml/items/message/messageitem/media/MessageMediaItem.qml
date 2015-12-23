@@ -16,7 +16,7 @@ Item
     readonly property bool hasMedia: message.media ? (message.media.classType !== TelegramConstants.typeMessageMediaEmpty) : false
     readonly property real progressPercent: isUpload ? (100 * message.upload.uploaded / message.upload.totalSize) : filehandler.progressPercent
 
-    readonly property real mediaSize: {
+    readonly property real mediaSize: { // Size in bytes
         if(isUpload)
             return message.upload.totalSize;
 
@@ -41,6 +41,9 @@ Item
 
         if(context.telegram.documentIsSticker(message.media.document))
             return "image://theme/icon-m-other"; //FIXME: WebP: Not Supported
+
+        if((message.media.classType === TelegramConstants.typeMessageMediaPhoto) && filehandler.downloaded)
+            return filehandler.filePath;
 
         return fileHandler.thumbPath;
     }

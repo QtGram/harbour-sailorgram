@@ -80,13 +80,6 @@ QString SailorGram::fileName(const QString &filepath)
     return url.fileName();
 }
 
-QSize SailorGram::imageSize(const QString &filepath)
-{
-    QUrl url(filepath);
-    QImage img(url.path());
-    return img.size();
-}
-
 FileLocationObject* SailorGram::mediaLocation(MessageMediaObject *messagemediaobject)
 {
     if(!this->_telegram)

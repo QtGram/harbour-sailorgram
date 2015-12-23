@@ -173,4 +173,5 @@ DISTFILES += \
     qml/js/TextElaborator.js \
     qml/items/message/messageitem/MessageTextContent.qml \
     qml/items/message/messageitem/MessageQuotedItem.qml \
-    qml/js/ColorScheme.js
+    qml/js/ColorScheme.js \
+    qml/js/TelegramMedia.js

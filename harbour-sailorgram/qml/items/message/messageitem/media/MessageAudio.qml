@@ -25,6 +25,7 @@ MessageMediaItem
         MessageThumbnail
         {
             id: imgpreview
+            imageSize: messageaudio.fileHandler.imageSize
             source: messageaudio.mediaThumbnail || "image://theme/icon-m-sounds"
             transferProgress: progressPercent
         }

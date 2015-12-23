@@ -11,11 +11,19 @@ Item
     property Context context
     property Message message
     property Message replyToMessage: context.telegram.message(message.replyToMsgId)
-    property real calculatedWidth: Math.min(Math.max(mtctextcontent.contentWidth, lbluser.contentWidth), parent.width)
+    property real calculatedWidth: Math.max(dummytextcontent.contentWidth, lbluser.contentWidth)
 
     id: messagequoteditem
     height: column.height
-    width: parent.width
+
+    Text
+    {
+        id: dummytextcontent
+        visible: false
+        font.pixelSize: mtctextcontent.font.pixelSize
+        font.italic: mtctextcontent.font.italic
+        text: mtctextcontent.rawText
+    }
 
     Row
     {
@@ -40,12 +48,12 @@ Item
                 id: lbluser
                 width: parent.width
                 visible: !TelegramHelper.isServiceMessage(replyToMessage)
+                color: ColorScheme.colorize(message, context)
                 font.bold: true
                 font.pixelSize: Theme.fontSizeTiny
                 wrapMode: Text.NoWrap
-                horizontalAlignment: Text.AlignLeft
+                elide: Text.ElideRight
                 verticalAlignment: Text.AlignVCenter
-                color: ColorScheme.colorize(message, context)
 
                 text: {
                     if(TelegramHelper.isServiceMessage(replyToMessage))

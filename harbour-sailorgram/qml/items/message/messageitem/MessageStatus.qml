@@ -11,15 +11,23 @@ Label
     property Message message
 
     id: messagestatus
-    visible: message.out && !TelegramHelper.isServiceMessage(message)
+    visible: !TelegramHelper.isServiceMessage(message)
+    color: ColorScheme.colorize(message, context)
     verticalAlignment: Text.AlignVCenter
-    font.bold: true
-    color: ColorScheme.colorizeTick(message, context)
+    horizontalAlignment: Text.AlignRight
+    font.pixelSize: Theme.fontSizeTiny
 
     text: {
-        if(!message.unread)
-            return " ✓✓";
+        var status = TelegramHelper.printableDate(message.date);
 
-        return " ✓";
+        if(message.out)
+        {
+            if(!message.unread)
+                status += " <b>✓✓</b>";
+            else
+                status += " <b>✓</b>";
+        }
+
+        return " " + status;
     }
 }

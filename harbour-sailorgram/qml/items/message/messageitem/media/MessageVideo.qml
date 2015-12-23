@@ -25,6 +25,7 @@ MessageMediaItem
         MessageThumbnail
         {
             id: imgpreview
+            imageSize: messagevideo.fileHandler.imageSize
             source: messagevideo.mediaThumbnail || "image://theme/icon-l-video"
             transferProgress: progressPercent
         }

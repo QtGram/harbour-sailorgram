@@ -547,10 +547,6 @@ Choisissez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessus
         <source>Opening media</source>
         <translation>Ouverture du média</translation>
     </message>
-    <message>
-        <source>You</source>
-        <translation>Vous :</translation>
-    </message>
 </context>
 <context>
     <name>MessageMenu</name>

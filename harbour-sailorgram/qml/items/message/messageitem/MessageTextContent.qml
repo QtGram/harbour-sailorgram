@@ -8,7 +8,6 @@ Label
     property string rawText
 
     id: messagetextcontent
-    clip: true
     textFormat: Text.StyledText
     text: TextElaborator.elaborate(rawText, emojiPath, linkColor)
     onLinkActivated: Qt.openUrlExternally(link)

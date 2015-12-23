@@ -547,10 +547,6 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteydet&quot; yläpuolella olevasta valik
         <source>Opening media</source>
         <translation>Avataan mediatiedostoa</translation>
     </message>
-    <message>
-        <source>You</source>
-        <translation>Sinä</translation>
-    </message>
 </context>
 <context>
     <name>MessageMenu</name>
