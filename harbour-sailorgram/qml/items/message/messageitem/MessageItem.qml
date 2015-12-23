@@ -165,6 +165,9 @@ ListItem
         }
 
         width: {
+            if(TelegramHelper.isServiceMessage(message))
+                return messageitem.width - Theme.paddingMedium;
+
             var w = messagetext.calculatedWidth;
 
             if(lbluser.visible)
@@ -181,7 +184,7 @@ ListItem
             if(w >= maxw)
                 return maxw;
 
-            return w + Theme.paddingMedium;
+            return w + (Theme.paddingMedium * 2);
         }
 
         height: {
@@ -283,7 +286,6 @@ ListItem
                 rightMargin: Theme.paddingMedium
             }
 
-            width: parent.width
             context: messageitem.context
             message: messageitem.message
         }

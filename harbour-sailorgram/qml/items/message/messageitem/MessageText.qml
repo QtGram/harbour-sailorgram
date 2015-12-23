@@ -10,7 +10,13 @@ Item
 {
     property Context context
     property Message message
-    property real calculatedWidth: Math.max(dummytextcontent.contentWidth, dummymsgstatus.contentWidth)
+
+    property real calculatedWidth: {
+        if(TelegramHelper.isServiceMessage(message))
+            return dummytextcontent.contentWidth;
+
+        return Math.max(dummytextcontent.contentWidth, dummymsgstatus.contentWidth);
+    }
 
     id: messagetext
     height: content.height
@@ -45,12 +51,12 @@ Item
         {
             id: mtctextcontent
             width: parent.width
+            horizontalAlignment: TelegramHelper.isServiceMessage(message) ? Text.AlignHCenter : Text.AlignLeft
+            verticalAlignment: Text.AlignTop
             font.pixelSize: TelegramHelper.isServiceMessage(message) ? Theme.fontSizeExtraSmall : Theme.fontSizeSmall
             font.italic: TelegramHelper.isServiceMessage(message)
-            horizontalAlignment: TelegramHelper.isServiceMessage(message) ? Text.AlignHCenter : Text.AlignLeft
             emojiPath: context.sailorgram.emojiPath
             rawText: TelegramHelper.isServiceMessage(message) ? TelegramAction.actionType(context.telegram, dialog, message) : messageitem.message.message
-            verticalAlignment: Text.AlignTop
             wrapMode: Text.WordWrap
             visible: text.length > 0
             color: ColorScheme.colorize(message, context)

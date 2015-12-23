@@ -15,6 +15,7 @@ Label
     color: ColorScheme.colorize(message, context)
     verticalAlignment: Text.AlignVCenter
     horizontalAlignment: Text.AlignRight
+    textFormat: Text.StyledText
     font.pixelSize: Theme.fontSizeTiny
 
     text: {
@@ -23,9 +24,9 @@ Label
         if(message.out)
         {
             if(!message.unread)
-                status += " <b>✓✓</b>";
+                status += "  <b>✓✓</b>";
             else
-                status += " <b>✓</b>";
+                status += "  <b>✓</b>";
         }
 
         return " " + status;
