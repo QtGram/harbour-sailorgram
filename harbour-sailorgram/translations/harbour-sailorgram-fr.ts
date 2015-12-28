@@ -489,6 +489,17 @@ Choisissez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessus
     </message>
 </context>
 <context>
+    <name>FilePicker</name>
+    <message>
+        <source>Created:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Picking file</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FilePickerPage</name>
     <message>
         <source>Root</source>

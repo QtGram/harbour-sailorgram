@@ -489,6 +489,17 @@ Elixa un contacto seleccionando &quot;Contactos&quot; no menu despregable</trans
     </message>
 </context>
 <context>
+    <name>FilePicker</name>
+    <message>
+        <source>Created:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Picking file</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FilePickerPage</name>
     <message>
         <source>Root</source>

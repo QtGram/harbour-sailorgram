@@ -489,6 +489,17 @@ Välj en kontakt från &quot;Kontakter&quot; i ovanstående menu</translation>
     </message>
 </context>
 <context>
+    <name>FilePicker</name>
+    <message>
+        <source>Created:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Picking file</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FilePickerPage</name>
     <message>
         <source>Root</source>

@@ -64,7 +64,7 @@ QString FolderListModel::sdcardFolder() const
         return QString();
 
     QDir dir(sdcardfolder);
-    QFileInfoList fileinfolist = dir.entryInfoList(QDir::AllDirs | QDir::NoDotAndDotDot | QDir::NoSymLinks, QDir::DirsFirst);
+    QFileInfoList fileinfolist = dir.entryInfoList(QDir::AllDirs | QDir::NoDotAndDotDot | QDir::NoSymLinks, QDir::DirsFirst | QDir::Time);
 
     if(fileinfolist.isEmpty())
         return QString();
@@ -147,6 +147,9 @@ QVariant FolderListModel::data(const QModelIndex &index, int role) const
         case FolderListModel::FileNameRole:
             return fi.fileName();
 
+        case FolderListModel::FileDateRole:
+            return fi.created();
+
         case FolderListModel::FilePathRole:
             return fi.filePath();
 
@@ -171,11 +174,11 @@ QHash<int, QByteArray> FolderListModel::roleNames() const
     QHash<int, QByteArray> roles;
     roles[FolderListModel::FileIconRole] = "fileicon";
     roles[FolderListModel::FileNameRole] = "filename";
+    roles[FolderListModel::FileDateRole] = "filedate";
     roles[FolderListModel::FilePathRole] = "filepath";
     roles[FolderListModel::IsFileRole] = "isfile";
     roles[FolderListModel::IsFolderRole] = "isfolder";
     roles[FolderListModel::IsImageRole] = "isimage";
-
 
     return roles;
 }

@@ -7,6 +7,7 @@
 #include <QList>
 #include <QVariant>
 #include <QFileInfo>
+#include <QDateTime>
 #include <QDir>
 
 class FolderListModel : public QAbstractListModel
@@ -20,8 +21,8 @@ class FolderListModel : public QAbstractListModel
     Q_PROPERTY(QString directoryName READ directoryName NOTIFY directoryNameChanged)
 
     public:
-        enum Roles { FileIconRole = Qt::UserRole + 1, FileNameRole = Qt::UserRole + 2, FilePathRole = Qt::UserRole + 3,
-                     IsFileRole = Qt::UserRole + 4, IsFolderRole = Qt::UserRole + 5, IsImageRole = Qt::UserRole + 6 };
+        enum Roles { FileIconRole = Qt::UserRole + 1, FileNameRole = Qt::UserRole + 2, FileDateRole = Qt::UserRole + 3, FilePathRole = Qt::UserRole + 4,
+                     IsFileRole = Qt::UserRole + 5, IsFolderRole = Qt::UserRole + 6, IsImageRole = Qt::UserRole + 7 };
 
     public:
         explicit FolderListModel(QObject *parent = 0);
