@@ -5,7 +5,7 @@ import "../../../../js/TelegramMedia.js" as TelegramMedia
 Item
 {
     property alias source: image.source
-    property alias imageSize: image.sourceSize
+    property size imageSize
     property real transferProgress
 
     id: messagethumbnail
@@ -18,7 +18,7 @@ Item
         smooth: true
         asynchronous: true
         visible: !progresscircle.visible && (image.status === Image.Ready)
-        sourceSize: TelegramMedia.thumbnailSize(imageSize)
+        sourceSize: TelegramMedia.thumbnailSize(imageSize, pageStack.currentPage.isPortrait);
     }
 
     BusyIndicator

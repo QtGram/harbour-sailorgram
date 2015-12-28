@@ -12,7 +12,7 @@ MessageMediaItem
         id: thumb
         anchors { left: parent.left; top: parent.top }
         source: messagephoto.mediaThumbnail
-        imageSize: messagephoto.fileHandler.imageSize
+        imageSize: Qt.size(message.media.photo.sizes.last.w, message.media.photo.sizes.last.h)
         transferProgress: progressPercent
     }
 }
