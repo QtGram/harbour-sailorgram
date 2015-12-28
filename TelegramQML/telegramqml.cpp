@@ -3902,8 +3902,6 @@ void TelegramQml::messagesInstallStickerSet_slt(qint64 msgId, bool ok)
 
 void TelegramQml::messagesUninstallStickerSet_slt(qint64 msgId, bool ok)
 {
-    Q_UNUSED(msgId)
-
     const QString &shortId = p->pending_stickers_uninstall.take(msgId);
     if(ok)
     {

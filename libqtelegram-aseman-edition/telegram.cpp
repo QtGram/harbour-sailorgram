@@ -180,6 +180,11 @@ bool Telegram::wake() {
     return false;
 }
 
+bool Telegram::isSlept() const
+{
+    return prv->mSlept;
+}
+
 void Telegram::setPhoneNumber(const QString &phoneNumber) {
     if (!prv->mSettings->loadSettings(phoneNumber)) {
         throw std::runtime_error("setPhoneNumber: could not load settings");

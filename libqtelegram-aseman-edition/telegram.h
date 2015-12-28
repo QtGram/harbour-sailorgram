@@ -233,6 +233,7 @@ public:
     // sleep / wake
     bool sleep();
     bool wake();
+    bool isSlept() const;
 
 Q_SIGNALS:
     // Errors
