@@ -11,6 +11,7 @@ SilicaListView
     signal previewRequested(string filepath)
 
     id: filepicker
+    quickScroll: true
 
     delegate:  ListItem {
         id: listitem
@@ -71,7 +72,7 @@ SilicaListView
                 verticalAlignment: Text.AlignTop
                 horizontalAlignment: Text.AlignLeft
                 font.pixelSize: Theme.fontSizeTiny
-                text: TelegramHelper.printableDate(filedate)
+                text: TelegramHelper.printableDate(filedate, true)
             }
         }
 

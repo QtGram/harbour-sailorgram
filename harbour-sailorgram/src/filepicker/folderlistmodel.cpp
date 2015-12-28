@@ -64,7 +64,7 @@ QString FolderListModel::sdcardFolder() const
         return QString();
 
     QDir dir(sdcardfolder);
-    QFileInfoList fileinfolist = dir.entryInfoList(QDir::AllDirs | QDir::NoDotAndDotDot | QDir::NoSymLinks, QDir::DirsFirst | QDir::Time);
+    QFileInfoList fileinfolist = dir.entryInfoList(QDir::AllDirs | QDir::Files | QDir::NoDotAndDotDot | QDir::NoSymLinks, QDir::DirsFirst | QDir::Time);
 
     if(fileinfolist.isEmpty())
         return QString();
@@ -76,7 +76,7 @@ void FolderListModel::readDirectory()
 {
     this->beginResetModel();
 
-    QFileInfoList fileinfolist = this->_directory.entryInfoList(QDir::AllDirs | QDir::Files | QDir::NoDotAndDotDot | QDir::NoSymLinks, QDir::DirsFirst);
+    QFileInfoList fileinfolist = this->_directory.entryInfoList(QDir::AllDirs | QDir::Files | QDir::NoDotAndDotDot | QDir::NoSymLinks, QDir::DirsFirst | QDir::Time);
 
     if(!this->_mimefilter.isEmpty())
     {
@@ -148,7 +148,7 @@ QVariant FolderListModel::data(const QModelIndex &index, int role) const
             return fi.fileName();
 
         case FolderListModel::FileDateRole:
-            return fi.created();
+            return fi.created().toTime_t();
 
         case FolderListModel::FilePathRole:
             return fi.filePath();

@@ -70,10 +70,13 @@ function isChat(dialog)
     return dialog.peer.classType === TelegramConstants.typePeerChat;
 }
 
-function printableDate(timestamp)
+function printableDate(timestamp, full)
 {
     var date = new Date(timestamp * 1000);
     var now = new Date(Date.now());
+
+    if(full === true) // We want the entire date
+        return Qt.formatDateTime(date, "dd MMM yy");
 
     if(now === date)
         return Qt.formatDateTime(date, "HH:mm");
