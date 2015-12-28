@@ -10,18 +10,22 @@
 #include <telegramqml.h>
 #include <telegram.h>
 #include <objects/types.h>
+#include "heartbeat.h"
 
 class SailorGram : public QObject
 {
     Q_OBJECT
 
     Q_PROPERTY(bool connected READ connected NOTIFY connectedChanged)
+    Q_PROPERTY(int interval READ interval WRITE setInterval NOTIFY intervalChanged)
     Q_PROPERTY(TelegramQml* telegram READ telegram WRITE setTelegram NOTIFY telegramChanged)
     Q_PROPERTY(QString emojiPath READ emojiPath CONSTANT FINAL)
 
     public:
         explicit SailorGram(QObject *parent = 0);
         bool connected() const;
+        int interval() const;
+        void setInterval(int interval);
         QString emojiPath() const;
         TelegramQml* telegram() const;
         void setTelegram(TelegramQml* telegram);
@@ -38,15 +42,18 @@ class SailorGram : public QObject
         void moveMediaToGallery(MessageMediaObject* messagemediaobject);
 
     private slots:
-        void checkConnectionState();
-
-    private:
-        TelegramQml* _telegram;
-        QMimeDatabase _mimedb;
+        void startHeartBeat();
+        void wakeSleep();
 
     signals:
         void connectedChanged();
+        void intervalChanged();
         void telegramChanged();
+
+    private:
+        TelegramQml* _telegram;
+        HeartBeat* _heartbeat;
+        QMimeDatabase _mimedb;
 
     private:
         static const QString EMOJI_FOLDER;

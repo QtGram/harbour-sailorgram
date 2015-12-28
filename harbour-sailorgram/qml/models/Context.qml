@@ -25,6 +25,7 @@ QtObject
 
     property SailorGram sailorgram: SailorGram {
         telegram: context.telegram
+        interval: 8000 // 8 seconds
     }
 
     property Telegram telegram: Telegram {
@@ -35,7 +36,6 @@ QtObject
         appHash: "5ce096f34c8afab871edce728e6d64c9"
         configPath: telegramlocalstorage.telegramConfigPath
         publicKeyFile: telegramlocalstorage.telegramPublicKey
-        autoRewakeInterval: 8000 // 8 seconds
         autoCleanUpMessages: true
 
         onErrorSignal: errors.addError(errorCode, functionName, errorText)

@@ -39,7 +39,7 @@ Page
     Timer
     {
         id: timdisplaystatus
-        interval: context.telegram.autoRewakeInterval / 2
+        interval: context.sailorgram.interval / 2
         running: true
     }
 

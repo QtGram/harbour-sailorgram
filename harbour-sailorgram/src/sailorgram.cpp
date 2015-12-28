@@ -4,14 +4,26 @@ const QString SailorGram::EMOJI_FOLDER = "emoji";
 
 SailorGram::SailorGram(QObject *parent): QObject(parent), _telegram(NULL)
 {
+    this->_heartbeat = new HeartBeat(this);
+
+    connect(this->_heartbeat, SIGNAL(connectedChanged()), this, SLOT(wakeSleep()), Qt::QueuedConnection);
+    connect(this->_heartbeat, SIGNAL(connectedChanged()), this, SIGNAL(connectedChanged()), Qt::QueuedConnection);
+    connect(this->_heartbeat, SIGNAL(intervalChanged()), this, SIGNAL(intervalChanged()));
 }
 
 bool SailorGram::connected() const
 {
-    if(!this->_telegram || !this->_telegram->telegram())
-        return false;
+    return this->_heartbeat->connected();
+}
 
-    return !this->_telegram->telegram()->isSlept();
+int SailorGram::interval() const
+{
+    return this->_heartbeat->interval();
+}
+
+void SailorGram::setInterval(int interval)
+{
+    this->_heartbeat->setInterval(interval);
 }
 
 QString SailorGram::emojiPath() const
@@ -30,11 +42,12 @@ void SailorGram::setTelegram(TelegramQml *telegram)
         return;
 
     this->_telegram = telegram;
+    this->_heartbeat->setTelegram(telegram);
 
-    if(this->_telegram->telegram())
-        this->checkConnectionState();
+    if(this->_telegram->connected())
+        this->_heartbeat->start();
     else
-        connect(this->_telegram, SIGNAL(telegramChanged()), this, SLOT(checkConnectionState()));
+        connect(this->_telegram, SIGNAL(connectedChanged()), this, SLOT(startHeartBeat()));
 
     emit telegramChanged();
 }
@@ -149,9 +162,15 @@ void SailorGram::moveMediaToGallery(MessageMediaObject *messagemediaobject)
         this->moveMediaToDownloads(messagemediaobject); // Fallback to Downloads folder
 }
 
-void SailorGram::checkConnectionState()
+void SailorGram::startHeartBeat()
 {
-    connect(this->_telegram->telegram(), SIGNAL(slept()), this, SIGNAL(connectedChanged()));
-    connect(this->_telegram->telegram(), SIGNAL(woken()), this, SIGNAL(connectedChanged()));
-    emit connectedChanged();
+    if(!this->_telegram->connected())
+        return;
+
+    this->_heartbeat->start();
+}
+
+void SailorGram::wakeSleep()
+{
+    this->_heartbeat->connected() ? this->_telegram->wake() : this->_telegram->sleep();
 }
