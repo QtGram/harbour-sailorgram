@@ -14,6 +14,12 @@ PullDownMenu
 
     MenuItem
     {
+        text: qsTr("Settings")
+        onClicked: pageStack.push(Qt.resolvedUrl("../../pages/settings/SettingsPage.qml"), { "context": dialogspulldownmenu.context })
+    }
+
+    MenuItem
+    {
         text: qsTr("Profile")
         onClicked: pageStack.push(Qt.resolvedUrl("../../pages/profile/ProfilePage.qml"), { "context": dialogspulldownmenu.context })
     }
@@ -31,12 +37,5 @@ PullDownMenu
         context: dialogspulldownmenu.context
         onClicked: pageStack.push(Qt.resolvedUrl("../../pages/chat/CreateChatPage.qml"), { "context": dialogspulldownmenu.context })
     }
-
-    MenuItem
-    {
-        text: qsTr("Contacts")
-        onClicked: pageStack.push(Qt.resolvedUrl("../../pages/contacts/ContactsPage.qml"), { "context": dialogspulldownmenu.context })
-    }
-
 }
 

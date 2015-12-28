@@ -453,8 +453,8 @@ Selecteer een contactpersoon door te kiezen voor &quot;Contactpersonen&quot; in 
         <translation>Nieuwe groep</translation>
     </message>
     <message>
-        <source>Contacts</source>
-        <translation>Contactpersonen</translation>
+        <source>Settings</source>
+        <translation type="unfinished">Instellingen</translation>
     </message>
 </context>
 <context>

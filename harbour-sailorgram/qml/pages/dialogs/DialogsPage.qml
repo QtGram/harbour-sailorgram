@@ -51,7 +51,7 @@ Page
         if(dialogspage.status !== PageStatus.Active)
             return;
 
-        pageStack.pushAttached(Qt.resolvedUrl("../settings/SettingsPage.qml"), { "context": dialogspage.context });
+        pageStack.pushAttached(Qt.resolvedUrl("../contacts/ContactsPage.qml"), { "context": dialogspage.context });
         context.foregroundDialog = context.telegram.nullDialog; // Reset Foreground Dialog
     }
 

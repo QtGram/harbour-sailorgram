@@ -451,7 +451,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <translation type="unfinished">Neue Gruppe</translation>
     </message>
     <message>
-        <source>Contacts</source>
+        <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

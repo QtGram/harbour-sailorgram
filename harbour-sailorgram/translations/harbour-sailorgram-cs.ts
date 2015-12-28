@@ -451,8 +451,8 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <translation>Nová skupina</translation>
     </message>
     <message>
-        <source>Contacts</source>
-        <translation>Kontakty</translation>
+        <source>Settings</source>
+        <translation type="unfinished">Nastavení</translation>
     </message>
 </context>
 <context>

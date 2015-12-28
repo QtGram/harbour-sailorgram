@@ -12,6 +12,13 @@ Page
     id: contactspage
     allowedOrientations: defaultAllowedOrientations
 
+    onStatusChanged: {
+        if(contactspage.status !== PageStatus.Active)
+            return;
+
+        context.contacts.refresh();
+    }
+
     SilicaListView
     {
         PullDownMenu

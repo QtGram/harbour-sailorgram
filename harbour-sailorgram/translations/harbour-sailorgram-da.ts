@@ -451,8 +451,8 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <translation>Ny gruppe</translation>
     </message>
     <message>
-        <source>Contacts</source>
-        <translation>Kontakter</translation>
+        <source>Settings</source>
+        <translation type="unfinished">Indstillinger</translation>
     </message>
 </context>
 <context>

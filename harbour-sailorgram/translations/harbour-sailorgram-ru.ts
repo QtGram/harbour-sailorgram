@@ -453,8 +453,8 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <translation>Создать беседу</translation>
     </message>
     <message>
-        <source>Contacts</source>
-        <translation>Контакты</translation>
+        <source>Settings</source>
+        <translation type="unfinished">Настройки</translation>
     </message>
 </context>
 <context>

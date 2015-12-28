@@ -453,8 +453,8 @@ Choisissez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessus
         <translation>Nouveau groupe</translation>
     </message>
     <message>
-        <source>Contacts</source>
-        <translation>Contacts</translation>
+        <source>Settings</source>
+        <translation type="unfinished">Paramètres</translation>
     </message>
 </context>
 <context>

@@ -453,8 +453,8 @@ Välj en kontakt från &quot;Kontakter&quot; i ovanstående menu</translation>
         <translation>Ny grupp</translation>
     </message>
     <message>
-        <source>Contacts</source>
-        <translation>Kontakter</translation>
+        <source>Settings</source>
+        <translation type="unfinished">Inställningar</translation>
     </message>
 </context>
 <context>

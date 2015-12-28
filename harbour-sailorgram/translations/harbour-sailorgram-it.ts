@@ -453,8 +453,8 @@ Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
         <translation>Nuovo gruppo</translation>
     </message>
     <message>
-        <source>Contacts</source>
-        <translation>Contatti</translation>
+        <source>Settings</source>
+        <translation type="unfinished">Impostazioni</translation>
     </message>
 </context>
 <context>

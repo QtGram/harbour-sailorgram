@@ -453,8 +453,8 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteydet&quot; yläpuolella olevasta valik
         <translation>Uusi ryhmä</translation>
     </message>
     <message>
-        <source>Contacts</source>
-        <translation>Yhteydet</translation>
+        <source>Settings</source>
+        <translation type="unfinished">Asetukset</translation>
     </message>
 </context>
 <context>

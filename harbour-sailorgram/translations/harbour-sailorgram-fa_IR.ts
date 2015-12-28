@@ -451,8 +451,8 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <translation type="unfinished">گروه تازه</translation>
     </message>
     <message>
-        <source>Contacts</source>
-        <translation type="unfinished"></translation>
+        <source>Settings</source>
+        <translation type="unfinished">تنظیمات</translation>
     </message>
 </context>
 <context>

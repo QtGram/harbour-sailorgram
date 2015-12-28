@@ -453,8 +453,8 @@ Elixa un contacto seleccionando &quot;Contactos&quot; no menu despregable</trans
         <translation>Novo grupo</translation>
     </message>
     <message>
-        <source>Contacts</source>
-        <translation>Contactos</translation>
+        <source>Settings</source>
+        <translation type="unfinished">Preferencias</translation>
     </message>
 </context>
 <context>
