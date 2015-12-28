@@ -3,16 +3,15 @@ import Sailfish.Silica 1.0
 
 SilicaListView
 {
-    property bool showThumbnails: false
-    property bool multiSelect: false
     property alias folderModel: filepicker.model
 
     signal fileSelected(string filepath)
     signal folderSelected(string folderpath)
+    signal previewRequested(string filepath)
 
     id: filepicker
 
-    delegate: ListItem {
+    delegate:  ListItem {
         id: listitem
         contentHeight: Theme.itemSizeSmall
         contentWidth: parent.width
@@ -20,8 +19,9 @@ SilicaListView
         Image
         {
             id: imgicon
-            source: (showThumbnails && isimage) ? filepath : fileicon
+            source: fileicon
             anchors { left: parent.left; verticalCenter: lblfilename.verticalCenter }
+            asynchronous: true
             width: parent.height
             height: parent.height
             fillMode: Image.PreserveAspectFit
@@ -30,7 +30,7 @@ SilicaListView
         Label
         {
             id: lblfilename
-            anchors { left: imgicon.right; right: swselect.left; verticalCenter: parent.verticalCenter; leftMargin: Theme.paddingMedium; }
+            anchors { left: imgicon.right; right: btnpreview.left; verticalCenter: parent.verticalCenter; leftMargin: Theme.paddingMedium; }
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignLeft
             elide: Text.ElideRight
@@ -39,20 +39,16 @@ SilicaListView
             text: filename
         }
 
-        Switch
+        IconButton
         {
-            id: swselect
-            visible: isfile && multiSelect
-            anchors { right: parent.right; verticalCenter: lblfilename.verticalCenter }
+            id: btnpreview
+            visible: isimage
+            anchors { right: parent.right; verticalCenter: parent.verticalCenter; rightMargin: Theme.paddingSmall }
+            icon.source: "qrc:///res/preview.png"
+            onClicked: previewRequested(filepath)
         }
 
         onClicked: {
-            if(multiSelect)
-            {
-                swselect.checked = !swselect.checked
-                return;
-            }
-
             if(isfile)
                 fileSelected(filepath);
             else if(isfolder)

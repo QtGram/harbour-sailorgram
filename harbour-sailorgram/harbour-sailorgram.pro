@@ -174,4 +174,5 @@ DISTFILES += \
     qml/items/message/messageitem/MessageTextContent.qml \
     qml/items/message/messageitem/MessageQuotedItem.qml \
     qml/js/ColorScheme.js \
-    qml/js/TelegramMedia.js
+    qml/js/TelegramMedia.js \
+    qml/pages/picker/ImagePreviewPage.qml

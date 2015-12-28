@@ -504,6 +504,13 @@ Selecteer een contactpersoon door te kiezen voor &quot;Contactpersonen&quot; in 
     </message>
 </context>
 <context>
+    <name>ImagePreviewPage</name>
+    <message>
+        <source>Select</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>

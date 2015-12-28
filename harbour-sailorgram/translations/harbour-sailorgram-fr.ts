@@ -504,6 +504,13 @@ Choisissez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessus
     </message>
 </context>
 <context>
+    <name>ImagePreviewPage</name>
+    <message>
+        <source>Select</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>

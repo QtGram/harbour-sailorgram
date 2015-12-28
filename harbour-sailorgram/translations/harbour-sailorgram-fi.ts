@@ -504,6 +504,13 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteydet&quot; yläpuolella olevasta valik
     </message>
 </context>
 <context>
+    <name>ImagePreviewPage</name>
+    <message>
+        <source>Select</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>

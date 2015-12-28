@@ -6,5 +6,6 @@
         <file>res/download.png</file>
         <file>res/telegrambackground.png</file>
         <file>res/debug.png</file>
+        <file>res/preview.png</file>
     </qresource>
 </RCC>

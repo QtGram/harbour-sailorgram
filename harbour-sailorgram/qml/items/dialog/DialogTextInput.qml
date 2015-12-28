@@ -3,6 +3,7 @@ import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../../models"
 import "../../components"
+import "../../js/TelegramHelper.js" as TelegramHelper
 
 InverseMouseArea
 {
@@ -86,7 +87,7 @@ InverseMouseArea
                 var picker = pageStack.push(Qt.resolvedUrl("../../pages/picker/FilePickerPage.qml"), { "rootPage": pageStack.currentPage });
 
                 picker.filePicked.connect(function(file) {
-                    context.telegram.sendFile(TelegramHelper.peerId(telegramDialog), file);
+                    context.telegram.sendFile(TelegramHelper.peerId(dialogtextinput.dialog), file);
                 });
             }
         }

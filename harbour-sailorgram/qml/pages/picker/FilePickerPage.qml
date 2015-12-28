@@ -79,7 +79,6 @@ Page
         FilePicker
         {
             id: filepicker
-            multiSelect: false
             anchors { left: parent.left; top: pageheader.bottom; right: parent.right; bottom: parent.bottom }
 
             folderModel: FolderListModel {
@@ -99,6 +98,11 @@ Page
             onFolderSelected: {
                 var page = pageStack.push(Qt.resolvedUrl("FilePickerPage.qml"), { "directory": folderpath, "filter" : mime, "rootPage": rootPage })
                 page.filePicked.connect(pickFile);
+            }
+
+            onPreviewRequested: {
+                var page = pageStack.push(Qt.resolvedUrl("ImagePreviewPage.qml"), { "filePath": filepath });
+                page.imageSelected.connect(pickFile);
             }
         }
     }
