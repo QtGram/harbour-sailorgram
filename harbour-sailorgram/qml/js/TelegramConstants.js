@@ -45,9 +45,9 @@ var typePeerUser = 0x9db1bc6d;
 var typePeerChat = 0xbad0e5bb;
 
 /* User Constants */
-var typeUserStatusOffline = 0x8c703f;
 var typeUserStatusEmpty = 0x9d05049;
 var typeUserStatusOnline = 0xedb93949;
+var typeUserStatusOffline = 0x8c703f;
 var typeUserStatusRecently = 0xe26f42f1;
 var typeUserStatusLastWeek = 0x7bf09fc;
 var typeUserStatusLastMonth = 0x77ebc742;

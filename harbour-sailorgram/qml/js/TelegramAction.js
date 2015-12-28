@@ -7,7 +7,7 @@ function actionType(telegram, dialog, message) {
    var action = message.action;
 
    if(!action)
-       return "";
+       return "???";
 
    if(action.classType === TelegramConstants.typeMessageActionChatCreate) {
        var userid = message.fromId;

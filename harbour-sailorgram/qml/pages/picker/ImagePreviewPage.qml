@@ -7,6 +7,9 @@ Page
 
     signal imageSelected()
 
+    id: imagepreviewpage
+    allowedOrientations: defaultAllowedOrientations
+
     SilicaFlickable
     {
         anchors.fill: parent
