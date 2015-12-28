@@ -70,7 +70,8 @@ Page
         {
             anchors.centerIn: parent
             size: BusyIndicatorSize.Large
-            running: messagesmodel.refreshing
+            running: context.sailorgram.connected && messagesmodel.refreshing
+            z: running ? 2 : 0
         }
 
         PeerItem
