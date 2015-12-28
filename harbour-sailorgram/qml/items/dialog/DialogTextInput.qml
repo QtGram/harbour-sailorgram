@@ -20,7 +20,7 @@ InverseMouseArea
     id: dialogtextinput
 
     height: {
-        if(!context.heartbeat.connected)
+        if(!context.sailorgram.connected)
             return Theme.itemSizeSmall;
 
         return lbltimestamp.y + lbltimestamp.height + Theme.paddingSmall;
@@ -39,6 +39,7 @@ InverseMouseArea
     TextArea
     {
         id: textarea
+        visible: context.sailorgram.connected
         focusOutBehavior: FocusBehavior.KeepFocus
         font.pixelSize: Theme.fontSizeSmall
         placeholderText: qsTr("Message...")
@@ -62,6 +63,7 @@ InverseMouseArea
     Row
     {
         id: row
+        visible: context.sailorgram.connected
 
         anchors {
             right: parent.right
@@ -96,6 +98,7 @@ InverseMouseArea
     Label
     {
         id: lbltimestamp
+        visible: context.sailorgram.connected
         color: Theme.highlightColor
         font.pixelSize: Theme.fontSizeTiny
         width: parent.width
