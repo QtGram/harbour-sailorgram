@@ -173,7 +173,7 @@ Item
                 MessageTextContent
                 {
                     id: lbllastmessage
-                    width: parent.width - rectunread.width - lblfrom.width
+                    width: parent.width - rectunread.width - lblfrom.contentWidth
                     height: parent.height
                     elide: Text.ElideRight
                     verticalAlignment: Text.AlignVCenter

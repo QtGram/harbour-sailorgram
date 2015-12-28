@@ -71,6 +71,7 @@ Page
 
         id: lvdialogs
         spacing: Theme.paddingMedium
+        clip: true
         anchors.fill: parent
 
         header: PageHeader {
