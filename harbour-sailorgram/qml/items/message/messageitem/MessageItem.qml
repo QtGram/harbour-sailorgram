@@ -139,7 +139,7 @@ ListItem
     Rectangle
     {
         id: bubble
-        radius: 10
+        radius: 4
         visible: !context.bubbleshidden
         color: ColorScheme.colorizeBubble(message, context)
         width: content.width

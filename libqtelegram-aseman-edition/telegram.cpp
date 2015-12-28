@@ -159,6 +159,7 @@ bool Telegram::sleep() {
     // sleep only if not slept and library already logged in. Returns true if sleep operations completes
     if (!prv->mSlept && prv->mLibraryState >= LoggedIn) {
         if (prv->mApi && prv->mApi->mainSession()) {
+            connect(prv->mApi, SIGNAL(mainSessionClosed()), this, SIGNAL(slept()), Qt::UniqueConnection);
             prv->mApi->mainSession()->close();
         }
         prv->mSlept = true;

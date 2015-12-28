@@ -45,7 +45,6 @@ SOURCES += src/harbour-sailorgram.cpp \
     src/dbus/notifications/notifications.cpp \
     src/sailorgram.cpp \
     src/filepicker/folderlistmodel.cpp \
-    src/heartbeat.cpp \
     src/dbus/screenblank.cpp
 
 OTHER_FILES += qml/harbour-sailorgram.qml \
@@ -147,7 +146,6 @@ HEADERS += \
     src/dbus/notifications/notifications.h \
     src/sailorgram.h \
     src/filepicker/folderlistmodel.h \
-    src/heartbeat.h \
     src/dbus/screenblank.h
 
 RESOURCES += \

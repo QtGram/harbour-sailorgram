@@ -39,7 +39,7 @@ Page
     Timer
     {
         id: timdisplaystatus
-        interval: context.heartbeat.interval / 2
+        interval: context.telegram.autoRewakeInterval / 2
         running: true
     }
 
@@ -63,7 +63,7 @@ Page
         {
             id: csitem
             context: connectionpage.context
-            forceActive: timdisplaystatus.running
+            forceActive: false
         }
     }
 

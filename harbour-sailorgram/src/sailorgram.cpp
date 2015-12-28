@@ -6,6 +6,14 @@ SailorGram::SailorGram(QObject *parent): QObject(parent), _telegram(NULL)
 {
 }
 
+bool SailorGram::connected() const
+{
+    if(!this->_telegram || !this->_telegram->telegram())
+        return false;
+
+    return !this->_telegram->telegram()->isSlept();
+}
+
 QString SailorGram::emojiPath() const
 {
     return qApp->applicationDirPath() + QDir::separator() + "../share/" + qApp->applicationName() + QDir::separator() + SailorGram::EMOJI_FOLDER + QDir::separator();
@@ -22,6 +30,12 @@ void SailorGram::setTelegram(TelegramQml *telegram)
         return;
 
     this->_telegram = telegram;
+
+    if(this->_telegram->telegram())
+        this->checkConnectionState();
+    else
+        connect(this->_telegram, SIGNAL(telegramChanged()), this, SLOT(checkConnectionState()));
+
     emit telegramChanged();
 }
 
@@ -42,16 +56,6 @@ void SailorGram::moveMediaTo(FileLocationObject *locationobj, const QString &des
         return;
 
     QFile::copy(location.path(), destpath);
-}
-
-void SailorGram::sleep()
-{
-    this->_telegram->telegram()->sleep();
-}
-
-void SailorGram::wake()
-{
-    this->_telegram->telegram()->wake();
 }
 
 bool SailorGram::fileIsPhoto(const QString &filepath)
@@ -143,4 +147,11 @@ void SailorGram::moveMediaToGallery(MessageMediaObject *messagemediaobject)
         this->moveMediaTo(locationobj, QStandardPaths::writableLocation(QStandardPaths::PicturesLocation));
     else
         this->moveMediaToDownloads(messagemediaobject); // Fallback to Downloads folder
+}
+
+void SailorGram::checkConnectionState()
+{
+    connect(this->_telegram->telegram(), SIGNAL(slept()), this, SIGNAL(connectedChanged()));
+    connect(this->_telegram->telegram(), SIGNAL(woken()), this, SIGNAL(connectedChanged()));
+    emit connectedChanged();
 }

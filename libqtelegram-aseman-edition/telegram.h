@@ -406,6 +406,7 @@ Q_SIGNALS:
     void disconnected();
     void connected();
     void woken();
+    void slept();
 
     void fatalError();
 

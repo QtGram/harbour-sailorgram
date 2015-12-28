@@ -37,7 +37,7 @@ CoverBackground
         Label
         {
             width: parent.width
-            text: !context.heartbeat.connected ? qsTr("Disconnected") : qsTr("Connected")
+            text: !context.sailorgram.connected ? qsTr("Disconnected") : qsTr("Connected")
             horizontalAlignment: Text.AlignHCenter
             truncationMode: TruncationMode.Fade
             color: Theme.secondaryColor

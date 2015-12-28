@@ -23,12 +23,6 @@ QtObject
     property ErrorsModel errors: ErrorsModel { }
     property Dialog foregroundDialog: telegram.nullDialog
 
-    property HeartBeat heartbeat: HeartBeat {
-        telegram: context.telegram
-        interval: 8000
-        onConnectedChanged: connected ? sailorgram.wake() : sailorgram.sleep();
-    }
-
     property SailorGram sailorgram: SailorGram {
         telegram: context.telegram
     }
@@ -41,13 +35,13 @@ QtObject
         appHash: "5ce096f34c8afab871edce728e6d64c9"
         configPath: telegramlocalstorage.telegramConfigPath
         publicKeyFile: telegramlocalstorage.telegramPublicKey
+        autoRewakeInterval: 8000 // 8 seconds
         autoCleanUpMessages: true
 
         onErrorSignal: errors.addError(errorCode, functionName, errorText)
 
         onConnectedChanged: {
             if(connected) {
-               context.heartbeat.start();
                context.contacts.telegram = context.telegram;
             }
         }

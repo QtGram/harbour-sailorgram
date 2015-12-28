@@ -51,8 +51,6 @@ ApplicationWindow
                 context.bubbleshidden = parseInt(Settings.transactionGet(tx, "hidebubbles"));
             });
         }
-
-        Component.onDestruction: context.heartbeat.quit()
     }
 
     id: mainwindow

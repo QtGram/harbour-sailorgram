@@ -76,7 +76,7 @@ Page
 
         header: PageHeader {
             id: pageheader
-            title: context.heartbeat.connected ? qsTr("Chats") : qsTr("Connecting...")
+            title: context.sailorgram.connected ? qsTr("Chats") : qsTr("Connecting...")
 
             ConnectionStatus {
                 context: dialogspage.context

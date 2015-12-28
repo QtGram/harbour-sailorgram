@@ -7,5 +7,5 @@ PullDownMenu
     property Context context
 
     id: telegrampulldownmenu
-    enabled: context.heartbeat.connected
+    enabled: context.sailorgram.connected
 }

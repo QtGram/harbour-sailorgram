@@ -6,7 +6,7 @@ Item
 {
     property Context context
 
-    visible: !context.heartbeat.connected
+    visible: !context.sailorgram.connected
     width: busyindicator.width + lblconnecting.contentWidth + Theme.paddingMedium
 
     BusyIndicator
@@ -14,7 +14,7 @@ Item
         id: busyindicator
         size: BusyIndicatorSize.Small
         anchors { left: parent.left; verticalCenter: lblconnecting.verticalCenter }
-        running: !context.heartbeat.connected
+        running: !context.sailorgram.connected
     }
 
     Label

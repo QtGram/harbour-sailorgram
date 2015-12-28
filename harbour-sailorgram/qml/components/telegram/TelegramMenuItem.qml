@@ -8,5 +8,5 @@ MenuItem
     property Context context
 
     id: telegrammenuitem
-    visible: context.heartbeat.connected && menuVisible
+    visible: context.sailorgram.connected && menuVisible
 }

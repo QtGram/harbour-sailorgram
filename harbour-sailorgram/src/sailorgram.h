@@ -15,11 +15,13 @@ class SailorGram : public QObject
 {
     Q_OBJECT
 
+    Q_PROPERTY(bool connected READ connected NOTIFY connectedChanged)
     Q_PROPERTY(TelegramQml* telegram READ telegram WRITE setTelegram NOTIFY telegramChanged)
     Q_PROPERTY(QString emojiPath READ emojiPath CONSTANT FINAL)
 
     public:
         explicit SailorGram(QObject *parent = 0);
+        bool connected() const;
         QString emojiPath() const;
         TelegramQml* telegram() const;
         void setTelegram(TelegramQml* telegram);
@@ -27,12 +29,7 @@ class SailorGram : public QObject
     private:
         void moveMediaTo(FileLocationObject* locationobj, const QString& destination);
 
-    signals:
-        void telegramChanged();
-
     public slots:
-        void sleep();
-        void wake();
         bool fileIsPhoto(const QString& filepath);
         bool fileIsVideo(const QString& filepath);
         QString fileName(const QString& filepath);
@@ -40,9 +37,16 @@ class SailorGram : public QObject
         void moveMediaToDownloads(MessageMediaObject* messagemediaobject);
         void moveMediaToGallery(MessageMediaObject* messagemediaobject);
 
+    private slots:
+        void checkConnectionState();
+
     private:
         TelegramQml* _telegram;
         QMimeDatabase _mimedb;
+
+    signals:
+        void connectedChanged();
+        void telegramChanged();
 
     private:
         static const QString EMOJI_FOLDER;

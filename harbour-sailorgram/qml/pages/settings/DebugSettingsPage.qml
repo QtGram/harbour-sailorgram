@@ -45,8 +45,8 @@ Page
             DebugLabel
             {
                 title: qsTr("Heartbeat:")
-                text: context.heartbeat.connected ? qsTr("Connected") : qsTr("Not Connected")
-                errorState: !context.heartbeat.connected
+                text: context.sailorgram.connected ? qsTr("Connected") : qsTr("Not Connected")
+                errorState: !context.sailorgram.connected
             }
 
             DebugLabel
