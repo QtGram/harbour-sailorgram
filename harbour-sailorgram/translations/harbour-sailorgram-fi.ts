@@ -57,7 +57,7 @@
     </message>
     <message>
         <source>An unofficial Telegram Client for SailfishOS</source>
-        <translation>Telegramin epävirallinen asiakassovellus SailfisOS:lle.</translation>
+        <translation>Telegramin epävirallinen asiakassovellus SailfishOS:lle.</translation>
     </message>
     <message>
         <source>Developer</source>
@@ -231,7 +231,7 @@ Vähimmäispituus on 5 merkkiä.</translation>
     </message>
     <message>
         <source>Hide Bubbles</source>
-        <translation type="unfinished"></translation>
+        <translation>Piilota puhekuplat</translation>
     </message>
 </context>
 <context>
@@ -393,7 +393,7 @@ Vähimmäispituus on 5 merkkiä.</translation>
     <name>DialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Lataa lisää viestejä</translation>
     </message>
 </context>
 <context>
@@ -694,7 +694,7 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteydet&quot; yläpuolella olevasta valik
     <name>SecretDialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lataa lisää viestejä</translation>
     </message>
 </context>
 <context>

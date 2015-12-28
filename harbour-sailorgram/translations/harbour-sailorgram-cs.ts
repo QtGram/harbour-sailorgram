@@ -227,11 +227,11 @@ Minimální délka je 5 znaků .</translation>
     </message>
     <message>
         <source>Hide chat header</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrýt hlavu konverzace</translation>
     </message>
     <message>
         <source>Hide Bubbles</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrýt bubliny</translation>
     </message>
 </context>
 <context>
@@ -312,11 +312,11 @@ Minimální délka je 5 znaků .</translation>
     <name>DebugSettingsPage</name>
     <message>
         <source>Debug</source>
-        <translation type="unfinished"></translation>
+        <translation>Zkoušet</translation>
     </message>
     <message>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Obnovit</translation>
     </message>
     <message>
         <source>Contacts:</source>
@@ -324,7 +324,7 @@ Minimální délka je 5 znaků .</translation>
     </message>
     <message>
         <source>Heartbeat:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tlukot srdce:</translation>
     </message>
     <message>
         <source>Connected</source>
@@ -393,7 +393,7 @@ Minimální délka je 5 znaků .</translation>
     <name>DialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Načíst další zprávy</translation>
     </message>
 </context>
 <context>
@@ -409,7 +409,9 @@ Minimální délka je 5 znaků .</translation>
         <source>No Chats
 
 Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation type="unfinished"></translation>
+        <translation>Žádné rozhovory
+
+Vyberte si kontakt výběrem &quot;Kontakty&quot; z Pull Down Menu</translation>
     </message>
     <message>
         <source>Chats</source>
@@ -425,15 +427,15 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Vymazání konverzace</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Vymazání tajného rozhovoru</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Vymazání skupiny</translation>
     </message>
 </context>
 <context>
@@ -452,7 +454,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Nastavení</translation>
+        <translation>Nastavení</translation>
     </message>
 </context>
 <context>
@@ -490,7 +492,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>FilePicker</name>
     <message>
         <source>Created:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vytvořeno:</translation>
     </message>
     <message>
         <source>Picking file</source>
@@ -516,7 +518,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>ImagePreviewPage</name>
     <message>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Vybrat</translation>
     </message>
 </context>
 <context>
@@ -606,7 +608,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>MessageQuotedItem</name>
     <message>
         <source>You</source>
-        <translation type="unfinished">Ty</translation>
+        <translation>Ty</translation>
     </message>
 </context>
 <context>
@@ -692,7 +694,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>SecretDialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Načíst další zprávy</translation>
     </message>
 </context>
 <context>
@@ -714,7 +716,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Debug</source>
-        <translation type="unfinished"></translation>
+        <translation>Zkoušet</translation>
     </message>
     <message>
         <source>About</source>
@@ -772,7 +774,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Group name changed to ��%1��</source>
-        <translation type="unfinished"></translation>
+        <translation>Název skupiny změněno na ��%1��</translation>
     </message>
 </context>
 <context>

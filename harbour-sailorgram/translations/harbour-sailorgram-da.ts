@@ -231,7 +231,7 @@ Minimumslængde er fem tegn.</translation>
     </message>
     <message>
         <source>Hide Bubbles</source>
-        <translation type="unfinished"></translation>
+        <translation>Gem Bobbler</translation>
     </message>
 </context>
 <context>
@@ -305,7 +305,7 @@ Minimumslængde er fem tegn.</translation>
     <name>CreateSecretDialogPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation>Ny Hemmelig Chat</translation>
+        <translation>Ny Hemmelig Samtale</translation>
     </message>
 </context>
 <context>
@@ -343,7 +343,7 @@ Minimumslængde er fem tegn.</translation>
     <name>DialogInfoPage</name>
     <message>
         <source>Delete secret chat</source>
-        <translation>Slet hemmelig chat</translation>
+        <translation>Slet hemmelig samtale</translation>
     </message>
     <message>
         <source>Delete group</source>
@@ -355,7 +355,7 @@ Minimumslængde er fem tegn.</translation>
     </message>
     <message>
         <source>Deleting secret chat</source>
-        <translation>Sletter hemmelig chat</translation>
+        <translation>Sletter hemmelig samtale</translation>
     </message>
     <message>
         <source>Deleting group</source>
@@ -393,7 +393,7 @@ Minimumslængde er fem tegn.</translation>
     <name>DialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Indlæs flere meddelelser</translation>
     </message>
 </context>
 <context>
@@ -409,11 +409,13 @@ Minimumslængde er fem tegn.</translation>
         <source>No Chats
 
 Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen Samtaler
+
+Vælg en kontakt, ved at vælge &quot;Kontakter&quot; fra menuen ovenover</translation>
     </message>
     <message>
         <source>Chats</source>
-        <translation>Chats</translation>
+        <translation>Samtaler</translation>
     </message>
     <message>
         <source>Connecting...</source>
@@ -429,7 +431,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation>Sletter Hemmelig Chat</translation>
+        <translation>Sletter Hemmelig Samtale</translation>
     </message>
     <message>
         <source>Deleting Group</source>
@@ -444,7 +446,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation>Ny Hemmelig Chat</translation>
+        <translation>Ny Hemmelig Samtale</translation>
     </message>
     <message>
         <source>New Group</source>
@@ -452,7 +454,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Indstillinger</translation>
+        <translation>Indstillinger</translation>
     </message>
 </context>
 <context>
@@ -490,7 +492,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>FilePicker</name>
     <message>
         <source>Created:</source>
-        <translation type="unfinished"></translation>
+        <translation>Oprettet:</translation>
     </message>
     <message>
         <source>Picking file</source>
@@ -516,7 +518,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>ImagePreviewPage</name>
     <message>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Vælg</translation>
     </message>
 </context>
 <context>
@@ -685,14 +687,14 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>SecretDialogDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation>Hemmelig chat annulleret</translation>
+        <translation>Hemmelig samtale annulleret</translation>
     </message>
 </context>
 <context>
     <name>SecretDialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Indlæs flere meddelelser</translation>
     </message>
 </context>
 <context>
@@ -764,15 +766,15 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Secret chat created by ��%1��</source>
-        <translation type="unfinished"></translation>
+        <translation>Hemmelig samtale oprettet af ��%1��</translation>
     </message>
     <message>
         <source>Group created by ��%1��</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppe oprettet af ��%1��</translation>
     </message>
     <message>
         <source>Group name changed to ��%1��</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppenavn ændret til ��%1��</translation>
     </message>
 </context>
 <context>

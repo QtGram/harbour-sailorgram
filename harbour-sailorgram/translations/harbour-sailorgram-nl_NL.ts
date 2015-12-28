@@ -231,7 +231,7 @@ De minimale lengte is 5 tekens.</translation>
     </message>
     <message>
         <source>Hide Bubbles</source>
-        <translation type="unfinished"></translation>
+        <translation>Antwoordbellen verbergen</translation>
     </message>
 </context>
 <context>
@@ -393,7 +393,7 @@ De minimale lengte is 5 tekens.</translation>
     <name>DialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Meer berichten laden</translation>
     </message>
 </context>
 <context>
@@ -454,7 +454,7 @@ Selecteer een contactpersoon door te kiezen voor &quot;Contactpersonen&quot; in 
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Instellingen</translation>
+        <translation>Instellingen</translation>
     </message>
 </context>
 <context>
@@ -492,11 +492,11 @@ Selecteer een contactpersoon door te kiezen voor &quot;Contactpersonen&quot; in 
     <name>FilePicker</name>
     <message>
         <source>Created:</source>
-        <translation type="unfinished"></translation>
+        <translation>Gecreëerd op:</translation>
     </message>
     <message>
         <source>Picking file</source>
-        <translation type="unfinished"></translation>
+        <translation>Bezig met kiezen van bestand</translation>
     </message>
 </context>
 <context>
@@ -518,7 +518,7 @@ Selecteer een contactpersoon door te kiezen voor &quot;Contactpersonen&quot; in 
     <name>ImagePreviewPage</name>
     <message>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteren</translation>
     </message>
 </context>
 <context>
@@ -608,7 +608,7 @@ Selecteer een contactpersoon door te kiezen voor &quot;Contactpersonen&quot; in 
     <name>MessageQuotedItem</name>
     <message>
         <source>You</source>
-        <translation type="unfinished">U</translation>
+        <translation>U</translation>
     </message>
 </context>
 <context>
@@ -694,7 +694,7 @@ Selecteer een contactpersoon door te kiezen voor &quot;Contactpersonen&quot; in 
     <name>SecretDialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Meer berichten laden</translation>
     </message>
 </context>
 <context>
@@ -774,7 +774,7 @@ Selecteer een contactpersoon door te kiezen voor &quot;Contactpersonen&quot; in 
     </message>
     <message>
         <source>Group name changed to ��%1��</source>
-        <translation type="unfinished"></translation>
+        <translation>De groepsnaam is gewijzigd in ��%1��</translation>
     </message>
 </context>
 <context>

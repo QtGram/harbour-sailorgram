@@ -608,7 +608,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>MessageQuotedItem</name>
     <message>
         <source>You</source>
-        <translation type="unfinished">Вы:</translation>
+        <translation>Вы</translation>
     </message>
 </context>
 <context>
@@ -774,7 +774,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Group name changed to ��%1��</source>
-        <translation type="unfinished"></translation>
+        <translation>Название беседы изменено на ��%1��</translation>
     </message>
 </context>
 <context>

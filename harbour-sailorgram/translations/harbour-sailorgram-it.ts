@@ -231,7 +231,7 @@ La lunghezza minima è di 5 caratteri.</translation>
     </message>
     <message>
         <source>Hide Bubbles</source>
-        <translation type="unfinished"></translation>
+        <translation>Nascondi bolle</translation>
     </message>
 </context>
 <context>
@@ -393,7 +393,7 @@ La lunghezza minima è di 5 caratteri.</translation>
     <name>DialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Carica altri messaggi</translation>
     </message>
 </context>
 <context>
@@ -454,7 +454,7 @@ Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Impostazioni</translation>
+        <translation>Impostazioni</translation>
     </message>
 </context>
 <context>
@@ -492,11 +492,11 @@ Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
     <name>FilePicker</name>
     <message>
         <source>Created:</source>
-        <translation type="unfinished"></translation>
+        <translation>Data creazione:</translation>
     </message>
     <message>
         <source>Picking file</source>
-        <translation type="unfinished"></translation>
+        <translation>Selezione file</translation>
     </message>
 </context>
 <context>
@@ -518,7 +518,7 @@ Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
     <name>ImagePreviewPage</name>
     <message>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleziona</translation>
     </message>
 </context>
 <context>
@@ -694,7 +694,7 @@ Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
     <name>SecretDialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Carica altri messaggi</translation>
     </message>
 </context>
 <context>

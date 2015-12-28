@@ -231,7 +231,7 @@ La longitud mínima es de 5 caracteres.</translation>
     </message>
     <message>
         <source>Hide Bubbles</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocultar burbujas de conversación</translation>
     </message>
 </context>
 <context>
@@ -393,7 +393,7 @@ La longitud mínima es de 5 caracteres.</translation>
     <name>DialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Cargar más mensajes</translation>
     </message>
 </context>
 <context>
@@ -694,7 +694,7 @@ Elige un contacto seleccionando &quot;Contactos&quot; en el menú desplegable de
     <name>SecretDialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Cargar más mensajes</translation>
     </message>
 </context>
 <context>

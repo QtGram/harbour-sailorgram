@@ -231,7 +231,7 @@ La longueur minimum est de 5 caractères.</translation>
     </message>
     <message>
         <source>Hide Bubbles</source>
-        <translation type="unfinished"></translation>
+        <translation>Cacher les bulles</translation>
     </message>
 </context>
 <context>
@@ -393,7 +393,7 @@ La longueur minimum est de 5 caractères.</translation>
     <name>DialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Charger plus de messages</translation>
     </message>
 </context>
 <context>
@@ -454,7 +454,7 @@ Choisissez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessus
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Paramètres</translation>
+        <translation>Paramètres</translation>
     </message>
 </context>
 <context>
@@ -492,7 +492,7 @@ Choisissez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessus
     <name>FilePicker</name>
     <message>
         <source>Created:</source>
-        <translation type="unfinished"></translation>
+        <translation>Réalisé par :</translation>
     </message>
     <message>
         <source>Picking file</source>
@@ -518,7 +518,7 @@ Choisissez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessus
     <name>ImagePreviewPage</name>
     <message>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Sélectionné </translation>
     </message>
 </context>
 <context>
@@ -608,7 +608,7 @@ Choisissez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessus
     <name>MessageQuotedItem</name>
     <message>
         <source>You</source>
-        <translation type="unfinished">Vous :</translation>
+        <translation>Vous</translation>
     </message>
 </context>
 <context>
@@ -694,7 +694,7 @@ Choisissez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessus
     <name>SecretDialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Charger plus de messages</translation>
     </message>
 </context>
 <context>
@@ -774,7 +774,7 @@ Choisissez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessus
     </message>
     <message>
         <source>Group name changed to ��%1��</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom de groupe changé en ��%1��</translation>
     </message>
 </context>
 <context>

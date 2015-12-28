@@ -231,7 +231,7 @@ Minimilängd är 5 tecken.</translation>
     </message>
     <message>
         <source>Hide Bubbles</source>
-        <translation type="unfinished"></translation>
+        <translation>Dölj bubblor</translation>
     </message>
 </context>
 <context>
@@ -393,7 +393,7 @@ Minimilängd är 5 tecken.</translation>
     <name>DialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Läs in fler meddelanden</translation>
     </message>
 </context>
 <context>
@@ -454,7 +454,7 @@ Välj en kontakt från &quot;Kontakter&quot; i ovanstående menu</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Inställningar</translation>
+        <translation>Inställningar</translation>
     </message>
 </context>
 <context>
@@ -492,7 +492,7 @@ Välj en kontakt från &quot;Kontakter&quot; i ovanstående menu</translation>
     <name>FilePicker</name>
     <message>
         <source>Created:</source>
-        <translation type="unfinished"></translation>
+        <translation>Skapad:</translation>
     </message>
     <message>
         <source>Picking file</source>
@@ -518,7 +518,7 @@ Välj en kontakt från &quot;Kontakter&quot; i ovanstående menu</translation>
     <name>ImagePreviewPage</name>
     <message>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj</translation>
     </message>
 </context>
 <context>
@@ -694,7 +694,7 @@ Välj en kontakt från &quot;Kontakter&quot; i ovanstående menu</translation>
     <name>SecretDialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Läs in fler meddelanden</translation>
     </message>
 </context>
 <context>
