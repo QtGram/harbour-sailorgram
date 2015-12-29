@@ -340,7 +340,7 @@ public Q_SLOTS:
     void messagesEditChatTitle(qint32 chatId, const QString &title);
     void messagesEditChatPhoto(qint32 chatId, const QString &filePath);
 
-    void messagesDeleteHistory(qint64 peerId, bool deleteChat = false, bool userRemoved = false);
+    void messagesDeleteHistory(qint64 peerId, bool deleteChat = false, bool userRemoved = false, bool force = false);
     void messagesSetTyping(qint64 peerId, bool stt);
     qint64 messagesReadHistory(qint64 peerId, qint32 maxDate = 0);
 

@@ -1999,7 +1999,7 @@ void TelegramQml::messagesEditChatPhoto(qint32 chatId, const QString &filePath)
     p->telegram->messagesEditChatPhoto(chatId, filePath);
 }
 
-void TelegramQml::messagesDeleteHistory(qint64 peerId, bool deleteChat, bool userRemoved)
+void TelegramQml::messagesDeleteHistory(qint64 peerId, bool deleteChat, bool userRemoved, bool force)
 {
     if(!p->telegram)
         return;
@@ -2042,6 +2042,9 @@ void TelegramQml::messagesDeleteHistory(qint64 peerId, bool deleteChat, bool use
         qint64 requestId = p->telegram->messagesDeleteHistory(peer);
         p->delete_history_requests.insert(requestId, peerId);
     }
+
+    if(force)
+        deleteLocalHistory(peerId);
 }
 
 void TelegramQml::messagesSetTyping(qint64 peerId, bool stt)
