@@ -12,6 +12,7 @@ SilicaListView
 
     id: filepicker
     quickScroll: true
+    clip: true
 
     delegate:  ListItem {
         id: listitem
