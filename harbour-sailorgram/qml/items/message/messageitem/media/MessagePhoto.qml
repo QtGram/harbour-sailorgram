@@ -11,6 +11,7 @@ MessageMediaItem
     {
         id: thumb
         anchors { left: parent.left; top: parent.top }
+        cache: !messagephoto.fileHandler.downloaded
         source: messagephoto.mediaThumbnail
         imageSize: Qt.size(message.media.photo.sizes.last.w, message.media.photo.sizes.last.h)
         transferProgress: progressPercent

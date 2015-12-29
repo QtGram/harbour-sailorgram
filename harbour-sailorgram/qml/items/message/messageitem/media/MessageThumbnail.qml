@@ -4,6 +4,7 @@ import "../../../../js/TelegramMedia.js" as TelegramMedia
 
 Item
 {
+    property alias cache: image.cache
     property alias source: image.source
     property size imageSize
     property real transferProgress
@@ -15,7 +16,6 @@ Item
     Image
     {
         id: image
-        smooth: true
         asynchronous: true
         visible: !progresscircle.visible && (image.status === Image.Ready)
         sourceSize: TelegramMedia.thumbnailSize(imageSize, pageStack.currentPage.isPortrait);
