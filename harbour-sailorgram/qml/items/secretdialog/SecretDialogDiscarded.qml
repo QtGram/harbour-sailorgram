@@ -9,6 +9,7 @@ Item
 
     id: secretdialogdiscarded
     visible: chat && (chat.classType === TelegramConstants.typeEncryptedChatDiscarded);
+    height: Theme.itemSizeSmall
 
     Label
     {

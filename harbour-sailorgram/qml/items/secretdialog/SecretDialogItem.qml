@@ -20,9 +20,6 @@ Item
     onDialogChanged: {
         chat = context.telegram.encryptedChat(dialog.peer.userId);
 
-        if(chat.classType === TelegramConstants.typeEncryptedChatRequested) /* Emulate Android Client: Auto accept encrypted chats */
-            context.telegram.messagesAcceptEncryptedChat(dialog.peer.userId);
-
         var userid = (chat.adminId === context.telegram.me) ? chat.participantId : chat.adminId;
         user = context.telegram.user(userid);
         message = context.telegram.message(dialog.topMessage);

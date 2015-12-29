@@ -18,18 +18,18 @@ Page
     property EncryptedChat chat: context.telegram.encryptedChat(dialog.peer.userId)
     property User user: context.telegram.user((chat.adminId === context.telegram.me) ? chat.participantId : chat.adminId)
 
-    id: secretconversationpage
+    id: secretdialogpage
     allowedOrientations: defaultAllowedOrientations
 
     onStatusChanged: {
         if(status !== PageStatus.Active)
             return;
 
-        pageStack.pushAttached(Qt.resolvedUrl("../dialogs/DialogInfoPage.qml"), { "context": secretconversationpage.context, "dialog": secretconversationpage.dialog, "user": secretconversationpage.user });
-        context.foregroundDialog = secretconversationpage.dialog;
+        pageStack.pushAttached(Qt.resolvedUrl("../dialogs/DialogInfoPage.qml"), { "context": secretdialogpage.context, "dialog": secretdialogpage.dialog, "user": secretdialogpage.user });
+        context.foregroundDialog = secretdialogpage.dialog;
 
-        messagesmodel.telegram = secretconversationpage.context.telegram;
-        messagesmodel.dialog = secretconversationpage.dialog;
+        messagesmodel.telegram = secretdialogpage.context.telegram;
+        messagesmodel.dialog = secretdialogpage.dialog;
         messagesmodel.setReaded();
     }
 
@@ -79,17 +79,17 @@ Page
             id: header
             visible: !context.chatheaderhidden
             anchors { left: parent.left; top: parent.top; right: parent.right; leftMargin: Theme.horizontalPageMargin; topMargin: Theme.paddingMedium }
-            height: context.chatheaderhidden ? 0 : Theme.itemSizeSmall
-            context: secretconversationpage.context
-            dialog: secretconversationpage.dialog
-            user: secretconversationpage.user
+            height: context.chatheaderhidden ? 0 : (secretdialogpage.isPortrait ? Theme.itemSizeSmall : Theme.itemSizeExtraSmall)
+            context: secretdialogpage.context
+            dialog: secretdialogpage.dialog
+            user: secretdialogpage.user
         }
 
         MessageView
         {
             id: messageview
-            anchors { left: parent.left; top: header.bottom; right: parent.right; bottom: bottomcontainer.top; topMargin: Theme.paddingSmall }
-            context: secretconversationpage.context
+            anchors { left: parent.left; top: header.bottom; right: parent.right; bottom: parent.bottom }
+            context: secretdialogpage.context
 
             model: MessagesModel {
                 id: messagesmodel
@@ -103,13 +103,13 @@ Page
             }
 
             delegate: MessageItem {
-                context: secretconversationpage.context
+                context: secretdialogpage.context
                 message: item
             }
 
             header: Item {
                 width: messageview.width
-                height: dialogtextinput.visible ? dialogtextinput.height : Theme.itemSizeSmall
+                height: dialogtextinput.visible ? dialogtextinput.height : headerarea.height
             }
 
             Column {
@@ -122,20 +122,20 @@ Page
                     id: dialogtextinput
                     width: parent.width
                     messagesModel: messagesmodel
-                    context: dialogpage.context
-                    dialog: dialogpage.dialog
+                    context: secretdialogpage.context
+                    dialog: secretdialogpage.dialog
                     visible: chat && (chat.classType !== TelegramConstants.typeEncryptedChatDiscarded) && (chat.classType !== TelegramConstants.typeEncryptedChatWaiting)
                 }
 
                 SecretDialogDiscarded {
                     width: parent.width
-                    chat: secretconversationpage.chat
+                    chat: secretdialogpage.chat
                 }
 
                 SecretDialogWaiting {
                     width: parent.width
-                    chat: secretconversationpage.chat
-                    user: secretconversationpage.user
+                    chat: secretdialogpage.chat
+                    user: secretdialogpage.user
                 }
             }
         }

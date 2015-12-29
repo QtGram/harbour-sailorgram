@@ -12,6 +12,7 @@ Item
     id: secretdialogwaiting
     visible: user && chat && (chat.classType === TelegramConstants.typeEncryptedChatWaiting)
     width: busyindicator.width + lblwaiting.contentWidth + Theme.paddingMedium
+    height: Theme.itemSizeSmall
 
     BusyIndicator
     {

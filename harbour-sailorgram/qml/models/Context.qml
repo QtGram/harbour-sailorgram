@@ -37,6 +37,7 @@ QtObject
         configPath: telegramlocalstorage.telegramConfigPath
         publicKeyFile: telegramlocalstorage.telegramPublicKey
         autoCleanUpMessages: true
+        autoAcceptEncrypted: true
 
         onErrorSignal: errors.addError(errorCode, functionName, errorText)
 
