@@ -14,7 +14,16 @@ Item
     readonly property bool isUpload: message.upload.fileId !== 0
     readonly property bool transferInProgress: (progressPercent > 0) && (progressPercent < 100)
     readonly property bool hasMedia: message.media ? (message.media.classType !== TelegramConstants.typeMessageMediaEmpty) : false
-    readonly property real progressPercent: isUpload ? (100 * message.upload.uploaded / message.upload.totalSize) : filehandler.progressPercent
+
+    readonly property real progressPercent: {
+        if(filehandler.downloaded)
+            return 0;
+
+        if(isUpload)
+            return 100 * message.upload.uploaded / message.upload.totalSize;
+
+        return filehandler.progressPercent;
+    }
 
     readonly property real mediaSize: { // Size in bytes
         if(isUpload)
