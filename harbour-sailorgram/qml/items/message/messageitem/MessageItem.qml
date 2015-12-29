@@ -238,6 +238,7 @@ ListItem
         Loader
         {
             id: quotedloader
+            asynchronous: true
 
             anchors  {
                 left: parent.left
@@ -257,6 +258,7 @@ ListItem
         Loader
         {
             id: medialoader
+            asynchronous: true
             anchors.horizontalCenter: parent.horizontalCenter
 
             sourceComponent: {
