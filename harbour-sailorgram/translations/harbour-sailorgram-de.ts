@@ -496,7 +496,7 @@ Wähle einen Kontakt über &quot;Kontakte&quot; im Pulley Menu</translation>
     </message>
     <message>
         <source>Picking file</source>
-        <translation type="unfinished"></translation>
+        <translation>Datei auswählen</translation>
     </message>
 </context>
 <context>

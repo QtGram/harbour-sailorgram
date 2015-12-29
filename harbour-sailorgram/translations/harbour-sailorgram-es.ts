@@ -454,7 +454,7 @@ Elige un contacto seleccionando &quot;Contactos&quot; en el menú desplegable de
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Ajustes</translation>
+        <translation>Ajustes</translation>
     </message>
 </context>
 <context>
@@ -492,11 +492,11 @@ Elige un contacto seleccionando &quot;Contactos&quot; en el menú desplegable de
     <name>FilePicker</name>
     <message>
         <source>Created:</source>
-        <translation type="unfinished"></translation>
+        <translation>Creado:</translation>
     </message>
     <message>
         <source>Picking file</source>
-        <translation type="unfinished"></translation>
+        <translation>Eligiendo fichero</translation>
     </message>
 </context>
 <context>
@@ -518,7 +518,7 @@ Elige un contacto seleccionando &quot;Contactos&quot; en el menú desplegable de
     <name>ImagePreviewPage</name>
     <message>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar</translation>
     </message>
 </context>
 <context>
@@ -694,7 +694,7 @@ Elige un contacto seleccionando &quot;Contactos&quot; en el menú desplegable de
     <name>SecretDialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished">Cargar más mensajes</translation>
+        <translation>Cargar más mensajes</translation>
     </message>
 </context>
 <context>

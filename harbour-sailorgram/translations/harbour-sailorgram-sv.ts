@@ -411,7 +411,7 @@ Minimilängd är 5 tecken.</translation>
 Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <translation>Inga chattar
 
-Välj en kontakt från &quot;Kontakter&quot; i ovanstående menu</translation>
+Välj en kontakt från &quot;Kontakter&quot; i ovanstående meny</translation>
     </message>
     <message>
         <source>Chats</source>
@@ -496,7 +496,7 @@ Välj en kontakt från &quot;Kontakter&quot; i ovanstående menu</translation>
     </message>
     <message>
         <source>Picking file</source>
-        <translation type="unfinished"></translation>
+        <translation>Hämtar fil</translation>
     </message>
 </context>
 <context>

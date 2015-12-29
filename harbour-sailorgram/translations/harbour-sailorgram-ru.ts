@@ -223,7 +223,7 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Disable background</source>
-        <translation>Отключить фоновый рисунок</translation>
+        <translation>Убрать фоновый рисунок</translation>
     </message>
     <message>
         <source>Hide chat header</source>
@@ -231,7 +231,7 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Hide Bubbles</source>
-        <translation type="unfinished"></translation>
+        <translation>Убрать пузыри сообщений</translation>
     </message>
 </context>
 <context>
@@ -393,7 +393,7 @@ Minimum length is 5 characters.</source>
     <name>DialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Загрузить больше сообщений</translation>
     </message>
 </context>
 <context>
@@ -454,7 +454,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Настройки</translation>
+        <translation>Настройки</translation>
     </message>
 </context>
 <context>
@@ -492,11 +492,11 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>FilePicker</name>
     <message>
         <source>Created:</source>
-        <translation type="unfinished"></translation>
+        <translation>Создано:</translation>
     </message>
     <message>
         <source>Picking file</source>
-        <translation type="unfinished"></translation>
+        <translation>Выбор файла</translation>
     </message>
 </context>
 <context>
@@ -518,7 +518,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>ImagePreviewPage</name>
     <message>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Выбрать</translation>
     </message>
 </context>
 <context>
@@ -694,7 +694,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>SecretDialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Загрузить больше сообщений</translation>
     </message>
 </context>
 <context>

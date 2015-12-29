@@ -85,18 +85,18 @@
     </message>
     <message>
         <source>Galician</source>
-        <translation type="unfinished"></translation>
+        <translation>Gälisch</translation>
     </message>
     <message>
         <source>Belaruian</source>
-        <translation type="unfinished"></translation>
+        <translation>Weißrussisch</translation>
     </message>
 </context>
 <context>
     <name>AddContactPage</name>
     <message>
         <source>Add Contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontakt hinzufügen</translation>
     </message>
     <message>
         <source>First Name</source>
@@ -108,7 +108,7 @@
     </message>
     <message>
         <source>Telephone Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Telefonnummer</translation>
     </message>
 </context>
 <context>
@@ -219,7 +219,7 @@ Minimale Länge sind 5 Zeichen</translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Nachricht mit Eingebetaste abschicken</translation>
     </message>
     <message>
         <source>Disable background</source>
@@ -257,14 +257,14 @@ Minimale Länge sind 5 Zeichen</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler-Log</translation>
     </message>
 </context>
 <context>
     <name>ContactsPage</name>
     <message>
         <source>Add Contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontakt hinzufügen</translation>
     </message>
     <message>
         <source>Contacts</source>
@@ -332,7 +332,7 @@ Minimale Länge sind 5 Zeichen</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler-Log</translation>
     </message>
     <message>
         <source>Not Connected</source>
@@ -343,7 +343,7 @@ Minimale Länge sind 5 Zeichen</translation>
     <name>DialogInfoPage</name>
     <message>
         <source>Delete secret chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Geheimes Gespräch löschen</translation>
     </message>
     <message>
         <source>Delete group</source>
@@ -400,7 +400,7 @@ Minimale Länge sind 5 Zeichen</translation>
     <name>DialogTextInput</name>
     <message>
         <source>Message...</source>
-        <translation type="unfinished"></translation>
+        <translation>Nachricht…</translation>
     </message>
 </context>
 <context>
@@ -440,7 +440,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>DialogsPullDownMenu</name>
     <message>
         <source>Profile</source>
-        <translation type="unfinished">Profil</translation>
+        <translation>Profil</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
@@ -448,7 +448,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>New Group</source>
-        <translation type="unfinished">Neue Gruppe</translation>
+        <translation>Neue Gruppe</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -467,7 +467,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler-Log</translation>
     </message>
     <message>
         <source>Error code:</source>
@@ -479,7 +479,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Lösche Fehler</translation>
     </message>
     <message>
         <source>Message:</source>
@@ -490,7 +490,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>FilePicker</name>
     <message>
         <source>Created:</source>
-        <translation type="unfinished"></translation>
+        <translation>Erstellt:</translation>
     </message>
     <message>
         <source>Picking file</source>
@@ -553,7 +553,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Größe: %1</translation>
     </message>
 </context>
 <context>
@@ -617,7 +617,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Größe: %1</translation>
     </message>
     <message>
         <source>Duration: %1</source>
@@ -662,7 +662,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Phone number</source>
-        <translation type="unfinished"></translation>
+        <translation>Telefonnummer</translation>
     </message>
     <message>
         <source>Profile</source>
@@ -685,7 +685,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>SecretDialogDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation type="unfinished"></translation>
+        <translation>Geheimes Gespräch abgebrochen</translation>
     </message>
 </context>
 <context>
@@ -760,7 +760,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>%1 has joined the group via invite link</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 hat die Gruppe mit dem Einladungs-Link betreten</translation>
     </message>
     <message>
         <source>Secret chat created by ��%1��</source>

@@ -130,7 +130,7 @@
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation>Vous avez saisi un mauvais code d&apos;autorisation</translation>
+        <translation>Vous avez saisi un code d&apos;autorisation erroné</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign In&apos;</source>
@@ -496,7 +496,7 @@ Choisissez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessus
     </message>
     <message>
         <source>Picking file</source>
-        <translation type="unfinished"></translation>
+        <translation>Sélection de fichier</translation>
     </message>
 </context>
 <context>

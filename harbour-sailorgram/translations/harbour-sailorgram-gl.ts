@@ -231,7 +231,7 @@ A lonxitude mínima é de 5 caracteres.</translation>
     </message>
     <message>
         <source>Hide Bubbles</source>
-        <translation type="unfinished"></translation>
+        <translation>Agochar burbullas</translation>
     </message>
 </context>
 <context>
@@ -393,7 +393,7 @@ A lonxitude mínima é de 5 caracteres.</translation>
     <name>DialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Cargar mais mensaxes</translation>
     </message>
 </context>
 <context>
@@ -454,7 +454,7 @@ Elixa un contacto seleccionando &quot;Contactos&quot; no menu despregable</trans
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Preferencias</translation>
+        <translation>Preferencias</translation>
     </message>
 </context>
 <context>
@@ -492,11 +492,11 @@ Elixa un contacto seleccionando &quot;Contactos&quot; no menu despregable</trans
     <name>FilePicker</name>
     <message>
         <source>Created:</source>
-        <translation type="unfinished"></translation>
+        <translation>Creado:</translation>
     </message>
     <message>
         <source>Picking file</source>
-        <translation type="unfinished"></translation>
+        <translation>Obtendo arquivo</translation>
     </message>
 </context>
 <context>
@@ -518,7 +518,7 @@ Elixa un contacto seleccionando &quot;Contactos&quot; no menu despregable</trans
     <name>ImagePreviewPage</name>
     <message>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione</translation>
     </message>
 </context>
 <context>
@@ -694,7 +694,7 @@ Elixa un contacto seleccionando &quot;Contactos&quot; no menu despregable</trans
     <name>SecretDialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Cargar mais mensaxes</translation>
     </message>
 </context>
 <context>

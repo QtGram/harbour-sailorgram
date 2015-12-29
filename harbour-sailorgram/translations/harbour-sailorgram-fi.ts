@@ -454,7 +454,7 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteydet&quot; yläpuolella olevasta valik
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Asetukset</translation>
+        <translation>Asetukset</translation>
     </message>
 </context>
 <context>
@@ -492,11 +492,11 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteydet&quot; yläpuolella olevasta valik
     <name>FilePicker</name>
     <message>
         <source>Created:</source>
-        <translation type="unfinished"></translation>
+        <translation>Luonut:</translation>
     </message>
     <message>
         <source>Picking file</source>
-        <translation type="unfinished"></translation>
+        <translation>Haetaan tiedostoa</translation>
     </message>
 </context>
 <context>
@@ -518,7 +518,7 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteydet&quot; yläpuolella olevasta valik
     <name>ImagePreviewPage</name>
     <message>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse</translation>
     </message>
 </context>
 <context>
@@ -694,7 +694,7 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteydet&quot; yläpuolella olevasta valik
     <name>SecretDialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished">Lataa lisää viestejä</translation>
+        <translation>Lataa lisää viestejä</translation>
     </message>
 </context>
 <context>
