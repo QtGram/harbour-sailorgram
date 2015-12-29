@@ -119,9 +119,9 @@ Page
                             item.unreadCount = 0;
 
                             if(item.encrypted)
-                                context.telegram.messagesDiscardEncryptedChat(item.peer.userId);
+                                context.telegram.messagesDiscardEncryptedChat(item.peer.userId, true);
                             else
-                                context.telegram.messagesDeleteHistory(TelegramHelper.peerId(item), true);
+                                context.telegram.messagesDeleteHistory(TelegramHelper.peerId(item), true, false, true);
                         });
                     }
                 }
