@@ -1,15 +1,18 @@
-An unofficial Telegram Client for SailfishOS.
+![Logo](https://github.com/Dax89/harbour-sailorgram/raw/master/harbour-sailorgram/res/telegram.png)
+#Sailorgram
 
-This software is under heavy development
+An unofficial Telegram Client for SailfishOS written in Qml using Silica graphics library.
 
 Implemented Features
 -----
 - Basic Notifications
+- Profile Management
 - Group and Members Management (Create/Add/Invite/Delete)
 - File Transfer (event from SD Card)
 - Image/Audio/Video/Document Media Support
-- Secret Chats (they will be improved in next version)
-- Profile Management
+- Secret Chats (bugfixes needed)
+- Bubbles and Quotes during conversations
+- Emoji
 
 Dependencies
 -----
