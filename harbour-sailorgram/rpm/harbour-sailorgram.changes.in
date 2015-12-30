@@ -8,6 +8,26 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Wed Dec 30 2015 Antonio Davide Trogu <trogu.davide@gmail.com> 0.73-1
+- Backported UI enhancements from 0.8x branch
+- Updated to the latest Cutegram libraries available
+- Implemented Emoji support
+- Implemented Bubbles
+- Bubble can be removed, if needed
+- Mentions are now highlighted (but not clickable)
+- Improved message loading from history
+- Updated Localizations
+- Improved File Picker's UI
+- Restored image previews in File Picker
+- Swapped Settings <-> Contacts page
+- Mentions, Links and Quotes are highlighted during conversations
+- Links are clickable
+- Adjusted and fixed UI glitches
+- Redesigned conversation page
+- Completely restructured source code
+- Performance improvements
+- Minor Fixes
+
 * Sun Oct 11 2015 Antonio Davide Trogu <trogu.davide@gmail.com> 0.72-2
 - Bug fixes in chat's background settings
 - i486 support (tablet)
