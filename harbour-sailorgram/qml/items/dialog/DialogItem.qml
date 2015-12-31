@@ -78,16 +78,6 @@ Item
                 anchors { left: parent.left; right: parent.right; rightMargin: Theme.paddingMedium }
                 spacing: Theme.paddingSmall
 
-                Image {
-                    id: imgchat
-                    width: lbltitle.contentHeight
-                    height: lbltitle.contentHeight
-                    visible: TelegramHelper.isChat(dialog)
-                    source: TelegramHelper.isChat(dialog) ? "image://theme/icon-s-chat" : ""
-                    anchors.verticalCenter: parent.verticalCenter
-                    fillMode: Image.PreserveAspectFit
-                }
-
                 Label {
                     id: lbltitle
                     text: TelegramHelper.isChat(dialog) ? chat.title : TelegramHelper.completeName(user)
@@ -98,9 +88,6 @@ Item
 
                     width: {
                         var w = parent.width - lbltime.contentWidth;
-
-                        if(imgchat.visible)
-                            w -= imgchat.width + Theme.paddingSmall;
 
                         if(imgmute.visible)
                             w -= imgmute.width + Theme.paddingSmall;
