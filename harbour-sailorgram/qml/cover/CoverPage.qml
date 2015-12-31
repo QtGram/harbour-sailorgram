@@ -76,7 +76,7 @@ CoverBackground
 
         CoverAction
         {
-            iconSource: context.telegram.globalMute ? "image://theme/icon-cover-unmute" : "image://theme/icon-cover-mute"
+            iconSource: context.telegram.globalMute ? "noalarmcover.png" : "alarmcover.png"
 
             onTriggered: {
                 context.telegram.globalMute = !context.telegram.globalMute;

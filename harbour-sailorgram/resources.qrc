@@ -7,5 +7,7 @@
         <file>res/telegrambackground.png</file>
         <file>res/debug.png</file>
         <file>res/preview.png</file>
+        <file>qml/cover/noalarmcover.png</file>
+        <file>qml/cover/alarmcover.png</file>
     </qresource>
 </RCC>
