@@ -13,6 +13,8 @@ Item
     property alias contentColor: lblcontent.color
     property alias text: lblcontent.text
 
+    signal infoClicked()
+
     height: lbltitle.height + lblcontent.height
 
     Label
@@ -35,5 +37,11 @@ Item
         font.pixelSize: Theme.fontSizeExtraSmall
         elide: labelElide
         wrapMode: labelWrap
+    }
+
+    MouseArea
+    {
+        anchors.fill: parent
+        onClicked: infoClicked()
     }
 }

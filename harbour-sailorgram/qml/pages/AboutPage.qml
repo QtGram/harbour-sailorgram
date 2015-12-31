@@ -142,6 +142,17 @@ Page
                     title: qsTr("GitHub Repository")
                     contentFont.underline: true
                     text: "https://github.com/Dax89/harbour-sailorgram";
+                    onInfoClicked: Qt.openUrlExternally(text)
+                }
+
+                InfoLabel
+                {
+                    id: lblemojpack
+                    anchors { left: parent.left; top: lblicondesigner.bottom; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
+                    title: qsTr("Emoji Set")
+                    contentFont.underline: true
+                    text: "http://emojione.com/"
+                    onInfoClicked: Qt.openUrlExternally(text)
                 }
 
                 InfoLabel
@@ -151,6 +162,7 @@ Page
                     title: qsTr("Translation Platform")
                     contentFont.underline: true
                     text: "https://www.transifex.com/projects/p/sailorgram";
+                    onInfoClicked: Qt.openUrlExternally(text)
                 }
             }
 
