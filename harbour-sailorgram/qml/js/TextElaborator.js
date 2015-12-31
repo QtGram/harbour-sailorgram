@@ -10,7 +10,7 @@ function surrogatePairToUnicodeScalar(hi, lo)
     return 0;
 }
 
-function emojify(s, emojipath)
+function emojify(s, height, emojipath)
 {
     if(!emojipath.length)
     {
@@ -25,7 +25,7 @@ function emojify(s, emojipath)
     return s.replace(new RegExp(ranges.join("|"), "g"),
                      function(match) {
                          var uniscalar = surrogatePairToUnicodeScalar(match.charCodeAt(0), match.charCodeAt(1));
-                         return "<img src=\"" + emojipath + uniscalar.toString(16).toLowerCase() + ".png\">";
+                         return "<img align=\"middle\" width=\"" + height + "\" height=\"" + height + "\" src=\"" + emojipath + uniscalar.toString(16).toLowerCase() + ".png\">";
                      });
 }
 
@@ -64,11 +64,11 @@ function replaceNewlines(s)
     return s.replace(/(?:\r\n|\r|\n)/g, "<br/>");
 }
 
-function elaborate(s, emojipath, highlightcolor)
+function elaborate(s, emojipath, height, highlightcolor)
 {
     var res = replaceLtGt(s);
     res = replaceNewlines(res);
-    res = emojify(res, emojipath);
+    res = emojify(res, height, emojipath);
     res = linkify(res);
     res = mentionify(res, highlightcolor);
     return "<span>" + res + "</span>";

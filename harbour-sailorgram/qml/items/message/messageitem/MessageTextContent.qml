@@ -9,6 +9,6 @@ Label
 
     id: messagetextcontent
     textFormat: Text.StyledText
-    text: TextElaborator.elaborate(rawText, emojiPath, linkColor)
+    text: TextElaborator.elaborate(rawText, emojiPath, height, linkColor)
     onLinkActivated: Qt.openUrlExternally(link)
 }

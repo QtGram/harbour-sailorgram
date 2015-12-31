@@ -259,12 +259,9 @@ void DcProvider::onConfigReceived(qint64 msgId, const Config &config) {
 
     const QList<DcOption> &dcOptions = config.dcOptions();
 
-    mPendingDcs = dcOptions.length() -2; //all the received options but the default one, yet used
+    mPendingDcs = dcOptions.length() -1; //all the received options but the default one, yet used
 
     Q_FOREACH (DcOption dcOption, dcOptions) {
-        if(dcOption.id() == 5) // HACK: DC 5 doesn't work, waiting for a fix
-            continue;
-
         qCDebug(TG_CORE_DCPROVIDER) << "dcOption | id =" << dcOption.id() << ", ipAddress =" << dcOption.ipAddress() <<
                     ", port =" << dcOption.port() << ", hostname =" << dcOption.hostname();
 

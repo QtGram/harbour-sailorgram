@@ -91,6 +91,10 @@
         <source>Belaruian</source>
         <translation>Hviderussisk</translation>
     </message>
+    <message>
+        <source>Emoji Set</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AddContactPage</name>
