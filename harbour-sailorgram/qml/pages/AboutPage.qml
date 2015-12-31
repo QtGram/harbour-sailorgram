@@ -117,7 +117,7 @@ Page
             Item
             {
                 width: parent.width
-                height: Theme.paddingLarge + lbldev.height + lblicondesigner.height + lblrepository.height + lbltranslationplatform.height
+                height: Theme.paddingLarge + lbldev.height + lblicondesigner.height + lblrepository.height + lbltranslationplatform.height + lblemojpack.height
 
                 InfoLabel
                 {
@@ -147,21 +147,21 @@ Page
 
                 InfoLabel
                 {
-                    id: lblemojpack
-                    anchors { left: parent.left; top: lblicondesigner.bottom; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
-                    title: qsTr("Emoji Set")
-                    contentFont.underline: true
-                    text: "http://emojione.com/"
-                    onInfoClicked: Qt.openUrlExternally(text)
-                }
-
-                InfoLabel
-                {
                     id: lbltranslationplatform
                     anchors { left: parent.left; top: lblrepository.bottom; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
                     title: qsTr("Translation Platform")
                     contentFont.underline: true
                     text: "https://www.transifex.com/projects/p/sailorgram";
+                    onInfoClicked: Qt.openUrlExternally(text)
+                }
+
+                InfoLabel
+                {
+                    id: lblemojpack
+                    anchors { left: parent.left; top: lbltranslationplatform.bottom; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
+                    title: qsTr("Emoji Set")
+                    contentFont.underline: true
+                    text: "http://emojione.com"
                     onInfoClicked: Qt.openUrlExternally(text)
                 }
             }
