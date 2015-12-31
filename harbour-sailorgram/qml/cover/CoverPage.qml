@@ -72,5 +72,14 @@ CoverBackground
                 mainwindow.activate();
             }
         }
+
+        CoverAction
+        {
+            iconSource: context.telegram.globalMute ? "image://theme/icon-cover-unmute" : "image://theme/icon-cover-mute"
+
+            onTriggered: {
+                context.telegram.globalMute = !context.telegram.globalMute;
+            }
+        }
     }
 }

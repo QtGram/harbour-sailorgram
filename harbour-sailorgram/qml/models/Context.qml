@@ -48,6 +48,9 @@ QtObject
         }
 
         onIncomingMessage: {
+            if(context.telegram.globalMute)
+                return;
+
             var userdata = context.telegram.userData;
 
             if(TelegramHelper.isServiceMessage(msg)) /* Do not notify for Action Messages */
