@@ -15,7 +15,7 @@ ContextMenu
     MenuItem
     {
         text: qsTr("Send Message")
-        onClicked: pageStack.replace(Qt.resolvedUrl("../pages/dialogs/DialogPage.qml"), { "context": usermenu.context, "dialog": usermenu.context.telegram.fakeDialogObject(usermenu.user.id, false) } )
+        onClicked: pageStack.push(Qt.resolvedUrl("../pages/dialogs/DialogPage.qml"), { "context": usermenu.context, "dialog": usermenu.context.telegram.fakeDialogObject(usermenu.user.id, false) } )
     }
 
     MenuItem
