@@ -722,10 +722,6 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteydet&quot; yläpuolella olevasta valik
         <source>Debug</source>
         <translation>Vian korjaus</translation>
     </message>
-    <message>
-        <source>About</source>
-        <translation>Tietoa</translation>
-    </message>
 </context>
 <context>
     <name>SignUpPage</name>

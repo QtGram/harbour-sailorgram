@@ -720,10 +720,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <source>Debug</source>
         <translation type="unfinished">Debug</translation>
     </message>
-    <message>
-        <source>About</source>
-        <translation>Über</translation>
-    </message>
 </context>
 <context>
     <name>SignUpPage</name>

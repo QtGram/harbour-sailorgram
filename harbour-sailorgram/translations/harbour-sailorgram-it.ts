@@ -722,10 +722,6 @@ Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
         <source>Debug</source>
         <translation>Debug</translation>
     </message>
-    <message>
-        <source>About</source>
-        <translation>Crediti</translation>
-    </message>
 </context>
 <context>
     <name>SignUpPage</name>

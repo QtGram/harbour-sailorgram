@@ -722,10 +722,6 @@ Selecteer een contactpersoon door te kiezen voor &quot;Contactpersonen&quot; in 
         <source>Debug</source>
         <translation>Foutopsporing</translation>
     </message>
-    <message>
-        <source>About</source>
-        <translation>Over</translation>
-    </message>
 </context>
 <context>
     <name>SignUpPage</name>

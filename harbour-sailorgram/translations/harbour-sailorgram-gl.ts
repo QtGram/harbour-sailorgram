@@ -722,10 +722,6 @@ Elixa un contacto seleccionando &quot;Contactos&quot; no menu despregable</trans
         <source>Debug</source>
         <translation>Debug</translation>
     </message>
-    <message>
-        <source>About</source>
-        <translation>Acerca de</translation>
-    </message>
 </context>
 <context>
     <name>SignUpPage</name>

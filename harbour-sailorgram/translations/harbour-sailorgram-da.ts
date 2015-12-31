@@ -500,7 +500,7 @@ Vælg en kontakt, ved at vælge &quot;Kontakter&quot; fra menuen ovenover</trans
     </message>
     <message>
         <source>Picking file</source>
-        <translation type="unfinished"></translation>
+        <translation>Udvælger fil</translation>
     </message>
 </context>
 <context>
@@ -721,10 +721,6 @@ Vælg en kontakt, ved at vælge &quot;Kontakter&quot; fra menuen ovenover</trans
     <message>
         <source>Debug</source>
         <translation>Debug</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation>Om</translation>
     </message>
 </context>
 <context>

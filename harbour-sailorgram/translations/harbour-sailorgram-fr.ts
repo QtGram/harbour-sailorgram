@@ -722,10 +722,6 @@ Choisissez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessus
         <source>Debug</source>
         <translation>Déboguer</translation>
     </message>
-    <message>
-        <source>About</source>
-        <translation>A propos</translation>
-    </message>
 </context>
 <context>
     <name>SignUpPage</name>

@@ -500,7 +500,7 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z Pull Down Menu</translation>
     </message>
     <message>
         <source>Picking file</source>
-        <translation type="unfinished"></translation>
+        <translation>Vybírání </translation>
     </message>
 </context>
 <context>
@@ -721,10 +721,6 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z Pull Down Menu</translation>
     <message>
         <source>Debug</source>
         <translation>Zkoušet</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation>O</translation>
     </message>
 </context>
 <context>

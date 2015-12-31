@@ -722,10 +722,6 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <source>Debug</source>
         <translation>Отладка</translation>
     </message>
-    <message>
-        <source>About</source>
-        <translation>О программе</translation>
-    </message>
 </context>
 <context>
     <name>SignUpPage</name>
