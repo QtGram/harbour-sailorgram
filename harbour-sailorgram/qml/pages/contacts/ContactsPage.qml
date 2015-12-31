@@ -49,7 +49,7 @@ Page
                 user: context.telegram.user(item.userId)
             }
 
-            onClicked: pageStack.replace(Qt.resolvedUrl("../dialogs/DialogPage.qml"), { "context": contactspage.context, "dialog": context.telegram.fakeDialogObject(item.userId, false) } )
+            onClicked: pageStack.push(Qt.resolvedUrl("../dialogs/DialogPage.qml"), { "context": contactspage.context, "dialog": context.telegram.fakeDialogObject(item.userId, false) } )
 
             UserItem {
                 id: useritem
