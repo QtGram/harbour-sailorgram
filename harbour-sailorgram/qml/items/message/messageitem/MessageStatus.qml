@@ -14,7 +14,7 @@ Label
     visible: !TelegramHelper.isServiceMessage(message)
     color: ColorScheme.colorize(message, context)
     verticalAlignment: Text.AlignVCenter
-    horizontalAlignment: Text.AlignRight
+    horizontalAlignment: message.out ? Text.AlignLeft : Text.AlignRight
     textFormat: Text.StyledText
     font.pixelSize: Theme.fontSizeTiny
 
