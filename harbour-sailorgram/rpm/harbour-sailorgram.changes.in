@@ -8,7 +8,7 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
-* Wed Dec 31 2015 Antonio Davide Trogu <trogu.davide@gmail.com> 0.73-3
+* Wed Dec 31 2015 Antonio Davide Trogu <trogu.davide@gmail.com> 0.73-5
 - Fixed ContactPage issue
 - Fixed Cover Actions
 - Added "Global Mute" setting in cover actions
