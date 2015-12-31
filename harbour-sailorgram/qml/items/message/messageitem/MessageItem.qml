@@ -227,6 +227,13 @@ ListItem
             font.bold: true
             wrapMode: Text.NoWrap
 
+            horizontalAlignment: {
+                if(message.out)
+                    return Text.AlignLeft;
+
+                return Text.AlignRight;
+            }
+
             text: {
                 if(TelegramHelper.isServiceMessage(message) || message.out)
                     return "";
