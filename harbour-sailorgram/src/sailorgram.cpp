@@ -1,9 +1,14 @@
 #include "sailorgram.h"
 
+const QString SailorGram::CONFIG_FOLDER = "telegram";
+const QString SailorGram::PUBLIC_KEY_FILE = "server.pub";
 const QString SailorGram::EMOJI_FOLDER = "emoji";
 
 SailorGram::SailorGram(QObject *parent): QObject(parent), _telegram(NULL)
 {
+    QDir cfgdir(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation));
+    cfgdir.mkpath(qApp->applicationName() + QDir::separator() + qApp->applicationName() + QDir::separator() + SailorGram::CONFIG_FOLDER);
+
     this->_heartbeat = new HeartBeat(this);
 
     connect(this->_heartbeat, SIGNAL(connectedChanged()), this, SLOT(wakeSleep()), Qt::QueuedConnection);
@@ -34,6 +39,16 @@ void SailorGram::setInterval(int interval)
 QString SailorGram::emojiPath() const
 {
     return qApp->applicationDirPath() + QDir::separator() + "../share/" + qApp->applicationName() + QDir::separator() + SailorGram::EMOJI_FOLDER + QDir::separator();
+}
+
+QString SailorGram::configPath() const
+{
+    return QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QDir::separator() + SailorGram::CONFIG_FOLDER;
+}
+
+QString SailorGram::publicKey() const
+{
+    return qApp->applicationDirPath() + QDir::separator() + "../share/" + qApp->applicationName() + QDir::separator() + SailorGram::PUBLIC_KEY_FILE;
 }
 
 TelegramQml *SailorGram::telegram() const

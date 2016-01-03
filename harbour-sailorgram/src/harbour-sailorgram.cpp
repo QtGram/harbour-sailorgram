@@ -35,7 +35,6 @@
 #include "dbus/notifications/notifications.h"
 #include "dbus/interface/sailorgraminterface.h"
 #include "filepicker/folderlistmodel.h"
-#include "localstorage/telegramlocalstorage.h"
 #include "sailorgram.h"
 
 int main(int argc, char *argv[])
@@ -48,7 +47,7 @@ int main(int argc, char *argv[])
 
     if(sessionbus.interface()->isServiceRegistered(SailorgramInterface::INTERFACE_NAME)) // Only a Single Instance is allowed
     {
-        SailorgramInterface::sendWakeup();
+        SailorgramInterface::sendWakeUp();
 
         if(application->hasPendingEvents())
             application->processEvents();
@@ -63,7 +62,6 @@ int main(int argc, char *argv[])
     qmlRegisterType<ScreenBlank>("harbour.sailorgram.DBus", 1, 0, "ScreenBlank");
     qmlRegisterType<Notifications>("harbour.sailorgram.DBus", 1, 0, "Notifications");
     qmlRegisterType<FolderListModel>("harbour.sailorgram.Pickers", 1, 0, "FolderListModel");
-    qmlRegisterType<TelegramLocalStorage>("harbour.sailorgram.TelegramLocalStorage", 1, 0, "TelegramLocalStorage");
 
     QScopedPointer<QQuickView> view(SailfishApp::createView());
     QQmlEngine* engine = view->engine();

@@ -41,7 +41,6 @@ emoji.path = /usr/share/$$TARGET/emoji
 INSTALLS += emoji
 
 SOURCES += src/harbour-sailorgram.cpp \
-    src/localstorage/telegramlocalstorage.cpp \
     src/dbus/notifications/notifications.cpp \
     src/sailorgram.cpp \
     src/filepicker/folderlistmodel.cpp \
@@ -145,7 +144,6 @@ TRANSLATIONS += translations/harbour-sailorgram-be.ts \
                 translations/harbour-sailorgram.ts
 
 HEADERS += \
-    src/localstorage/telegramlocalstorage.h \
     src/dbus/notifications/notifications.h \
     src/sailorgram.h \
     src/filepicker/folderlistmodel.h \

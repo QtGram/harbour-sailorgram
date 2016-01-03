@@ -24,7 +24,7 @@ SailorgramInterface::SailorgramInterface(QObject *parent) : QObject(parent)
         qWarning() << connection.lastError().message();
 }
 
-void SailorgramInterface::sendWakeup()
+void SailorgramInterface::sendWakeUp()
 {
     QDBusMessage message = QDBusMessage::createMethodCall(SailorgramInterface::INTERFACE_NAME, "/", SailorgramInterface::INTERFACE_NAME, "wakeUp");
     QDBusConnection connection = QDBusConnection::sessionBus();

@@ -21,6 +21,8 @@ class SailorGram : public QObject
     Q_PROPERTY(int interval READ interval WRITE setInterval NOTIFY intervalChanged)
     Q_PROPERTY(TelegramQml* telegram READ telegram WRITE setTelegram NOTIFY telegramChanged)
     Q_PROPERTY(QString emojiPath READ emojiPath CONSTANT FINAL)
+    Q_PROPERTY(QString configPath READ configPath CONSTANT FINAL)
+    Q_PROPERTY(QString publicKey READ  publicKey CONSTANT FINAL)
 
     public:
         explicit SailorGram(QObject *parent = 0);
@@ -29,6 +31,8 @@ class SailorGram : public QObject
         int interval() const;
         void setInterval(int interval);
         QString emojiPath() const;
+        QString configPath() const;
+        QString publicKey() const;
         TelegramQml* telegram() const;
         void setTelegram(TelegramQml* telegram);
         void setKeepRunning(bool keep);
@@ -60,6 +64,8 @@ class SailorGram : public QObject
         QMimeDatabase _mimedb;
 
     private:
+        static const QString CONFIG_FOLDER;
+        static const QString PUBLIC_KEY_FILE;
         static const QString EMOJI_FOLDER;
 };
 

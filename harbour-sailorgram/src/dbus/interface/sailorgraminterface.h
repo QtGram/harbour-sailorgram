@@ -12,7 +12,7 @@ class SailorgramInterface : public QObject
         explicit SailorgramInterface(QObject *parent = 0);
 
     public:
-        static void sendWakeup();
+        static void sendWakeUp();
 
     public slots:
         void wakeUp();
