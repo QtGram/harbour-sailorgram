@@ -42,7 +42,7 @@ ApplicationWindow
     Context
     {
         id: context
-        sailorgraminterface.onWakeUpRequested: mainwindow.activate()
+        sailorgram.onWakeUpRequested: mainwindow.activate()
 
         Component.onCompleted: {
             Settings.load(function(tx) {

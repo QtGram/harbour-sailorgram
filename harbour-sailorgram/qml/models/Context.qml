@@ -18,7 +18,6 @@ QtObject
     property ScreenBlank screenblank: ScreenBlank { }
     property ContactsModel contacts: ContactsModel { }
     property ErrorsModel errors: ErrorsModel { }
-    property SailorgramInterface sailorgraminterface: SailorgramInterface { }
 
     property NotificationManager notificationmanager: NotificationManager {
         telegram: context.telegram

@@ -4,13 +4,16 @@ const QString SailorGram::CONFIG_FOLDER = "telegram";
 const QString SailorGram::PUBLIC_KEY_FILE = "server.pub";
 const QString SailorGram::EMOJI_FOLDER = "emoji";
 
-SailorGram::SailorGram(QObject *parent): QObject(parent), _telegram(NULL)
+SailorGram::SailorGram(QObject *parent): QObject(parent), _telegram(NULL), _daemonized(false)
 {
     QDir cfgdir(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation));
     cfgdir.mkpath(qApp->applicationName() + QDir::separator() + qApp->applicationName() + QDir::separator() + SailorGram::CONFIG_FOLDER);
 
     this->_heartbeat = new HeartBeat(this);
+    this->_interface = new SailorgramInterface(this);
 
+    connect(qApp, SIGNAL(applicationStateChanged(Qt::ApplicationState)), this, SLOT(onApplicationStateChanged(Qt::ApplicationState)));
+    connect(this->_interface, SIGNAL(wakeUpRequested()), this, SLOT(onWakeUpRequested()));
     connect(this->_heartbeat, SIGNAL(connectedChanged()), this, SLOT(wakeSleep()), Qt::QueuedConnection);
     connect(this->_heartbeat, SIGNAL(connectedChanged()), this, SIGNAL(connectedChanged()), Qt::QueuedConnection);
     connect(this->_heartbeat, SIGNAL(intervalChanged()), this, SIGNAL(intervalChanged()));
@@ -19,6 +22,11 @@ SailorGram::SailorGram(QObject *parent): QObject(parent), _telegram(NULL)
 bool SailorGram::keepRunning() const
 {
     return !qApp->quitOnLastWindowClosed();
+}
+
+bool SailorGram::daemonized() const
+{
+    return qApp->applicationState() == Qt::ApplicationActive;
 }
 
 bool SailorGram::connected() const
@@ -98,6 +106,28 @@ void SailorGram::moveMediaTo(FileLocationObject *locationobj, const QString &des
         return;
 
     QFile::copy(location.path(), destpath);
+}
+
+void SailorGram::onApplicationStateChanged(Qt::ApplicationState state)
+{
+    bool active = state == Qt::ApplicationActive;
+
+    if((!this->_daemonized && active) || (this->_daemonized && !active))
+        return;
+
+    this->_daemonized = !active;
+    emit daemonizedChanged();
+}
+
+void SailorGram::onWakeUpRequested()
+{
+    if(this->_daemonized)
+    {
+        this->_daemonized = false;
+        emit daemonizedChanged();
+    }
+
+    emit wakeUpRequested();
 }
 
 bool SailorGram::fileIsPhoto(const QString &filepath)
