@@ -460,6 +460,10 @@ Selecteer een contactpersoon door te kiezen voor &quot;Contactpersonen&quot; in 
         <source>Settings</source>
         <translation>Instellingen</translation>
     </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ErrorsPage</name>

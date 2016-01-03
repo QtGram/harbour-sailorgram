@@ -33,6 +33,7 @@
 #include <telegramqmlinitializer.h>
 #include "dbus/screenblank.h"
 #include "dbus/notifications/notifications.h"
+#include "dbus/interface/sailorgraminterface.h"
 #include "filepicker/folderlistmodel.h"
 #include "localstorage/telegramlocalstorage.h"
 #include "sailorgram.h"
@@ -43,9 +44,22 @@ int main(int argc, char *argv[])
     application->setApplicationName("harbour-sailorgram");
     application->setApplicationVersion("0.7");
 
+    QDBusConnection sessionbus = QDBusConnection::sessionBus();
+
+    if(sessionbus.interface()->isServiceRegistered(SailorgramInterface::INTERFACE_NAME)) // Only a Single Instance is allowed
+    {
+        SailorgramInterface::sendWakeup();
+
+        if(application->hasPendingEvents())
+            application->processEvents();
+
+        return 0;
+    }
+
     TelegramQmlInitializer::init("harbour.sailorgram.TelegramQml");
 
     qmlRegisterType<SailorGram>("harbour.sailorgram.SailorGram", 1, 0, "SailorGram");
+    qmlRegisterType<SailorgramInterface>("harbour.sailorgram.DBus", 1, 0, "SailorgramInterface");
     qmlRegisterType<ScreenBlank>("harbour.sailorgram.DBus", 1, 0, "ScreenBlank");
     qmlRegisterType<Notifications>("harbour.sailorgram.DBus", 1, 0, "Notifications");
     qmlRegisterType<FolderListModel>("harbour.sailorgram.Pickers", 1, 0, "FolderListModel");
@@ -57,5 +71,6 @@ int main(int argc, char *argv[])
 
     view->setSource(SailfishApp::pathTo("qml/harbour-sailorgram.qml"));
     view->show();
+
     return application->exec();
 }

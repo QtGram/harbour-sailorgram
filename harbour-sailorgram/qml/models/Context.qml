@@ -16,12 +16,13 @@ QtObject
     property bool chatheaderhidden: false
     property bool bubbleshidden: false
 
+    property Dialog foregroundDialog: telegram.nullDialog
     property TelegramLocalStorage telegramlocalstorage: TelegramLocalStorage { }
     property ScreenBlank screenblank: ScreenBlank { }
     property Notifications notifications: Notifications { }
     property ContactsModel contacts: ContactsModel { }
     property ErrorsModel errors: ErrorsModel { }
-    property Dialog foregroundDialog: telegram.nullDialog
+    property SailorgramInterface sailorgraminterface: SailorgramInterface { }
 
     property SailorGram sailorgram: SailorGram {
         telegram: context.telegram
@@ -45,6 +46,7 @@ QtObject
         onConnectedChanged: {
             if(connected) {
                context.contacts.telegram = context.telegram;
+               context.sailorgram.keepRunning = true;
             }
         }
 

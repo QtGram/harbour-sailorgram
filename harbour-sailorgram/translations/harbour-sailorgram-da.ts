@@ -460,6 +460,10 @@ Vælg en kontakt, ved at vælge &quot;Kontakter&quot; fra menuen ovenover</trans
         <source>Settings</source>
         <translation>Indstillinger</translation>
     </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ErrorsPage</name>

@@ -46,7 +46,9 @@ SOURCES += src/harbour-sailorgram.cpp \
     src/sailorgram.cpp \
     src/filepicker/folderlistmodel.cpp \
     src/dbus/screenblank.cpp \
-    src/heartbeat.cpp
+    src/heartbeat.cpp \
+    src/dbus/interface/sailorgramadaptor.cpp \
+    src/dbus/interface/sailorgraminterface.cpp
 
 OTHER_FILES += qml/harbour-sailorgram.qml \
     rpm/harbour-sailorgram.changes.in \
@@ -148,7 +150,9 @@ HEADERS += \
     src/sailorgram.h \
     src/filepicker/folderlistmodel.h \
     src/dbus/screenblank.h \
-    src/heartbeat.h
+    src/heartbeat.h \
+    src/dbus/interface/sailorgramadaptor.h \
+    src/dbus/interface/sailorgraminterface.h
 
 RESOURCES += \
     resources.qrc

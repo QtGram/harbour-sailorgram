@@ -460,6 +460,10 @@ Elixa un contacto seleccionando &quot;Contactos&quot; no menu despregable</trans
         <source>Settings</source>
         <translation>Preferencias</translation>
     </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ErrorsPage</name>

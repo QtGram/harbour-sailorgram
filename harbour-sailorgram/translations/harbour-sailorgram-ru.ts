@@ -460,6 +460,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
         <source>Settings</source>
         <translation>Настройки</translation>
     </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ErrorsPage</name>

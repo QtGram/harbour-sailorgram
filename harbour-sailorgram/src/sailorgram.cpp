@@ -11,6 +11,11 @@ SailorGram::SailorGram(QObject *parent): QObject(parent), _telegram(NULL)
     connect(this->_heartbeat, SIGNAL(intervalChanged()), this, SIGNAL(intervalChanged()));
 }
 
+bool SailorGram::keepRunning() const
+{
+    return !qApp->quitOnLastWindowClosed();
+}
+
 bool SailorGram::connected() const
 {
     return this->_heartbeat->connected();
@@ -50,6 +55,15 @@ void SailorGram::setTelegram(TelegramQml *telegram)
         connect(this->_telegram, SIGNAL(connectedChanged()), this, SLOT(startHeartBeat()));
 
     emit telegramChanged();
+}
+
+void SailorGram::setKeepRunning(bool keep)
+{
+    if(keep == this->keepRunning())
+        return;
+
+    qApp->setQuitOnLastWindowClosed(!keep);
+    emit keepRunningChanged();
 }
 
 void SailorGram::moveMediaTo(FileLocationObject *locationobj, const QString &destination)

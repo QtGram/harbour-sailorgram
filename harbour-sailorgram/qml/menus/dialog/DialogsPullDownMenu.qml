@@ -14,6 +14,12 @@ PullDownMenu
 
     MenuItem
     {
+        text: qsTr("Exit")
+        onClicked: Qt.quit()
+    }
+
+    MenuItem
+    {
         text: qsTr("Settings")
         onClicked: pageStack.push(Qt.resolvedUrl("../../pages/settings/SettingsPage.qml"), { "context": dialogspulldownmenu.context })
     }

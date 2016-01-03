@@ -460,6 +460,10 @@ Wähle einen Kontakt über &quot;Kontakte&quot; im Pulley Menu</translation>
         <source>Settings</source>
         <translation>Einstellungen</translation>
     </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ErrorsPage</name>

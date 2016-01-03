@@ -460,6 +460,10 @@ Svep åt vänster för att välja en kontakt från &quot;Kontakter&quot;.</trans
         <source>Settings</source>
         <translation>Inställningar</translation>
     </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ErrorsPage</name>

@@ -460,6 +460,10 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z Pull Down Menu</translation>
         <source>Settings</source>
         <translation>Nastavení</translation>
     </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ErrorsPage</name>

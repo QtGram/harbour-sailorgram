@@ -460,6 +460,10 @@ Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
         <source>Settings</source>
         <translation>Impostazioni</translation>
     </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ErrorsPage</name>
