@@ -31,9 +31,9 @@
 #include <QtQuick>
 #include <sailfishapp.h>
 #include <telegramqmlinitializer.h>
-#include "dbus/screenblank.h"
-#include "dbus/notifications/notifications.h"
 #include "dbus/interface/sailorgraminterface.h"
+#include "dbus/screenblank.h"
+#include "dbus/notificationmanager.h"
 #include "filepicker/folderlistmodel.h"
 #include "sailorgram.h"
 
@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<SailorGram>("harbour.sailorgram.SailorGram", 1, 0, "SailorGram");
     qmlRegisterType<SailorgramInterface>("harbour.sailorgram.DBus", 1, 0, "SailorgramInterface");
     qmlRegisterType<ScreenBlank>("harbour.sailorgram.DBus", 1, 0, "ScreenBlank");
-    qmlRegisterType<Notifications>("harbour.sailorgram.DBus", 1, 0, "Notifications");
+    qmlRegisterType<NotificationManager>("harbour.sailorgram.DBus", 1, 0, "NotificationManager");
     qmlRegisterType<FolderListModel>("harbour.sailorgram.Pickers", 1, 0, "FolderListModel");
 
     QScopedPointer<QQuickView> view(SailfishApp::createView());

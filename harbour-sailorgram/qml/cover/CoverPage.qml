@@ -10,7 +10,7 @@ CoverBackground
 
     function preparePages() /* Remove Current Chat Page, if any */
     {
-        if(context.foregroundDialog === context.telegram.nullDialog)
+        if(!context.notificationmanager.foregroundDialog)
             return;
 
         pageStack.pop();

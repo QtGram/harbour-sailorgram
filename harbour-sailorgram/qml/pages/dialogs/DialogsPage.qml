@@ -52,7 +52,7 @@ Page
             return;
 
         pageStack.pushAttached(Qt.resolvedUrl("../contacts/ContactsPage.qml"), { "context": dialogspage.context });
-        context.foregroundDialog = context.telegram.nullDialog; // Reset Foreground Dialog
+        context.notificationmanager.foregroundDialog = null; // Reset Foreground Dialog
     }
 
     SilicaListView

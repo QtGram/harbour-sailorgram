@@ -41,13 +41,13 @@ emoji.path = /usr/share/$$TARGET/emoji
 INSTALLS += emoji
 
 SOURCES += src/harbour-sailorgram.cpp \
-    src/dbus/notifications/notifications.cpp \
     src/sailorgram.cpp \
     src/filepicker/folderlistmodel.cpp \
     src/dbus/screenblank.cpp \
     src/heartbeat.cpp \
     src/dbus/interface/sailorgramadaptor.cpp \
-    src/dbus/interface/sailorgraminterface.cpp
+    src/dbus/interface/sailorgraminterface.cpp \
+    src/dbus/notificationmanager.cpp
 
 OTHER_FILES += qml/harbour-sailorgram.qml \
     rpm/harbour-sailorgram.changes.in \
@@ -144,13 +144,13 @@ TRANSLATIONS += translations/harbour-sailorgram-be.ts \
                 translations/harbour-sailorgram.ts
 
 HEADERS += \
-    src/dbus/notifications/notifications.h \
     src/sailorgram.h \
     src/filepicker/folderlistmodel.h \
     src/dbus/screenblank.h \
     src/heartbeat.h \
     src/dbus/interface/sailorgramadaptor.h \
-    src/dbus/interface/sailorgraminterface.h
+    src/dbus/interface/sailorgraminterface.h \
+    src/dbus/notificationmanager.h
 
 RESOURCES += \
     resources.qrc

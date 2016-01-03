@@ -15,12 +15,14 @@ QtObject
     property bool chatheaderhidden: false
     property bool bubbleshidden: false
 
-    property Dialog foregroundDialog: telegram.nullDialog
     property ScreenBlank screenblank: ScreenBlank { }
-    property Notifications notifications: Notifications { }
     property ContactsModel contacts: ContactsModel { }
     property ErrorsModel errors: ErrorsModel { }
     property SailorgramInterface sailorgraminterface: SailorgramInterface { }
+
+    property NotificationManager notificationmanager: NotificationManager {
+        telegram: context.telegram
+    }
 
     property SailorGram sailorgram: SailorGram {
         telegram: context.telegram
@@ -40,35 +42,13 @@ QtObject
         autoAcceptEncrypted: true
 
         onErrorSignal: errors.addError(errorCode, functionName, errorText)
+        onIncomingMessage: notificationmanager.notify(msg)
 
         onConnectedChanged: {
             if(connected) {
                context.contacts.telegram = context.telegram;
                context.sailorgram.keepRunning = true;
             }
-        }
-
-        onIncomingMessage: {
-            if(context.telegram.globalMute)
-                return;
-
-            var userdata = context.telegram.userData;
-
-            if(TelegramHelper.isServiceMessage(msg)) /* Do not notify for Action Messages */
-                return;
-
-            var dialog = context.telegram.messageDialog(msg.id);
-            var peerid = TelegramHelper.peerId(dialog);
-
-            if(userdata.isMuted(peerid) || (msg.fromId === context.telegram.me)) // Don't notify myself!
-                return;
-
-            var user = context.telegram.user(msg.fromId);
-
-            if((dialog !== foregroundDialog) || (Qt.application.state !== Qt.ApplicationActive))
-                notifications.send(TelegramHelper.completeName(user), TelegramHelper.messageContent(msg), user.photo.photoSmall.download.location, true, (Qt.application.state === Qt.ApplicationActive));
-            else
-                notifications.beep();
         }
 
         onPhoneNumberChanged: {
