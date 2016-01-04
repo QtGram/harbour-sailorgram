@@ -10,12 +10,14 @@
 #include <QTimerEvent>
 #include <QFileInfo>
 #include <QDir>
+#include <QUuid>
 
 #define ENCRYPTER (p->encrypter?p->encrypter:p->default_encrypter)
 
 class DatabaseCorePrivate
 {
 public:
+    QString connectionName;
     QSqlDatabase db;
     QString path;
     QString phoneNumber;
@@ -38,8 +40,9 @@ DatabaseCore::DatabaseCore(const QString &path, const QString &configPath, const
     p->phoneNumber = phoneNumber;
     p->default_encrypter = new DatabaseNormalEncrypter();
     p->encrypter = 0;
+    p->connectionName = DATABASE_DB_CONNECTION + p->phoneNumber + QUuid::createUuid().toString();
 
-    p->db = QSqlDatabase::addDatabase("QSQLITE",DATABASE_DB_CONNECTION+p->phoneNumber);
+    p->db = QSqlDatabase::addDatabase("QSQLITE",p->connectionName);
     p->db.setDatabaseName(p->path);
 
     reconnect();
@@ -47,6 +50,7 @@ DatabaseCore::DatabaseCore(const QString &path, const QString &configPath, const
     qRegisterMetaType<DbUser>("DbUser");
     qRegisterMetaType<DbChat>("DbChat");
     qRegisterMetaType<DbDialog>("DbDialog");
+    qRegisterMetaType<DbContact>("DbContact");
     qRegisterMetaType<DbMessage>("DbMessage");
     qRegisterMetaType<DbPeer>("DbPeer");
 }
@@ -178,6 +182,25 @@ void DatabaseCore::insertDialog(const DbDialog &ddialog, bool encrypted)
     }
 }
 
+void DatabaseCore::insertContact(const DbContact &dcnt)
+{
+    begin();
+    const Contact &contact = dcnt.contact;
+    QSqlQuery query(p->db);
+    query.prepare("INSERT OR REPLACE INTO Contacts (userId, mutual, type) "
+                  "VALUES (:userId, :mutual, :type);");
+    query.bindValue(":userId", contact.userId() );
+    query.bindValue(":mutual", contact.mutual() );
+    query.bindValue(":type", contact.classType() );
+
+    bool res = query.exec();
+    if(!res)
+    {
+        qDebug() << __FUNCTION__ << query.lastError();
+        return;
+    }
+}
+
 void DatabaseCore::insertMessage(const DbMessage &dmessage, bool encrypted)
 {
     begin();
@@ -271,6 +294,7 @@ void DatabaseCore::readFullDialogs()
 {
     readUsers();
     readChats();
+    readContacts();
     readDialogs();
 }
 
@@ -622,11 +646,44 @@ void DatabaseCore::readChats()
     }
 }
 
+void DatabaseCore::readContacts()
+{
+    QSqlQuery query(p->db);
+    query.prepare("SELECT * FROM Contacts");
+
+    bool res = query.exec();
+    if(!res)
+    {
+        qDebug() << __FUNCTION__ << query.lastError();
+        return;
+    }
+
+    while(query.next())
+    {
+        const QSqlRecord &record = query.record();
+
+        qint32 userId = record.value("userId").toInt();
+        bool mutual = record.value("mutual").toInt();
+        qint64 type = record.value("type").toLongLong();
+
+        Q_UNUSED(type)
+        Contact contact;
+        contact.setUserId(userId);
+        contact.setMutual(mutual);
+
+
+        DbContact dcnt;
+        dcnt.contact = contact;
+
+        Q_EMIT contactFounded(dcnt);
+    }
+}
+
 void DatabaseCore::reconnect()
 {
     p->db.open();
-    init_buffer();
     update_db();
+    init_buffer();
 }
 
 void DatabaseCore::init_buffer()
@@ -685,6 +742,14 @@ void DatabaseCore::update_db()
         query.exec();
 
         db_version = 4;
+    }
+    if (db_version == 4)
+    {
+        QSqlQuery query(p->db);
+        query.prepare("CREATE TABLE IF NOT EXISTS Contacts (userId BIGINT PRIMARY KEY NOT NULL, mutual BOOLEAN, type BIGINT)");
+        query.exec();
+
+        db_version = 5;
     }
 
     setValue("version", QString::number(db_version) );
@@ -1315,7 +1380,10 @@ void DatabaseCore::timerEvent(QTimerEvent *e)
 
 DatabaseCore::~DatabaseCore()
 {
+    QString connectionName = p->connectionName;
     delete p->default_encrypter;
     delete p;
+    if(QSqlDatabase::contains(connectionName))
+        QSqlDatabase::removeDatabase(connectionName);
 }
 

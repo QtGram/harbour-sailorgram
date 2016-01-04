@@ -10,10 +10,12 @@ class Peer;
 class Message;
 class User;
 class Dialog;
+class Contact;
 class Chat;
 class DbUser;
 class DbDialog;
 class DbMessage;
+class DbContact;
 class DbChat;
 class DatabasePrivate;
 class TELEGRAMQMLSHARED_EXPORT Database : public QObject
@@ -39,6 +41,7 @@ public Q_SLOTS:
     void insertUser(const User &user);
     void insertChat(const Chat &chat);
     void insertDialog(const Dialog &dialog, bool encrypted);
+    void insertContact(const Contact &contact);
     void insertMessage(const Message &message, bool encrypted);
     void insertMediaEncryptedKeys(qint64 mediaId, const QByteArray &key, const QByteArray &iv);
 
@@ -60,6 +63,7 @@ Q_SIGNALS:
     void userFounded(const User &user);
     void chatFounded(const Chat &chat);
     void dialogFounded(const Dialog &dialog, bool encrypted);
+    void contactFounded(const Contact &contact);
     void messageFounded(const Message &message);
     void mediaKeyFounded(qint64 mediaId, const QByteArray &key, const QByteArray &iv);
     void phoneNumberChanged();
@@ -70,6 +74,7 @@ private Q_SLOTS:
     void chatFounded_slt(const DbChat &chat);
     void dialogFounded_slt(const DbDialog &dialog, bool encrypted);
     void messageFounded_slt(const DbMessage &message);
+    void contactFounded_slt(const DbContact &contact);
 
 private:
     void refresh();

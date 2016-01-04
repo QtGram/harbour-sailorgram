@@ -97,6 +97,7 @@ class TELEGRAMQMLSHARED_EXPORT TelegramQml : public QObject
 
     Q_PROPERTY(Telegram*   telegram    READ telegram    NOTIFY telegramChanged)
     Q_PROPERTY(UserData*   userData    READ userData    NOTIFY userDataChanged)
+    Q_PROPERTY(Database*   database    READ database    NOTIFY databaseChanged)
     Q_PROPERTY(qint64      me          READ me          NOTIFY meChanged)
     Q_PROPERTY(qint64      cutegramId  READ cutegramId  NOTIFY fakeSignal)
     Q_PROPERTY(UserObject* myUser      READ myUser      NOTIFY myUserChanged)
@@ -252,6 +253,7 @@ public:
     Q_INVOKABLE EncryptedChatObject *encryptedChat(qint64 id) const;
     Q_INVOKABLE DocumentObject* sticker(qint64 id) const;
     Q_INVOKABLE StickerSetObject* stickerSet(qint64 id) const;
+    Q_INVOKABLE StickerSetObject* stickerSetByShortName(const QString &shortName) const;
     Q_INVOKABLE StickerPackObject* stickerPack(const QString &id) const;
 
     Q_INVOKABLE FileLocationObject *locationOf(qint64 id, qint64 dcId, qint64 accessHash, QObject *parent);
@@ -322,7 +324,7 @@ public Q_SLOTS:
     void contactsBlock(qint64 userId);
     void contactsUnblock(qint64 userId);
 
-    void sendMessage( qint64 dialogId, const QString & msg, int replyTo = 0 );
+    qint32 sendMessage( qint64 dialogId, const QString & msg, int replyTo = 0 );
     bool sendMessageAsDocument( qint64 dialogId, const QString & msg );
     void sendGeo(qint64 dialogId, qreal latitude, qreal longitude, int replyTo = 0);
     void forwardDocument(qint64 dialogId, DocumentObject *doc);
@@ -340,7 +342,7 @@ public Q_SLOTS:
     void messagesEditChatTitle(qint32 chatId, const QString &title);
     void messagesEditChatPhoto(qint32 chatId, const QString &filePath);
 
-    void messagesDeleteHistory(qint64 peerId, bool deleteChat = false, bool userRemoved = false, bool force = false);
+    void messagesDeleteHistory(qint64 peerId, bool deleteChat = false, bool userRemoved = false);
     void messagesSetTyping(qint64 peerId, bool stt);
     qint64 messagesReadHistory(qint64 peerId, qint32 maxDate = 0);
 
@@ -392,6 +394,7 @@ Q_SIGNALS:
     void autoAcceptEncryptedChanged();
     void autoCleanUpMessagesChanged();
     void userDataChanged();
+    void databaseChanged();
     void onlineChanged();
     void downloadPathChanged();
     void tempPathChanged();
@@ -421,6 +424,7 @@ Q_SIGNALS:
 
     void authNeededChanged();
     void authLoggedInChanged();
+    void authLoggedOut();
     void authPhoneRegisteredChanged();
     void authPhoneInvitedChanged();
     void authPhoneCheckedChanged();
@@ -459,6 +463,7 @@ Q_SIGNALS:
     void searchDone(const QList<qint64> &messages);
     void contactsFounded(const QList<qint32> &contacts);
 
+    void messageSent(qint32 reqId, MessageObject *msg);
     void messagesSent(qint32 count);
     void messagesReceived(qint32 count);
 
@@ -569,7 +574,7 @@ private:
     void insertDocument(const Document &doc, bool fromDb = false);
     void insertUpdates(const UpdatesType &updates);
     void insertUpdate( const Update & update );
-    void insertContact( const Contact & contact );
+    void insertContact(const Contact & contact , bool fromDb = false);
     void insertEncryptedMessage(const EncryptedMessage & emsg);
     void insertEncryptedChat(const EncryptedChat & c);
     void insertSecretChatMessage(const SecretChatMessage & sc, bool cachedMsg = false);
@@ -597,6 +602,7 @@ private Q_SLOTS:
     void dbUserFounded(const User &user);
     void dbChatFounded(const Chat &chat);
     void dbDialogFounded(const Dialog &dialog, bool encrypted);
+    void dbContactFounded(const Contact &contact);
     void dbMessageFounded(const Message &message);
     void dbMediaKeysFounded(qint64 mediaId, const QByteArray &key, const QByteArray &iv);
 

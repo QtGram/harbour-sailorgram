@@ -29,6 +29,7 @@
 #include <QHash>
 #include <QFileInfo>
 #include <QDir>
+#include <QUuid>
 
 class SecretChatDBClass
 {
@@ -41,6 +42,7 @@ public:
 class UserDataPrivate
 {
 public:
+    QString connectionName;
     QSqlDatabase db;
     QString path;
 
@@ -60,6 +62,7 @@ UserData::UserData(QObject *parent) :
     QObject(parent)
 {
     p = new UserDataPrivate;
+    p->connectionName = USERDATA_DB_CONNECTION + p->phoneNumber + QUuid::createUuid().toString();
 }
 
 void UserData::setPhoneNumber(const QString &phoneNumber)
@@ -117,7 +120,7 @@ void UserData::refresh()
 
     QFile(p->path).setPermissions(QFileDevice::WriteOwner|QFileDevice::WriteGroup|QFileDevice::ReadUser|QFileDevice::ReadGroup);
 
-    p->db = QSqlDatabase::addDatabase("QSQLITE",USERDATA_DB_CONNECTION+p->phoneNumber);
+    p->db = QSqlDatabase::addDatabase("QSQLITE",p->connectionName);
     p->db.setDatabaseName(p->path);
 
     reconnect();
@@ -504,5 +507,8 @@ void UserData::update_db()
 
 UserData::~UserData()
 {
+    QString connectionName = p->connectionName;
     delete p;
+    if(QSqlDatabase::contains(connectionName))
+        QSqlDatabase::removeDatabase(connectionName);
 }

@@ -29,6 +29,7 @@
 #include <QDebug>
 #include <QDir>
 #include <QDebug>
+#include <QUuid>
 
 class ProfilesModelPrivate
 {
@@ -39,12 +40,14 @@ public:
 
     QHash<QString,ProfilesModelItem*> data;
     QList<QString> numbers;
+    QString connectionName;
 };
 
 ProfilesModel::ProfilesModel(QObject *parent) :
     TgAbstractListModel(parent)
 {
     p = new ProfilesModelPrivate;
+    p->connectionName = PROFILES_DB_CONNECTION + QUuid::createUuid().toString();
 }
 
 void ProfilesModel::setConfigPath(const QString &path)
@@ -299,7 +302,7 @@ void ProfilesModel::refresh()
 
     QFile(p->path).setPermissions(QFile::WriteOwner|QFile::WriteGroup|QFile::ReadUser|QFile::ReadGroup);
 
-    p->db = QSqlDatabase::addDatabase("QSQLITE",PROFILES_DB_CONNECTION);
+    p->db = QSqlDatabase::addDatabase("QSQLITE",p->connectionName);
     p->db.setDatabaseName(p->path);
     p->db.open();
 
@@ -308,7 +311,10 @@ void ProfilesModel::refresh()
 
 ProfilesModel::~ProfilesModel()
 {
+    QString connectionName = p->connectionName;
     delete p;
+    if(QSqlDatabase::contains(connectionName))
+        QSqlDatabase::removeDatabase(connectionName);
 }
 
 

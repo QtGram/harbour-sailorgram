@@ -104,6 +104,15 @@ void Database::insertDialog(const Dialog &dialog, bool encrypted)
     QMetaObject::invokeMethod(p->core, "insertDialog", Qt::QueuedConnection, Q_ARG(DbDialog,ddlg), Q_ARG(bool,encrypted));
 }
 
+void Database::insertContact(const Contact &contact)
+{
+    FIRST_CHECK;
+    DbContact dcnt;
+    dcnt.contact = contact;
+
+    QMetaObject::invokeMethod(p->core, "insertContact", Qt::QueuedConnection, Q_ARG(DbContact,dcnt));
+}
+
 void Database::insertMessage(const Message &message, bool encrypted)
 {
     FIRST_CHECK;
@@ -202,6 +211,11 @@ void Database::messageFounded_slt(const DbMessage &message)
     Q_EMIT messageFounded(message.message);
 }
 
+void Database::contactFounded_slt(const DbContact &contact)
+{
+    Q_EMIT contactFounded(contact.contact);
+}
+
 void Database::refresh()
 {
     if(p->core && p->thread)
@@ -238,6 +252,7 @@ void Database::refresh()
     connect(p->core, SIGNAL(userFounded(DbUser))         , SLOT(userFounded_slt(DbUser))         , Qt::QueuedConnection );
     connect(p->core, SIGNAL(dialogFounded(DbDialog,bool)), SLOT(dialogFounded_slt(DbDialog,bool)), Qt::QueuedConnection );
     connect(p->core, SIGNAL(messageFounded(DbMessage))   , SLOT(messageFounded_slt(DbMessage))   , Qt::QueuedConnection );
+    connect(p->core, SIGNAL(contactFounded(DbContact))   , SLOT(contactFounded_slt(DbContact))   , Qt::QueuedConnection );
     connect(p->core, SIGNAL(mediaKeyFounded(qint64,QByteArray,QByteArray)),
             SIGNAL(mediaKeyFounded(qint64,QByteArray,QByteArray)), Qt::QueuedConnection );
 }

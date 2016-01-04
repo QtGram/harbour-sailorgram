@@ -186,11 +186,14 @@ void TelegramDialogsModel::refreshDatabase()
 
 void TelegramDialogsModel::recheck()
 {
-    if(!p->telegram || !p->telegram->authLoggedIn())
+    if(!p->telegram)
         return;
 
     refreshDatabase();
     dialogsChanged(true);
+
+    if(!p->telegram->authLoggedIn())
+        return;
 
     Telegram *tgObject = p->telegram->telegram();
     if(tgObject)

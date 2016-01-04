@@ -18,11 +18,21 @@ Item {
         placeholderText: qsTr("Sticker short name")
         onAccepted: sticker_model.currentStickerSet = text
     }
+    
+    TextInput {
+        id: sticker_title
+        anchors.top: input.bottom
+        x: 10
+        readOnly: true
+        selectByMouse: true
+        font.pointSize: 12
+        text: sticker_model.stickerSetItem(sticker_model.currentStickerSet).title
+    }
 
     ScrollView {
         width: parent.width
         height: parent.height
-        anchors.top: input.bottom
+        anchors.top: sticker_title.bottom
         anchors.bottom: parent.bottom
 
         GridView {
@@ -59,7 +69,11 @@ Item {
                 sourceSize: Qt.size(width, height)
                 source: handler.downloaded? handler.filePath : handler.thumbPath
             }
+            
+            MouseArea {
+                anchors.fill: parent
+                onClicked: Qt.openUrlExternally(handler.thumbPath)
+            }
         }
     }
 }
-

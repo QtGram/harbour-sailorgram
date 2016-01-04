@@ -159,7 +159,6 @@ bool Telegram::sleep() {
     // sleep only if not slept and library already logged in. Returns true if sleep operations completes
     if (!prv->mSlept && prv->mLibraryState >= LoggedIn) {
         if (prv->mApi && prv->mApi->mainSession()) {
-            connect(prv->mApi, SIGNAL(mainSessionClosed()), this, SIGNAL(slept()), Qt::UniqueConnection);
             prv->mApi->mainSession()->close();
         }
         prv->mSlept = true;
@@ -1919,9 +1918,11 @@ qint64 Telegram::updatesGetDifference(qint32 pts, qint32 date, qint32 qts) {
 }
 
 qint64 Telegram::uploadGetFile(const InputFileLocation &location, qint32 fileSize, qint32 dcNum, const QByteArray &key, const QByteArray &iv) {
+    if(!prv->mFileHandler) return 0;
     return prv->mFileHandler->uploadGetFile(location, fileSize, dcNum, key, iv);
 }
 
 qint64 Telegram::uploadCancelFile(qint64 fileId) {
+    if(!prv->mFileHandler) return 0;
     return prv->mFileHandler->uploadCancelFile(fileId);
 }

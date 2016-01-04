@@ -352,7 +352,7 @@ bool TelegramFileHandler::download()
 
 void TelegramFileHandler::refresh()
 {
-    if(!p->telegram || !p->telegram->authLoggedIn())
+    if(!p->telegram/* || !p->telegram->authLoggedIn()*/)
         return;
 
     disconnectLocation(p->location);

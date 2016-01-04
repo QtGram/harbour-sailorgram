@@ -10,6 +10,7 @@
 class TELEGRAMQMLSHARED_EXPORT DbChat { public: DbChat(): chat(Chat::typeChatEmpty){} Chat chat; };
 class TELEGRAMQMLSHARED_EXPORT DbUser { public: DbUser(): user(User::typeUserEmpty){} User user; };
 class TELEGRAMQMLSHARED_EXPORT DbDialog { public: DbDialog(): dialog(){} Dialog dialog; };
+class TELEGRAMQMLSHARED_EXPORT DbContact { public: DbContact(): contact(){} Contact contact; };
 class TELEGRAMQMLSHARED_EXPORT DbMessage { public: DbMessage(): message(){} Message message; };
 class TELEGRAMQMLSHARED_EXPORT DbPeer { public: DbPeer(): peer(Peer::typePeerUser){} Peer peer; };
 
@@ -38,6 +39,7 @@ public Q_SLOTS:
     void insertUser(const DbUser &user);
     void insertChat(const DbChat &chat);
     void insertDialog(const DbDialog &dialog, bool encrypted);
+    void insertContact(const DbContact &contact);
     void insertMessage(const DbMessage &message, bool encrypted);
     void insertMediaEncryptedKeys(qint64 mediaId, const QByteArray &key, const QByteArray &iv);
 
@@ -62,6 +64,7 @@ Q_SIGNALS:
     void userFounded(const DbUser &user);
     void chatFounded(const DbChat &chat);
     void dialogFounded(const DbDialog &dialog, bool encrypted);
+    void contactFounded(const DbContact &contact);
     void messageFounded(const DbMessage &message);
     void mediaKeyFounded(qint64 mediaId, const QByteArray &key, const QByteArray &iv);
     void valueChanged(const QString &value);
@@ -70,6 +73,7 @@ private:
     void readDialogs();
     void readUsers();
     void readChats();
+    void readContacts();
 
     void init_buffer();
     void update_db();
@@ -110,6 +114,7 @@ private:
 Q_DECLARE_METATYPE(DbUser)
 Q_DECLARE_METATYPE(DbChat)
 Q_DECLARE_METATYPE(DbDialog)
+Q_DECLARE_METATYPE(DbContact)
 Q_DECLARE_METATYPE(DbMessage)
 Q_DECLARE_METATYPE(DbPeer)
 

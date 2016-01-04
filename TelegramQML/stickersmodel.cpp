@@ -112,7 +112,9 @@ DocumentObject *StickersModel::stickerSetThumbnailDocument(const QString &id) co
     if(!p->telegram)
         return 0;
 
-    QList<qint64> list = p->telegram->stickerSetDocuments(id.toLongLong());
+    qint64 numId = id.toLongLong();
+    QList<qint64> list = numId? p->telegram->stickerSetDocuments(numId) :
+                                p->telegram->stickerSetDocuments(id);
     qSort(list.begin(), list.end());
     if(list.isEmpty())
         return p->telegram->nullSticker();
@@ -125,7 +127,11 @@ StickerSetObject *StickersModel::stickerSetItem(const QString &id) const
     if(!p->telegram)
         return 0;
 
-    return p->telegram->stickerSet(id.toLongLong());
+    qint64 numId = id.toLongLong();
+    if(numId)
+        return p->telegram->stickerSet(id.toLongLong());
+    else
+        return p->telegram->stickerSetByShortName(id);
 }
 
 qint64 StickersModel::id(const QModelIndex &index) const

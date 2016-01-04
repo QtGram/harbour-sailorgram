@@ -37,7 +37,6 @@ qint64 FileHandler::uploadSendFile(FileOperation &op, const QString &fileName, c
     // create dedicated session to working dc for the main file
     DC *dc = mDcProvider.getWorkingDc();
     Session *session = mApi->fileSession(dc);
-
     if(!session)
         return 0;
 

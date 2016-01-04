@@ -13,6 +13,7 @@ macx {
     CONFIG += staticlib
 }
 
+include($$PWD/../config.pri)
 include(libqtelegram-ae.pri)
 
 linux {
@@ -25,19 +26,22 @@ linux {
     }
 }
 
-isEmpty(PREFIX) {
-    isEmpty(INSTALL_HEADERS_PREFIX): INSTALL_HEADERS_PREFIX = $$[QT_INSTALL_HEADERS]
-    isEmpty(INSTALL_LIBS_PREFIX): INSTALL_LIBS_PREFIX = $$[QT_INSTALL_LIBS]
-} else {
-    isEmpty(INSTALL_HEADERS_PREFIX): INSTALL_HEADERS_PREFIX = $$PREFIX/include
-    isEmpty(INSTALL_LIBS_PREFIX): INSTALL_LIBS_PREFIX = $$PREFIX/lib/$$LIB_PATH
-}
+!contains(CONFIG, no_install) {
+    message(":O")
+    isEmpty(PREFIX) {
+        isEmpty(INSTALL_HEADERS_PREFIX): INSTALL_HEADERS_PREFIX = $$[QT_INSTALL_HEADERS]
+        isEmpty(INSTALL_LIBS_PREFIX): INSTALL_LIBS_PREFIX = $$[QT_INSTALL_LIBS]
+    } else {
+        isEmpty(INSTALL_HEADERS_PREFIX): INSTALL_HEADERS_PREFIX = $$PREFIX/include
+        isEmpty(INSTALL_LIBS_PREFIX): INSTALL_LIBS_PREFIX = $$PREFIX/lib/$$LIB_PATH
+    }
 
-#INSTALL_PREFIX = $$INSTALL_HEADERS_PREFIX/libqtelegram-ae
-#INSTALL_HEADERS = $$HEADERS
-#include(qmake/headerinstall.pri)
-#
-#target = $$TARGET
-#target.path = $$INSTALL_LIBS_PREFIX
-#
-#INSTALLS += target
+    INSTALL_PREFIX = $$INSTALL_HEADERS_PREFIX/libqtelegram-ae
+    INSTALL_HEADERS = $$HEADERS
+    include(qmake/headerinstall.pri)
+
+    target = $$TARGET
+    target.path = $$INSTALL_LIBS_PREFIX
+
+    INSTALLS += target
+}

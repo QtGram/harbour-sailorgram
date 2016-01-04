@@ -292,11 +292,13 @@ void TelegramQml::setPhoneNumber(const QString &phone)
     Q_EMIT phoneNumberChanged();
     Q_EMIT downloadPathChanged();
     Q_EMIT userDataChanged();
+    Q_EMIT databaseChanged();
 
     connect(p->database, SIGNAL(chatFounded(Chat))         , SLOT(dbChatFounded(Chat))         );
     connect(p->database, SIGNAL(userFounded(User))         , SLOT(dbUserFounded(User))         );
     connect(p->database, SIGNAL(dialogFounded(Dialog,bool)), SLOT(dbDialogFounded(Dialog,bool)));
     connect(p->database, SIGNAL(messageFounded(Message))   , SLOT(dbMessageFounded(Message))   );
+    connect(p->database, SIGNAL(contactFounded(Contact))   , SLOT(dbContactFounded(Contact))   );
     connect(p->database, SIGNAL(mediaKeyFounded(qint64,QByteArray,QByteArray)),
             SLOT(dbMediaKeysFounded(qint64,QByteArray,QByteArray)) );
 }
@@ -957,6 +959,18 @@ StickerSetObject *TelegramQml::stickerSet(qint64 id) const
         res = p->nullStickerSet;
 
     return res;
+}
+
+StickerSetObject *TelegramQml::stickerSetByShortName(const QString &shortName) const
+{
+    QHashIterator<qint64, StickerSetObject*> i(p->stickerSets);
+    while(i.hasNext())
+    {
+        i.next();
+        if(i.value()->shortName() == shortName)
+            return i.value();
+    }
+    return p->nullStickerSet;
 }
 
 StickerPackObject *TelegramQml::stickerPack(const QString &id) const
@@ -1735,10 +1749,10 @@ void TelegramQml::contactsUnblock(qint64 userId)
     p->unblockRequests.insert(requestId, userId);
 }
 
-void TelegramQml::sendMessage(qint64 dId, const QString &msg, int replyTo)
+qint32 TelegramQml::sendMessage(qint64 dId, const QString &msg, int replyTo)
 {
     if( !p->telegram )
-        return;
+        return 0;
 
     DialogObject *dlg = p->dialogs.value(dId);
 
@@ -1767,6 +1781,7 @@ void TelegramQml::sendMessage(qint64 dId, const QString &msg, int replyTo)
     p->pend_messages[sendId] = msgObj;
 
     timerUpdateDialogs();
+    return sendId;
 }
 
 bool TelegramQml::sendMessageAsDocument(qint64 dId, const QString &msg)
@@ -1999,7 +2014,7 @@ void TelegramQml::messagesEditChatPhoto(qint32 chatId, const QString &filePath)
     p->telegram->messagesEditChatPhoto(chatId, filePath);
 }
 
-void TelegramQml::messagesDeleteHistory(qint64 peerId, bool deleteChat, bool userRemoved, bool force)
+void TelegramQml::messagesDeleteHistory(qint64 peerId, bool deleteChat, bool userRemoved)
 {
     if(!p->telegram)
         return;
@@ -2042,9 +2057,6 @@ void TelegramQml::messagesDeleteHistory(qint64 peerId, bool deleteChat, bool use
         qint64 requestId = p->telegram->messagesDeleteHistory(peer);
         p->delete_history_requests.insert(requestId, peerId);
     }
-
-    if(force)
-        deleteLocalHistory(peerId);
 }
 
 void TelegramQml::messagesSetTyping(qint64 peerId, bool stt)
@@ -2977,6 +2989,7 @@ void TelegramQml::authLogOut_slt(qint64 id, bool ok)
     Q_EMIT authNeededChanged();
     Q_EMIT authLoggedInChanged();
     Q_EMIT meChanged();
+    Q_EMIT authLoggedOut();
 }
 
 void TelegramQml::authSendCode_slt(qint64 id, bool phoneRegistered, qint32 sendCallTimeout)
@@ -3290,6 +3303,7 @@ void TelegramQml::messagesSendMessage_slt(qint64 id, qint32 msgId, qint32 date, 
     insertMessage(msg);
     timerUpdateDialogs(3000);
 
+    Q_EMIT messageSent(id, p->messages.value(msgId));
     Q_EMIT messagesSent(1);
 }
 
@@ -3439,11 +3453,20 @@ void TelegramQml::messagesGetDialogs_slt(qint64 id, qint32 sliceCount, const QLi
     Q_FOREACH( const Message & m, messages )
         insertMessage(m);
 
-    QSet<qint64> dialogIds;
+    QSet<qint64> removedDialogs = p->dialogs_list.toSet();
     Q_FOREACH( const Dialog & d, dialogs )
     {
         insertDialog(d);
-        dialogIds.insert( d.peer().chatId()?d.peer().chatId():d.peer().userId() );
+        qint64 dialogId = d.peer().chatId()?d.peer().chatId():d.peer().userId();
+        removedDialogs.remove(dialogId);
+    }
+
+    if(p->database) {
+        Q_FOREACH(qint64 dId, removedDialogs)
+        {
+            p->database->deleteDialog(dId);
+            insertToGarbeges(p->dialogs.value(dId));
+        }
     }
 
     Q_EMIT dialogsChanged(false);
@@ -4712,7 +4735,7 @@ void TelegramQml::insertUpdate(const Update &update)
     }
 }
 
-void TelegramQml::insertContact(const Contact &c)
+void TelegramQml::insertContact(const Contact &c, bool fromDb)
 {
     ContactObject *obj = p->contacts.value(c.userId());
     if( !obj )
@@ -4722,6 +4745,9 @@ void TelegramQml::insertContact(const Contact &c)
     }
     else
         *obj = c;
+
+    if(!fromDb)
+        p->database->insertContact(c);
 
     Q_EMIT contactsChanged();
 }
@@ -5182,6 +5208,11 @@ void TelegramQml::dbDialogFounded(const Dialog &dialog, bool encrypted)
             insertEncryptedChat(chat);
         }
     }
+}
+
+void TelegramQml::dbContactFounded(const Contact &contact)
+{
+    insertContact(contact, true);
 }
 
 void TelegramQml::dbMessageFounded(const Message &message)
