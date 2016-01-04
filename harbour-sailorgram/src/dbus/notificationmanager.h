@@ -1,6 +1,11 @@
 #ifndef NOTIFICATION_MANAGER_H
 #define NOTIFICATION_MANAGER_H
 
+/*
+ * Documentation:
+ * http://www.galago-project.org/specs/notification/0.9/
+ */
+
 #include <QGuiApplication>
 #include <QObject>
 #include <QHash>

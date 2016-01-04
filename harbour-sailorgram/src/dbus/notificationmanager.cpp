@@ -114,9 +114,9 @@ void NotificationManager::notify(MessageObject *message)
     if(userdata->isMuted(peerid))
         return;
 
-    bool active = qApp->applicationState() != Qt::ApplicationActive;
+    bool active = qApp->applicationState() == Qt::ApplicationActive;
 
-    if((dialog == this->_foregrounddialog) || (qApp->applicationState() != Qt::ApplicationActive))
+    if((dialog != this->_foregrounddialog) || !active)
     {
         UserObject* user = this->_telegram->user(message->fromId());
         this->send(this->completeName(user), message->message(), user->photo()->photoSmall()->download()->location(), true, active);
