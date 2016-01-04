@@ -157,6 +157,12 @@ function messageContent(message)
     return message.message;
 }
 
+function firstMessageLine(message)
+{
+    var content = messageContent(message)
+    return content.split("\n")[0];
+}
+
 function formatBytes(bytes, decimals)
 {
    if(bytes === 0)

@@ -165,6 +165,8 @@ Item
                     elide: Text.ElideRight
                     verticalAlignment: Text.AlignVCenter
                     font.pixelSize: Theme.fontSizeExtraSmall
+                    wrapMode: Text.NoWrap
+                    maximumLineCount: 1
                     emojiPath: context.sailorgram.emojiPath
                     linkColor: message.out ? Theme.secondaryHighlightColor : Theme.secondaryColor
                     color: TelegramHelper.isServiceMessage(message) ? Theme.highlightColor : Theme.primaryColor
@@ -186,14 +188,14 @@ Item
                         if(TelegramHelper.isServiceMessage(message))
                             return TelegramAction.actionType(context.telegram, dialog, message);
 
-                        return TelegramHelper.messageContent(message);
+                        return TelegramHelper.firstMessageLine(message);
                     }
                 }
 
                 Rectangle
                 {
                     id: rectunread
-                    width: parent.height
+                    width: dialog.unreadCount > 0 ? parent.height : 0
                     height: parent.height
                     color: Theme.secondaryHighlightColor
                     visible: dialog.unreadCount > 0
