@@ -40,6 +40,11 @@ emoji.files = $$PWD/res/emoji/*.png
 emoji.path = /usr/share/$$TARGET/emoji
 INSTALLS += emoji
 
+# Lipstick Config
+lipstick_config.files = $$PWD/lipstick/*.conf
+lipstick_config.path = /usr/share/lipstick/notificationcategories
+INSTALLS += lipstick_config
+
 SOURCES += src/harbour-sailorgram.cpp \
     src/sailorgram.cpp \
     src/filepicker/folderlistmodel.cpp \
@@ -54,6 +59,7 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     rpm/harbour-sailorgram.spec \
     rpm/harbour-sailorgram.yaml \
     translations/*.ts \
+    lipstick/*.conf \
     harbour-sailorgram.desktop \
     qml/pages/login/ConnectionPage.qml \
     server.pub \

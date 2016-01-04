@@ -51,6 +51,7 @@ void NotificationManager::send(const QString &summary, const QString &body, cons
     QDBusMessage message = QDBusMessage::createMethodCall("org.freedesktop.Notifications", "/org/freedesktop/Notifications", "org.freedesktop.Notifications", "Notify");
 
     QVariantMap hints;
+    hints["category"] = "harbour.sailorgram.notification";
 
     if(!icon.isEmpty())
         hints["x-nemo-icon"] = icon;
