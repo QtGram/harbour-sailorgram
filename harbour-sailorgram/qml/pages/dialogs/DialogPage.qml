@@ -46,8 +46,8 @@ Page
         id: refreshtimer
         repeat: true
         interval: 10000
+        running: !context.sailorgram.daemonized
         onTriggered: messagesmodel.refresh()
-        Component.onCompleted: start()
     }
 
     PopupMessage
@@ -76,7 +76,7 @@ Page
         {
             anchors.centerIn: parent
             size: BusyIndicatorSize.Large
-            running: context.sailorgram.connected && messagesmodel.refreshing
+            running: context.sailorgram.connected && messagesmodel.refreshing && (messageview.count <= 0)
             z: running ? 2 : 0
         }
 
@@ -102,7 +102,7 @@ Page
                 id: messagesmodel
 
                 onCountChanged: {
-                    if(!count)
+                    if(!count || (dialogpage.status !== PageStatus.Active))
                         return;
 
                     messagesmodel.setReaded(); /* We are in this chat, always mark these messages as read */
