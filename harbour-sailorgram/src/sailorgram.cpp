@@ -133,8 +133,15 @@ void SailorGram::notify(const QString &summary, const QString &body, const QStri
         if(!this->_notifications.contains(peerid))
         {
             notification = new Notification(this);
-            QVariant remoteaction = Notification::remoteAction("default", QString(), "org.harbour.sailorgram", "/", "org.harbour.sailorgram", "openDialog",
-                                                               (QVariantList() << peerid));
+
+            QVariantMap remoteaction;
+            remoteaction["name"] = "default";
+            remoteaction["service"] = "org.harbour.sailorgram";
+            remoteaction["path"] = "/";
+            remoteaction["iface"] = "org.harbour.sailorgram";
+            remoteaction["method"] = "openDialog";
+            remoteaction["arguments"] = (QVariantList() << peerid);
+            remoteaction["icon"] = icon.isEmpty() ? "icon-m-notifications" : icon;
 
             notification->setRemoteAction(remoteaction);
             this->_notifications[peerid] = notification;
