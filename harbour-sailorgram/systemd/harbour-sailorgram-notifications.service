@@ -1,0 +1,12 @@
+[Unit]
+Description=Sailorgram notifications
+Requires=lipstick.service
+After=lipstick.service
+
+[Service]
+Type=dbus
+Exec=invoker --type=j /usr/bin/harbour-sailorgram
+BusName=org.harbour.sailorgram
+
+[Install]
+WantedBy=post-user-session.target

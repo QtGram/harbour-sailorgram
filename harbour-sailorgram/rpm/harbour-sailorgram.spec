@@ -60,11 +60,36 @@ rm -rf %{buildroot}
 %qmake5_install
 
 # >> install post
+mkdir -p %{buildroot}/usr/lib/systemd/user/post-user-session.target.wants
+ln -s ../harbour-sailorgram-notifications.service %{buildroot}/usr/lib/systemd/user/post-user-session.target.wants/harbour-sailorgram-notifications.service
 # << install post
 
 desktop-file-install --delete-original       \
   --dir %{buildroot}%{_datadir}/applications             \
    %{buildroot}%{_datadir}/applications/*.desktop
+
+%pre
+# >> pre
+systemctl-user stop harbour-sailorgram-notifications.service
+
+if /sbin/pidof harbour-sailorgram > /dev/null; then
+killall harbour-sailorgram || true
+fi
+# << pre
+
+%preun
+# >> preun
+systemctl-user stop harbour-sailorgram-notifications.service
+
+if /sbin/pidof harbour-sailorgram > /dev/null; then
+killall harbour-sailorgram || true
+fi
+
+# << preun
+%post
+# >> post
+systemctl-user restart ngfd.service
+# << post
 
 %files
 %defattr(-,root,root,-)
@@ -72,7 +97,10 @@ desktop-file-install --delete-original       \
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/86x86/apps/%{name}.png
-%{_datadir}/lipstick/notificationcategories/harbour.sailorgram.notification.conf
-%{_datadir}/dbus-1/services/org.harbour.sailorgram.service
+%{_datadir}/lipstick/notificationcategories/*.conf
+%{_datadir}/ngfd/events.d/*.ini
+%{_datadir}/dbus-1/services/*.service
+%{_libdir}/systemd/user/harbour-sailorgram-notifications.service
+%{_libdir}/systemd/user/post-user-session.target.wants/harbour-sailorgram-notifications.service
 # >> files
 # << files

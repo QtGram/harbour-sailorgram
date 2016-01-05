@@ -178,7 +178,11 @@ void SailorGram::notify(const QString &summary, const QString &body, const QStri
 
 void SailorGram::beep()
 {
-    this->notify(QString(), QString(), QString(), 0);
+    Notification notification;
+    notification.setCategory("harbour.sailorgram.notificationfg");
+    notification.setAppName(SailorGram::APPLICATION_PRETTY_NAME);
+    notification.setTimestamp(QDateTime::currentDateTime());
+    notification.publish();
 }
 
 void SailorGram::onApplicationStateChanged(Qt::ApplicationState state)

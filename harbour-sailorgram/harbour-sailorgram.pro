@@ -50,6 +50,16 @@ dbus_config.files = $$PWD/dbus/*.service
 dbus_config.path = /usr/share/dbus-1/services
 INSTALLS += dbus_config
 
+# Systemd Config
+systemd.files = $$PWD/systemd/*.service
+systemd.path = /usr/lib/systemd/user
+INSTALLS += systemd
+
+# Events Config
+events.files = $$PWD/events/*.ini
+events.path = /usr/share/ngfd/events.d
+INSTALLS += events
+
 SOURCES += src/harbour-sailorgram.cpp \
     src/sailorgram.cpp \
     src/filepicker/folderlistmodel.cpp \
@@ -191,4 +201,8 @@ DISTFILES += \
     qml/js/ColorScheme.js \
     qml/js/TelegramMedia.js \
     qml/pages/picker/ImagePreviewPage.qml \
-    dbus/org.harbour.sailorgram.service
+    dbus/org.harbour.sailorgram.service \
+    events/sailorgram.ini \
+    lipstick/harbour.sailorgram.notificationfg.conf \
+    events/sailorgram_fg.ini \
+    systemd/harbour-sailorgram-notifications.service

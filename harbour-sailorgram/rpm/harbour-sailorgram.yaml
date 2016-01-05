@@ -46,8 +46,11 @@ Files:
   - '%{_datadir}/%{name}'
   - '%{_datadir}/applications/%{name}.desktop'
   - '%{_datadir}/icons/hicolor/86x86/apps/%{name}.png'
-  - '%{_datadir}/lipstick/notificationcategories/harbour.sailorgram.notification.conf'
-  - '%{_datadir}/dbus-1/services/org.harbour.sailorgram.service'
+  - '%{_datadir}/lipstick/notificationcategories/*.conf'
+  - '%{_datadir}/ngfd/events.d/*.ini'
+  - '%{_datadir}/dbus-1/services/*.service'
+  - '%{_libdir}/systemd/user/harbour-sailorgram-notifications.service'
+  - '%{_libdir}/systemd/user/post-user-session.target.wants/harbour-sailorgram-notifications.service'
 
 # For more information about yaml and what's supported in Sailfish OS
 # build system, please see https://wiki.merproject.org/wiki/Spectacle
