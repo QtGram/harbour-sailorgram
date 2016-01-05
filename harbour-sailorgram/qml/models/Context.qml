@@ -1,9 +1,11 @@
 import QtQuick 2.1
+import Sailfish.Silica 1.0
 import harbour.sailorgram.DBus 1.0
 import harbour.sailorgram.SailorGram 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../js/Settings.js" as Settings
 import "../js/TelegramHelper.js" as TelegramHelper
+import "../js/TextElaborator.js" as TextElaborator
 
 QtObject
 {
@@ -18,10 +20,6 @@ QtObject
     property ScreenBlank screenblank: ScreenBlank { }
     property ContactsModel contacts: ContactsModel { }
     property ErrorsModel errors: ErrorsModel { }
-
-    property NotificationManager notificationmanager: NotificationManager {
-        telegram: context.telegram
-    }
 
     property SailorGram sailorgram: SailorGram {
         telegram: context.telegram
@@ -41,7 +39,13 @@ QtObject
         autoAcceptEncrypted: true
 
         onErrorSignal: errors.addError(errorCode, functionName, errorText)
-        onIncomingMessage: notificationmanager.notify(msg)
+
+        onIncomingMessage: {
+            var elaboratedtext = TextElaborator.elaborateNotify(TelegramHelper.messageContent(msg), sailorgram.emojiPath, Theme.fontSizeSmall);
+            var user = context.telegram.user(msg.fromId);
+
+            sailorgram.notify(msg, TelegramHelper.completeName(user), elaboratedtext);
+        }
 
         onConnectedChanged: {
             if(connected) {

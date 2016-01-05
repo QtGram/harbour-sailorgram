@@ -10,7 +10,7 @@ CoverBackground
 
     function preparePages() /* Remove Current Chat Page, if any */
     {
-        if(!context.notificationmanager.foregroundDialog)
+        if(!context.sailorgram.foregroundDialog)
             return;
 
         pageStack.pop();

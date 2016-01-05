@@ -10,7 +10,7 @@ function surrogatePairToUnicodeScalar(hi, lo)
     return 0;
 }
 
-function emojify(s, height, emojipath)
+function emojify(s, height, emojipath, notification)
 {
     if(!emojipath.length)
     {
@@ -25,7 +25,11 @@ function emojify(s, height, emojipath)
     return s.replace(new RegExp(ranges.join("|"), "g"),
                      function(match) {
                          var uniscalar = surrogatePairToUnicodeScalar(match.charCodeAt(0), match.charCodeAt(1));
-                         return "<img align=\"middle\" width=\"" + height + "\" height=\"" + height + "\" src=\"" + emojipath + uniscalar.toString(16).toLowerCase() + ".png\">";
+
+                         if(notification === true)
+                             return "<img alt=\"" + match + "\" src=\"" + emojipath + uniscalar.toString(16).toLowerCase() + ".png\"/>";
+
+                         return "<img align=\"middle\" width=\"" + height + "\" height=\"" + height + "\" src=\"" + emojipath + uniscalar.toString(16).toLowerCase() + ".png\"/>";
                      });
 }
 
@@ -37,7 +41,7 @@ function linkify(s)
 
     //URLs starting with "www." (without // before it, or it'd re-link the ones done above).
     var rgxwwwurl = /(^|[^\/])(www\.[\S]+(\b|$))/gim;
-    s = s.replace(rgxwwwurl, '$1<a href="http://$2" target="_blank">$2</a>');
+    s = s.replace(rgxwwwurl, '$1<a href="http://$2">$2</a>');
 
     //Change email addresses to mailto:: links.
     var rgxmailto = /(([a-zA-Z0-9\-\_\.])+@[a-zA-Z\_]+?(\.[a-zA-Z]{2,6})+)/gim;
@@ -51,6 +55,14 @@ function mentionify(s, highlightcolor)
     return s.replace(/\B@[a-zA-Z0-9_]+/gi,
                      function(match) {
                          return "<font color=\"" + highlightcolor + "\">" + match + "</font>";
+                     });
+}
+
+function mentionifyBold(s)
+{
+    return s.replace(/\B@[a-zA-Z0-9_]+/gi,
+                     function(match) {
+                         return "<b>" + match + "</b>";
                      });
 }
 
@@ -68,8 +80,17 @@ function elaborate(s, emojipath, height, highlightcolor)
 {
     var res = replaceLtGt(s);
     res = replaceNewlines(res);
-    res = emojify(res, height, emojipath);
+    res = emojify(res, height, emojipath, false);
     res = linkify(res);
     res = mentionify(res, highlightcolor);
     return "<span>" + res + "</span>";
+}
+
+function elaborateNotify(s, emojipath, height)
+{
+    return s; // NOTE: Lipstick doesn't support markup!
+    //var res = emojify(s, height, emojipath, true);
+    //res = linkify(res);
+    //res = mentionifyBold(res);
+    //return res;
 }

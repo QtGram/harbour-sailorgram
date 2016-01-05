@@ -8,10 +8,11 @@
 #include <QImage>
 #include <QMimeDatabase>
 #include <telegramqml.h>
-#include <telegram.h>
+#include <userdata.h>
 #include <objects/types.h>
 #include "heartbeat.h"
 #include "dbus/interface/sailorgraminterface.h"
+#include "dbus/notification/notification.h"
 
 class SailorGram : public QObject
 {
@@ -25,6 +26,7 @@ class SailorGram : public QObject
     Q_PROPERTY(QString emojiPath READ emojiPath CONSTANT FINAL)
     Q_PROPERTY(QString configPath READ configPath CONSTANT FINAL)
     Q_PROPERTY(QString publicKey READ  publicKey CONSTANT FINAL)
+    Q_PROPERTY(DialogObject* foregroundDialog READ foregroundDialog WRITE setForegroundDialog NOTIFY foregroundDialogChanged)
 
     public:
         explicit SailorGram(QObject *parent = 0);
@@ -37,7 +39,9 @@ class SailorGram : public QObject
         QString configPath() const;
         QString publicKey() const;
         TelegramQml* telegram() const;
+        DialogObject* foregroundDialog() const;
         void setTelegram(TelegramQml* telegram);
+        void setForegroundDialog(DialogObject* dialog);
         void setKeepRunning(bool keep);
 
     public slots:
@@ -45,14 +49,18 @@ class SailorGram : public QObject
         bool fileIsVideo(const QString& filepath);
         void moveMediaToDownloads(MessageMediaObject* messagemediaobject);
         void moveMediaToGallery(MessageMediaObject* messagemediaobject);
+        void notify(MessageObject* message, const QString& name, const QString &elaboratedbody);
         QString fileName(const QString& filepath);
         FileLocationObject *mediaLocation(MessageMediaObject* messagemediaobject);
 
     private:
         void moveMediaTo(FileLocationObject* locationobj, const QString& destination);
+        void notify(const QString& summary, const QString& body, const QString &icon, qint32 peerid);
+        void beep();
 
     private slots:
         void onApplicationStateChanged(Qt::ApplicationState state);
+        void onNotificationClosed(uint);
         void onWakeUpRequested();
         void startHeartBeat();
         void wakeSleep();
@@ -64,18 +72,23 @@ class SailorGram : public QObject
         void intervalChanged();
         void telegramChanged();
         void wakeUpRequested();
+        void foregroundDialogChanged();
+        void openDialogRequested(qint32 peerid);
 
     private:
+        QHash<qint32, Notification*> _notifications;
+        QMimeDatabase _mimedb;
         TelegramQml* _telegram;
         HeartBeat* _heartbeat;
         SailorgramInterface* _interface;
-        QMimeDatabase _mimedb;
+        DialogObject* _foregrounddialog;
         bool _daemonized;
 
     private:
         static const QString CONFIG_FOLDER;
         static const QString PUBLIC_KEY_FILE;
         static const QString EMOJI_FOLDER;
+        static const QString APPLICATION_PRETTY_NAME;
 };
 
 #endif // SAILORGRAM_H

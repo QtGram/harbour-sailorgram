@@ -52,7 +52,34 @@ Page
             return;
 
         pageStack.pushAttached(Qt.resolvedUrl("../contacts/ContactsPage.qml"), { "context": dialogspage.context });
-        context.notificationmanager.foregroundDialog = null; // Reset Foreground Dialog
+        context.sailorgram.foregroundDialog = null; // Reset Foreground Dialog
+    }
+
+
+    Connections
+    {
+        target: context.sailorgram
+
+        onOpenDialogRequested: {
+            if(pageStack.depth > 1)
+                pageStack.pop(dialogspage, PageStackAction.Immediate);
+
+            var dialog = context.telegram.dialog(peerid);
+
+            if(dialog === context.telegram.nullDialog)
+            {
+                console.warn("Invalid dialog for peerId = " + peerid);
+                return;
+            }
+
+            if(dialog.encrypted)
+                pageStack.push(Qt.resolvedUrl("../secretdialogs/SecretDialogPage.qml"), { "context": context, "dialog": dialog }, PageStackAction.Immediate);
+            else
+                pageStack.push(Qt.resolvedUrl("DialogPage.qml"), { "context": context, "dialog": dialog }, PageStackAction.Immediate);
+
+            if(Qt.application.state !== Qt.ApplicationActive)
+                mainwindow.activate();
+        }
     }
 
     SilicaListView

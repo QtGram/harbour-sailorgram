@@ -32,7 +32,7 @@ Page
             return;
 
         pageStack.pushAttached(Qt.resolvedUrl("DialogInfoPage.qml"), { "context": dialogpage.context, "dialog": dialogpage.dialog, "chat": dialogpage.chat, "user": dialogpage.user });
-        context.notificationmanager.foregroundDialog = dialogpage.dialog;
+        context.sailorgram.foregroundDialog = dialogpage.dialog;
 
         messagesmodel.telegram = dialogpage.context.telegram;
         messagesmodel.dialog = dialogpage.dialog;

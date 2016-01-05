@@ -26,7 +26,7 @@ Page
             return;
 
         pageStack.pushAttached(Qt.resolvedUrl("../dialogs/DialogInfoPage.qml"), { "context": secretdialogpage.context, "dialog": secretdialogpage.dialog, "user": secretdialogpage.user });
-        context.notificationmanager.foregroundDialog = secretdialogpage.dialog;
+        context.sailorgram.foregroundDialog = secretdialogpage.dialog;
 
         messagesmodel.telegram = secretdialogpage.context.telegram;
         messagesmodel.dialog = secretdialogpage.dialog;

@@ -25,7 +25,7 @@ Item
             user = context.telegram.user(dialog.peer.userId);
 
         message = context.telegram.message(dialog.topMessage);
-        muted = context.telegram.userData.isMuted(TelegramHelper.peerId(dialog));
+        muted = context.telegram.userData.isMuted(TelegramHelper.peerId(dialog)) || (dialog.notifySettings.muteUntil > 0)
     }
 
     id: dialogitem

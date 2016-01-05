@@ -2,6 +2,7 @@
 #define SAILORGRAMADAPTOR_H
 
 #include <QDBusAbstractAdaptor>
+#include <QDebug>
 
 class SailorgramAdaptor : public QDBusAbstractAdaptor
 {
@@ -13,6 +14,7 @@ class SailorgramAdaptor : public QDBusAbstractAdaptor
 
     public slots:
         void wakeUp();
+        void openDialog(qint32 peerid);
 };
 
 #endif // SAILORGRAMADAPTOR_H

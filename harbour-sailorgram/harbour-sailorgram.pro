@@ -45,6 +45,11 @@ lipstick_config.files = $$PWD/lipstick/*.conf
 lipstick_config.path = /usr/share/lipstick/notificationcategories
 INSTALLS += lipstick_config
 
+# DBus Config
+dbus_config.files = $$PWD/dbus/*.service
+dbus_config.path = /usr/share/dbus-1/services
+INSTALLS += dbus_config
+
 SOURCES += src/harbour-sailorgram.cpp \
     src/sailorgram.cpp \
     src/filepicker/folderlistmodel.cpp \
@@ -52,7 +57,8 @@ SOURCES += src/harbour-sailorgram.cpp \
     src/heartbeat.cpp \
     src/dbus/interface/sailorgramadaptor.cpp \
     src/dbus/interface/sailorgraminterface.cpp \
-    src/dbus/notificationmanager.cpp
+    src/dbus/notification/notification.cpp \
+    src/dbus/notification/notificationmanagerproxy.cpp
 
 OTHER_FILES += qml/harbour-sailorgram.qml \
     rpm/harbour-sailorgram.changes.in \
@@ -156,7 +162,8 @@ HEADERS += \
     src/heartbeat.h \
     src/dbus/interface/sailorgramadaptor.h \
     src/dbus/interface/sailorgraminterface.h \
-    src/dbus/notificationmanager.h
+    src/dbus/notification/notification.h \
+    src/dbus/notification/notificationmanagerproxy.h
 
 RESOURCES += \
     resources.qrc
@@ -183,4 +190,5 @@ DISTFILES += \
     qml/items/message/messageitem/MessageQuotedItem.qml \
     qml/js/ColorScheme.js \
     qml/js/TelegramMedia.js \
-    qml/pages/picker/ImagePreviewPage.qml
+    qml/pages/picker/ImagePreviewPage.qml \
+    dbus/org.harbour.sailorgram.service

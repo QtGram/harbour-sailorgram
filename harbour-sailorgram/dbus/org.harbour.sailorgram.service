@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=org.harbour.sailorgram
+Exec=invoker --type=j /usr/bin/harbour-sailorgram
