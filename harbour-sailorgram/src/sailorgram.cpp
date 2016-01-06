@@ -350,7 +350,7 @@ void SailorGram::notify(MessageObject *message, const QString &name, const QStri
     DialogObject* dialog = this->_telegram->messageDialog(message->id());
     qint32 peerid = (dialog->peer()->classType() == Peer::typePeerChat) ? dialog->peer()->chatId() : dialog->peer()->userId();
 
-    if(userdata->isMuted(peerid) || (dialog->notifySettings()->muteUntil() > 0))
+    if(userdata->isMuted(peerid))
         return;
 
     bool active = qApp->applicationState() == Qt::ApplicationActive;
