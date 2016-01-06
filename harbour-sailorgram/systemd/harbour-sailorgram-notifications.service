@@ -5,7 +5,7 @@ After=lipstick.service
 
 [Service]
 Type=dbus
-ExecStart=/usr/bin/invoker --type=j /usr/bin/harbour-sailorgram -daemon
+ExecStart=/usr/bin/invoker --type=generic /usr/bin/harbour-sailorgram -daemon
 BusName=org.harbour.sailorgram
 
 [Install]

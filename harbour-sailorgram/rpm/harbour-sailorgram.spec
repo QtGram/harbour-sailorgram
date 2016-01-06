@@ -89,6 +89,7 @@ fi
 %post
 # >> post
 systemctl-user restart ngfd.service
+systemctl-user restart harbour-sailorgram-notifications.service
 # << post
 
 %files
