@@ -53,14 +53,18 @@ Page
 
         pageStack.pushAttached(Qt.resolvedUrl("../contacts/ContactsPage.qml"), { "context": dialogspage.context });
         context.sailorgram.foregroundDialog = null; // Reset Foreground Dialog
-
-        //FIXME: if(lvdialogs.count > 0)
-            //dialogsmodel.recheck();
     }
 
     Connections
     {
         target: context.sailorgram
+
+        onDaemonizedChanged: {
+            if(context.sailorgram.daemonized)
+                return;
+
+            dialogsmodel.refreshDatabase();
+        }
 
         onOpenDialogRequested: {
             if(pageStack.depth > 1)
