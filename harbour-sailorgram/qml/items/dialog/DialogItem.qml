@@ -15,36 +15,26 @@ Item
     property var dialog
     property User user
     property Chat chat
-    property Message message
-    property bool muted: false
+    property bool muted: context.telegram.userData.isMuted(TelegramHelper.peerId(dialogitem.dialog))
+    property Message message: context.telegram.message(dialog.topMessage);
 
     onDialogChanged: {
         if(TelegramHelper.isChat(dialog))
             chat = context.telegram.chat(dialog.peer.chatId);
         else
             user = context.telegram.user(dialog.peer.userId);
-
-        message = context.telegram.message(dialog.topMessage);
-        muted = context.telegram.userData.isMuted(TelegramHelper.peerId(dialog)) || (dialog.notifySettings.muteUntil > 0)
     }
 
     id: dialogitem
 
     Connections
     {
-        target: dialog
-
-        onTopMessageChanged: {
-            message = context.telegram.message(dialog.topMessage);
-        }
-    }
-
-    Connections
-    {
         target: context.telegram.userData
 
         onMuteChanged: {
-            if(id !== TelegramHelper.peerId(dialog))
+            var peerid = TelegramHelper.peerId(dialog);
+
+            if(id !== peerid)
                 return;
 
             dialogitem.muted = context.telegram.userData.isMuted(id);

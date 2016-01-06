@@ -23,7 +23,9 @@ Page
         target: context.telegram.userData
 
         onMuteChanged: {
-            if(user && (id !== user.id))
+            var peerid = TelegramHelper.peerId(dialog);
+
+            if(id !== peerid)
                 return;
 
             dialoginfopage.muted = context.telegram.userData.isMuted(id);
