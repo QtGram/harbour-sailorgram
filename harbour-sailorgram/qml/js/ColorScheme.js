@@ -35,19 +35,19 @@ function colorizeTick(message, context)
     return Silica.Theme.highlightDimmerColor;
 }
 
-function colorizeBubble(message, context)
+function colorizeBubble(message, context, ignorehidden)
 {
-    if(context.bubbleshidden || TelegramHelper.isServiceMessage(message))
+    if(!ignorehidden && (context.bubbleshidden || TelegramHelper.isServiceMessage(message)))
         return "transparent"
 
     if(message.out)
-        return Silica.Theme.rgba(Silica.Theme.secondaryColor, 0.8);
+        return Silica.Theme.rgba(Silica.Theme.secondaryColor, 0.7);
 
-    return Silica.Theme.rgba(Qt.tint(Silica.Theme.secondaryHighlightColor, Silica.Theme.rgba(Silica.Theme.highlightDimmerColor, 0.3)), 0.8);
+    return Silica.Theme.rgba(Qt.tint(Silica.Theme.secondaryHighlightColor, Silica.Theme.rgba(Silica.Theme.highlightDimmerColor, 0.3)), 0.7);
 }
 
 function colorizeLink(message, context)
 {
-    var bubblecolor = Silica.Theme.rgba(colorizeBubble(message,  context), 1.0);
+    var bubblecolor = Silica.Theme.rgba(colorizeBubble(message,  context, true), 1.0);
     return Qt.lighter(Qt.rgba(1.0 - bubblecolor.r, 1.0 - bubblecolor.g, 1.0 - bubblecolor.b, 1.0), 1.5);
 }

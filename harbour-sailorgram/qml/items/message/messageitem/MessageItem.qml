@@ -141,7 +141,7 @@ ListItem
         id: bubble
         radius: 4
         visible: !context.bubbleshidden
-        color: ColorScheme.colorizeBubble(message, context)
+        color: ColorScheme.colorizeBubble(message, context, false)
         width: content.width
         height: content.height
 
