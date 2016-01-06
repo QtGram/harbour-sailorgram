@@ -223,7 +223,7 @@ ListItem
             color: ColorScheme.colorize(message, context)
             visible: !TelegramHelper.isServiceMessage(message) && !message.out
             verticalAlignment: Text.AlignVCenter
-            font.pixelSize: Theme.fontSizeMedium
+            font.pixelSize: Theme.fontSizeSmall
             font.bold: true
             wrapMode: Text.NoWrap
 
