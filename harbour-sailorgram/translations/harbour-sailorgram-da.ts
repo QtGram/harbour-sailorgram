@@ -93,7 +93,7 @@
     </message>
     <message>
         <source>Emoji Set</source>
-        <translation type="unfinished"></translation>
+        <translation>Emoji-ikonsæt</translation>
     </message>
 </context>
 <context>
@@ -235,7 +235,7 @@ Minimumslængde er fem tegn.</translation>
     </message>
     <message>
         <source>Hide Bubbles</source>
-        <translation>Gem Bobbler</translation>
+        <translation>Gem Talebobler</translation>
     </message>
 </context>
 <context>
@@ -265,7 +265,7 @@ Minimumslængde er fem tegn.</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Afslut</translation>
     </message>
 </context>
 <context>
@@ -489,7 +489,7 @@ Vælg en kontakt, ved at vælge &quot;Kontakter&quot; fra menuen ovenover</trans
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Afslut</translation>
     </message>
 </context>
 <context>

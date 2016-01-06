@@ -93,7 +93,7 @@
     </message>
     <message>
         <source>Emoji Set</source>
-        <translation type="unfinished"></translation>
+        <translation>Set di Emoji</translation>
     </message>
 </context>
 <context>
@@ -265,7 +265,7 @@ La lunghezza minima è di 5 caratteri.</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Esci</translation>
     </message>
 </context>
 <context>
@@ -320,23 +320,23 @@ La lunghezza minima è di 5 caratteri.</translation>
     <name>DaemonSettingsPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Salva</translation>
+        <translation>Salva</translation>
     </message>
     <message>
         <source>Keep running</source>
-        <translation type="unfinished"></translation>
+        <translation>Mantieni in esecuzione</translation>
     </message>
     <message>
         <source>SailorGram keeps running in background even when closed</source>
-        <translation type="unfinished"></translation>
+        <translation>SailorGram rimane in esecuzione anche se viene chiuso</translation>
     </message>
     <message>
         <source>Autostart</source>
-        <translation type="unfinished"></translation>
+        <translation>Avvio automatico</translation>
     </message>
     <message>
         <source>SailorGram starts automatically</source>
-        <translation type="unfinished"></translation>
+        <translation>SailorGram viene eseguito automaticamente</translation>
     </message>
 </context>
 <context>
@@ -489,7 +489,7 @@ Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Esci</translation>
     </message>
 </context>
 <context>
@@ -755,7 +755,7 @@ Per iniziare, seleziona &quot;Contatti&quot; dal menu superiore</translation>
     </message>
     <message>
         <source>Daemon</source>
-        <translation type="unfinished"></translation>
+        <translation>Demone</translation>
     </message>
 </context>
 <context>

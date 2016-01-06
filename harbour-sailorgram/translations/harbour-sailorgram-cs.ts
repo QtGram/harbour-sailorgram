@@ -93,7 +93,7 @@
     </message>
     <message>
         <source>Emoji Set</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubor emoji</translation>
     </message>
 </context>
 <context>
@@ -104,7 +104,7 @@
     </message>
     <message>
         <source>First Name</source>
-        <translation>Jméno</translation>
+        <translation>Křestní jméno</translation>
     </message>
     <message>
         <source>Last Name</source>
@@ -112,7 +112,7 @@
     </message>
     <message>
         <source>Telephone Number</source>
-        <translation>Telefoní číslo</translation>
+        <translation>Telefonní číslo</translation>
     </message>
 </context>
 <context>
@@ -171,21 +171,21 @@
 
 You can use a-z, 0-9 and underscores.
 Minimum length is 5 characters.</source>
-        <translation>Na Telegramu si můžete si vybrat uživatelské jméno. Pokud tak učiníte, ostatní lidé mohou vás kontaktovat , aniž by věděli vaše telefonní číslo.
+        <translation>Pro Telegram si můžete si vybrat uživatelské jméno. Pokud tak učiníte, ostatní lidé vás mohou kontaktovat , aniž by věděli vaše telefonní číslo.
 
 Můžete používat a-z, 0-9 a &quot;_&quot;.
 Minimální délka je 5 znaků .</translation>
     </message>
     <message>
         <source>This username is already occupied</source>
-        <translation>Toto uživatelské jméno je již obsazeno</translation>
+        <translation>Zvolené uživatelské jméno je již obsazeno</translation>
     </message>
 </context>
 <context>
     <name>ChatInfo</name>
     <message>
         <source>Members</source>
-        <translation>Členi</translation>
+        <translation>Členové</translation>
     </message>
     <message>
         <source>Leave group</source>
@@ -193,7 +193,7 @@ Minimální délka je 5 znaků .</translation>
     </message>
     <message>
         <source>Leaving group</source>
-        <translation>Opustím skupinu</translation>
+        <translation>Opustění skupiny</translation>
     </message>
     <message>
         <source>Change title</source>
@@ -261,11 +261,11 @@ Minimální délka je 5 znaků .</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation>Chybní protokol</translation>
+        <translation>Protokol chyb</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ukončit</translation>
     </message>
 </context>
 <context>
@@ -347,7 +347,7 @@ Minimální délka je 5 znaků .</translation>
     </message>
     <message>
         <source>Refresh</source>
-        <translation>Obnovit</translation>
+        <translation>Aktulizovat</translation>
     </message>
     <message>
         <source>Contacts:</source>
@@ -489,7 +489,7 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z Pull Down Menu</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukončit</translation>
     </message>
 </context>
 <context>
@@ -571,7 +571,7 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z Pull Down Menu</translation>
     <name>MediaPlayerToolBar</name>
     <message>
         <source>Downloading media</source>
-        <translation>Stahovám média</translation>
+        <translation>Stáhnutí média</translation>
     </message>
     <message>
         <source>Media saved in Gallery</source>
@@ -597,7 +597,7 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z Pull Down Menu</translation>
     <name>MessageItem</name>
     <message>
         <source>Downloading Media</source>
-        <translation>Přesunovaní media</translation>
+        <translation>Stáhnutí media</translation>
     </message>
     <message>
         <source>Opening Media</source>
@@ -632,11 +632,11 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z Pull Down Menu</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation>Přesunout</translation>
+        <translation>Stáhnout</translation>
     </message>
     <message>
         <source>Downloading media</source>
-        <translation>Přesunovaní media</translation>
+        <translation>Stáhnutí media</translation>
     </message>
 </context>
 <context>

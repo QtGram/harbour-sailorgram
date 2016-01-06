@@ -5,121 +5,121 @@
     <name>AboutPage</name>
     <message>
         <source>Danish</source>
-        <translation type="unfinished"></translation>
+        <translation>Δανικά</translation>
     </message>
     <message>
         <source>Dutch</source>
-        <translation type="unfinished"></translation>
+        <translation>Ολλανδικά</translation>
     </message>
     <message>
         <source>Finnish</source>
-        <translation type="unfinished"></translation>
+        <translation>Φινλανδικά</translation>
     </message>
     <message>
         <source>German</source>
-        <translation type="unfinished"></translation>
+        <translation>Γερμανικά</translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρωσικά</translation>
     </message>
     <message>
         <source>Spanish</source>
-        <translation type="unfinished"></translation>
+        <translation>Ισπανικά</translation>
     </message>
     <message>
         <source>Czech</source>
-        <translation type="unfinished"></translation>
+        <translation>Τσέχικα</translation>
     </message>
     <message>
         <source>French</source>
-        <translation type="unfinished"></translation>
+        <translation>Γαλλικά</translation>
     </message>
     <message>
         <source>Italian</source>
-        <translation type="unfinished"></translation>
+        <translation>Ιταλικά</translation>
     </message>
     <message>
         <source>Persian</source>
-        <translation type="unfinished"></translation>
+        <translation>Περσικά</translation>
     </message>
     <message>
         <source>Greek</source>
-        <translation type="unfinished"></translation>
+        <translation>Ελληνικά</translation>
     </message>
     <message>
         <source>About SailorGram</source>
-        <translation type="unfinished"></translation>
+        <translation>Σχετικά με το SailorGram</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Έκδοση</translation>
     </message>
     <message>
         <source>An unofficial Telegram Client for SailfishOS</source>
-        <translation type="unfinished"></translation>
+        <translation>Ανεπίσημος </translation>
     </message>
     <message>
         <source>Developer</source>
-        <translation type="unfinished"></translation>
+        <translation>Προγραμματιστής</translation>
     </message>
     <message>
         <source>Icon Designer</source>
-        <translation type="unfinished"></translation>
+        <translation>Σχεδιαστής εικονιδίων</translation>
     </message>
     <message>
         <source>GitHub Repository</source>
-        <translation type="unfinished"></translation>
+        <translation>GitHub Αποθήκη</translation>
     </message>
     <message>
         <source>Translators</source>
-        <translation type="unfinished"></translation>
+        <translation>Μεταφραστές</translation>
     </message>
     <message>
         <source>Translation Platform</source>
-        <translation type="unfinished"></translation>
+        <translation>Πλατφόρμα μετάφρασης</translation>
     </message>
     <message>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>Σουηδικά</translation>
     </message>
     <message>
         <source>Galician</source>
-        <translation type="unfinished"></translation>
+        <translation>Γαλικία</translation>
     </message>
     <message>
         <source>Belaruian</source>
-        <translation type="unfinished"></translation>
+        <translation>Λευκορώσικα</translation>
     </message>
     <message>
         <source>Emoji Set</source>
-        <translation type="unfinished"></translation>
+        <translation>Σετ χαρακτήρων Emoji</translation>
     </message>
 </context>
 <context>
     <name>AddContactPage</name>
     <message>
         <source>Add Contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσθήκη επαφής</translation>
     </message>
     <message>
         <source>First Name</source>
-        <translation type="unfinished">Όνομα</translation>
+        <translation>&apos;Ονομα</translation>
     </message>
     <message>
         <source>Last Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Επίθετο</translation>
     </message>
     <message>
         <source>Telephone Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Αριθμός τηλεφώνου</translation>
     </message>
 </context>
 <context>
     <name>AddContactsPage</name>
     <message>
         <source>Add Chat Member</source>
-        <translation type="unfinished"></translation>
+        <translation>Πρόσθεση μέλους συνομιλίας </translation>
     </message>
 </context>
 <context>
@@ -142,104 +142,107 @@
     </message>
     <message>
         <source>Resend Activation Code</source>
-        <translation type="unfinished"></translation>
+        <translation>Επαναποστολή κωδικού ενεργοποίησης</translation>
     </message>
     <message>
         <source>Sending Activation Code</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποστέλλεται κωδικός ενεργοποίησης</translation>
     </message>
 </context>
 <context>
     <name>ChangeChatTitle</name>
     <message>
         <source>Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Αλλαγή</translation>
     </message>
 </context>
 <context>
     <name>ChangeUsernamePage</name>
     <message>
         <source>Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Αλλαγή</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation type="unfinished"></translation>
+        <translation>Όνομα χρήστη</translation>
     </message>
     <message>
         <source>You can choose an username on Telegram. If you do, other people may contact you without knowing your phone number.
 
 You can use a-z, 0-9 and underscores.
 Minimum length is 5 characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Μπορείτε να επιλέξτε όνομα χρήστη στο Telegram. Αν το κάνετε, άλλοι θα μπορούν να επικοινωνήσουν μαζί σας χωρίς να ξέρουν τον αριθμό τηλεφώνου σας.
+
+Μπορείτε να χρησιμοποιήστε χαρακτήρες a-z, 0-9, και την υπογράμμιση.
+Το ελάχιστο μήκος είναι 5 χαρακτήρες. </translation>
     </message>
     <message>
         <source>This username is already occupied</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτό το όνομα χρήστη είναι κατειλημμένο </translation>
     </message>
 </context>
 <context>
     <name>ChatInfo</name>
     <message>
         <source>Members</source>
-        <translation type="unfinished"></translation>
+        <translation>Μέλη</translation>
     </message>
     <message>
         <source>Leave group</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποχώρηση από ομάδα</translation>
     </message>
     <message>
         <source>Leaving group</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποχωρώντας από ομάδα</translation>
     </message>
     <message>
         <source>Change title</source>
-        <translation type="unfinished"></translation>
+        <translation>Αλλαγή τίτλου</translation>
     </message>
     <message>
         <source>Add member</source>
-        <translation type="unfinished"></translation>
+        <translation>Πρόσθεση μέλους</translation>
     </message>
 </context>
 <context>
     <name>ChatInfoMenu</name>
     <message>
         <source>Remove from Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Διαγραφή από ομάδα</translation>
     </message>
     <message>
         <source>Removing from group</source>
-        <translation type="unfinished"></translation>
+        <translation>Διαγράφοντας από ομάδα</translation>
     </message>
 </context>
 <context>
     <name>ChatSettingsPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποθήκευση</translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποστολή μηνυμάτων με χρήση του πλήκτρου επιστροφής </translation>
     </message>
     <message>
         <source>Disable background</source>
-        <translation type="unfinished"></translation>
+        <translation>Απενεργοποίηση φόντου</translation>
     </message>
     <message>
         <source>Hide chat header</source>
-        <translation type="unfinished"></translation>
+        <translation>Απόκρυψη τίτλου συνομιλίας</translation>
     </message>
     <message>
         <source>Hide Bubbles</source>
-        <translation type="unfinished"></translation>
+        <translation>Απόκρυψη φυσαλίδων</translation>
     </message>
 </context>
 <context>
     <name>ConnectingLabel</name>
     <message>
         <source>Connecting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Συνδέοντας</translation>
     </message>
 </context>
 <context>
@@ -250,74 +253,74 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Login Again</source>
-        <translation type="unfinished"></translation>
+        <translation>Συνδεθείτε ξανά</translation>
     </message>
     <message>
         <source>Telegram Status</source>
-        <translation type="unfinished"></translation>
+        <translation>Κατάσταση Telegram</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <translation>Καταγραφή σφαλμάτων</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Έξοδος</translation>
     </message>
 </context>
 <context>
     <name>ContactsPage</name>
     <message>
         <source>Add Contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσθήκη επαφής</translation>
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished"></translation>
+        <translation>Επαφές</translation>
     </message>
 </context>
 <context>
     <name>CoverPage</name>
     <message>
         <source>Connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Συνδεμένο</translation>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποσυνδεμένο</translation>
     </message>
     <message>
         <source>%1 unread messages</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 αδιάβαστα μηνύματα</translation>
     </message>
     <message>
         <source>%1 unread message</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 αδιάβαστο μήνυμα</translation>
     </message>
 </context>
 <context>
     <name>CreateChatPage</name>
     <message>
         <source>Group Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Όνομα Ομάδας</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Νέα Ομάδα</translation>
     </message>
 </context>
 <context>
     <name>CreateSecretDialogPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Νέα μυστική συνομιλία</translation>
     </message>
 </context>
 <context>
     <name>DaemonSettingsPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αποθήκευση</translation>
     </message>
     <message>
         <source>Keep running</source>
@@ -340,95 +343,96 @@ Minimum length is 5 characters.</source>
     <name>DebugSettingsPage</name>
     <message>
         <source>Debug</source>
-        <translation type="unfinished"></translation>
+        <translation>Debug</translation>
     </message>
     <message>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Ανανέωση</translation>
     </message>
     <message>
         <source>Contacts:</source>
-        <translation type="unfinished"></translation>
+        <translation>Επαφές:</translation>
     </message>
     <message>
         <source>Heartbeat:</source>
-        <translation type="unfinished"></translation>
+        <translation>Παλμός συγχρονισμού:</translation>
     </message>
     <message>
         <source>Connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Συνδεμένο</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <translation>Καταγραφή σφαλμάτων</translation>
     </message>
     <message>
         <source>Not Connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Μη συνδεμένο</translation>
     </message>
 </context>
 <context>
     <name>DialogInfoPage</name>
     <message>
         <source>Delete secret chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Διαγραφή μυστικής συνομιλίας</translation>
     </message>
     <message>
         <source>Delete group</source>
-        <translation type="unfinished"></translation>
+        <translation>Διαγραφή ομάδας</translation>
     </message>
     <message>
         <source>Delete conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Διαγραφή συνομιλίας</translation>
     </message>
     <message>
         <source>Deleting secret chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Διαγραφή μυστικής συνομιλίας</translation>
     </message>
     <message>
         <source>Deleting group</source>
-        <translation type="unfinished"></translation>
+        <translation>Η ομάδα διαγράφεται</translation>
     </message>
     <message>
         <source>Deleting conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Η συνομιλία διαγράφεται</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished"></translation>
+        <translation>Ενέργειες</translation>
     </message>
     <message>
         <source>Enable notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Ενεργοποίηση Ειδοποιήσεων</translation>
     </message>
     <message>
         <source>Disable notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Απενεργοποίηση Ειδοποιήσεων</translation>
     </message>
     <message>
         <source>Add to contacts</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσθήκη στις επαφές</translation>
     </message>
 </context>
 <context>
     <name>DialogItem</name>
     <message>
         <source>You:</source>
-        <translation type="unfinished"></translation>
+        <translation>Εσύ:</translation>
     </message>
 </context>
 <context>
     <name>DialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Φόρτωση περισσοτέρων μηνυμάτων
+</translation>
     </message>
 </context>
 <context>
     <name>DialogTextInput</name>
     <message>
         <source>Message...</source>
-        <translation type="unfinished"></translation>
+        <translation>Μήνυμα...</translation>
     </message>
 </context>
 <context>
@@ -437,96 +441,98 @@ Minimum length is 5 characters.</source>
         <source>No Chats
 
 Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν υπάρχουν συνομιλίες
+
+Επιλέξτε μια επαφή από τις &quot;Επαφές&quot; από το Μενού πιο πάνω</translation>
     </message>
     <message>
         <source>Chats</source>
-        <translation type="unfinished"></translation>
+        <translation>Συνομιλίες</translation>
     </message>
     <message>
         <source>Connecting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Συνδέοντας</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Η συνομιλία διαγράφεται</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Η μυστική συνομιλία διαγράφεται</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Η ομάδα διαγράφεται</translation>
     </message>
 </context>
 <context>
     <name>DialogsPullDownMenu</name>
     <message>
         <source>Profile</source>
-        <translation type="unfinished">Προφίλ</translation>
+        <translation>Προφίλ</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Νέα μυστική συνομιλία</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Νέα Ομάδα</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρυθμίσεις</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Έξοδος</translation>
     </message>
 </context>
 <context>
     <name>ErrorsPage</name>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Καθαρισμός καταγραφής σφαλμάτων</translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>Το αρχείο καταγραφής σφαλμάτων είναι άδειο</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation type="unfinished"></translation>
+        <translation>Καταγραφή σφαλμάτων</translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished"></translation>
+        <translation>Κωδικός σφάλματος</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished"></translation>
+        <translation>Λειτουργία:</translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Τα σφάλματα διαγράφονται</translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished"></translation>
+        <translation>Μήνυμα:</translation>
     </message>
 </context>
 <context>
     <name>FilePicker</name>
     <message>
         <source>Created:</source>
-        <translation type="unfinished"></translation>
+        <translation>Δημιουργήθηκε:</translation>
     </message>
     <message>
         <source>Picking file</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέγοντας το αρχείο</translation>
     </message>
 </context>
 <context>
@@ -548,44 +554,44 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>ImagePreviewPage</name>
     <message>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλογή</translation>
     </message>
 </context>
 <context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποθήκευση στην Συλλογή</translation>
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>Η εικόνα αποθηκεύτηκε στην Συλλογή</translation>
     </message>
 </context>
 <context>
     <name>MediaPlayerToolBar</name>
     <message>
         <source>Downloading media</source>
-        <translation type="unfinished"></translation>
+        <translation>Γίνεται λήψη πολυμέσων</translation>
     </message>
     <message>
         <source>Media saved in Gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>Το πολυμέσο αποθηκεύτηκε στην Συλλογή</translation>
     </message>
 </context>
 <context>
     <name>MessageAudio</name>
     <message>
         <source>Duration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Διάρκεια: %1</translation>
     </message>
     <message>
         <source>Audio recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Εγγραφή ήχου</translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Μέγεθος: %1</translation>
     </message>
 </context>
 <context>
@@ -596,64 +602,64 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Opening Media</source>
-        <translation type="unfinished"></translation>
+        <translation>Ανοιγμα Πολυμέσου</translation>
     </message>
     <message>
         <source>Opening media</source>
-        <translation type="unfinished"></translation>
+        <translation>Ανοιγμα πολυμέσου</translation>
     </message>
 </context>
 <context>
     <name>MessageMenu</name>
     <message>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Αντιγραφή</translation>
     </message>
     <message>
         <source>Message copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Αντιγραφή μηνύματος στο πρόχειρο</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <source>Deleting Message</source>
-        <translation type="unfinished"></translation>
+        <translation>Το μήνυμα διαγράφεται</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Ακύρωση</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation type="unfinished"></translation>
+        <translation>Λήψη</translation>
     </message>
     <message>
         <source>Downloading media</source>
-        <translation type="unfinished"></translation>
+        <translation>Γίνεται λήψη πολυμέσων </translation>
     </message>
 </context>
 <context>
     <name>MessageQuotedItem</name>
     <message>
         <source>You</source>
-        <translation type="unfinished"></translation>
+        <translation>Εσύ</translation>
     </message>
 </context>
 <context>
     <name>MessageVideo</name>
     <message>
         <source>Video recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Εγγραφή εικονοσκόπισης </translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Μέγεθος: %1</translation>
     </message>
     <message>
         <source>Duration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Διάρκεια: %1</translation>
     </message>
 </context>
 <context>
@@ -664,7 +670,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>%1 member</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 μέλος</translation>
     </message>
 </context>
 <context>
@@ -690,63 +696,64 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>ProfilePage</name>
     <message>
         <source>Change Picture</source>
-        <translation type="unfinished"></translation>
+        <translation>Αλλαγή εικόνας</translation>
     </message>
     <message>
         <source>Phone number</source>
-        <translation type="unfinished"></translation>
+        <translation>Αριθμός τηλεφώνου</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation type="unfinished">Προφίλ</translation>
+        <translation>Προφίλ</translation>
     </message>
     <message>
         <source>Change Username</source>
-        <translation type="unfinished"></translation>
+        <translation>Αλλαγή ονόματος χρήστη</translation>
     </message>
     <message>
         <source>User</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρήστης</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation type="unfinished"></translation>
+        <translation>Όνομα χρήστη</translation>
     </message>
 </context>
 <context>
     <name>SecretDialogDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation type="unfinished"></translation>
+        <translation>Κατάργηση μυστικής συνομιλίας</translation>
     </message>
 </context>
 <context>
     <name>SecretDialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Φόρτωση περισσοτέρων μηνυμάτων
+</translation>
     </message>
 </context>
 <context>
     <name>SecretDialogWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>
-        <translation type="unfinished"></translation>
+        <translation>Περιμένοντας τον %1 να συνδεθεί</translation>
     </message>
 </context>
 <context>
     <name>SettingsPage</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρυθμίσεις</translation>
     </message>
     <message>
         <source>Chats</source>
-        <translation type="unfinished"></translation>
+        <translation>Συνομιλίες</translation>
     </message>
     <message>
         <source>Debug</source>
-        <translation type="unfinished"></translation>
+        <translation>Debug</translation>
     </message>
     <message>
         <source>Daemon</source>
@@ -785,27 +792,27 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <name>TelegramAction</name>
     <message>
         <source>%1 has left the group</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 άφησε την ομάδα</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ήρθε στην ομάδα</translation>
     </message>
     <message>
         <source>%1 has joined the group via invite link</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ήρθε στην ομάδα μέσω πρόσκλησης από σύνδεσμο</translation>
     </message>
     <message>
         <source>Secret chat created by ��%1��</source>
-        <translation type="unfinished"></translation>
+        <translation>Μυστική συνομιλία δημιουργήθηκε από ��%1��</translation>
     </message>
     <message>
         <source>Group created by ��%1��</source>
-        <translation type="unfinished"></translation>
+        <translation>Η ομάδα δημιουργήθηκε από ��%1��</translation>
     </message>
     <message>
         <source>Group name changed to ��%1��</source>
-        <translation type="unfinished"></translation>
+        <translation>Το όνομα της ομάδας άλλαξε σε ��%1��</translation>
     </message>
 </context>
 <context>
@@ -860,7 +867,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Last Seen %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Τελευταία Επίσκεψη %1</translation>
     </message>
 </context>
 <context>
@@ -871,7 +878,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Begin Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Έναρξη μυστικής συνομιλίας</translation>
     </message>
     <message>
         <source>Phone Number</source>

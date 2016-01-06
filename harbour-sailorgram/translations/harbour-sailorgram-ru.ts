@@ -313,7 +313,7 @@ Minimum length is 5 characters.</source>
     <name>CreateSecretDialogPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation>Начать тайный разговор</translation>
+        <translation>Создать тайный диалог</translation>
     </message>
 </context>
 <context>
@@ -477,7 +477,7 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation>Начать тайный разговор</translation>
+        <translation>Создать тайный диалог</translation>
     </message>
     <message>
         <source>New Group</source>

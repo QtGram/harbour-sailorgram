@@ -93,7 +93,7 @@
     </message>
     <message>
         <source>Emoji Set</source>
-        <translation type="unfinished"></translation>
+        <translation>Emoji-set</translation>
     </message>
 </context>
 <context>
@@ -265,7 +265,7 @@ Minimilängd är 5 tecken.</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Avsluta</translation>
     </message>
 </context>
 <context>
@@ -320,23 +320,23 @@ Minimilängd är 5 tecken.</translation>
     <name>DaemonSettingsPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Spara</translation>
+        <translation>Spara</translation>
     </message>
     <message>
         <source>Keep running</source>
-        <translation type="unfinished"></translation>
+        <translation>Kör i bakgrunden</translation>
     </message>
     <message>
         <source>SailorGram keeps running in background even when closed</source>
-        <translation type="unfinished"></translation>
+        <translation>SailorGram fortsätter köra i bakgrunden även när den stängs</translation>
     </message>
     <message>
         <source>Autostart</source>
-        <translation type="unfinished"></translation>
+        <translation>Autostart</translation>
     </message>
     <message>
         <source>SailorGram starts automatically</source>
-        <translation type="unfinished"></translation>
+        <translation>SailorGram startar automatiskt</translation>
     </message>
 </context>
 <context>
@@ -489,7 +489,7 @@ Svep åt vänster för att välja en kontakt från &quot;Kontakter&quot;.</trans
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Avsluta</translation>
     </message>
 </context>
 <context>
@@ -755,7 +755,7 @@ Svep åt vänster för att välja en kontakt från &quot;Kontakter&quot;.</trans
     </message>
     <message>
         <source>Daemon</source>
-        <translation type="unfinished"></translation>
+        <translation>Demon</translation>
     </message>
 </context>
 <context>

@@ -93,7 +93,7 @@
     </message>
     <message>
         <source>Emoji Set</source>
-        <translation type="unfinished"></translation>
+        <translation>Panneau d&apos;émoticônes</translation>
     </message>
 </context>
 <context>

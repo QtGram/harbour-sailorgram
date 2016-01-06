@@ -93,14 +93,14 @@
     </message>
     <message>
         <source>Emoji Set</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupo de emoticonos</translation>
     </message>
 </context>
 <context>
     <name>AddContactPage</name>
     <message>
         <source>Add Contact</source>
-        <translation>Añadir Contacto</translation>
+        <translation>Añadir contacto</translation>
     </message>
     <message>
         <source>First Name</source>
@@ -119,7 +119,7 @@
     <name>AddContactsPage</name>
     <message>
         <source>Add Chat Member</source>
-        <translation>Añadir Miembro al Chat</translation>
+        <translation>Añadir miembro al chat</translation>
     </message>
 </context>
 <context>
@@ -265,14 +265,14 @@ La longitud mínima es de 5 caracteres.</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Salir</translation>
     </message>
 </context>
 <context>
     <name>ContactsPage</name>
     <message>
         <source>Add Contact</source>
-        <translation>Añadir Contacto</translation>
+        <translation>Añadir contacto</translation>
     </message>
     <message>
         <source>Contacts</source>
@@ -313,7 +313,7 @@ La longitud mínima es de 5 caracteres.</translation>
     <name>CreateSecretDialogPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation>Nuevo Chat Secreto</translation>
+        <translation>Nuevo chat secreto</translation>
     </message>
 </context>
 <context>
@@ -458,15 +458,15 @@ Elige un contacto seleccionando &quot;Contactos&quot; en el menú desplegable de
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation>Borrando Conversación</translation>
+        <translation>Borrando conversación</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation>Borrando Chat Secreto</translation>
+        <translation>Borrando chat secreto</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation>Borrando Grupo</translation>
+        <translation>Borrando grupo</translation>
     </message>
 </context>
 <context>
@@ -477,11 +477,11 @@ Elige un contacto seleccionando &quot;Contactos&quot; en el menú desplegable de
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation>Nuevo Chat Secreto</translation>
+        <translation>Nuevo chat secreto</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation>Nuevo Grupo</translation>
+        <translation>Nuevo grupo</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -489,7 +489,7 @@ Elige un contacto seleccionando &quot;Contactos&quot; en el menú desplegable de
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Salir</translation>
     </message>
 </context>
 <context>
@@ -875,7 +875,7 @@ Elige un contacto seleccionando &quot;Contactos&quot; en el menú desplegable de
     </message>
     <message>
         <source>Begin Secret Chat</source>
-        <translation>Iniciar Chat Secreto</translation>
+        <translation>Iniciar chat secreto</translation>
     </message>
     <message>
         <source>Phone Number</source>

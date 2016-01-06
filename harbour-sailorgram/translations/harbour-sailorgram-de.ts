@@ -93,7 +93,7 @@
     </message>
     <message>
         <source>Emoji Set</source>
-        <translation type="unfinished"></translation>
+        <translation>Emoji Set</translation>
     </message>
 </context>
 <context>
@@ -265,7 +265,7 @@ Minimum sind 5 Zeichen.</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Beenden</translation>
     </message>
 </context>
 <context>
@@ -489,7 +489,7 @@ Wähle einen Kontakt über &quot;Kontakte&quot; im Pulley Menu</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Beenden</translation>
     </message>
 </context>
 <context>

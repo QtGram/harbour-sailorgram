@@ -93,7 +93,7 @@
     </message>
     <message>
         <source>Emoji Set</source>
-        <translation type="unfinished"></translation>
+        <translation>Emoji-kokoelma</translation>
     </message>
 </context>
 <context>
@@ -265,7 +265,7 @@ Vähimmäispituus on 5 merkkiä.</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Poistu</translation>
     </message>
 </context>
 <context>
@@ -489,7 +489,7 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteydet&quot; yläpuolella olevasta valik
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Poistu</translation>
     </message>
 </context>
 <context>

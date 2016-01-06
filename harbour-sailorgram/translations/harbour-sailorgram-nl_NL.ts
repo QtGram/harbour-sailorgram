@@ -93,7 +93,7 @@
     </message>
     <message>
         <source>Emoji Set</source>
-        <translation type="unfinished"></translation>
+        <translation>Emoji-verzameling</translation>
     </message>
 </context>
 <context>
@@ -265,7 +265,7 @@ De minimale lengte is 5 tekens.</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Afsluiten</translation>
     </message>
 </context>
 <context>
@@ -489,7 +489,7 @@ Selecteer een contactpersoon door te kiezen voor &quot;Contactpersonen&quot; in 
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Afsluiten</translation>
     </message>
 </context>
 <context>
