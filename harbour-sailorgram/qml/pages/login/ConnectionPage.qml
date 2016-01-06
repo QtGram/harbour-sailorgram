@@ -43,74 +43,89 @@ Page
         running: true
     }
 
-    Row
+    SilicaFlickable
     {
-        anchors { top: parent.top; right: parent.right }
-        height: csitem.height
+        anchors.fill: parent
 
-        Label
+        PullDownMenu
         {
-            text: qsTr("Telegram Status")
-            anchors.verticalCenter: csitem.verticalCenter
-            horizontalAlignment: Text.AlignRight
-            verticalAlignment: Text.AlignLeft
-            font.family: Theme.fontFamilyHeading
-            font.pixelSize: Theme.fontSizeLarge
-            color: Theme.highlightColor
-        }
-
-        ConnectionStatus
-        {
-            id: csitem
-            context: connectionpage.context
-            forceActive: false
-        }
-    }
-
-    Label
-    {
-        anchors { bottom: indicator.top; bottomMargin: Theme.paddingMedium }
-        width: parent.width
-        font.pixelSize: Theme.fontSizeExtraLarge
-        horizontalAlignment: Text.AlignHCenter
-        color: Theme.secondaryHighlightColor
-        text: qsTr("Connecting")
-    }
-
-    BusyIndicator
-    {
-        id: indicator
-        anchors.centerIn: parent
-        size: BusyIndicatorSize.Large
-        running: true
-    }
-
-    Row
-    {
-        anchors { horizontalCenter: parent.horizontalCenter; bottom: parent.bottom; bottomMargin: Theme.paddingLarge }
-
-        Button
-        {
-            text: qsTr("Login Again")
-            visible: !timlogin.running
-
-            onClicked: {
-                if(context.telegram.phoneNumber.length > 0) {
-                    pageStack.replace(Qt.resolvedUrl("AuthorizationPage.qml"), { "context": connectionpage.context, "resendCode": true });
-                }
-                else
-                    pageStack.replace(Qt.resolvedUrl("PhoneNumberPage.qml"), { "context": connectionpage.context });
+            MenuItem
+            {
+                text: qsTr("Exit")
+                visible: context.sailorgram.keepRunning
+                onClicked: Qt.quit()
             }
         }
 
-        Button
+        Row
         {
-            text: qsTr("Error log")
-            visible: !timlogin.running
+            anchors { top: parent.top; right: parent.right }
+            height: csitem.height
 
-            onClicked: {
-                pageStack.pushAttached(Qt.resolvedUrl("../settings/DebugSettingsPage.qml"), { "context": connectionpage.context });
-                pageStack.navigateForward(PageStackAction.Animated);
+            Label
+            {
+                text: qsTr("Telegram Status")
+                anchors.verticalCenter: csitem.verticalCenter
+                horizontalAlignment: Text.AlignRight
+                verticalAlignment: Text.AlignLeft
+                font.family: Theme.fontFamilyHeading
+                font.pixelSize: Theme.fontSizeLarge
+                color: Theme.highlightColor
+            }
+
+            ConnectionStatus
+            {
+                id: csitem
+                context: connectionpage.context
+                forceActive: false
+            }
+        }
+
+        Label
+        {
+            anchors { bottom: indicator.top; bottomMargin: Theme.paddingMedium }
+            width: parent.width
+            font.pixelSize: Theme.fontSizeExtraLarge
+            horizontalAlignment: Text.AlignHCenter
+            color: Theme.secondaryHighlightColor
+            text: qsTr("Connecting")
+        }
+
+        BusyIndicator
+        {
+            id: indicator
+            anchors.centerIn: parent
+            size: BusyIndicatorSize.Large
+            running: true
+        }
+
+        Row
+        {
+            anchors { horizontalCenter: parent.horizontalCenter; bottom: parent.bottom; bottomMargin: Theme.paddingLarge }
+
+            Button
+            {
+                text: qsTr("Login Again")
+                visible: !timlogin.running
+
+                onClicked: {
+                    if(context.telegram.phoneNumber.length > 0) {
+                        pageStack.replace(Qt.resolvedUrl("AuthorizationPage.qml"), { "context": connectionpage.context, "resendCode": true });
+                    }
+                    else
+                        pageStack.replace(Qt.resolvedUrl("PhoneNumberPage.qml"), { "context": connectionpage.context });
+                }
+            }
+
+            Button
+            {
+                text: qsTr("Error log")
+                visible: !timlogin.running
+
+                onClicked: {
+                    pageStack.pushAttached(Qt.resolvedUrl("../settings/DebugSettingsPage.qml"), { "context": connectionpage.context });
+                    pageStack.navigateForward(PageStackAction.Animated);
+                }
             }
         }
     }

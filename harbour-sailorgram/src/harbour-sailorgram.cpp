@@ -35,11 +35,28 @@
 #include "filepicker/folderlistmodel.h"
 #include "sailorgram.h"
 
+bool hasDaemon(const QStringList& args)
+{
+    foreach(QString arg, args)
+    {
+        if(arg == "-daemon")
+            return true;
+    }
+
+    return false;
+}
+
 int main(int argc, char *argv[])
 {
     QScopedPointer<QGuiApplication> application(SailfishApp::application(argc, argv));
     application->setApplicationName("harbour-sailorgram");
     application->setApplicationVersion("0.7");
+
+    QStringList args = application->arguments();
+    bool daemonized = hasDaemon(args);
+
+    if(daemonized && SailorGram::hasNoDaemonFile())
+        return 0;
 
     QDBusConnection sessionbus = QDBusConnection::sessionBus();
 
@@ -64,7 +81,11 @@ int main(int argc, char *argv[])
     QObject::connect(engine, SIGNAL(quit()), application.data(), SLOT(quit()));
 
     view->setSource(SailfishApp::pathTo("qml/harbour-sailorgram.qml"));
-    view->show();
+
+    if(daemonized)
+        application->setQuitOnLastWindowClosed(false);
+    else
+        view->show();
 
     return application->exec();
 }

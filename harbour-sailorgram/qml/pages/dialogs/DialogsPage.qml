@@ -28,7 +28,7 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-import QtQuick 2.0
+import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../../models"
@@ -53,8 +53,10 @@ Page
 
         pageStack.pushAttached(Qt.resolvedUrl("../contacts/ContactsPage.qml"), { "context": dialogspage.context });
         context.sailorgram.foregroundDialog = null; // Reset Foreground Dialog
-    }
 
+        //FIXME: if(lvdialogs.count > 0)
+            //dialogsmodel.recheck();
+    }
 
     Connections
     {
@@ -112,6 +114,7 @@ Page
         }
 
         model: DialogsModel {
+            id: dialogsmodel
             telegram: dialogspage.context.telegram
         }
 

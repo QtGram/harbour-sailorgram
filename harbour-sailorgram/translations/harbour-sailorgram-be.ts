@@ -263,6 +263,10 @@ Minimum length is 5 characters.</source>
         <source>Error log</source>
         <translation>Журнал памылак</translation>
     </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ContactsPage</name>
@@ -309,6 +313,29 @@ Minimum length is 5 characters.</source>
     <name>CreateSecretDialogPage</name>
     <message>
         <source>New Secret Chat</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DaemonSettingsPage</name>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished">Захаваць</translation>
+    </message>
+    <message>
+        <source>Keep running</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SailorGram keeps running in background even when closed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Autostart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SailorGram starts automatically</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -723,6 +750,10 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     <message>
         <source>Debug</source>
         <translation>Адладка</translation>
+    </message>
+    <message>
+        <source>Daemon</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

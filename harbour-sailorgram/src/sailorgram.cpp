@@ -1,5 +1,6 @@
 #include "sailorgram.h"
 
+const QString SailorGram::NO_DAEMON_FILE = "no_daemon";
 const QString SailorGram::CONFIG_FOLDER = "telegram";
 const QString SailorGram::PUBLIC_KEY_FILE = "server.pub";
 const QString SailorGram::EMOJI_FOLDER = "emoji";
@@ -12,6 +13,7 @@ SailorGram::SailorGram(QObject *parent): QObject(parent), _telegram(NULL), _fore
 
     this->_heartbeat = new HeartBeat(this);
     this->_interface = new SailorgramInterface(this);
+    this->_autostart = !SailorGram::hasNoDaemonFile();
 
     connect(qApp, SIGNAL(applicationStateChanged(Qt::ApplicationState)), this, SLOT(onApplicationStateChanged(Qt::ApplicationState)));
     connect(this->_interface, SIGNAL(wakeUpRequested()), this, SLOT(onWakeUpRequested()));
@@ -19,6 +21,11 @@ SailorGram::SailorGram(QObject *parent): QObject(parent), _telegram(NULL), _fore
     connect(this->_heartbeat, SIGNAL(connectedChanged()), this, SLOT(wakeSleep()), Qt::QueuedConnection);
     connect(this->_heartbeat, SIGNAL(connectedChanged()), this, SIGNAL(connectedChanged()), Qt::QueuedConnection);
     connect(this->_heartbeat, SIGNAL(intervalChanged()), this, SIGNAL(intervalChanged()));
+}
+
+bool SailorGram::autostart()
+{
+    return this->_autostart;
 }
 
 bool SailorGram::keepRunning() const
@@ -103,6 +110,33 @@ void SailorGram::setKeepRunning(bool keep)
 
     qApp->setQuitOnLastWindowClosed(!keep);
     emit keepRunningChanged();
+}
+
+void SailorGram::setAutostart(bool autostart)
+{
+    if(this->_autostart == autostart)
+        return;
+
+    this->_autostart = autostart;
+
+    QDir dir(this->configPath());
+
+    if(autostart)
+        QFile::remove(dir.absoluteFilePath(SailorGram::NO_DAEMON_FILE));
+    else
+    {
+        QFile file(dir.absoluteFilePath(SailorGram::NO_DAEMON_FILE));
+        file.open(QFile::WriteOnly);
+        file.close();
+    }
+
+    emit autostartChanged();
+}
+
+bool SailorGram::hasNoDaemonFile()
+{
+    QDir dir(QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QDir::separator() + SailorGram::CONFIG_FOLDER);
+    return QFile::exists(dir.absoluteFilePath(SailorGram::NO_DAEMON_FILE));
 }
 
 void SailorGram::moveMediaTo(FileLocationObject *locationobj, const QString &destination)

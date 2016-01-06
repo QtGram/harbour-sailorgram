@@ -15,6 +15,7 @@ PullDownMenu
     MenuItem
     {
         text: qsTr("Exit")
+        visible: context.sailorgram.keepRunning
         onClicked: Qt.quit()
     }
 

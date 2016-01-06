@@ -263,6 +263,10 @@ Minimilängd är 5 tecken.</translation>
         <source>Error log</source>
         <translation>Fellogg</translation>
     </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ContactsPage</name>
@@ -310,6 +314,29 @@ Minimilängd är 5 tecken.</translation>
     <message>
         <source>New Secret Chat</source>
         <translation>Ny hemlig chatt</translation>
+    </message>
+</context>
+<context>
+    <name>DaemonSettingsPage</name>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished">Spara</translation>
+    </message>
+    <message>
+        <source>Keep running</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SailorGram keeps running in background even when closed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Autostart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SailorGram starts automatically</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -725,6 +752,10 @@ Svep åt vänster för att välja en kontakt från &quot;Kontakter&quot;.</trans
     <message>
         <source>Debug</source>
         <translation>Felsök</translation>
+    </message>
+    <message>
+        <source>Daemon</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

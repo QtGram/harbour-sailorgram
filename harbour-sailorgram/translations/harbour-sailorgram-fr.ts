@@ -263,6 +263,10 @@ La longueur minimum est de 5 caractères.</translation>
         <source>Error log</source>
         <translation>Journal d&apos;erreur</translation>
     </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ContactsPage</name>
@@ -310,6 +314,29 @@ La longueur minimum est de 5 caractères.</translation>
     <message>
         <source>New Secret Chat</source>
         <translation>Nouvelle conversation secrète</translation>
+    </message>
+</context>
+<context>
+    <name>DaemonSettingsPage</name>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished">Enregistrer</translation>
+    </message>
+    <message>
+        <source>Keep running</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SailorGram keeps running in background even when closed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Autostart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SailorGram starts automatically</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -725,6 +752,10 @@ Choisissez un contact en appuyant sur &quot;Contacts&quot; sur le Menu au-dessus
     <message>
         <source>Debug</source>
         <translation>Déboguer</translation>
+    </message>
+    <message>
+        <source>Daemon</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

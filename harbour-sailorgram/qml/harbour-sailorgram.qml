@@ -50,6 +50,7 @@ ApplicationWindow
                 context.backgrounddisabled = parseInt(Settings.transactionGet(tx, "backgrounddisabled"));
                 context.chatheaderhidden = parseInt(Settings.transactionGet(tx, "chatheaderhidden"));
                 context.bubbleshidden = parseInt(Settings.transactionGet(tx, "hidebubbles"));
+                context.sailorgram.keepRunning = parseInt(Settings.transactionGet(tx, "keeprunning"));
             });
         }
     }

@@ -45,6 +45,15 @@ Page
             {
                 width: parent.width
                 height: Theme.itemSizeSmall
+                icon: "qrc:///res/daemon.png"
+                text: qsTr("Daemon")
+                onActionRequested: pageStack.push(Qt.resolvedUrl("DaemonSettingsPage.qml"), { "context": settingspage.context })
+            }
+
+            SettingLabel
+            {
+                width: parent.width
+                height: Theme.itemSizeSmall
                 icon: "qrc:///res/debug.png"
                 text: qsTr("Debug")
                 onActionRequested: pageStack.push(Qt.resolvedUrl("DebugSettingsPage.qml"), { "context": settingspage.context })

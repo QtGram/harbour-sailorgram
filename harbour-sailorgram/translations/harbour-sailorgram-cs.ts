@@ -263,6 +263,10 @@ Minimální délka je 5 znaků .</translation>
         <source>Error log</source>
         <translation>Chybní protokol</translation>
     </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ContactsPage</name>
@@ -310,6 +314,29 @@ Minimální délka je 5 znaků .</translation>
     <message>
         <source>New Secret Chat</source>
         <translation>Nový tajný rozhovor</translation>
+    </message>
+</context>
+<context>
+    <name>DaemonSettingsPage</name>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished">Uložit</translation>
+    </message>
+    <message>
+        <source>Keep running</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SailorGram keeps running in background even when closed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Autostart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SailorGram starts automatically</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -725,6 +752,10 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z Pull Down Menu</translation>
     <message>
         <source>Debug</source>
         <translation>Zkoušet</translation>
+    </message>
+    <message>
+        <source>Daemon</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

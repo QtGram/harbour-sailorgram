@@ -205,4 +205,5 @@ DISTFILES += \
     events/sailorgram.ini \
     lipstick/harbour.sailorgram.notificationfg.conf \
     events/sailorgram_fg.ini \
-    systemd/harbour-sailorgram-notifications.service
+    systemd/harbour-sailorgram-notifications.service \
+    qml/pages/settings/DaemonSettingsPage.qml

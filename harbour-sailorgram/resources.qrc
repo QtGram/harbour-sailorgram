@@ -9,5 +9,6 @@
         <file>res/preview.png</file>
         <file>qml/cover/noalarmcover.png</file>
         <file>qml/cover/alarmcover.png</file>
+        <file>res/daemon.png</file>
     </qresource>
 </RCC>

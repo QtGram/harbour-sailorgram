@@ -50,7 +50,6 @@ QtObject
         onConnectedChanged: {
             if(connected) {
                context.contacts.telegram = context.telegram;
-               context.sailorgram.keepRunning = true;
             }
         }
 
