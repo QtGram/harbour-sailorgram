@@ -28,6 +28,16 @@ Dialog
         anchors.fill: parent
         contentHeight: content.height
 
+        PullDownMenu
+        {
+            MenuItem
+            {
+                text: qsTr("Exit")
+                visible: context.sailorgram.keepRunning
+                onClicked: Qt.quit()
+            }
+        }
+
         Column
         {
             id: content

@@ -36,6 +36,16 @@ Dialog
 
         PushUpMenu
         {
+            PullDownMenu
+            {
+                MenuItem
+                {
+                    text: qsTr("Exit")
+                    visible: context.sailorgram.keepRunning
+                    onClicked: Qt.quit()
+                }
+            }
+
             MenuItem
             {
                 text: qsTr("Resend Activation Code")
