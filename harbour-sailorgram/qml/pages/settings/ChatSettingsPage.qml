@@ -73,6 +73,7 @@ Dialog
                 label: qsTr("Bubble opacity")
                 minimumValue: 1
                 maximumValue: 100
+                stepSize: 1
                 value: context.bubblesopacity
                 valueText: value + "%"
             }
