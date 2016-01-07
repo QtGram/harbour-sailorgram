@@ -437,14 +437,6 @@ Vähimmäispituus on 5 merkkiä.</translation>
 <context>
     <name>DialogsPage</name>
     <message>
-        <source>No Chats
-
-Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation>Ei keskusteluja
-
-Hae yhteyshenkilö valitsemalla &quot;Yhteydet&quot; yläpuolella olevasta valikosta.</translation>
-    </message>
-    <message>
         <source>Chats</source>
         <translation>Keskustelut</translation>
     </message>
@@ -467,6 +459,12 @@ Hae yhteyshenkilö valitsemalla &quot;Yhteydet&quot; yläpuolella olevasta valik
     <message>
         <source>Deleting Group</source>
         <translation>Poistetaan ryhmä</translation>
+    </message>
+    <message>
+        <source>No Chats
+
+Do a swype to the right to select a contact</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

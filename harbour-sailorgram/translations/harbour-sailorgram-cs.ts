@@ -437,14 +437,6 @@ Minimální délka je 5 znaků .</translation>
 <context>
     <name>DialogsPage</name>
     <message>
-        <source>No Chats
-
-Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation>Žádné rozhovory
-
-Vyberte si kontakt výběrem &quot;Kontakty&quot; z Pull Down Menu</translation>
-    </message>
-    <message>
         <source>Chats</source>
         <translation>Rozhovory</translation>
     </message>
@@ -467,6 +459,12 @@ Vyberte si kontakt výběrem &quot;Kontakty&quot; z Pull Down Menu</translation>
     <message>
         <source>Deleting Group</source>
         <translation>Vymazání skupiny</translation>
+    </message>
+    <message>
+        <source>No Chats
+
+Do a swype to the right to select a contact</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

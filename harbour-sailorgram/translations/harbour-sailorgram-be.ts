@@ -437,12 +437,6 @@ Minimum length is 5 characters.</source>
 <context>
     <name>DialogsPage</name>
     <message>
-        <source>No Chats
-
-Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Chats</source>
         <translation type="unfinished">Гаворкі</translation>
     </message>
@@ -464,6 +458,12 @@ Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
     </message>
     <message>
         <source>Deleting Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No Chats
+
+Do a swype to the right to select a contact</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

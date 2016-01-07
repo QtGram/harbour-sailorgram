@@ -437,14 +437,6 @@ Minimilängd är 5 tecken.</translation>
 <context>
     <name>DialogsPage</name>
     <message>
-        <source>No Chats
-
-Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation>Inga chattar
-
-Svep åt vänster för att välja en kontakt från &quot;Kontakter&quot;.</translation>
-    </message>
-    <message>
         <source>Chats</source>
         <translation>Chattar</translation>
     </message>
@@ -467,6 +459,12 @@ Svep åt vänster för att välja en kontakt från &quot;Kontakter&quot;.</trans
     <message>
         <source>Deleting Group</source>
         <translation>Tar bort grupp</translation>
+    </message>
+    <message>
+        <source>No Chats
+
+Do a swype to the right to select a contact</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

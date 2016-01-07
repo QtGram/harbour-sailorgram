@@ -437,14 +437,6 @@ A lonxitude mínima é de 5 caracteres.</translation>
 <context>
     <name>DialogsPage</name>
     <message>
-        <source>No Chats
-
-Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation>Non hai conversas
-
-Elixa un contacto seleccionando &quot;Contactos&quot; no menu despregable</translation>
-    </message>
-    <message>
         <source>Chats</source>
         <translation>Conversas</translation>
     </message>
@@ -467,6 +459,12 @@ Elixa un contacto seleccionando &quot;Contactos&quot; no menu despregable</trans
     <message>
         <source>Deleting Group</source>
         <translation>Borrando grupo</translation>
+    </message>
+    <message>
+        <source>No Chats
+
+Do a swype to the right to select a contact</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

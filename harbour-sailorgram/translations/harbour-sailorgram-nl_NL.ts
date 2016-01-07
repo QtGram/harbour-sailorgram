@@ -437,14 +437,6 @@ De minimale lengte is 5 tekens.</translation>
 <context>
     <name>DialogsPage</name>
     <message>
-        <source>No Chats
-
-Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation>Geen chatgesprekken
-
-Selecteer een contactpersoon door te kiezen voor &quot;Contactpersonen&quot; in het menu hierboven</translation>
-    </message>
-    <message>
         <source>Chats</source>
         <translation>Chatgesprekken</translation>
     </message>
@@ -467,6 +459,12 @@ Selecteer een contactpersoon door te kiezen voor &quot;Contactpersonen&quot; in 
     <message>
         <source>Deleting Group</source>
         <translation>Bezig met verwijderen van groep</translation>
+    </message>
+    <message>
+        <source>No Chats
+
+Do a swype to the right to select a contact</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

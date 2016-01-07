@@ -437,14 +437,6 @@ Minimum sind 5 Zeichen.</translation>
 <context>
     <name>DialogsPage</name>
     <message>
-        <source>No Chats
-
-Pick a contact by selecting &quot;Contacts&quot; from the Menu above</source>
-        <translation>Keine Chats
-
-Wähle einen Kontakt über &quot;Kontakte&quot; im Pulley Menu</translation>
-    </message>
-    <message>
         <source>Chats</source>
         <translation>Chats</translation>
     </message>
@@ -467,6 +459,12 @@ Wähle einen Kontakt über &quot;Kontakte&quot; im Pulley Menu</translation>
     <message>
         <source>Deleting Group</source>
         <translation>Gruppe wird gelöscht</translation>
+    </message>
+    <message>
+        <source>No Chats
+
+Do a swype to the right to select a contact</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

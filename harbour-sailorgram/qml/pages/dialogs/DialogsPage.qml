@@ -99,7 +99,7 @@ Page
         ViewPlaceholder
         {
             enabled: lvdialogs.count <= 0
-            text: qsTr("No Chats\n\nPick a contact by selecting \"Contacts\" from the Menu above")
+            text: qsTr("No Chats\n\nDo a swype to the right to select a contact")
         }
 
         id: lvdialogs
