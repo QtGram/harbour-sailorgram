@@ -148,6 +148,10 @@
         <source>Sending Activation Code</source>
         <translation>Отправка кода активации</translation>
     </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChangeChatTitle</name>
@@ -226,16 +230,28 @@ Minimum length is 5 characters.</source>
         <translation>Отправка сообщений клавишей ввода</translation>
     </message>
     <message>
-        <source>Disable background</source>
-        <translation>Убрать фоновый рисунок</translation>
+        <source>Background enabled</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hide chat header</source>
-        <translation>Убрать заголовок диалога</translation>
+        <source>Chat header visible</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hide Bubbles</source>
-        <translation>Убрать пузыри сообщений</translation>
+        <source>Bubbles visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bubble opacity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keyboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -688,6 +704,10 @@ Do a swype to the right to select a contact</source>
         <source>Insert your phone number and press &apos;Next&apos;</source>
         <translation>Введите свой номер и нажмите &apos;Далее&apos;</translation>
     </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProfilePage</name>
@@ -781,6 +801,10 @@ Do a swype to the right to select a contact</source>
     <message>
         <source>Authorization Code</source>
         <translation>Код авторизации</translation>
+    </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

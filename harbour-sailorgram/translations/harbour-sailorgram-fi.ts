@@ -148,6 +148,10 @@
         <source>Sending Activation Code</source>
         <translation>Aktivointikoodia lähetetään</translation>
     </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished">Poistu</translation>
+    </message>
 </context>
 <context>
     <name>ChangeChatTitle</name>
@@ -226,16 +230,28 @@ Vähimmäispituus on 5 merkkiä.</translation>
         <translation>Lähetä viestejä painamalla Enter -näppäintä</translation>
     </message>
     <message>
-        <source>Disable background</source>
-        <translation>Poista taustakuva käytöstä</translation>
+        <source>Background enabled</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hide chat header</source>
-        <translation>Piilota keskustelun ylätunniste</translation>
+        <source>Chat header visible</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hide Bubbles</source>
-        <translation>Piilota puhekuplat</translation>
+        <source>Bubbles visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bubble opacity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keyboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -688,6 +704,10 @@ Do a swype to the right to select a contact</source>
         <source>Insert your phone number and press &apos;Next&apos;</source>
         <translation>Anna puhelinnumerosi ja paina &quot;seuraava&quot;.</translation>
     </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished">Poistu</translation>
+    </message>
 </context>
 <context>
     <name>ProfilePage</name>
@@ -781,6 +801,10 @@ Do a swype to the right to select a contact</source>
     <message>
         <source>Authorization Code</source>
         <translation>Pääsykoodi</translation>
+    </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished">Poistu</translation>
     </message>
 </context>
 <context>

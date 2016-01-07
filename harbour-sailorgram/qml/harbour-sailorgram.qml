@@ -51,6 +51,9 @@ ApplicationWindow
                 context.chatheaderhidden = parseInt(Settings.transactionGet(tx, "chatheaderhidden"));
                 context.bubbleshidden = parseInt(Settings.transactionGet(tx, "hidebubbles"));
                 context.sailorgram.keepRunning = parseInt(Settings.transactionGet(tx, "keeprunning"));
+
+                var opacity = Settings.transactionGet(tx, "bubblesopacity");
+                context.bubblesopacity = (opacity === false) ? 100 : parseInt(opacity);
             });
         }
     }

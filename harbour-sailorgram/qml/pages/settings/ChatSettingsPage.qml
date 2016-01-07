@@ -13,13 +13,15 @@ Dialog
 
     onAccepted: {
         context.sendwithreturn = tssendwithreturn.checked;
-        context.backgrounddisabled = tsdisablebackground.checked;
-        context.chatheaderhidden = tshideheader.checked
-        context.bubbleshidden = tshidebubbles.checked
-        Settings.set("backgrounddisabled", tsdisablebackground.checked);
+        context.backgrounddisabled = !tsenablebackground.checked;
+        context.chatheaderhidden = !tsshowchatheader.checked;
+        context.bubbleshidden = !tsbubblesvisible.checked;
+        context.bubblesopacity = slbubblesopacity.value;
         Settings.set("sendwithreturn", tssendwithreturn.checked);
-        Settings.set("chatheaderhidden", tshideheader.checked);
-        Settings.set("hidebubbles", tshidebubbles.checked);
+        Settings.set("backgrounddisabled", !tsenablebackground.checked);
+        Settings.set("chatheaderhidden", !tsshowchatheader.checked);
+        Settings.set("hidebubbles", !tsbubblesvisible.checked);
+        Settings.set("bubblesopacity", slbubblesopacity.value);
     }
 
     SilicaFlickable
@@ -37,36 +39,52 @@ Dialog
                 acceptText: qsTr("Save")
             }
 
+            SectionHeader { text: qsTr("Appearance") }
+
+            TextSwitch
+            {
+                id: tsenablebackground
+                anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
+                text: qsTr("Background enabled")
+                checked: !context.backgrounddisabled
+            }
+
+            TextSwitch
+            {
+                id: tsshowchatheader
+                anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
+                text: qsTr("Chat header visible")
+                checked: !context.chatheaderhidden
+            }
+
+            TextSwitch
+            {
+                id: tsbubblesvisible
+                anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
+                text: qsTr("Bubbles visible")
+                checked: !context.bubbleshidden
+            }
+
+            Slider
+            {
+                id: slbubblesopacity
+                anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
+                visible: tsbubblesvisible.checked
+                label: qsTr("Bubble opacity")
+                minimumValue: 1
+                maximumValue: 100
+                value: context.bubblesopacity
+                valueText: value + "%"
+            }
+
+            SectionHeader { text: qsTr("Keyboard") }
+
             TextSwitch
             {
                 id: tssendwithreturn
                 anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
                 text: qsTr("Send Messages by pressing Return Key")
                 checked: context.sendwithreturn
-            }
-
-            TextSwitch
-            {
-                id: tsdisablebackground
-                anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
-                text: qsTr("Disable background")
-                checked: context.backgrounddisabled
-            }
-
-            TextSwitch
-            {
-                id: tshideheader
-                anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
-                text: qsTr("Hide chat header")
-                checked: context.chatheaderhidden
-            }
-
-            TextSwitch
-            {
-                id: tshidebubbles
-                anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
-                text: qsTr("Hide Bubbles")
-                checked: context.bubbleshidden
             }
         }
     }

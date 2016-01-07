@@ -16,6 +16,7 @@ QtObject
     property bool backgrounddisabled: false
     property bool chatheaderhidden: false
     property bool bubbleshidden: false
+    property int bubblesopacity: 100
 
     property ScreenBlank screenblank: ScreenBlank { }
     property ContactsModel contacts: ContactsModel { }

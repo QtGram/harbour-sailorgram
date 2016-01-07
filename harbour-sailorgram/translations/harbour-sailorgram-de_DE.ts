@@ -148,6 +148,10 @@
         <source>Sending Activation Code</source>
         <translation>Sende Aktivierungs-Code</translation>
     </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChangeChatTitle</name>
@@ -226,15 +230,27 @@ Minimale Länge sind 5 Zeichen</translation>
         <translation>Nachricht mit Eingebetaste abschicken</translation>
     </message>
     <message>
-        <source>Disable background</source>
+        <source>Background enabled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hide chat header</source>
+        <source>Chat header visible</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hide Bubbles</source>
+        <source>Bubbles visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bubble opacity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keyboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Appearance</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -688,6 +704,10 @@ Do a swype to the right to select a contact</source>
         <source>Insert your phone number and press &apos;Next&apos;</source>
         <translation>Trage deine Telefonnummer ein und gehe auf &apos;weiter&apos;</translation>
     </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProfilePage</name>
@@ -781,6 +801,10 @@ Do a swype to the right to select a contact</source>
     <message>
         <source>Authorization Code</source>
         <translation>Autorisierungscode</translation>
+    </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

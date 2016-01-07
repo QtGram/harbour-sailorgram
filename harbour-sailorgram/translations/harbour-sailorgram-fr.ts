@@ -148,6 +148,10 @@
         <source>Sending Activation Code</source>
         <translation>Envoi du Code d&apos;Activation</translation>
     </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChangeChatTitle</name>
@@ -226,16 +230,28 @@ La longueur minimum est de 5 caractères.</translation>
         <translation>Envoyer les messages en cliquant la touche Retour</translation>
     </message>
     <message>
-        <source>Disable background</source>
-        <translation>Supprimer le fond d&apos;écran</translation>
+        <source>Background enabled</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hide chat header</source>
-        <translation>Masquer l&apos;entête de conversation</translation>
+        <source>Chat header visible</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hide Bubbles</source>
-        <translation>Cacher les bulles</translation>
+        <source>Bubbles visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bubble opacity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keyboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -688,6 +704,10 @@ Do a swype to the right to select a contact</source>
         <source>Insert your phone number and press &apos;Next&apos;</source>
         <translation>Saisissez votre numéro de téléphone et appuyez sur « Suivant »</translation>
     </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProfilePage</name>
@@ -781,6 +801,10 @@ Do a swype to the right to select a contact</source>
     <message>
         <source>Authorization Code</source>
         <translation>Code d&apos;autorisation</translation>
+    </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

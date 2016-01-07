@@ -148,6 +148,10 @@
         <source>Sending Activation Code</source>
         <translation>Invio codice di attivazione</translation>
     </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished">Esci</translation>
+    </message>
 </context>
 <context>
     <name>ChangeChatTitle</name>
@@ -226,16 +230,28 @@ La lunghezza minima è di 5 caratteri.</translation>
         <translation>Invia i messaggi premendo il tasto Invio</translation>
     </message>
     <message>
-        <source>Disable background</source>
-        <translation>Disabilita sfondo</translation>
+        <source>Background enabled</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hide chat header</source>
-        <translation>Nascondi l&apos;intestazione della chat</translation>
+        <source>Chat header visible</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hide Bubbles</source>
-        <translation>Nascondi bolle</translation>
+        <source>Bubbles visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bubble opacity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keyboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -688,6 +704,10 @@ Do a swype to the right to select a contact</source>
         <source>Insert your phone number and press &apos;Next&apos;</source>
         <translation>Inserisci il tuo numero di telefono e premi &apos;Avanti&apos;</translation>
     </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished">Esci</translation>
+    </message>
 </context>
 <context>
     <name>ProfilePage</name>
@@ -781,6 +801,10 @@ Do a swype to the right to select a contact</source>
     <message>
         <source>Authorization Code</source>
         <translation>Codice di autorizzazione</translation>
+    </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished">Esci</translation>
     </message>
 </context>
 <context>

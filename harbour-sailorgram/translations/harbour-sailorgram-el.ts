@@ -148,6 +148,10 @@
         <source>Sending Activation Code</source>
         <translation>Αποστέλλεται κωδικός ενεργοποίησης</translation>
     </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished">Έξοδος</translation>
+    </message>
 </context>
 <context>
     <name>ChangeChatTitle</name>
@@ -226,16 +230,28 @@ Minimum length is 5 characters.</source>
         <translation>Αποστολή μηνυμάτων με χρήση του πλήκτρου επιστροφής </translation>
     </message>
     <message>
-        <source>Disable background</source>
-        <translation>Απενεργοποίηση φόντου</translation>
+        <source>Background enabled</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hide chat header</source>
-        <translation>Απόκρυψη τίτλου συνομιλίας</translation>
+        <source>Chat header visible</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hide Bubbles</source>
-        <translation>Απόκρυψη φυσαλίδων</translation>
+        <source>Bubbles visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bubble opacity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keyboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -689,6 +705,10 @@ Do a swype to the right to select a contact</source>
         <source>Insert your phone number and press &apos;Next&apos;</source>
         <translation>Εισάγετε τον αριθμό του τηλεφώνου σας και πατήστε το πλήκτρο &apos;Επόμενο&apos;</translation>
     </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished">Έξοδος</translation>
+    </message>
 </context>
 <context>
     <name>ProfilePage</name>
@@ -784,6 +804,10 @@ Do a swype to the right to select a contact</source>
         <source>Authorization Code</source>
         <translation> Κωδικός Εξουσιοδότησης
 </translation>
+    </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished">Έξοδος</translation>
     </message>
 </context>
 <context>
