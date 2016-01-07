@@ -14,6 +14,9 @@ ListItem
     property Message message
 
     function remorseNeeded(mediatype, type) {
+        if(!medialoader.item)
+            return;
+
         if(medialoader.item.fileHandler.downloaded) // No remorse for downloaded medias
             return false;
 
@@ -30,6 +33,9 @@ ListItem
     }
 
     function openOrDownloadMedia(canbeviewed, type) {
+        if(!medialoader.item)
+            return;
+
         if(!medialoader.item.fileHandler.downloaded)
             medialoader.item.fileHandler.download();
 
