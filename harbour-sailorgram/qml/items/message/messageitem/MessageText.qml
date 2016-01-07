@@ -51,7 +51,6 @@ Item
         {
             id: mtctextcontent
             width: parent.width
-            horizontalAlignment: TelegramHelper.isServiceMessage(message) ? Text.AlignHCenter : Text.AlignLeft
             verticalAlignment: Text.AlignTop
             font.pixelSize: TelegramHelper.isServiceMessage(message) ? Theme.fontSizeExtraSmall : Theme.fontSizeSmall
             font.italic: TelegramHelper.isServiceMessage(message)
@@ -59,8 +58,18 @@ Item
             rawText: TelegramHelper.isServiceMessage(message) ? TelegramAction.actionType(context.telegram, dialog, message) : messageitem.message.message
             wrapMode: Text.WordWrap
             visible: text.length > 0
-            color: ColorScheme.colorize(message, context)
+            color: ColorScheme.colorizeText(message, context)
             linkColor: ColorScheme.colorizeLink(message, context)
+
+            horizontalAlignment: {
+                if(TelegramHelper.isServiceMessage(message))
+                    return Text.AlignHCenter;
+
+                if(!message.out)
+                    return Text.AlignRight;
+
+                return Text.AlignLeft;
+            }
         }
 
         MessageStatus

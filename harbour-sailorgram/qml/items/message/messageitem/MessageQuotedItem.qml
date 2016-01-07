@@ -48,7 +48,7 @@ Item
                 id: lbluser
                 width: parent.width
                 visible: !TelegramHelper.isServiceMessage(replyToMessage)
-                color: ColorScheme.colorize(message, context)
+                color: ColorScheme.colorizeText(message, context)
                 font.bold: true
                 font.pixelSize: Theme.fontSizeTiny
                 wrapMode: Text.NoWrap
@@ -80,7 +80,7 @@ Item
                 elide: Text.ElideRight
                 maximumLineCount: 3
                 visible: text.length > 0
-                color: ColorScheme.colorize(message, context)
+                color: ColorScheme.colorizeText(message, context)
                 linkColor: ColorScheme.colorizeLink(message, context)
             }
         }

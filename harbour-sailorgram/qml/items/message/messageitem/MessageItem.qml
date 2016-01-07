@@ -147,7 +147,7 @@ ListItem
         id: bubble
         radius: 4
         visible: !context.bubbleshidden
-        color: ColorScheme.colorizeBubble(message, context, false)
+        color: ColorScheme.colorizeBubble(message, context)
         width: content.width
         height: content.height
 
@@ -226,7 +226,7 @@ ListItem
                 rightMargin: Theme.paddingMedium
             }
 
-            color: ColorScheme.colorize(message, context)
+            color: ColorScheme.colorizeText(message, context)
             visible: !TelegramHelper.isServiceMessage(message) && !message.out
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: Theme.fontSizeSmall

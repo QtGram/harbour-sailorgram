@@ -12,7 +12,7 @@ Label
 
     id: messagestatus
     visible: !TelegramHelper.isServiceMessage(message)
-    color: ColorScheme.colorize(message, context)
+    color: ColorScheme.colorizeText(message, context)
     verticalAlignment: Text.AlignVCenter
     horizontalAlignment: message.out ? Text.AlignLeft : Text.AlignRight
     textFormat: Text.StyledText

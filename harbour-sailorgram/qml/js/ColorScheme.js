@@ -3,7 +3,7 @@
 .import Sailfish.Silica 1.0 as Silica
 .import "TelegramHelper.js" as TelegramHelper
 
-function colorize(message, context)
+function colorizeText(message, context)
 {
     if(TelegramHelper.isServiceMessage(message))
         return Silica.Theme.primaryColor;
@@ -35,9 +35,9 @@ function colorizeTick(message, context)
     return Silica.Theme.highlightDimmerColor;
 }
 
-function colorizeBubble(message, context, ignorehidden)
+function colorizeBubble(message, context)
 {
-    if(!ignorehidden && (context.bubbleshidden || TelegramHelper.isServiceMessage(message)))
+    if(context.bubbleshidden || TelegramHelper.isServiceMessage(message))
         return "transparent"
 
     if(message.out)
@@ -48,6 +48,12 @@ function colorizeBubble(message, context, ignorehidden)
 
 function colorizeLink(message, context)
 {
-    var bubblecolor = Silica.Theme.rgba(colorizeBubble(message,  context, true), 1.0);
-    return Qt.lighter(Qt.rgba(1.0 - bubblecolor.r, 1.0 - bubblecolor.g, 1.0 - bubblecolor.b, 1.0), 1.5);
+    if(context.bubbleshidden)
+    {
+        var linkcolor = Silica.Theme.rgba(Silica.Theme.highlightColor, 1.0);
+        return Qt.lighter(Qt.rgba(1.0 - linkcolor.r, 1.0 - linkcolor.g, 1.0 - linkcolor.b, 1.0), 2.5);
+    }
+
+    var bubblecolor = Silica.Theme.rgba(colorizeBubble(message,  context), 1.0);
+    return Qt.lighter(Qt.rgba(1.0 - bubblecolor.r, 1.0 - bubblecolor.g, 1.0 - bubblecolor.b, 1.0), 2.0);
 }
