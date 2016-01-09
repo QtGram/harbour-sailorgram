@@ -55,5 +55,5 @@ function colorizeLink(message, context)
     }
 
     var bubblecolor = Silica.Theme.rgba(colorizeBubble(message,  context), 1.0);
-    return Qt.lighter(Qt.rgba(1.0 - bubblecolor.r, 1.0 - bubblecolor.g, 1.0 - bubblecolor.b, 1.0), 2.0);
+    return Qt.lighter(Qt.rgba(1.0 - bubblecolor.r, 1.0 - bubblecolor.g, 1.0 - bubblecolor.b, 1.0), 1.5);
 }
