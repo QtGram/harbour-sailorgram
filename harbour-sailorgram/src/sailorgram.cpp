@@ -11,11 +11,13 @@ SailorGram::SailorGram(QObject *parent): QObject(parent), _telegram(NULL), _fore
     QDir cfgdir(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation));
     cfgdir.mkpath(qApp->applicationName() + QDir::separator() + qApp->applicationName() + QDir::separator() + SailorGram::CONFIG_FOLDER);
 
+    this->_netcfgmanager = new QNetworkConfigurationManager(this);
     this->_heartbeat = new HeartBeat(this);
     this->_interface = new SailorgramInterface(this);
     this->_autostart = !SailorGram::hasNoDaemonFile();
 
     connect(qApp, SIGNAL(applicationStateChanged(Qt::ApplicationState)), this, SLOT(onApplicationStateChanged(Qt::ApplicationState)));
+    connect(this->_netcfgmanager, SIGNAL(onlineStateChanged(bool)), this, SLOT(onOnlineStateChanged(bool)));
     connect(this->_interface, SIGNAL(wakeUpRequested()), this, SLOT(onWakeUpRequested()));
     connect(this->_interface, SIGNAL(openDialogRequested(qint32)), this, SIGNAL(openDialogRequested(qint32)));
     connect(this->_heartbeat, SIGNAL(connectedChanged()), this, SLOT(wakeSleep()), Qt::QueuedConnection);
@@ -228,6 +230,14 @@ void SailorGram::onApplicationStateChanged(Qt::ApplicationState state)
 
     this->_daemonized = !active;
     emit daemonizedChanged();
+}
+
+void SailorGram::onOnlineStateChanged(bool isonline)
+{
+    if(this->_heartbeat->connected() == isonline)
+        return;
+
+    this->_heartbeat->setStopped(!isonline);
 }
 
 void SailorGram::onNotificationClosed(uint)

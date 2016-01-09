@@ -1,6 +1,6 @@
 #include "heartbeat.h"
 
-HeartBeat::HeartBeat(QObject *parent): QThread(parent), _connected(-1), _interval(0), _telegram(NULL)
+HeartBeat::HeartBeat(QObject *parent): QThread(parent), _connected(-1), _interval(0), _cancontinue(true), _telegram(NULL)
 {
 
 }
@@ -46,9 +46,27 @@ void HeartBeat::setInterval(int interval)
     emit intervalChanged();
 }
 
+void HeartBeat::setStopped(bool stopped)
+{
+    bool cancontinue = !stopped;
+
+    if(this->_cancontinue == cancontinue)
+        return;
+
+    this->_cancontinue = cancontinue;
+
+    if(!cancontinue)
+    {
+        this->_connected = false;
+        emit connectedChanged();
+    }
+    else
+        this->start();
+}
+
 void HeartBeat::run()
 {
-    for(; ;)
+    while(this->_cancontinue)
     {
         QTcpSocket socket;
         socket.connectToHost(this->_telegram->defaultHostAddress(), this->_telegram->defaultHostPort());

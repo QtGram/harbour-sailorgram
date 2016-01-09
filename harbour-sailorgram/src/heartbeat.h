@@ -19,6 +19,7 @@ class HeartBeat : public QThread
         TelegramQml* telegram() const;
         void setTelegram(TelegramQml* telegram);
         void setInterval(int interval);
+        void setStopped(bool stopped);
 
     protected:
         virtual void run();
@@ -31,6 +32,7 @@ class HeartBeat : public QThread
     private:
         int _connected;
         int _interval;
+        bool _cancontinue;
         TelegramQml* _telegram;
 };
 

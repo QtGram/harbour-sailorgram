@@ -66,6 +66,7 @@ class SailorGram : public QObject
 
     private slots:
         void onApplicationStateChanged(Qt::ApplicationState state);
+        void onOnlineStateChanged(bool isonline);
         void onNotificationClosed(uint);
         void onWakeUpRequested();
         void startHeartBeat();
@@ -86,6 +87,7 @@ class SailorGram : public QObject
         QHash<qint32, Notification*> _notifications;
         QMimeDatabase _mimedb;
         TelegramQml* _telegram;
+        QNetworkConfigurationManager* _netcfgmanager;
         HeartBeat* _heartbeat;
         SailorgramInterface* _interface;
         DialogObject* _foregrounddialog;
