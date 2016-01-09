@@ -70,7 +70,11 @@ void AbstractApi::onErrorReceived(Query *q, qint32 errorCode, QString errorText)
 void AbstractApi::onResultReceived(Query *q, InboundPkt &inboundPkt) {
     if (q->methods() && q->methods()->onAnswer) {
         (((Api *)this)->*(q->methods()->onAnswer))(q, inboundPkt);
-        Q_ASSERT(inboundPkt.inPtr() == inboundPkt.inEnd());
+        if(inboundPkt.inPtr() != inboundPkt.inEnd())
+        {
+            Q_EMIT fatalError();
+            return;
+        }
     }
     delete q;
 }

@@ -245,8 +245,10 @@ Q_SIGNALS:
     void authNeeded();
     void authLoggedIn();
     void authCheckPhoneAnswer(qint64 id, bool phoneRegistered);
+    void authCheckedPhoneError(qint64 msgId);
     void authCheckPhoneSent(qint64 msgId, const QString &phoneNumber);
     void authSendCodeAnswer(qint64 id, bool phoneRegistered, qint32 sendCallTimeout);
+    void authSendCodeError(qint64 id);
     void authSendSmsAnswer(qint64 id, bool ok);
     void authSendCallAnswer(qint64 id, bool ok);
     void authLogOutAnswer(qint64 id, bool ok);

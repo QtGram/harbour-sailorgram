@@ -34,6 +34,7 @@
 #include <QtEndian>
 #include <QImage>
 #include <QImageReader>
+#include <QCryptographicHash>
 
 #include "util/tlvalues.h"
 #include "telegram/types/types.h"
@@ -53,8 +54,6 @@ Q_LOGGING_CATEGORY(TG_LIB_SECRET, "tg.lib.secret")
 
 #define CHECK_API if(!prv->mApi) {qDebug() << __FUNCTION__ << "Error: API is not ready."; return 0;}
 
-QHash<QString, Settings*> qtelegram_settings_per_number;
-QHash<QString, CryptoUtils*> qtelegram_cryptos_per_number;
 QSettings::Format qtelegram_default_settings_format = QSettings::IniFormat;
 
 class TelegramPrivate
@@ -113,27 +112,20 @@ Telegram::Telegram(const QString &defaultHostAddress, qint16 defaultHostPort, qi
     prv->mSettingsId = defaultHostAddress + ":" + QString::number(defaultHostPort) + ":" + configPath +
             ":" + QString::number(defaultHostPort) + ":" + QString::number(appId) + ":" + appHash +
             phoneNumber;
-    prv->mSettings = qtelegram_settings_per_number.value(prv->mSettingsId);
-    if(!prv->mSettings) {
-        prv->mSettings = new Settings();
-        prv->mSettings->setAppHash(appHash);
-        prv->mSettings->setAppId(appId);
-        prv->mSettings->setDefaultHostAddress(defaultHostAddress);
-        prv->mSettings->setDefaultHostDcId(defaultHostDcId);
-        prv->mSettings->setDefaultHostPort(defaultHostPort);
-        qtelegram_settings_per_number[prv->mSettingsId] = prv->mSettings;
-    }
+
+    prv->mSettings = new Settings();
+    prv->mSettings->setAppHash(appHash);
+    prv->mSettings->setAppId(appId);
+    prv->mSettings->setDefaultHostAddress(defaultHostAddress);
+    prv->mSettings->setDefaultHostDcId(defaultHostDcId);
+    prv->mSettings->setDefaultHostPort(defaultHostPort);
 
     // load settings
     if (!prv->mSettings->loadSettings(phoneNumber, configPath, publicKeyFile)) {
         throw std::runtime_error("loadSettings failure");
     }
 
-    prv->mCrypto = qtelegram_cryptos_per_number.value(phoneNumber);
-    if(!prv->mCrypto) {
-        prv->mCrypto = new CryptoUtils(prv->mSettings);
-        qtelegram_cryptos_per_number[phoneNumber] = prv->mCrypto;
-    }
+    prv->mCrypto = new CryptoUtils(prv->mSettings);
 
     prv->mDcProvider = new DcProvider(prv->mSettings, prv->mCrypto);
     prv->mDcProvider->setParent(this);
@@ -199,6 +191,8 @@ void Telegram::init() {
 }
 
 Telegram::~Telegram() {
+    delete prv->mDcProvider;
+    delete prv->mSettings;
     delete prv;
 }
 
@@ -285,6 +279,7 @@ void Telegram::onDcProviderReady() {
     connect(prv->mApi, SIGNAL(updatesCombined(const QList<Update>&,const QList<User>&,const QList<Chat>&,qint32,qint32,qint32)), this, SIGNAL(updatesCombined(const QList<Update>&,const QList<User>&,const QList<Chat>&,qint32,qint32,qint32)));
     connect(prv->mApi, SIGNAL(updates(const QList<Update>&,const QList<User>&,const QList<Chat>&,qint32,qint32)), this, SIGNAL(updates(const QList<Update>&,const QList<User>&,const QList<Chat>&,qint32,qint32)));
     // errors
+    connect(prv->mApi, SIGNAL(fatalError()), this, SIGNAL(fatalError()));
     connect(prv->mApi, SIGNAL(error(qint64,qint32,const QString&,const QString&)), this, SLOT(onError(qint64,qint32,const QString&,const QString&)));
     connect(prv->mApi, SIGNAL(errorRetry(qint64,qint32,const QString&)), this, SLOT(onErrorRetry(qint64,qint32,const QString&)));
     connect(prv->mApi, SIGNAL(authSignInError(qint64,qint32,const QString&)), this, SIGNAL(authSignInError(qint64,qint32,const QString&)));
@@ -292,8 +287,10 @@ void Telegram::onDcProviderReady() {
     // positive responses
     connect(prv->mApi, SIGNAL(helpGetInviteTextAnswer(qint64,const QString&)), this, SIGNAL(helpGetInviteTextAnswer(qint64,const QString&)));
     connect(prv->mApi, SIGNAL(authCheckedPhone(qint64,bool)), this, SIGNAL(authCheckPhoneAnswer(qint64,bool)));
+    connect(prv->mApi, SIGNAL(authCheckedPhoneError(qint64)), this, SIGNAL(authCheckedPhoneError(qint64)));
     connect(prv->mApi, SIGNAL(authCheckPhoneSent(qint64,const QString&)), this, SIGNAL(authCheckPhoneSent(qint64,const QString&)));
     connect(prv->mApi, SIGNAL(authSentCode(qint64,bool,const QString&,qint32,bool)), this, SLOT(onAuthSentCode(qint64,bool,const QString&,qint32,bool)));
+    connect(prv->mApi, SIGNAL(authSendCodeError(qint64)), this, SIGNAL(authSendCodeError(qint64)));
     connect(prv->mApi, SIGNAL(authSentAppCode(qint64,bool,const QString&,qint32,bool)), this, SLOT(onAuthSentCode(qint64,bool,const QString&,qint32,bool)));
     connect(prv->mApi, SIGNAL(authSendSmsResult(qint64,bool)), this, SIGNAL(authSendSmsAnswer(qint64,bool)));
     connect(prv->mApi, SIGNAL(authSendCallResult(qint64,bool)), this, SIGNAL(authSendCallAnswer(qint64,bool)));
@@ -302,7 +299,7 @@ void Telegram::onDcProviderReady() {
     connect(prv->mApi, SIGNAL(authLogOutResult(qint64,bool)), this, SLOT(onAuthLogOutAnswer(qint64,bool)));
     connect(prv->mApi, SIGNAL(authSendInvitesResult(qint64,bool)), this, SIGNAL(authSendInvitesAnswer(qint64,bool)));
     connect(prv->mApi, SIGNAL(authResetAuthorizationsResult(qint64,bool)), this, SIGNAL(authResetAuthorizationsAnswer(qint64,bool)));
-    connect(prv->mApi, SIGNAL(authCheckPasswordResult(qint64,qint32,const User&)), this, SIGNAL(authCheckPasswordAnswer(qint64,qint32,const User&)));
+    connect(prv->mApi, SIGNAL(authCheckPasswordResult(qint64,qint32,const User&)), this, SLOT(onUserAuthorized(qint64,qint32,const User&)));
     connect(prv->mApi, SIGNAL(authRequestPasswordRecoveryResult(qint64,AuthPasswordRecovery)), this, SIGNAL(authRequestPasswordRecoveryAnswer(qint64,AuthPasswordRecovery)));
     connect(prv->mApi, SIGNAL(authRecoverPasswordResult(qint64,AuthAuthorization)), this, SIGNAL(authRecoverPasswordAnswer(qint64,AuthAuthorization)));
     connect(prv->mApi, SIGNAL(accountRegisterDeviceResult(qint64,bool)), this, SIGNAL(accountRegisterDeviceAnswer(qint64,bool)));
@@ -1314,9 +1311,9 @@ qint64 Telegram::authResetAuthorizations() {
     return prv->mApi->authResetAuthorizations();
 }
 
-qint64 Telegram::authCheckPassword(const QByteArray &passwordHash) {
+qint64 Telegram::authCheckPassword(const QByteArray &password) {
     CHECK_API;
-    return prv->mApi->authCheckPassword(passwordHash);
+    return prv->mApi->authCheckPassword( QCryptographicHash::hash(password, QCryptographicHash::Sha3_256) );
 }
 
 qint64 Telegram::accountRegisterDevice(const QString &token, const QString &appVersion, bool appSandbox) {

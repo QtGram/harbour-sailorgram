@@ -161,6 +161,7 @@ Q_SIGNALS:
     void authCheckedPhone(qint64 msgId, bool phoneRegistered);
     void authCheckPhoneSent(qint64 msgId, const QString &phoneNumber);
     void authSentCode(qint64 msgId, bool phoneRegistered, const QString &phoneCodeHash, qint32 sendCallTimeout, bool isPassword);
+    void authSendCodeError(qint64 msgId);
     void authSentAppCode(qint64 msgId, bool phoneRegistered, const QString &phoneCodeHahs, qint32 sendCallTimeout, bool isPassword);
     void authSendSmsResult(qint64 msgId, bool ok);
     void authSendCallResult(qint64 msgId, bool ok);
@@ -174,6 +175,7 @@ Q_SIGNALS:
     void authCheckPasswordResult(qint64 msgId, qint32 expires, const User &user);
     void authRequestPasswordRecoveryResult(qint64 msgId, const AuthPasswordRecovery &recovery);
     void authRecoverPasswordResult(qint64 msgId, const AuthAuthorization &auth);
+    void authCheckedPhoneError(qint64 msgId);
     // Notifications / settings
     void accountRegisterDeviceResult(qint64 msgId, bool ok);
     void accountUnregisterDeviceResult(qint64 msgId, bool ok);

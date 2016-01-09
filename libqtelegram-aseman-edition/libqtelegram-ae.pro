@@ -27,7 +27,6 @@ linux {
 }
 
 !contains(CONFIG, no_install) {
-    message(":O")
     isEmpty(PREFIX) {
         isEmpty(INSTALL_HEADERS_PREFIX): INSTALL_HEADERS_PREFIX = $$[QT_INSTALL_HEADERS]
         isEmpty(INSTALL_LIBS_PREFIX): INSTALL_LIBS_PREFIX = $$[QT_INSTALL_LIBS]

@@ -6,8 +6,8 @@
 #define TELEGRAMTYPEOBJECT_H
 
 #ifdef LQTG_DISABLE_ASSERTS
-#define LQTG_FETCH_ASSERT
-#define LQTG_PUSH_ASSERT
+#define LQTG_FETCH_ASSERT setError(true)
+#define LQTG_PUSH_ASSERT setError(true)
 #else
 #include <QtGlobal>
 #define LQTG_FETCH_ASSERT qt_assert("x",__FILE__,__LINE__)
@@ -35,6 +35,16 @@ public:
 
     virtual bool fetch(InboundPkt *in) = 0;
     virtual bool push(OutboundPkt *out) const = 0;
+
+    bool error() const;
+
+protected:
+    void setError(bool stt) {
+        mError = stt;
+    }
+
+private:
+    bool mError;
 };
 
 #endif // TELEGRAMTYPEOBJECT_H

@@ -4,9 +4,15 @@
 
 #include "telegramtypeobject.h"
 
-TelegramTypeObject::TelegramTypeObject()
+TelegramTypeObject::TelegramTypeObject() :
+    mError(false)
 {
 
+}
+
+bool TelegramTypeObject::error() const
+{
+    return mError;
 }
 
 TelegramTypeObject::~TelegramTypeObject()

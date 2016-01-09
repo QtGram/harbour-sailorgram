@@ -29,7 +29,8 @@ DcProvider::DcProvider(Settings *settings, CryptoUtils *crypto) :
     mApi(0),
     mPendingDcs(0),
     mPendingTransferSessions(0),
-    mWorkingDcSession(0) {
+    mWorkingDcSession(0),
+    mConfigReceived(0) {
 }
 
 DcProvider::~DcProvider() {
@@ -242,12 +243,12 @@ void DcProvider::onApiReady(DC*) {
 
     // after emitting the api startup signals, we don't want to do it again when session gets connected, so disconnect signal-slot
     disconnect(session, SIGNAL(error(QAbstractSocket::SocketError)), this, SLOT(onApiError()));
-    // disconnect the signal-slot to query for current server config when connected (once logged in that info is irrelevant)
-    disconnect(session, SIGNAL(sessionReady(DC*)), this, SLOT(onApiReady(DC*)));
 
     // get the config
-    connect(mApi, SIGNAL(config(qint64,const Config&)), this, SLOT(onConfigReceived(qint64,const Config&)));
-    mApi->helpGetConfig();
+    connect(mApi, SIGNAL(config(qint64,const Config&)), this, SLOT(onConfigReceived(qint64,const Config&)), Qt::UniqueConnection );
+
+    qint64 rid = mApi->helpGetConfig();
+    mGetConfigRequests[rid] = session;
 }
 
 void DcProvider::onConfigReceived(qint64 msgId, const Config &config) {
@@ -256,6 +257,15 @@ void DcProvider::onConfigReceived(qint64 msgId, const Config &config) {
     qCDebug(TG_CORE_DCPROVIDER) << "date =" << config.date();
     qCDebug(TG_CORE_DCPROVIDER) << "testMode =" << config.testMode();
     qCDebug(TG_CORE_DCPROVIDER) << "thisDc =" << config.thisDc();
+
+    Session *session = mGetConfigRequests.take(msgId);
+    if(session)
+        disconnect(session, SIGNAL(sessionReady(DC*)), this, SLOT(onApiReady(DC*)));
+
+    if(mConfigReceived)
+        return;
+
+    mConfigReceived = true;
 
     const QList<DcOption> &dcOptions = config.dcOptions();
 
