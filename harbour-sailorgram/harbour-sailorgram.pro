@@ -206,4 +206,5 @@ DISTFILES += \
     lipstick/harbour.sailorgram.notificationfg.conf \
     events/sailorgram_fg.ini \
     systemd/harbour-sailorgram-notifications.service \
-    qml/pages/settings/DaemonSettingsPage.qml
+    qml/pages/settings/DaemonSettingsPage.qml \
+    qml/js/Emoji.js

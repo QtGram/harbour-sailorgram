@@ -1,37 +1,6 @@
 .pragma library
 
-function surrogatePairToUnicodeScalar(hi, lo)
-{
-    if (hi >= 0xD800 && hi <= 0xDBFF && lo >= 0xDC00 && lo <= 0xDFFF)
-        return ((hi - 0xD800) * 0x400) + (lo - 0xDC00) + 0x10000;
-    else
-        console.log("Invalid surrogate pair");
-
-    return 0;
-}
-
-function emojify(s, height, emojipath, notification)
-{
-    if(!emojipath.length)
-    {
-        console.log("Invalid emoji path");
-        return;
-    }
-
-    var ranges = [ "\ud83c[\udf00-\udfff]",    // U+1F300 to U+1F3FF
-                   "\ud83d[\udc00-\ude4f]",    // U+1F400 to U+1F64F
-                   "\ud83d[\ude80-\udeff]" ];  // U+1F680 to U+1F6FF
-
-    return s.replace(new RegExp(ranges.join("|"), "g"),
-                     function(match) {
-                         var uniscalar = surrogatePairToUnicodeScalar(match.charCodeAt(0), match.charCodeAt(1));
-
-                         if(notification === true)
-                             return "<img alt=\"" + match + "\" src=\"" + emojipath + uniscalar.toString(16).toLowerCase() + ".png\"/>";
-
-                         return "<img align=\"middle\" width=\"" + height + "\" height=\"" + height + "\" src=\"" + emojipath + uniscalar.toString(16).toLowerCase() + ".png\"/>";
-                     });
-}
+.import "Emoji.js" as Emoji
 
 function linkify(s)
 {
@@ -80,7 +49,7 @@ function elaborate(s, emojipath, height, highlightcolor)
 {
     var res = replaceLtGt(s);
     res = replaceNewlines(res);
-    res = emojify(res, height, emojipath, false);
+    res = Emoji.emojify(res, height, emojipath, false);
     res = linkify(res);
     res = mentionify(res, highlightcolor);
     return "<span>" + res + "</span>";
@@ -89,7 +58,7 @@ function elaborate(s, emojipath, height, highlightcolor)
 function elaborateNotify(s, emojipath, height)
 {
     return s; // NOTE: Lipstick doesn't support markup!
-    //var res = emojify(s, height, emojipath, true);
+    //var res = Emoji.emojify(s, height, emojipath, true);
     //res = linkify(res);
     //res = mentionifyBold(res);
     //return res;
