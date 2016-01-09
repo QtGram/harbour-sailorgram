@@ -56,7 +56,7 @@ Item
             font.italic: TelegramHelper.isServiceMessage(message)
             emojiPath: context.sailorgram.emojiPath
             rawText: TelegramHelper.isServiceMessage(message) ? TelegramAction.actionType(context.telegram, dialog, message) : messageitem.message.message
-            wrapMode: Text.WordWrap
+            wrapMode: Text.Wrap
             visible: text.length > 0
             color: ColorScheme.colorizeText(message, context)
             linkColor: ColorScheme.colorizeLink(message, context)
