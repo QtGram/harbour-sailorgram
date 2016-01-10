@@ -11,7 +11,8 @@ Item
     property Context context
     property Message message
     property Message replyToMessage: context.telegram.message(message.replyToMsgId)
-    property real calculatedWidth: Math.max(dummytextcontent.contentWidth, lbluser.contentWidth)
+    property real calculatedWidth: Math.max(dummytextcontent.contentWidth, lbluser.contentWidth) + quotedIndicatorRect.width + row.spacing
+    property real maxWidth
 
     id: messagequoteditem
     height: column.height
@@ -19,10 +20,12 @@ Item
     Text
     {
         id: dummytextcontent
+        width: maxWidth - quotedIndicatorRect.width - row.spacing
         visible: false
         font.pixelSize: mtctextcontent.font.pixelSize
         font.italic: mtctextcontent.font.italic
         text: mtctextcontent.rawText
+        wrapMode: mtctextcontent.wrapMode
     }
 
     Row
@@ -33,6 +36,7 @@ Item
 
         Rectangle
         {
+            id: quotedIndicatorRect
             color: Theme.secondaryHighlightColor
             width: Theme.paddingSmall
             height: parent.height
@@ -41,7 +45,7 @@ Item
         Column
         {
             id: column
-            width: parent.width - (Theme.paddingSmall * 2)
+            width: parent.width - row.spacing - quotedIndicatorRect.width
 
             Label
             {
@@ -76,7 +80,7 @@ Item
                 emojiPath: context.sailorgram.emojiPath
                 rawText: TelegramHelper.isServiceMessage(replyToMessage) ? TelegramAction.actionType(context.telegram, dialog, replyToMessage) : replyToMessage.message
                 verticalAlignment: Text.AlignTop
-                wrapMode: Text.WordWrap
+                wrapMode: Text.Wrap
                 elide: Text.ElideRight
                 maximumLineCount: 3
                 visible: text.length > 0

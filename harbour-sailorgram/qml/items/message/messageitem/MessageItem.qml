@@ -103,6 +103,7 @@ ListItem
         MessageQuotedItem {
             context: messageitem.context
             message: messageitem.message
+            maxWidth: content.maxw - 2 * Theme.paddingMedium
         }
     }
 
@@ -182,21 +183,6 @@ ListItem
             w += 2 * Theme.paddingMedium;
 
             return w;
-        }
-
-        height: {
-            var h = padding.height + messagetext.height + Theme.paddingSmall;
-
-            if(lbluser.visible)
-                h += lbluser.contentHeight;
-
-            if(quotedloader.item)
-                h += quotedloader.height;
-
-            if(medialoader.item)
-                h += medialoader.height;
-
-            return h;
         }
 
         Item
