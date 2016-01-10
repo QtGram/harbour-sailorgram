@@ -20,7 +20,7 @@ Item
     Text
     {
         id: dummytextcontent
-        width: maxWidth - quotedIndicatorRect.width - row.spacing
+        width: maxWidth - quotedindicatorrect.width - row.spacing
         visible: false
         font.pixelSize: mtctextcontent.font.pixelSize
         font.italic: mtctextcontent.font.italic
