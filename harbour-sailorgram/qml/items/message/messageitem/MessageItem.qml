@@ -103,6 +103,7 @@ ListItem
         MessageQuotedItem {
             context: messageitem.context
             message: messageitem.message
+            maxWidth: content.maxw - 2 * Theme.paddingMedium
         }
     }
 
@@ -148,20 +149,14 @@ ListItem
         radius: 4
         visible: !context.bubbleshidden
         color: ColorScheme.colorizeBubble(message, context)
-        width: content.width
-        height: content.height
-
-        anchors {
-            left: message.out ? parent.left : undefined
-            right: message.out ? undefined : parent.right
-            leftMargin: Theme.paddingMedium
-            rightMargin: Theme.paddingMedium
-        }
+        anchors.fill: content
     }
 
     Column
     {
         id: content
+
+        property real maxw: parent.width * 3/4
 
         anchors {
             left: message.out ? parent.left : undefined
@@ -185,27 +180,9 @@ ListItem
             if(medialoader.item)
                 w = Math.max(w, medialoader.width);
 
-            var maxw = messageitem.width - (Theme.paddingMedium * 2);
+            w += 2 * Theme.paddingMedium;
 
-            if(w >= maxw)
-                return maxw;
-
-            return w + (Theme.paddingMedium * 2);
-        }
-
-        height: {
-            var h = padding.height + messagetext.height + Theme.paddingSmall;
-
-            if(lbluser.visible)
-                h += lbluser.contentHeight;
-
-            if(quotedloader.item)
-                h += quotedloader.height;
-
-            if(medialoader.item)
-                h += medialoader.height;
-
-            return h;
+            return w;
         }
 
         Item
@@ -300,6 +277,8 @@ ListItem
                 leftMargin: Theme.paddingMedium
                 rightMargin: Theme.paddingMedium
             }
+
+            maxWidth: content.maxw - 2 * Theme.paddingMedium
 
             context: messageitem.context
             message: messageitem.message
