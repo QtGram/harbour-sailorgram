@@ -148,20 +148,14 @@ ListItem
         radius: 4
         visible: !context.bubbleshidden
         color: ColorScheme.colorizeBubble(message, context)
-        width: content.width
-        height: content.height
-
-        anchors {
-            left: message.out ? parent.left : undefined
-            right: message.out ? undefined : parent.right
-            leftMargin: Theme.paddingMedium
-            rightMargin: Theme.paddingMedium
-        }
+        anchors.fill: content
     }
 
     Column
     {
         id: content
+
+        property real maxw: parent.width * 3/4
 
         anchors {
             left: message.out ? parent.left : undefined
@@ -185,12 +179,9 @@ ListItem
             if(medialoader.item)
                 w = Math.max(w, medialoader.width);
 
-            var maxw = messageitem.width - (Theme.paddingMedium * 2);
+            w += 2 * Theme.paddingMedium;
 
-            if(w >= maxw)
-                return maxw;
-
-            return w + (Theme.paddingMedium * 2);
+            return w;
         }
 
         height: {
@@ -300,6 +291,8 @@ ListItem
                 leftMargin: Theme.paddingMedium
                 rightMargin: Theme.paddingMedium
             }
+
+            maxWidth: content.maxw - 2 * Theme.paddingMedium
 
             context: messageitem.context
             message: messageitem.message

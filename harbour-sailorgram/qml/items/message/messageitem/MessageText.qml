@@ -11,12 +11,10 @@ Item
     property Context context
     property Message message
 
-    property real calculatedWidth: {
-        if(TelegramHelper.isServiceMessage(message))
-            return dummytextcontent.contentWidth;
-
-        return Math.max(dummytextcontent.contentWidth, dummymsgstatus.contentWidth);
-    }
+    property real calculatedWidth: TelegramHelper.isServiceMessage(message) ?
+                                       dummytextcontent.contentWidth :
+                                       Math.max(dummytextcontent.contentWidth, dummymsgstatus.contentWidth);
+    property real maxWidth
 
     id: messagetext
     height: content.height
@@ -24,6 +22,8 @@ Item
     Text
     {
         id: dummytextcontent
+        width: maxWidth
+        wrapMode: mtctextcontent.wrapMode
         font.pixelSize: mtctextcontent.font.pixelSize
         font.italic: mtctextcontent.font.italic
         text: mtctextcontent.text
