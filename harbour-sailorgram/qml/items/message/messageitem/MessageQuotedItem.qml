@@ -11,7 +11,7 @@ Item
     property Context context
     property Message message
     property Message replyToMessage: context.telegram.message(message.replyToMsgId)
-    property real calculatedWidth: Math.max(dummytextcontent.contentWidth, lbluser.contentWidth) + quotedIndicatorRect.width + row.spacing
+    property real calculatedWidth: Math.max(dummytextcontent.contentWidth, lbluser.contentWidth) + quotedindicatorrect.width + row.spacing
     property real maxWidth
 
     id: messagequoteditem
@@ -36,7 +36,7 @@ Item
 
         Rectangle
         {
-            id: quotedIndicatorRect
+            id: quotedindicatorrect
             color: Theme.secondaryHighlightColor
             width: Theme.paddingSmall
             height: parent.height
@@ -45,7 +45,7 @@ Item
         Column
         {
             id: column
-            width: parent.width - row.spacing - quotedIndicatorRect.width
+            width: parent.width - row.spacing - quotedindicatorrect.width
 
             Label
             {
