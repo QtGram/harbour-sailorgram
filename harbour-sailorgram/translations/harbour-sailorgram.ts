@@ -123,6 +123,21 @@
     </message>
 </context>
 <context>
+    <name>AudioRecorder</name>
+    <message>
+        <source>Error : %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stopped.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AuthorizationPage</name>
     <message>
         <source>Sign In</source>
@@ -751,6 +766,121 @@ Do a swype to the right to select a contact</source>
     <name>SecretDialogWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SelectorFilesPage</name>
+    <message>
+        <source>Android storage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SD Card</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selecting file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SelectorImagesPage</name>
+    <message>
+        <source>Selecting image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SelectorLocationPage</name>
+    <message>
+        <source>Waiting for coordinates...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Coordinates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>lat: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>long: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SelectorMainPage</name>
+    <message>
+        <source>Send file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image from gallery</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Capture photo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Record sound</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>My location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sticker</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Browse files</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SelectorSoundRecordPage</name>
+    <message>
+        <source>%1 sec</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>~%1 B</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>~%1 KiB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>~%1 MiB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>~%1 GiB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

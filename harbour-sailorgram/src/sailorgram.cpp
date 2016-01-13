@@ -11,6 +11,9 @@ SailorGram::SailorGram(QObject *parent): QObject(parent), _telegram(NULL), _fore
     QDir cfgdir(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation));
     cfgdir.mkpath(qApp->applicationName() + QDir::separator() + qApp->applicationName() + QDir::separator() + SailorGram::CONFIG_FOLDER);
 
+    QDir cachedir(QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation));
+    cachedir.mkpath(qApp->applicationName() + QDir::separator() + qApp->applicationName());
+
     this->_netcfgmanager = new QNetworkConfigurationManager(this);
     this->_heartbeat = new HeartBeat(this);
     this->_interface = new SailorgramInterface(this);
@@ -68,6 +71,54 @@ QString SailorGram::configPath() const
 QString SailorGram::publicKey() const
 {
     return qApp->applicationDirPath() + QDir::separator() + "../share/" + qApp->applicationName() + QDir::separator() + SailorGram::PUBLIC_KEY_FILE;
+}
+
+QString SailorGram::homeFolder() const
+{
+    return QStandardPaths::writableLocation(QStandardPaths::HomeLocation);
+}
+
+QString SailorGram::sdcardFolder() const
+{
+    QString sdcardfolder;
+
+    if(QFile::exists("/media/sdcard"))
+        sdcardfolder = "/media/sdcard";
+
+    if(QFile::exists("/run/user/100000/media/sdcard"))
+        sdcardfolder = "/run/user/100000/media/sdcard";
+
+    if(sdcardfolder.isEmpty())
+        return QString();
+
+    QDir dir(sdcardfolder);
+    QFileInfoList fileinfolist = dir.entryInfoList(QDir::AllDirs | QDir::Files | QDir::NoDotAndDotDot | QDir::NoSymLinks, QDir::DirsFirst | QDir::Time);
+
+    if(fileinfolist.isEmpty())
+        return QString();
+
+    return fileinfolist.first().filePath();
+}
+
+QString SailorGram::picturesFolder() const
+{
+    return QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
+}
+
+QString SailorGram::androidStorage() const
+{
+    QDir homefolder(this->homeFolder());
+
+    if(!homefolder.exists("android_storage"))
+        return QString();
+
+    return homefolder.absoluteFilePath("android_storage");
+}
+
+QString SailorGram::voiceRecordPath() const
+{
+    QDir cachefolder = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
+    return cachefolder.absoluteFilePath("voice-rec.wav");
 }
 
 TelegramQml *SailorGram::telegram() const

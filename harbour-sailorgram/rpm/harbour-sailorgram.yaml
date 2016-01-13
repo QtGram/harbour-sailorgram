@@ -28,6 +28,9 @@ PkgConfigBR:
   - Qt5Quick
   - Qt5DBus
   - Qt5Multimedia
+  - Qt5Concurrent
+  - Qt5Location
+  - Qt5Positioning
   - openssl
 # Build dependencies without a pkgconfig setup can be listed here
 # PkgBR:

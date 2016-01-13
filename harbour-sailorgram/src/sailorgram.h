@@ -26,7 +26,12 @@ class SailorGram : public QObject
     Q_PROPERTY(TelegramQml* telegram READ telegram WRITE setTelegram NOTIFY telegramChanged)
     Q_PROPERTY(QString emojiPath READ emojiPath CONSTANT FINAL)
     Q_PROPERTY(QString configPath READ configPath CONSTANT FINAL)
-    Q_PROPERTY(QString publicKey READ  publicKey CONSTANT FINAL)
+    Q_PROPERTY(QString publicKey READ publicKey CONSTANT FINAL)
+    Q_PROPERTY(QString homeFolder READ homeFolder CONSTANT FINAL)
+    Q_PROPERTY(QString sdcardFolder READ sdcardFolder CONSTANT FINAL)
+    Q_PROPERTY(QString picturesFolder READ picturesFolder CONSTANT FINAL)
+    Q_PROPERTY(QString androidStorage READ androidStorage CONSTANT FINAL)
+    Q_PROPERTY(QString voiceRecordPath READ voiceRecordPath CONSTANT FINAL)
     Q_PROPERTY(DialogObject* foregroundDialog READ foregroundDialog WRITE setForegroundDialog NOTIFY foregroundDialogChanged)
 
     public:
@@ -39,6 +44,11 @@ class SailorGram : public QObject
         QString emojiPath() const;
         QString configPath() const;
         QString publicKey() const;
+        QString homeFolder() const;
+        QString sdcardFolder() const;
+        QString picturesFolder() const;
+        QString androidStorage() const;
+        QString voiceRecordPath() const;
         TelegramQml* telegram() const;
         DialogObject* foregroundDialog() const;
         void setInterval(int interval);

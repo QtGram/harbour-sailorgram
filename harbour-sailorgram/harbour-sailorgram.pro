@@ -13,7 +13,7 @@
 TARGET = harbour-sailorgram
 
 CONFIG += sailfishapp
-QT += sql dbus
+QT += sql dbus multimedia concurrent
 
 include($$PWD/../config.pri)
 
@@ -68,7 +68,9 @@ SOURCES += src/harbour-sailorgram.cpp \
     src/dbus/interface/sailorgramadaptor.cpp \
     src/dbus/interface/sailorgraminterface.cpp \
     src/dbus/notification/notification.cpp \
-    src/dbus/notification/notificationmanagerproxy.cpp
+    src/dbus/notification/notificationmanagerproxy.cpp \
+    src/selector/audiorecorder.cpp \
+    src/selector/imagethumbnailer.cpp
 
 OTHER_FILES += qml/harbour-sailorgram.qml \
     rpm/harbour-sailorgram.changes.in \
@@ -173,7 +175,9 @@ HEADERS += \
     src/dbus/interface/sailorgramadaptor.h \
     src/dbus/interface/sailorgraminterface.h \
     src/dbus/notification/notification.h \
-    src/dbus/notification/notificationmanagerproxy.h
+    src/dbus/notification/notificationmanagerproxy.h \
+    src/selector/audiorecorder.h \
+    src/selector/imagethumbnailer.h
 
 RESOURCES += \
     resources.qrc
@@ -207,4 +211,11 @@ DISTFILES += \
     events/sailorgram_fg.ini \
     systemd/harbour-sailorgram-notifications.service \
     qml/pages/settings/DaemonSettingsPage.qml \
-    qml/js/Emoji.js
+    qml/js/Emoji.js \
+    qml/pages/selector/SelectorFilesPage.qml \
+    qml/pages/selector/SelectorImagesPage.qml \
+    qml/pages/selector/SelectorLocationPage.qml \
+    qml/pages/selector/SelectorMainPage.qml \
+    qml/pages/selector/SelectorPhotoCapturePage.qml \
+    qml/pages/selector/SelectorSoundRecordPage.qml \
+    qml/pages/selector/SelectorStickerPage.qml

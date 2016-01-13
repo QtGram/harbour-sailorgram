@@ -86,10 +86,22 @@ InverseMouseArea
             icon.source: "image://theme/icon-m-attach"
 
             onClicked: {
-                var picker = pageStack.push(Qt.resolvedUrl("../../pages/picker/FilePickerPage.qml"), { "rootPage": pageStack.currentPage });
+                var selector = pageStack.push(Qt.resolvedUrl("../../pages/selector/SelectorMainPage.qml"), { "context": dialogtextinput.context });
 
-                picker.filePicked.connect(function(file) {
-                    context.telegram.sendFile(TelegramHelper.peerId(dialogtextinput.dialog), file);
+                selector.actionCompleted.connect(function(action, data) {
+                    if(action === selector.stickerAction) {
+
+                    }
+                    else if(action === selector.soundRecordAction) {
+
+                    }
+                    else if(action === selector.photoCaptureAction) {
+
+                    }
+                    else if(action === selector.locationAction)
+                        context.telegram.sendGeo(TelegramHelper.peerId(dialogtextinput.dialog), data.latitude, data.longitude);
+                    else
+                        context.telegram.sendFile(TelegramHelper.peerId(dialogtextinput.dialog), data);
                 });
             }
         }

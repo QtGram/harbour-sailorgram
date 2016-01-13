@@ -29,6 +29,9 @@ BuildRequires:  pkgconfig(Qt5Xml)
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(Qt5DBus)
 BuildRequires:  pkgconfig(Qt5Multimedia)
+BuildRequires:  pkgconfig(Qt5Concurrent)
+BuildRequires:  pkgconfig(Qt5Location)
+BuildRequires:  pkgconfig(Qt5Positioning)
 BuildRequires:  pkgconfig(openssl)
 BuildRequires:  desktop-file-utils
 
