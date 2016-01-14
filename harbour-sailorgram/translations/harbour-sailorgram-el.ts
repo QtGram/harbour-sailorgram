@@ -857,6 +857,13 @@ Do a swype to the right to select a contact</source>
     </message>
 </context>
 <context>
+    <name>SelectorStickerPage</name>
+    <message>
+        <source>Sending sticker</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SettingsPage</name>
     <message>
         <source>Settings</source>
