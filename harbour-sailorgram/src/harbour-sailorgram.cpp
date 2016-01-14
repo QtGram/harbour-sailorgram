@@ -32,7 +32,6 @@
 #include <sailfishapp.h>
 #include <telegramqmlinitializer.h>
 #include "dbus/screenblank.h"
-#include "filepicker/folderlistmodel.h"
 #include "selector/audiorecorder.h"
 #include "selector/imagethumbnailer.h"
 #include "sailorgram.h"
@@ -78,7 +77,6 @@ int main(int argc, char *argv[])
     qmlRegisterType<ScreenBlank>("harbour.sailorgram.DBus", 1, 0, "ScreenBlank");
     qmlRegisterType<AudioRecorder>("harbour.sailorgram.Selector", 1, 0, "AudioRecorder");
     qmlRegisterType<ImageThumbnailer>("harbour.sailorgram.Selector", 1, 0, "ImageThumbnailer");
-    qmlRegisterType<FolderListModel>("harbour.sailorgram.Pickers", 1, 0, "FolderListModel");
 
     QScopedPointer<QQuickView> view(SailfishApp::createView());
     QQmlEngine* engine = view->engine();

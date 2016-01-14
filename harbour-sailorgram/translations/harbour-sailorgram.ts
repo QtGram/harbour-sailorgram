@@ -550,39 +550,6 @@ Do a swype to the right to select a contact</source>
     </message>
 </context>
 <context>
-    <name>FilePicker</name>
-    <message>
-        <source>Created:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Picking file</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>FilePickerPage</name>
-    <message>
-        <source>Root</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>SD Card</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Home</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ImagePreviewPage</name>
-    <message>
-        <source>Select</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>

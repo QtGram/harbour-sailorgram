@@ -35,10 +35,10 @@ Page
                 text: qsTr("Change Picture")
 
                 onClicked: {
-                    var picker = pageStack.push(Qt.resolvedUrl("../picker/FilePickerPage.qml"), { "rootPage": profilepage, "mime": "image" })
+                    var imgselector = pageStack.push(Qt.resolvedUrl("../selector/SelectorImagesPage.qml"), { "context": profilepage.context });
 
-                    picker.filePicked.connect(function(file) {
-                        context.telegram.setProfilePhoto(file);
+                    imgselector.actionCompleted.connect(function(action, data) {
+                        context.telegram.setProfilePhoto(data);
                     });
                 }
             }

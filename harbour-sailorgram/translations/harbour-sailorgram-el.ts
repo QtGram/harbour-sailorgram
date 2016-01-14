@@ -554,39 +554,6 @@ Do a swype to the right to select a contact</source>
     </message>
 </context>
 <context>
-    <name>FilePicker</name>
-    <message>
-        <source>Created:</source>
-        <translation>Δημιουργήθηκε:</translation>
-    </message>
-    <message>
-        <source>Picking file</source>
-        <translation>Επιλέγοντας το αρχείο</translation>
-    </message>
-</context>
-<context>
-    <name>FilePickerPage</name>
-    <message>
-        <source>Root</source>
-        <translation>Ρίζα</translation>
-    </message>
-    <message>
-        <source>SD Card</source>
-        <translation>Κάρτα μνήμης</translation>
-    </message>
-    <message>
-        <source>Home</source>
-        <translation>Σπίτι</translation>
-    </message>
-</context>
-<context>
-    <name>ImagePreviewPage</name>
-    <message>
-        <source>Select</source>
-        <translation>Επιλογή</translation>
-    </message>
-</context>
-<context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>

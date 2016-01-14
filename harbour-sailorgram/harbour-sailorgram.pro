@@ -62,7 +62,6 @@ INSTALLS += events
 
 SOURCES += src/harbour-sailorgram.cpp \
     src/sailorgram.cpp \
-    src/filepicker/folderlistmodel.cpp \
     src/dbus/screenblank.cpp \
     src/heartbeat.cpp \
     src/dbus/interface/sailorgramadaptor.cpp \
@@ -97,8 +96,6 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/components/ClickableLabel.qml \
     qml/items/message/messageitem/media/MessageThumbnail.qml \
     qml/js/TelegramConstants.js \
-    qml/pages/picker/FilePickerPage.qml \
-    qml/components/pickers/FilePicker.qml \
     qml/pages/login/SignUpPage.qml \
     qml/items/peer/PeerItem.qml \
     qml/items/peer/PeerImage.qml \
@@ -169,7 +166,6 @@ TRANSLATIONS += translations/harbour-sailorgram-be.ts \
 
 HEADERS += \
     src/sailorgram.h \
-    src/filepicker/folderlistmodel.h \
     src/dbus/screenblank.h \
     src/heartbeat.h \
     src/dbus/interface/sailorgramadaptor.h \
@@ -204,7 +200,6 @@ DISTFILES += \
     qml/items/message/messageitem/MessageQuotedItem.qml \
     qml/js/ColorScheme.js \
     qml/js/TelegramMedia.js \
-    qml/pages/picker/ImagePreviewPage.qml \
     dbus/org.harbour.sailorgram.service \
     events/sailorgram.ini \
     lipstick/harbour.sailorgram.notificationfg.conf \

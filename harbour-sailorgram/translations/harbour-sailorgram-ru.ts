@@ -553,39 +553,6 @@ Do a swype to the right to select a contact</source>
     </message>
 </context>
 <context>
-    <name>FilePicker</name>
-    <message>
-        <source>Created:</source>
-        <translation>Создано:</translation>
-    </message>
-    <message>
-        <source>Picking file</source>
-        <translation>Выбор файла</translation>
-    </message>
-</context>
-<context>
-    <name>FilePickerPage</name>
-    <message>
-        <source>Root</source>
-        <translation>Root</translation>
-    </message>
-    <message>
-        <source>SD Card</source>
-        <translation>Карта памяти</translation>
-    </message>
-    <message>
-        <source>Home</source>
-        <translation>Главная</translation>
-    </message>
-</context>
-<context>
-    <name>ImagePreviewPage</name>
-    <message>
-        <source>Select</source>
-        <translation>Выбрать</translation>
-    </message>
-</context>
-<context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
