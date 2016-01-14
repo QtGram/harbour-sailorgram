@@ -49,7 +49,7 @@ Item
             return "";
 
         if(context.telegram.documentIsSticker(message.media.document))
-            return "image://theme/icon-m-other"; //FIXME: WebP: Not Supported
+            return filehandler.thumbPath;
 
         if((message.media.classType === TelegramConstants.typeMessageMediaPhoto) && filehandler.downloaded)
             return filehandler.filePath;

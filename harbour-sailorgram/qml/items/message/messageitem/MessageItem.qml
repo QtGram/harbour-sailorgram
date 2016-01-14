@@ -143,20 +143,48 @@ ListItem
         }
     }
 
+    Component {
+        id: stickercomponent
+
+        MessageSticker {
+            context: messageitem.context
+            message: messageitem.message
+        }
+    }
+
     Rectangle
     {
         id: bubble
         radius: 4
-        visible: !context.bubbleshidden
+
+        visible: {
+            var bubblevisible = !context.bubbleshidden;
+
+            if(bubblevisible)
+            {
+                if(!TelegramHelper.isMediaMessage(message))
+                    return bubblevisible;
+
+                if(message.media.classType !== TelegramConstants.typeMessageMediaDocument)
+                    return bubblevisible;
+
+                if(context.telegram.documentIsSticker(message.media.document))
+                    return false;
+            }
+
+            return bubblevisible;
+        }
+
         color: ColorScheme.colorizeBubble(message, context)
         anchors.fill: content
     }
 
     Column
     {
-        id: content
-
+        property bool isSticker: false
         property real maxw: parent.width * 3/4
+
+        id: content
 
         anchors {
             left: message.out ? parent.left : undefined
@@ -171,14 +199,11 @@ ListItem
 
             var w = messagetext.calculatedWidth;
 
-            if(lbluser.visible)
-                w = Math.max(w, lbluser.contentWidth);
-
             if(quotedloader.item)
                 w = Math.max(w, quotedloader.item.calculatedWidth);
 
             if(medialoader.item)
-                w = Math.max(w, medialoader.width);
+                w = Math.max(w, medialoader.item.width);
 
             w += 2 * Theme.paddingMedium;
 
@@ -209,6 +234,7 @@ ListItem
             font.pixelSize: Theme.fontSizeSmall
             font.bold: true
             wrapMode: Text.NoWrap
+            elide: Text.ElideRight
 
             horizontalAlignment: {
                 if(message.out)
@@ -253,10 +279,15 @@ ListItem
 
             sourceComponent: {
                 if(message.media) {
+                    if(message.media.classType === TelegramConstants.typeMessageMediaDocument)
+                    {
+                        if(context.telegram.documentIsSticker(message.media.document))
+                            return stickercomponent;
+
+                        return documentcomponent;
+                    }
                     if(message.media.classType === TelegramConstants.typeMessageMediaPhoto)
                         return photocomponent;
-                    else if(message.media.classType === TelegramConstants.typeMessageMediaDocument)
-                        return documentcomponent;
                     else if(message.media.classType === TelegramConstants.typeMessageMediaAudio)
                         return audiocomponent;
                     else if(message.media.classType === TelegramConstants.typeMessageMediaVideo)

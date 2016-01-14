@@ -5,9 +5,6 @@ import "../../models"
 Page
 {
     property Context context
-    property bool searching : true
-    property real latitude  : 0.0
-    property real longitude : 0.0
 
     readonly property string fileAction: "file"
     readonly property string imageAction: "image"

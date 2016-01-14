@@ -20,6 +20,11 @@ include($$PWD/../config.pri)
 LIBS += -L$$LIBQTELEGRAM_LIB_DIR -L$$TELEGRAMQML_LIB_DIR -lqtelegram-ae -ltelegramqml
 INCLUDEPATH += $$LIBQTELEGRAM_INCLUDE_PATH $$TELEGRAMQML_INCLUDE_PATH
 
+# WebP Plugin
+webp.files = $$OUT_PWD/../webp-plugin/plugins/imageformats/*.so
+webp.path = /usr/share/$$TARGET/lib/imageformats
+INSTALLS += webp
+
 # TelegramQml
 libtelegram_qml.files = $$OUT_PWD/../TelegramQML/*.so*
 libtelegram_qml.path = /usr/share/$$TARGET/lib
@@ -213,4 +218,5 @@ DISTFILES += \
     qml/pages/selector/SelectorMainPage.qml \
     qml/pages/selector/SelectorPhotoCapturePage.qml \
     qml/pages/selector/SelectorSoundRecordPage.qml \
-    qml/pages/selector/SelectorStickerPage.qml
+    qml/pages/selector/SelectorStickerPage.qml \
+    qml/items/message/messageitem/media/MessageSticker.qml

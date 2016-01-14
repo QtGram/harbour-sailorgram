@@ -47,11 +47,17 @@ bool hasDaemon(const QStringList& args)
     return false;
 }
 
+void setPluginsPath(QScopedPointer<QGuiApplication>& application)
+{
+    application->addLibraryPath(qApp->applicationDirPath() + QDir::separator() + "../share/" + qApp->applicationName() + QDir::separator() + "lib");
+}
+
 int main(int argc, char *argv[])
 {
     QScopedPointer<QGuiApplication> application(SailfishApp::application(argc, argv));
     application->setApplicationName("harbour-sailorgram");
     application->setApplicationVersion("0.7");
+    setPluginsPath(application);
 
     QStringList args = application->arguments();
     bool daemonized = hasDaemon(args);

@@ -38,6 +38,7 @@ BuildRequires:  desktop-file-utils
 %description
 An unofficial Telegram Client for SailfishOS
 
+%define _unpackaged_files_terminate_build 0
 
 %prep
 %setup -q -n %{name}-%{version}
