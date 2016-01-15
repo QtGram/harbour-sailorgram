@@ -20,6 +20,7 @@ SailorGram::SailorGram(QObject *parent): QObject(parent), _telegram(NULL), _fore
     this->_autostart = !SailorGram::hasNoDaemonFile();
 
     connect(qApp, SIGNAL(applicationStateChanged(Qt::ApplicationState)), this, SLOT(onApplicationStateChanged(Qt::ApplicationState)));
+    connect(this, SIGNAL(daemonizedChanged()), this, SLOT(updateLogLevel()));
     connect(this->_netcfgmanager, SIGNAL(onlineStateChanged(bool)), this, SLOT(onOnlineStateChanged(bool)));
     connect(this->_interface, SIGNAL(wakeUpRequested()), this, SLOT(onWakeUpRequested()));
     connect(this->_interface, SIGNAL(openDialogRequested(qint32)), this, SIGNAL(openDialogRequested(qint32)));
@@ -261,6 +262,14 @@ void SailorGram::notify(const QString &summary, const QString &body, const QStri
 
     if(!peerid) // Temporary notification
         notification->deleteLater();
+}
+
+void SailorGram::updateLogLevel()
+{
+    if(!this->_telegram)
+        return;
+
+    this->_telegram->setLogLevel(this->_daemonized ? TelegramQml::LogLevelClean : TelegramQml::LogLevelFull);
 }
 
 void SailorGram::beep()

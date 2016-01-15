@@ -80,6 +80,7 @@ class SailorGram : public QObject
         void onNotificationClosed(uint);
         void onWakeUpRequested();
         void startHeartBeat();
+        void updateLogLevel();
         void wakeSleep();
 
     signals:
