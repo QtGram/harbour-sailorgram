@@ -1,3 +1,19 @@
+libqtelegram-ae (0.6.1-1aseman1-wily) wily; urgency=medium
+
+  * Add auto reconnect support
+  * Add fatal error handler
+  * Many bugfix and improvements
+
+ -- Aseman Team <contact@aseman.co>  Tue, 12 Jan 2016 01:30:00 +0330
+ 
+libqtelegram-ae (0.6.1-1aseman1-trusty) trusty; urgency=medium
+
+  * Add auto reconnect support
+  * Add fatal error handler
+  * Many bugfix and improvements
+
+ -- Aseman Team <contact@aseman.co>  Tue, 12 Jan 2016 01:30:00 +0330
+ 
 libqtelegram-ae (0.6.0-6aseman1-vivid) vivid; urgency=medium
 
   * API 29 support

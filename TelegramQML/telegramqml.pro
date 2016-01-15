@@ -19,7 +19,6 @@ win32 {
     }
 }
 
-include($$PWD/../config.pri)
 include(telegramqml.pri)
 
 linux {

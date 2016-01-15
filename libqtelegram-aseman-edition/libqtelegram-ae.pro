@@ -13,7 +13,6 @@ macx {
     CONFIG += staticlib
 }
 
-include($$PWD/../config.pri)
 include(libqtelegram-ae.pri)
 
 linux {
