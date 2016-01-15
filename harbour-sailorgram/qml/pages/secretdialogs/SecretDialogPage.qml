@@ -98,7 +98,7 @@ Page
                 id: messagesmodel
 
                 onCountChanged: {
-                    if(!count || (dialogpage.status !== PageStatus.Active))
+                    if(!count || (secretdialogpage.status !== PageStatus.Active))
                         return;
 
                     messagesmodel.setReaded(); /* We are in this chat, always mark these messages as read */

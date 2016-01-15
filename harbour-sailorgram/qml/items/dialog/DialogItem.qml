@@ -158,7 +158,7 @@ Item
                     wrapMode: Text.NoWrap
                     maximumLineCount: 1
                     emojiPath: context.sailorgram.emojiPath
-                    linkColor: message.out ? Theme.secondaryHighlightColor : Theme.secondaryColor
+                    linkColor: Theme.secondaryColor
                     color: TelegramHelper.isServiceMessage(message) ? Theme.highlightColor : Theme.primaryColor
 
                     font.italic: {
