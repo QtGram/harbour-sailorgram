@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="ru">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="ru" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -93,7 +91,7 @@
     </message>
     <message>
         <source>Emoji Set</source>
-        <translation type="unfinished"></translation>
+        <translation>Набор Emoji</translation>
     </message>
 </context>
 <context>
@@ -126,15 +124,15 @@
     <name>AudioRecorder</name>
     <message>
         <source>Error : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка : %1</translation>
     </message>
     <message>
         <source>Recording...</source>
-        <translation type="unfinished"></translation>
+        <translation>Запись...</translation>
     </message>
     <message>
         <source>Stopped.</source>
-        <translation type="unfinished"></translation>
+        <translation>Остановлено.</translation>
     </message>
 </context>
 <context>
@@ -165,7 +163,7 @@
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Выйти</translation>
     </message>
 </context>
 <context>
@@ -246,27 +244,27 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Background enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Фон</translation>
     </message>
     <message>
         <source>Chat header visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Заголовок диалога</translation>
     </message>
     <message>
         <source>Bubbles visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Пузыри сообщений</translation>
     </message>
     <message>
         <source>Bubble opacity</source>
-        <translation type="unfinished"></translation>
+        <translation>Прозрачность пузырей сообщений</translation>
     </message>
     <message>
         <source>Keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Клавиатура</translation>
     </message>
     <message>
         <source>Appearance</source>
-        <translation type="unfinished"></translation>
+        <translation>Интерфейс</translation>
     </message>
 </context>
 <context>
@@ -296,7 +294,7 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Выйти</translation>
     </message>
 </context>
 <context>
@@ -351,23 +349,23 @@ Minimum length is 5 characters.</source>
     <name>DaemonSettingsPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Сохранить</translation>
+        <translation>Сохранить</translation>
     </message>
     <message>
         <source>Keep running</source>
-        <translation type="unfinished"></translation>
+        <translation>Фоновый режим</translation>
     </message>
     <message>
         <source>SailorGram keeps running in background even when closed</source>
-        <translation type="unfinished"></translation>
+        <translation>SailorGram работает в фоне даже если закрыт</translation>
     </message>
     <message>
         <source>Autostart</source>
-        <translation type="unfinished"></translation>
+        <translation>Автозагрузка</translation>
     </message>
     <message>
         <source>SailorGram starts automatically</source>
-        <translation type="unfinished"></translation>
+        <translation>SailorGram запускается автоматически</translation>
     </message>
 </context>
 <context>
@@ -495,7 +493,9 @@ Minimum length is 5 characters.</source>
         <source>No Chats
 
 Do a swype to the right to select a contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Диалоги отсутствуют
+
+Свайпните вправо, чтобы выбрать контакта</translation>
     </message>
 </context>
 <context>
@@ -518,7 +518,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Выйти</translation>
     </message>
 </context>
 <context>
@@ -560,7 +560,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation>Изображение сохранено в Галерее</translation>
+        <translation>Изображение сохранено в галерее</translation>
     </message>
 </context>
 <context>
@@ -688,7 +688,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Выйти</translation>
     </message>
 </context>
 <context>
@@ -743,122 +743,115 @@ Do a swype to the right to select a contact</source>
     <name>SelectorFilesPage</name>
     <message>
         <source>Android storage</source>
-        <translation type="unfinished"></translation>
+        <translation>Память Android</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished">Карта памяти</translation>
+        <translation>Карта памяти</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished">Главная</translation>
+        <translation>Домой</translation>
     </message>
     <message>
         <source>Selecting file</source>
-        <translation type="unfinished"></translation>
+        <translation>Выбор файла</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Назад</translation>
     </message>
 </context>
 <context>
     <name>SelectorImagesPage</name>
     <message>
         <source>Selecting image</source>
-        <translation type="unfinished"></translation>
+        <translation>Выбор изображения</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Назад</translation>
     </message>
 </context>
 <context>
     <name>SelectorLocationPage</name>
     <message>
         <source>Waiting for coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ожидание координат...</translation>
     </message>
     <message>
         <source>Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Координаты</translation>
     </message>
     <message>
         <source>lat: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>широта: %1</translation>
     </message>
     <message>
         <source>long: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>долгота: %1</translation>
     </message>
 </context>
 <context>
     <name>SelectorMainPage</name>
     <message>
         <source>Send file</source>
-        <translation type="unfinished"></translation>
+        <translation>Отправить файл</translation>
     </message>
     <message>
         <source>Image from gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>Изображение из галереи</translation>
     </message>
     <message>
         <source>Capture photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Сделать фото</translation>
     </message>
     <message>
         <source>Record sound</source>
-        <translation type="unfinished"></translation>
+        <translation>Записать сообщение</translation>
     </message>
     <message>
         <source>My location</source>
-        <translation type="unfinished"></translation>
+        <translation>Моя локация</translation>
     </message>
     <message>
         <source>Sticker</source>
-        <translation type="unfinished"></translation>
+        <translation>Стикер</translation>
     </message>
     <message>
         <source>Browse files</source>
-        <translation type="unfinished"></translation>
+        <translation>Просмотреть файлы</translation>
     </message>
 </context>
 <context>
     <name>SelectorSoundRecordPage</name>
     <message>
         <source>%1 sec</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 сек</translation>
     </message>
     <message>
         <source>~%1 B</source>
-        <translation type="unfinished"></translation>
+        <translation>~%1 B</translation>
     </message>
     <message>
         <source>~%1 KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>~%1 KiB</translation>
     </message>
     <message>
         <source>~%1 MiB</source>
-        <translation type="unfinished"></translation>
+        <translation>~%1 MiB</translation>
     </message>
     <message>
         <source>~%1 GiB</source>
-        <translation type="unfinished"></translation>
+        <translation>~%1 GiB</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Начать</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SelectorStickerPage</name>
-    <message>
-        <source>Sending sticker</source>
-        <translation type="unfinished"></translation>
+        <translation>Остановить</translation>
     </message>
 </context>
 <context>
@@ -877,7 +870,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Daemon</source>
-        <translation type="unfinished"></translation>
+        <translation>Daemon</translation>
     </message>
 </context>
 <context>
@@ -908,7 +901,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Выйти</translation>
     </message>
 </context>
 <context>

@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="gl">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="gl" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -93,7 +91,7 @@
     </message>
     <message>
         <source>Emoji Set</source>
-        <translation type="unfinished"></translation>
+        <translation>Set de Emoji</translation>
     </message>
 </context>
 <context>
@@ -126,15 +124,15 @@
     <name>AudioRecorder</name>
     <message>
         <source>Error : %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Recording...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Stopped.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -165,7 +163,7 @@
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Sair</translation>
     </message>
 </context>
 <context>
@@ -246,27 +244,27 @@ A lonxitude mínima é de 5 caracteres.</translation>
     </message>
     <message>
         <source>Background enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Fondo activado</translation>
     </message>
     <message>
         <source>Chat header visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Cabeceira da conversa visibel</translation>
     </message>
     <message>
         <source>Bubbles visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Burbullas visibeis</translation>
     </message>
     <message>
         <source>Bubble opacity</source>
-        <translation type="unfinished"></translation>
+        <translation>Opacidade das burbullas</translation>
     </message>
     <message>
         <source>Keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Teclado</translation>
     </message>
     <message>
         <source>Appearance</source>
-        <translation type="unfinished"></translation>
+        <translation>Aparencia</translation>
     </message>
 </context>
 <context>
@@ -296,7 +294,7 @@ A lonxitude mínima é de 5 caracteres.</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Sair</translation>
     </message>
 </context>
 <context>
@@ -351,23 +349,23 @@ A lonxitude mínima é de 5 caracteres.</translation>
     <name>DaemonSettingsPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Gardar</translation>
+        <translation>Gardar</translation>
     </message>
     <message>
         <source>Keep running</source>
-        <translation type="unfinished"></translation>
+        <translation>Manter en funcionamento</translation>
     </message>
     <message>
         <source>SailorGram keeps running in background even when closed</source>
-        <translation type="unfinished"></translation>
+        <translation>SailorGram manterase en segundo plano inda que se peche</translation>
     </message>
     <message>
         <source>Autostart</source>
-        <translation type="unfinished"></translation>
+        <translation>Autoinicio</translation>
     </message>
     <message>
         <source>SailorGram starts automatically</source>
-        <translation type="unfinished"></translation>
+        <translation>SailorGram iniciarase automaticamente</translation>
     </message>
 </context>
 <context>
@@ -495,7 +493,9 @@ A lonxitude mínima é de 5 caracteres.</translation>
         <source>No Chats
 
 Do a swype to the right to select a contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Sen conversas
+
+Desprace a dereita para seleccionar un contacto</translation>
     </message>
 </context>
 <context>
@@ -518,7 +518,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Sair</translation>
     </message>
 </context>
 <context>
@@ -688,7 +688,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Sair</translation>
     </message>
 </context>
 <context>
@@ -743,122 +743,115 @@ Do a swype to the right to select a contact</source>
     <name>SelectorFilesPage</name>
     <message>
         <source>Android storage</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished">Tarxeta SD</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished">Inicio</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Selecting file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>SelectorImagesPage</name>
     <message>
         <source>Selecting image</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>SelectorLocationPage</name>
     <message>
         <source>Waiting for coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>lat: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>long: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>SelectorMainPage</name>
     <message>
         <source>Send file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Image from gallery</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Capture photo</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Record sound</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>My location</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Sticker</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Browse files</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>SelectorSoundRecordPage</name>
     <message>
         <source>%1 sec</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>~%1 B</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>~%1 KiB</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>~%1 MiB</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>~%1 GiB</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SelectorStickerPage</name>
-    <message>
-        <source>Sending sticker</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -877,7 +870,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Daemon</source>
-        <translation type="unfinished"></translation>
+        <translation>Daemon</translation>
     </message>
 </context>
 <context>
@@ -908,7 +901,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Sair</translation>
     </message>
 </context>
 <context>

@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fi">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="fi" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -126,15 +124,15 @@
     <name>AudioRecorder</name>
     <message>
         <source>Error : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe: %1</translation>
     </message>
     <message>
         <source>Recording...</source>
-        <translation type="unfinished"></translation>
+        <translation>Nauhoittaa...</translation>
     </message>
     <message>
         <source>Stopped.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pysähtynyt.</translation>
     </message>
 </context>
 <context>
@@ -165,7 +163,7 @@
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished">Poistu</translation>
+        <translation>Poistu</translation>
     </message>
 </context>
 <context>
@@ -246,27 +244,27 @@ Vähimmäispituus on 5 merkkiä.</translation>
     </message>
     <message>
         <source>Background enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Tausta käytössä</translation>
     </message>
     <message>
         <source>Chat header visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Keskustelupalkki näkyvissä</translation>
     </message>
     <message>
         <source>Bubbles visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Puhekuplat näkyvissä</translation>
     </message>
     <message>
         <source>Bubble opacity</source>
-        <translation type="unfinished"></translation>
+        <translation>Puhekuplan läpinäkyvyys</translation>
     </message>
     <message>
         <source>Keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Näppäimistö</translation>
     </message>
     <message>
         <source>Appearance</source>
-        <translation type="unfinished"></translation>
+        <translation>Ulkonäkö</translation>
     </message>
 </context>
 <context>
@@ -296,7 +294,7 @@ Vähimmäispituus on 5 merkkiä.</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished">Poistu</translation>
+        <translation>Poistu</translation>
     </message>
 </context>
 <context>
@@ -351,23 +349,23 @@ Vähimmäispituus on 5 merkkiä.</translation>
     <name>DaemonSettingsPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Tallenna</translation>
+        <translation>Tallenna</translation>
     </message>
     <message>
         <source>Keep running</source>
-        <translation type="unfinished"></translation>
+        <translation>Pidä käynnissä taustalla</translation>
     </message>
     <message>
         <source>SailorGram keeps running in background even when closed</source>
-        <translation type="unfinished"></translation>
+        <translation>SailorGram toimii taustalla sovelluksen sulkemisen jälkeenkin</translation>
     </message>
     <message>
         <source>Autostart</source>
-        <translation type="unfinished"></translation>
+        <translation>Automaattinen käynnistyminen</translation>
     </message>
     <message>
         <source>SailorGram starts automatically</source>
-        <translation type="unfinished"></translation>
+        <translation>SailorGram käynnistyy automaattisesi käynnistettyäsi laitteen</translation>
     </message>
 </context>
 <context>
@@ -495,7 +493,9 @@ Vähimmäispituus on 5 merkkiä.</translation>
         <source>No Chats
 
 Do a swype to the right to select a contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei keskusteluja
+
+Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     </message>
 </context>
 <context>
@@ -688,7 +688,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished">Poistu</translation>
+        <translation>Poistu</translation>
     </message>
 </context>
 <context>
@@ -743,122 +743,115 @@ Do a swype to the right to select a contact</source>
     <name>SelectorFilesPage</name>
     <message>
         <source>Android storage</source>
-        <translation type="unfinished"></translation>
+        <translation>Android varasto</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished">SD -muistikortti</translation>
+        <translation>SD -muistikortti</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished">Puhelimen muisti</translation>
+        <translation>Kotikansio</translation>
     </message>
     <message>
         <source>Selecting file</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitaan tiedosto</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Takaisin</translation>
     </message>
 </context>
 <context>
     <name>SelectorImagesPage</name>
     <message>
         <source>Selecting image</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitaan kuva</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Takaisin</translation>
     </message>
 </context>
 <context>
     <name>SelectorLocationPage</name>
     <message>
         <source>Waiting for coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Odotetaan koordinaatteja...</translation>
     </message>
     <message>
         <source>Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinaatit</translation>
     </message>
     <message>
         <source>lat: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>long: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>SelectorMainPage</name>
     <message>
         <source>Send file</source>
-        <translation type="unfinished"></translation>
+        <translation>Lähetä tiedosto</translation>
     </message>
     <message>
         <source>Image from gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuva otettu galleriasta</translation>
     </message>
     <message>
         <source>Capture photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Ota kuva</translation>
     </message>
     <message>
         <source>Record sound</source>
-        <translation type="unfinished"></translation>
+        <translation>Äänitä</translation>
     </message>
     <message>
         <source>My location</source>
-        <translation type="unfinished"></translation>
+        <translation>Sijaintini</translation>
     </message>
     <message>
         <source>Sticker</source>
-        <translation type="unfinished"></translation>
+        <translation>Tarra</translation>
     </message>
     <message>
         <source>Browse files</source>
-        <translation type="unfinished"></translation>
+        <translation>Selaa tiedostoja</translation>
     </message>
 </context>
 <context>
     <name>SelectorSoundRecordPage</name>
     <message>
         <source>%1 sec</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 sekuntia</translation>
     </message>
     <message>
         <source>~%1 B</source>
-        <translation type="unfinished"></translation>
+        <translation>~%1 B</translation>
     </message>
     <message>
         <source>~%1 KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>~%1 KiB</translation>
     </message>
     <message>
         <source>~%1 MiB</source>
-        <translation type="unfinished"></translation>
+        <translation>~%1 MiB</translation>
     </message>
     <message>
         <source>~%1 GiB</source>
-        <translation type="unfinished"></translation>
+        <translation>~%1 GiB</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Aloita</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SelectorStickerPage</name>
-    <message>
-        <source>Sending sticker</source>
-        <translation type="unfinished"></translation>
+        <translation>Pysäytä</translation>
     </message>
 </context>
 <context>
@@ -877,7 +870,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Daemon</source>
-        <translation type="unfinished"></translation>
+        <translation>Taustaprosessi</translation>
     </message>
 </context>
 <context>
@@ -908,7 +901,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished">Poistu</translation>
+        <translation>Poistu</translation>
     </message>
 </context>
 <context>
