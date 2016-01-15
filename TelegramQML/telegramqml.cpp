@@ -752,17 +752,17 @@ void TelegramQml::setLogLevel(int level)
     switch(level)
     {
     case LogLevelClean:
-        qputenv("QT_LOGGING_RULES", "tg.*=false");
+        QLoggingCategory::setFilterRules("tg.*=false");
         break;
 
     case LogLevelUseful:
-        qputenv("QT_LOGGING_RULES", "tg.core.settings=false\n"
-                                    "tg.core.outboundpkt=false\n"
-                                    "tg.core.inboundpkt=false");
+        QLoggingCategory::setFilterRules("tg.core.settings=false\n"
+                                         "tg.core.outboundpkt=false\n"
+                                         "tg.core.inboundpkt=false");
         break;
 
     case LogLevelFull:
-        qputenv("QT_LOGGING_RULES", "");
+        QLoggingCategory::setFilterRules(QString());
         break;
     }
 }
