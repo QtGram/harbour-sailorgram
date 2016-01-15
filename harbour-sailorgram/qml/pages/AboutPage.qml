@@ -94,7 +94,7 @@ Page
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 font.pixelSize: Theme.fontSizeExtraSmall
-                text: qsTr("Version") + " " + context.version
+                text: qsTr("Version") + " " + context.versionString()
             }
 
             Item
