@@ -65,6 +65,7 @@ public:
 
 public Q_SLOTS:
     void refreshDatabase();
+    void recheck();
 
 Q_SIGNALS:
     void telegramChanged();
@@ -73,7 +74,6 @@ Q_SIGNALS:
     void stopUpdatingChanged();
 
 private Q_SLOTS:
-    void recheck();
     void dialogsChanged(bool cachedData);
     void dialogsChanged_priv();
     void userDataChanged();
