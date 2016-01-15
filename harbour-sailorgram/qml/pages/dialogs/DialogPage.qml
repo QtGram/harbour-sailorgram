@@ -32,11 +32,13 @@ Page
             return;
 
         pageStack.pushAttached(Qt.resolvedUrl("DialogInfoPage.qml"), { "context": dialogpage.context, "dialog": dialogpage.dialog, "chat": dialogpage.chat, "user": dialogpage.user });
-        context.sailorgram.foregroundDialog = dialogpage.dialog;
 
         messagesmodel.telegram = dialogpage.context.telegram;
         messagesmodel.dialog = dialogpage.dialog;
         messagesmodel.setReaded();
+
+        context.sailorgram.foregroundDialog = dialogpage.dialog;
+        context.sailorgram.closeNotification(dialog);
     }
 
     RemorsePopup { id: remorsepopup }

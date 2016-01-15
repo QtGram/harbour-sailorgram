@@ -264,6 +264,22 @@ void SailorGram::notify(const QString &summary, const QString &body, const QStri
         notification->deleteLater();
 }
 
+void SailorGram::closeNotification(DialogObject *dialog)
+{
+    if(!dialog)
+        return;
+
+    qint32 peerid = (dialog->peer()->classType() == Peer::typePeerChat) ? dialog->peer()->chatId() : dialog->peer()->userId();
+
+    if(!this->_notifications.contains(peerid))
+        return;
+
+    Notification* notification = this->_notifications[peerid];
+    notification->close();
+    notification->deleteLater();
+    this->_notifications.remove(peerid);
+}
+
 void SailorGram::updateLogLevel()
 {
     if(!this->_telegram)
