@@ -199,6 +199,9 @@ ListItem
 
             var w = messagetext.calculatedWidth;
 
+            if(lbluser.visible)
+                w = Math.max(w, lbluser.contentWidth);
+
             if(quotedloader.item)
                 w = Math.max(w, quotedloader.item.calculatedWidth);
 
@@ -206,8 +209,7 @@ ListItem
                 w = Math.max(w, medialoader.item.width);
 
             w += 2 * Theme.paddingMedium;
-
-            return w;
+            return Math.min(w, content.maxw);
         }
 
         Item
@@ -234,7 +236,6 @@ ListItem
             font.pixelSize: Theme.fontSizeSmall
             font.bold: true
             wrapMode: Text.NoWrap
-            elide: Text.ElideRight
 
             horizontalAlignment: {
                 if(message.out)

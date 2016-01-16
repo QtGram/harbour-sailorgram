@@ -91,6 +91,7 @@ public:
     QString tempPath;
     QString configPath;
     QUrl publicKeyFile;
+    AccountPassword accountPassword;
 
     bool globalMute;
     bool online;
@@ -108,8 +109,10 @@ public:
     bool phoneInvited;
     bool phoneChecked;
 
+    QString authSignInCode;
     QString authSignUpError;
     QString authSignInError;
+    int authCheckPhoneRetry;
     QString error;
 
     bool loggingOut;
@@ -217,6 +220,7 @@ TelegramQml::TelegramQml(QObject *parent) :
     p->autoRewakeInterval = 0;
     p->encrypter = 0;
     p->totalUploadedPercent = 0;
+    p->authCheckPhoneRetry = 0;
     p->online = false;
     p->globalMute = true;
     p->invisible = false;
@@ -752,17 +756,17 @@ void TelegramQml::setLogLevel(int level)
     switch(level)
     {
     case LogLevelClean:
-        qputenv("QT_LOGGING_RULES", "tg.*=false");
+        QLoggingCategory::setFilterRules("tg.*=false");
         break;
 
     case LogLevelUseful:
-        qputenv("QT_LOGGING_RULES", "tg.core.settings=false\n"
-                                    "tg.core.outboundpkt=false\n"
-                                    "tg.core.inboundpkt=false");
+        QLoggingCategory::setFilterRules("tg.core.settings=false\n"
+                                         "tg.core.outboundpkt=false\n"
+                                         "tg.core.inboundpkt=false");
         break;
 
     case LogLevelFull:
-        qputenv("QT_LOGGING_RULES", "");
+        QLoggingCategory::setFilterRules(QString());
         break;
     }
 }
@@ -1677,12 +1681,16 @@ void TelegramQml::authSendInvites(const QStringList &phoneNumbers, const QString
     p->telegram->authSendInvites(phoneNumbers, inviteText);
 }
 
-void TelegramQml::authSignIn(const QString &code)
+void TelegramQml::authSignIn(const QString &code, bool retry)
 {
     if( !p->telegram )
         return;
 
-    p->telegram->authSignIn(code);
+    if(!retry)
+        p->authCheckPhoneRetry = 0;
+
+    p->authSignInCode = code;
+    p->telegram->authSignIn(p->authSignInCode);
 
     p->authNeeded = false;
     p->authSignUpError.clear();
@@ -1705,6 +1713,15 @@ void TelegramQml::authSignUp(const QString &code, const QString &firstName, cons
     Q_EMIT authSignInErrorChanged();
     Q_EMIT authSignUpErrorChanged();
     Q_EMIT authNeededChanged();
+}
+
+void TelegramQml::authCheckPassword(const QString &pass)
+{
+    if( !p->telegram )
+        return;
+
+    QByteArray salt = p->accountPassword.currentSalt();
+    p->telegram->authCheckPassword(salt+pass.toUtf8()+salt);
 }
 
 void TelegramQml::accountUpdateProfile(const QString &firstName, const QString &lastName)
@@ -2785,8 +2802,10 @@ void TelegramQml::try_init()
     connect( p->telegram, SIGNAL(authLoggedIn())                        , SLOT(authLoggedIn_slt())                         );
     connect( p->telegram, SIGNAL(authLogOutAnswer(qint64,bool))         , SLOT(authLogOut_slt(qint64,bool))                );
     connect( p->telegram, SIGNAL(authCheckPhoneAnswer(qint64,bool))     , SLOT(authCheckPhone_slt(qint64,bool))            );
+    connect( p->telegram, SIGNAL(authCheckedPhoneError(qint64))         , SLOT(authCheckedPhoneError_slt(qint64))          );
     connect( p->telegram, SIGNAL(authSendCallAnswer(qint64,bool))       , SLOT(authSendCall_slt(qint64,bool))              );
     connect( p->telegram, SIGNAL(authSendCodeAnswer(qint64,bool,qint32)), SLOT(authSendCode_slt(qint64,bool,qint32))       );
+    connect( p->telegram, SIGNAL(authSendCodeError(qint64))             , SLOT(authSendCodeError_slt(qint64))              );
     connect( p->telegram, SIGNAL(authSendInvitesAnswer(qint64,bool))    , SLOT(authSendInvites_slt(qint64,bool))           );
     connect( p->telegram, SIGNAL(authSignInError(qint64,qint32,QString)), SLOT(authSignInError_slt(qint64,qint32,QString)) );
     connect( p->telegram, SIGNAL(authSignUpError(qint64,qint32,QString)), SLOT(authSignUpError_slt(qint64,qint32,QString)) );
@@ -2940,6 +2959,8 @@ void TelegramQml::try_init()
     connect( p->telegram, SIGNAL(helpGetInviteTextAnswer(qint64,QString)),
              SIGNAL(helpGetInviteTextAnswer(qint64,QString)) );
 
+    connect( p->telegram, SIGNAL(fatalError()), SLOT(fatalError_slt()), Qt::QueuedConnection);
+
     Q_EMIT telegramChanged();
 
     p->telegram->init();
@@ -2965,6 +2986,8 @@ void TelegramQml::authLoggedIn_slt()
     p->authNeeded = false;
     p->authLoggedIn = true;
     p->phoneChecked = true;
+    p->checkphone_req_id = 0;
+    p->authSignInCode.clear();
 
     Q_EMIT authNeededChanged();
     Q_EMIT authLoggedInChanged();
@@ -3003,6 +3026,12 @@ void TelegramQml::authSendCode_slt(qint64 id, bool phoneRegistered, qint32 sendC
     Q_EMIT authCodeRequested(phoneRegistered, sendCallTimeout );
 }
 
+void TelegramQml::authSendCodeError_slt(qint64 id)
+{
+    Q_UNUSED(id)
+    p->telegram->authSendCode();
+}
+
 void TelegramQml::authSendCall_slt(qint64 id, bool ok)
 {
     Q_UNUSED(id)
@@ -3025,7 +3054,9 @@ void TelegramQml::authCheckPassword_slt(qint64 id, qint32 expires, const User &u
 
 void TelegramQml::authCheckPhone_slt(qint64 id, bool phoneRegistered)
 {
+    p->checkphone_req_id = 0;
     QString phone = p->phoneCheckIds.take(id);
+
     if (phone.isEmpty()) {
         p->phoneRegistered = phoneRegistered;
         p->phoneInvited = false;
@@ -3035,11 +3066,26 @@ void TelegramQml::authCheckPhone_slt(qint64 id, bool phoneRegistered)
         Q_EMIT authPhoneInvitedChanged();
         Q_EMIT authPhoneCheckedChanged();
 
-        if( p->telegram )
-            p->telegram->authSendCode();
+//        p->telegram->accountGetPassword();
+        if(p->authSignInCode.isEmpty() || p->authCheckPhoneRetry>=3)
+        {
+            authSendCode();
+        }
+        else
+        {
+            qDebug() << __FUNCTION__ << "retrying..." << p->authCheckPhoneRetry;
+            authSignIn(p->authSignInCode, true);
+            p->authCheckPhoneRetry++;
+        }
     } else {
         Q_EMIT phoneChecked(phone, phoneRegistered);
     }
+}
+
+void TelegramQml::authCheckedPhoneError_slt(qint64 msgId)
+{
+    Q_UNUSED(msgId)
+    p->checkphone_req_id = p->telegram->authCheckPhone();
 }
 
 void TelegramQml::reconnect()
@@ -3053,7 +3099,14 @@ void TelegramQml::reconnect()
 void TelegramQml::accountGetPassword_slt(qint64 id, const AccountPassword &password)
 {
     Q_UNUSED(id)
-    Q_UNUSED(password)
+    p->accountPassword = password;
+    if(password.classType() == AccountPassword::typeAccountPassword)
+    {
+        Q_EMIT authPasswordNeeded();
+    }
+    else
+        authSendCode();
+
 }
 
 void TelegramQml::accountRegisterDevice_slt(qint64 id, bool result)
@@ -3079,16 +3132,29 @@ void TelegramQml::accountUnregisterDevice_slt(qint64 id, bool result)
 void TelegramQml::authSignInError_slt(qint64 id, qint32 errorCode, QString errorText)
 {
     Q_UNUSED(id)
-    Q_UNUSED(errorCode)
-
-    p->authSignUpError = "";
-    p->authSignInError = errorText;
-    p->authNeeded = true;
-    Q_EMIT authNeededChanged();
-    Q_EMIT authSignInErrorChanged();
-    Q_EMIT authSignUpErrorChanged();
 
     qDebug() << __FUNCTION__ << errorText;
+    if(errorCode == -1)
+    {
+        qDebug() << __FUNCTION__ << "Sign in retrying...";
+        p->telegram->authSignIn(p->authSignInCode);
+    }
+    else
+    {
+        p->authSignUpError = "";
+        p->authSignInError = errorText;
+        p->authNeeded = true;
+        Q_EMIT authNeededChanged();
+        if(errorCode == 401 || errorText == "SESSION_PASSWORD_NEEDED")
+        {
+            Q_EMIT authPasswordNeeded();
+        }
+        else
+        {
+            Q_EMIT authSignInErrorChanged();
+            Q_EMIT authSignUpErrorChanged();
+        }
+    }
 }
 
 void TelegramQml::authSignUpError_slt(qint64 id, qint32 errorCode, QString errorText)
@@ -3464,6 +3530,9 @@ void TelegramQml::messagesGetDialogs_slt(qint64 id, qint32 sliceCount, const QLi
     if(p->database) {
         Q_FOREACH(qint64 dId, removedDialogs)
         {
+            if(p->dialogs[dId]->encrypted())
+                continue;
+
             p->database->deleteDialog(dId);
             insertToGarbeges(p->dialogs.value(dId));
         }
@@ -4222,6 +4291,11 @@ void TelegramQml::uploadCancelFile_slt(qint64 fileId, bool cancelled)
         locObj->download()->file()->close();
         locObj->download()->file()->remove();
     }
+}
+
+void TelegramQml::fatalError_slt()
+{
+    try_init();
 }
 
 void TelegramQml::incomingAsemanMessage(const Message &msg, const Dialog &dialog)

@@ -63,7 +63,7 @@ Page
             if(context.sailorgram.daemonized)
                 return;
 
-            dialogsmodel.refreshDatabase();
+            dialogsmodel.recheck();
         }
 
         onOpenDialogRequested: {

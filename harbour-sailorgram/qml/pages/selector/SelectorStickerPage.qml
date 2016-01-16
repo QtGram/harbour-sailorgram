@@ -2,166 +2,98 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import QtLocation 5.0
 import QtPositioning 5.0
+import harbour.sailorgram.TelegramQml 1.0
+import harbour.sailorgram.SailorGram 1.0
+import "../../models"
+import "../../items/sticker"
 
-Dialog
+Page
 {
-    property int selectedStickerId : -1
+    property Context context
 
     signal actionCompleted(string action, var data)
 
     id: selectorstickerpage
     allowedOrientations: defaultAllowedOrientations
-    canAccept:(selectedStickerId >= 0)
 
-    onAccepted: {
-        // TODO : @Dax89 send 'stickerId' to conversation
-    }
+    RemorsePopup { id: remorsepopup }
 
-    function getImagePathForSticker(stickerId) {
-        // TODO : @Dax89 : handle using TelegramQML API to retrieve the file path for the sticker
-        return dumbStickersModel.dumbImages [stickerId % dumbStickersModel.dumbImages.length]
-    }
-
-    function getImagePathForStickersPack(stickersSetName) {
-        // TODO : @Dax89 : handle using TelegramQML API to retrieve the file path for the sticker pack
-        return "image://theme/icon-m-other"
-    }
-
-    function getFullNameForStickersPack(stickersSetName) {
-        // TODO : @Dax89 : handle using TelegramQML API to retrieve the full name for the sticker pack
-        return "Full Name of the pack"
-    }
-
-    property QtObject stickersmodel : dumbStickersModel;  //  TODO : @Dax89 : this is for demo, bind the real StickersModel here
-
-    ListModel
+    StickersModel
     {
-        id: dumbStickersModel
-        onCurrentStickerSetChanged: { refresh(); }
-        Component.onCompleted: { refresh(); }
-
-        property string currentStickerSet : "minds"
-
-        readonly property var installedStickerSets : ["minds", "memes", "minions"]
-
-        readonly property var dumbImages : [
-            "image://theme/icon-m-car",
-            "image://theme/icon-m-day",
-            "image://theme/icon-m-edit",
-            "image://theme/icon-m-home",
-            "image://theme/icon-m-jolla",
-            "image://theme/icon-m-night",
-            "image://theme/icon-m-presence",
-            "image://theme/icon-m-sailfish",
-            "image://theme/icon-m-traffic",
-            "image://theme/icon-m-train",
-            "image://theme/icon-m-toy",
-            "image://theme/icon-m-wizard",
-        ]
-
-        function refresh() {
-            clear()
-            for(var idx = 0; idx < 50; idx++) {
-                append({
-                            "stickerId"      : idx,
-                            "document"       : 0,
-                            "emoticon"       : ":-)",
-                            "stickerSetName" : currentStickerSet,
-                            "stickerSetId"   : installedStickerSets.indexOf(currentStickerSet),
-                        })
-            }
-        }
+        id: stickersmodel
+        telegram: context.telegram
     }
 
-    DialogHeader
+    PageHeader
     {
         id: header
-        title: getFullNameForStickersPack(stickersmodel.currentStickerSet)
+
+        title: {
+            var stickerset = stickersmodel.stickerSetItem(stickersmodel.currentStickerSet);
+
+            if(stickerset)
+                return stickerset.title;
+
+            return "";
+        }
     }
 
     SilicaFlickable
     {
         id: view
         clip: true
-        contentHeight:(stickergrid.height + stickergrid.anchors.margins * 2)
-        anchors { top: header.bottom; left: parent.left; right: parent.right; bottom: layouttabs.top }
+        contentHeight: (stickergrid.height + stickergrid.anchors.margins * 2)
+        anchors { top: header.bottom; left: parent.left; right: parent.right; bottom: lvstickersets.top }
 
-        ScrollDecorator { flickable: view }
-
-        Grid
+        SilicaGridView
         {
-            readonly property real itemSize :(((width + spacing) / columns) - spacing)
+            readonly property int columns: (selectorstickerpage.isPortrait ? 5 : 9)
+            readonly property int spacing: Theme.paddingSmall
+            readonly property real itemSize : (((width + spacing) / columns) - spacing)
+
+            VerticalScrollDecorator { flickable: stickergrid }
+            HorizontalScrollDecorator { flickable: stickergrid }
 
             id: stickergrid
-            columns:(selectorstickerpage.isPortrait ? 5 : 9)
-            spacing: Theme.paddingSmall
             anchors { top: parent.top; left: parent.left; right: parent.right; margins: Theme.paddingSmall }
+            cellWidth: itemSize
+            cellHeight: itemSize
+            model: stickersmodel
 
-            Repeater
-            {
-                model: stickersmodel
+            delegate: StickerItem {
+                width: stickergrid.itemSize - stickergrid.spacing
+                height: stickergrid.itemSize - stickergrid.spacing
+                context: selectorstickerpage.context
+                stickerDocument: document
 
-                delegate: MouseArea {
-                    z: (selectedStickerId === model.stickerId ? 999999 : model.index)
-                    scale: (selectedStickerId === model.stickerId ? 1.35 : 1.0)
-                    width: stickergrid.itemSize
-                    height: stickergrid.itemSize
-                    onClicked: { selectedStickerId =(selectedStickerId !== model.stickerId ? model.stickerId : -1); }
-
-                    Rectangle {
-                        color: Theme.highlightColor
-                        opacity: 0.85
-                        visible:(selectedStickerId === model.stickerId)
-                        anchors.fill: parent
-                    }
-                    Image {
-                        source: getImagePathForSticker(model.stickerId)
-                        fillMode: Image.PreserveAspectFit
-                        verticalAlignment: Image.AlignVCenter
-                        horizontalAlignment: Image.AlignHCenter
-                        anchors {
-                            fill: parent
-                            margins:(Theme.paddingSmall / 2)
-                        }
-                    }
+                onClicked: {
+                    remorsepopup.execute(qsTr("Sending sticker"), function() {
+                        actionCompleted("sticker", stickerId);
+                    });
                 }
             }
         }
     }
 
-    Grid
+    SilicaListView
     {
-        readonly property real itemSize :(((width + spacing) / columns) - spacing)
+        id: lvstickersets
+        anchors { left: parent.left; right: parent.right; bottom: parent.bottom }
+        orientation: ListView.Horizontal
+        height: Theme.itemSizeMedium + Theme.paddingSmall
+        model: stickersmodel.stickerSets
+        currentIndex: -1
 
-        id: layouttabs
-        columns: stickergrid.columns
-        spacing: 1
-        anchors { left: parent.left; right: parent.right; bottom: parent.bottom; margins: 1 }
+        delegate: StickerSetImage {
+            width: Theme.itemSizeMedium
+            height: parent.height
+            context: selectorstickerpage.context
+            stickersModel: stickersmodel
+            stickerSetId: modelData
+            isSelected: (lvstickersets.currentIndex === index)
 
-        Repeater
-        {
-            model: stickersmodel.installedStickerSets
-
-            delegate: MouseArea {
-                width: layouttabs.itemSize
-                height: layouttabs.itemSize
-                onClicked: { stickersmodel.currentStickerSet = modelData; }
-
-                Rectangle
-                {
-                    color:(stickersmodel.currentStickerSet === modelData ? Theme.highlightColor : Theme.secondaryColor)
-                    opacity: 0.35
-                    anchors.fill: parent
-                }
-
-                Image
-                {
-                    source: getImagePathForStickersPack(modelData)
-                    fillMode: Image.PreserveAspectFit
-                    verticalAlignment: Image.AlignVCenter
-                    horizontalAlignment: Image.AlignHCenter
-                    anchors { fill: parent; margins: (Theme.paddingSmall / 2) }
-                }
+            onClicked: {
+                stickersmodel.currentStickerSet = modelData;
             }
         }
     }

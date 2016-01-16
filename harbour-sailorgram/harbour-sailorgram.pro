@@ -219,4 +219,6 @@ DISTFILES += \
     qml/pages/selector/SelectorPhotoCapturePage.qml \
     qml/pages/selector/SelectorSoundRecordPage.qml \
     qml/pages/selector/SelectorStickerPage.qml \
-    qml/items/message/messageitem/media/MessageSticker.qml
+    qml/items/message/messageitem/media/MessageSticker.qml \
+    qml/items/sticker/StickerSetImage.qml \
+    qml/items/sticker/StickerItem.qml

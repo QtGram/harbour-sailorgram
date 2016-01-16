@@ -1,3 +1,17 @@
+telegramqml (0.9.1-3aseman-wily) wily; urgency=medium
+
+  * Add error handler
+  * Many other improvements and bugfixes
+
+ -- Aseman Team <contact@aseman.co>  Tue, 12 Jan 2016 12:00:00 +0330
+ 
+telegramqml (0.9.1-3aseman-trusty) trusty; urgency=medium
+
+  * Add error handler
+  * Many other improvements and bugfixes
+
+ -- Aseman Team <contact@aseman.co>  Tue, 12 Jan 2016 12:00:00 +0330
+ 
 telegramqml (0.9.0-3aseman-vivid) vivid; urgency=medium
 
   * API 29 support

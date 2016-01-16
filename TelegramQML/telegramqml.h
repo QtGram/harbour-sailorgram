@@ -311,8 +311,9 @@ public Q_SLOTS:
     void authSendCall();
     void authSendCode();
     void authSendInvites(const QStringList &phoneNumbers, const QString &inviteText);
-    void authSignIn(const QString &code);
+    void authSignIn(const QString &code, bool retry = false);
     void authSignUp(const QString &code, const QString &firstName, const QString &lastName);
+    void authCheckPassword(const QString &pass);
 
     void accountRegisterDevice(const QString &token, const QString &appVersion = QString::null);
     void accountUnregisterDevice(const QString &token);
@@ -428,6 +429,7 @@ Q_SIGNALS:
     void authPhoneRegisteredChanged();
     void authPhoneInvitedChanged();
     void authPhoneCheckedChanged();
+    void authPasswordNeeded();
     void phoneChecked(QString phone, bool phoneRegistered);
     void authPasswordProtectedError();
     void connectedChanged();
@@ -477,10 +479,12 @@ private Q_SLOTS:
     void authLoggedIn_slt();
     void authLogOut_slt(qint64 id, bool ok);
     void authSendCode_slt(qint64 id, bool phoneRegistered, qint32 sendCallTimeout);
+    void authSendCodeError_slt(qint64 id);
     void authSendCall_slt(qint64 id, bool ok);
     void authSendInvites_slt(qint64 id, bool ok);
     void authCheckPassword_slt(qint64 msgId, qint32 expires, const User &user);
     void authCheckPhone_slt(qint64 id, bool phoneRegistered);
+    void authCheckedPhoneError_slt(qint64 msgId);
     void authSignInError_slt(qint64 id, qint32 errorCode, QString errorText);
     void authSignUpError_slt(qint64 id, qint32 errorCode, QString errorText);
     void error_slt(qint64 id, qint32 errorCode, QString errorText, QString functionName);
@@ -561,6 +565,8 @@ private Q_SLOTS:
     void uploadGetFile_slt(qint64 id, const StorageFileType & type, qint32 mtime, const QByteArray & bytes, qint32 partId, qint32 downloaded, qint32 total);
     void uploadSendFile_slt(qint64 fileId, qint32 partId, qint32 uploaded, qint32 totalSize);
     void uploadCancelFile_slt(qint64 fileId, bool cancelled);
+
+    void fatalError_slt();
 
     void incomingAsemanMessage(const Message &msg, const Dialog &dialog);
 

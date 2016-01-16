@@ -10,6 +10,7 @@ import "../../items/secretdialog"
 import "../../items/message"
 import "../../items/message/messageitem"
 import "../../js/TelegramConstants.js" as TelegramConstants
+import "../../js/TelegramHelper.js" as TelegramHelper
 
 Page
 {
@@ -26,11 +27,13 @@ Page
             return;
 
         pageStack.pushAttached(Qt.resolvedUrl("../dialogs/DialogInfoPage.qml"), { "context": secretdialogpage.context, "dialog": secretdialogpage.dialog, "user": secretdialogpage.user });
-        context.sailorgram.foregroundDialog = secretdialogpage.dialog;
 
         messagesmodel.telegram = secretdialogpage.context.telegram;
         messagesmodel.dialog = secretdialogpage.dialog;
         messagesmodel.setReaded();
+
+        context.sailorgram.foregroundDialog = secretdialogpage.dialog;
+        context.sailorgram.closeNotification(dialog);
     }
 
     RemorsePopup { id: remorsepopup }
@@ -95,7 +98,7 @@ Page
                 id: messagesmodel
 
                 onCountChanged: {
-                    if(!count || (dialogpage.status !== PageStatus.Active))
+                    if(!count || (secretdialogpage.status !== PageStatus.Active))
                         return;
 
                     messagesmodel.setReaded(); /* We are in this chat, always mark these messages as read */

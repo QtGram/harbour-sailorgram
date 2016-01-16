@@ -66,6 +66,7 @@ class SailorGram : public QObject
         void moveMediaToDownloads(MessageMediaObject* messagemediaobject);
         void moveMediaToGallery(MessageMediaObject* messagemediaobject);
         void notify(MessageObject* message, const QString& name, const QString &elaboratedbody);
+        void closeNotification(DialogObject* dialog);
         QString fileName(const QString& filepath);
         FileLocationObject *mediaLocation(MessageMediaObject* messagemediaobject);
 
@@ -80,6 +81,7 @@ class SailorGram : public QObject
         void onNotificationClosed(uint);
         void onWakeUpRequested();
         void startHeartBeat();
+        void updateLogLevel();
         void wakeSleep();
 
     signals:
