@@ -1,1015 +1,1015 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="sv" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="uk_UA" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
         <source>Danish</source>
-        <translation>Danska</translation>
+        <translation>Датська</translation>
     </message>
     <message>
         <source>Dutch</source>
-        <translation>Nederländska</translation>
+        <translation>Голландська</translation>
     </message>
     <message>
         <source>Finnish</source>
-        <translation>Finska</translation>
+        <translation>Фінська</translation>
     </message>
     <message>
         <source>German</source>
-        <translation>Tyska</translation>
+        <translation>Німецька</translation>
     </message>
     <message>
         <source>Russian</source>
-        <translation>Ryska</translation>
+        <translation>Російська</translation>
     </message>
     <message>
         <source>Spanish</source>
-        <translation>Spanska</translation>
+        <translation>Іспанська</translation>
     </message>
     <message>
         <source>Czech</source>
-        <translation>Tjeckiska</translation>
+        <translation>Чеська</translation>
     </message>
     <message>
         <source>French</source>
-        <translation>Franska</translation>
+        <translation>Французька</translation>
     </message>
     <message>
         <source>Italian</source>
-        <translation>Italienska</translation>
+        <translation>Італійська</translation>
     </message>
     <message>
         <source>Persian</source>
-        <translation>Persiska</translation>
+        <translation>Іранська</translation>
     </message>
     <message>
         <source>Greek</source>
-        <translation>Grekiska</translation>
+        <translation>Грецька</translation>
     </message>
     <message>
         <source>About SailorGram</source>
-        <translation>Om SailorGram</translation>
+        <translation>Про SailorGram</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation>Version</translation>
+        <translation>Версія</translation>
     </message>
     <message>
         <source>An unofficial Telegram Client for SailfishOS</source>
-        <translation>En inofficiell Telegram-klient för SailfishOS</translation>
+        <translation>Неофіційний клієнт Telegram для SailfishOS</translation>
     </message>
     <message>
         <source>Developer</source>
-        <translation>Utvecklare</translation>
+        <translation>Розробник</translation>
     </message>
     <message>
         <source>Icon Designer</source>
-        <translation>Ikondesigner</translation>
+        <translation>Дизайнер іконок</translation>
     </message>
     <message>
         <source>GitHub Repository</source>
-        <translation>GitHub Repository</translation>
+        <translation>GitHub Репозиторій</translation>
     </message>
     <message>
         <source>Translators</source>
-        <translation>Översättare</translation>
+        <translation>Перекладачі</translation>
     </message>
     <message>
         <source>Translation Platform</source>
-        <translation>Översättningsplattform</translation>
+        <translation>Платформа для перекладу</translation>
     </message>
     <message>
         <source>Swedish</source>
-        <translation>Svenska</translation>
+        <translation>Шведська</translation>
     </message>
     <message>
         <source>Galician</source>
-        <translation>Galiciska</translation>
+        <translation>Галісійська</translation>
     </message>
     <message>
         <source>Belaruian</source>
-        <translation>Vitryska</translation>
+        <translation>Білоруська</translation>
     </message>
     <message>
         <source>Emoji Set</source>
-        <translation>Emoji-set</translation>
+        <translation>Набір Emoji</translation>
     </message>
 </context>
 <context>
     <name>AddContactPage</name>
     <message>
         <source>Add Contact</source>
-        <translation>Lägg till kontakt</translation>
+        <translation>Додати контакт</translation>
     </message>
     <message>
         <source>First Name</source>
-        <translation>Förnamn</translation>
+        <translation>Ім’я</translation>
     </message>
     <message>
         <source>Last Name</source>
-        <translation>Efternamn</translation>
+        <translation>Прізвище</translation>
     </message>
     <message>
         <source>Telephone Number</source>
-        <translation>Telefonnummer</translation>
+        <translation>Номер телефону</translation>
     </message>
 </context>
 <context>
     <name>AddContactsPage</name>
     <message>
         <source>Add Chat Member</source>
-        <translation>Lägg till chattmedlem</translation>
+        <translation>Додати учасника чату</translation>
     </message>
 </context>
 <context>
     <name>AudioRecorder</name>
     <message>
         <source>Error : %1</source>
-        <translation>Fel: %1</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Recording...</source>
-        <translation>Spelar in...</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Stopped.</source>
-        <translation>Stoppad.</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>AuthorizationPage</name>
     <message>
         <source>Sign In</source>
-        <translation>Logga in</translation>
+        <translation>Зайти</translation>
     </message>
     <message>
         <source>Authorization Code</source>
-        <translation>Auktoriseringskod</translation>
+        <translation>Код авторизації</translation>
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation>Du har angett fel auktoriseringskod</translation>
+        <translation>Ви ввели неправильний код авторизації</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign In&apos;</source>
-        <translation>Vänta på det SMS som innehåller aktiveringskoden och tryck &apos;Logga in&apos;</translation>
+        <translation>Зачекайте на СМС з кодом активації і натисніть &quot;Зайти&quot;</translation>
     </message>
     <message>
         <source>Resend Activation Code</source>
-        <translation>Skicka aktiveringskoden igen</translation>
+        <translation>Повторно надіслати код активації</translation>
     </message>
     <message>
         <source>Sending Activation Code</source>
-        <translation>Skickar aktiveringskod</translation>
+        <translation>Надсилається код активації</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation>Avsluta</translation>
+        <translation>Вихід</translation>
     </message>
 </context>
 <context>
     <name>ChangeChatTitle</name>
     <message>
         <source>Change</source>
-        <translation>Ändra</translation>
+        <translation>Змінити</translation>
     </message>
 </context>
 <context>
     <name>ChangeUsernamePage</name>
     <message>
         <source>Change</source>
-        <translation>Ändra</translation>
+        <translation>Змінити</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation>Användarnamn</translation>
+        <translation>Ім’я користувача</translation>
     </message>
     <message>
         <source>You can choose an username on Telegram. If you do, other people may contact you without knowing your phone number.
 
 You can use a-z, 0-9 and underscores.
 Minimum length is 5 characters.</source>
-        <translation>Du kan välja ett användarnamn på Telegram. Om du gör det, kanske andra människor kontaktar dig utan att veta ditt telefonnummer.
+        <translation>Ви можете обрати ім’я користувача в Telegram. В цьому разі Інші люди зможуть зв’язатися з вами не знаючи номер телефону.
 
-Du kan använda a-z, 0-9 och understreck.
-Minimilängd är 5 tecken.</translation>
+Ви можете використовувати символи a-z, 0-9 і символ нижнього підкреслення.
+Мінімальна довжина - 5 символів.</translation>
     </message>
     <message>
         <source>This username is already occupied</source>
-        <translation>Det här användarnamnet är upptaget</translation>
+        <translation>Це ім’я користувача вже зайняте</translation>
     </message>
 </context>
 <context>
     <name>ChatInfo</name>
     <message>
         <source>Members</source>
-        <translation>Medlemar</translation>
+        <translation>Учасники</translation>
     </message>
     <message>
         <source>Leave group</source>
-        <translation>Lämna gruppen</translation>
+        <translation>Покинути групу</translation>
     </message>
     <message>
         <source>Leaving group</source>
-        <translation>Lämnar grupp</translation>
+        <translation>Покидаємо групу</translation>
     </message>
     <message>
         <source>Change title</source>
-        <translation>Ändra titel</translation>
+        <translation>Змінити заголовок</translation>
     </message>
     <message>
         <source>Add member</source>
-        <translation>Lägg till medlem</translation>
+        <translation>Додати учасника</translation>
     </message>
 </context>
 <context>
     <name>ChatInfoMenu</name>
     <message>
         <source>Remove from Group</source>
-        <translation>Ta bort från gruppen</translation>
+        <translation>Видалити групу</translation>
     </message>
     <message>
         <source>Removing from group</source>
-        <translation>Tar bort från grupp</translation>
+        <translation>Видаляємо з групи</translation>
     </message>
 </context>
 <context>
     <name>ChatSettingsPage</name>
     <message>
         <source>Save</source>
-        <translation>Spara</translation>
+        <translation>Зберегти</translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation>Skicka meddelanden med returtangenten</translation>
+        <translation>Посилати повідомлення по натиску клавіші &quot;Return&quot;</translation>
     </message>
     <message>
         <source>Background enabled</source>
-        <translation>Bakgrund aktiverad</translation>
+        <translation>Показувати тло</translation>
     </message>
     <message>
         <source>Chat header visible</source>
-        <translation>Chatthuvud synligt</translation>
+        <translation>Видимість заголовка чату</translation>
     </message>
     <message>
         <source>Bubbles visible</source>
-        <translation>Bubblor synliga</translation>
+        <translation>Видимість бульбашок повідомлень</translation>
     </message>
     <message>
         <source>Bubble opacity</source>
-        <translation>Bubbelopacitet</translation>
+        <translation>Прозорість бульбашок повідомлень</translation>
     </message>
     <message>
         <source>Keyboard</source>
-        <translation>Tangentbord</translation>
+        <translation>Клавіатура</translation>
     </message>
     <message>
         <source>Appearance</source>
-        <translation>Utseende</translation>
+        <translation>Зовнішній вигляд</translation>
     </message>
 </context>
 <context>
     <name>ConnectingLabel</name>
     <message>
         <source>Connecting...</source>
-        <translation>Ansluter...</translation>
+        <translation>З’єднуємося...</translation>
     </message>
 </context>
 <context>
     <name>ConnectionPage</name>
     <message>
         <source>Connecting</source>
-        <translation>Ansluter</translation>
+        <translation>З’єднуємося</translation>
     </message>
     <message>
         <source>Login Again</source>
-        <translation>Logga in igen</translation>
+        <translation>Залогуватися знову</translation>
     </message>
     <message>
         <source>Telegram Status</source>
-        <translation>Telegram-status</translation>
+        <translation>Статус Telegram</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation>Fellogg</translation>
+        <translation>Лог помилок</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation>Avsluta</translation>
+        <translation>Вийти</translation>
     </message>
 </context>
 <context>
     <name>ContactsPage</name>
     <message>
         <source>Add Contact</source>
-        <translation>Lägg till kontakt</translation>
+        <translation>Додати контакт</translation>
     </message>
     <message>
         <source>Contacts</source>
-        <translation>Kontakter</translation>
+        <translation>Контакти</translation>
     </message>
 </context>
 <context>
     <name>CoverPage</name>
     <message>
         <source>Connected</source>
-        <translation>Ansluten</translation>
+        <translation>З’єднано</translation>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation>Bortkopplad</translation>
+        <translation>Роз’єднано</translation>
     </message>
     <message>
         <source>%1 unread messages</source>
-        <translation>%1 olästa meddelanden</translation>
+        <translation>%1 непрочитані повідомлення</translation>
     </message>
     <message>
         <source>%1 unread message</source>
-        <translation>%1 oläst meddelande</translation>
+        <translation>%1 непрочитані повідомлення</translation>
     </message>
 </context>
 <context>
     <name>CreateChatPage</name>
     <message>
         <source>Group Name</source>
-        <translation>Gruppnamn</translation>
+        <translation>Назва групи</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation>Ny grupp</translation>
+        <translation>Нова група</translation>
     </message>
 </context>
 <context>
     <name>CreateSecretDialogPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation>Ny hemlig chatt</translation>
+        <translation>Новий секретний чат</translation>
     </message>
 </context>
 <context>
     <name>DaemonSettingsPage</name>
     <message>
         <source>Save</source>
-        <translation>Spara</translation>
+        <translation>Зберегти</translation>
     </message>
     <message>
         <source>Keep running</source>
-        <translation>Kör i bakgrunden</translation>
+        <translation>Залишати увімкненим</translation>
     </message>
     <message>
         <source>SailorGram keeps running in background even when closed</source>
-        <translation>SailorGram fortsätter köra i bakgrunden även när den stängs</translation>
+        <translation>Програма SailorGram залишається увімкненою навіть коли буде закрита</translation>
     </message>
     <message>
         <source>Autostart</source>
-        <translation>Autostart</translation>
+        <translation>Автостарт</translation>
     </message>
     <message>
         <source>SailorGram starts automatically</source>
-        <translation>SailorGram startar automatiskt</translation>
+        <translation>Програма SailorGram запускається автоматично</translation>
     </message>
 </context>
 <context>
     <name>DebugSettingsPage</name>
     <message>
         <source>Debug</source>
-        <translation>Felsök</translation>
+        <translation>Відлагодження</translation>
     </message>
     <message>
         <source>Refresh</source>
-        <translation>Uppdatera</translation>
+        <translation>Оновити</translation>
     </message>
     <message>
         <source>Contacts:</source>
-        <translation>Kontakter:</translation>
+        <translation>Контакти</translation>
     </message>
     <message>
         <source>Heartbeat:</source>
-        <translation>Status:</translation>
+        <translation>Heartbeat:</translation>
     </message>
     <message>
         <source>Connected</source>
-        <translation>Ansluten</translation>
+        <translation>З’єднано</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation>Fellogg</translation>
+        <translation>Лог помилок</translation>
     </message>
     <message>
         <source>Not Connected</source>
-        <translation>Ej ansluten</translation>
+        <translation>Не з’єднано</translation>
     </message>
 </context>
 <context>
     <name>DialogInfoPage</name>
     <message>
         <source>Delete secret chat</source>
-        <translation>Ta bort hemlig chatt</translation>
+        <translation>Видалити секретний чат</translation>
     </message>
     <message>
         <source>Delete group</source>
-        <translation>Ta bort grupp</translation>
+        <translation>Видалити групу</translation>
     </message>
     <message>
         <source>Delete conversation</source>
-        <translation>Ta bort konversation</translation>
+        <translation>Видалити бесіду</translation>
     </message>
     <message>
         <source>Deleting secret chat</source>
-        <translation>Tar bort hemlig chatt</translation>
+        <translation>Видаляємо секретний чат</translation>
     </message>
     <message>
         <source>Deleting group</source>
-        <translation>Tar bort grupp</translation>
+        <translation>Видаляємо групу</translation>
     </message>
     <message>
         <source>Deleting conversation</source>
-        <translation>Tar bort konversation</translation>
+        <translation>Видаляємо бесіду</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation>Åtgärder</translation>
+        <translation>Дії</translation>
     </message>
     <message>
         <source>Enable notifications</source>
-        <translation>Aktivera aviseringar</translation>
+        <translation>Увімкнути сповіщення</translation>
     </message>
     <message>
         <source>Disable notifications</source>
-        <translation>Inaktivera aviseringar</translation>
+        <translation>Вимкнути сповіщення</translation>
     </message>
     <message>
         <source>Add to contacts</source>
-        <translation>Lägg till i kontakter</translation>
+        <translation>Додати до контактів</translation>
     </message>
 </context>
 <context>
     <name>DialogItem</name>
     <message>
         <source>You:</source>
-        <translation>Du:</translation>
+        <translation>Ви:</translation>
     </message>
 </context>
 <context>
     <name>DialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation>Läs in fler meddelanden</translation>
+        <translation>Завантажити ще повідомлень</translation>
     </message>
 </context>
 <context>
     <name>DialogTextInput</name>
     <message>
         <source>Message...</source>
-        <translation>Meddelande...</translation>
+        <translation>Повідомлення...</translation>
     </message>
 </context>
 <context>
     <name>DialogsPage</name>
     <message>
         <source>Chats</source>
-        <translation>Chattar</translation>
+        <translation>Чати</translation>
     </message>
     <message>
         <source>Connecting...</source>
-        <translation>Ansluter...</translation>
+        <translation>З’єднуємося...</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Ta bort</translation>
+        <translation>Видалити</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation>Tar bort konversation</translation>
+        <translation>Видаляємо бесіду</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation>Tar bort hemlig chatt</translation>
+        <translation>Видаляємо секретний чат</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation>Tar bort grupp</translation>
+        <translation>Видаляємо групу</translation>
     </message>
     <message>
         <source>No Chats
 
 Do a swype to the right to select a contact</source>
-        <translation>Inga chattar
+        <translation>Немає чатів
 
-Svep åt vänster för att välja en kontakt</translation>
+Зробіть свайп вправо для того щоб обрати контакт</translation>
     </message>
 </context>
 <context>
     <name>DialogsPullDownMenu</name>
     <message>
         <source>Profile</source>
-        <translation>Profil</translation>
+        <translation>Профіль</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation>Ny hemlig chatt</translation>
+        <translation>Новий секретний чат</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation>Ny grupp</translation>
+        <translation>Нова група</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation>Inställningar</translation>
+        <translation>Налаштування</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation>Avsluta</translation>
+        <translation>Вийти</translation>
     </message>
 </context>
 <context>
     <name>ErrorsPage</name>
     <message>
         <source>Clear errors</source>
-        <translation>Rensa felloggen</translation>
+        <translation>Очистити помилки</translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation>Felloggen är tom</translation>
+        <translation>Лог помилок порожній</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation>Fellogg</translation>
+        <translation>Лог помилок</translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation>Felkod:</translation>
+        <translation>Код помилки</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation>Funktion:</translation>
+        <translation>Функція:</translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation>Tar bort fel</translation>
+        <translation>Видаляємо помилки</translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation>Meddelande:</translation>
+        <translation>Повідомлення:</translation>
     </message>
 </context>
 <context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
-        <translation>Spara i Galleri</translation>
+        <translation>Зберегти до галереї</translation>
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation>Bild sparad i Galleri</translation>
+        <translation>Зображення було збережено в галереї</translation>
     </message>
 </context>
 <context>
     <name>MediaPlayerToolBar</name>
     <message>
         <source>Downloading media</source>
-        <translation>Laddar ner media</translation>
+        <translation>Завантажуємо медіа-дані</translation>
     </message>
     <message>
         <source>Media saved in Gallery</source>
-        <translation>Media sparat i Galleri</translation>
+        <translation>Медіа-дані були збережені в галереї</translation>
     </message>
 </context>
 <context>
     <name>MessageAudio</name>
     <message>
         <source>Duration: %1</source>
-        <translation>Varaktighet: %1</translation>
+        <translation>Тривалість: %1</translation>
     </message>
     <message>
         <source>Audio recording</source>
-        <translation>Ljudinspelning</translation>
+        <translation>Запис звуку</translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation>Storlek: %1</translation>
+        <translation>Розмір: %1</translation>
     </message>
 </context>
 <context>
     <name>MessageItem</name>
     <message>
         <source>Downloading Media</source>
-        <translation>Laddar ner media</translation>
+        <translation>Завантаження медіа-даних</translation>
     </message>
     <message>
         <source>Opening Media</source>
-        <translation>Öppnar media</translation>
+        <translation>Відкривання медіа-даних</translation>
     </message>
     <message>
         <source>Opening media</source>
-        <translation>Öppnar media</translation>
+        <translation>Відкривання медіа-даних</translation>
     </message>
 </context>
 <context>
     <name>MessageMenu</name>
     <message>
         <source>Copy</source>
-        <translation>Kopiera</translation>
+        <translation>Копіювати</translation>
     </message>
     <message>
         <source>Message copied to clipboard</source>
-        <translation>Meddelande kopierat till urklipp</translation>
+        <translation>Повідомлення скопійовано до буферу обміну</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Ta bort</translation>
+        <translation>Видалити</translation>
     </message>
     <message>
         <source>Deleting Message</source>
-        <translation>Tar bort meddelande</translation>
+        <translation>Видаляємо повідомлення</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Avbryt</translation>
+        <translation>Відмінити</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation>Ladda ner</translation>
+        <translation>Завантажити</translation>
     </message>
     <message>
         <source>Downloading media</source>
-        <translation>Laddar ner media</translation>
+        <translation>Завантажуємо медіа-дані</translation>
     </message>
 </context>
 <context>
     <name>MessageQuotedItem</name>
     <message>
         <source>You</source>
-        <translation>Du</translation>
+        <translation>Ви</translation>
     </message>
 </context>
 <context>
     <name>MessageVideo</name>
     <message>
         <source>Video recording</source>
-        <translation>Filminspelning</translation>
+        <translation>Запис відео</translation>
     </message>
     <message>
         <source>Size: %1</source>
-        <translation>Storlek: %1</translation>
+        <translation>Розмір: %1</translation>
     </message>
     <message>
         <source>Duration: %1</source>
-        <translation>Varaktighet: %1</translation>
+        <translation>Тривалість: %1</translation>
     </message>
 </context>
 <context>
     <name>PeerItem</name>
     <message>
         <source>%1 members</source>
-        <translation>%1 medlemmar</translation>
+        <translation>%1 учасник(-ів)</translation>
     </message>
     <message>
         <source>%1 member</source>
-        <translation>%1 medlem</translation>
+        <translation>%1 учасник(-ів)</translation>
     </message>
 </context>
 <context>
     <name>PhoneNumberPage</name>
     <message>
         <source>Next</source>
-        <translation>Nästa</translation>
+        <translation>Далі</translation>
     </message>
     <message>
         <source>Phone Number</source>
-        <translation>Telefonnummer</translation>
+        <translation>Номер телефону</translation>
     </message>
     <message>
         <source>Country Code</source>
-        <translation>Landskod</translation>
+        <translation>Код країни</translation>
     </message>
     <message>
         <source>Insert your phone number and press &apos;Next&apos;</source>
-        <translation>Ange ditt telefonnummer och tryck &apos;Nästa&apos;</translation>
+        <translation>Вставте ваш номер телефону та натисніть &quot;Далі&quot;</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation>Avsluta</translation>
+        <translation>Вихід</translation>
     </message>
 </context>
 <context>
     <name>ProfilePage</name>
     <message>
         <source>Change Picture</source>
-        <translation>Byt bild</translation>
+        <translation>Змінити картинку</translation>
     </message>
     <message>
         <source>Phone number</source>
-        <translation>Telefonnummer</translation>
+        <translation>Номер телефону</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation>Profil</translation>
+        <translation>Профіль</translation>
     </message>
     <message>
         <source>Change Username</source>
-        <translation>Byt användarnamn</translation>
+        <translation>Змінити ім’я користувача</translation>
     </message>
     <message>
         <source>User</source>
-        <translation>Användare</translation>
+        <translation>Користувач</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation>Användarnamn</translation>
+        <translation>Ім’я користувача</translation>
     </message>
 </context>
 <context>
     <name>SecretDialogDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation>Hemlig chatt avbruten</translation>
+        <translation>Секретний чат вимкнено</translation>
     </message>
 </context>
 <context>
     <name>SecretDialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation>Läs in fler meddelanden</translation>
+        <translation>Завантажити ще повідомлень</translation>
     </message>
 </context>
 <context>
     <name>SecretDialogWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>
-        <translation>Väntar på att %1 skall ansluta</translation>
+        <translation>Зачекайте %1 і Ви в мережі </translation>
     </message>
 </context>
 <context>
     <name>SelectorFilesPage</name>
     <message>
         <source>Android storage</source>
-        <translation>Android-lagring</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>SD Card</source>
-        <translation>SD-kort</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Home</source>
-        <translation>Hemkatalog</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Selecting file</source>
-        <translation>Väljer fil</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Back</source>
-        <translation>Tillbaka</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>SelectorImagesPage</name>
     <message>
         <source>Selecting image</source>
-        <translation>Väljer bild</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Back</source>
-        <translation>Tillbaka</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>SelectorLocationPage</name>
     <message>
         <source>Waiting for coordinates...</source>
-        <translation>Väntar på koordinater...</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Coordinates</source>
-        <translation>Koordinater</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>lat: %1</source>
-        <translation>lat: %1</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>long: %1</source>
-        <translation>long: %1</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>SelectorMainPage</name>
     <message>
         <source>Send file</source>
-        <translation>Skicka fil</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Image from gallery</source>
-        <translation>Bild från galleriet</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Capture photo</source>
-        <translation>Ta ett foto</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Record sound</source>
-        <translation>Spela in ljud</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>My location</source>
-        <translation>Min plats</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Sticker</source>
-        <translation>Märke</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Browse files</source>
-        <translation>Bläddra bland filer</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>SelectorSoundRecordPage</name>
     <message>
         <source>%1 sec</source>
-        <translation>%1 sek</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>~%1 B</source>
-        <translation>~%1 B</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>~%1 KiB</source>
-        <translation>~%1 KiB</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>~%1 MiB</source>
-        <translation>~%1 MiB</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>~%1 GiB</source>
-        <translation>~%1 GiB</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Start</source>
-        <translation>Starta</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Stop</source>
-        <translation>Stopp</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>SettingsPage</name>
     <message>
         <source>Settings</source>
-        <translation>Inställningar</translation>
+        <translation>Налаштування</translation>
     </message>
     <message>
         <source>Chats</source>
-        <translation>Chattar</translation>
+        <translation>Чати</translation>
     </message>
     <message>
         <source>Debug</source>
-        <translation>Felsök</translation>
+        <translation>Відлагодження</translation>
     </message>
     <message>
         <source>Daemon</source>
-        <translation>Demon</translation>
+        <translation>Демон</translation>
     </message>
 </context>
 <context>
     <name>SignUpPage</name>
     <message>
         <source>Sign Up</source>
-        <translation>Registrera</translation>
+        <translation>Приєднатися</translation>
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation>Du har angett fel auktoriseringskod</translation>
+        <translation>Ви ввели неправильний код авторизації</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
-        <translation>Vänta på det SMS som innehåller aktiveringskoden och tryck &apos;Registrera&apos;</translation>
+        <translation>Зачекайте на СМС з кодом активації і натисніть &quot;Приєднатися&quot;</translation>
     </message>
     <message>
         <source>First Name</source>
-        <translation>Förnamn</translation>
+        <translation>Ім’я</translation>
     </message>
     <message>
         <source>Last Name (Optional)</source>
-        <translation>Efternamn (Tillval)</translation>
+        <translation>Прізвище (за бажанням)</translation>
     </message>
     <message>
         <source>Authorization Code</source>
-        <translation>Auktoriseringskod</translation>
+        <translation>Код авторизації</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation>Avsluta</translation>
+        <translation>Вихід</translation>
     </message>
 </context>
 <context>
     <name>TelegramAction</name>
     <message>
         <source>%1 has left the group</source>
-        <translation>%1 har lämnat gruppen</translation>
+        <translation>%1 покинув (-ла) групу</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
-        <translation>%1 har anslutit till gruppen</translation>
+        <translation>%1 приєднався (-ла) до групи</translation>
     </message>
     <message>
         <source>%1 has joined the group via invite link</source>
-        <translation>%1 har anslutit till gruppen via inbjudningslänk</translation>
+        <translation>%1 приєднався (-ла) до групи через посилання-запрошення</translation>
     </message>
     <message>
         <source>Secret chat created by ��%1��</source>
-        <translation>Hemlig chatt skapad av ��%1��</translation>
+        <translation>Секретний чат створив (-ла) ��%1��</translation>
     </message>
     <message>
         <source>Group created by ��%1��</source>
-        <translation>Grupp skapad av ��%1��</translation>
+        <translation>Групу стоврив (-ла) ��%1��</translation>
     </message>
     <message>
         <source>Group name changed to ��%1��</source>
-        <translation>Gruppnamn ändrat till ��%1��</translation>
+        <translation>Назву групи змінив (-ла) ��%1��</translation>
     </message>
 </context>
 <context>
     <name>TelegramHelper</name>
     <message>
         <source>Recently</source>
-        <translation>Nyligen</translation>
+        <translation>Нещодавно</translation>
     </message>
     <message>
         <source>Last Month</source>
-        <translation>Senaste månaden</translation>
+        <translation>Минулий місяць</translation>
     </message>
     <message>
         <source>Last Week</source>
-        <translation>Senaste veckan</translation>
+        <translation>Минулий тиждень</translation>
     </message>
     <message>
         <source>Online</source>
-        <translation>Ansluten</translation>
+        <translation>В мережі</translation>
     </message>
     <message>
         <source>Unknown</source>
-        <translation>Okänd</translation>
+        <translation>Невідомий</translation>
     </message>
     <message>
         <source>Document</source>
-        <translation>Dokument</translation>
+        <translation>Документ</translation>
     </message>
     <message>
         <source>Contact</source>
-        <translation>Kontakt</translation>
+        <translation>Контакт</translation>
     </message>
     <message>
         <source>Video</source>
-        <translation>Video</translation>
+        <translation>Відео</translation>
     </message>
     <message>
         <source>Unsupported</source>
-        <translation>Saknar stöd</translation>
+        <translation>Не підтримується</translation>
     </message>
     <message>
         <source>Audio</source>
-        <translation>Ljud</translation>
+        <translation>Аудіо</translation>
     </message>
     <message>
         <source>Photo</source>
-        <translation>Foto</translation>
+        <translation>Фото</translation>
     </message>
     <message>
         <source>Geo</source>
-        <translation>Geo</translation>
+        <translation>Гео</translation>
     </message>
     <message>
         <source>Last Seen %1</source>
-        <translation>Sågs senast %1</translation>
+        <translation>Останній раз був (-ла) %1</translation>
     </message>
 </context>
 <context>
     <name>UserInfo</name>
     <message>
         <source>Send Message</source>
-        <translation>Skicka meddelande</translation>
+        <translation>Надіслати повідомлення</translation>
     </message>
     <message>
         <source>Begin Secret Chat</source>
-        <translation>Starta hemlig chatt</translation>
+        <translation>Розпочати секретний чат</translation>
     </message>
     <message>
         <source>Phone Number</source>
-        <translation>Telefonnummer</translation>
+        <translation>Номер телефону</translation>
     </message>
 </context>
 <context>
     <name>UserMenu</name>
     <message>
         <source>Send Message</source>
-        <translation>Skicka meddelande</translation>
+        <translation>Надіслати повідомлення</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation>Profil</translation>
+        <translation>Профіль</translation>
     </message>
 </context>
 </TS>

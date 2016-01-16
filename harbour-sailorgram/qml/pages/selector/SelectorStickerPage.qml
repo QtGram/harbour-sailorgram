@@ -61,6 +61,7 @@ Page
             model: stickersmodel
 
             delegate: StickerItem {
+                id: stickeritem
                 width: stickergrid.itemSize - stickergrid.spacing
                 height: stickergrid.itemSize - stickergrid.spacing
                 context: selectorstickerpage.context
@@ -68,7 +69,7 @@ Page
 
                 onClicked: {
                     remorsepopup.execute(qsTr("Sending sticker"), function() {
-                        actionCompleted("sticker", stickerId);
+                        actionCompleted("sticker", stickeritem.stickerPath);
                     });
                 }
             }

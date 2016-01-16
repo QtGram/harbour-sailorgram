@@ -167,6 +167,7 @@ TRANSLATIONS += translations/harbour-sailorgram-be.ts \
                 translations/harbour-sailorgram-nl_NL.ts \
                 translations/harbour-sailorgram-ru.ts \
                 translations/harbour-sailorgram-sv.ts \
+                translations/harbour-sailorgram-uk_UA.ts
                 translations/harbour-sailorgram.ts
 
 HEADERS += \
@@ -221,4 +222,4 @@ DISTFILES += \
     qml/pages/selector/SelectorStickerPage.qml \
     qml/items/message/messageitem/media/MessageSticker.qml \
     qml/items/sticker/StickerSetImage.qml \
-    qml/items/sticker/StickerItem.qml
+    qml/items/sticker/StickerItem.qml \

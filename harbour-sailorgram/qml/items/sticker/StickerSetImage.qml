@@ -31,7 +31,7 @@ ListItem
 
     Image
     {
-        source: filehandler.filePath
+        source: filehandler.thumbPath
         fillMode: Image.PreserveAspectFit
         verticalAlignment: Image.AlignVCenter
         horizontalAlignment: Image.AlignHCenter

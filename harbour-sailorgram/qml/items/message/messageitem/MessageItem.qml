@@ -66,6 +66,9 @@ ListItem
                           (message.media.classType === TelegramConstants.typeMessageMediaAudio);
 
         if(message.media.classType === TelegramConstants.typeMessageMediaDocument) {
+            if(context.telegram.documentIsSticker(message.media.document))
+                return;
+
             var mime = message.media.document.mimeType;
             type = mime.split("/")[0];
             canbeviewed = ((type === "video") || (type === "audio") || (type === "image")) ? true : false;

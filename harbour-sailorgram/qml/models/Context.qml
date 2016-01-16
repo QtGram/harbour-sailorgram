@@ -11,12 +11,23 @@ QtObject
 {
     id: context
 
+    readonly property bool beta: true
+    readonly property int betanum: 13
     readonly property string version: "0.73"
     property bool sendwithreturn: false
     property bool backgrounddisabled: false
     property bool chatheaderhidden: false
     property bool bubbleshidden: false
     property int bubblesopacity: 100
+
+    function versionString() {
+        var ver = context.version;
+
+        if(beta)
+            ver += " BETA " + betanum;
+
+        return ver;
+    }
 
     property ScreenBlank screenblank: ScreenBlank { }
     property ContactsModel contacts: ContactsModel { }

@@ -5,6 +5,7 @@ import "../../models"
 
 BackgroundItem
 {
+    property alias stickerPath: filehandler.filePath
     property Context context
     property alias stickerDocument: filehandler.target
 
@@ -17,7 +18,7 @@ BackgroundItem
 
     Image
     {
-        source: filehandler.filePath
+        source: filehandler.thumbPath
         fillMode: Image.PreserveAspectFit
         verticalAlignment: Image.AlignVCenter
         horizontalAlignment: Image.AlignHCenter
