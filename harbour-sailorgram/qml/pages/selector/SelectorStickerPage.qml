@@ -55,7 +55,7 @@ Page
             HorizontalScrollDecorator { flickable: stickergrid }
 
             id: stickergrid
-            anchors { top: parent.top; left: parent.left; right: parent.right; margins: Theme.paddingSmall }
+            anchors.fill: parent
             cellWidth: itemSize
             cellHeight: itemSize
             model: stickersmodel
@@ -84,6 +84,7 @@ Page
         height: Theme.itemSizeMedium + Theme.paddingSmall
         model: stickersmodel.stickerSets
         currentIndex: -1
+        spacing: Theme.paddingSmall
 
         delegate: StickerSetImage {
             width: Theme.itemSizeMedium
