@@ -4,13 +4,13 @@ import Sailfish.Silica 1.0
 MessageMediaItem
 {
     id: messagesticker
-    width: thumb.width
-    height: thumb.height
+    contentWidth: thumb.width
+    contentHeight: thumb.height
 
     MessageThumbnail
     {
         id: thumb
-        anchors { left: parent.left; top: parent.top }
+        anchors.fill: parent
         cache: !messagesticker.fileHandler.downloaded
         source: messagesticker.mediaThumbnail
         transferProgress: progressPercent

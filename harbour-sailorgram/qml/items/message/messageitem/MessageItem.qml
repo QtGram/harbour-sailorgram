@@ -116,6 +116,7 @@ ListItem
         MessageDocument {
             context: messageitem.context
             message: messageitem.message
+            maxWidth: content.maxw - 2 * Theme.paddingMedium
         }
     }
 
@@ -125,6 +126,7 @@ ListItem
         MessagePhoto {
             context: messageitem.context
             message: messageitem.message
+            maxWidth: content.maxw - 2 * Theme.paddingMedium
         }
     }
 
@@ -134,6 +136,7 @@ ListItem
         MessageAudio {
             context: messageitem.context
             message: messageitem.message
+            maxWidth: content.maxw - 2 * Theme.paddingMedium
         }
     }
 
@@ -143,6 +146,7 @@ ListItem
         MessageVideo {
             context: messageitem.context
             message: messageitem.message
+            maxWidth: content.maxw - 2 * Theme.paddingMedium
         }
     }
 
@@ -152,6 +156,7 @@ ListItem
         MessageSticker {
             context: messageitem.context
             message: messageitem.message
+            maxWidth: content.maxw - 2 * Theme.paddingMedium
         }
     }
 
@@ -314,7 +319,6 @@ ListItem
             }
 
             maxWidth: content.maxw - 2 * Theme.paddingMedium
-
             context: messageitem.context
             message: messageitem.message
         }

@@ -6,19 +6,17 @@ Item
 {
     property alias cache: image.cache
     property alias source: image.source
-    property size imageSize
     property real transferProgress
 
     id: messagethumbnail
-    width: image.width
-    height: image.height
 
     Image
     {
         id: image
         asynchronous: true
+        anchors.fill: parent
         visible: !progresscircle.visible && (image.status === Image.Ready)
-        sourceSize: TelegramMedia.thumbnailSize(imageSize, pageStack.currentPage.isPortrait);
+        fillMode: Image.PreserveAspectFit
     }
 
     BusyIndicator

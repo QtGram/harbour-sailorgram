@@ -9,8 +9,8 @@ MessageMediaItem
     property FileLocation fileLocation: context.telegram.locationOfDocument(message.media.document)
 
     id: messagedocument
-    height: row.height
-    width: Math.min(messageitem.width, row.width)
+    contentWidth: Math.min(messageitem.width, row.width)
+    contentHeight: row.height
 
     Row
     {
@@ -23,7 +23,6 @@ MessageMediaItem
         MessageThumbnail
         {
             id: imgpreview
-            imageSize: messagedocument.fileHandler.imageSize
             source: messagedocument.mediaThumbnail || "image://theme/icon-m-document"
             transferProgress: progressPercent
         }

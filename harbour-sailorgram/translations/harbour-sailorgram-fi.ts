@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="fi" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="fi">
 <context>
     <name>AboutPage</name>
     <message>
@@ -785,11 +787,11 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     </message>
     <message>
         <source>lat: %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>long: %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -852,6 +854,13 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     <message>
         <source>Stop</source>
         <translation>Pysäytä</translation>
+    </message>
+</context>
+<context>
+    <name>SelectorStickerPage</name>
+    <message>
+        <source>Sending sticker</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

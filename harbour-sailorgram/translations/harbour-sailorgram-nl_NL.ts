@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl_NL" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="nl_NL">
 <context>
     <name>AboutPage</name>
     <message>
@@ -852,6 +854,13 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     <message>
         <source>Stop</source>
         <translation>Stoppen</translation>
+    </message>
+</context>
+<context>
+    <name>SelectorStickerPage</name>
+    <message>
+        <source>Sending sticker</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

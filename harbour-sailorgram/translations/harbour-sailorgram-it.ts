@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="it" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="it">
 <context>
     <name>AboutPage</name>
     <message>
@@ -852,6 +854,13 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     <message>
         <source>Stop</source>
         <translation>Ferma</translation>
+    </message>
+</context>
+<context>
+    <name>SelectorStickerPage</name>
+    <message>
+        <source>Sending sticker</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

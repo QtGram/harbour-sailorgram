@@ -9,8 +9,8 @@ MessageMediaItem
     property FileLocation fileLocation: context.telegram.locationOfVideo(message.media.video)
 
     id: messagevideo
-    height: row.height
-    width: Math.min(messageitem.width, row.width)
+    contentWidth: Math.min(messageitem.width, row.width)
+    contentHeight: row.height
 
     MediaPlayerTimings { id: mediaplayertimings }
 
@@ -25,7 +25,6 @@ MessageMediaItem
         MessageThumbnail
         {
             id: imgpreview
-            imageSize: messagevideo.fileHandler.imageSize
             source: messagevideo.mediaThumbnail || "image://theme/icon-l-video"
             transferProgress: progressPercent
         }
