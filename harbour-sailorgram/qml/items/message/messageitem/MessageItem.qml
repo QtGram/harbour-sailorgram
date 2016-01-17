@@ -190,7 +190,7 @@ ListItem
     Column
     {
         property bool isSticker: false
-        property real maxw: parent.width * 3/4
+        property real maxw: parent.width * 3 / 4
 
         id: content
 
