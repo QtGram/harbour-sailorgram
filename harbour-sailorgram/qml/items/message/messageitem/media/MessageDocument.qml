@@ -10,13 +10,13 @@ MessageMediaItem
     property FileLocation fileLocation: context.telegram.locationOfDocument(message.media.document)
 
     id: messagedocument
-    contentWidth: imgpreview.width + info.width + Theme.paddingMedium
+    contentWidth: imgpreview.width + Math.max(lblinfo.contentWidth, lblsize.contentWidth + lblmime.contentWidth) + Theme.paddingMedium
     contentHeight: row.height
 
     Row
     {
         id: row
-        anchors { left: parent.left; right: parent.right; top: parent.top }
+        width: parent.width
         height: imgpreview.height
         spacing: Theme.paddingMedium
 
@@ -39,12 +39,13 @@ MessageMediaItem
         Column
         {
             id: info
-            width: Math.max(lblinfo.paintedWidth, sizemimerow.width)
+            width: parent.width
             height: imgpreview.height
 
             Label
             {
                 id: lblinfo
+                width: parent.width
                 verticalAlignment: Text.AlignTop
                 horizontalAlignment: Text.AlignLeft
                 font.pixelSize: Theme.fontSizeExtraSmall
@@ -57,6 +58,7 @@ MessageMediaItem
             Row
             {
                 id: sizemimerow
+                width: parent.width
                 height: parent.height - lblinfo.contentHeight
                 spacing: Theme.paddingMedium
 
