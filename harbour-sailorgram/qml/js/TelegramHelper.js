@@ -5,7 +5,23 @@
 
 function completeName(user)
 {
-    return user.firstName + " " + user.lastName;
+    var name = user.firstName;
+
+    if(user.lastName.length > 0)
+        name += " " + user.lastName;
+
+    return name;
+}
+
+function userDisplayName(user)
+{
+    if(user.firstName.length > 0)
+        return user.firstName;
+
+    if(user.lastName.length > 0)
+        return user.lastName;
+
+    return qsTr("Unknown");
 }
 
 function phoneNumber(user)
