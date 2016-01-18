@@ -92,7 +92,7 @@ Page
                     if (model.fileIsDir)
                         folderlistmodel.folder = model.fileURL;
                     else
-                        remorseAction(qsTr("Selecting file"), function() { fileSelected(model.fileURL.toString()); });
+                        remorseAction(qsTr("Selecting file"), function() { actionCompleted("file", model.fileURL.toString()); });
                 }
 
                 Image {

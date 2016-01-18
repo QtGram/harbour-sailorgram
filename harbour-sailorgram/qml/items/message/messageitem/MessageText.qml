@@ -64,10 +64,10 @@ Item
                 if(TelegramHelper.isServiceMessage(message))
                     return TelegramAction.actionType(context.telegram, dialog, message);
 
-                if(TelegramHelper.isMediaMessage(message))
+                if(TelegramHelper.isMediaMessage(message) && (message.media.caption.length > 0))
                     return message.media.caption;
 
-                return messageitem.message.message;
+                return message.message;
             }
 
             horizontalAlignment: {

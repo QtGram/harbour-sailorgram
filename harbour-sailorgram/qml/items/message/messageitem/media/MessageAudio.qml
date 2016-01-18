@@ -9,8 +9,8 @@ MessageMediaItem
     property FileLocation fileLocation: context.telegram.locationOfAudio(message.media.audio)
 
     id: messageaudio
-    height: row.height
-    width: Math.min(messageitem.width, row.width)
+    contentWidth: Math.min(messageitem.width, row.width)
+    contentHeight: row.height
 
     MediaPlayerTimings { id: mediaplayertimings }
 
@@ -25,7 +25,6 @@ MessageMediaItem
         MessageThumbnail
         {
             id: imgpreview
-            imageSize: messageaudio.fileHandler.imageSize
             source: messageaudio.mediaThumbnail || "image://theme/icon-m-sounds"
             transferProgress: progressPercent
         }

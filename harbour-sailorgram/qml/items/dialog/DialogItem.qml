@@ -136,7 +136,7 @@ Item
                             if(TelegramHelper.isChat(dialog))
                             {
                                 var user = context.telegram.user(message.fromId);
-                                return TelegramHelper.completeName(user) + ": ";
+                                return TelegramHelper.userDisplayName(user) + ": ";
                             }
 
                             if(message && message.out)

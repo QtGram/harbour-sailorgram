@@ -10,6 +10,9 @@ Item
     property Context context
     property Telegram telegram
     property Message message
+    property real maxWidth
+    property real contentWidth
+    property real contentHeight
 
     readonly property bool isUpload: message.upload.fileId !== 0
     readonly property bool transferInProgress: (progressPercent > 0) && (progressPercent < 100)
@@ -75,6 +78,8 @@ Item
 
     id: messagemediaitem
     visible: hasMedia
+    width: Math.min(contentWidth, maxWidth)
+    height: contentHeight
 
     FileHandler
     {

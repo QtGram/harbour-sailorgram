@@ -3,17 +3,27 @@ import Sailfish.Silica 1.0
 
 MessageMediaItem
 {
+    property real aspectRatio: {
+        var w = message.media.photo.sizes.last.w;
+        var h = message.media.photo.sizes.last.h;
+
+        if(!w || !h)
+            return 0;
+
+        return w / h;
+    }
+
     id: messagephoto
-    width: thumb.width
-    height: thumb.height
+    contentWidth: message.media.photo.sizes.last.w
+    contentHeight: thumb.height
 
     MessageThumbnail
     {
         id: thumb
-        anchors { left: parent.left; top: parent.top }
+        width: parent.width
+        height: aspectRatio ? (width / aspectRatio) : 0
         cache: !messagephoto.fileHandler.downloaded
         source: messagephoto.mediaThumbnail
-        imageSize: Qt.size(message.media.photo.sizes.last.w, message.media.photo.sizes.last.h)
         transferProgress: progressPercent
     }
 }

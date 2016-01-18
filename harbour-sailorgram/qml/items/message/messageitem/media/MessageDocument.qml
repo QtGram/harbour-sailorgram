@@ -3,45 +3,54 @@ import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../../../../models"
 import "../../../../js/TelegramHelper.js" as TelegramHelper
+import "../../../../js/ColorScheme.js" as ColorScheme
 
 MessageMediaItem
 {
     property FileLocation fileLocation: context.telegram.locationOfDocument(message.media.document)
 
     id: messagedocument
-    height: row.height
-    width: Math.min(messageitem.width, row.width)
+    contentWidth: imgpreview.width + Math.max(lblinfo.contentWidth, lblsize.contentWidth + lblmime.contentWidth) + Theme.paddingMedium
+    contentHeight: row.height
 
     Row
     {
         id: row
-        anchors { left: parent.left; top: parent.top }
+        width: parent.width
         height: imgpreview.height
-        width: imgpreview.width + info.width
-        spacing: Theme.paddingSmall
+        spacing: Theme.paddingMedium
 
         MessageThumbnail
         {
             id: imgpreview
-            imageSize: messagedocument.fileHandler.imageSize
+            height: Theme.iconSizeMedium
+            width: Theme.iconSizeMedium
             source: messagedocument.mediaThumbnail || "image://theme/icon-m-document"
             transferProgress: progressPercent
+
+            Rectangle {
+                border.width: 1
+                border.color: ColorScheme.colorizeLink(message, context)
+                anchors { fill: parent; margins: -Theme.paddingSmall }
+                color: "transparent"
+            }
         }
 
         Column
         {
             id: info
-            width: Math.max(lblinfo.paintedWidth, sizemimerow.width)
+            width: parent.width
             height: imgpreview.height
 
             Label
             {
                 id: lblinfo
-                height: parent.height / 2
+                width: parent.width
                 verticalAlignment: Text.AlignTop
                 horizontalAlignment: Text.AlignLeft
                 font.pixelSize: Theme.fontSizeExtraSmall
                 text: isUpload ? context.sailorgram.fileName(message.upload.location) : fileLocation.fileName
+                color: ColorScheme.colorizeText(message, context)
                 wrapMode: Text.NoWrap
                 elide: Text.ElideRight
             }
@@ -49,12 +58,14 @@ MessageMediaItem
             Row
             {
                 id: sizemimerow
-                height: parent.height / 2
+                width: parent.width
+                height: parent.height - lblinfo.contentHeight
                 spacing: Theme.paddingMedium
 
                 Label
                 {
                     id: lblsize
+                    color: ColorScheme.colorizeText(message, context)
                     font.pixelSize: Theme.fontSizeExtraSmall
                     text: TelegramHelper.formatBytes(mediaSize, 2)
                 }
@@ -62,6 +73,7 @@ MessageMediaItem
                 Label
                 {
                     id: lblmime
+                    color: ColorScheme.colorizeText(message, context)
                     font.pixelSize: Theme.fontSizeExtraSmall
                     text: message.media.document.mimeType
                 }
