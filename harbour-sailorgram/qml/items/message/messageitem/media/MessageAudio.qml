@@ -7,8 +7,6 @@ import "../../../../js/ColorScheme.js" as ColorScheme
 
 MessageMediaItem
 {
-    property FileLocation fileLocation: context.telegram.locationOfAudio(message.media.audio)
-
     id: messageaudio
     contentWidth: imgpreview.width + Math.max(lbldummyinfo.contentWidth, lblsize.contentWidth + lblduration.contentWidth) + Theme.paddingMedium
     contentHeight: row.height

@@ -51,7 +51,7 @@ MessageMediaItem
                 verticalAlignment: Text.AlignTop
                 horizontalAlignment: Text.AlignLeft
                 font.pixelSize: Theme.fontSizeExtraSmall
-                text: isUpload ? context.sailorgram.fileName(message.upload.location) : fileLocation.fileName
+                text: isUpload ? context.sailorgram.fileName(message.upload.location) : fileHandler.fileName
                 color: ColorScheme.colorizeText(message, context)
                 wrapMode: Text.NoWrap
                 elide: Text.ElideRight

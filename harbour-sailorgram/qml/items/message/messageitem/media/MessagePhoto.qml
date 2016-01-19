@@ -4,8 +4,8 @@ import Sailfish.Silica 1.0
 MessageMediaItem
 {
     property real aspectRatio: {
-        var w = message.media.photo.sizes.last.w;
-        var h = message.media.photo.sizes.last.h;
+        var w = fileHandler.imageSize.width;
+        var h = fileHandler.imageSize.height;
 
         if(!w || !h)
             return 0;
@@ -14,7 +14,7 @@ MessageMediaItem
     }
 
     id: messagephoto
-    contentWidth: message.media.photo.sizes.last.w
+    contentWidth: fileHandler.imageSize.width
     contentHeight: thumb.height
 
     Image
