@@ -13,7 +13,13 @@ MessageMediaItem
         id: map
         anchors.fill: parent
         gesture.enabled: false
-        plugin: Plugin { preferred: ["osm", "here", "nokia", "gmaps"] }
         center: QtPositioning.coordinate(message.media.geo.lat, message.media.geo.longitude)
+
+        plugin: Plugin {
+            allowExperimental: true
+            required.mapping: Plugin.AnyMappingFeatures
+            required.geocoding: Plugin.AnyGeocodingFeatures
+            preferred: ["osm", "here", "nokia", "gmaps"]
+        }
     }
 }

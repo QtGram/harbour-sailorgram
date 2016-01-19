@@ -30,7 +30,6 @@ MessageMediaItem
         id: videothumb
         anchors.centerIn: parent
         source: "image://theme/icon-m-play"
-        visible: !messagevideo.fileHandler.downloaded
         z: 2
     }
 
@@ -39,9 +38,8 @@ MessageMediaItem
         id: thumb
         width: parent.width
         height: aspectRatio ? (width / aspectRatio) : 0
-        cache: !messagevideo.fileHandler.downloaded
-        source: messagevideo.mediaThumbnail
+        cache: false
+        source: fileHandler.thumbPath
         transferProgress: progressPercent
     }
-
 }
