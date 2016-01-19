@@ -15,7 +15,7 @@ Dialog
     id: selectorsoundrecordpage
     allowedOrientations: defaultAllowedOrientations
     canAccept: finished
-    onAccepted: actionCompleted("voicerecord", context.sailorgram.voiceRecordPath)
+    onAccepted: actionCompleted("soundrecord", context.sailorgram.voiceRecordPath)
 
     AudioRecorder { id: recorder }
     DialogHeader { id: header }
