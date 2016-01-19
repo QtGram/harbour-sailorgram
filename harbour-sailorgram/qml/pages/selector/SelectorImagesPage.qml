@@ -1,127 +1,105 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import Qt.labs.folderlistmodel 2.1
-import harbour.sailorgram.SailorGram 1.0
-import harbour.sailorgram.Selector 1.0
+import QtDocGallery 5.0
 import "../../models"
 
 Page
 {
     property Context context
-    readonly property string rootPathLimit : "file://" + context.sailorgram.homeFolder
+    property int numCellColumnsPortrait: {
+        switch (Screen.sizeCategory) {
+            case Screen.Small: return 2;
+            case Screen.Medium: return 3;
+            case Screen.Large: return 4;
+            case Screen.ExtraLarge: return 5;
+            default: return 3;
+        }
+    }
+    property int numCellColumnsLandscape: {
+        switch (Screen.sizeCategory) {
+            case Screen.Small: return 4;
+            case Screen.Medium: return 5;
+            case Screen.Large: return 6;
+            case Screen.ExtraLarge: return 7;
+            default: return 5;
+        }
+    }
+    readonly property real cellSize: isPortrait ? width / numCellColumnsPortrait : width / numCellColumnsLandscape
+    readonly property real maxCellSize: Math.max(Screen.height / numCellColumnsLandscape, Screen.width / numCellColumnsPortrait)
 
     signal actionCompleted(string action, var data)
 
     id: selectorimagespage
     allowedOrientations: defaultAllowedOrientations
 
-    FolderListModel {
-        id: folderlistmodel
-        folder: context.sailorgram.picturesFolder
-        showFiles: true
-        showHidden: false
-        showDirsFirst: true
-        showDotAndDotDot: false
-        showOnlyReadable: true
-        nameFilters: ["*.jpg", "*.jpeg", "*.png", "*.gif", "*.bmp", "*.webp"]
+    DocumentGalleryModel {
+        id: documentgallerymodel
+        rootType: DocumentGallery.Image
+        properties: [ "url", "filePath", "orientation", "dateTaken" ]
+        sortProperties: [ "-dateTaken" ]
+        autoUpdate: true
     }
 
-    RemorsePopup { id: remorsepopup }
+    RemorsePopup {
+        id: remorsepopup
+        onCanceled: view.currentIndex = -1
+    }
 
     PageHeader
     {
         id: header
-        title: folderlistmodel.folder.toString().replace("file:///", "/")
+        title: qsTr("Images")
     }
 
-    SilicaFlickable
+    SilicaGridView
     {
         id: view
         clip: true
         anchors { left: parent.left; top: header.bottom; right: parent.right; bottom: parent.bottom }
-        contentHeight: (layoutflow.height + layoutflow.anchors.margins * 2)
+        quickScroll: true
+        cellWidth: cellSize
+        cellHeight: cellSize
+        model: documentgallerymodel
 
-        VerticalScrollDecorator { flickable: view }
-        HorizontalScrollDecorator { flickable: view }
+        delegate: BackgroundItem {
+            width: cellSize
+            height: cellSize
+            onClicked: {
+                remorsepopup.cancel();
+                view.currentIndex = index;
+                remorsepopup.execute(qsTr("Selecting image"), function () { actionCompleted("image", url) });
+            }
 
-        Flow
-        {
-            readonly property real cellSize : (((width + spacing) / (selectorimagespage.isPortrait ? 4 : 7)) - spacing)
+            Image {
+                id: thumbnail
+                anchors.fill: parent
+                fillMode: Image.PreserveAspectCrop
+                asynchronous: true
+                antialiasing: true
+                sourceSize.width: maxCellSize
+                sourceSize.height: maxCellSize
+                rotation: 360 - model.orientation
+                source: "image://thumbnail/" + filePath;
+            }
 
-            id: layoutflow
-            spacing: Theme.paddingSmall
-            anchors { top: parent.top; left: parent.left; right: parent.right; margins: spacing }
+            Loader {
+                active: (thumbnail.status === Image.Loading)
+                anchors.centerIn: parent
+                width: view.cellWidth / 2
+                height: view.cellHeight / 2
 
-            Button {
-                width: layoutflow.width
-                height: Theme.itemSizeSmall
-                visible: (folderlistmodel.folder.toString() !== rootPathLimit)
-                text: qsTr ("Back")
-
-                onClicked: {
-                    folderlistmodel.folder = folderlistmodel.parentFolder;
+                sourceComponent: BusyIndicator {
+                    running: true
                 }
             }
 
-            Repeater
-            {
-                model: folderlistmodel
+            Loader {
+                active: index === view.currentIndex
+                anchors.fill: parent
 
-                delegate: BackgroundItem {
-                    readonly property bool isFolder : (model.fileIsDir || false)
-                    readonly property string imageUrl : (model.fileURL ? model.fileURL.toString () : "")
-
-                    id: clicker
-                    width: (isFolder ? layoutflow.width : layoutflow.cellSize)
-                    height: (isFolder ? Theme.itemSizeSmall : layoutflow.cellSize)
-                    opacity: (enabled ? 1.0 : 0.35)
-
-                    onClicked: {
-                        if (isFolder)
-                            folderlistmodel.folder = imageUrl;
-                        else
-                            remorsepopup.execute(qsTr("Selecting image"), function () { actionCompleted("image", imageUrl) });
-                    }
-
-                    Row {
-                        visible: isFolder
-                        spacing: Theme.paddingMedium
-                        height: Theme.itemSizeSmall
-                        width: parent.width
-
-                        Image {
-                            source: "image://theme/icon-m-folder"
-                            anchors.verticalCenter: parent.verticalCenter
-                        }
-                        Label {
-                            text: (model.fileName || "")
-                            anchors.verticalCenter: parent.verticalCenter
-                        }
-                    }
-
-                    Image {
-                        id: thumbnail
-                        cache: false
-                        visible: !isFolder
-                        fillMode: Image.PreserveAspectCrop
-                        asynchronous: true
-                        antialiasing: true
-                        sourceSize.width: 150
-                        sourceSize.height: 150
-                        anchors.fill: parent
-
-                        ImageThumbnailer on source {
-                            id: thumbnailer
-                            imageUrl: (thumbnail.visible ? (model.fileURL || "") : "")
-                        }
-                    }
-
-                    BusyIndicator {
-                        size: BusyIndicatorSize.Medium
-                        visible: running
-                        running: (thumbnailer.status === ImageThumbnailer.Processing)
-                        anchors.centerIn: parent
-                    }
+                sourceComponent: Rectangle {
+                    color: Theme.highlightColor
+                    opacity: 0.4
                 }
             }
         }

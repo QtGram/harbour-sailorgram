@@ -74,7 +74,7 @@ SOURCES += src/harbour-sailorgram.cpp \
     src/dbus/notification/notification.cpp \
     src/dbus/notification/notificationmanagerproxy.cpp \
     src/selector/audiorecorder.cpp \
-    src/selector/imagethumbnailer.cpp
+    src/selector/thumbnailprovider.cpp
 
 OTHER_FILES += qml/harbour-sailorgram.qml \
     rpm/harbour-sailorgram.changes.in \
@@ -179,7 +179,7 @@ HEADERS += \
     src/dbus/notification/notification.h \
     src/dbus/notification/notificationmanagerproxy.h \
     src/selector/audiorecorder.h \
-    src/selector/imagethumbnailer.h
+    src/selector/thumbnailprovider.h
 
 RESOURCES += \
     resources.qrc

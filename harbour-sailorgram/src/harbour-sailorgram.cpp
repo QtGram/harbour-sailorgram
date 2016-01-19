@@ -33,7 +33,7 @@
 #include <telegramqmlinitializer.h>
 #include "dbus/screenblank.h"
 #include "selector/audiorecorder.h"
-#include "selector/imagethumbnailer.h"
+#include "selector/thumbnailprovider.h"
 #include "sailorgram.h"
 
 bool hasDaemon(const QStringList& args)
@@ -82,11 +82,11 @@ int main(int argc, char *argv[])
     qmlRegisterType<SailorGram>("harbour.sailorgram.SailorGram", 1, 0, "SailorGram");
     qmlRegisterType<ScreenBlank>("harbour.sailorgram.DBus", 1, 0, "ScreenBlank");
     qmlRegisterType<AudioRecorder>("harbour.sailorgram.Selector", 1, 0, "AudioRecorder");
-    qmlRegisterType<ImageThumbnailer>("harbour.sailorgram.Selector", 1, 0, "ImageThumbnailer");
 
     QScopedPointer<QQuickView> view(SailfishApp::createView());
     QQmlEngine* engine = view->engine();
     QObject::connect(engine, SIGNAL(quit()), application.data(), SLOT(quit()));
+    engine->addImageProvider(QStringLiteral("thumbnail"), new ThumbnailProvider);
 
     view->setSource(SailfishApp::pathTo("qml/harbour-sailorgram.qml"));
 
