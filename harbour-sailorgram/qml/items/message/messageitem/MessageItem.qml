@@ -151,6 +151,16 @@ ListItem
     }
 
     Component {
+        id: locationcomponent
+
+        MessageLocation {
+            context: messageitem.context
+            message: messageitem.message
+            maxWidth: content.maxw - 2 * Theme.paddingMedium
+        }
+    }
+
+    Component {
         id: stickercomponent
 
         MessageSticker {
@@ -301,6 +311,8 @@ ListItem
                         return audiocomponent;
                     else if(message.media.classType === TelegramConstants.typeMessageMediaVideo)
                         return videocomponent;
+                    else if(message.media.classType === TelegramConstants.typeMessageMediaGeo)
+                        return locationcomponent;
                 }
 
                 return null;

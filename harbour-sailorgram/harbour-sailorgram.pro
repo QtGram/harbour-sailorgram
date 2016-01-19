@@ -223,3 +223,4 @@ DISTFILES += \
     qml/items/message/messageitem/media/MessageSticker.qml \
     qml/items/sticker/StickerSetImage.qml \
     qml/items/sticker/StickerItem.qml \
+    qml/items/message/messageitem/media/MessageLocation.qml
