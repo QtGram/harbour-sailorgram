@@ -645,21 +645,6 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     </message>
 </context>
 <context>
-    <name>MessageVideo</name>
-    <message>
-        <source>Video recording</source>
-        <translation>Video-opname</translation>
-    </message>
-    <message>
-        <source>Size: %1</source>
-        <translation>Grootte: %1</translation>
-    </message>
-    <message>
-        <source>Duration: %1</source>
-        <translation>Duur: %1</translation>
-    </message>
-</context>
-<context>
     <name>PeerItem</name>
     <message>
         <source>%1 members</source>

@@ -645,21 +645,6 @@ Stryg til venstre for at vælge en kontakt</translation>
     </message>
 </context>
 <context>
-    <name>MessageVideo</name>
-    <message>
-        <source>Video recording</source>
-        <translation>Videooptagelse</translation>
-    </message>
-    <message>
-        <source>Size: %1</source>
-        <translation>Størrelse: %1</translation>
-    </message>
-    <message>
-        <source>Duration: %1</source>
-        <translation>Varighed: %1</translation>
-    </message>
-</context>
-<context>
     <name>PeerItem</name>
     <message>
         <source>%1 members</source>

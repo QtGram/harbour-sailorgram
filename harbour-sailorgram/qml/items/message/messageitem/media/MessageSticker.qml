@@ -4,8 +4,9 @@ import Sailfish.Silica 1.0
 MessageMediaItem
 {
     id: messagesticker
-    contentWidth: thumb.width
-    contentHeight: thumb.height
+    contentWidth: maxWidth
+    contentHeight: maxWidth
+    fileHandler.onTargetTypeChanged: fileHandler.download(); // Autodownload stickers
 
     MessageThumbnail
     {

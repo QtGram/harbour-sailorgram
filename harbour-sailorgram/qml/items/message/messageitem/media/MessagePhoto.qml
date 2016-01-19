@@ -17,6 +17,15 @@ MessageMediaItem
     contentWidth: message.media.photo.sizes.last.w
     contentHeight: thumb.height
 
+    Image
+    {
+        id: imgdownload
+        anchors.centerIn: parent
+        source: "image://theme/icon-m-cloud-download"
+        visible: !messagephoto.fileHandler.downloaded
+        z: 2
+    }
+
     MessageThumbnail
     {
         id: thumb

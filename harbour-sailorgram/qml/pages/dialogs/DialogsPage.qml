@@ -59,6 +59,13 @@ Page
     {
         target: context.sailorgram
 
+        onConnectedChanged: {
+            if(!context.sailorgram.connected)
+                return;
+
+            dialogsmodel.recheck();
+        }
+
         onDaemonizedChanged: {
             if(context.sailorgram.daemonized)
                 return;

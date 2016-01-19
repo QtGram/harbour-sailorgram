@@ -52,7 +52,12 @@ Item
             return "";
 
         if(context.telegram.documentIsSticker(message.media.document))
+        {
+            if(fileHandler.downloaded)
+                return filehandler.filePath;
+
             return filehandler.thumbPath;
+        }
 
         if((message.media.classType === TelegramConstants.typeMessageMediaPhoto) && filehandler.downloaded)
             return filehandler.filePath;
@@ -94,7 +99,7 @@ Item
             if((progressType !== TelegramConstants.typeProgressDownload) || (filepathstring.length <= 0) || (progressPercent < 100) || isSticker)
                 return;
 
-            if(targetType !== FileHandler.TypeTargetMediaDocument)
+            if((targetType !== FileHandler.TypeTargetMediaDocument) || context.telegram.documentIsSticker(message.media.document))
                 return;
 
             var type = message.media.document.mimeType.split("/")[0];

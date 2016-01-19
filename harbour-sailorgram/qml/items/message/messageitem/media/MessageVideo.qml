@@ -8,60 +8,40 @@ MessageMediaItem
 {
     property FileLocation fileLocation: context.telegram.locationOfVideo(message.media.video)
 
-    id: messagevideo
-    contentWidth: Math.min(messageitem.width, row.width)
-    contentHeight: row.height
+    property real aspectRatio: {
+        var w = fileHandler.imageSize.width;
+        var h = fileHandler.imageSize.height;
+
+        if(!w || !h)
+            return 0;
+
+        return w / h;
+    }
 
     MediaPlayerTimings { id: mediaplayertimings }
 
-    Row
+    id: messagevideo
+
+    contentWidth: fileHandler.imageSize.width
+    contentHeight: thumb.height
+
+    Image
     {
-        id: row
-        anchors { left: parent.left; top: parent.top }
-        height: imgpreview.height
-        width: imgpreview.width + info.width
-        spacing: Theme.paddingSmall
-
-        MessageThumbnail
-        {
-            id: imgpreview
-            source: messagevideo.mediaThumbnail || "image://theme/icon-l-video"
-            transferProgress: progressPercent
-        }
-
-        Column
-        {
-            id: info
-            width: Math.max(lblinfo.paintedWidth, lblduration.paintedWidth, lblsize.paintedWidth)
-            height: imgpreview.height
-
-            Label
-            {
-                id: lblinfo
-                height: parent.height / 3
-                verticalAlignment: Text.AlignTop
-                horizontalAlignment: Text.AlignLeft
-                font.pixelSize: Theme.fontSizeExtraSmall
-                text: qsTr("Video recording")
-                wrapMode: Text.NoWrap
-                elide: Text.ElideRight
-            }
-
-            Label
-            {
-                id: lblsize
-                height: parent.height / 3
-                font.pixelSize: Theme.fontSizeExtraSmall
-                text: qsTr("Size: %1").arg(TelegramHelper.formatBytes(mediaSize, 2))
-            }
-
-            Label
-            {
-                id: lblduration
-                height: parent.height / 3
-                font.pixelSize: Theme.fontSizeExtraSmall
-                text: qsTr("Duration: %1").arg(mediaplayertimings.displayDuration(message.media.video.duration))
-            }
-        }
+        id: videothumb
+        anchors.centerIn: parent
+        source: "image://theme/icon-m-play"
+        visible: !messagevideo.fileHandler.downloaded
+        z: 2
     }
+
+    MessageThumbnail
+    {
+        id: thumb
+        width: parent.width
+        height: aspectRatio ? (width / aspectRatio) : 0
+        cache: !messagevideo.fileHandler.downloaded
+        source: messagevideo.mediaThumbnail
+        transferProgress: progressPercent
+    }
+
 }

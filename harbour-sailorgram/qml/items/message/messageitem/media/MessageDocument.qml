@@ -10,7 +10,7 @@ MessageMediaItem
     property FileLocation fileLocation: context.telegram.locationOfDocument(message.media.document)
 
     id: messagedocument
-    contentWidth: imgpreview.width + Math.max(lblinfo.contentWidth, lblsize.contentWidth + lblmime.contentWidth) + Theme.paddingMedium
+    contentWidth: imgpreview.width + Math.max(lbldummyinfo.contentWidth, lblsize.contentWidth + lblmime.contentWidth) + Theme.paddingMedium
     contentHeight: row.height
 
     Row
@@ -25,7 +25,7 @@ MessageMediaItem
             id: imgpreview
             height: Theme.iconSizeMedium
             width: Theme.iconSizeMedium
-            source: messagedocument.mediaThumbnail || "image://theme/icon-m-document"
+            source: "image://theme/icon-m-document"
             transferProgress: progressPercent
 
             Rectangle {
@@ -41,6 +41,8 @@ MessageMediaItem
             id: info
             width: parent.width
             height: imgpreview.height
+
+            Label { id: lbldummyinfo; text: lblinfo.text; visible: false }
 
             Label
             {

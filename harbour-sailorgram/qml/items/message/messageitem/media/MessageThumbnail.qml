@@ -6,6 +6,7 @@ Item
 {
     property alias cache: image.cache
     property alias source: image.source
+    property alias sourceSize: image.sourceSize
     property real transferProgress
 
     id: messagethumbnail
@@ -32,8 +33,8 @@ Item
     {
         id: progresscircle
         anchors.centerIn: parent
-        width: image.height - Theme.paddingSmall
-        height: image.height - Theme.paddingSmall
+        width: parent.height - Theme.paddingSmall
+        height: parent.height - Theme.paddingSmall
         value: transferProgress / 100
         visible: (transferProgress > 0) && (transferProgress < 100)
     }
