@@ -646,21 +646,6 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
     </message>
 </context>
 <context>
-    <name>MessageVideo</name>
-    <message>
-        <source>Video recording</source>
-        <translation>Videoaufnahme</translation>
-    </message>
-    <message>
-        <source>Size: %1</source>
-        <translation>Größe: %1</translation>
-    </message>
-    <message>
-        <source>Duration: %1</source>
-        <translation>Dauer: %1</translation>
-    </message>
-</context>
-<context>
     <name>PeerItem</name>
     <message>
         <source>%1 members</source>

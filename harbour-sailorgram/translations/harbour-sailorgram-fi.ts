@@ -645,21 +645,6 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     </message>
 </context>
 <context>
-    <name>MessageVideo</name>
-    <message>
-        <source>Video recording</source>
-        <translation>Videotallenne</translation>
-    </message>
-    <message>
-        <source>Size: %1</source>
-        <translation>Koko: %1</translation>
-    </message>
-    <message>
-        <source>Duration: %1</source>
-        <translation>Kesto: %1</translation>
-    </message>
-</context>
-<context>
     <name>PeerItem</name>
     <message>
         <source>%1 members</source>

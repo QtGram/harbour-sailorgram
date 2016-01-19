@@ -643,21 +643,6 @@ Do a swype to the right to select a contact</source>
     </message>
 </context>
 <context>
-    <name>MessageVideo</name>
-    <message>
-        <source>Video recording</source>
-        <translation>Video záznam</translation>
-    </message>
-    <message>
-        <source>Size: %1</source>
-        <translation>Velikost: %1</translation>
-    </message>
-    <message>
-        <source>Duration: %1</source>
-        <translation>Trvání: %1</translation>
-    </message>
-</context>
-<context>
     <name>PeerItem</name>
     <message>
         <source>%1 members</source>

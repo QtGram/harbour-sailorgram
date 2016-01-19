@@ -65,7 +65,6 @@ Page
         PullDownMenu
         {
             id: pulldownmenu
-            enabled: messageview.atYBeginning && !messagesmodel.refreshing && (messageview.count > 0)
 
             MenuItem
             {

@@ -645,21 +645,6 @@ Svep åt vänster för att välja en kontakt</translation>
     </message>
 </context>
 <context>
-    <name>MessageVideo</name>
-    <message>
-        <source>Video recording</source>
-        <translation>Filminspelning</translation>
-    </message>
-    <message>
-        <source>Size: %1</source>
-        <translation>Storlek: %1</translation>
-    </message>
-    <message>
-        <source>Duration: %1</source>
-        <translation>Varaktighet: %1</translation>
-    </message>
-</context>
-<context>
     <name>PeerItem</name>
     <message>
         <source>%1 members</source>

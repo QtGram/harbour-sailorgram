@@ -6,7 +6,8 @@ Item
 {
     property alias cache: image.cache
     property alias source: image.source
-    property real transferProgress
+    property alias sourceSize: image.sourceSize
+    property real transferProgress: 0
 
     id: messagethumbnail
 
@@ -19,21 +20,12 @@ Item
         fillMode: Image.PreserveAspectFit
     }
 
-    BusyIndicator
-    {
-        id: busyindicator
-        anchors.centerIn: parent
-        width: Theme.iconSizeLarge - Theme.paddingSmall
-        height: Theme.iconSizeLarge - Theme.paddingSmall
-        running: !progresscircle.visible && (image.status !== Image.Ready)
-    }
-
     ProgressCircle
     {
         id: progresscircle
         anchors.centerIn: parent
-        width: image.height - Theme.paddingSmall
-        height: image.height - Theme.paddingSmall
+        width: parent.height - Theme.paddingSmall
+        height: parent.height - Theme.paddingSmall
         value: transferProgress / 100
         visible: (transferProgress > 0) && (transferProgress < 100)
     }

@@ -645,21 +645,6 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
     </message>
 </context>
 <context>
-    <name>MessageVideo</name>
-    <message>
-        <source>Video recording</source>
-        <translation>Enregistrement vidéo</translation>
-    </message>
-    <message>
-        <source>Size: %1</source>
-        <translation>Taille : %1</translation>
-    </message>
-    <message>
-        <source>Duration: %1</source>
-        <translation>Durée : %1</translation>
-    </message>
-</context>
-<context>
     <name>PeerItem</name>
     <message>
         <source>%1 members</source>

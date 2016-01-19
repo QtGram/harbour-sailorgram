@@ -644,21 +644,6 @@ Do a swype to the right to select a contact</source>
     </message>
 </context>
 <context>
-    <name>MessageVideo</name>
-    <message>
-        <source>Video recording</source>
-        <translation>Εγγραφή εικονοσκόπισης </translation>
-    </message>
-    <message>
-        <source>Size: %1</source>
-        <translation>Μέγεθος: %1</translation>
-    </message>
-    <message>
-        <source>Duration: %1</source>
-        <translation>Διάρκεια: %1</translation>
-    </message>
-</context>
-<context>
     <name>PeerItem</name>
     <message>
         <source>%1 members</source>
