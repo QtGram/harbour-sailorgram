@@ -274,6 +274,7 @@ ListItem
         {
             id: quotedloader
             asynchronous: true
+            visible: quotedloader.item !== NULL
 
             anchors  {
                 left: parent.left
@@ -295,6 +296,7 @@ ListItem
             id: medialoader
             asynchronous: true
             anchors.horizontalCenter: parent.horizontalCenter
+            visible: medialoader.item !== NULL
 
             sourceComponent: {
                 if(message.media) {
