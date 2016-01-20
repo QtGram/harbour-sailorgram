@@ -35,7 +35,6 @@ QtObject
 
     property SailorGram sailorgram: SailorGram {
         telegram: context.telegram
-        interval: 8000 // 8 seconds
     }
 
     property Telegram telegram: Telegram {

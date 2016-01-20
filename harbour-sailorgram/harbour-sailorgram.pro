@@ -68,7 +68,6 @@ INSTALLS += events
 SOURCES += src/harbour-sailorgram.cpp \
     src/sailorgram.cpp \
     src/dbus/screenblank.cpp \
-    src/heartbeat.cpp \
     src/dbus/interface/sailorgramadaptor.cpp \
     src/dbus/interface/sailorgraminterface.cpp \
     src/dbus/notification/notification.cpp \
@@ -173,7 +172,6 @@ TRANSLATIONS += translations/harbour-sailorgram-be.ts \
 HEADERS += \
     src/sailorgram.h \
     src/dbus/screenblank.h \
-    src/heartbeat.h \
     src/dbus/interface/sailorgramadaptor.h \
     src/dbus/interface/sailorgraminterface.h \
     src/dbus/notification/notification.h \
