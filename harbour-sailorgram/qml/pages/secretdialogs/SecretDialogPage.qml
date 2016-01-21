@@ -106,6 +106,7 @@ Page
 
             delegate: MessageItem {
                 context: secretdialogpage.context
+                messageTypesPool: messageview.messageTypesPool
                 message: item
             }
 

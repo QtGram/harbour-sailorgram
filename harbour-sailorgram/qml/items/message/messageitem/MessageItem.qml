@@ -1,6 +1,7 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
+import "../../../components/message"
 import "../../../models"
 import "../../../menus"
 import "media"
@@ -11,13 +12,14 @@ import "../../../js/TelegramHelper.js" as TelegramHelper
 ListItem
 {
     property Context context
+    property MessageTypesPool messageTypesPool
     property Message message
 
     function remorseNeeded(mediatype, type) {
-        if(!medialoader.item)
+        if(!mediacontainer.item)
             return;
 
-        if(medialoader.item.fileHandler.downloaded) // No remorse for downloaded medias
+        if(mediacontainer.item.fileHandler.downloaded) // No remorse for downloaded medias
             return false;
 
         if((mediatype === TelegramConstants.typeMessageMediaVideo) || (mediatype === TelegramConstants.typeMessageMediaAudio))
@@ -33,27 +35,27 @@ ListItem
     }
 
     function openOrDownloadMedia(canbeviewed, type) {
-        if(!medialoader.item)
+        if(!mediacontainer.item)
             return;
 
-        if(!medialoader.item.fileHandler.downloaded)
-            medialoader.item.fileHandler.download();
+        if(!mediacontainer.item.fileHandler.downloaded)
+            mediacontainer.item.fileHandler.download();
 
         if((message.media.classType === TelegramConstants.typeMessageMediaPhoto) || (type === "image")) {
-            pageStack.push(Qt.resolvedUrl("../../../pages/media/MediaPhotoPage.qml"), { "context": messageitem.context, "message": messageitem.message, "fileHandler": medialoader.item.fileHandler });
+            pageStack.push(Qt.resolvedUrl("../../../pages/media/MediaPhotoPage.qml"), { "context": messageitem.context, "message": messageitem.message, "fileHandler": mediacontainer.item.fileHandler });
             return;
         }
 
         if((message.media.classType === TelegramConstants.typeMessageMediaVideo) || (message.media.classType === TelegramConstants.typeMessageMediaAudio) || (type === "audio") || (type === "video")) {
-            pageStack.push(Qt.resolvedUrl("../../../pages/media/MediaPlayerPage.qml"), { "context": messageitem.context, "message": messageitem.message, "fileHandler": medialoader.item.fileHandler });
+            pageStack.push(Qt.resolvedUrl("../../../pages/media/MediaPlayerPage.qml"), { "context": messageitem.context, "message": messageitem.message, "fileHandler": mediacontainer.item.fileHandler });
             return;
         }
 
-        if(!medialoader.item.fileHandler.downloaded)
+        if(!mediacontainer.item.fileHandler.downloaded)
             return;
 
         popupmessage.show(qsTr("Opening media"));
-        Qt.openUrlExternally(medialoader.item.fileHandler.filePath);
+        Qt.openUrlExternally(mediacontainer.item.fileHandler.filePath);
     }
 
     function displayMedia() {
@@ -92,83 +94,13 @@ ListItem
         id: messagemenu
         context: messageitem.context
         message: messageitem.message
-        messageMediaItem: medialoader.item
+        messageMediaItem: mediacontainer.item
 
-        onCancelRequested: medialoader.item.cancelTransfer()
-        onDownloadRequested: medialoader.item.download()
+        onCancelRequested: mediacontainer.item.cancelTransfer()
+        onDownloadRequested: mediacontainer.item.download()
     }
 
     onClicked: displayMedia()
-
-    Component {
-        id: messagequoteditem
-
-        MessageQuotedItem {
-            context: messageitem.context
-            message: messageitem.message
-            maxWidth: content.maxw - 2 * Theme.paddingMedium
-        }
-    }
-
-    Component {
-        id: documentcomponent
-
-        MessageDocument {
-            context: messageitem.context
-            message: messageitem.message
-            maxWidth: content.maxw - 2 * Theme.paddingMedium
-        }
-    }
-
-    Component {
-        id: photocomponent
-
-        MessagePhoto {
-            context: messageitem.context
-            message: messageitem.message
-            maxWidth: content.maxw - 2 * Theme.paddingMedium
-        }
-    }
-
-    Component {
-        id: audiocomponent
-
-        MessageAudio {
-            context: messageitem.context
-            message: messageitem.message
-            maxWidth: content.maxw - 2 * Theme.paddingMedium
-        }
-    }
-
-    Component {
-        id: videocomponent
-
-        MessageVideo {
-            context: messageitem.context
-            message: messageitem.message
-            maxWidth: content.maxw - 2 * Theme.paddingMedium
-        }
-    }
-
-    Component {
-        id: locationcomponent
-
-        MessageLocation {
-            context: messageitem.context
-            message: messageitem.message
-            maxWidth: content.maxw - 2 * Theme.paddingMedium
-        }
-    }
-
-    Component {
-        id: stickercomponent
-
-        MessageSticker {
-            context: messageitem.context
-            message: messageitem.message
-            maxWidth: content.maxw - 2 * Theme.paddingMedium
-        }
-    }
 
     Rectangle
     {
@@ -220,11 +152,11 @@ ListItem
             if(lbluser.visible)
                 w = Math.max(w, lbluser.contentWidth);
 
-            if(quotedloader.item)
-                w = Math.max(w, quotedloader.item.calculatedWidth);
+            if(quotedcontainer.item)
+                w = Math.max(w, quotedcontainer.item.width);
 
-            if(medialoader.item)
-                w = Math.max(w, medialoader.item.width);
+            if(mediacontainer.item)
+                w = Math.max(w, mediacontainer.item.width);
 
             w += 2 * Theme.paddingMedium;
             return Math.min(w, content.maxw);
@@ -270,54 +202,58 @@ ListItem
             }
         }
 
-        Loader
+        MessageContainer
         {
-            id: quotedloader
-            asynchronous: true
-            visible: quotedloader.item !== null
+            id: quotedcontainer
+            visible: quotedcontainer.item !== null
+            anchors.horizontalCenter: parent.horizontalCenter
 
+            /*
             anchors  {
                 left: parent.left
                 right: parent.right
                 leftMargin: Theme.paddingMedium
                 rightMargin: Theme.paddingMedium
             }
+            */
 
-            sourceComponent: {
-                if(message.replyToMsgId)
-                     return messagequoteditem;
-
-                return null;
+            Component.onCompleted: {
+                if(message.replyToMsgId) {
+                    var params = { "context": messageitem.context, "message": messageitem.message, "maxWidth": content.maxw - 2 * Theme.paddingMedium };
+                    messageTypesPool.messageQuotedComponent.createObject(quotedcontainer, params);
+                }
             }
         }
 
-        Loader
+        MessageContainer
         {
-            id: medialoader
-            asynchronous: true
+            id: mediacontainer
             anchors.horizontalCenter: parent.horizontalCenter
-            visible: medialoader.item !== null
+            visible: mediacontainer.item !== null
 
-            sourceComponent: {
-                if(message.media) {
-                    if(message.media.classType === TelegramConstants.typeMessageMediaDocument)
-                    {
-                        if(context.telegram.documentIsSticker(message.media.document))
-                            return stickercomponent;
+            Component.onCompleted: {
+                if(!message.media)
+                    return;
 
-                        return documentcomponent;
-                    }
-                    if(message.media.classType === TelegramConstants.typeMessageMediaPhoto)
-                        return photocomponent;
-                    else if(message.media.classType === TelegramConstants.typeMessageMediaAudio)
-                        return audiocomponent;
-                    else if(message.media.classType === TelegramConstants.typeMessageMediaVideo)
-                        return videocomponent;
-                    else if(message.media.classType === TelegramConstants.typeMessageMediaGeo)
-                        return locationcomponent;
+                var params = { "context": messageitem.context, "message": messageitem.message, "maxWidth": content.maxw - 2 * Theme.paddingMedium };
+
+                if(message.media.classType === TelegramConstants.typeMessageMediaDocument) {
+                    if(context.telegram.documentIsSticker(message.media.document))
+                        messageTypesPool.stickerComponent.createObject(mediacontainer, params);
+                    else
+                        messageTypesPool.documentComponent.createObject(mediacontainer, params);
+
+                    return;
                 }
 
-                return null;
+                if(message.media.classType === TelegramConstants.typeMessageMediaPhoto)
+                    messageTypesPool.photoComponent.createObject(mediacontainer, params);
+                else if(message.media.classType === TelegramConstants.typeMessageMediaAudio)
+                    messageTypesPool.audioComponent.createObject(mediacontainer, params);
+                else if(message.media.classType === TelegramConstants.typeMessageMediaVideo)
+                    messageTypesPool.videoComponent.createObject(mediacontainer, params);
+                else if(message.media.classType === TelegramConstants.typeMessageMediaGeo)
+                    messageTypesPool.locationComponent.createObject(mediacontainer, params);
             }
         }
 

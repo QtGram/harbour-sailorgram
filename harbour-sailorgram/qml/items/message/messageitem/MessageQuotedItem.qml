@@ -11,16 +11,19 @@ Item
     property Context context
     property Message message
     property Message replyToMessage: context.telegram.message(message.replyToMsgId)
-    property real calculatedWidth: Math.max(dummytextcontent.contentWidth, lbluser.contentWidth) + quotedindicatorrect.width + row.spacing
     property real maxWidth
 
     id: messagequoteditem
-    height: column.height
+    height: row.height
+
+    width: {
+        var w = Math.max(dummytextcontent.contentWidth, dummyuser.contentWidth) + quotedindicatorrect.width + row.spacing
+        return Math.min(w, maxWidth);
+    }
 
     Text
     {
         id: dummytextcontent
-        width: maxWidth - quotedindicatorrect.width - row.spacing
         visible: false
         font.pixelSize: mtctextcontent.font.pixelSize
         font.italic: mtctextcontent.font.italic
@@ -28,10 +31,21 @@ Item
         wrapMode: mtctextcontent.wrapMode
     }
 
+    Text
+    {
+        id: dummyuser
+        visible: false
+        font.bold: true
+        font.pixelSize: Theme.fontSizeTiny
+        text: lbluser.text
+        wrapMode: lbluser.wrapMode
+    }
+
     Row
     {
         id: row
-        anchors.fill: parent
+        width: parent.width
+        height: column.height
         spacing: Theme.paddingSmall
 
         Rectangle
@@ -39,13 +53,14 @@ Item
             id: quotedindicatorrect
             color: Theme.secondaryHighlightColor
             width: Theme.paddingSmall
-            height: parent.height
+            height: column.height
         }
 
         Column
         {
             id: column
-            width: parent.width - row.spacing - quotedindicatorrect.width
+            width: parent.width
+            height: lbluser.contentHeight + mtctextcontent.contentHeight
 
             Label
             {

@@ -2,10 +2,12 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import "../../models"
 import "../../components/telegram"
+import "../../components/message"
 
 SilicaListView
 {
     property Context context
+    property MessageTypesPool messageTypesPool: MessageTypesPool { }
 
     id: messageview
     currentIndex: -1

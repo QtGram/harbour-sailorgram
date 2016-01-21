@@ -112,6 +112,7 @@ Page
 
             delegate: MessageItem {
                 context: dialogpage.context
+                messageTypesPool: messageview.messageTypesPool
                 message: item
             }
 
