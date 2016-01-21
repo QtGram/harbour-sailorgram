@@ -5,13 +5,13 @@ MessageMediaItem
     readonly property string appId: "MqR7KyY6dZpTbKiFwc3h"
     readonly property string appCode: "zfYp6V9Ou_wDQn4NVqMofA"
 
-    function locationThumbnail(latitude, longitude)
+    function locationThumbnail(latitude, longitude, z)
     {
         return "https://maps.nlp.nokia.com/mia/1.6/mapview?" + "app_id=" + appId + "&"
                                                              + "app_code=" + appCode + "&"
-                                                             + "ord&f=0&poithm=1&poilbl=0&"
+                                                             + "nord&f=0&poithm=1&poilbl=0&"
                                                              + "ctr=" + latitude + "," + longitude + "&"
-                                                             + "w=" + width + "&h=" + height + "&z=1";
+                                                             + "w=" + width + "&h=" + height + "&z=" + z;
     }
 
     id: messagelocation
@@ -24,6 +24,6 @@ MessageMediaItem
         asynchronous: true
         cache: true
         anchors.fill: parent
-        source: locationThumbnail(message.media.geo.lat, message.media.geo.longitude);
+        source: locationThumbnail(message.media.geo.lat, message.media.geo.longitude, 14);
     }
 }
