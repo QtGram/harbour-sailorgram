@@ -2,14 +2,20 @@
 #define THUMBNAILPROVIDER_H
 
 
+#include <QQuickImageProvider>
+
+
 class ThumbnailProvider : public QQuickImageProvider
 {
 public:
     ThumbnailProvider();
 
-signals:
+    QPixmap requestPixmap(const QString &id, QSize *size, const QSize &requestedSize) Q_DECL_OVERRIDE;
 
-public slots:
+private:
+    static const QSize THUMBNAIL_SIZE;
+
+    const QString _thumbnailsdir;
 };
 
 #endif // THUMBNAILPROVIDER_H

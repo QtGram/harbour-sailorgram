@@ -1,6 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import QtDocGallery 5.0
+import harbour.sailorgram.ImagesModel 1.0
 import "../../models"
 
 Page
@@ -32,12 +32,10 @@ Page
     id: selectorimagespage
     allowedOrientations: defaultAllowedOrientations
 
-    DocumentGalleryModel {
-        id: documentgallerymodel
-        rootType: DocumentGallery.Image
-        properties: [ "url", "filePath", "orientation", "dateTaken" ]
-        sortProperties: [ "-dateTaken" ]
-        autoUpdate: true
+    ImagesModel {
+        id: imagesmodel
+        sortRole: ImagesModel.DateRole
+        sortOrder: Qt.DescendingOrder
     }
 
     RemorsePopup {
@@ -59,15 +57,17 @@ Page
         quickScroll: true
         cellWidth: cellSize
         cellHeight: cellSize
-        model: documentgallerymodel
+        model: imagesmodel
 
         delegate: BackgroundItem {
             width: cellSize
             height: cellSize
             onClicked: {
-                remorsepopup.cancel();
-                view.currentIndex = index;
-                remorsepopup.execute(qsTr("Selecting image"), function () { actionCompleted("image", url) });
+                if (view.currentIndex !== index) {
+                    remorsepopup.cancel();
+                    view.currentIndex = index;
+                    remorsepopup.execute(qsTr("Selecting image"), function () { actionCompleted("image", model.url) });
+                }
             }
 
             Image {
@@ -79,7 +79,7 @@ Page
                 sourceSize.width: maxCellSize
                 sourceSize.height: maxCellSize
                 rotation: 360 - model.orientation
-                source: "image://thumbnail/" + filePath;
+                source: "image://thumbnail/" + model.path;
             }
 
             Loader {
