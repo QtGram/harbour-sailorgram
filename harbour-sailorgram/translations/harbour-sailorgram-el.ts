@@ -126,15 +126,15 @@
     <name>AudioRecorder</name>
     <message>
         <source>Error : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Σφάλμα: %1</translation>
     </message>
     <message>
         <source>Recording...</source>
-        <translation type="unfinished"></translation>
+        <translation>Εγγραφή...</translation>
     </message>
     <message>
         <source>Stopped.</source>
-        <translation type="unfinished"></translation>
+        <translation>Σταματημένο. </translation>
     </message>
 </context>
 <context>
@@ -165,7 +165,7 @@
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished">Έξοδος</translation>
+        <translation>Έξοδος</translation>
     </message>
 </context>
 <context>
@@ -227,7 +227,7 @@ Minimum length is 5 characters.</source>
     <name>ChatInfoMenu</name>
     <message>
         <source>Remove from Group</source>
-        <translation>Διαγραφή από ομάδα</translation>
+        <translation>Διαγραφή από Ομάδα</translation>
     </message>
     <message>
         <source>Removing from group</source>
@@ -246,27 +246,27 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Background enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Ενεργοποίηση στο υπόβαθρο</translation>
     </message>
     <message>
         <source>Chat header visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Επικεφαλίδα συνομιλίας ορατή</translation>
     </message>
     <message>
         <source>Bubbles visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Ορατότητα φυσαλίδων</translation>
     </message>
     <message>
         <source>Bubble opacity</source>
-        <translation type="unfinished"></translation>
+        <translation>Αδιαφάνεια φυσαλίδας </translation>
     </message>
     <message>
         <source>Keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Πληκτρολόγιο</translation>
     </message>
     <message>
         <source>Appearance</source>
-        <translation type="unfinished"></translation>
+        <translation>Εμφάνιση</translation>
     </message>
 </context>
 <context>
@@ -288,11 +288,11 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Telegram Status</source>
-        <translation>Κατάσταση Telegram</translation>
+        <translation>Κατάσταση του Telegram</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation>Καταγραφή σφαλμάτων</translation>
+        <translation>Κατάλογος σφαλμάτων</translation>
     </message>
     <message>
         <source>Exit</source>
@@ -496,7 +496,9 @@ Minimum length is 5 characters.</source>
         <source>No Chats
 
 Do a swype to the right to select a contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν υπάρχουν συνομιλίες
+
+Σύρατε προς τα δεξιά για να επιλέξετε μια επαφή</translation>
     </message>
 </context>
 <context>
@@ -674,7 +676,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished">Έξοδος</translation>
+        <translation>Έξοδος</translation>
     </message>
 </context>
 <context>
@@ -730,122 +732,122 @@ Do a swype to the right to select a contact</source>
     <name>SelectorFilesPage</name>
     <message>
         <source>Android storage</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποθήκευση Android</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished"></translation>
+        <translation>Κάρτα SD</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Home</translation>
     </message>
     <message>
         <source>Selecting file</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέγοντας αρχείο</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιστροφή</translation>
     </message>
 </context>
 <context>
     <name>SelectorImagesPage</name>
     <message>
         <source>Selecting image</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέγοντας εικόνα</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιστροφή</translation>
     </message>
 </context>
 <context>
     <name>SelectorLocationPage</name>
     <message>
         <source>Waiting for coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Αναμονή για τις συντεταγμένες</translation>
     </message>
     <message>
         <source>Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Συντεταγμένες</translation>
     </message>
     <message>
         <source>lat: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>πλάτος: %1</translation>
     </message>
     <message>
         <source>long: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>μήκος: %1</translation>
     </message>
 </context>
 <context>
     <name>SelectorMainPage</name>
     <message>
         <source>Send file</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποστολή αρχείου</translation>
     </message>
     <message>
         <source>Image from gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>Εικόνα από την συλλογή</translation>
     </message>
     <message>
         <source>Capture photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Λήψη φωτογραφίας</translation>
     </message>
     <message>
         <source>Record sound</source>
-        <translation type="unfinished"></translation>
+        <translation>Εγγραφή ήχου</translation>
     </message>
     <message>
         <source>My location</source>
-        <translation type="unfinished"></translation>
+        <translation>Η τοποθεσία μου</translation>
     </message>
     <message>
         <source>Sticker</source>
-        <translation type="unfinished"></translation>
+        <translation>Ετικέτα </translation>
     </message>
     <message>
         <source>Browse files</source>
-        <translation type="unfinished"></translation>
+        <translation>Περιήγηση αρχείων</translation>
     </message>
 </context>
 <context>
     <name>SelectorSoundRecordPage</name>
     <message>
         <source>%1 sec</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 δεύτερα</translation>
     </message>
     <message>
         <source>~%1 B</source>
-        <translation type="unfinished"></translation>
+        <translation>~%1 Β</translation>
     </message>
     <message>
         <source>~%1 KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>~%1 KiB</translation>
     </message>
     <message>
         <source>~%1 MiB</source>
-        <translation type="unfinished"></translation>
+        <translation>~%1 MiB</translation>
     </message>
     <message>
         <source>~%1 GiB</source>
-        <translation type="unfinished"></translation>
+        <translation>~%1 GiB</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Έναρξη</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Σταμάτημα</translation>
     </message>
 </context>
 <context>
     <name>SelectorStickerPage</name>
     <message>
         <source>Sending sticker</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποστολή ετικέτας </translation>
     </message>
 </context>
 <context>
@@ -896,7 +898,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished">Έξοδος</translation>
+        <translation>Έξοδος</translation>
     </message>
 </context>
 <context>

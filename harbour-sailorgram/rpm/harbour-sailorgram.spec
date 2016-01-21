@@ -14,7 +14,7 @@ Name:       harbour-sailorgram
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    SailorGram
 Version:    0.73
-Release:    14
+Release:    15
 Group:      Qt/Qt
 License:    GPL3
 URL:        https://github.com/Dax89/harbour-sailorgram/
@@ -92,6 +92,7 @@ fi
 # << preun
 %post
 # >> post
+systemctl-user restart mce.service
 systemctl-user restart ngfd.service
 systemctl-user restart harbour-sailorgram-notifications.service
 # << post
@@ -107,5 +108,6 @@ systemctl-user restart harbour-sailorgram-notifications.service
 %{_datadir}/dbus-1/services/*.service
 %{_libdir}/systemd/user/harbour-sailorgram-notifications.service
 %{_libdir}/systemd/user/post-user-session.target.wants/harbour-sailorgram-notifications.service
+/etc/mce/10sailorgram-led.ini
 # >> files
 # << files

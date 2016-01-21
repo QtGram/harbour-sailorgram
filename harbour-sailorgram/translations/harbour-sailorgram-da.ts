@@ -126,15 +126,15 @@
     <name>AudioRecorder</name>
     <message>
         <source>Error : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Fejl : %1</translation>
     </message>
     <message>
         <source>Recording...</source>
-        <translation type="unfinished"></translation>
+        <translation>Optager...</translation>
     </message>
     <message>
         <source>Stopped.</source>
-        <translation type="unfinished"></translation>
+        <translation>Stoppet.</translation>
     </message>
 </context>
 <context>
@@ -730,122 +730,122 @@ Stryg til venstre for at vælge en kontakt</translation>
     <name>SelectorFilesPage</name>
     <message>
         <source>Android storage</source>
-        <translation type="unfinished"></translation>
+        <translation>Android storage</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished"></translation>
+        <translation>SD-kort</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Hjem</translation>
     </message>
     <message>
         <source>Selecting file</source>
-        <translation type="unfinished"></translation>
+        <translation>Vælger fil</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilbage</translation>
     </message>
 </context>
 <context>
     <name>SelectorImagesPage</name>
     <message>
         <source>Selecting image</source>
-        <translation type="unfinished"></translation>
+        <translation>Vælger billede</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilbage</translation>
     </message>
 </context>
 <context>
     <name>SelectorLocationPage</name>
     <message>
         <source>Waiting for coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Venter på Koordinater...</translation>
     </message>
     <message>
         <source>Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinater</translation>
     </message>
     <message>
         <source>lat: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>bredde: %1</translation>
     </message>
     <message>
         <source>long: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>længe: %1</translation>
     </message>
 </context>
 <context>
     <name>SelectorMainPage</name>
     <message>
         <source>Send file</source>
-        <translation type="unfinished"></translation>
+        <translation>Send fil</translation>
     </message>
     <message>
         <source>Image from gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>Billede fra galleri</translation>
     </message>
     <message>
         <source>Capture photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Fang foto</translation>
     </message>
     <message>
         <source>Record sound</source>
-        <translation type="unfinished"></translation>
+        <translation>Optag lyd</translation>
     </message>
     <message>
         <source>My location</source>
-        <translation type="unfinished"></translation>
+        <translation>Min placering</translation>
     </message>
     <message>
         <source>Sticker</source>
-        <translation type="unfinished"></translation>
+        <translation>Mærke</translation>
     </message>
     <message>
         <source>Browse files</source>
-        <translation type="unfinished"></translation>
+        <translation>Gennemse filer</translation>
     </message>
 </context>
 <context>
     <name>SelectorSoundRecordPage</name>
     <message>
         <source>%1 sec</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 sek</translation>
     </message>
     <message>
         <source>~%1 B</source>
-        <translation type="unfinished"></translation>
+        <translation>~%1 B</translation>
     </message>
     <message>
         <source>~%1 KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>~%1 KiB</translation>
     </message>
     <message>
         <source>~%1 MiB</source>
-        <translation type="unfinished"></translation>
+        <translation>~%1 MiB</translation>
     </message>
     <message>
         <source>~%1 GiB</source>
-        <translation type="unfinished"></translation>
+        <translation>~%1 GiB</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Start</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Stop</translation>
     </message>
 </context>
 <context>
     <name>SelectorStickerPage</name>
     <message>
         <source>Sending sticker</source>
-        <translation type="unfinished"></translation>
+        <translation>Sender mærke</translation>
     </message>
 </context>
 <context>

@@ -1,7 +1,7 @@
 Name: harbour-sailorgram
 Summary: SailorGram
 Version: 0.73
-Release: 14
+Release: 15
 # The contents of the Group field should be one of the groups listed here:
 # http://gitorious.org/meego-developer-tools/spectacle/blobs/master/data/GROUPS
 Group: Qt/Qt
@@ -54,6 +54,7 @@ Files:
   - '%{_datadir}/dbus-1/services/*.service'
   - '%{_libdir}/systemd/user/harbour-sailorgram-notifications.service'
   - '%{_libdir}/systemd/user/post-user-session.target.wants/harbour-sailorgram-notifications.service'
+  - '/etc/mce/10sailorgram-led.ini'
 
 # For more information about yaml and what's supported in Sailfish OS
 # build system, please see https://wiki.merproject.org/wiki/Spectacle

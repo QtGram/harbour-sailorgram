@@ -845,7 +845,7 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
     <name>SelectorStickerPage</name>
     <message>
         <source>Sending sticker</source>
-        <translation type="unfinished"></translation>
+        <translation>Envoie de sticker</translation>
     </message>
 </context>
 <context>

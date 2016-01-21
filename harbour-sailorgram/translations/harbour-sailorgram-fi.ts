@@ -153,7 +153,7 @@
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign In&apos;</source>
-        <translation>Odota tekstiviestiä, jossa on aktivointikoodi. Paina sitten &quot;Kirjaudu&quot;.</translation>
+        <translation>Odota tekstiviestiä, jossa on aktivointikoodi. Valitse sitten &quot;Kirjaudu&quot;.</translation>
     </message>
     <message>
         <source>Resend Activation Code</source>
@@ -197,7 +197,7 @@ Vähimmäispituus on 5 merkkiä.</translation>
     </message>
     <message>
         <source>This username is already occupied</source>
-        <translation>Käyttäjänimi on jo varattu.</translation>
+        <translation>Käyttäjänimi on jo varattu</translation>
     </message>
 </context>
 <context>
@@ -318,7 +318,7 @@ Vähimmäispituus on 5 merkkiä.</translation>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation>Yhteys katkaistu</translation>
+        <translation>Ei yhteyttä</translation>
     </message>
     <message>
         <source>%1 unread messages</source>
@@ -772,11 +772,11 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     </message>
     <message>
         <source>lat: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>lev: %1</translation>
     </message>
     <message>
         <source>long: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>pit: %1</translation>
     </message>
 </context>
 <context>
@@ -787,7 +787,7 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     </message>
     <message>
         <source>Image from gallery</source>
-        <translation>Kuva otettu galleriasta</translation>
+        <translation>Hae kuva galleriasta</translation>
     </message>
     <message>
         <source>Capture photo</source>
@@ -845,7 +845,7 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     <name>SelectorStickerPage</name>
     <message>
         <source>Sending sticker</source>
-        <translation type="unfinished"></translation>
+        <translation>Lähetetään tarraa</translation>
     </message>
 </context>
 <context>
@@ -879,7 +879,7 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
-        <translation>Odota tekstiviestiä, jossa on aktivointikoodi. Paina sitten &quot;Kirjaudu&quot;.</translation>
+        <translation>Odota tekstiviestiä, jossa on aktivointikoodi. Valitse sitten &quot;Kirjaudu&quot;.</translation>
     </message>
     <message>
         <source>First Name</source>
