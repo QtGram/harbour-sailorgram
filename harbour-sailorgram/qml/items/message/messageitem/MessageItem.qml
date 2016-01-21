@@ -208,15 +208,6 @@ ListItem
             visible: quotedcontainer.item !== null
             anchors.horizontalCenter: parent.horizontalCenter
 
-            /*
-            anchors  {
-                left: parent.left
-                right: parent.right
-                leftMargin: Theme.paddingMedium
-                rightMargin: Theme.paddingMedium
-            }
-            */
-
             Component.onCompleted: {
                 if(message.replyToMsgId) {
                     var params = { "context": messageitem.context, "message": messageitem.message, "maxWidth": content.maxw - 2 * Theme.paddingMedium };
