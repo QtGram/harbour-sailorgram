@@ -65,6 +65,11 @@ events.files = $$PWD/events/*.ini
 events.path = /usr/share/ngfd/events.d
 INSTALLS += events
 
+# MCE Config
+mce.files = $$PWD/mce/*.ini
+mce.path = /etc/mce
+INSTALLS += mce
+
 SOURCES += src/harbour-sailorgram.cpp \
     src/sailorgram.cpp \
     src/dbus/screenblank.cpp \
@@ -223,4 +228,5 @@ DISTFILES += \
     qml/items/sticker/StickerItem.qml \
     qml/items/message/messageitem/media/MessageLocation.qml \
     qml/components/message/MessageTypesPool.qml \
-    qml/components/message/MessageContainer.qml
+    qml/components/message/MessageContainer.qml \
+    mce/10sailorgram-led.ini
