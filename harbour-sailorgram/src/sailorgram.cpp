@@ -6,7 +6,7 @@ const QString SailorGram::PUBLIC_KEY_FILE = "server.pub";
 const QString SailorGram::EMOJI_FOLDER = "emoji";
 const QString SailorGram::APPLICATION_PRETTY_NAME = "SailorGram";
 
-SailorGram::SailorGram(QObject *parent): QObject(parent), _telegram(NULL), _foregrounddialog(NULL), _daemonized(false)
+SailorGram::SailorGram(QObject *parent): QObject(parent), _telegram(NULL), _connected(-1), _foregrounddialog(NULL), _daemonized(false)
 {
     QDir cfgdir(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation));
     cfgdir.mkpath(qApp->applicationName() + QDir::separator() + qApp->applicationName() + QDir::separator() + SailorGram::CONFIG_FOLDER);
@@ -15,18 +15,15 @@ SailorGram::SailorGram(QObject *parent): QObject(parent), _telegram(NULL), _fore
     cachedir.mkpath(qApp->applicationName() + QDir::separator() + qApp->applicationName());
 
     this->_netcfgmanager = new QNetworkConfigurationManager(this);
-    this->_heartbeat = new HeartBeat(this);
     this->_interface = new SailorgramInterface(this);
     this->_autostart = !SailorGram::hasNoDaemonFile();
 
     connect(qApp, SIGNAL(applicationStateChanged(Qt::ApplicationState)), this, SLOT(onApplicationStateChanged(Qt::ApplicationState)));
     connect(this, SIGNAL(daemonizedChanged()), this, SLOT(updateLogLevel()));
+    connect(this, SIGNAL(connectedChanged()), this, SLOT(wakeSleep()), Qt::QueuedConnection);
     connect(this->_netcfgmanager, SIGNAL(onlineStateChanged(bool)), this, SLOT(onOnlineStateChanged(bool)));
     connect(this->_interface, SIGNAL(wakeUpRequested()), this, SLOT(onWakeUpRequested()));
     connect(this->_interface, SIGNAL(openDialogRequested(qint32)), this, SIGNAL(openDialogRequested(qint32)));
-    connect(this->_heartbeat, SIGNAL(connectedChanged()), this, SLOT(wakeSleep()), Qt::QueuedConnection);
-    connect(this->_heartbeat, SIGNAL(connectedChanged()), this, SIGNAL(connectedChanged()), Qt::QueuedConnection);
-    connect(this->_heartbeat, SIGNAL(intervalChanged()), this, SIGNAL(intervalChanged()));
 }
 
 bool SailorGram::autostart()
@@ -46,17 +43,7 @@ bool SailorGram::daemonized() const
 
 bool SailorGram::connected() const
 {
-    return this->_heartbeat->connected();
-}
-
-int SailorGram::interval() const
-{
-    return this->_heartbeat->interval();
-}
-
-void SailorGram::setInterval(int interval)
-{
-    this->_heartbeat->setInterval(interval);
+    return this->_connected;
 }
 
 QString SailorGram::emojiPath() const
@@ -138,12 +125,14 @@ void SailorGram::setTelegram(TelegramQml *telegram)
         return;
 
     this->_telegram = telegram;
-    this->_heartbeat->setTelegram(telegram);
 
-    if(this->_telegram->connected())
-        this->_heartbeat->start();
+    if(!this->_telegram->connected())
+        connect(this->_telegram, SIGNAL(connectedChanged()), this, SLOT(onConnectedChanged()));
     else
-        connect(this->_telegram, SIGNAL(connectedChanged()), this, SLOT(startHeartBeat()));
+    {
+        this->_connected = true;
+        emit connectedChanged();
+    }
 
     emit telegramChanged();
 }
@@ -310,10 +299,11 @@ void SailorGram::onApplicationStateChanged(Qt::ApplicationState state)
 
 void SailorGram::onOnlineStateChanged(bool isonline)
 {
-    if(this->_heartbeat->connected() == isonline)
+    if(this->_connected == isonline)
         return;
 
-    this->_heartbeat->setStopped(!isonline);
+    this->_connected = isonline;
+    emit connectedChanged();
 }
 
 void SailorGram::onNotificationClosed(uint)
@@ -451,15 +441,16 @@ void SailorGram::notify(MessageObject *message, const QString &name, const QStri
         this->beep();
 }
 
-void SailorGram::startHeartBeat()
+void SailorGram::onConnectedChanged()
 {
-    if(!this->_telegram->connected())
+    if(this->_connected == this->_telegram->connected())
         return;
 
-    this->_heartbeat->start();
+    this->_connected = this->_telegram->connected();
+    emit connectedChanged();
 }
 
 void SailorGram::wakeSleep()
 {
-    this->_heartbeat->connected() ? this->_telegram->wake() : this->_telegram->sleep();
+    this->_connected ? this->_telegram->wake() : this->_telegram->sleep();
 }

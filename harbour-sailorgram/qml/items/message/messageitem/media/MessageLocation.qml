@@ -1,25 +1,29 @@
 import QtQuick 2.1
-import QtLocation 5.0
-import QtPositioning 5.0
 
 MessageMediaItem
 {
+    readonly property string appId: "MqR7KyY6dZpTbKiFwc3h"
+    readonly property string appCode: "zfYp6V9Ou_wDQn4NVqMofA"
+
+    function locationThumbnail(latitude, longitude)
+    {
+        return "https://maps.nlp.nokia.com/mia/1.6/mapview?" + "app_id=" + appId + "&"
+                                                             + "app_code=" + appCode + "&"
+                                                             + "ord&f=0&poithm=1&poilbl=0&"
+                                                             + "ctr=" + latitude + "," + longitude + "&"
+                                                             + "w=" + width + "&h=" + height + "&z=1";
+    }
+
     id: messagelocation
     contentWidth: maxWidth
     contentHeight: maxWidth
 
-    Map
+    Image
     {
-        id: map
+        id: mapthumbnail
+        asynchronous: true
+        cache: true
         anchors.fill: parent
-        gesture.enabled: false
-        center: QtPositioning.coordinate(message.media.geo.lat, message.media.geo.longitude)
-
-        plugin: Plugin {
-            allowExperimental: true
-            required.mapping: Plugin.AnyMappingFeatures
-            required.geocoding: Plugin.AnyGeocodingFeatures
-            preferred: ["osm", "here", "nokia", "gmaps"]
-        }
+        source: locationThumbnail(message.media.geo.lat, message.media.geo.longitude);
     }
 }

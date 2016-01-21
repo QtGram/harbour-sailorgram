@@ -12,7 +12,7 @@ QtObject
     id: context
 
     readonly property bool beta: true
-    readonly property int betanum: 13
+    readonly property int betanum: 14
     readonly property string version: "0.73"
     property bool sendwithreturn: false
     property bool backgrounddisabled: false
@@ -35,7 +35,6 @@ QtObject
 
     property SailorGram sailorgram: SailorGram {
         telegram: context.telegram
-        interval: 8000 // 8 seconds
     }
 
     property Telegram telegram: Telegram {

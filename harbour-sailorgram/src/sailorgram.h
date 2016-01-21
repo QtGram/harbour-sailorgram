@@ -10,7 +10,6 @@
 #include <telegramqml.h>
 #include <userdata.h>
 #include <objects/types.h>
-#include "heartbeat.h"
 #include "dbus/interface/sailorgraminterface.h"
 #include "dbus/notification/notification.h"
 
@@ -22,7 +21,6 @@ class SailorGram : public QObject
     Q_PROPERTY(bool keepRunning READ keepRunning WRITE setKeepRunning NOTIFY keepRunningChanged)
     Q_PROPERTY(bool daemonized READ daemonized NOTIFY daemonizedChanged)
     Q_PROPERTY(bool connected READ connected NOTIFY connectedChanged)
-    Q_PROPERTY(int interval READ interval WRITE setInterval NOTIFY intervalChanged)
     Q_PROPERTY(TelegramQml* telegram READ telegram WRITE setTelegram NOTIFY telegramChanged)
     Q_PROPERTY(QString emojiPath READ emojiPath CONSTANT FINAL)
     Q_PROPERTY(QString configPath READ configPath CONSTANT FINAL)
@@ -51,7 +49,6 @@ class SailorGram : public QObject
         QString voiceRecordPath() const;
         TelegramQml* telegram() const;
         DialogObject* foregroundDialog() const;
-        void setInterval(int interval);
         void setTelegram(TelegramQml* telegram);
         void setForegroundDialog(DialogObject* dialog);
         void setKeepRunning(bool keep);
@@ -80,7 +77,7 @@ class SailorGram : public QObject
         void onOnlineStateChanged(bool isonline);
         void onNotificationClosed(uint);
         void onWakeUpRequested();
-        void startHeartBeat();
+        void onConnectedChanged();
         void updateLogLevel();
         void wakeSleep();
 
@@ -89,7 +86,6 @@ class SailorGram : public QObject
         void keepRunningChanged();
         void daemonizedChanged();
         void connectedChanged();
-        void intervalChanged();
         void telegramChanged();
         void wakeUpRequested();
         void foregroundDialogChanged();
@@ -100,9 +96,9 @@ class SailorGram : public QObject
         QMimeDatabase _mimedb;
         TelegramQml* _telegram;
         QNetworkConfigurationManager* _netcfgmanager;
-        HeartBeat* _heartbeat;
         SailorgramInterface* _interface;
         DialogObject* _foregrounddialog;
+        int _connected;
         bool _daemonized;
         bool _autostart;
 
