@@ -74,6 +74,7 @@ class SailorGram : public QObject
 
     private slots:
         void onApplicationStateChanged(Qt::ApplicationState state);
+        void onOnlineStateChanged();
         void onOnlineStateChanged(bool isonline);
         void onNotificationClosed(uint);
         void onWakeUpRequested();
@@ -101,6 +102,7 @@ class SailorGram : public QObject
         int _connected;
         bool _daemonized;
         bool _autostart;
+        QTimer* _waittimer;
 
     private:
         static const QString NO_DAEMON_FILE;

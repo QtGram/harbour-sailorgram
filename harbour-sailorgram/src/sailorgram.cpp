@@ -6,13 +6,17 @@ const QString SailorGram::PUBLIC_KEY_FILE = "server.pub";
 const QString SailorGram::EMOJI_FOLDER = "emoji";
 const QString SailorGram::APPLICATION_PRETTY_NAME = "SailorGram";
 
-SailorGram::SailorGram(QObject *parent): QObject(parent), _telegram(NULL), _connected(-1), _foregrounddialog(NULL), _daemonized(false)
+SailorGram::SailorGram(QObject *parent): QObject(parent), _telegram(NULL), _foregrounddialog(NULL), _connected(-1), _daemonized(false)
 {
     QDir cfgdir(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation));
     cfgdir.mkpath(qApp->applicationName() + QDir::separator() + qApp->applicationName() + QDir::separator() + SailorGram::CONFIG_FOLDER);
 
     QDir cachedir(QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation));
     cachedir.mkpath(qApp->applicationName() + QDir::separator() + qApp->applicationName());
+
+    this->_waittimer = new QTimer(this);
+    this->_waittimer->setInterval(5000);
+    this->_waittimer->setSingleShot(true);
 
     this->_netcfgmanager = new QNetworkConfigurationManager(this);
     this->_interface = new SailorgramInterface(this);
@@ -24,6 +28,7 @@ SailorGram::SailorGram(QObject *parent): QObject(parent), _telegram(NULL), _conn
     connect(this->_netcfgmanager, SIGNAL(onlineStateChanged(bool)), this, SLOT(onOnlineStateChanged(bool)));
     connect(this->_interface, SIGNAL(wakeUpRequested()), this, SLOT(onWakeUpRequested()));
     connect(this->_interface, SIGNAL(openDialogRequested(qint32)), this, SIGNAL(openDialogRequested(qint32)));
+    connect(this->_waittimer, SIGNAL(timeout()), this, SLOT(onOnlineStateChanged()));
 }
 
 bool SailorGram::autostart()
@@ -297,12 +302,22 @@ void SailorGram::onApplicationStateChanged(Qt::ApplicationState state)
     emit daemonizedChanged();
 }
 
+void SailorGram::onOnlineStateChanged()
+{
+    this->onOnlineStateChanged(this->_connected);
+}
+
 void SailorGram::onOnlineStateChanged(bool isonline)
 {
     if(this->_connected == isonline)
         return;
 
     this->_connected = isonline;
+
+    if(this->_waittimer->isActive())
+        return;
+
+    this->_waittimer->start();
     emit connectedChanged();
 }
 
