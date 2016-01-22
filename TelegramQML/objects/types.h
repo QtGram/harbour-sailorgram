@@ -2957,6 +2957,7 @@ class TELEGRAMQMLSHARED_EXPORT MessageActionObject : public TqObject
     Q_OBJECT
     Q_PROPERTY(QString address READ address WRITE setAddress NOTIFY addressChanged)
     Q_PROPERTY(qint32 userId READ userId WRITE setUserId NOTIFY userIdChanged)
+    Q_PROPERTY(qint32 inviterId READ inviterId WRITE setInviterId NOTIFY inviterIdChanged)
     Q_PROPERTY(PhotoObject* photo READ photo WRITE setPhoto NOTIFY photoChanged)
     Q_PROPERTY(QString title READ title WRITE setTitle NOTIFY titleChanged)
     Q_PROPERTY(QList<qint32> users READ users WRITE setUsers NOTIFY usersChanged)
@@ -2964,9 +2965,9 @@ class TELEGRAMQMLSHARED_EXPORT MessageActionObject : public TqObject
 
 public:
     MessageActionObject(const MessageAction & another, QObject *parent = 0) : TqObject(parent){
-        (void)another;
         _address = another.address();
         _userId = another.userId();
+        _inviterId = another.inviterId();
         _photo = new PhotoObject(another.photo(), this);
         _title = another.title();
         _users = another.users();
@@ -2999,6 +3000,19 @@ public:
             return;
         _userId = value;
         Q_EMIT userIdChanged();
+        Q_EMIT changed();
+    }
+
+    qint32 inviterId() const {
+        return _inviterId;
+    }
+
+    void setInviterId(qint32 value) {
+        if( value == _inviterId )
+            return;
+
+        _inviterId = value;
+        Q_EMIT inviterIdChanged();
         Q_EMIT changed();
     }
 
@@ -3071,6 +3085,7 @@ Q_SIGNALS:
     void changed();
     void addressChanged();
     void userIdChanged();
+    void inviterIdChanged();
     void photoChanged();
     void titleChanged();
     void usersChanged();
@@ -3079,6 +3094,7 @@ Q_SIGNALS:
 private:
     QString _address;
     qint32 _userId;
+    qint32 _inviterId;
     PhotoObject* _photo;
     QString _title;
     QList<qint32> _users;
