@@ -1,126 +1,220 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import Qt.labs.folderlistmodel 2.1
-import harbour.sailorgram.SailorGram 1.0
-import harbour.sailorgram.Selector 1.0
+import harbour.sailorgram.ImagesModel 1.0
 import "../../models"
 
 Page
 {
+    property alias directory: imagesmodel.rootDir
+    property alias sortRole: imagesmodel.sortRole
+    property alias sortOrder: imagesmodel.sortOrder
+    property Page rootPage
     property Context context
-    readonly property string rootPathLimit : "file://" + context.sailorgram.homeFolder
+    property int numCellColumnsPortrait: {
+        switch (Screen.sizeCategory) {
+            case Screen.Small: return 2;
+            case Screen.Medium: return 3;
+            case Screen.Large: return 4;
+            case Screen.ExtraLarge: return 5;
+            default: return 3;
+        }
+    }
+    property int numCellColumnsLandscape: {
+        switch (Screen.sizeCategory) {
+            case Screen.Small: return 4;
+            case Screen.Medium: return 5;
+            case Screen.Large: return 6;
+            case Screen.ExtraLarge: return 7;
+            default: return 5;
+        }
+    }
+    readonly property real cellSize: isPortrait ? width / numCellColumnsPortrait : width / numCellColumnsLandscape
+    readonly property real maxCellSize: Math.max(Screen.height / numCellColumnsLandscape, Screen.width / numCellColumnsPortrait)
 
     signal actionCompleted(string action, var data)
 
     id: selectorimagespage
     allowedOrientations: defaultAllowedOrientations
 
-    FolderListModel {
-        id: folderlistmodel
-        folder: context.sailorgram.picturesFolder
-        showFiles: true
-        showHidden: false
-        showDirsFirst: true
-        showDotAndDotDot: false
-        showOnlyReadable: true
-        nameFilters: ["*.jpg", "*.jpeg", "*.png", "*.gif", "*.bmp", "*.webp"]
+    ImagesModel {
+        id: imagesmodel
+        sortRole: ImagesModel.DateRole
+        sortOrder: Qt.DescendingOrder
+        recursive: false
+        directoriesFirst: true
     }
 
-    RemorsePopup { id: remorsepopup }
-
-    PageHeader
-    {
-        id: header
-        title: folderlistmodel.folder.toString().replace("file:///", "/")
+    RemorsePopup {
+        id: remorsepopup
+        onCanceled: view.currentIndex = -1
     }
 
     SilicaFlickable
     {
-        id: view
-        clip: true
-        anchors { left: parent.left; top: header.bottom; right: parent.right; bottom: parent.bottom }
-        contentHeight: (layoutflow.height + layoutflow.anchors.margins * 2)
+        anchors.fill: parent
+        contentHeight: height - pulldownmenu.spacing
 
-        VerticalScrollDecorator { flickable: view }
-        HorizontalScrollDecorator { flickable: view }
-
-        Flow
+        PullDownMenu
         {
-            readonly property real cellSize : (((width + spacing) / (selectorimagespage.isPortrait ? 4 : 7)) - spacing)
+            id: pulldownmenu
 
-            id: layoutflow
-            spacing: Theme.paddingSmall
-            anchors { top: parent.top; left: parent.left; right: parent.right; margins: spacing }
-
-            Button {
-                width: layoutflow.width
-                height: Theme.itemSizeSmall
-                visible: (folderlistmodel.folder.toString() !== rootPathLimit)
-                text: qsTr ("Back")
-
+            MenuItem
+            {
+                text: qsTr("Android storage")
+                visible: context.sailorgram.androidStorage.length > 0
                 onClicked: {
-                    folderlistmodel.folder = folderlistmodel.parentFolder;
+                    if (!!rootPage) {
+                        rootPage.directory = context.sailorgram.androidStorage;
+                        rootPage.sortRole = ImagesModel.NameRole;
+                        rootPage.sortOrder = Qt.AscendingOrder;
+                        pageStack.pop(rootPage);
+                    } else {
+                        directory = context.sailorgram.androidStorage;
+                        sortRole = ImagesModel.NameRole;
+                        sortOrder = Qt.AscendingOrder;
+                    }
                 }
             }
 
-            Repeater
-            {
-                model: folderlistmodel
-
-                delegate: BackgroundItem {
-                    readonly property bool isFolder : (model.fileIsDir || false)
-                    readonly property string imageUrl : (model.fileURL ? model.fileURL.toString () : "")
-
-                    id: clicker
-                    width: (isFolder ? layoutflow.width : layoutflow.cellSize)
-                    height: (isFolder ? Theme.itemSizeSmall : layoutflow.cellSize)
-                    opacity: (enabled ? 1.0 : 0.35)
-
-                    onClicked: {
-                        if (isFolder)
-                            folderlistmodel.folder = imageUrl;
-                        else
-                            remorsepopup.execute(qsTr("Selecting image"), function () { actionCompleted("image", imageUrl) });
+            MenuItem {
+                text: qsTr("SD Card")
+                visible: context.sailorgram.sdcardFolder.length > 0
+                onClicked: {
+                    if (!!rootPage) {
+                        rootPage.directory = context.sailorgram.sdcardFolder;
+                        rootPage.sortRole = ImagesModel.NameRole;
+                        rootPage.sortOrder = Qt.AscendingOrder;
+                        pageStack.pop(rootPage);
+                    } else {
+                        directory = context.sailorgram.sdcardFolder;
+                        sortRole = ImagesModel.NameRole;
+                        sortOrder = Qt.AscendingOrder;
                     }
+                }
+            }
 
-                    Row {
-                        visible: isFolder
-                        spacing: Theme.paddingMedium
-                        height: Theme.itemSizeSmall
-                        width: parent.width
-
-                        Image {
-                            source: "image://theme/icon-m-folder"
-                            anchors.verticalCenter: parent.verticalCenter
-                        }
-                        Label {
-                            text: (model.fileName || "")
-                            anchors.verticalCenter: parent.verticalCenter
-                        }
+            MenuItem {
+                text: qsTr("Home")
+                onClicked: {
+                    if (!!rootPage) {
+                        rootPage.directory = context.sailorgram.homeFolder;
+                        rootPage.sortRole = ImagesModel.NameRole;
+                        rootPage.sortOrder = Qt.AscendingOrder;
+                        pageStack.pop(rootPage);
+                    } else {
+                        directory = context.sailorgram.homeFolder;
+                        sortRole = ImagesModel.NameRole;
+                        sortOrder = Qt.AscendingOrder;
                     }
+                }
+            }
 
-                    Image {
-                        id: thumbnail
-                        cache: false
-                        visible: !isFolder
-                        fillMode: Image.PreserveAspectCrop
-                        asynchronous: true
-                        antialiasing: true
-                        sourceSize.width: 150
-                        sourceSize.height: 150
-                        anchors.fill: parent
+            MenuItem {
+                text: qsTr("Sort ascending")
+                visible: sortOrder !== Qt.AscendingOrder
+                onClicked: sortOrder = Qt.AscendingOrder
+            }
 
-                        ImageThumbnailer on source {
-                            id: thumbnailer
-                            imageUrl: (thumbnail.visible ? (model.fileURL || "") : "")
-                        }
+            MenuItem {
+                text: qsTr("Sort descending")
+                visible: sortOrder !== Qt.DescendingOrder
+                onClicked: sortOrder = Qt.DescendingOrder
+            }
+
+            MenuItem {
+                text: qsTr("Sort by name")
+                visible: sortRole !== ImagesModel.NameRole
+                onClicked: sortRole = ImagesModel.NameRole
+            }
+
+            MenuItem {
+                text: qsTr("Sort by date")
+                visible: sortRole !== ImagesModel.DateRole
+                onClicked: sortRole = ImagesModel.DateRole
+            }
+        }
+
+        PageHeader
+        {
+            id: header
+            title: imagesmodel.rootDir.split('/').pop();
+        }
+
+        SilicaGridView
+        {
+            id: view
+            clip: true
+            anchors { left: parent.left; top: header.bottom; right: parent.right; bottom: parent.bottom }
+            quickScroll: true
+            cellWidth: cellSize
+            cellHeight: cellSize
+            model: imagesmodel
+
+            delegate: BackgroundItem {
+                width: cellSize
+                height: cellSize
+                onClicked: {
+                    if (model.isDir) {
+                        var nextPage = pageStack.push(Qt.resolvedUrl("SelectorImagesPage.qml"),
+                                                      { "directory": model.path,
+                                                        "context": context,
+                                                        "sortRole": sortRole,
+                                                        "sortOrder": sortOrder,
+                                                        "rootPage": !!rootPage ? rootPage : selectorimagespage } );
+                        nextPage.actionCompleted.connect(selectorimagespage.actionCompleted);
                     }
+                    else if (view.currentIndex !== index) {
+                        remorsepopup.cancel();
+                        view.currentIndex = index;
+                        remorsepopup.execute(qsTr("Selecting image"), function () { actionCompleted("image", model.url) });
+                    }
+                }
 
-                    BusyIndicator {
-                        size: BusyIndicatorSize.Medium
-                        visible: running
-                        running: (thumbnailer.status === ImageThumbnailer.Processing)
-                        anchors.centerIn: parent
+                Image {
+                    id: thumbnail
+                    width: view.cellWidth
+                    height: model.isDir ? view.cellHeight - labelloader.item.height : view.cellHeight
+                    fillMode: model.isDir ? Image.PreserveAspectFit : Image.PreserveAspectCrop
+                    asynchronous: true
+                    antialiasing: true
+                    sourceSize.width: maxCellSize
+                    sourceSize.height: maxCellSize
+                    rotation: model.isDir ? 0 : 360 - model.orientation
+                    source: model.isDir ? "image://theme/icon-m-folder" : "image://thumbnail/" + model.path;
+                }
+
+                Loader {
+                    id: labelloader
+                    active: model.isDir
+                    anchors.bottom: parent.bottom
+                    width: view.cellWidth
+                    height: Math.min(item.contentHeight, view.cellHeight * 2 / 3)
+
+                    sourceComponent: Label {
+                        text: model.name
+                        horizontalAlignment: Qt.AlignHCenter
+                        wrapMode: Text.Wrap
+                    }
+                }
+
+                Loader {
+                    active: (thumbnail.status === Image.Loading)
+                    anchors.centerIn: parent
+                    width: view.cellWidth / 2
+                    height: view.cellHeight / 2
+
+                    sourceComponent: BusyIndicator {
+                        running: true
+                    }
+                }
+
+                Loader {
+                    active: index === view.currentIndex
+                    anchors.fill: parent
+
+                    sourceComponent: Rectangle {
+                        color: Theme.highlightColor
+                        opacity: 0.4
                     }
                 }
             }

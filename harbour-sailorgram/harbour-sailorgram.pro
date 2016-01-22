@@ -12,7 +12,9 @@
 # The name of your application
 TARGET = harbour-sailorgram
 
-CONFIG += sailfishapp
+CONFIG += sailfishapp \
+       += c++11
+
 QT += sql dbus multimedia concurrent
 
 include($$PWD/../config.pri)
@@ -78,7 +80,10 @@ SOURCES += src/harbour-sailorgram.cpp \
     src/dbus/notification/notification.cpp \
     src/dbus/notification/notificationmanagerproxy.cpp \
     src/selector/audiorecorder.cpp \
-    src/selector/imagethumbnailer.cpp
+    src/selector/thumbnailprovider.cpp \
+    src/selector/imagesmodel.cpp \
+    src/selector/exif/exif.cpp \
+    src/selector/imagesmodelworker.cpp
 
 OTHER_FILES += qml/harbour-sailorgram.qml \
     rpm/harbour-sailorgram.changes.in \
@@ -182,7 +187,10 @@ HEADERS += \
     src/dbus/notification/notification.h \
     src/dbus/notification/notificationmanagerproxy.h \
     src/selector/audiorecorder.h \
-    src/selector/imagethumbnailer.h
+    src/selector/thumbnailprovider.h \
+    src/selector/imagesmodel.h \
+    src/selector/exif/exif.h \
+    src/selector/imagesmodelworker.h
 
 RESOURCES += \
     resources.qrc
