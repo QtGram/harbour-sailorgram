@@ -25,6 +25,7 @@ public:
     struct Entry
     {
         QString path;
+        QString name;
         qint64 date;
         int orientation;
         bool isDir;

@@ -27,6 +27,7 @@ void ImagesModelWorker::scanDirectory(const QString &dirPath, const QStringList 
 
             ImagesModel::Entry entry;
             entry.path = filePath;
+            entry.name = fileInfo.fileName();
             entry.date = fileInfo.lastModified().toMSecsSinceEpoch();
 
             if (fileInfo.isDir())

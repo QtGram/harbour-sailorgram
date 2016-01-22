@@ -91,7 +91,7 @@ QVariant ImagesModel::data(const QModelIndex &index, int role) const
         }
         case ImagesModel::NameRole:
         {
-            return this->_entries.at(row).path.split('/').last();
+            return this->_entries.at(row).name;
         }
     }
 
@@ -222,11 +222,11 @@ void ImagesModel::setRecursive(bool recursive)
     }
     else
     {
-        int rootLength = this->_rootdir.split('/').length();
+        int rootLength = this->_rootdir.split('/', QString::SkipEmptyParts).length();
 
         for (int i=0; i<this->_entries.size(); i++)
         {
-            if (this->_entries.at(i).path.split('/').length() > rootLength)
+            if (this->_entries.at(i).path.split('/', QString::SkipEmptyParts).length() > rootLength + 1)
             {
                 beginRemoveRows(QModelIndex(), i, i);
                 this->_entries.removeAt(i);
@@ -257,7 +257,7 @@ bool ImagesModel::lesserThan(const Entry &e1, const Entry &e2, ImagesModel::Role
             return e1.isDir < e2.isDir;
 
         case ImagesModel::NameRole:
-            return e1.path.split('/').last() < e2.path.split('/').last();
+            return e1.name < e2.name;
     }
 
     return false;
@@ -283,7 +283,7 @@ bool ImagesModel::biggerThan(const Entry &e1, const Entry &e2, ImagesModel::Role
             return e1.isDir > e2.isDir;
 
         case ImagesModel::NameRole:
-            return e1.path.split('/').last() > e2.path.split('/').last();
+            return e1.name > e2.name;
     }
 
     return false;
