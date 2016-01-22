@@ -129,14 +129,22 @@ void ImagesModel::integrateDirectory(const ImagesModel::EntryList &list, const Q
 {
     if (this->_recursive && dirPath.contains(this->_rootdir))
     {
+        beginResetModel();
+
         this->_entries += list;
-        sort();
+        sort(false);
+
+        endResetModel();
     }
 
     if (!this->_recursive && dirPath == this->_rootdir)
     {
+        beginResetModel();
+
         this->_entries = list;
-        sort();
+        sort(false);
+
+        endResetModel();
     }
 }
 
