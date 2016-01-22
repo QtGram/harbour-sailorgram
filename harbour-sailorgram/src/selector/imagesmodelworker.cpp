@@ -11,9 +11,9 @@ ImagesModelWorker::ImagesModelWorker(QObject *parent) : QObject(parent)
     qRegisterMetaType<ImagesModel::Entry>();
 }
 
-void ImagesModelWorker::scanDirectory(const QString &dirPath, const QStringList &filterList)
+void ImagesModelWorker::scanDirectory(const QString &dirPath, const QStringList &filterList, bool recursive)
 {
-    QList<ImagesModel::Entry> entryList;
+    ImagesModel::EntryList entryList;
 
     QDir directory(dirPath);
 
@@ -25,14 +25,25 @@ void ImagesModelWorker::scanDirectory(const QString &dirPath, const QStringList 
         {
             const QString filePath(fileInfo.absoluteFilePath());
 
+            ImagesModel::Entry entry;
+            entry.path = filePath;
+            entry.date = fileInfo.lastModified().toMSecsSinceEpoch();
+
             if (fileInfo.isDir())
-                scanDirectory(filePath, filterList);
+            {
+                if (recursive)
+                    scanDirectory(filePath, filterList, recursive);
+                else
+                {
+                    entry.isDir = true;
+                    entry.orientation = 0;
+                    entryList << entry;
+                }
+            }
 
             if (fileInfo.isFile())
             {
-                ImagesModel::Entry entry;
-                entry.path = filePath;
-                entry.date = fileInfo.lastModified().toMSecsSinceEpoch();
+                entry.isDir = false;
 
                 int orientation = 0;
                 Exif::getExifOrientation(filePath, &orientation);
@@ -68,5 +79,5 @@ void ImagesModelWorker::scanDirectory(const QString &dirPath, const QStringList 
         }
     }
 
-    emit scanComplete(entryList);
+    emit scanComplete(entryList, dirPath);
 }

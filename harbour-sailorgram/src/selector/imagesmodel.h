@@ -14,16 +14,20 @@ class ImagesModel : public QAbstractListModel
     Q_ENUMS(Role)
     Q_PROPERTY(Role sortRole READ sortRole WRITE setSortRole NOTIFY sortRoleChanged)
     Q_PROPERTY(Qt::SortOrder sortOrder READ sortOrder WRITE setSortOrder NOTIFY sortOrderChanged)
+    Q_PROPERTY(bool directoriesFirst READ directoriesFirst WRITE setDirectoriesFirst NOTIFY directoriesFirstChanged)
+    Q_PROPERTY(QString rootDir READ rootDir WRITE setRootDir NOTIFY rootDirChanged)
+    Q_PROPERTY(bool recursive READ recursive WRITE setRecursive NOTIFY recursiveChanged)
 
 public:
 
-    enum Role { PathRole = 0, DateRole = 1, OrientationRole = 2 , UrlRole = 3};
+    enum Role { PathRole = 0, DateRole = 1, OrientationRole = 2 , UrlRole = 3, IsDirRole = 4, NameRole = 5 };
 
     struct Entry
     {
         QString path;
         qint64 date;
         int orientation;
+        bool isDir;
     };
     typedef QList<Entry> EntryList;
 
@@ -36,14 +40,23 @@ public:
 
     Role sortRole() const { return this->_sortrole; }
     Qt::SortOrder sortOrder() const { return this->_sortorder; }
+    bool directoriesFirst() const { return this->_directoriesfirst; }
+    QString rootDir() const { return this->_rootdir; }
+    bool recursive() const { return this->_recursive; }
     void setSortRole(Role);
     void setSortOrder(Qt::SortOrder);
+    void setDirectoriesFirst(bool);
+    void setRootDir(const QString&);
+    void setRecursive(bool);
 
 signals:
 
     void sortRoleChanged();
     void sortOrderChanged();
-    void dirNeedsScan(QString, QStringList);
+    void directoriesFirstChanged();
+    void rootDirChanged();
+    void recursiveChanged();
+    void dirNeedsScan(QString, QStringList, bool);
 
 private:
 
@@ -55,6 +68,9 @@ private:
     ImagesModel::EntryList _entries;
     Role _sortrole;
     Qt::SortOrder _sortorder;
+    bool _directoriesfirst;
+    bool _recursive;
+    QString _rootdir;
 
     static const QStringList _imagesdirpaths;
     static const QStringList _filterlist;
@@ -62,7 +78,7 @@ private:
 private slots:
 
     void sort(bool emitReset = true);
-    void integrateDirectory(ImagesModel::EntryList);
+    void integrateDirectory(const ImagesModel::EntryList &list, const QString &dirPath);
 };
 
 Q_DECLARE_METATYPE(ImagesModel::Entry)

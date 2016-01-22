@@ -8,7 +8,7 @@
 
 const QSize ThumbnailProvider::THUMBNAIL_SIZE(200, 200);
 
-ThumbnailProvider::ThumbnailProvider() : QQuickImageProvider(QQuickImageProvider::Pixmap),
+ThumbnailProvider::ThumbnailProvider() : QQuickImageProvider(QQuickImageProvider::Pixmap, QQmlImageProviderBase::ForceAsynchronousImageLoading),
     _thumbnailsdir(QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + "/thumbs/")
 {
     QDir dir(this->_thumbnailsdir);

@@ -5,6 +5,10 @@ import "../../models"
 
 Page
 {
+    property alias directory: imagesmodel.rootDir
+    property alias sortRole: imagesmodel.sortRole
+    property alias sortOrder: imagesmodel.sortOrder
+    property Page rootPage
     property Context context
     property int numCellColumnsPortrait: {
         switch (Screen.sizeCategory) {
@@ -36,6 +40,8 @@ Page
         id: imagesmodel
         sortRole: ImagesModel.DateRole
         sortOrder: Qt.DescendingOrder
+        recursive: false
+        directoriesFirst: true
     }
 
     RemorsePopup {
@@ -43,63 +49,173 @@ Page
         onCanceled: view.currentIndex = -1
     }
 
-    PageHeader
+    SilicaFlickable
     {
-        id: header
-        title: qsTr("Images")
-    }
+        anchors.fill: parent
+        contentHeight: height - pulldownmenu.spacing
 
-    SilicaGridView
-    {
-        id: view
-        clip: true
-        anchors { left: parent.left; top: header.bottom; right: parent.right; bottom: parent.bottom }
-        quickScroll: true
-        cellWidth: cellSize
-        cellHeight: cellSize
-        model: imagesmodel
+        PullDownMenu
+        {
+            id: pulldownmenu
 
-        delegate: BackgroundItem {
-            width: cellSize
-            height: cellSize
-            onClicked: {
-                if (view.currentIndex !== index) {
-                    remorsepopup.cancel();
-                    view.currentIndex = index;
-                    remorsepopup.execute(qsTr("Selecting image"), function () { actionCompleted("image", model.url) });
+            MenuItem
+            {
+                text: qsTr("Android storage")
+                visible: context.sailorgram.androidStorage.length > 0
+                onClicked: {
+                    if (!!rootPage) {
+                        rootPage.directory = context.sailorgram.androidStorage;
+                        rootPage.sortRole = ImagesModel.NameRole;
+                        rootPage.sortOrder = Qt.AscendingOrder;
+                        pageStack.pop(rootPage);
+                    } else {
+                        directory = context.sailorgram.androidStorage;
+                        sortRole = ImagesModel.NameRole;
+                        sortOrder = Qt.AscendingOrder;
+                    }
                 }
             }
 
-            Image {
-                id: thumbnail
-                anchors.fill: parent
-                fillMode: Image.PreserveAspectCrop
-                asynchronous: true
-                antialiasing: true
-                sourceSize.width: maxCellSize
-                sourceSize.height: maxCellSize
-                rotation: 360 - model.orientation
-                source: "image://thumbnail/" + model.path;
-            }
-
-            Loader {
-                active: (thumbnail.status === Image.Loading)
-                anchors.centerIn: parent
-                width: view.cellWidth / 2
-                height: view.cellHeight / 2
-
-                sourceComponent: BusyIndicator {
-                    running: true
+            MenuItem {
+                text: qsTr("SD Card")
+                visible: context.sailorgram.sdcardFolder.length > 0
+                onClicked: {
+                    if (!!rootPage) {
+                        rootPage.directory = context.sailorgram.sdcardFolder;
+                        rootPage.sortRole = ImagesModel.NameRole;
+                        rootPage.sortOrder = Qt.AscendingOrder;
+                        pageStack.pop(rootPage);
+                    } else {
+                        directory = context.sailorgram.sdcardFolder;
+                        sortRole = ImagesModel.NameRole;
+                        sortOrder = Qt.AscendingOrder;
+                    }
                 }
             }
 
-            Loader {
-                active: index === view.currentIndex
-                anchors.fill: parent
+            MenuItem {
+                text: qsTr("Home")
+                onClicked: {
+                    if (!!rootPage) {
+                        rootPage.directory = context.sailorgram.homeFolder;
+                        rootPage.sortRole = ImagesModel.NameRole;
+                        rootPage.sortOrder = Qt.AscendingOrder;
+                        pageStack.pop(rootPage);
+                    } else {
+                        directory = context.sailorgram.homeFolder;
+                        sortRole = ImagesModel.NameRole;
+                        sortOrder = Qt.AscendingOrder;
+                    }
+                }
+            }
 
-                sourceComponent: Rectangle {
-                    color: Theme.highlightColor
-                    opacity: 0.4
+            MenuItem {
+                text: qsTr("Sort ascending")
+                visible: sortOrder !== Qt.AscendingOrder
+                onClicked: sortOrder = Qt.AscendingOrder
+            }
+
+            MenuItem {
+                text: qsTr("Sort descending")
+                visible: sortOrder !== Qt.DescendingOrder
+                onClicked: sortOrder = Qt.DescendingOrder
+            }
+
+            MenuItem {
+                text: qsTr("Sort by name")
+                visible: sortRole !== ImagesModel.NameRole
+                onClicked: sortRole = ImagesModel.NameRole
+            }
+
+            MenuItem {
+                text: qsTr("Sort by date")
+                visible: sortRole !== ImagesModel.DateRole
+                onClicked: sortRole = ImagesModel.DateRole
+            }
+        }
+
+        PageHeader
+        {
+            id: header
+            title: imagesmodel.rootDir.split('/').pop();
+        }
+
+        SilicaGridView
+        {
+            id: view
+            clip: true
+            anchors { left: parent.left; top: header.bottom; right: parent.right; bottom: parent.bottom }
+            quickScroll: true
+            cellWidth: cellSize
+            cellHeight: cellSize
+            model: imagesmodel
+
+            delegate: BackgroundItem {
+                width: cellSize
+                height: cellSize
+                onClicked: {
+                    if (model.isDir) {
+                        var nextPage = pageStack.push(Qt.resolvedUrl("SelectorImagesPage.qml"),
+                                                      { "directory": model.path,
+                                                        "context": context,
+                                                        "sortRole": sortRole,
+                                                        "sortOrder": sortOrder,
+                                                        "rootPage": !!rootPage ? rootPage : selectorimagespage } );
+                        nextPage.actionCompleted.connect(selectorimagespage.actionCompleted);
+                    }
+                    else if (view.currentIndex !== index) {
+                        remorsepopup.cancel();
+                        view.currentIndex = index;
+                        remorsepopup.execute(qsTr("Selecting image"), function () { actionCompleted("image", model.url) });
+                    }
+                }
+
+                Image {
+                    id: thumbnail
+                    width: view.cellWidth
+                    height: model.isDir ? view.cellHeight - labelloader.item.height : view.cellHeight
+                    fillMode: model.isDir ? Image.PreserveAspectFit : Image.PreserveAspectCrop
+                    asynchronous: true
+                    antialiasing: true
+                    sourceSize.width: maxCellSize
+                    sourceSize.height: maxCellSize
+                    rotation: model.isDir ? 0 : 360 - model.orientation
+                    source: model.isDir ? "image://theme/icon-m-folder" : "image://thumbnail/" + model.path;
+                }
+
+                Loader {
+                    id: labelloader
+                    active: model.isDir
+                    anchors.bottom: parent.bottom
+                    width: view.cellWidth
+                    height: Math.min(item.contentHeight, view.cellHeight * 2 / 3)
+
+                    sourceComponent: Label {
+                        text: model.name
+                        horizontalAlignment: Qt.AlignHCenter
+                        wrapMode: Text.Wrap
+                    }
+                }
+
+                Loader {
+                    active: (thumbnail.status === Image.Loading)
+                    anchors.centerIn: parent
+                    width: view.cellWidth / 2
+                    height: view.cellHeight / 2
+
+                    sourceComponent: BusyIndicator {
+                        running: true
+                    }
+                }
+
+                Loader {
+                    active: index === view.currentIndex
+                    anchors.fill: parent
+
+                    sourceComponent: Rectangle {
+                        color: Theme.highlightColor
+                        opacity: 0.4
+                    }
                 }
             }
         }

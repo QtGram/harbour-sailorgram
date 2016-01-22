@@ -14,9 +14,12 @@ const QStringList ImagesModel::_filterlist(QStringList() << "*.jpg" << "*.jpeg" 
 
 ImagesModel::ImagesModel(QObject *parent) : QAbstractListModel(parent),
     _worker(new ImagesModelWorker()),
-    _workerthread(new QThread(this)),
+    _workerthread(new QThread()),
     _sortrole(ImagesModel::DateRole),
-    _sortorder(Qt::DescendingOrder)
+    _sortorder(Qt::DescendingOrder),
+    _directoriesfirst(true),
+    _recursive(false),
+    _rootdir(ImagesModel::_imagesdirpaths.first())
 {
     qRegisterMetaType<ImagesModel::EntryList>("ImagesModel::EntryList");
 
@@ -26,16 +29,14 @@ ImagesModel::ImagesModel(QObject *parent) : QAbstractListModel(parent),
     connect(this, &ImagesModel::dirNeedsScan, this->_worker, &ImagesModelWorker::scanDirectory);
     connect(this->_worker, &ImagesModelWorker::scanComplete, this, &ImagesModel::integrateDirectory);
 
-    foreach (const QString &path, ImagesModel::_imagesdirpaths)
-    {
-        emit dirNeedsScan(path, ImagesModel::_filterlist);
-    }
+    emit dirNeedsScan(this->_rootdir, ImagesModel::_filterlist, this->_recursive);
 }
 
 ImagesModel::~ImagesModel()
 {
     this->_worker->deleteLater();
     this->_workerthread->quit();
+    this->_workerthread->deleteLater();
 }
 
 QHash<int, QByteArray> ImagesModel::roleNames() const
@@ -46,6 +47,8 @@ QHash<int, QByteArray> ImagesModel::roleNames() const
     hash.insert(ImagesModel::DateRole, QByteArray("date"));
     hash.insert(ImagesModel::OrientationRole, QByteArray("orientation"));
     hash.insert(ImagesModel::UrlRole, QByteArray("url"));
+    hash.insert(ImagesModel::IsDirRole, QByteArray("isDir"));
+    hash.insert(ImagesModel::NameRole, QByteArray("name"));
 
     return hash;
 }
@@ -82,6 +85,14 @@ QVariant ImagesModel::data(const QModelIndex &index, int role) const
         {
             return QUrl::fromLocalFile(this->_entries.at(row).path);
         }
+        case ImagesModel::IsDirRole:
+        {
+            return this->_entries.at(row).isDir;
+        }
+        case ImagesModel::NameRole:
+        {
+            return this->_entries.at(row).path.split('/').last();
+        }
     }
 
     return QVariant();
@@ -107,46 +118,25 @@ void ImagesModel::sort(bool emitReset)
         }
     }
 
+    if (this->_directoriesfirst)
+        std::stable_sort(this->_entries.begin(), this->_entries.end(), [this] (const Entry &e1, const Entry &e2) -> bool { return biggerThan(e1, e2, ImagesModel::IsDirRole); });
+
     if (emitReset)
         endResetModel();
 }
 
-void ImagesModel::integrateDirectory(ImagesModel::EntryList list)
+void ImagesModel::integrateDirectory(const ImagesModel::EntryList &list, const QString &dirPath)
 {
-    foreach (const ImagesModel::Entry &entry, list)
+    if (this->_recursive && dirPath.contains(this->_rootdir))
     {
-        int i = 0;
+        this->_entries += list;
+        sort();
+    }
 
-        switch (this->_sortorder)
-        {
-            case Qt::AscendingOrder:
-            {
-                while (i < this->_entries.size() && biggerThan(entry, this->_entries.at(i), this->_sortrole))
-                {
-                    i++;
-                }
-
-                beginInsertRows(QModelIndex(), i, i);
-                this->_entries.insert(i, entry);
-                endInsertRows();
-
-                break;
-            }
-
-            case Qt::DescendingOrder:
-            {
-                while (i < this->_entries.size() && lesserThan(entry, this->_entries.at(i), this->_sortrole))
-                {
-                    i++;
-                }
-
-                beginInsertRows(QModelIndex(), i, i);
-                this->_entries.insert(i, entry);
-                endInsertRows();
-
-                break;
-            }
-        }
+    if (!this->_recursive && dirPath == this->_rootdir)
+    {
+        this->_entries = list;
+        sort();
     }
 }
 
@@ -172,6 +162,73 @@ void ImagesModel::setSortRole(ImagesModel::Role role)
     sort();
 }
 
+void ImagesModel::setDirectoriesFirst(bool df)
+{
+    if (this->_directoriesfirst == df)
+        return;
+
+    this->_directoriesfirst = df;
+    emit directoriesFirstChanged();
+
+    sort();
+}
+
+void ImagesModel::setRootDir(const QString &newRoot)
+{
+    QString temp;
+
+    if (newRoot.isEmpty())
+        temp = ImagesModel::_imagesdirpaths.first();
+    else
+        temp = newRoot;
+
+    if (this->_rootdir == temp)
+        return;
+
+    this->_rootdir = temp;
+
+    emit rootDirChanged();
+
+    beginResetModel();
+    this->_entries.clear();
+    endResetModel();
+
+    emit dirNeedsScan(this->_rootdir, ImagesModel::_filterlist, this->_recursive);
+}
+
+void ImagesModel::setRecursive(bool recursive)
+{
+    if (this->_recursive == recursive)
+        return;
+
+    this->_recursive = recursive;
+    emit recursiveChanged();
+
+    if (this->_recursive)
+    {
+        foreach (const ImagesModel::Entry &entry, this->_entries)
+        {
+            if (entry.isDir)
+                emit dirNeedsScan(entry.path, ImagesModel::_filterlist, this->_recursive);
+        }
+    }
+    else
+    {
+        int rootLength = this->_rootdir.split('/').length();
+
+        for (int i=0; i<this->_entries.size(); i++)
+        {
+            if (this->_entries.at(i).path.split('/').length() > rootLength)
+            {
+                beginRemoveRows(QModelIndex(), i, i);
+                this->_entries.removeAt(i);
+                endRemoveRows();
+                i--;
+            }
+        }
+    }
+}
+
 bool ImagesModel::lesserThan(const Entry &e1, const Entry &e2, ImagesModel::Role role)
 {
     switch (role)
@@ -187,6 +244,12 @@ bool ImagesModel::lesserThan(const Entry &e1, const Entry &e2, ImagesModel::Role
 
         case ImagesModel::UrlRole:
             return e1.path < e2.path;
+
+        case ImagesModel::IsDirRole:
+            return e1.isDir < e2.isDir;
+
+        case ImagesModel::NameRole:
+            return e1.path.split('/').last() < e2.path.split('/').last();
     }
 
     return false;
@@ -207,6 +270,12 @@ bool ImagesModel::biggerThan(const Entry &e1, const Entry &e2, ImagesModel::Role
 
         case ImagesModel::UrlRole:
             return e1.path > e2.path;
+
+        case ImagesModel::IsDirRole:
+            return e1.isDir > e2.isDir;
+
+        case ImagesModel::NameRole:
+            return e1.path.split('/').last() > e2.path.split('/').last();
     }
 
     return false;
