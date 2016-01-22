@@ -756,8 +756,32 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
         <translation>Seleccionando imagen</translation>
     </message>
     <message>
-        <source>Back</source>
-        <translation>Volver</translation>
+        <source>Android storage</source>
+        <translation type="unfinished">Almacenamiento Android</translation>
+    </message>
+    <message>
+        <source>SD Card</source>
+        <translation type="unfinished">Tarjeta SD</translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <translation type="unfinished">Home</translation>
+    </message>
+    <message>
+        <source>Sort ascending</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort descending</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort by name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort by date</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -923,6 +947,10 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
     <message>
         <source>Group name changed to ��%1��</source>
         <translation>El nombre del grupo ha cambiado a ��%1��</translation>
+    </message>
+    <message>
+        <source>%1 added %2</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

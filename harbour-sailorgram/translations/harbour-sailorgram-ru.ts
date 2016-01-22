@@ -756,8 +756,32 @@ Do a swype to the right to select a contact</source>
         <translation>Выбор изображения</translation>
     </message>
     <message>
-        <source>Back</source>
-        <translation>Назад</translation>
+        <source>Android storage</source>
+        <translation type="unfinished">Память Android</translation>
+    </message>
+    <message>
+        <source>SD Card</source>
+        <translation type="unfinished">Карта памяти</translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <translation type="unfinished">Домой</translation>
+    </message>
+    <message>
+        <source>Sort ascending</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort descending</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort by name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort by date</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -923,6 +947,10 @@ Do a swype to the right to select a contact</source>
     <message>
         <source>Group name changed to ��%1��</source>
         <translation>Название беседы изменено на ��%1��</translation>
+    </message>
+    <message>
+        <source>%1 added %2</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

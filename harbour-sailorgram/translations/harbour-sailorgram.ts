@@ -751,7 +751,31 @@ Do a swype to the right to select a contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Back</source>
+        <source>Android storage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SD Card</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort ascending</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort descending</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort by name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort by date</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -917,6 +941,10 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Group name changed to ��%1��</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 added %2</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

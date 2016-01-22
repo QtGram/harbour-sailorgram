@@ -22,11 +22,22 @@ function actionType(telegram, dialog, message) {
        return qsTr("Group created by «%1»").arg(TelegramHelper.completeName(telegram.user(userid)));
    }
 
-   if(action.classType === TelegramConstants.typeMessageActionChatAddUser)
-       return qsTr("%1 has joined the group").arg(TelegramHelper.completeName(telegram.user(action.userId)));
+   if(action.classType === TelegramConstants.typeMessageActionChatAddUser) {
+       if(message.fromId)
+           return qsTr("%1 added %2").arg(TelegramHelper.completeName(telegram.user(message.fromId))).arg(TelegramHelper.completeName(telegram.user(action.userId)));
 
-   if(action.classType === TelegramConstants.typeMessageActionChatJoinedByLink)
-       return qsTr("%1 has joined the group via invite link").arg(TelegramHelper.completeName(telegram.user(action.inviterId)));
+       return qsTr("%1 has joined the group").arg(TelegramHelper.completeName(telegram.user(action.userId)));
+   }
+
+   if(action.classType === TelegramConstants.typeMessageActionChatJoinedByLink) {
+       if(action.inviterId) {
+           var from = TelegramHelper.completeName(telegram.user(message.fromId))
+           var inviter = TelegramHelper.completeName(telegram.user(action.inviterId));
+           return qsTr("%1 added %2").arg(inviter).arg(from);
+       }
+
+       return qsTr("%1 has joined the group via invite link").arg(TelegramHelper.completeName(telegram.user(message.fromId)));
+   }
 
    if(action.classType === TelegramConstants.typeMessageActionChatDeleteUser)
        return qsTr("%1 has left the group").arg(TelegramHelper.completeName(telegram.user(action.userId)));

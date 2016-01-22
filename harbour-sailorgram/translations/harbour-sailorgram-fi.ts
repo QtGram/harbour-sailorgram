@@ -756,8 +756,32 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
         <translation>Valitaan kuva</translation>
     </message>
     <message>
-        <source>Back</source>
-        <translation>Takaisin</translation>
+        <source>Android storage</source>
+        <translation type="unfinished">Android varasto</translation>
+    </message>
+    <message>
+        <source>SD Card</source>
+        <translation type="unfinished">SD -muistikortti</translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <translation type="unfinished">Kotikansio</translation>
+    </message>
+    <message>
+        <source>Sort ascending</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort descending</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort by name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort by date</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -923,6 +947,10 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     <message>
         <source>Group name changed to ��%1��</source>
         <translation>Ryhmän nimi on vaihdettu: ��%1��</translation>
+    </message>
+    <message>
+        <source>%1 added %2</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

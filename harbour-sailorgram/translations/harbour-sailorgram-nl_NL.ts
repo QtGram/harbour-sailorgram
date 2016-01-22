@@ -756,8 +756,32 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
         <translation>Bezig met selecteren van afbeelding</translation>
     </message>
     <message>
-        <source>Back</source>
-        <translation>Terug</translation>
+        <source>Android storage</source>
+        <translation type="unfinished">Android-opslagruimte</translation>
+    </message>
+    <message>
+        <source>SD Card</source>
+        <translation type="unfinished">SD-kaart</translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <translation type="unfinished">Persoonlijke map</translation>
+    </message>
+    <message>
+        <source>Sort ascending</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort descending</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort by name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort by date</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -923,6 +947,10 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     <message>
         <source>Group name changed to ��%1��</source>
         <translation>De groepsnaam is gewijzigd in ��%1��</translation>
+    </message>
+    <message>
+        <source>%1 added %2</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

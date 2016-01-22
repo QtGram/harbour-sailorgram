@@ -756,8 +756,32 @@ Stryg til venstre for at vælge en kontakt</translation>
         <translation>Vælger billede</translation>
     </message>
     <message>
-        <source>Back</source>
-        <translation>Tilbage</translation>
+        <source>Android storage</source>
+        <translation type="unfinished">Android storage</translation>
+    </message>
+    <message>
+        <source>SD Card</source>
+        <translation type="unfinished">SD-kort</translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <translation type="unfinished">Hjem</translation>
+    </message>
+    <message>
+        <source>Sort ascending</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort descending</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort by name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort by date</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -923,6 +947,10 @@ Stryg til venstre for at vælge en kontakt</translation>
     <message>
         <source>Group name changed to ��%1��</source>
         <translation>Gruppenavn ændret til ��%1��</translation>
+    </message>
+    <message>
+        <source>%1 added %2</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
