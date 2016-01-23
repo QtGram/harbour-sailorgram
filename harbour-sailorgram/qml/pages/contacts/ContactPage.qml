@@ -36,6 +36,7 @@ Page
                 height: Theme.itemSizeSmall
                 context: contactpage.context
                 user: contactpage.user
+                showUsername: true
             }
 
             UserInfo

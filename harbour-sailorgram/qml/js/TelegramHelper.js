@@ -216,6 +216,9 @@ function formatBytes(bytes, decimals)
 
 function completePhoneNumber(phonenumber)
 {
+    if(phonenumber.length <= 0)
+        return "";
+
     if(phonenumber[0] !== '+')
         return "+" + phonenumber;
 

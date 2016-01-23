@@ -697,14 +697,6 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
         <source>Change Username</source>
         <translation>Nutzernamen ändern </translation>
     </message>
-    <message>
-        <source>User</source>
-        <translation>Nutzer</translation>
-    </message>
-    <message>
-        <source>Username</source>
-        <translation>Nutzername</translation>
-    </message>
 </context>
 <context>
     <name>SecretDialogDiscarded</name>

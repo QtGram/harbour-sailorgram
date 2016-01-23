@@ -9,6 +9,7 @@ Item
 {
     property Context context
     property User user
+    property bool showUsername: false
 
     id: contactitem
 
@@ -32,6 +33,17 @@ Item
             width: parent.width
             elide: Text.ElideRight
             text: TelegramHelper.completeName(user)
+        }
+
+        Label
+        {
+            id: lblusername
+            width: parent.width
+            elide: Text.ElideRight
+            text: (user.username.length > 0) ? "@" + user.username : ""
+            visible: showUsername && (text.length > 0)
+            font.pixelSize: Theme.fontSizeExtraSmall
+            color: Theme.secondaryHighlightColor
         }
 
         Row

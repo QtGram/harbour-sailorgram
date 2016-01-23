@@ -97,6 +97,7 @@ Page
                 dialog: dialoginfopage.dialog
                 chat: dialoginfopage.chat
                 user: dialoginfopage.user
+                showUsername: true
             }
 
             SectionHeader { text: qsTr("Actions") }

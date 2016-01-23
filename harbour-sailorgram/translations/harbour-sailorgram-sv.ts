@@ -696,14 +696,6 @@ Svep åt vänster för att välja en kontakt</translation>
         <source>Change Username</source>
         <translation>Byt användarnamn</translation>
     </message>
-    <message>
-        <source>User</source>
-        <translation>Användare</translation>
-    </message>
-    <message>
-        <source>Username</source>
-        <translation>Användarnamn</translation>
-    </message>
 </context>
 <context>
     <name>SecretDialogDiscarded</name>

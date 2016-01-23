@@ -696,14 +696,6 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
         <source>Change Username</source>
         <translation>Gebruikersnaam wijzigen</translation>
     </message>
-    <message>
-        <source>User</source>
-        <translation>Gebruiker</translation>
-    </message>
-    <message>
-        <source>Username</source>
-        <translation>Gebruikersnaam</translation>
-    </message>
 </context>
 <context>
     <name>SecretDialogDiscarded</name>

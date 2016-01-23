@@ -60,38 +60,7 @@ Page
                 height: Theme.itemSizeSmall
                 context: profilepage.context
                 user: profilepage.user
-            }
-
-            SectionHeader
-            {
-                text: qsTr("User")
-            }
-
-            Label
-            {
-                anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
-                horizontalAlignment: Text.AlignLeft
-                verticalAlignment: Text.AlignVCenter
-                wrapMode: Text.WordWrap
-                font.pixelSize: Theme.fontSizeSmall
-                text: user.firstName + " " + user.lastName
-            }
-
-            SectionHeader
-            {
-                text: qsTr("Username")
-                visible: user.username.length > 0
-            }
-
-            Label
-            {
-                visible: user.username.length > 0
-                anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
-                horizontalAlignment: Text.AlignLeft
-                verticalAlignment: Text.AlignVCenter
-                wrapMode: Text.WordWrap
-                font.pixelSize: Theme.fontSizeSmall
-                text: user.username
+                showUsername: true
             }
 
             SectionHeader

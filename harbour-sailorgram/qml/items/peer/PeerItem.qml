@@ -10,6 +10,7 @@ Item
     property var dialog
     property Chat chat
     property User user
+    property bool showUsername: false
 
     id: peeritem
 
@@ -52,6 +53,17 @@ Item
                 elide: Text.ElideRight
                 text: TelegramHelper.isChat(dialog) ? chat.title : TelegramHelper.completeName(user)
             }
+        }
+
+        Label
+        {
+            id: lblusername
+            width: parent.width
+            elide: Text.ElideRight
+            visible: !TelegramHelper.isChat(dialog) && showUsername
+            text: user ? "@" + user.username : ""
+            font.pixelSize: Theme.fontSizeExtraSmall
+            color: Theme.secondaryHighlightColor
         }
 
         Row

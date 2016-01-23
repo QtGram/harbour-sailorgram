@@ -694,14 +694,6 @@ Do a swype to the right to select a contact</source>
         <source>Change Username</source>
         <translation>Змяніць імя карыстальніка</translation>
     </message>
-    <message>
-        <source>User</source>
-        <translation>Карыстальнік</translation>
-    </message>
-    <message>
-        <source>Username</source>
-        <translation>Імя карыстальніка</translation>
-    </message>
 </context>
 <context>
     <name>SecretDialogDiscarded</name>

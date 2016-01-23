@@ -696,14 +696,6 @@ Stryg til venstre for at vælge en kontakt</translation>
         <source>Change Username</source>
         <translation>Skift Brugernavn</translation>
     </message>
-    <message>
-        <source>User</source>
-        <translation>Bruger</translation>
-    </message>
-    <message>
-        <source>Username</source>
-        <translation>Brugernavn</translation>
-    </message>
 </context>
 <context>
     <name>SecretDialogDiscarded</name>

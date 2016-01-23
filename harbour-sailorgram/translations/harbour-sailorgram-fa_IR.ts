@@ -694,14 +694,6 @@ Do a swype to the right to select a contact</source>
         <source>Change Username</source>
         <translation>تغییر نام کاربری</translation>
     </message>
-    <message>
-        <source>User</source>
-        <translation>کاربر</translation>
-    </message>
-    <message>
-        <source>Username</source>
-        <translation>نام کاربری</translation>
-    </message>
 </context>
 <context>
     <name>SecretDialogDiscarded</name>

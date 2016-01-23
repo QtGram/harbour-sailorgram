@@ -696,14 +696,6 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
         <source>Change Username</source>
         <translation>Vaihda käyttäjänimi</translation>
     </message>
-    <message>
-        <source>User</source>
-        <translation>Käyttäjä</translation>
-    </message>
-    <message>
-        <source>Username</source>
-        <translation>Käyttäjänimi</translation>
-    </message>
 </context>
 <context>
     <name>SecretDialogDiscarded</name>

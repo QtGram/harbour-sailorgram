@@ -51,13 +51,18 @@ Item
             }
         }
 
-        SectionHeader { text: qsTr("Phone Number") }
+        SectionHeader
+        {
+            text: qsTr("Phone Number")
+            visible: user.phone.length > 0
+        }
 
         Label
         {
             x: Theme.paddingMedium
             width: parent.width - (x * 2)
             text: TelegramHelper.phoneNumber(user)
+            visible: user.phone.length > 0
         }
     }
 }
