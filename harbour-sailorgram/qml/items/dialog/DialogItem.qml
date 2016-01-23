@@ -126,7 +126,7 @@ Item
                     font.pixelSize: Theme.fontSizeExtraSmall
 
                     visible: {
-                        if(TelegramHelper.isServiceMessage(message))
+                        if(TelegramHelper.isServiceMessage(message) || (dialog.typingUsers.length > 0))
                             return false;
 
                         if(TelegramHelper.isChat(dialog))
@@ -136,7 +136,7 @@ Item
                     }
 
                     text: {
-                        if(!TelegramHelper.isServiceMessage(message))
+                        if(!TelegramHelper.isServiceMessage(message) && (dialog.typingUsers.length <= 0))
                         {
                             if(TelegramHelper.isChat(dialog))
                             {
