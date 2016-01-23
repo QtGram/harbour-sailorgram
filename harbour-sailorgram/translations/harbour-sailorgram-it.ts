@@ -749,31 +749,31 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Android storage</source>
-        <translation type="unfinished">Storage Android</translation>
+        <translation>Storage Android</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished">Scheda SD</translation>
+        <translation>Scheda SD</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished">Home</translation>
+        <translation>Home</translation>
     </message>
     <message>
         <source>Sort ascending</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordina dal più vecchio</translation>
     </message>
     <message>
         <source>Sort descending</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordina dal più recente</translation>
     </message>
     <message>
         <source>Sort by name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordina per nome</translation>
     </message>
     <message>
         <source>Sort by date</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordina per data</translation>
     </message>
 </context>
 <context>
@@ -823,7 +823,7 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Browse files</source>
-        <translation>Sfoglia i files</translation>
+        <translation>Altri files</translation>
     </message>
 </context>
 <context>
@@ -942,7 +942,7 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>%1 added %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ha aggiunto %2</translation>
     </message>
 </context>
 <context>
@@ -1001,19 +1001,19 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>Sta scrivendo...</translation>
     </message>
     <message>
         <source>%1 is typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 sta scrivendo...</translation>
     </message>
     <message>
         <source>%1 and %2 are typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 e %2 stanno scrivendo...</translation>
     </message>
     <message>
         <source>%1 members are typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 membri stanno scrivendo</translation>
     </message>
 </context>
 <context>
@@ -1032,7 +1032,7 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Azioni</translation>
+        <translation>Azioni</translation>
     </message>
 </context>
 <context>

@@ -238,7 +238,7 @@ Minimum sind 5 Zeichen.</translation>
     <name>ChatSettingsPage</name>
     <message>
         <source>Save</source>
-        <translation>Sichern</translation>
+        <translation>Speichern</translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
@@ -378,7 +378,7 @@ Minimum sind 5 Zeichen.</translation>
     </message>
     <message>
         <source>Refresh</source>
-        <translation>Refresh</translation>
+        <translation>Aktualisieren</translation>
     </message>
     <message>
         <source>Contacts:</source>
@@ -672,7 +672,7 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Insert your phone number and press &apos;Next&apos;</source>
-        <translation>Gebe deine Telefonnummer ein und drücke &quot;Weiter&quot;</translation>
+        <translation>Gib deine Telefonnummer ein und drücke &quot;Weiter&quot;</translation>
     </message>
     <message>
         <source>Exit</source>
@@ -695,7 +695,7 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Change Username</source>
-        <translation>Nutzernamen ändern </translation>
+        <translation>Nutzernamen ändern</translation>
     </message>
 </context>
 <context>
@@ -750,31 +750,31 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Android storage</source>
-        <translation type="unfinished">Android Speicher</translation>
+        <translation>Android Speicher</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished">SD Karte</translation>
+        <translation>SD Karte</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished">Home</translation>
+        <translation>Home</translation>
     </message>
     <message>
         <source>Sort ascending</source>
-        <translation type="unfinished"></translation>
+        <translation>Aufsteigend sortieren</translation>
     </message>
     <message>
         <source>Sort descending</source>
-        <translation type="unfinished"></translation>
+        <translation>Absteigend sortieren</translation>
     </message>
     <message>
         <source>Sort by name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nach Namen sortieren</translation>
     </message>
     <message>
         <source>Sort by date</source>
-        <translation type="unfinished"></translation>
+        <translation>Nach Datum sortieren</translation>
     </message>
 </context>
 <context>
@@ -943,7 +943,7 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>%1 added %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 hinzugefügt von %2</translation>
     </message>
 </context>
 <context>

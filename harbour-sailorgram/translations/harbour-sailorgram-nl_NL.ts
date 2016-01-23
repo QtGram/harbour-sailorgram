@@ -749,31 +749,31 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     </message>
     <message>
         <source>Android storage</source>
-        <translation type="unfinished">Android-opslagruimte</translation>
+        <translation>Android-opslagruimte</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished">SD-kaart</translation>
+        <translation>SD-kaart</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished">Persoonlijke map</translation>
+        <translation>Persoonlijke map</translation>
     </message>
     <message>
         <source>Sort ascending</source>
-        <translation type="unfinished"></translation>
+        <translation>Oplopend sorteren</translation>
     </message>
     <message>
         <source>Sort descending</source>
-        <translation type="unfinished"></translation>
+        <translation>Aflopend sorteren</translation>
     </message>
     <message>
         <source>Sort by name</source>
-        <translation type="unfinished"></translation>
+        <translation>Sorteren op naam</translation>
     </message>
     <message>
         <source>Sort by date</source>
-        <translation type="unfinished"></translation>
+        <translation>Sorteren op datum</translation>
     </message>
 </context>
 <context>
@@ -942,7 +942,7 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     </message>
     <message>
         <source>%1 added %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 heeft %2 toegevoegd</translation>
     </message>
 </context>
 <context>

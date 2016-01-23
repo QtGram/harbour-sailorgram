@@ -749,31 +749,31 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     </message>
     <message>
         <source>Android storage</source>
-        <translation type="unfinished">Android varasto</translation>
+        <translation>Android varasto</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished">SD -muistikortti</translation>
+        <translation>SD -muistikortti</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished">Kotikansio</translation>
+        <translation>Kotikansio</translation>
     </message>
     <message>
         <source>Sort ascending</source>
-        <translation type="unfinished"></translation>
+        <translation>Järjestys: nouseva</translation>
     </message>
     <message>
         <source>Sort descending</source>
-        <translation type="unfinished"></translation>
+        <translation>Järjestys: laskeva</translation>
     </message>
     <message>
         <source>Sort by name</source>
-        <translation type="unfinished"></translation>
+        <translation>Järjestä nimen mukaan</translation>
     </message>
     <message>
         <source>Sort by date</source>
-        <translation type="unfinished"></translation>
+        <translation>Järjestä päivämäärän mukaan</translation>
     </message>
 </context>
 <context>
@@ -942,7 +942,7 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     </message>
     <message>
         <source>%1 added %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 lisätty %2</translation>
     </message>
 </context>
 <context>

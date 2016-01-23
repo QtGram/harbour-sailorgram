@@ -749,31 +749,31 @@ Svep åt vänster för att välja en kontakt</translation>
     </message>
     <message>
         <source>Android storage</source>
-        <translation type="unfinished">Android-lagring</translation>
+        <translation>Android-lagring</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished">SD-kort</translation>
+        <translation>SD-kort</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished">Hemkatalog</translation>
+        <translation>Hem</translation>
     </message>
     <message>
         <source>Sort ascending</source>
-        <translation type="unfinished"></translation>
+        <translation>Sortera stigande</translation>
     </message>
     <message>
         <source>Sort descending</source>
-        <translation type="unfinished"></translation>
+        <translation>Sortera fallande</translation>
     </message>
     <message>
         <source>Sort by name</source>
-        <translation type="unfinished"></translation>
+        <translation>Sortera efter namn</translation>
     </message>
     <message>
         <source>Sort by date</source>
-        <translation type="unfinished"></translation>
+        <translation>Sortera efter datum</translation>
     </message>
 </context>
 <context>
@@ -942,7 +942,7 @@ Svep åt vänster för att välja en kontakt</translation>
     </message>
     <message>
         <source>%1 added %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 lade till %2</translation>
     </message>
 </context>
 <context>
@@ -1001,19 +1001,19 @@ Svep åt vänster för att välja en kontakt</translation>
     </message>
     <message>
         <source>Typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriver...</translation>
     </message>
     <message>
         <source>%1 is typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 skriver...</translation>
     </message>
     <message>
         <source>%1 and %2 are typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 och %2 skriver...</translation>
     </message>
     <message>
         <source>%1 members are typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 medlemmar skriver...</translation>
     </message>
 </context>
 <context>
@@ -1032,7 +1032,7 @@ Svep åt vänster för att välja en kontakt</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Åtgärder</translation>
+        <translation>Åtgärder</translation>
     </message>
 </context>
 <context>

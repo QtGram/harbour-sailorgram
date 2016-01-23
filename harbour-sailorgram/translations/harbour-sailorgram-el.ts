@@ -322,11 +322,11 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>%1 unread messages</source>
-        <translation>%1 αδιάβαστα μηνύματα</translation>
+        <translation>%1 μη αναγνωσμένα μηνύματα</translation>
     </message>
     <message>
         <source>%1 unread message</source>
-        <translation>%1 αδιάβαστο μήνυμα</translation>
+        <translation>%1 μη αναγνωσμένο μήνυμα</translation>
     </message>
 </context>
 <context>
@@ -355,7 +355,7 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Keep running</source>
-        <translation>Συνεχίζει να λειτουργεί</translation>
+        <translation>Συνέχισε να λειτουργείς</translation>
     </message>
     <message>
         <source>SailorGram keeps running in background even when closed</source>
@@ -717,7 +717,7 @@ Do a swype to the right to select a contact</source>
     <name>SecretDialogWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>
-        <translation>Περιμένοντας τον %1 να συνδεθεί</translation>
+        <translation>Περιμένοντας για %1 να συνδεθεί</translation>
     </message>
 </context>
 <context>
@@ -782,7 +782,7 @@ Do a swype to the right to select a contact</source>
     <name>SelectorLocationPage</name>
     <message>
         <source>Waiting for coordinates...</source>
-        <translation>Αναμονή για τις συντεταγμένες</translation>
+        <translation>Περιμένοντας συντεταγμένες...</translation>
     </message>
     <message>
         <source>Coordinates</source>
@@ -893,7 +893,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation>Έχετε εισάγει ένα λάθος Κωδικό Εξουσιοδότησης</translation>
+        <translation>Έχετε εισάγει λανθασμένο Κωδικό Εξουσιοδότησης</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
