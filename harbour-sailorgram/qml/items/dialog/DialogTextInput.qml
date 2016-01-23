@@ -36,6 +36,30 @@ InverseMouseArea
         context: dialogtextinput.context
     }
 
+    Timer
+    {
+        id: timstoptyping
+        interval: 3000 // 3 seconds
+        onTriggered: context.telegram.messagesSetTyping(TelegramHelper.peerId(dialog), false);
+    }
+
+    Timer
+    {
+        id: timtyping
+        triggeredOnStart: true
+        interval: 3000 // 3 seconds
+        onTriggered: context.telegram.messagesSetTyping(TelegramHelper.peerId(dialog), true);
+
+        function startTyping() {
+            timstoptyping.restart();
+
+            if(running)
+                return;
+
+            timtyping.restart();
+        }
+    }
+
     TextArea
     {
         id: textarea
@@ -44,6 +68,7 @@ InverseMouseArea
         font.pixelSize: Theme.fontSizeSmall
         placeholderText: qsTr("Message...")
         textRightMargin: 0
+        onTextChanged: timtyping.startTyping()
 
         anchors {
             left: parent.left
@@ -51,6 +76,7 @@ InverseMouseArea
             top: parent.top
             topMargin: Theme.paddingMedium
         }
+
 
         EnterKey.onClicked: {
             if(!context.sendwithreturn)
