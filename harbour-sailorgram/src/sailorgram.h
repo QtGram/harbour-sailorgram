@@ -79,6 +79,7 @@ class SailorGram : public QObject
         void onWakeUpRequested();
         void onConnectedChanged();
         void updateLogLevel();
+        void updateOnlineState();
         void wakeSleep();
 
     signals:
