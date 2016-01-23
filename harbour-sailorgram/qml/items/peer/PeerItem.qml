@@ -78,7 +78,7 @@ Item
 
                 text: {
                     if(dialog.typingUsers.length > 0)
-                        return TelegramHelper.typingUsers(dialog);
+                        return TelegramHelper.typingUsers(context, dialog);
 
                     if(TelegramHelper.isChat(dialog)) {
 

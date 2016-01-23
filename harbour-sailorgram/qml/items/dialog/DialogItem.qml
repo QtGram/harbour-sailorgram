@@ -164,10 +164,19 @@ Item
                     maximumLineCount: 1
                     emojiPath: context.sailorgram.emojiPath
                     linkColor: Theme.secondaryColor
-                    color: TelegramHelper.isServiceMessage(message) ? Theme.highlightColor : Theme.primaryColor
+
+                    color: {
+                        if(dialog.typingUsers.length > 0)
+                            return Theme.highlightColor;
+
+                        if(TelegramHelper.isServiceMessage(message))
+                            return Theme.highlightColor;
+
+                        return Theme.primaryColor;
+                    }
 
                     font.italic: {
-                        if(TelegramHelper.isServiceMessage(message))
+                        if(TelegramHelper.isServiceMessage(message) || (dialog.typingUsers.length > 0))
                             return true;
 
                         if(TelegramHelper.isMediaMessage(message) && (message.media.classType === TelegramConstants.typeMessageMediaDocument) && context.telegram.documentIsSticker(message.media.document))
@@ -178,7 +187,7 @@ Item
 
                     rawText: {
                         if(dialog.typingUsers.length > 0)
-                            return TelegramHelper.typingUsers(dialog);
+                            return TelegramHelper.typingUsers(context, dialog);
 
                         if(!message)
                             return "";
