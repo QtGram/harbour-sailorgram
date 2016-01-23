@@ -1166,6 +1166,7 @@ void Telegram::onMessagesSentMessage(qint64 id, qint32 msgId, qint32 date, const
 void Telegram::onMessagesSendMediaAnswer(qint64 fileId, const UpdatesType &updates) {
     //depending on responded media, emit one signal or another
     const int mediaType = prv->pendingMediaSends.take(fileId);
+
     switch (mediaType) {
     case MessageMedia::typeMessageMediaPhoto:
         Q_EMIT messagesSendPhotoAnswer(fileId, updates);
