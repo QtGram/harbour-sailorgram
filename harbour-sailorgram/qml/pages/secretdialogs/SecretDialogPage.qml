@@ -38,6 +38,18 @@ Page
 
     RemorsePopup { id: remorsepopup }
 
+    Connections
+    {
+        target: Qt.application
+
+        onStateChanged: {
+            if(Qt.application.state !== Qt.ApplicationActive)
+                return;
+
+            messagesmodel.setReaded();
+        }
+    }
+
     Timer
     {
         id: refreshtimer
@@ -97,7 +109,7 @@ Page
                 id: messagesmodel
 
                 onCountChanged: {
-                    if(!count || (secretdialogpage.status !== PageStatus.Active))
+                    if((count <= 0) || (Qt.application.state !== Qt.ApplicationActive))
                         return;
 
                     messagesmodel.setReaded(); /* We are in this chat, always mark these messages as read */
