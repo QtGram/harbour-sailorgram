@@ -25,7 +25,7 @@ MessageMediaItem
             id: imgpreview
             height: Theme.iconSizeMedium
             width: Theme.iconSizeMedium
-            source: "image://theme/icon-m-document"
+            source: messagedocument.mediaThumbnail || "image://theme/icon-m-document"
             transferProgress: progressPercent
 
             Rectangle {
