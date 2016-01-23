@@ -64,10 +64,6 @@
         <translation>Desarrollador</translation>
     </message>
     <message>
-        <source>Icon Designer</source>
-        <translation>Diseñador del icono</translation>
-    </message>
-    <message>
         <source>GitHub Repository</source>
         <translation>Repositorio Github</translation>
     </message>
@@ -94,6 +90,10 @@
     <message>
         <source>Emoji Set</source>
         <translation>Grupo de emoticonos</translation>
+    </message>
+    <message>
+        <source>Icon Designers</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -749,31 +749,31 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
     </message>
     <message>
         <source>Android storage</source>
-        <translation type="unfinished">Almacenamiento Android</translation>
+        <translation>Almacenamiento Android</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished">Tarjeta SD</translation>
+        <translation>Tarjeta SD</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished">Home</translation>
+        <translation>Home</translation>
     </message>
     <message>
         <source>Sort ascending</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordenar por el más antiguo</translation>
     </message>
     <message>
         <source>Sort descending</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordenar por el más reciente</translation>
     </message>
     <message>
         <source>Sort by name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordenar por nombre</translation>
     </message>
     <message>
         <source>Sort by date</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordenar por fecha</translation>
     </message>
 </context>
 <context>
@@ -942,7 +942,7 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
     </message>
     <message>
         <source>%1 added %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 añadió a %2</translation>
     </message>
 </context>
 <context>
@@ -1001,19 +1001,19 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
     </message>
     <message>
         <source>Typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>Escribiendo...</translation>
     </message>
     <message>
         <source>%1 is typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 está escribiendo...</translation>
     </message>
     <message>
         <source>%1 and %2 are typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 y %2 están escribiendo...</translation>
     </message>
     <message>
         <source>%1 members are typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 miembros están escribiendo...</translation>
     </message>
 </context>
 <context>
@@ -1032,7 +1032,7 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Acciones</translation>
+        <translation>Acciones</translation>
     </message>
 </context>
 <context>

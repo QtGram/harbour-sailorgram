@@ -64,10 +64,6 @@
         <translation>Sviluppatore</translation>
     </message>
     <message>
-        <source>Icon Designer</source>
-        <translation>Designer dell&apos;icona</translation>
-    </message>
-    <message>
         <source>GitHub Repository</source>
         <translation>Repository GitHub</translation>
     </message>
@@ -94,6 +90,10 @@
     <message>
         <source>Emoji Set</source>
         <translation>Set di Emoji</translation>
+    </message>
+    <message>
+        <source>Icon Designers</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

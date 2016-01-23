@@ -64,10 +64,6 @@
         <translation>Προγραμματιστής</translation>
     </message>
     <message>
-        <source>Icon Designer</source>
-        <translation>Σχεδιαστής εικονιδίων</translation>
-    </message>
-    <message>
         <source>GitHub Repository</source>
         <translation>GitHub Αποθήκη</translation>
     </message>
@@ -94,6 +90,10 @@
     <message>
         <source>Emoji Set</source>
         <translation>Σετ χαρακτήρων Emoji</translation>
+    </message>
+    <message>
+        <source>Icon Designers</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

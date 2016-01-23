@@ -64,10 +64,6 @@
         <translation>Розробник</translation>
     </message>
     <message>
-        <source>Icon Designer</source>
-        <translation>Дизайнер іконок</translation>
-    </message>
-    <message>
         <source>GitHub Repository</source>
         <translation>GitHub Репозиторій</translation>
     </message>
@@ -94,6 +90,10 @@
     <message>
         <source>Emoji Set</source>
         <translation>Набір Emoji</translation>
+    </message>
+    <message>
+        <source>Icon Designers</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

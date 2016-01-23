@@ -64,10 +64,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Icon Designer</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>GitHub Repository</source>
         <translation type="unfinished"></translation>
     </message>
@@ -93,6 +89,10 @@
     </message>
     <message>
         <source>Emoji Set</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Icon Designers</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
