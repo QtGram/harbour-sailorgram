@@ -131,8 +131,8 @@ Page
                 {
                     id: lblicondesigner
                     anchors { left: parent.left; top: lbldev.bottom; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
-                    title: qsTr("Icon Designer")
-                    text: "gri4994"
+                    title: qsTr("Icon Designers")
+                    text: "gri4994 and Topias"
                 }
 
                 InfoLabel
