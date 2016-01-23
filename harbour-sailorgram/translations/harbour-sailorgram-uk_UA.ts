@@ -1007,6 +1007,22 @@ Do a swype to the right to select a contact</source>
         <source>Last Seen %1</source>
         <translation>Останній раз був (-ла) %1</translation>
     </message>
+    <message>
+        <source>Typing...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 is typing...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 and %2 are typing...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 members are typing...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserInfo</name>

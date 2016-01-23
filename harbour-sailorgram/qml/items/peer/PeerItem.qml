@@ -65,8 +65,16 @@ Item
                 color: Theme.highlightColor
 
                 text: {
-                    if(TelegramHelper.isChat(dialog))
-                        return chat.participantsCount === 1 ? qsTr("%1 member").arg(chat.participantsCount) : qsTr("%1 members").arg(chat.participantsCount);
+                    if(dialog.typingUsers.length > 0)
+                        return TelegramHelper.typingUsers(dialog);
+
+                    if(TelegramHelper.isChat(dialog)) {
+
+                        if(chat.participantsCount === 1)
+                            return qsTr("%1 member").arg(chat.participantsCount);
+
+                        return qsTr("%1 members").arg(chat.participantsCount);
+                    }
 
                     return TelegramHelper.userStatus(user);
                 }

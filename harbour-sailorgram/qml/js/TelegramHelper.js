@@ -108,6 +108,28 @@ function printableDate(timestamp, full)
     return Qt.formatDateTime(date, "dd MMM yy");
 }
 
+function typingUsers(dialog)
+{
+    if(!isChat(dialog))
+        return qsTr("Typing...");
+
+    var telegram = dialog.telegram;
+
+    if(dialog.typingUsers.length === 1) {
+        var user = telegram.user(telegram.user(dialog.typingUsers[0]));
+        return qsTr("%1 is typing...").arg(userDisplayName(user));
+    }
+    else if(dialog.typingUsers.length === 2) {
+        var user1 = telegram.user(telegram.user(dialog.typingUsers[0]));
+        var user2 = telegram.user(telegram.user(dialog.typingUsers[1]));
+        return qsTr("%1 and %2 are typing...").arg(userDisplayName(user1)).arg(userDisplayName(user2));
+    }
+    else if(dialog.typingUsers.length > 2)
+        return qsTr("%1 members are typing...").arg(dialog.typingUsers.length);
+
+    return "";
+}
+
 function isServiceMessage(message)
 {
     if(message.classType === TelegramConstants.typeMessageService)
