@@ -14,10 +14,6 @@ SailorGram::SailorGram(QObject *parent): QObject(parent), _telegram(NULL), _fore
     QDir cachedir(QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation));
     cachedir.mkpath(qApp->applicationName() + QDir::separator() + qApp->applicationName());
 
-    this->_waittimer = new QTimer(this);
-    this->_waittimer->setInterval(5000);
-    this->_waittimer->setSingleShot(true);
-
     this->_netcfgmanager = new QNetworkConfigurationManager(this);
     this->_interface = new SailorgramInterface(this);
     this->_autostart = !SailorGram::hasNoDaemonFile();
@@ -28,7 +24,6 @@ SailorGram::SailorGram(QObject *parent): QObject(parent), _telegram(NULL), _fore
     connect(this->_netcfgmanager, SIGNAL(onlineStateChanged(bool)), this, SLOT(onOnlineStateChanged(bool)));
     connect(this->_interface, SIGNAL(wakeUpRequested()), this, SLOT(onWakeUpRequested()));
     connect(this->_interface, SIGNAL(openDialogRequested(qint32)), this, SIGNAL(openDialogRequested(qint32)));
-    connect(this->_waittimer, SIGNAL(timeout()), this, SLOT(onOnlineStateChanged()));
 }
 
 bool SailorGram::autostart()
@@ -302,22 +297,12 @@ void SailorGram::onApplicationStateChanged(Qt::ApplicationState state)
     emit daemonizedChanged();
 }
 
-void SailorGram::onOnlineStateChanged()
-{
-    this->onOnlineStateChanged(this->_connected);
-}
-
 void SailorGram::onOnlineStateChanged(bool isonline)
 {
     if(this->_connected == isonline)
         return;
 
     this->_connected = isonline;
-
-    if(this->_waittimer->isActive())
-        return;
-
-    this->_waittimer->start();
     emit connectedChanged();
 }
 
