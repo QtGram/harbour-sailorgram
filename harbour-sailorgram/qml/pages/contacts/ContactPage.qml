@@ -8,7 +8,6 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 
 Page
 {
-    property bool actionVisible: true
     property Context context
     property User user
 
@@ -46,6 +45,7 @@ Page
                 actionVisible: true
                 context: contactpage.context
                 user: contactpage.user
+                showHeader: true
             }
         }
     }

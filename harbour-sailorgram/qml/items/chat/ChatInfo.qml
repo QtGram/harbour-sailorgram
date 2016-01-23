@@ -87,6 +87,8 @@ Item
             contentHeight: Theme.itemSizeSmall
             showMenuOnPressAndHold: adminMenu && (user.id !== context.telegram.me)
 
+            onClicked: pageStack.push(Qt.resolvedUrl("../../pages/contacts/ContactPage.qml"), { "context": chatinfo.context, "user": liparticipant.user } )
+
             menu: ChatInfoMenu {
                 context: chatinfo.context
                 dialog: chatinfo.dialog

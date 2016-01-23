@@ -1030,6 +1030,10 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
         <source>Phone Number</source>
         <translation>Numéro de téléphone</translation>
     </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished">Actions</translation>
+    </message>
 </context>
 <context>
     <name>UserMenu</name>

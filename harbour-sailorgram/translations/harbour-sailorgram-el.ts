@@ -1033,6 +1033,10 @@ Do a swype to the right to select a contact</source>
         <source>Phone Number</source>
         <translation>Αριθμός τηλεφώνου</translation>
     </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished">Ενέργειες</translation>
+    </message>
 </context>
 <context>
     <name>UserMenu</name>

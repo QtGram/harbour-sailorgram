@@ -1030,6 +1030,10 @@ Svep åt vänster för att välja en kontakt</translation>
         <source>Phone Number</source>
         <translation>Telefonnummer</translation>
     </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished">Åtgärder</translation>
+    </message>
 </context>
 <context>
     <name>UserMenu</name>

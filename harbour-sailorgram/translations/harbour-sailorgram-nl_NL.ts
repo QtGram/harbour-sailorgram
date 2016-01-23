@@ -1030,6 +1030,10 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
         <source>Phone Number</source>
         <translation>Telefoonnummer</translation>
     </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished">Acties</translation>
+    </message>
 </context>
 <context>
     <name>UserMenu</name>

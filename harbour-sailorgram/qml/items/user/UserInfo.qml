@@ -9,6 +9,7 @@ Item
 {
     property bool allowSendMessage: true
     property bool actionVisible: false
+    property bool showHeader: false
     property Context context
     property User user
 
@@ -20,6 +21,12 @@ Item
     {
         id: column
         anchors { left: parent.left; top: parent.top; right: parent.right }
+
+        SectionHeader
+        {
+            text: qsTr("Actions")
+            visible: showHeader
+        }
 
         ClickableLabel
         {

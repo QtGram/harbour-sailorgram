@@ -9,6 +9,9 @@ Label
 {
     property Context context
     property Message message
+    property color ticksColor: messagestatus.color
+    property bool dateFirst: true
+    property bool dateOnly: false
 
     id: messagestatus
     visible: !TelegramHelper.isServiceMessage(message)
@@ -19,16 +22,29 @@ Label
     font.pixelSize: Theme.fontSizeTiny
 
     text: {
-        var status = TelegramHelper.printableDate(message.date);
+        if(dateOnly)
+            return TelegramHelper.printableDate(message.date);
+
+        var status = "";
+
+        if(dateFirst)
+            status += TelegramHelper.printableDate(message.date) + " ";
 
         if(message.out)
         {
+            status += "<font color=\"" + ticksColor + "\">";
+
             if(!message.unread)
                 status += "  <b>✓✓</b>";
             else
                 status += "  <b>✓</b>";
+
+            status += "</font>";
         }
 
-        return " " + status;
+        if(!dateFirst)
+            status += " " + TelegramHelper.printableDate(message.date);
+
+        return status;
     }
 }

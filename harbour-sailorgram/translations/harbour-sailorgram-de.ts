@@ -1031,6 +1031,10 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
         <source>Phone Number</source>
         <translation>Telefonnummer</translation>
     </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished">Aktionen</translation>
+    </message>
 </context>
 <context>
     <name>UserMenu</name>

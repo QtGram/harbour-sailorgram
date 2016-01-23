@@ -1030,6 +1030,10 @@ Stryg til venstre for at vælge en kontakt</translation>
         <source>Phone Number</source>
         <translation>Telefonnummer</translation>
     </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished">Handlinger</translation>
+    </message>
 </context>
 <context>
     <name>UserMenu</name>

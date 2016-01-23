@@ -1030,6 +1030,10 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
         <source>Phone Number</source>
         <translation>Puhelinnumero</translation>
     </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished">Toiminnot</translation>
+    </message>
 </context>
 <context>
     <name>UserMenu</name>

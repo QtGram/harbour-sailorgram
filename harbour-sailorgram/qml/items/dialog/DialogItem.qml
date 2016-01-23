@@ -77,7 +77,7 @@ Item
                     elide: Text.ElideRight
 
                     width: {
-                        var w = parent.width - lbltime.contentWidth;
+                        var w = parent.width - msgstatus.contentWidth;
 
                         if(imgmute.visible)
                             w -= imgmute.width + Theme.paddingSmall;
@@ -96,13 +96,18 @@ Item
                     fillMode: Image.PreserveAspectFit
                 }
 
-                Label {
-                    id: lbltime
+                MessageStatus
+                {
+                    id: msgstatus
+                    context: dialogitem.context
+                    message: dialogitem.message
                     height: parent.height
-                    font.pixelSize: Theme.fontSizeTiny
-                    verticalAlignment: Text.AlignVCenter
+                    color: Theme.primaryColor
                     horizontalAlignment: Text.AlignRight
-                    text: TelegramHelper.printableDate(message.date)
+                    dateOnly: TelegramHelper.isServiceMessage(message) || !dialogitem.message.out
+                    dateFirst: false
+                    ticksColor: Theme.highlightColor
+                    visible: true
                 }
             }
 
@@ -172,6 +177,9 @@ Item
                     }
 
                     rawText: {
+                        if(dialog.typingUsers.length > 0)
+                            return TelegramHelper.typingUsers(dialog);
+
                         if(!message)
                             return "";
 

@@ -1025,6 +1025,10 @@ Do a swype to the right to select a contact</source>
         <source>Phone Number</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserMenu</name>

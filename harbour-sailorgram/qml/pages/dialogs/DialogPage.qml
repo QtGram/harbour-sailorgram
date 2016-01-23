@@ -77,7 +77,7 @@ Page
         {
             anchors.centerIn: parent
             size: BusyIndicatorSize.Large
-            running: context.sailorgram.connected && messagesmodel.refreshing && (messageview.count <= 0)
+            running: context.sailorgram.connected && messagesmodel.refreshing && (messagesmodel.count <= 0)
             z: running ? 2 : 0
         }
 
