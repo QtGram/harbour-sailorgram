@@ -2,6 +2,7 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.DBus 1.0
 import harbour.sailorgram.SailorGram 1.0
+import harbour.sailorgram.DialogsHistoryModel 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../js/Settings.js" as Settings
 import "../js/TelegramHelper.js" as TelegramHelper
@@ -32,6 +33,10 @@ QtObject
     property ScreenBlank screenblank: ScreenBlank { }
     property ContactsModel contacts: ContactsModel { }
     property ErrorsModel errors: ErrorsModel { }
+
+    property DialogsHistoryModel dialogshistory: DialogsHistoryModel {
+        telegram: context.telegram
+    }
 
     property SailorGram sailorgram: SailorGram {
         telegram: context.telegram
