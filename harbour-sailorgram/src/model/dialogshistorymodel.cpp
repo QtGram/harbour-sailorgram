@@ -80,6 +80,9 @@ void DialogsHistoryModel::removeDialog(DialogObject* dialog)
 
 void DialogsHistoryModel::onIncomingMessage(MessageObject *message)
 {
+    if(message->out())
+        return;
+
     this->beginResetModel();
     this->removeOlder();
 
