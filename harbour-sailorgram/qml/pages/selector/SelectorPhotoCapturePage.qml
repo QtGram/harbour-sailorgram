@@ -1,6 +1,6 @@
 import QtQuick 2.1
 import QtQuick.Window 2.1
-import QtMultimedia 5.4
+import QtMultimedia 5.0
 import Sailfish.Silica 1.0
 
 Dialog
@@ -14,6 +14,30 @@ Dialog
     allowedOrientations: defaultAllowedOrientations
     canAccept:(capturedFilePath !== "")
     onAccepted: actionCompleted("photocapture", capturedFilePath)
+    onOrientationChanged: {
+        switch(orientation) {
+            case Orientation.Landscape:
+                camera.imageCapture.setMetadata("Orientation", 0);
+                break;
+
+            case Orientation.LandscapeInverted:
+                camera.imageCapture.setMetadata("Orientation", 180);
+                break;
+
+            case Orientation.Portrait:
+                camera.imageCapture.setMetadata("Orientation", 270);
+                break;
+
+            case Orientation.PortraitInverted:
+
+                camera.imageCapture.setMetadata("Orientation", 90);
+                break;
+
+            default:
+                camera.imageCapture.setMetadata("Orientation", 0);
+                break;
+        }
+    }
 
     DialogHeader { id: header }
 
@@ -55,11 +79,13 @@ Dialog
             rotation: {
                 switch(selectorphotopage.orientation) {
                     case Orientation.Landscape:
+                        return 270;
                     case Orientation.LandscapeInverted:
-                        return -90;
-
+                        return 90;
                     case Orientation.Portrait:
+                        return 0;
                     case Orientation.PortraitInverted:
+                        return 180;
                     default:
                         return 0;
                 }
@@ -89,12 +115,14 @@ Dialog
 
             rotation: {
                 switch(capturedOrientation) {
-                    case Orientation.Portrait:
-                    case Orientation.PortraitInverted:
-                        return +90;
-
                     case Orientation.Landscape:
+                        return 0;
                     case Orientation.LandscapeInverted:
+                        return 180;
+                    case Orientation.Portrait:
+                        return 90;
+                    case Orientation.PortraitInverted:
+                        return 270;
                     default:
                         return 0;
                 }
