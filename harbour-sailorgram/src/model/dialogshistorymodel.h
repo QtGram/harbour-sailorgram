@@ -3,46 +3,36 @@
 
 #define MAX_RECENT_CHATS 4
 
-#include <QAbstractListModel>
-#include <QList>
-#include <QSet>
-#include <telegramqml.h>
-#include <objects/types.h>
+#include <QSortFilterProxyModel>
+#include <telegramdialogsmodel.h>
 
-class DialogsHistoryModel : public QAbstractListModel
+class DialogsHistoryModel : public QSortFilterProxyModel
 {
     Q_OBJECT
 
-    Q_PROPERTY(TelegramQml* telegram READ telegram WRITE setTelegram NOTIFY telegramChanged)
+    Q_PROPERTY(TelegramDialogsModel* dialogsModel READ dialogsModel WRITE setDialogsModel NOTIFY dialogsModelChanged)
+    Q_PROPERTY(int historyLength READ historyLength WRITE setHistoryLength NOTIFY historyLengthChanged)
 
     public:
-        enum DialogsHistoryModelRole { DialogRole = Qt::UserRole };
-        TelegramQml* telegram() const;
-        void setTelegram(TelegramQml* telegram);
+        TelegramDialogsModel* dialogsModel() const;
+        void setDialogsModel(TelegramDialogsModel* dialogsmodel);
+        int historyLength() const;
+        void setHistoryLength(int hl);
 
     public:
         explicit DialogsHistoryModel(QObject *parent = 0);
-        virtual QHash<int, QByteArray> roleNames() const;
-        virtual QVariant data(const QModelIndex &index, int role) const;
-        virtual int rowCount(const QModelIndex&) const;
 
-    public slots:
-        void markAsRead(DialogObject* dialog);
-
-    private:
-        void removeOlder();
-        void removeDialog(DialogObject *dialog);
-
-    private slots:
-        void onIncomingMessage(MessageObject* message);
+    protected:
+        virtual bool filterAcceptsRow(int source_row, const QModelIndex &) const;
 
     signals:
-        void telegramChanged();
+        void dialogsModelChanged();
+        void historyLengthChanged();
 
     private:
-        QList<DialogObject*> _recentdialogs;
-        QSet<DialogObject*> _recentdialogsset;
         TelegramQml* _telegram;
+        TelegramDialogsModel* _dialogsmodel;
+        int _historylength;
 };
 
 #endif // DIALOGSHISTORYMODEL_H

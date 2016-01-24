@@ -321,12 +321,18 @@ Minimální délka je 5 znaků .</translation>
         <translation>Odpojen</translation>
     </message>
     <message>
-        <source>%1 unread messages</source>
-        <translation>%1 nepřečtených zpráv</translation>
+        <source>Unread
+message</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 unread message</source>
-        <translation>%1 nepřečtená zpráva</translation>
+        <source>Unread
+messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recent chats:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

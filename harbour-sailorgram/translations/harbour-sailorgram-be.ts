@@ -321,12 +321,18 @@ Minimum length is 5 characters.</source>
         <translation>Разлучана</translation>
     </message>
     <message>
-        <source>%1 unread messages</source>
-        <translation>%1 непрачытаных паведамленняў</translation>
+        <source>Unread
+message</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 unread message</source>
-        <translation>%1 непрачытанае паведамленне</translation>
+        <source>Unread
+messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recent chats:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

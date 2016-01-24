@@ -321,12 +321,18 @@ La lunghezza minima è di 5 caratteri.</translation>
         <translation>Disconnesso</translation>
     </message>
     <message>
-        <source>%1 unread messages</source>
-        <translation>%1 messaggi non letti</translation>
+        <source>Unread
+message</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 unread message</source>
-        <translation>%1 messaggio non letto</translation>
+        <source>Unread
+messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recent chats:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

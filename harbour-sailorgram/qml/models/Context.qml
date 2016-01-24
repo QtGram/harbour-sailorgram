@@ -34,8 +34,13 @@ QtObject
     property ContactsModel contacts: ContactsModel { }
     property ErrorsModel errors: ErrorsModel { }
 
-    property DialogsHistoryModel dialogshistory: DialogsHistoryModel {
+    property DialogsModel dialogs: DialogsModel {
         telegram: context.telegram
+    }
+
+    property DialogsHistoryModel dialogshistory: DialogsHistoryModel {
+        dialogsModel: context.dialogs
+        historyLength: 4
     }
 
     property SailorGram sailorgram: SailorGram {

@@ -321,12 +321,18 @@ Minimilängd är 5 tecken.</translation>
         <translation>Bortkopplad</translation>
     </message>
     <message>
-        <source>%1 unread messages</source>
-        <translation>%1 olästa meddelanden</translation>
+        <source>Unread
+message</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 unread message</source>
-        <translation>%1 oläst meddelande</translation>
+        <source>Unread
+messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recent chats:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

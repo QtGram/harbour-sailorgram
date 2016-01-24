@@ -321,12 +321,18 @@ De minimale lengte is 5 tekens.</translation>
         <translation>Niet verbonden</translation>
     </message>
     <message>
-        <source>%1 unread messages</source>
-        <translation>%1 ongelezen berichten</translation>
+        <source>Unread
+message</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 unread message</source>
-        <translation>%1 ongelezen bericht</translation>
+        <source>Unread
+messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recent chats:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

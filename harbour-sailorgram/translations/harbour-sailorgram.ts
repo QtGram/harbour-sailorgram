@@ -318,11 +318,17 @@ Minimum length is 5 characters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 unread messages</source>
+        <source>Unread
+message</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 unread message</source>
+        <source>Unread
+messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recent chats:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

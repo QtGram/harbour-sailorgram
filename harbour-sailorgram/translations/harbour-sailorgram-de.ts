@@ -321,12 +321,18 @@ Minimum sind 5 Zeichen.</translation>
         <translation>Verbindung getrennt</translation>
     </message>
     <message>
-        <source>%1 unread messages</source>
-        <translation>%1 ungelesene Nachrichten</translation>
+        <source>Unread
+message</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 unread message</source>
-        <translation>%1 ungelesene Nachricht</translation>
+        <source>Unread
+messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recent chats:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

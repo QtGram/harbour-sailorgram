@@ -321,12 +321,18 @@ Minimumslængde er fem tegn.</translation>
         <translation>Frakoblet</translation>
     </message>
     <message>
-        <source>%1 unread messages</source>
-        <translation>%1 ulæste meddelelser</translation>
+        <source>Unread
+message</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 unread message</source>
-        <translation>%1 ulæst meddelelse</translation>
+        <source>Unread
+messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recent chats:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

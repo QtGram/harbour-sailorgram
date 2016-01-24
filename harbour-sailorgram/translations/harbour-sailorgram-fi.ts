@@ -321,12 +321,18 @@ Vähimmäispituus on 5 merkkiä.</translation>
         <translation>Ei yhteyttä</translation>
     </message>
     <message>
-        <source>%1 unread messages</source>
-        <translation>%1 lukematonta viestiä</translation>
+        <source>Unread
+message</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 unread message</source>
-        <translation>%1 lukematon viesti</translation>
+        <source>Unread
+messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recent chats:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
