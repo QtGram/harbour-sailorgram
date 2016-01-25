@@ -25,7 +25,6 @@ void DialogsHistoryModel::setDialogsModel(TelegramDialogsModel *dialogsmodel)
 
     this->_dialogsmodel = dialogsmodel;
     this->setSourceModel(dialogsmodel);
-    this->invalidate();
     emit dialogsModelChanged();
 }
 

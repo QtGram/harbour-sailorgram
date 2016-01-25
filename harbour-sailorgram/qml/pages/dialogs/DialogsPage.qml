@@ -117,6 +117,13 @@ Page
         model: DialogsModel {
             id: dialogsmodel
             telegram: dialogspage.context.telegram
+
+            onInitializingChanged: {
+                if(initializing)
+                    return;
+
+                context.dialogshistory.dialogsModel = dialogsmodel; // Balance load: Load after DialogsPage is displayed
+            }
         }
 
         delegate: ListItem {
