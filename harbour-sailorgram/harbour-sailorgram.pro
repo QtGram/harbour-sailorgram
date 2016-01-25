@@ -83,8 +83,7 @@ SOURCES += src/harbour-sailorgram.cpp \
     src/selector/thumbnailprovider.cpp \
     src/selector/imagesmodel.cpp \
     src/selector/exif/exif.cpp \
-    src/selector/imagesmodelworker.cpp \
-    src/model/dialogshistorymodel.cpp
+    src/selector/imagesmodelworker.cpp
 
 OTHER_FILES += qml/harbour-sailorgram.qml \
     rpm/harbour-sailorgram.changes.in \
@@ -191,8 +190,7 @@ HEADERS += \
     src/selector/thumbnailprovider.h \
     src/selector/imagesmodel.h \
     src/selector/exif/exif.h \
-    src/selector/imagesmodelworker.h \
-    src/model/dialogshistorymodel.h
+    src/selector/imagesmodelworker.h
 
 RESOURCES += \
     resources.qrc

@@ -310,14 +310,6 @@ Minimum length is 5 characters.</source>
 <context>
     <name>CoverPage</name>
     <message>
-        <source>Connected</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Disconnected</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Unread
 message</source>
         <translation type="unfinished"></translation>
@@ -325,6 +317,14 @@ message</source>
     <message>
         <source>Unread
 messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disconnected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

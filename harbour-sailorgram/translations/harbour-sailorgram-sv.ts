@@ -313,14 +313,6 @@ Minimilängd är 5 tecken.</translation>
 <context>
     <name>CoverPage</name>
     <message>
-        <source>Connected</source>
-        <translation>Ansluten</translation>
-    </message>
-    <message>
-        <source>Disconnected</source>
-        <translation>Bortkopplad</translation>
-    </message>
-    <message>
         <source>Unread
 message</source>
         <translation type="unfinished"></translation>
@@ -329,6 +321,14 @@ message</source>
         <source>Unread
 messages</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disconnected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connected</source>
+        <translation type="unfinished">Ansluten</translation>
     </message>
     <message>
         <source>Recent chats:</source>

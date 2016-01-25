@@ -35,7 +35,6 @@
 #include "selector/audiorecorder.h"
 #include "selector/thumbnailprovider.h"
 #include "selector/imagesmodel.h"
-#include "model/dialogshistorymodel.h"
 #include "sailorgram.h"
 
 bool hasDaemon(const QStringList& args)
@@ -85,7 +84,6 @@ int main(int argc, char *argv[])
     qmlRegisterType<ScreenBlank>("harbour.sailorgram.DBus", 1, 0, "ScreenBlank");
     qmlRegisterType<AudioRecorder>("harbour.sailorgram.Selector", 1, 0, "AudioRecorder");
     qmlRegisterType<ImagesModel>("harbour.sailorgram.ImagesModel", 1, 0, "ImagesModel");
-    qmlRegisterType<DialogsHistoryModel>("harbour.sailorgram.DialogsHistoryModel", 1, 0, "DialogsHistoryModel");
 
     QScopedPointer<QQuickView> view(SailfishApp::createView());
     QQmlEngine* engine = view->engine();

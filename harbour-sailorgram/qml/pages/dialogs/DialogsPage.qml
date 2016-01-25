@@ -53,15 +53,13 @@ Page
 
         pageStack.pushAttached(Qt.resolvedUrl("../contacts/ContactsPage.qml"), { "context": dialogspage.context });
         context.sailorgram.foregroundDialog = null; // Reset Foreground Dialog
+        context.dialogs.telegram = context.telegram; // Balance load: Load after DialogsPage is displayed
+        context.contacts.telegram = context.telegram;
     }
 
     Connections
     {
         target: context.sailorgram
-
-        onDaemonizedChanged: {
-            dialogsmodel.stopUpdating = context.sailorgram.daemonized;
-        }
 
         onOpenDialogRequested: {
             if(pageStack.depth > 1)
@@ -103,6 +101,7 @@ Page
         spacing: Theme.paddingMedium
         clip: true
         anchors.fill: parent
+        model: context.dialogs
 
         header: PageHeader {
             id: pageheader
@@ -111,18 +110,6 @@ Page
             ConnectionStatus {
                 context: dialogspage.context
                 anchors { verticalCenter: pageheader.extraContent.verticalCenter; left: pageheader.extraContent.left; leftMargin: -Theme.horizontalPageMargin }
-            }
-        }
-
-        model: DialogsModel {
-            id: dialogsmodel
-            telegram: dialogspage.context.telegram
-
-            onInitializingChanged: {
-                if(initializing)
-                    return;
-
-                context.dialogshistory.dialogsModel = dialogsmodel; // Balance load: Load after DialogsPage is displayed
             }
         }
 

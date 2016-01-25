@@ -313,14 +313,6 @@ A lonxitude mínima é de 5 caracteres.</translation>
 <context>
     <name>CoverPage</name>
     <message>
-        <source>Connected</source>
-        <translation>Conectado</translation>
-    </message>
-    <message>
-        <source>Disconnected</source>
-        <translation>Desconectado</translation>
-    </message>
-    <message>
         <source>Unread
 message</source>
         <translation type="unfinished"></translation>
@@ -329,6 +321,14 @@ message</source>
         <source>Unread
 messages</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disconnected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connected</source>
+        <translation type="unfinished">Conectado</translation>
     </message>
     <message>
         <source>Recent chats:</source>

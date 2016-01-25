@@ -2,7 +2,6 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.DBus 1.0
 import harbour.sailorgram.SailorGram 1.0
-import harbour.sailorgram.DialogsHistoryModel 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../js/Settings.js" as Settings
 import "../js/TelegramHelper.js" as TelegramHelper
@@ -32,16 +31,8 @@ QtObject
 
     property ScreenBlank screenblank: ScreenBlank { }
     property ContactsModel contacts: ContactsModel { }
+    property DialogsModel dialogs: DialogsModel { }
     property ErrorsModel errors: ErrorsModel { }
-
-    property DialogsModel dialogs: DialogsModel {
-        telegram: context.telegram
-    }
-
-    property DialogsHistoryModel dialogshistory: DialogsHistoryModel {
-        dialogsModel: context.dialogs
-        historyLength: 4
-    }
 
     property SailorGram sailorgram: SailorGram {
         telegram: context.telegram
@@ -66,12 +57,6 @@ QtObject
             var user = context.telegram.user(msg.fromId);
 
             sailorgram.notify(msg, TelegramHelper.completeName(user), elaboratedtext);
-        }
-
-        onConnectedChanged: {
-            if(connected) {
-               context.contacts.telegram = context.telegram;
-            }
         }
 
         onPhoneNumberChanged: {
