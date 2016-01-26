@@ -32,6 +32,7 @@
 #include <sailfishapp.h>
 #include <telegramqmlinitializer.h>
 #include "dbus/screenblank.h"
+#include "model/dialogscovermodel.h"
 #include "selector/audiorecorder.h"
 #include "selector/thumbnailprovider.h"
 #include "selector/imagesmodel.h"
@@ -84,6 +85,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<ScreenBlank>("harbour.sailorgram.DBus", 1, 0, "ScreenBlank");
     qmlRegisterType<AudioRecorder>("harbour.sailorgram.Selector", 1, 0, "AudioRecorder");
     qmlRegisterType<ImagesModel>("harbour.sailorgram.ImagesModel", 1, 0, "ImagesModel");
+    qmlRegisterType<DialogsCoverModel>("harbour.sailorgram.DialogsCoverModel", 1, 0, "DialogsCoverModel");
 
     QScopedPointer<QQuickView> view(SailfishApp::createView());
     QQmlEngine* engine = view->engine();
