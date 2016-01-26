@@ -23,7 +23,7 @@ void DialogsCoverModel::setDialogsModel(TelegramDialogsModel *dialogsmodel)
     this->_dialogsmodel = dialogsmodel;
     this->endResetModel();
 
-    connect(this->_dialogsmodel, SIGNAL(countChanged()), this, SLOT(onCountChanged()));
+    connect(this->_dialogsmodel, SIGNAL(countChanged()), this, SIGNAL(layoutChanged()));
 }
 
 int DialogsCoverModel::maxDialogs() const
@@ -62,10 +62,4 @@ int DialogsCoverModel::rowCount(const QModelIndex& parent) const
         return 0;
 
     return qMin(this->_dialogsmodel->rowCount(parent), this->_maxdialogs);
-}
-
-void DialogsCoverModel::onCountChanged()
-{
-    emit layoutAboutToBeChanged();
-    emit layoutChanged();
 }
