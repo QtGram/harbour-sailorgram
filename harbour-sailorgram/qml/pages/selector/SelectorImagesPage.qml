@@ -188,12 +188,13 @@ Page
                     active: model.isDir
                     anchors.bottom: parent.bottom
                     width: view.cellWidth
-                    height: Math.min(item.contentHeight, view.cellHeight * 2 / 3)
+                    height: active && !!item ? Math.min(item.contentHeight, view.cellHeight * 2 / 3) : 0
 
                     sourceComponent: Label {
                         text: model.name
                         horizontalAlignment: Qt.AlignHCenter
                         wrapMode: Text.Wrap
+                        clip: true
                     }
                 }
 
