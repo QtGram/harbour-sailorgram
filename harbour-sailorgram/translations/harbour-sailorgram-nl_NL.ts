@@ -391,20 +391,8 @@ messages</source>
         <translation>Contactpersonen:</translation>
     </message>
     <message>
-        <source>Heartbeat:</source>
-        <translation>Hartslag:</translation>
-    </message>
-    <message>
-        <source>Connected</source>
-        <translation>Verbonden</translation>
-    </message>
-    <message>
         <source>Error log</source>
         <translation>Foutenlogbestand</translation>
-    </message>
-    <message>
-        <source>Not Connected</source>
-        <translation>Niet verbonden</translation>
     </message>
 </context>
 <context>

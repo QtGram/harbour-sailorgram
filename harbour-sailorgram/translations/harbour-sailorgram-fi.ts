@@ -391,20 +391,8 @@ messages</source>
         <translation>Yhteydet:</translation>
     </message>
     <message>
-        <source>Heartbeat:</source>
-        <translation>Tila:</translation>
-    </message>
-    <message>
-        <source>Connected</source>
-        <translation>Yhdistetty</translation>
-    </message>
-    <message>
         <source>Error log</source>
         <translation>Virheloki</translation>
-    </message>
-    <message>
-        <source>Not Connected</source>
-        <translation>Ei yhdistettynä</translation>
     </message>
 </context>
 <context>

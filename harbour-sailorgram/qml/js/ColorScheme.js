@@ -13,15 +13,15 @@ function colorizeText(message, context)
             return Silica.Theme.primaryColor;
 
         if(message.out)
-            return Silica.Theme.highlightColor;
+            return Silica.Theme.primaryColor;
 
-        return Silica.Theme.primaryColor;
+        return Silica.Theme.highlightColor;
     }
 
     if(message.out)
-        return Silica.Theme.highlightDimmerColor;
+        return Silica.Theme.primaryColor;
 
-    return Silica.Theme.primaryColor;
+        return Silica.Theme.highlightDimmerColor;
 }
 
 function colorizeTick(message, context)
@@ -41,9 +41,9 @@ function colorizeBubble(message, context)
         return "transparent"
 
     if(message.out)
-        return Silica.Theme.rgba(Silica.Theme.secondaryColor, context.bubblesopacity / 100.0);
+        return Silica.Theme.rgba(Qt.tint(Silica.Theme.secondaryHighlightColor, Silica.Theme.rgba(Silica.Theme.highlightDimmerColor, 0.3)), context.bubblesopacity / 100.0);
 
-    return Silica.Theme.rgba(Qt.tint(Silica.Theme.secondaryHighlightColor, Silica.Theme.rgba(Silica.Theme.highlightDimmerColor, 0.3)), context.bubblesopacity / 100.0);
+    return Silica.Theme.rgba(Silica.Theme.secondaryColor, context.bubblesopacity / 100.0);
 }
 
 function colorizeLink(message, context)

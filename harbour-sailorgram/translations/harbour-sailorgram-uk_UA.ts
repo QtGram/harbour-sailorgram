@@ -391,20 +391,8 @@ messages</source>
         <translation>Контакти</translation>
     </message>
     <message>
-        <source>Heartbeat:</source>
-        <translation>Heartbeat:</translation>
-    </message>
-    <message>
-        <source>Connected</source>
-        <translation>З’єднано</translation>
-    </message>
-    <message>
         <source>Error log</source>
         <translation>Лог помилок</translation>
-    </message>
-    <message>
-        <source>Not Connected</source>
-        <translation>Не з’єднано</translation>
     </message>
 </context>
 <context>
