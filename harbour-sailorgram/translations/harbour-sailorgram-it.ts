@@ -391,20 +391,8 @@ messages</source>
         <translation>Contatti:</translation>
     </message>
     <message>
-        <source>Heartbeat:</source>
-        <translation>Heartbeat:</translation>
-    </message>
-    <message>
-        <source>Connected</source>
-        <translation>Connesso</translation>
-    </message>
-    <message>
         <source>Error log</source>
         <translation>Log degli errori</translation>
-    </message>
-    <message>
-        <source>Not Connected</source>
-        <translation>Non connesso</translation>
     </message>
 </context>
 <context>

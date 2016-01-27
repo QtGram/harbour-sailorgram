@@ -391,20 +391,8 @@ messages</source>
         <translation>آشنایان:</translation>
     </message>
     <message>
-        <source>Heartbeat:</source>
-        <translation>هارت‌بیت:</translation>
-    </message>
-    <message>
-        <source>Connected</source>
-        <translation>وصل‌شده</translation>
-    </message>
-    <message>
         <source>Error log</source>
         <translation>خطانگاره</translation>
-    </message>
-    <message>
-        <source>Not Connected</source>
-        <translation>وصل‌نشده</translation>
     </message>
 </context>
 <context>

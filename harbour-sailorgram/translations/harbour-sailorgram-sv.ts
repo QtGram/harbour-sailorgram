@@ -391,20 +391,8 @@ messages</source>
         <translation>Kontakter:</translation>
     </message>
     <message>
-        <source>Heartbeat:</source>
-        <translation>Status:</translation>
-    </message>
-    <message>
-        <source>Connected</source>
-        <translation>Ansluten</translation>
-    </message>
-    <message>
         <source>Error log</source>
         <translation>Fellogg</translation>
-    </message>
-    <message>
-        <source>Not Connected</source>
-        <translation>Ej ansluten</translation>
     </message>
 </context>
 <context>

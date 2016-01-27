@@ -388,19 +388,7 @@ messages</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Heartbeat:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Connected</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Error log</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Not Connected</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

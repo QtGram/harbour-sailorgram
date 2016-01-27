@@ -391,20 +391,8 @@ messages</source>
         <translation>Кантакты:</translation>
     </message>
     <message>
-        <source>Heartbeat:</source>
-        <translation>Стан:</translation>
-    </message>
-    <message>
-        <source>Connected</source>
-        <translation>Падключана</translation>
-    </message>
-    <message>
         <source>Error log</source>
         <translation>Дзённік памылак</translation>
-    </message>
-    <message>
-        <source>Not Connected</source>
-        <translation>Няма злучэння</translation>
     </message>
 </context>
 <context>

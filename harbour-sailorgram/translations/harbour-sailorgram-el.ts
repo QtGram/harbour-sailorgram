@@ -391,20 +391,8 @@ messages</source>
         <translation>Επαφές:</translation>
     </message>
     <message>
-        <source>Heartbeat:</source>
-        <translation>Παλμός συγχρονισμού:</translation>
-    </message>
-    <message>
-        <source>Connected</source>
-        <translation>Συνδεμένο</translation>
-    </message>
-    <message>
         <source>Error log</source>
         <translation>Καταγραφή σφαλμάτων</translation>
-    </message>
-    <message>
-        <source>Not Connected</source>
-        <translation>Μη συνδεμένο</translation>
     </message>
 </context>
 <context>

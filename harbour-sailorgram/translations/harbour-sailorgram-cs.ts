@@ -391,20 +391,8 @@ messages</source>
         <translation>Kontakty:</translation>
     </message>
     <message>
-        <source>Heartbeat:</source>
-        <translation>Tlukot srdce:</translation>
-    </message>
-    <message>
-        <source>Connected</source>
-        <translation>Připojen</translation>
-    </message>
-    <message>
         <source>Error log</source>
         <translation>Chybní protokol</translation>
-    </message>
-    <message>
-        <source>Not Connected</source>
-        <translation>Nespojen</translation>
     </message>
 </context>
 <context>
