@@ -17,7 +17,7 @@ Item
     property real maxWidth
 
     id: messagetext
-    height: content.height
+    height: content.height + Theme.paddingSmall
 
     Text
     {
