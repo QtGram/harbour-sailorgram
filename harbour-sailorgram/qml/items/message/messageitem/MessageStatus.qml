@@ -35,9 +35,9 @@ Label
             status += "<font color=\"" + ticksColor + "\">";
 
             if(!message.unread)
-                status += "  <b>✓✓</b>";
+                status += " <b>✓✓</b> ";
             else
-                status += "  <b>✓</b>";
+                status += " <b>✓</b> ";
 
             status += "</font>";
         }
