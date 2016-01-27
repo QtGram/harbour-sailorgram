@@ -33,6 +33,7 @@ import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../../models"
 import "../../components"
+import "../../components/search"
 import "../../menus/dialog"
 import "../../items/dialog"
 import "../../js/TelegramHelper.js" as TelegramHelper
@@ -42,7 +43,16 @@ Page
 {
     property Context context
     property Component conversationItemComponent
-    property Component secretConversationItemComponent;
+    property Component secretConversationItemComponent
+
+    function displayDialog(dialog) {
+        if(dialog.encrypted) {
+            pageStack.push(Qt.resolvedUrl("../secretdialogs/SecretDialogPage.qml"), { "context": dialogspage.context, "dialog": dialog });
+            return;
+        }
+
+        pageStack.push(Qt.resolvedUrl("DialogPage.qml"), { "context": dialogspage.context, "dialog": dialog })
+    }
 
     id: dialogspage
     allowedOrientations: defaultAllowedOrientations
@@ -83,27 +93,18 @@ Page
         }
     }
 
-    SilicaListView
+    SilicaFlickable
     {
+        anchors.fill: parent
+
         DialogsPullDownMenu
         {
             id: dialogsmenu
             context: dialogspage.context
         }
 
-        ViewPlaceholder
+        PageHeader
         {
-            enabled: lvdialogs.count <= 0
-            text: qsTr("No Chats\n\nDo a swype to the right to select a contact")
-        }
-
-        id: lvdialogs
-        spacing: Theme.paddingMedium
-        clip: true
-        anchors.fill: parent
-        model: context.dialogs
-
-        header: PageHeader {
             id: pageheader
             title: context.sailorgram.connected ? qsTr("Chats") : qsTr("Connecting...")
 
@@ -113,65 +114,81 @@ Page
             }
         }
 
-        delegate: ListItem {
-            function displayConversation() {
-                if(item.encrypted) {
-                    pageStack.push(Qt.resolvedUrl("../secretdialogs/SecretDialogPage.qml"), { "context": dialogspage.context, "dialog": item });
-                    return;
-                }
-
-                pageStack.push(Qt.resolvedUrl("DialogPage.qml"), { "context": dialogspage.context, "dialog": item })
+        SilicaListView
+        {
+            ViewPlaceholder
+            {
+                enabled: lvdialogs.count <= 0
+                text: qsTr("No Chats\n\nDo a swype to the right to select a contact")
             }
 
-            id: dialogitem
-            contentWidth: parent.width
-            contentHeight: Theme.itemSizeSmall
-            onClicked: displayConversation()
+            id: lvdialogs
+            spacing: Theme.paddingMedium
+            clip: true
+            model: context.dialogs
+            anchors { left: parent.left; top: pageheader.bottom; right: parent.right; bottom: parent.bottom }
 
-            menu: ContextMenu {
-                MenuItem {
-                    text: qsTr("Delete")
+            header: SearchList {
+                width: parent.width
+                context: dialogspage.context
 
-                    onClicked: {
-                        var msg = qsTr("Deleting Conversation");
+                onMessageClicked: {
+                    var dialog = context.telegram.messageDialog(message.id);
+                    displayDialog(dialog);
+                }
+            }
 
-                        if(item.encrypted)
-                            msg = qsTr("Deleting Secret Chat");
-                        else if(TelegramHelper.isChat(item))
-                            msg = qsTr("Deleting Group");
+            delegate: ListItem {
+                id: dialogitem
+                contentWidth: parent.width
+                contentHeight: Theme.itemSizeSmall
+                onClicked: displayDialog(item)
 
-                        dialogitem.remorseAction(msg, function() {
-                            item.unreadCount = 0;
+                menu: ContextMenu {
+                    MenuItem {
+                        text: qsTr("Delete")
+
+                        onClicked: {
+                            var msg = qsTr("Deleting Conversation");
 
                             if(item.encrypted)
-                                context.telegram.messagesDiscardEncryptedChat(item.peer.userId, true);
-                            else
-                                context.telegram.messagesDeleteHistory(TelegramHelper.peerId(item), true, false, true);
-                        });
-                    }
-                }
-            }
+                                msg = qsTr("Deleting Secret Chat");
+                            else if(TelegramHelper.isChat(item))
+                                msg = qsTr("Deleting Group");
 
-            Component.onCompleted: {
-                if(!item.encrypted && !conversationItemComponent) {
-                    conversationItemComponent = Qt.createComponent("../../items/dialog/DialogItem.qml");
+                            dialogitem.remorseAction(msg, function() {
+                                item.unreadCount = 0;
 
-                    if(conversationItemComponent.status === Component.Error) {
-                        console.log(conversationItemComponent.errorString());
-                        return;
-                    }
-                }
-                else if(item.encrypted && !secretConversationItemComponent) {
-                    secretConversationItemComponent = Qt.createComponent("../../items/secretdialog/SecretDialogItem.qml");
-
-                    if(secretConversationItemComponent.status === Component.Error) {
-                        console.log(secretConversationItemComponent.errorString());
-                        return;
+                                if(item.encrypted)
+                                    context.telegram.messagesDiscardEncryptedChat(item.peer.userId, true);
+                                else
+                                    context.telegram.messagesDeleteHistory(TelegramHelper.peerId(item), true, false, true);
+                            });
+                        }
                     }
                 }
 
-                var c = !item.encrypted ? conversationItemComponent : secretConversationItemComponent;
-                c.createObject(contentItem, {"anchors.fill": contentItem, "context": dialogspage.context, "dialog": item });
+                Component.onCompleted: {
+                    if(!item.encrypted && !conversationItemComponent) {
+                        conversationItemComponent = Qt.createComponent("../../items/dialog/DialogItem.qml");
+
+                        if(conversationItemComponent.status === Component.Error) {
+                            console.log(conversationItemComponent.errorString());
+                            return;
+                        }
+                    }
+                    else if(item.encrypted && !secretConversationItemComponent) {
+                        secretConversationItemComponent = Qt.createComponent("../../items/secretdialog/SecretDialogItem.qml");
+
+                        if(secretConversationItemComponent.status === Component.Error) {
+                            console.log(secretConversationItemComponent.errorString());
+                            return;
+                        }
+                    }
+
+                    var c = !item.encrypted ? conversationItemComponent : secretConversationItemComponent;
+                    c.createObject(contentItem, {"anchors.fill": contentItem, "context": dialogspage.context, "dialog": item });
+                }
             }
         }
     }

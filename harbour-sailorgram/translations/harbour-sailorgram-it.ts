@@ -692,6 +692,13 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
 </context>
 <context>
+    <name>SearchBox</name>
+    <message>
+        <source>Search...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SecretDialogDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
