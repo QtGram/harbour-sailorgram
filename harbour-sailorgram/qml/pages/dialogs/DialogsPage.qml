@@ -114,7 +114,7 @@ Page
             }
         }
 
-        SearchList
+        MessageSearchList
         {
             id: searchlist
             width: parent.width

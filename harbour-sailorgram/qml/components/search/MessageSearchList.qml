@@ -35,7 +35,7 @@ Item
             keyword: searchbox.text
         }
 
-        delegate: SearchItem {
+        delegate: MessageSearchItem {
             id: searchitem
             contentWidth: parent.width
             contentHeight: Theme.itemSizeSmall
