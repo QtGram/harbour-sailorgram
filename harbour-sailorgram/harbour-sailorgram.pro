@@ -240,6 +240,5 @@ DISTFILES += \
     qml/components/message/MessageTypesPool.qml \
     qml/components/message/MessageContainer.qml \
     mce/10sailorgram-led.ini \
-    qml/components/search/SearchBox.qml \
-    qml/items/search/SearchItem.qml \
-    qml/components/search/SearchList.qml
+    qml/components/search/MessageSearchList.qml \
+    qml/items/search/MessageSearchItem.qml
