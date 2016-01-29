@@ -79,7 +79,7 @@ InverseMouseArea
 
 
         EnterKey.onClicked: {
-            if(!context.sendwithreturn)
+            if(!context.sendwithreturn || (text.length <= 0))
                 return;
 
             sendMessage();
