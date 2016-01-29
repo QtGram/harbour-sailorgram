@@ -68,9 +68,6 @@ ListItem
                 linkColor: Theme.secondaryColor
 
                 color: {
-                    if(dialog.typingUsers.length > 0)
-                        return Theme.highlightColor;
-
                     if(TelegramHelper.isServiceMessage(message))
                         return Theme.highlightColor;
 
@@ -78,7 +75,7 @@ ListItem
                 }
 
                 font.italic: {
-                    if(TelegramHelper.isServiceMessage(message) || (dialog.typingUsers.length > 0))
+                    if(TelegramHelper.isServiceMessage(message))
                         return true;
 
                     if(TelegramHelper.isMediaMessage(message) && (message.media.classType === TelegramConstants.typeMessageMediaDocument) && context.telegram.documentIsSticker(message.media.document))
@@ -88,9 +85,6 @@ ListItem
                 }
 
                 rawText: {
-                    if(dialog.typingUsers.length > 0)
-                        return TelegramHelper.typingUsers(context, dialog);
-
                     if(!message)
                         return "";
 

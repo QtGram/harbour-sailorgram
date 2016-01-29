@@ -7,6 +7,8 @@ import "../../items/search"
 Item
 {
     property Context context
+    property alias searchBox: searchbox
+    property alias count: lvsearch.count
 
     signal messageClicked(var message)
 

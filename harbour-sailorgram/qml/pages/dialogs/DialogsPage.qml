@@ -114,80 +114,86 @@ Page
             }
         }
 
-        SilicaListView
+        SearchList
         {
-            ViewPlaceholder
-            {
-                enabled: lvdialogs.count <= 0
-                text: qsTr("No Chats\n\nDo a swype to the right to select a contact")
-            }
-
-            id: lvdialogs
-            spacing: Theme.paddingMedium
-            clip: true
-            model: context.dialogs
+            id: searchlist
+            width: parent.width
+            context: dialogspage.context
             anchors { left: parent.left; top: pageheader.bottom; right: parent.right; bottom: parent.bottom }
 
-            header: SearchList {
-                width: parent.width
-                context: dialogspage.context
-
-                onMessageClicked: {
-                    var dialog = context.telegram.messageDialog(message.id);
-                    displayDialog(dialog);
-                }
+            onMessageClicked: {
+                var dialog = context.telegram.messageDialog(message.id);
+                displayDialog(dialog);
             }
 
-            delegate: ListItem {
-                id: dialogitem
-                contentWidth: parent.width
-                contentHeight: Theme.itemSizeSmall
-                onClicked: displayDialog(item)
-
-                menu: ContextMenu {
-                    MenuItem {
-                        text: qsTr("Delete")
-
-                        onClicked: {
-                            var msg = qsTr("Deleting Conversation");
-
-                            if(item.encrypted)
-                                msg = qsTr("Deleting Secret Chat");
-                            else if(TelegramHelper.isChat(item))
-                                msg = qsTr("Deleting Group");
-
-                            dialogitem.remorseAction(msg, function() {
-                                item.unreadCount = 0;
-
-                                if(item.encrypted)
-                                    context.telegram.messagesDiscardEncryptedChat(item.peer.userId, true);
-                                else
-                                    context.telegram.messagesDeleteHistory(TelegramHelper.peerId(item), true, false, true);
-                            });
-                        }
-                    }
+            SilicaListView
+            {
+                ViewPlaceholder
+                {
+                    enabled: lvdialogs.count <= 0
+                    text: qsTr("No Chats\n\nDo a swype to the right to select a contact")
                 }
 
-                Component.onCompleted: {
-                    if(!item.encrypted && !conversationItemComponent) {
-                        conversationItemComponent = Qt.createComponent("../../items/dialog/DialogItem.qml");
+                id: lvdialogs
+                spacing: Theme.paddingMedium
+                clip: true
+                model: context.dialogs
+                anchors { left: parent.left; top: searchlist.searchBox.bottom; right: parent.right; bottom: parent.bottom }
+                height: parent.height - searchlist.height
+                visible: searchlist.count <= 0
+                z: 2
 
-                        if(conversationItemComponent.status === Component.Error) {
-                            console.log(conversationItemComponent.errorString());
-                            return;
+                delegate: ListItem {
+                    id: dialogitem
+                    contentWidth: parent.width
+                    contentHeight: Theme.itemSizeSmall
+                    onClicked: displayDialog(item)
+
+                    menu: ContextMenu {
+                        MenuItem {
+                            text: qsTr("Delete")
+
+                            onClicked: {
+                                var msg = qsTr("Deleting Conversation");
+
+                                if(item.encrypted)
+                                    msg = qsTr("Deleting Secret Chat");
+                                else if(TelegramHelper.isChat(item))
+                                    msg = qsTr("Deleting Group");
+
+                                dialogitem.remorseAction(msg, function() {
+                                    item.unreadCount = 0;
+
+                                    if(item.encrypted)
+                                        context.telegram.messagesDiscardEncryptedChat(item.peer.userId, true);
+                                    else
+                                        context.telegram.messagesDeleteHistory(TelegramHelper.peerId(item), true, false, true);
+                                });
+                            }
                         }
                     }
-                    else if(item.encrypted && !secretConversationItemComponent) {
-                        secretConversationItemComponent = Qt.createComponent("../../items/secretdialog/SecretDialogItem.qml");
 
-                        if(secretConversationItemComponent.status === Component.Error) {
-                            console.log(secretConversationItemComponent.errorString());
-                            return;
+                    Component.onCompleted: {
+                        if(!item.encrypted && !conversationItemComponent) {
+                            conversationItemComponent = Qt.createComponent("../../items/dialog/DialogItem.qml");
+
+                            if(conversationItemComponent.status === Component.Error) {
+                                console.log(conversationItemComponent.errorString());
+                                return;
+                            }
                         }
-                    }
+                        else if(item.encrypted && !secretConversationItemComponent) {
+                            secretConversationItemComponent = Qt.createComponent("../../items/secretdialog/SecretDialogItem.qml");
 
-                    var c = !item.encrypted ? conversationItemComponent : secretConversationItemComponent;
-                    c.createObject(contentItem, {"anchors.fill": contentItem, "context": dialogspage.context, "dialog": item });
+                            if(secretConversationItemComponent.status === Component.Error) {
+                                console.log(secretConversationItemComponent.errorString());
+                                return;
+                            }
+                        }
+
+                        var c = !item.encrypted ? conversationItemComponent : secretConversationItemComponent;
+                        c.createObject(contentItem, {"anchors.fill": contentItem, "context": dialogspage.context, "dialog": item });
+                    }
                 }
             }
         }
