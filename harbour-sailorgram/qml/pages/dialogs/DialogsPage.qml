@@ -139,9 +139,7 @@ Page
                 clip: true
                 model: context.dialogs
                 anchors { left: parent.left; top: searchlist.searchBox.bottom; right: parent.right; bottom: parent.bottom }
-                height: parent.height - searchlist.height
                 visible: searchlist.count <= 0
-                z: 2
 
                 delegate: ListItem {
                     id: dialogitem
