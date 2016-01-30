@@ -10,13 +10,14 @@ import "../../items/sticker"
 Dialog
 {
     property Context context
-    property string selectedSticker
+    property var selectedSticker: null
 
     signal actionCompleted(string action, var data)
 
     id: selectorstickerpage
     allowedOrientations: defaultAllowedOrientations
-    canAccept: selectedSticker.length > 0
+    canAccept: selectedSticker !== null
+    onAccepted: actionCompleted("sticker", selectedSticker)
 
     TelegramQml.StickersModel
     {
@@ -66,7 +67,7 @@ Dialog
             highlighted: isSelected
 
             onClicked: {
-                selectedSticker = stickeritem.stickerPath;
+                selectedSticker = stickeritem.stickerDocument;
             }
         }
     }

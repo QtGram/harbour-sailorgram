@@ -122,6 +122,8 @@ InverseMouseArea
                         context.telegram.sendGeo(peerid, data.latitude, data.longitude);
                     else if(action === selector.soundRecordAction)
                         context.telegram.sendFile(peerid, data, false, true);
+                    else if(action === selector.stickerAction)
+                        context.telegram.forwardDocument(peerid, data);
                     else
                         context.telegram.sendFile(peerid, data); // NOTE: Needs Investigation
 
