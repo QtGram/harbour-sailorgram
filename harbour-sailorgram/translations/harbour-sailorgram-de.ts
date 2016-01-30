@@ -858,6 +858,10 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
         <source>Send</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Select a Sticker Set from below</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsPage</name>

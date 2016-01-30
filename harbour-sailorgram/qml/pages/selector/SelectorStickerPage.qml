@@ -57,18 +57,22 @@ Dialog
         clip: true
 
         delegate: StickerItem {
-            property bool isSelected: selectedSticker === stickeritem.stickerPath.toString()
-
             id: stickeritem
             width: stickergrid.itemSize - stickergrid.spacing
             height: stickergrid.itemSize - stickergrid.spacing
             context: selectorstickerpage.context
             stickerDocument: document
-            highlighted: isSelected
+            highlighted: (selectedSticker === stickeritem.stickerDocument)
 
             onClicked: {
                 selectedSticker = stickeritem.stickerDocument;
             }
+        }
+
+        ViewPlaceholder
+        {
+            enabled: stickergrid.count <= 0
+            text: qsTr("Select a Sticker Set from below")
         }
     }
 
@@ -79,17 +83,16 @@ Dialog
         orientation: ListView.Horizontal
         height: Theme.itemSizeLarge
         model: stickersmodel.stickerSets
-        currentIndex: 0
         spacing: Theme.paddingSmall
         clip: true
 
         delegate: StickerSetImage {
             width: Theme.itemSizeMedium
             contentHeight: parent.height
-            highlighted: (lvstickersets.currentIndex === index)
             context: selectorstickerpage.context
             stickersModel: stickersmodel
             stickerSetId: modelData
+            highlighted: (stickersmodel.currentStickerSet === modelData)
 
             onClicked: {
                 stickersmodel.currentStickerSet = modelData;
