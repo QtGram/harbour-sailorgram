@@ -81,7 +81,7 @@
     </message>
     <message>
         <source>Galician</source>
-        <translation>Galisch</translation>
+        <translation>Galicisch</translation>
     </message>
     <message>
         <source>Belaruian</source>
@@ -93,7 +93,7 @@
     </message>
     <message>
         <source>Icon Designers</source>
-        <translation type="unfinished"></translation>
+        <translation>Pictogramontwerpers</translation>
     </message>
 </context>
 <context>
@@ -119,7 +119,7 @@
     <name>AddContactsPage</name>
     <message>
         <source>Add Chat Member</source>
-        <translation>Chatdeelnemer toevoegen</translation>
+        <translation>Gespreksdeelnemer toevoegen</translation>
     </message>
 </context>
 <context>
@@ -190,7 +190,7 @@
 
 You can use a-z, 0-9 and underscores.
 Minimum length is 5 characters.</source>
-        <translation>U kunt een gebruikersnaam kiezen op Telegram. Als u ervoor kiest om dit te doen, zullen anderen contact met u kunnen opnemen zonder uw telefoonnummer te kennen.
+        <translation>U kunt een gebruikersnaam kiezen op Telegram. Als u ervoor kiest om dit te doen, zullen anderen contact met u kunnen opnemen zonder uw telefoonnummer te hoeven weten.
 
 U kunt a-z, 0-9 en liggende streepjes gebruiken.
 De minimale lengte is 5 tekens.</translation>
@@ -250,7 +250,7 @@ De minimale lengte is 5 tekens.</translation>
     </message>
     <message>
         <source>Chat header visible</source>
-        <translation>Chatkop is zichtbaar</translation>
+        <translation>Gesprekskop is zichtbaar</translation>
     </message>
     <message>
         <source>Bubbles visible</source>
@@ -258,11 +258,11 @@ De minimale lengte is 5 tekens.</translation>
     </message>
     <message>
         <source>Bubble opacity</source>
-        <translation>Doorzichtigheid van gespreksbalonnen</translation>
+        <translation>Doorzichtigheid van gespreksballonnen</translation>
     </message>
     <message>
         <source>Keyboard</source>
-        <translation>Ingeschakeld</translation>
+        <translation>Toetsenbord</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -315,24 +315,26 @@ De minimale lengte is 5 tekens.</translation>
     <message>
         <source>Unread
 message</source>
-        <translation type="unfinished"></translation>
+        <translation>Ongelezen
+bericht</translation>
     </message>
     <message>
         <source>Unread
 messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Ongelezen
+berichten</translation>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation type="unfinished"></translation>
+        <translation>Niet verbonden</translation>
     </message>
     <message>
         <source>Connected</source>
-        <translation type="unfinished">Verbonden</translation>
+        <translation>Verbonden</translation>
     </message>
     <message>
         <source>Recent chats:</source>
-        <translation type="unfinished"></translation>
+        <translation>Recente gesprekken:</translation>
     </message>
 </context>
 <context>
@@ -350,7 +352,7 @@ messages</source>
     <name>CreateSecretDialogPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation>Nieuw geheim chatgesprek</translation>
+        <translation>Nieuw geheim gesprek</translation>
     </message>
 </context>
 <context>
@@ -399,7 +401,7 @@ messages</source>
     <name>DialogInfoPage</name>
     <message>
         <source>Delete secret chat</source>
-        <translation>Geheim chatgesprek verwijderen</translation>
+        <translation>Geheim gesprek verwijderen</translation>
     </message>
     <message>
         <source>Delete group</source>
@@ -411,7 +413,7 @@ messages</source>
     </message>
     <message>
         <source>Deleting secret chat</source>
-        <translation>Bezig met verwijderen van geheim chatgesprek</translation>
+        <translation>Bezig met verwijderen van geheim gesprek</translation>
     </message>
     <message>
         <source>Deleting group</source>
@@ -463,7 +465,7 @@ messages</source>
     <name>DialogsPage</name>
     <message>
         <source>Chats</source>
-        <translation>Chatgesprekken</translation>
+        <translation>Gesprekken</translation>
     </message>
     <message>
         <source>Connecting...</source>
@@ -479,7 +481,7 @@ messages</source>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation>Bezig met verwijderen van geheim chatgesprek</translation>
+        <translation>Bezig met verwijderen van geheim gesprek</translation>
     </message>
     <message>
         <source>Deleting Group</source>
@@ -489,7 +491,7 @@ messages</source>
         <source>No Chats
 
 Do a swype to the right to select a contact</source>
-        <translation>Geen chatgespreken
+        <translation>Geen gesprekken
 
 Veeg naar rechts om een contactpersoon te selecteren</translation>
     </message>
@@ -502,7 +504,7 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation>Nieuw geheim chatgesprek</translation>
+        <translation>Nieuw geheim gesprek</translation>
     </message>
     <message>
         <source>New Group</source>
@@ -695,7 +697,7 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     <name>SecretDialogDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation>Geheim chatgesprek geannuleerd</translation>
+        <translation>Het geheime gesprek is geannuleerd</translation>
     </message>
 </context>
 <context>
@@ -870,7 +872,7 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     </message>
     <message>
         <source>Chats</source>
-        <translation>Chatgesprekken </translation>
+        <translation>Gesprekken</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -928,7 +930,7 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     </message>
     <message>
         <source>Secret chat created by ��%1��</source>
-        <translation>Het geheime chatgesprek is gecreëerd door ��%1��</translation>
+        <translation>Het geheime gesprek is gecreëerd door ��%1��</translation>
     </message>
     <message>
         <source>Group created by ��%1��</source>
@@ -999,19 +1001,19 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     </message>
     <message>
         <source>Typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bezig met typen...</translation>
     </message>
     <message>
         <source>%1 is typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 is bezig met typen...</translation>
     </message>
     <message>
         <source>%1 and %2 are typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 en %2 zijn bezig met typen...</translation>
     </message>
     <message>
         <source>%1 members are typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 deelnemers zijn bezig met typen...</translation>
     </message>
 </context>
 <context>
@@ -1022,7 +1024,7 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     </message>
     <message>
         <source>Begin Secret Chat</source>
-        <translation>Geheim chatgesprek beginnen</translation>
+        <translation>Geheim gesprek beginnen</translation>
     </message>
     <message>
         <source>Phone Number</source>
@@ -1030,7 +1032,7 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Acties</translation>
+        <translation>Acties</translation>
     </message>
 </context>
 <context>

@@ -93,7 +93,7 @@
     </message>
     <message>
         <source>Icon Designers</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikondesigner</translation>
     </message>
 </context>
 <context>
@@ -315,24 +315,26 @@ Minimilängd är 5 tecken.</translation>
     <message>
         <source>Unread
 message</source>
-        <translation type="unfinished"></translation>
+        <translation>Oläst
+meddelande</translation>
     </message>
     <message>
         <source>Unread
 messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Olästa
+meddelanden</translation>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation type="unfinished"></translation>
+        <translation>Bortkopplad</translation>
     </message>
     <message>
         <source>Connected</source>
-        <translation type="unfinished">Ansluten</translation>
+        <translation>Ansluten</translation>
     </message>
     <message>
         <source>Recent chats:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tidigare chattar:</translation>
     </message>
 </context>
 <context>

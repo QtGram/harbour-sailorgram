@@ -93,7 +93,7 @@
     </message>
     <message>
         <source>Icon Designers</source>
-        <translation type="unfinished"></translation>
+        <translation>Дизайнеры иконки</translation>
     </message>
 </context>
 <context>
@@ -315,24 +315,26 @@ Minimum length is 5 characters.</source>
     <message>
         <source>Unread
 message</source>
-        <translation type="unfinished"></translation>
+        <translation>Новое
+сообщение</translation>
     </message>
     <message>
         <source>Unread
 messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Новые
+сообщения</translation>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation type="unfinished"></translation>
+        <translation>Не в сети</translation>
     </message>
     <message>
         <source>Connected</source>
-        <translation type="unfinished">В сети</translation>
+        <translation>В сети</translation>
     </message>
     <message>
         <source>Recent chats:</source>
-        <translation type="unfinished"></translation>
+        <translation>Недавние диалоги:</translation>
     </message>
 </context>
 <context>
@@ -365,7 +367,7 @@ messages</source>
     </message>
     <message>
         <source>SailorGram keeps running in background even when closed</source>
-        <translation>SailorGram работает в фоне даже если закрыт</translation>
+        <translation>SailorGram работает в фоне, даже если закрыт</translation>
     </message>
     <message>
         <source>Autostart</source>
@@ -739,31 +741,31 @@ Do a swype to the right to select a contact</source>
     <name>SelectorImagesPage</name>
     <message>
         <source>Android storage</source>
-        <translation type="unfinished">Память Android</translation>
+        <translation>Хранилище Android</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished">Карта памяти</translation>
+        <translation>Карта памяти</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished">Домой</translation>
+        <translation>Домой</translation>
     </message>
     <message>
         <source>Sort ascending</source>
-        <translation type="unfinished"></translation>
+        <translation>Сортировать по возрастанию</translation>
     </message>
     <message>
         <source>Sort descending</source>
-        <translation type="unfinished"></translation>
+        <translation>Сортировать по убыванию</translation>
     </message>
     <message>
         <source>Sort by name</source>
-        <translation type="unfinished"></translation>
+        <translation>Сортировать по имени</translation>
     </message>
     <message>
         <source>Sort by date</source>
-        <translation type="unfinished"></translation>
+        <translation>Сортировать по дате</translation>
     </message>
     <message>
         <source>Send</source>
@@ -940,7 +942,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>%1 added %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 создано %2</translation>
     </message>
 </context>
 <context>
@@ -999,19 +1001,19 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>Пишет...</translation>
     </message>
     <message>
         <source>%1 is typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 пишет...</translation>
     </message>
     <message>
         <source>%1 and %2 are typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 и %2 пишут...</translation>
     </message>
     <message>
         <source>%1 members are typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 пишут...</translation>
     </message>
 </context>
 <context>
@@ -1030,7 +1032,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Действия</translation>
+        <translation>Действия</translation>
     </message>
 </context>
 <context>

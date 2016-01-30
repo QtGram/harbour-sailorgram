@@ -93,7 +93,7 @@
     </message>
     <message>
         <source>Icon Designers</source>
-        <translation type="unfinished"></translation>
+        <translation>Icon designer</translation>
     </message>
 </context>
 <context>
@@ -324,11 +324,11 @@ messages</source>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation type="unfinished"></translation>
+        <translation>Odpojen</translation>
     </message>
     <message>
         <source>Connected</source>
-        <translation type="unfinished">Připojen</translation>
+        <translation>Připojen</translation>
     </message>
     <message>
         <source>Recent chats:</source>
@@ -423,7 +423,7 @@ messages</source>
     </message>
     <message>
         <source>Actions</source>
-        <translation>Akce</translation>
+        <translation>Činnost</translation>
     </message>
     <message>
         <source>Enable notifications</source>
@@ -489,7 +489,9 @@ messages</source>
         <source>No Chats
 
 Do a swype to the right to select a contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Žádné rozhovory
+
+Do a swype to the right to select a contact</translation>
     </message>
 </context>
 <context>
@@ -714,7 +716,7 @@ Do a swype to the right to select a contact</source>
     <name>SelectorFilesPage</name>
     <message>
         <source>Android storage</source>
-        <translation type="unfinished"></translation>
+        <translation>Skladiště Android</translation>
     </message>
     <message>
         <source>SD Card</source>
@@ -737,7 +739,7 @@ Do a swype to the right to select a contact</source>
     <name>SelectorImagesPage</name>
     <message>
         <source>Android storage</source>
-        <translation type="unfinished"></translation>
+        <translation>Skladiště Android</translation>
     </message>
     <message>
         <source>SD Card</source>
@@ -749,19 +751,19 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Sort ascending</source>
-        <translation type="unfinished"></translation>
+        <translation>Řadit vzestupně</translation>
     </message>
     <message>
         <source>Sort descending</source>
-        <translation type="unfinished"></translation>
+        <translation>Řadit sestupně</translation>
     </message>
     <message>
         <source>Sort by name</source>
-        <translation>Seřadit podle názvu</translation>
+        <translation>Řadit podle názvu</translation>
     </message>
     <message>
         <source>Sort by date</source>
-        <translation>Seřadit podle data</translation>
+        <translation>Řadit podle data</translation>
     </message>
     <message>
         <source>Send</source>
@@ -780,18 +782,18 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>lat: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>šíř: %1</translation>
     </message>
     <message>
         <source>long: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>pod: %1</translation>
     </message>
 </context>
 <context>
     <name>SelectorMainPage</name>
     <message>
         <source>Send file</source>
-        <translation type="unfinished"></translation>
+        <translation>Odeslat soubor</translation>
     </message>
     <message>
         <source>Image from gallery</source>
@@ -799,11 +801,11 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Capture photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Zajmout fotku</translation>
     </message>
     <message>
         <source>Record sound</source>
-        <translation type="unfinished"></translation>
+        <translation>Záznam zvuku</translation>
     </message>
     <message>
         <source>My location</source>
@@ -815,7 +817,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Browse files</source>
-        <translation type="unfinished"></translation>
+        <translation>Prohlížet soubory</translation>
     </message>
 </context>
 <context>
@@ -997,19 +999,19 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>Píše...</translation>
     </message>
     <message>
         <source>%1 is typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 píše...</translation>
     </message>
     <message>
         <source>%1 and %2 are typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 and %2 psají</translation>
     </message>
     <message>
         <source>%1 members are typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 členú psají</translation>
     </message>
 </context>
 <context>
@@ -1028,7 +1030,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Akce</translation>
+        <translation>Činnost</translation>
     </message>
 </context>
 <context>

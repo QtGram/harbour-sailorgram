@@ -93,7 +93,7 @@
     </message>
     <message>
         <source>Icon Designers</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikondesignere</translation>
     </message>
 </context>
 <context>
@@ -315,24 +315,26 @@ Minimumslængde er fem tegn.</translation>
     <message>
         <source>Unread
 message</source>
-        <translation type="unfinished"></translation>
+        <translation>Uløste
+meddelelser</translation>
     </message>
     <message>
         <source>Unread
 messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Ulæste
+meddelelser</translation>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation type="unfinished"></translation>
+        <translation>Frakoblet</translation>
     </message>
     <message>
         <source>Connected</source>
-        <translation type="unfinished">Forbundet</translation>
+        <translation>Forbundet</translation>
     </message>
     <message>
         <source>Recent chats:</source>
-        <translation type="unfinished"></translation>
+        <translation>Seneste samtaler:</translation>
     </message>
 </context>
 <context>
@@ -739,31 +741,31 @@ Stryg til venstre for at vælge en kontakt</translation>
     <name>SelectorImagesPage</name>
     <message>
         <source>Android storage</source>
-        <translation type="unfinished">Android storage</translation>
+        <translation>Android lager</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished">SD-kort</translation>
+        <translation>SD-kort</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished">Hjem</translation>
+        <translation>Hjem</translation>
     </message>
     <message>
         <source>Sort ascending</source>
-        <translation type="unfinished"></translation>
+        <translation>Sortér stigende</translation>
     </message>
     <message>
         <source>Sort descending</source>
-        <translation type="unfinished"></translation>
+        <translation>Sortér faldende</translation>
     </message>
     <message>
         <source>Sort by name</source>
-        <translation type="unfinished"></translation>
+        <translation>Sortér efter navn</translation>
     </message>
     <message>
         <source>Sort by date</source>
-        <translation type="unfinished"></translation>
+        <translation>Sortér efter dato</translation>
     </message>
     <message>
         <source>Send</source>
@@ -940,7 +942,7 @@ Stryg til venstre for at vælge en kontakt</translation>
     </message>
     <message>
         <source>%1 added %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 tilføjede %2</translation>
     </message>
 </context>
 <context>
@@ -999,19 +1001,19 @@ Stryg til venstre for at vælge en kontakt</translation>
     </message>
     <message>
         <source>Typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriver...</translation>
     </message>
     <message>
         <source>%1 is typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 skriver...</translation>
     </message>
     <message>
         <source>%1 and %2 are typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 og %2 skriver...</translation>
     </message>
     <message>
         <source>%1 members are typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 medlemmer skriver...</translation>
     </message>
 </context>
 <context>
@@ -1030,7 +1032,7 @@ Stryg til venstre for at vælge en kontakt</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Handlinger</translation>
+        <translation>Handlinger</translation>
     </message>
 </context>
 <context>

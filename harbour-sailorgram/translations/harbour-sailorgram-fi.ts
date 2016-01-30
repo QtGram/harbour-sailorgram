@@ -93,7 +93,7 @@
     </message>
     <message>
         <source>Icon Designers</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuvan suunnittelijat</translation>
     </message>
 </context>
 <context>
@@ -315,24 +315,26 @@ Vähimmäispituus on 5 merkkiä.</translation>
     <message>
         <source>Unread
 message</source>
-        <translation type="unfinished"></translation>
+        <translation>Lukematon
+viesti</translation>
     </message>
     <message>
         <source>Unread
 messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Lukemattomat
+viestit</translation>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei yhteyttä</translation>
     </message>
     <message>
         <source>Connected</source>
-        <translation type="unfinished">Yhdistetty</translation>
+        <translation>Yhdistetty</translation>
     </message>
     <message>
         <source>Recent chats:</source>
-        <translation type="unfinished"></translation>
+        <translation>Uusimmat keskustelut:</translation>
     </message>
 </context>
 <context>
@@ -940,7 +942,7 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     </message>
     <message>
         <source>%1 added %2</source>
-        <translation>%1 lisätty %2</translation>
+        <translation>%1 lisäsi henkilön %2</translation>
     </message>
 </context>
 <context>
@@ -999,19 +1001,19 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     </message>
     <message>
         <source>Typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirjoittaa...</translation>
     </message>
     <message>
         <source>%1 is typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 kirjoittaa...</translation>
     </message>
     <message>
         <source>%1 and %2 are typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ja %2 kirjoittavat...</translation>
     </message>
     <message>
         <source>%1 members are typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 jäsentä kirjoittaa...</translation>
     </message>
 </context>
 <context>
@@ -1030,7 +1032,7 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Toiminnot</translation>
+        <translation>Toiminnot</translation>
     </message>
 </context>
 <context>

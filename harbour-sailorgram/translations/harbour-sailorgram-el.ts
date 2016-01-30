@@ -324,11 +324,11 @@ messages</source>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποσυνδεμένο</translation>
     </message>
     <message>
         <source>Connected</source>
-        <translation type="unfinished">Συνδεμένο</translation>
+        <translation>Συνδεμένο</translation>
     </message>
     <message>
         <source>Recent chats:</source>

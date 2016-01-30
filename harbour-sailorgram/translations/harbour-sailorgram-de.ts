@@ -93,7 +93,7 @@
     </message>
     <message>
         <source>Icon Designers</source>
-        <translation type="unfinished"></translation>
+        <translation>Icon Designer </translation>
     </message>
 </context>
 <context>
@@ -315,24 +315,26 @@ Minimum sind 5 Zeichen.</translation>
     <message>
         <source>Unread
 message</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungelesene
+Nachrichten</translation>
     </message>
     <message>
         <source>Unread
 messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungelesene
+Nachrichten</translation>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation type="unfinished"></translation>
+        <translation>Verbindung getrennt</translation>
     </message>
     <message>
         <source>Connected</source>
-        <translation type="unfinished">Verbunden</translation>
+        <translation>Verbunden</translation>
     </message>
     <message>
         <source>Recent chats:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kürzliche Chats:</translation>
     </message>
 </context>
 <context>
@@ -1000,19 +1002,19 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>Schreibt...</translation>
     </message>
     <message>
         <source>%1 is typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 schreibt...</translation>
     </message>
     <message>
         <source>%1 and %2 are typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 und %2 schreiben...</translation>
     </message>
     <message>
         <source>%1 members are typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Mitglieder schreiben...</translation>
     </message>
 </context>
 <context>
@@ -1031,7 +1033,7 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Aktionen</translation>
+        <translation>Aktionen</translation>
     </message>
 </context>
 <context>

@@ -93,7 +93,7 @@
     </message>
     <message>
         <source>Icon Designers</source>
-        <translation type="unfinished"></translation>
+        <translation>Deseñadores de iconas</translation>
     </message>
 </context>
 <context>
@@ -315,24 +315,26 @@ A lonxitude mínima é de 5 caracteres.</translation>
     <message>
         <source>Unread
 message</source>
-        <translation type="unfinished"></translation>
+        <translation>Mensaxe
+sen ler</translation>
     </message>
     <message>
         <source>Unread
 messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Mensaxes
+sen ler</translation>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation type="unfinished"></translation>
+        <translation>Desconectado</translation>
     </message>
     <message>
         <source>Connected</source>
-        <translation type="unfinished">Conectado</translation>
+        <translation>Conectado</translation>
     </message>
     <message>
         <source>Recent chats:</source>
-        <translation type="unfinished"></translation>
+        <translation>Conversas recentes:</translation>
     </message>
 </context>
 <context>
@@ -739,31 +741,31 @@ Desprace a dereita para seleccionar un contacto</translation>
     <name>SelectorImagesPage</name>
     <message>
         <source>Android storage</source>
-        <translation type="unfinished">Almacenamento de Android</translation>
+        <translation>Almacenamento de Android</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished">Tarxeta SD</translation>
+        <translation>Tarxeta SD</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished">Inicio</translation>
+        <translation>Inicio</translation>
     </message>
     <message>
         <source>Sort ascending</source>
-        <translation type="unfinished"></translation>
+        <translation>Orde ascendente</translation>
     </message>
     <message>
         <source>Sort descending</source>
-        <translation type="unfinished"></translation>
+        <translation>Orde descendente</translation>
     </message>
     <message>
         <source>Sort by name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordear polo nome</translation>
     </message>
     <message>
         <source>Sort by date</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordear por data</translation>
     </message>
     <message>
         <source>Send</source>
@@ -940,7 +942,7 @@ Desprace a dereita para seleccionar un contacto</translation>
     </message>
     <message>
         <source>%1 added %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 engadiu %2</translation>
     </message>
 </context>
 <context>
@@ -999,19 +1001,19 @@ Desprace a dereita para seleccionar un contacto</translation>
     </message>
     <message>
         <source>Typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>Escribindo...</translation>
     </message>
     <message>
         <source>%1 is typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 está escribindo...</translation>
     </message>
     <message>
         <source>%1 and %2 are typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 e %2 estan escribindo...</translation>
     </message>
     <message>
         <source>%1 members are typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 membro esta escribindo...</translation>
     </message>
 </context>
 <context>
@@ -1030,7 +1032,7 @@ Desprace a dereita para seleccionar un contacto</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Accións</translation>
+        <translation>Accións</translation>
     </message>
 </context>
 <context>

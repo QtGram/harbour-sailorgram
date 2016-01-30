@@ -324,11 +324,11 @@ messages</source>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation type="unfinished"></translation>
+        <translation>Роз’єднано</translation>
     </message>
     <message>
         <source>Connected</source>
-        <translation type="unfinished">З’єднано</translation>
+        <translation>З’єднано</translation>
     </message>
     <message>
         <source>Recent chats:</source>
