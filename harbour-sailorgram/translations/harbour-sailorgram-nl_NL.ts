@@ -854,8 +854,8 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
 <context>
     <name>SelectorStickerPage</name>
     <message>
-        <source>Sending sticker</source>
-        <translation>Bezig met versturen van sticker</translation>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

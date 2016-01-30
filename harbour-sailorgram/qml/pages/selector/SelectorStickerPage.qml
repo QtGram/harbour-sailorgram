@@ -2,31 +2,32 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import QtLocation 5.0
 import QtPositioning 5.0
-import harbour.sailorgram.TelegramQml 1.0
+import harbour.sailorgram.TelegramQml 1.0 as TelegramQml
 import harbour.sailorgram.SailorGram 1.0
 import "../../models"
 import "../../items/sticker"
 
-Page
+Dialog
 {
     property Context context
+    property string selectedSticker
 
     signal actionCompleted(string action, var data)
 
     id: selectorstickerpage
     allowedOrientations: defaultAllowedOrientations
+    canAccept: selectedSticker.length > 0
 
-    RemorsePopup { id: remorsepopup }
-
-    StickersModel
+    TelegramQml.StickersModel
     {
         id: stickersmodel
         telegram: context.telegram
     }
 
-    PageHeader
+    DialogHeader
     {
         id: header
+        acceptText: qsTr("Send")
 
         title: {
             var stickerset = stickersmodel.stickerSetItem(stickersmodel.currentStickerSet);
@@ -38,40 +39,34 @@ Page
         }
     }
 
-    SilicaFlickable
+    SilicaGridView
     {
-        id: view
-        clip: true
-        contentHeight: (stickergrid.height + stickergrid.anchors.margins * 2)
+        readonly property int columns: (selectorstickerpage.isPortrait ? 5 : 9)
+        readonly property int spacing: Theme.paddingSmall
+        readonly property real itemSize : (((width + spacing) / columns) - spacing)
+
+        VerticalScrollDecorator { flickable: stickergrid }
+        HorizontalScrollDecorator { flickable: stickergrid }
+
+        id: stickergrid
         anchors { top: header.bottom; left: parent.left; right: parent.right; bottom: lvstickersets.top }
+        cellWidth: itemSize
+        cellHeight: itemSize
+        model: stickersmodel
+        clip: true
 
-        SilicaGridView
-        {
-            readonly property int columns: (selectorstickerpage.isPortrait ? 5 : 9)
-            readonly property int spacing: Theme.paddingSmall
-            readonly property real itemSize : (((width + spacing) / columns) - spacing)
+        delegate: StickerItem {
+            property bool isSelected: selectedSticker === stickeritem.stickerPath.toString()
 
-            VerticalScrollDecorator { flickable: stickergrid }
-            HorizontalScrollDecorator { flickable: stickergrid }
+            id: stickeritem
+            width: stickergrid.itemSize - stickergrid.spacing
+            height: stickergrid.itemSize - stickergrid.spacing
+            context: selectorstickerpage.context
+            stickerDocument: document
+            highlighted: isSelected
 
-            id: stickergrid
-            anchors.fill: parent
-            cellWidth: itemSize
-            cellHeight: itemSize
-            model: stickersmodel
-
-            delegate: StickerItem {
-                id: stickeritem
-                width: stickergrid.itemSize - stickergrid.spacing
-                height: stickergrid.itemSize - stickergrid.spacing
-                context: selectorstickerpage.context
-                stickerDocument: document
-
-                onClicked: {
-                    remorsepopup.execute(qsTr("Sending sticker"), function() {
-                        actionCompleted("sticker", stickeritem.stickerPath);
-                    });
-                }
+            onClicked: {
+                selectedSticker = stickeritem.stickerPath;
             }
         }
     }
@@ -79,20 +74,21 @@ Page
     SilicaListView
     {
         id: lvstickersets
-        anchors { left: parent.left; right: parent.right; bottom: parent.bottom }
+        anchors { left: parent.left; right: parent.right; bottom: parent.bottom; bottomMargin: Theme.paddingSmall }
         orientation: ListView.Horizontal
-        height: Theme.itemSizeMedium + Theme.paddingSmall
+        height: Theme.itemSizeLarge
         model: stickersmodel.stickerSets
-        currentIndex: -1
+        currentIndex: 0
         spacing: Theme.paddingSmall
+        clip: true
 
         delegate: StickerSetImage {
             width: Theme.itemSizeMedium
-            height: parent.height
+            contentHeight: parent.height
+            highlighted: (lvstickersets.currentIndex === index)
             context: selectorstickerpage.context
             stickersModel: stickersmodel
             stickerSetId: modelData
-            isSelected: (lvstickersets.currentIndex === index)
 
             onClicked: {
                 stickersmodel.currentStickerSet = modelData;

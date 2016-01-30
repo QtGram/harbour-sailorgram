@@ -8,7 +8,6 @@ ListItem
     property Context context
     property StickersModel stickersModel
     property string stickerSetId
-    property bool isSelected: false
     property StickerSet stickerSet: stickersModel.stickerSetItem(stickerSetId)
     property Document document: stickersModel.stickerSetThumbnailDocument(stickerSetId)
 
@@ -19,7 +18,11 @@ ListItem
         id: filehandler
         telegram: context.telegram
         target: stickersetimage.document
-        Component.onCompleted: download()
+
+        onTargetChanged: {
+            if(!filehandler.downloaded)
+                download();
+        }
     }
 
     BusyIndicator
@@ -33,9 +36,7 @@ ListItem
     {
         source: filehandler.thumbPath
         fillMode: Image.PreserveAspectFit
-        verticalAlignment: Image.AlignVCenter
-        horizontalAlignment: Image.AlignHCenter
-        anchors { left: parent.left; right: parent.right; bottom: selectionrect.top; margins: (Theme.paddingSmall / 2) }
+        anchors { left: parent.left; top: parent.top; right: parent.right; bottom: selectionrect.top; bottomMargin: Theme.paddingSmall; topMargin: Theme.paddingSmall }
     }
 
     Rectangle
@@ -43,7 +44,6 @@ ListItem
         id: selectionrect
         anchors { left: parent.left; right: parent.right; bottom: parent.bottom }
         height: Theme.paddingSmall
-        width: parent.width
         color: Theme.secondaryHighlightColor
     }
 }

@@ -856,8 +856,8 @@ Do a swype to the right to select a contact</source>
 <context>
     <name>SelectorStickerPage</name>
     <message>
-        <source>Sending sticker</source>
-        <translation>Αποστολή ετικέτας </translation>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

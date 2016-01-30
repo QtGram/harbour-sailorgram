@@ -854,8 +854,8 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
 <context>
     <name>SelectorStickerPage</name>
     <message>
-        <source>Sending sticker</source>
-        <translation>Enviando sticker</translation>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

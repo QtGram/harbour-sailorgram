@@ -854,8 +854,8 @@ Svep åt vänster för att välja en kontakt</translation>
 <context>
     <name>SelectorStickerPage</name>
     <message>
-        <source>Sending sticker</source>
-        <translation>Skickar märke</translation>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -854,8 +854,8 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
 <context>
     <name>SelectorStickerPage</name>
     <message>
-        <source>Sending sticker</source>
-        <translation>Lähetetään tarraa</translation>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

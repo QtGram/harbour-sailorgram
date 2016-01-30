@@ -855,8 +855,8 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
 <context>
     <name>SelectorStickerPage</name>
     <message>
-        <source>Sending sticker</source>
-        <translation>Sticker wird gesendet</translation>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
