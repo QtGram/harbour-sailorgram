@@ -12,8 +12,9 @@
 # The name of your application
 TARGET = harbour-sailorgram
 
-CONFIG += sailfishapp \
-       += c++11
+CONFIG += \
+    sailfishapp \
+    c++11
 
 QT += sql dbus multimedia concurrent
 

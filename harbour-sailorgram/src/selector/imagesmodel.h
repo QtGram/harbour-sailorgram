@@ -10,9 +10,11 @@ class QThread;
 
 class ImagesModel : public QAbstractListModel
 {
+    friend class ImagesModelWorker;
+
     Q_OBJECT
     Q_ENUMS(Role)
-    Q_PROPERTY(Role sortRole READ sortRole WRITE setSortRole NOTIFY sortRoleChanged)
+    Q_PROPERTY(ImagesModel::Role sortRole READ sortRole WRITE setSortRole NOTIFY sortRoleChanged)
     Q_PROPERTY(Qt::SortOrder sortOrder READ sortOrder WRITE setSortOrder NOTIFY sortOrderChanged)
     Q_PROPERTY(bool directoriesFirst READ directoriesFirst WRITE setDirectoriesFirst NOTIFY directoriesFirstChanged)
     Q_PROPERTY(QString rootDir READ rootDir WRITE setRootDir NOTIFY rootDirChanged)
@@ -25,12 +27,29 @@ public:
     struct Entry
     {
         QString path;
-        QString name;
         qint64 date;
         int orientation;
         bool isDir;
     };
     typedef QList<Entry> EntryList;
+
+    struct Request
+    {
+        ImagesModel::Role sortRole = ImagesModel::DateRole;
+        Qt::SortOrder sortOrder = Qt::DescendingOrder;
+        bool directoriesFirst = true;
+        bool recursive = false;
+        QString rootDir;
+
+        bool operator==(const Request &r2) const
+        {
+            return directoriesFirst == r2.directoriesFirst &&
+                   recursive == r2.recursive &&
+                   sortOrder == r2.sortOrder &&
+                   sortRole == r2.sortRole &&
+                   rootDir == r2.rootDir;
+        }
+    };
 
     explicit ImagesModel(QObject *parent = Q_NULLPTR);
     ~ImagesModel();
@@ -39,12 +58,12 @@ public:
     QVariant data(const QModelIndex &index, int role) const Q_DECL_OVERRIDE;
     QHash<int, QByteArray> roleNames() const Q_DECL_OVERRIDE;
 
-    Role sortRole() const { return this->_sortrole; }
-    Qt::SortOrder sortOrder() const { return this->_sortorder; }
-    bool directoriesFirst() const { return this->_directoriesfirst; }
-    QString rootDir() const { return this->_rootdir; }
-    bool recursive() const { return this->_recursive; }
-    void setSortRole(Role);
+    ImagesModel::Role sortRole() const { return this->_request.sortRole; }
+    Qt::SortOrder sortOrder() const { return this->_request.sortOrder; }
+    bool directoriesFirst() const { return this->_request.directoriesFirst; }
+    QString rootDir() const { return this->_request.rootDir; }
+    bool recursive() const { return this->_request.recursive; }
+    void setSortRole(ImagesModel::Role);
     void setSortOrder(Qt::SortOrder);
     void setDirectoriesFirst(bool);
     void setRootDir(const QString&);
@@ -57,32 +76,25 @@ signals:
     void directoriesFirstChanged();
     void rootDirChanged();
     void recursiveChanged();
-    void dirNeedsScan(QString, QStringList, bool);
+    void newRequest(ImagesModel::Request);
 
 private:
-
-    bool lesserThan(const Entry &e1, const Entry &e2, Role role);
-    bool biggerThan(const Entry &e1, const Entry &e2, Role role);
 
     ImagesModelWorker *_worker;
     QThread *_workerthread;
     ImagesModel::EntryList _entries;
-    Role _sortrole;
-    Qt::SortOrder _sortorder;
-    bool _directoriesfirst;
-    bool _recursive;
-    QString _rootdir;
+    ImagesModel::Request _request;
 
     static const QStringList _imagesdirpaths;
     static const QStringList _filterlist;
 
 private slots:
 
-    void sort(bool emitReset = true);
-    void integrateDirectory(const ImagesModel::EntryList &list, const QString &dirPath);
+    void handleCompletedRequest(const ImagesModel::Request &request, const ImagesModel::EntryList &list);
 };
 
 Q_DECLARE_METATYPE(ImagesModel::Entry)
+Q_DECLARE_METATYPE(ImagesModel::Request)
 
 
 #endif // IMAGESMODEL_H
