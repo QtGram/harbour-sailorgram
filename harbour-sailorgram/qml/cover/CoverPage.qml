@@ -1,8 +1,11 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
+import harbour.sailorgram.TelegramQml 1.0
+import harbour.sailorgram.DialogsCoverModel 1.0
 import "../components/cover"
 import "../models"
 import "../js/TelegramHelper.js" as TelegramHelper
+import "../js/ColorScheme.js" as ColorScheme
 
 CoverBackground
 {
@@ -19,42 +22,109 @@ CoverBackground
 
     id: cover
 
+    Image
+    {
+        id: imgcover
+        source: "qrc:///res/sailorgram-cover.png"
+        asynchronous: true
+        opacity: 0.1
+        width: parent.width * 1.15
+        anchors.horizontalCenter: parent.horizontalCenter
+        fillMode: Image.PreserveAspectFit
+    }
+
     Column
     {
-        anchors{ fill: parent; topMargin: Theme.paddingLarge; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
-        spacing: Theme.paddingLarge
+        id: statusColumn
+        anchors { top: parent.top; left: parent.left; right: parent.right; topMargin: Theme.paddingMedium; leftMargin: Theme.paddingLarge; rightMargin: Theme.paddingSmall }
+        height: unreadItem.height + statusLabel.height
 
-        Image
+        Item
         {
-            id: imglogo
-            source: "qrc:///res/telegramcover.png"
-            opacity: 0.5
-            width: parent.width / 2
-            anchors.horizontalCenter: parent.horizontalCenter
-            fillMode: Image.PreserveAspectFit
+            id: unreadItem
+            height: unreadCount.contentHeight
+            width: unreadCount.contentWidth + unreadLabel.contentWidth
+
+            Label
+            {
+                id: unreadCount
+                text: context.telegram.unreadCount
+                font.pixelSize: Theme.fontSizeHuge
+                font.family: Theme.fontFamilyHeading
+            }
+
+            Label
+            {
+                id: unreadLabel
+                text: (context.telegram.unreadCount == 1) ? qsTr("Unread\nmessage") : qsTr("Unread\nmessages")
+                font.pixelSize: Theme.fontSizeExtraSmall
+                font.family: Theme.fontFamilyHeading
+                font.weight: Font.Light
+                lineHeight: 0.8
+                truncationMode: TruncationMode.Fade
+
+                anchors {
+                    left: unreadCount.right
+                    leftMargin: Theme.paddingMedium
+                    verticalCenter: unreadCount.verticalCenter
+                }
+            }
         }
 
         Label
         {
+            id: statusLabel
             width: parent.width
             text: !context.sailorgram.connected ? qsTr("Disconnected") : qsTr("Connected")
-            horizontalAlignment: Text.AlignHCenter
             truncationMode: TruncationMode.Fade
-            color: Theme.secondaryColor
-            opacity: 0.7
+            color: !context.sailorgram.connected ? ColorScheme.reverseColor(Theme.highlightColor) : Theme.highlightColor
+        }
+    }
+
+    Column
+    {
+        id: messagesColumn
+        anchors {
+            top: statusColumn.bottom
+            bottom: parent.bottom
+            left: parent.left
+            right: parent.right
+            topMargin: Theme.paddingSmall
+            leftMargin: Theme.paddingLarge
         }
 
         Label
         {
             width: parent.width
-            text: (context.telegram.unreadCount == 1) ? qsTr("%1 unread message").arg(context.telegram.unreadCount) : qsTr("%1 unread messages").arg(context.telegram.unreadCount)
-            visible: context.telegram.unreadCount > 0
-            wrapMode: Text.WordWrap
+            text: qsTr("Recent chats:")
             truncationMode: TruncationMode.Fade
-            horizontalAlignment: Text.AlignHCenter
             font.pixelSize: Theme.fontSizeExtraSmall
-            color: Theme.secondaryColor
-            opacity: 0.5
+            color: Theme.primaryColor
+        }
+
+        Repeater {
+            model: DialogsCoverModel {
+                dialogsModel: context.dialogs
+                maxDialogs: 3
+            }
+
+            delegate: Label {
+                width: messagesColumn.width
+                elide: Text.ElideRight
+                truncationMode: TruncationMode.Fade
+                font.pixelSize: Theme.fontSizeSmall
+                color: item.unreadCount > 0 ? Theme.highlightColor : Theme.primaryColor
+
+                text: {
+                    if(TelegramHelper.isChat(item)) {
+                        var chat = context.telegram.chat(item.peer.chatId);
+                        return (item.unreadCount > 0) ? (item.unreadCount + " " + chat.title) : chat.title;
+                    }
+
+                    var user = context.telegram.user(item.peer.userId);
+                    return (item.unreadCount > 0) ? (item.unreadCount + " "  + TelegramHelper.completeName(user)) : TelegramHelper.completeName(user);
+                }
+            }
         }
     }
 

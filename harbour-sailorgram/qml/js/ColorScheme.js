@@ -3,10 +3,10 @@
 .import Sailfish.Silica 1.0 as Silica
 .import "TelegramHelper.js" as TelegramHelper
 
-function reverseRgb(color, light)
+function reverseColor(color, light)
 {
     if(light === undefined)
-        light = 1.0;
+        light = 3.0;
 
     return Qt.lighter(Qt.rgba(1.0 - color.r, 1.0 - color.g, 1.0 - color.b, 1.0), light);
 }
@@ -59,9 +59,9 @@ function colorizeLink(message, context)
     if(context.bubbleshidden)
     {
         var linkcolor = Silica.Theme.rgba(Silica.Theme.highlightColor, 1.0);
-        return reverseRgb(linkcolor, 2.5);
+        return reverseColor(linkcolor, 2.5);
     }
 
     var bubblecolor = Silica.Theme.rgba(colorizeBubble(message,  context), 1.0);
-    return reverseRgb(bubblecolor, 1.5);
+    return reverseColor(bubblecolor, 1.5);
 }
