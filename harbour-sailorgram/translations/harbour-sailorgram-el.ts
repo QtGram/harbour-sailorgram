@@ -729,20 +729,16 @@ Do a swype to the right to select a contact</source>
         <translation>Home</translation>
     </message>
     <message>
-        <source>Selecting file</source>
-        <translation>Επιλέγοντας αρχείο</translation>
-    </message>
-    <message>
         <source>Back</source>
         <translation>Επιστροφή</translation>
+    </message>
+    <message>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SelectorImagesPage</name>
-    <message>
-        <source>Selecting image</source>
-        <translation>Επιλέγοντας εικόνα</translation>
-    </message>
     <message>
         <source>Android storage</source>
         <translation type="unfinished">Αποθήκευση Android</translation>
@@ -769,6 +765,10 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Sort by date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -727,20 +727,16 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
         <translation>Persoonlijke map</translation>
     </message>
     <message>
-        <source>Selecting file</source>
-        <translation>Bezig met selecteren van bestand</translation>
-    </message>
-    <message>
         <source>Back</source>
         <translation>Terug</translation>
+    </message>
+    <message>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SelectorImagesPage</name>
-    <message>
-        <source>Selecting image</source>
-        <translation>Bezig met selecteren van afbeelding</translation>
-    </message>
     <message>
         <source>Android storage</source>
         <translation>Android-opslagruimte</translation>
@@ -768,6 +764,10 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     <message>
         <source>Sort by date</source>
         <translation>Sorteren op datum</translation>
+    </message>
+    <message>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

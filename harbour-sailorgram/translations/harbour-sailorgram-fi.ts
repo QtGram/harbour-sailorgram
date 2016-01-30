@@ -727,20 +727,16 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
         <translation>Kotikansio</translation>
     </message>
     <message>
-        <source>Selecting file</source>
-        <translation>Valitaan tiedosto</translation>
-    </message>
-    <message>
         <source>Back</source>
         <translation>Takaisin</translation>
+    </message>
+    <message>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SelectorImagesPage</name>
-    <message>
-        <source>Selecting image</source>
-        <translation>Valitaan kuva</translation>
-    </message>
     <message>
         <source>Android storage</source>
         <translation>Android varasto</translation>
@@ -768,6 +764,10 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     <message>
         <source>Sort by date</source>
         <translation>Järjestä päivämäärän mukaan</translation>
+    </message>
+    <message>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

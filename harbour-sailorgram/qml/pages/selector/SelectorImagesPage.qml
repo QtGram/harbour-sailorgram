@@ -3,13 +3,15 @@ import Sailfish.Silica 1.0
 import harbour.sailorgram.ImagesModel 1.0
 import "../../models"
 
-Page
+Dialog
 {
     property alias directory: imagesmodel.rootDir
     property alias sortRole: imagesmodel.sortRole
     property alias sortOrder: imagesmodel.sortOrder
+    property string selectedFile
     property Page rootPage
     property Context context
+
     property int numCellColumnsPortrait: {
         switch (Screen.sizeCategory) {
             case Screen.Small: return 2;
@@ -19,6 +21,7 @@ Page
             default: return 3;
         }
     }
+
     property int numCellColumnsLandscape: {
         switch (Screen.sizeCategory) {
             case Screen.Small: return 4;
@@ -28,6 +31,7 @@ Page
             default: return 5;
         }
     }
+
     readonly property real cellSize: isPortrait ? width / numCellColumnsPortrait : width / numCellColumnsLandscape
     readonly property real maxCellSize: Math.max(Screen.height / numCellColumnsLandscape, Screen.width / numCellColumnsPortrait)
 
@@ -35,6 +39,8 @@ Page
 
     id: selectorimagespage
     allowedOrientations: defaultAllowedOrientations
+    canAccept: selectedFile.length > 0
+    onAccepted: actionCompleted("image", selectedFile)
 
     ImagesModel {
         id: imagesmodel
@@ -42,11 +48,6 @@ Page
         sortOrder: Qt.DescendingOrder
         recursive: false
         directoriesFirst: true
-    }
-
-    RemorsePopup {
-        id: remorsepopup
-        onCanceled: view.currentIndex = -1
     }
 
     SilicaFlickable
@@ -134,9 +135,10 @@ Page
             }
         }
 
-        PageHeader
+        DialogHeader
         {
             id: header
+            acceptText: qsTr("Send")
             title: imagesmodel.rootDir.split('/').pop();
         }
 
@@ -151,8 +153,12 @@ Page
             model: imagesmodel
 
             delegate: BackgroundItem {
+                property bool isSelected: (selectedFile === model.url)
+
                 width: cellSize
                 height: cellSize
+                highlighted: isSelected
+
                 onClicked: {
                     if (model.isDir) {
                         var nextPage = pageStack.push(Qt.resolvedUrl("SelectorImagesPage.qml"),
@@ -164,9 +170,8 @@ Page
                         nextPage.actionCompleted.connect(selectorimagespage.actionCompleted);
                     }
                     else if (view.currentIndex !== index) {
-                        remorsepopup.cancel();
                         view.currentIndex = index;
-                        remorsepopup.execute(qsTr("Selecting image"), function () { actionCompleted("image", model.url) });
+                        selectedFile = model.url.toString();
                     }
                 }
 

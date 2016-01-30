@@ -728,20 +728,16 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
         <translation>Home</translation>
     </message>
     <message>
-        <source>Selecting file</source>
-        <translation>Datei auswählen</translation>
-    </message>
-    <message>
         <source>Back</source>
         <translation>Zurück</translation>
+    </message>
+    <message>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SelectorImagesPage</name>
-    <message>
-        <source>Selecting image</source>
-        <translation>Bild auswählen</translation>
-    </message>
     <message>
         <source>Android storage</source>
         <translation>Android Speicher</translation>
@@ -769,6 +765,10 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
     <message>
         <source>Sort by date</source>
         <translation>Nach Datum sortieren</translation>
+    </message>
+    <message>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

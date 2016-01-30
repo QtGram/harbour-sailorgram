@@ -727,20 +727,16 @@ Stryg til venstre for at vælge en kontakt</translation>
         <translation>Hjem</translation>
     </message>
     <message>
-        <source>Selecting file</source>
-        <translation>Vælger fil</translation>
-    </message>
-    <message>
         <source>Back</source>
         <translation>Tilbage</translation>
+    </message>
+    <message>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SelectorImagesPage</name>
-    <message>
-        <source>Selecting image</source>
-        <translation>Vælger billede</translation>
-    </message>
     <message>
         <source>Android storage</source>
         <translation type="unfinished">Android storage</translation>
@@ -767,6 +763,10 @@ Stryg til venstre for at vælge en kontakt</translation>
     </message>
     <message>
         <source>Sort by date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -4,15 +4,18 @@ import Qt.labs.folderlistmodel 2.1
 import harbour.sailorgram.SailorGram 1.0
 import "../../models"
 
-Page
+Dialog
 {
     property Context context
+    property string selectedFile
     readonly property string rootPathLimit : "file:///"
 
     signal actionCompleted(string action, var data)
 
     id: selectorfilespage
     allowedOrientations: defaultAllowedOrientations
+    canAccept: selectedFile.length > 0
+    onAccepted: actionCompleted("file", selectedFile)
 
     FolderListModel
     {
@@ -59,9 +62,10 @@ Page
             }
         }
 
-        PageHeader
+        DialogHeader
         {
             id: header
+            acceptText: qsTr("Send")
             title: folderlistmodel.folder.toString().replace("file:///", "/")
         }
 
@@ -85,20 +89,23 @@ Page
             anchors { top: btnparent.bottom; left: parent.left; right: parent.right; bottom: parent.bottom }
 
             delegate: ListItem {
+                property string fileUrl: model.fileURL.toString()
+                property bool isSelected: (selectedFile === fileUrl)
+
                 contentHeight: Theme.itemSizeSmall
                 anchors { left: parent.left; right: parent.right }
+                highlighted: isSelected
 
                 onClicked: {
                     if (model.fileIsDir)
                         folderlistmodel.folder = model.fileURL;
                     else
-                        remorseAction(qsTr("Selecting file"), function() { actionCompleted("file", model.fileURL.toString()); });
+                        selectedFile = fileUrl;
                 }
 
                 Image {
                     id: imgfilefolder
                     source: (model.fileIsDir ? "image://theme/icon-m-folder" : "image://theme/icon-m-other")
-                    anchors.verticalCenter: parent.verticalCenter
                     anchors { left: parent.left; margins: Theme.paddingMedium; verticalCenter: parent.verticalCenter }
                 }
 
@@ -108,6 +115,8 @@ Page
                     wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                     maximumLineCount: 2
                     font.family: Theme.fontFamilyHeading
+                    font.bold: isSelected
+                    color: isSelected ? Theme.highlightColor : Theme.primaryColor
                     anchors { left: imgfilefolder.right; right: parent.right; margins: Theme.paddingMedium; verticalCenter: parent.verticalCenter }
                 }
             }

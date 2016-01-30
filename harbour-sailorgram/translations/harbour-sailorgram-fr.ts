@@ -727,20 +727,16 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
         <translation>Home</translation>
     </message>
     <message>
-        <source>Selecting file</source>
-        <translation>Choix de fichier</translation>
-    </message>
-    <message>
         <source>Back</source>
         <translation>Retour</translation>
+    </message>
+    <message>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SelectorImagesPage</name>
-    <message>
-        <source>Selecting image</source>
-        <translation>Choix d&apos;une image</translation>
-    </message>
     <message>
         <source>Android storage</source>
         <translation type="unfinished">Stockage Android</translation>
@@ -767,6 +763,10 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
     </message>
     <message>
         <source>Sort by date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -727,20 +727,16 @@ Svep åt vänster för att välja en kontakt</translation>
         <translation>Hemkatalog</translation>
     </message>
     <message>
-        <source>Selecting file</source>
-        <translation>Väljer fil</translation>
-    </message>
-    <message>
         <source>Back</source>
         <translation>Tillbaka</translation>
+    </message>
+    <message>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SelectorImagesPage</name>
-    <message>
-        <source>Selecting image</source>
-        <translation>Väljer bild</translation>
-    </message>
     <message>
         <source>Android storage</source>
         <translation>Android-lagring</translation>
@@ -768,6 +764,10 @@ Svep åt vänster för att välja en kontakt</translation>
     <message>
         <source>Sort by date</source>
         <translation>Sortera efter datum</translation>
+    </message>
+    <message>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

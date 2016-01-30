@@ -727,20 +727,16 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
         <translation>Home</translation>
     </message>
     <message>
-        <source>Selecting file</source>
-        <translation>Seleccionando archivo</translation>
-    </message>
-    <message>
         <source>Back</source>
         <translation>Volver</translation>
+    </message>
+    <message>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SelectorImagesPage</name>
-    <message>
-        <source>Selecting image</source>
-        <translation>Seleccionando imagen</translation>
-    </message>
     <message>
         <source>Android storage</source>
         <translation>Almacenamiento Android</translation>
@@ -768,6 +764,10 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
     <message>
         <source>Sort by date</source>
         <translation>Ordenar por fecha</translation>
+    </message>
+    <message>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
