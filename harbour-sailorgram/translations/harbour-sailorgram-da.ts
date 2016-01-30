@@ -692,13 +692,6 @@ Stryg til venstre for at vælge en kontakt</translation>
     </message>
 </context>
 <context>
-    <name>SearchBox</name>
-    <message>
-        <source>Search...</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>SecretDialogDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>

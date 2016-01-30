@@ -40,6 +40,11 @@ function replaceLtGt(s)
     return s.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
+function replaceAmpersand(s)
+{
+    return s.replace("&", "&amp;");
+}
+
 function replaceNewlines(s)
 {
     return s.replace(/(?:\r\n|\r|\n)/g, "<br/>");
@@ -49,6 +54,7 @@ function elaborate(s, emojipath, height, highlightcolor)
 {
     var res = replaceLtGt(s);
     res = replaceNewlines(res);
+    res = replaceAmpersand(res);
     res = Emoji.emojify(res, height, emojipath, false);
     res = linkify(res);
     res = mentionify(res, highlightcolor);
