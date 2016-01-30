@@ -15,11 +15,10 @@ Item
     id: searchlist
     height: searchbox.height + lvsearch.contentHeight
 
-    SearchBox
+    SearchField
     {
         id: searchbox
         anchors { left: parent.left; right: parent.right }
-        context: searchlist.context
     }
 
     SilicaListView
