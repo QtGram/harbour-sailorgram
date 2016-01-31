@@ -29,7 +29,10 @@ function colorizeText(message, context)
     if(message.out)
         return Silica.Theme.primaryColor;
 
-        return Silica.Theme.highlightDimmerColor;
+    if((context.bubblesopacity / 100.0) < 0.45)
+        return Silica.Theme.highlightColor;
+
+    return Silica.Theme.highlightDimmerColor;
 }
 
 function colorizeTick(message, context)
