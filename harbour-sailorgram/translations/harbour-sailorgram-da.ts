@@ -641,6 +641,13 @@ Stryg til venstre for at vælge en kontakt</translation>
     </message>
 </context>
 <context>
+    <name>MessageSearchItem</name>
+    <message>
+        <source>You:</source>
+        <translation type="unfinished">Dig:</translation>
+    </message>
+</context>
+<context>
     <name>PeerItem</name>
     <message>
         <source>%1 members</source>

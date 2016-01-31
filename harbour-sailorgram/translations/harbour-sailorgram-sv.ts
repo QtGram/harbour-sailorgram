@@ -641,6 +641,13 @@ Svep åt vänster för att välja en kontakt</translation>
     </message>
 </context>
 <context>
+    <name>MessageSearchItem</name>
+    <message>
+        <source>You:</source>
+        <translation type="unfinished">Du:</translation>
+    </message>
+</context>
+<context>
     <name>PeerItem</name>
     <message>
         <source>%1 members</source>

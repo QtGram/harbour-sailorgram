@@ -639,6 +639,13 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
     </message>
 </context>
 <context>
+    <name>MessageSearchItem</name>
+    <message>
+        <source>You:</source>
+        <translation type="unfinished">Tú:</translation>
+    </message>
+</context>
+<context>
     <name>PeerItem</name>
     <message>
         <source>%1 members</source>

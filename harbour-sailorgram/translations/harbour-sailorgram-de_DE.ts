@@ -637,6 +637,13 @@ Do a swype to the right to select a contact</source>
     </message>
 </context>
 <context>
+    <name>MessageSearchItem</name>
+    <message>
+        <source>You:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PeerItem</name>
     <message>
         <source>%1 members</source>

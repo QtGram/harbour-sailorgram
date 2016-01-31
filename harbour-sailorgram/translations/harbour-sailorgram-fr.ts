@@ -641,6 +641,13 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
     </message>
 </context>
 <context>
+    <name>MessageSearchItem</name>
+    <message>
+        <source>You:</source>
+        <translation type="unfinished">Vous :</translation>
+    </message>
+</context>
+<context>
     <name>PeerItem</name>
     <message>
         <source>%1 members</source>

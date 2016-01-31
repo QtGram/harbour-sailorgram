@@ -13,12 +13,27 @@ ListItem
 {
     property Context context
     property Message message
+    property Chat chat
     property User user
     property var dialog
 
     onMessageChanged: {
-        user = context.telegram.user(message.fromId);
         dialog = context.telegram.messageDialog(message.id);
+        peerimage.dialog = dialog;
+
+        var peerid = TelegramHelper.peerId(dialog);
+
+        if(TelegramHelper.isChat(dialog))
+        {
+            chat = context.telegram.chat(peerid);
+            user = context.telegram.user(message.fromId);
+            peerimage.chat = chat;
+        }
+        else
+        {
+            user = context.telegram.user(peerid);
+            peerimage.user = user;
+        }
     }
 
     id: searchitem
@@ -30,23 +45,22 @@ ListItem
 
         PeerImage
         {
-            id: userimage
+            id: peerimage
             width: searchitem.height
             height: searchitem.height
             context: searchitem.context
-            user: searchitem.user
         }
 
         Column
         {
-            width: parent.width - userimage.width
+            width: parent.width - peerimage.width
             anchors { top: parent.top; bottom: parent.bottom }
             spacing: Theme.paddingSmall
 
             Label
             {
                 id: lbltitle
-                text: TelegramHelper.completeName(user)
+                text: TelegramHelper.isChat(dialog) ? chat.title : TelegramHelper.completeName(user)
                 verticalAlignment: Text.AlignVCenter
                 height: searchitem.height / 2
                 anchors { left: parent.left; right: parent.right; rightMargin: Theme.paddingMedium }
@@ -54,44 +68,74 @@ ListItem
                 elide: Text.ElideRight
             }
 
-            MessageTextContent
+            Row
             {
-                id: lbllastmessage
-                anchors { left: parent.left; right: parent.right; rightMargin: Theme.paddingMedium }
+
                 height: searchitem.height / 2
-                elide: Text.ElideRight
-                verticalAlignment: Text.AlignVCenter
-                font.pixelSize: Theme.fontSizeExtraSmall
-                wrapMode: Text.NoWrap
-                maximumLineCount: 1
-                emojiPath: context.sailorgram.emojiPath
-                linkColor: Theme.secondaryColor
+                anchors { left: parent.left; right: parent.right; rightMargin: Theme.paddingMedium }
 
-                color: {
-                    if(TelegramHelper.isServiceMessage(message))
-                        return Theme.highlightColor;
+                Label
+                {
+                    id: lblfrom
+                    height: parent.height
+                    elide: Text.ElideRight
+                    verticalAlignment: Text.AlignVCenter
+                    color: Theme.highlightColor
+                    font.pixelSize: Theme.fontSizeExtraSmall
 
-                    return Theme.primaryColor;
-                }
+                    text: {
+                        if(!TelegramHelper.isServiceMessage(message))
+                        {
+                            if(TelegramHelper.isChat(dialog))
+                                return TelegramHelper.userDisplayName(user) + ": ";
 
-                font.italic: {
-                    if(TelegramHelper.isServiceMessage(message))
-                        return true;
+                            if(message && message.out)
+                                return qsTr("You:") + " ";
+                        }
 
-                    if(TelegramHelper.isMediaMessage(message) && (message.media.classType === TelegramConstants.typeMessageMediaDocument) && context.telegram.documentIsSticker(message.media.document))
-                        return true;
-
-                    return false;
-                }
-
-                rawText: {
-                    if(!message)
                         return "";
+                    }
+                }
 
-                    if(TelegramHelper.isServiceMessage(message))
-                        return TelegramAction.actionType(context.telegram, dialog, message);
+                MessageTextContent
+                {
+                    id: lbllastmessage
+                    width: parent.width - lblfrom.contentWidth
+                    height: parent.height
+                    elide: Text.ElideRight
+                    verticalAlignment: Text.AlignVCenter
+                    font.pixelSize: Theme.fontSizeExtraSmall
+                    wrapMode: Text.NoWrap
+                    maximumLineCount: 1
+                    emojiPath: context.sailorgram.emojiPath
+                    linkColor: Theme.secondaryColor
 
-                    return TelegramHelper.firstMessageLine(message);
+                    color: {
+                        if(TelegramHelper.isServiceMessage(message))
+                            return Theme.highlightColor;
+
+                        return Theme.primaryColor;
+                    }
+
+                    font.italic: {
+                        if(TelegramHelper.isServiceMessage(message))
+                            return true;
+
+                        if(TelegramHelper.isMediaMessage(message) && (message.media.classType === TelegramConstants.typeMessageMediaDocument) && context.telegram.documentIsSticker(message.media.document))
+                            return true;
+
+                        return false;
+                    }
+
+                    rawText: {
+                        if(!message)
+                            return "";
+
+                        if(TelegramHelper.isServiceMessage(message))
+                            return TelegramAction.actionType(context.telegram, dialog, message);
+
+                        return TelegramHelper.firstMessageLine(message);
+                    }
                 }
             }
         }
