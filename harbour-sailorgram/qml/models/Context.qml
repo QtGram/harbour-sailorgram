@@ -33,6 +33,7 @@ QtObject
     property ContactsModel contacts: ContactsModel { }
     property DialogsModel dialogs: DialogsModel { }
     property ErrorsModel errors: ErrorsModel { }
+    property StickersModel stickers: StickersModel { }
 
     property SailorGram sailorgram: SailorGram {
         telegram: context.telegram

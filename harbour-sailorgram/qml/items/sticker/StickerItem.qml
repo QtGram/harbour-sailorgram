@@ -5,19 +5,26 @@ import "../../models"
 
 BackgroundItem
 {
-    property alias stickerPath: filehandler.filePath
     property Context context
+    property alias stickerPath: filehandler.filePath
     property alias stickerDocument: filehandler.target
 
     FileHandler
     {
         id: filehandler
         telegram: context.telegram
-        Component.onCompleted: download()
+
+        onTargetTypeChanged: {
+            if(downloaded)
+                return;
+
+            download();
+        }
     }
 
     Image
     {
+        asynchronous: true
         source: filehandler.thumbPath
         fillMode: Image.PreserveAspectFit
         verticalAlignment: Image.AlignVCenter

@@ -11,42 +11,40 @@ Image
     property Chat chat
     property User user
 
-    onUserChanged: {
-        if(!user)
-            return;
+    FileHandler
+    {
+        id: filehandler
+        telegram: context.telegram
 
-        if(!user.photo.photoSmall.download.downloaded)
-            context.telegram.getFile(user.photo.photoSmall);
-    }
+        target: {
+            if(user)
+                return user.photo.photoSmall;
 
-    onChatChanged: {
-        if(!chat)
-            return;
+            if(chat)
+                return chat.photo.photoSmall;
 
-        if(!chat.photo.photoSmall.download.downloaded)
-            context.telegram.getFile(chat.photo.photoSmall);
+            return null;
+        }
+
+        onTargetTypeChanged: {
+            if(downloaded)
+                return;
+
+            download();
+        }
     }
 
     id: imgpeer
-    fillMode: Image.PreserveAspectFit
     asynchronous: true
-
-    source: {
-        if(user)
-            return user.photo.photoSmall.download.location;
-
-        if(chat)
-            return chat.photo.photoSmall.download.location;
-
-        return "";
-    }
+    fillMode: Image.PreserveAspectFit
+    source: filehandler.filePath
 
     Rectangle {
         id: imgfallback
         anchors.fill: parent
         color: Theme.secondaryHighlightColor
         radius: imgpeer.width * 0.5
-        visible: (source.toString().length <= 0) || (imgpeer.status === Image.Error)
+        visible: !filehandler.downloaded || (imgpeer.status === Image.Error)
 
         Label {
             anchors.centerIn: parent
@@ -58,6 +56,7 @@ Image
     Image
     {
         id: imgpeertype
+        asynchronous: true
         anchors { bottom: parent.bottom; right: parent.right }
         fillMode: Image.PreserveAspectFit
         visible: dialog && (dialog.encrypted || TelegramHelper.isChat(dialog))

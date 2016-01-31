@@ -14,15 +14,16 @@ Dialog
 
     signal actionCompleted(string action, var data)
 
-    id: selectorstickerpage
+    id: dlgselectorsticker
     allowedOrientations: defaultAllowedOrientations
     canAccept: selectedSticker !== null
     onAccepted: actionCompleted("sticker", selectedSticker)
 
-    TelegramQml.StickersModel
-    {
-        id: stickersmodel
-        telegram: context.telegram
+    onStatusChanged: {
+        if(dlgselectorsticker.status !== PageStatus.Active)
+            return;
+
+        context.stickers.telegram = context.telegram;
     }
 
     DialogHeader
@@ -31,7 +32,7 @@ Dialog
         acceptText: qsTr("Send")
 
         title: {
-            var stickerset = stickersmodel.stickerSetItem(stickersmodel.currentStickerSet);
+            var stickerset = context.stickers.stickerSetItem(context.stickers.currentStickerSet);
 
             if(stickerset)
                 return stickerset.title;
@@ -42,7 +43,7 @@ Dialog
 
     SilicaGridView
     {
-        readonly property int columns: (selectorstickerpage.isPortrait ? 5 : 9)
+        readonly property int columns: (dlgselectorsticker.isPortrait ? 5 : 9)
         readonly property int spacing: Theme.paddingSmall
         readonly property real itemSize : (((width + spacing) / columns) - spacing)
 
@@ -53,14 +54,14 @@ Dialog
         anchors { top: header.bottom; left: parent.left; right: parent.right; bottom: lvstickersets.top }
         cellWidth: itemSize
         cellHeight: itemSize
-        model: stickersmodel
+        model: context.stickers
         clip: true
 
         delegate: StickerItem {
             id: stickeritem
             width: stickergrid.itemSize - stickergrid.spacing
             height: stickergrid.itemSize - stickergrid.spacing
-            context: selectorstickerpage.context
+            context: dlgselectorsticker.context
             stickerDocument: document
             highlighted: (selectedSticker === stickeritem.stickerDocument)
 
@@ -71,7 +72,7 @@ Dialog
 
         ViewPlaceholder
         {
-            enabled: stickergrid.count <= 0
+            enabled: context.stickers.count <= 0
             text: qsTr("Select a Sticker Set from below")
         }
     }
@@ -82,20 +83,20 @@ Dialog
         anchors { left: parent.left; right: parent.right; bottom: parent.bottom; bottomMargin: Theme.paddingSmall }
         orientation: ListView.Horizontal
         height: Theme.itemSizeLarge
-        model: stickersmodel.stickerSets
+        model: context.stickers.stickerSets
         spacing: Theme.paddingSmall
         clip: true
 
         delegate: StickerSetImage {
             width: Theme.itemSizeMedium
             contentHeight: parent.height
-            context: selectorstickerpage.context
-            stickersModel: stickersmodel
+            context: dlgselectorsticker.context
+            stickersModel: context.stickers
             stickerSetId: modelData
-            highlighted: (stickersmodel.currentStickerSet === modelData)
+            highlighted: (context.stickers.currentStickerSet === modelData)
 
             onClicked: {
-                stickersmodel.currentStickerSet = modelData;
+                context.stickers.currentStickerSet = modelData;
             }
         }
     }

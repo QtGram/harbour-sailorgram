@@ -12,6 +12,13 @@ Page
     id: contactspage
     allowedOrientations: defaultAllowedOrientations
 
+    onStatusChanged: {
+        if(status !== PageStatus.Active)
+            return;
+
+        context.contacts.telegram = context.telegram;
+    }
+
     SilicaListView
     {
         PullDownMenu

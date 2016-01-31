@@ -18,6 +18,13 @@ Page
     id: selectormainpage
     allowedOrientations: defaultAllowedOrientations
 
+    onStatusChanged: {
+        if(status !== PageStatus.Active)
+            return;
+
+        context.stickers.telegram = context.telegram; // Preload stickers
+    }
+
     PageHeader { id: header; title: qsTr ("Send file") }
 
     Item

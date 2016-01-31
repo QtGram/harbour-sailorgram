@@ -64,7 +64,6 @@ Page
         pageStack.pushAttached(Qt.resolvedUrl("../contacts/ContactsPage.qml"), { "context": dialogspage.context });
         context.sailorgram.foregroundDialog = null; // Reset Foreground Dialog
         context.dialogs.telegram = context.telegram; // Balance load: Load after DialogsPage is displayed
-        context.contacts.telegram = context.telegram;
     }
 
     Connections

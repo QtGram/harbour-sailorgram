@@ -19,9 +19,11 @@ ListItem
         telegram: context.telegram
         target: stickersetimage.document
 
-        onTargetChanged: {
-            if(!filehandler.downloaded)
-                download();
+        onTargetTypeChanged: {
+            if(downloaded)
+                return;
+
+            download();
         }
     }
 
@@ -34,6 +36,7 @@ ListItem
 
     Image
     {
+        asynchronous: true
         source: filehandler.thumbPath
         fillMode: Image.PreserveAspectFit
         anchors { left: parent.left; top: parent.top; right: parent.right; bottom: selectionrect.top; bottomMargin: Theme.paddingSmall; topMargin: Theme.paddingSmall }

@@ -40,11 +40,7 @@ Item
             contentHeight: Theme.itemSizeSmall
             context: searchlist.context
             message: item
-
-            onClicked: {
-                searchbox.text = "";
-                messageClicked(searchitem.message);
-            }
+            onClicked: messageClicked(searchitem.message);
         }
     }
 }

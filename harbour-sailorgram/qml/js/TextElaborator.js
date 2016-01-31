@@ -52,9 +52,9 @@ function replaceNewlines(s)
 
 function elaborate(s, emojipath, height, highlightcolor)
 {
-    var res = replaceLtGt(s);
+    var res = replaceAmpersand(s);
+    res = replaceLtGt(res);
     res = replaceNewlines(res);
-    res = replaceAmpersand(res);
     res = Emoji.emojify(res, height, emojipath, false);
     res = linkify(res);
     res = mentionify(res, highlightcolor);
