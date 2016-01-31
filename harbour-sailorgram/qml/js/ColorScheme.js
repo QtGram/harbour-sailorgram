@@ -21,9 +21,9 @@ function colorizeText(message, context)
             return Silica.Theme.primaryColor;
 
         if(message.out)
-            return Silica.Theme.primaryColor;
+            return Silica.Theme.highlightColor;
 
-        return Silica.Theme.highlightColor;
+        return Silica.Theme.primaryColor;
     }
 
     if(message.out)
