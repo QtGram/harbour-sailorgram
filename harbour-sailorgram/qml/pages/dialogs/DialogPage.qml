@@ -113,6 +113,7 @@ Page
 
             model: MessagesModel {
                 id: messagesmodel
+                stepCount: context.stepcount
 
                 onCountChanged: {
                     if((count <= 0) || (Qt.application.state !== Qt.ApplicationActive))

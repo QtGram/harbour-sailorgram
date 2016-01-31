@@ -37,6 +37,7 @@ class TELEGRAMQMLSHARED_EXPORT TelegramMessagesModel : public TgAbstractListMode
     Q_PROPERTY(bool initializing READ initializing NOTIFY initializingChanged)
     Q_PROPERTY(bool refreshing  READ refreshing  NOTIFY refreshingChanged)
     Q_PROPERTY(int maxId READ maxId WRITE setMaxId NOTIFY maxIdChanged)
+    Q_PROPERTY(int stepCount READ stepCount WRITE setStepCount NOTIFY stepCountChanged)
     Q_PROPERTY(bool hasNewMessage READ hasNewMessage NOTIFY hasNewMessageChanged)
 
 public:
@@ -56,6 +57,9 @@ public:
 
     void setMaxId(int id);
     int maxId() const;
+
+    void setStepCount(int step);
+    int stepCount() const;
 
     Q_INVOKABLE int indexOf(qint64 msgId) const;
 
@@ -88,6 +92,7 @@ Q_SIGNALS:
     void initializingChanged();
     void refreshingChanged();
     void maxIdChanged();
+    void stepCountChanged();
     void messageAdded(qint64 msgId);
     void hasNewMessageChanged();
     void focusToNewRequest(int unreads);
