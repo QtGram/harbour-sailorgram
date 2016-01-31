@@ -381,20 +381,32 @@ non lus</translation>
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Debug</source>
-        <translation>Déboguer</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation>Actualiser</translation>
-    </message>
-    <message>
-        <source>Contacts:</source>
-        <translation>Contacts :</translation>
-    </message>
-    <message>
         <source>Error log</source>
         <translation>Journal d&apos;erreur</translation>
+    </message>
+    <message>
+        <source>Clear errors</source>
+        <translation type="unfinished">Supprimer les erreurs</translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
+        <translation type="unfinished">Suppression des erreurs</translation>
+    </message>
+    <message>
+        <source>Error log is empty</source>
+        <translation type="unfinished">Le journal d&apos;erreur est vide</translation>
+    </message>
+    <message>
+        <source>Error code:</source>
+        <translation type="unfinished">Code d&apos;erreur :</translation>
+    </message>
+    <message>
+        <source>Function:</source>
+        <translation type="unfinished">Fonction :</translation>
+    </message>
+    <message>
+        <source>Message:</source>
+        <translation type="unfinished">Message :</translation>
     </message>
 </context>
 <context>
@@ -520,37 +532,6 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
     </message>
 </context>
 <context>
-    <name>ErrorsPage</name>
-    <message>
-        <source>Clear errors</source>
-        <translation>Supprimer les erreurs</translation>
-    </message>
-    <message>
-        <source>Error log is empty</source>
-        <translation>Le journal d&apos;erreur est vide</translation>
-    </message>
-    <message>
-        <source>Error log</source>
-        <translation>Journal d&apos;erreur</translation>
-    </message>
-    <message>
-        <source>Error code:</source>
-        <translation>Code d&apos;erreur :</translation>
-    </message>
-    <message>
-        <source>Function:</source>
-        <translation>Fonction :</translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
-        <translation>Suppression des erreurs</translation>
-    </message>
-    <message>
-        <source>Message:</source>
-        <translation>Message :</translation>
-    </message>
-</context>
-<context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
@@ -631,6 +612,10 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
     <message>
         <source>Downloading media</source>
         <translation>Téléchargement du média</translation>
+    </message>
+    <message>
+        <source>Install Sticker set</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

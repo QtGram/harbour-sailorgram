@@ -381,20 +381,32 @@ berichten</translation>
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Debug</source>
-        <translation>Foutopsporing</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation>Herladen</translation>
-    </message>
-    <message>
-        <source>Contacts:</source>
-        <translation>Contactpersonen:</translation>
-    </message>
-    <message>
         <source>Error log</source>
         <translation>Foutenlogbestand</translation>
+    </message>
+    <message>
+        <source>Clear errors</source>
+        <translation type="unfinished">Fouten wissen</translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
+        <translation type="unfinished">Bezig met het verwijderen van de fouten</translation>
+    </message>
+    <message>
+        <source>Error log is empty</source>
+        <translation type="unfinished">Het foutenlogbestand is leeg</translation>
+    </message>
+    <message>
+        <source>Error code:</source>
+        <translation type="unfinished">Foutcode:</translation>
+    </message>
+    <message>
+        <source>Function:</source>
+        <translation type="unfinished">Functie:</translation>
+    </message>
+    <message>
+        <source>Message:</source>
+        <translation type="unfinished">Bericht:</translation>
     </message>
 </context>
 <context>
@@ -520,37 +532,6 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     </message>
 </context>
 <context>
-    <name>ErrorsPage</name>
-    <message>
-        <source>Clear errors</source>
-        <translation>Fouten wissen</translation>
-    </message>
-    <message>
-        <source>Error log is empty</source>
-        <translation>Het foutenlogbestand is leeg</translation>
-    </message>
-    <message>
-        <source>Error log</source>
-        <translation>Foutenlogbestand</translation>
-    </message>
-    <message>
-        <source>Error code:</source>
-        <translation>Foutcode:</translation>
-    </message>
-    <message>
-        <source>Function:</source>
-        <translation>Functie:</translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
-        <translation>Bezig met het verwijderen van de fouten</translation>
-    </message>
-    <message>
-        <source>Message:</source>
-        <translation>Bericht:</translation>
-    </message>
-</context>
-<context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
@@ -632,6 +613,10 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
         <source>Downloading media</source>
         <translation>Bezig met het downloaden van de media</translation>
     </message>
+    <message>
+        <source>Install Sticker set</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageQuotedItem</name>
@@ -644,7 +629,7 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     <name>MessageSearchItem</name>
     <message>
         <source>You:</source>
-        <translation type="unfinished">U:</translation>
+        <translation>U:</translation>
     </message>
 </context>
 <context>
@@ -741,7 +726,7 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     </message>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Versturen</translation>
     </message>
 </context>
 <context>
@@ -776,7 +761,7 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     </message>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Versturen</translation>
     </message>
 </context>
 <context>
@@ -864,11 +849,11 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     <name>SelectorStickerPage</name>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Versturen</translation>
     </message>
     <message>
         <source>Select a Sticker Set from below</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer hieronder een stickerverzameling</translation>
     </message>
 </context>
 <context>

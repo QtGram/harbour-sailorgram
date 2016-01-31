@@ -381,20 +381,32 @@ meddelanden</translation>
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Debug</source>
-        <translation>Felsök</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation>Uppdatera</translation>
-    </message>
-    <message>
-        <source>Contacts:</source>
-        <translation>Kontakter:</translation>
-    </message>
-    <message>
         <source>Error log</source>
         <translation>Fellogg</translation>
+    </message>
+    <message>
+        <source>Clear errors</source>
+        <translation type="unfinished">Rensa felloggen</translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
+        <translation type="unfinished">Tar bort fel</translation>
+    </message>
+    <message>
+        <source>Error log is empty</source>
+        <translation type="unfinished">Felloggen är tom</translation>
+    </message>
+    <message>
+        <source>Error code:</source>
+        <translation type="unfinished">Felkod:</translation>
+    </message>
+    <message>
+        <source>Function:</source>
+        <translation type="unfinished">Funktion:</translation>
+    </message>
+    <message>
+        <source>Message:</source>
+        <translation type="unfinished">Meddelande:</translation>
     </message>
 </context>
 <context>
@@ -520,37 +532,6 @@ Svep åt vänster för att välja en kontakt</translation>
     </message>
 </context>
 <context>
-    <name>ErrorsPage</name>
-    <message>
-        <source>Clear errors</source>
-        <translation>Rensa felloggen</translation>
-    </message>
-    <message>
-        <source>Error log is empty</source>
-        <translation>Felloggen är tom</translation>
-    </message>
-    <message>
-        <source>Error log</source>
-        <translation>Fellogg</translation>
-    </message>
-    <message>
-        <source>Error code:</source>
-        <translation>Felkod:</translation>
-    </message>
-    <message>
-        <source>Function:</source>
-        <translation>Funktion:</translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
-        <translation>Tar bort fel</translation>
-    </message>
-    <message>
-        <source>Message:</source>
-        <translation>Meddelande:</translation>
-    </message>
-</context>
-<context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
@@ -632,6 +613,10 @@ Svep åt vänster för att välja en kontakt</translation>
         <source>Downloading media</source>
         <translation>Laddar ner media</translation>
     </message>
+    <message>
+        <source>Install Sticker set</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageQuotedItem</name>
@@ -644,7 +629,7 @@ Svep åt vänster för att välja en kontakt</translation>
     <name>MessageSearchItem</name>
     <message>
         <source>You:</source>
-        <translation type="unfinished">Du:</translation>
+        <translation>Du:</translation>
     </message>
 </context>
 <context>
@@ -741,7 +726,7 @@ Svep åt vänster för att välja en kontakt</translation>
     </message>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Skicka</translation>
     </message>
 </context>
 <context>
@@ -776,7 +761,7 @@ Svep åt vänster för att välja en kontakt</translation>
     </message>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Skicka</translation>
     </message>
 </context>
 <context>
@@ -864,11 +849,11 @@ Svep åt vänster för att välja en kontakt</translation>
     <name>SelectorStickerPage</name>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Skicka</translation>
     </message>
     <message>
         <source>Select a Sticker Set from below</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj en märkesuppsättning nedan</translation>
     </message>
 </context>
 <context>

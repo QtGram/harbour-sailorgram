@@ -29,6 +29,7 @@ QtObject
         return ver;
     }
 
+    property Document currentSticker: null
     property ScreenBlank screenblank: ScreenBlank { }
     property ContactsModel contacts: ContactsModel { }
     property DialogsModel dialogs: DialogsModel { }
@@ -52,6 +53,14 @@ QtObject
         autoAcceptEncrypted: true
 
         onErrorSignal: errors.addError(errorCode, functionName, errorText)
+
+        onDocumentStickerRecieved: {
+            if(document !== context.currentSticker)
+                return
+
+            context.telegram.installStickerSet(set.shortName);
+            context.currentSticker = null;
+        }
 
         onIncomingMessage: {
             var elaboratedtext = TextElaborator.elaborateNotify(TelegramHelper.messageContent(msg), sailorgram.emojiPath, Theme.fontSizeSmall);

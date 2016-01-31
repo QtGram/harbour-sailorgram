@@ -150,6 +150,20 @@ function isMediaMessage(message)
     return true;
 }
 
+function isSticker(context, message)
+{
+    if(!isMediaMessage(message))
+        return false;
+
+    if(message.media.classType !== TelegramConstants.typeMessageMediaDocument)
+        return false;
+
+    if(context.telegram.documentIsSticker(message.media.document))
+        return true;
+
+    return false;
+}
+
 function peerId(dialog)
 {
     if(dialog.peer.classType === TelegramConstants.typePeerChat)

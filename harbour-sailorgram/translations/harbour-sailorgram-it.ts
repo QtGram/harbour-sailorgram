@@ -379,20 +379,32 @@ messages</source>
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Debug</source>
-        <translation>Debug</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation>Aggiorna</translation>
-    </message>
-    <message>
-        <source>Contacts:</source>
-        <translation>Contatti:</translation>
-    </message>
-    <message>
         <source>Error log</source>
         <translation>Log degli errori</translation>
+    </message>
+    <message>
+        <source>Clear errors</source>
+        <translation type="unfinished">Cancella gli errori</translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
+        <translation type="unfinished">Rimozione errori:</translation>
+    </message>
+    <message>
+        <source>Error log is empty</source>
+        <translation type="unfinished">Il log degli errori è vuoto</translation>
+    </message>
+    <message>
+        <source>Error code:</source>
+        <translation type="unfinished">Codice d&apos;errore:</translation>
+    </message>
+    <message>
+        <source>Function:</source>
+        <translation type="unfinished">Funzione:</translation>
+    </message>
+    <message>
+        <source>Message:</source>
+        <translation type="unfinished">Messaggi:</translation>
     </message>
 </context>
 <context>
@@ -518,37 +530,6 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
 </context>
 <context>
-    <name>ErrorsPage</name>
-    <message>
-        <source>Clear errors</source>
-        <translation>Cancella gli errori</translation>
-    </message>
-    <message>
-        <source>Error log is empty</source>
-        <translation>Il log degli errori è vuoto</translation>
-    </message>
-    <message>
-        <source>Error log</source>
-        <translation>Log degli errori</translation>
-    </message>
-    <message>
-        <source>Error code:</source>
-        <translation>Codice d&apos;errore:</translation>
-    </message>
-    <message>
-        <source>Function:</source>
-        <translation>Funzione:</translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
-        <translation>Rimozione errori:</translation>
-    </message>
-    <message>
-        <source>Message:</source>
-        <translation>Messaggi:</translation>
-    </message>
-</context>
-<context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
@@ -629,6 +610,10 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     <message>
         <source>Downloading media</source>
         <translation>Scaricamento file multimediale</translation>
+    </message>
+    <message>
+        <source>Install Sticker set</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

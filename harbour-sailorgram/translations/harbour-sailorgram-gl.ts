@@ -381,20 +381,32 @@ sen ler</translation>
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Debug</source>
-        <translation>Debug</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation>Recargar</translation>
-    </message>
-    <message>
-        <source>Contacts:</source>
-        <translation>Contactos:</translation>
-    </message>
-    <message>
         <source>Error log</source>
         <translation>Log de errores</translation>
+    </message>
+    <message>
+        <source>Clear errors</source>
+        <translation type="unfinished">Limpar erros</translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
+        <translation type="unfinished">Borrando errores</translation>
+    </message>
+    <message>
+        <source>Error log is empty</source>
+        <translation type="unfinished">O log de errores está baleiro</translation>
+    </message>
+    <message>
+        <source>Error code:</source>
+        <translation type="unfinished">Código de erro:</translation>
+    </message>
+    <message>
+        <source>Function:</source>
+        <translation type="unfinished">Función:</translation>
+    </message>
+    <message>
+        <source>Message:</source>
+        <translation type="unfinished">Mensaxe:</translation>
     </message>
 </context>
 <context>
@@ -520,37 +532,6 @@ Desprace a dereita para seleccionar un contacto</translation>
     </message>
 </context>
 <context>
-    <name>ErrorsPage</name>
-    <message>
-        <source>Clear errors</source>
-        <translation>Limpar erros</translation>
-    </message>
-    <message>
-        <source>Error log is empty</source>
-        <translation>O log de errores está baleiro</translation>
-    </message>
-    <message>
-        <source>Error log</source>
-        <translation>Log de errores</translation>
-    </message>
-    <message>
-        <source>Error code:</source>
-        <translation>Código de erro:</translation>
-    </message>
-    <message>
-        <source>Function:</source>
-        <translation>Función:</translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
-        <translation>Borrando errores</translation>
-    </message>
-    <message>
-        <source>Message:</source>
-        <translation>Mensaxe:</translation>
-    </message>
-</context>
-<context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
@@ -631,6 +612,10 @@ Desprace a dereita para seleccionar un contacto</translation>
     <message>
         <source>Downloading media</source>
         <translation>A descargar multimedia</translation>
+    </message>
+    <message>
+        <source>Install Sticker set</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

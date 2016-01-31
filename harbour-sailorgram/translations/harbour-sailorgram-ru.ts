@@ -381,20 +381,32 @@ messages</source>
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Debug</source>
-        <translation>Отладка</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation>Обновить</translation>
-    </message>
-    <message>
-        <source>Contacts:</source>
-        <translation>Контакты:</translation>
-    </message>
-    <message>
         <source>Error log</source>
         <translation>Журнал ошибок</translation>
+    </message>
+    <message>
+        <source>Clear errors</source>
+        <translation type="unfinished">Очистить ошибки</translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
+        <translation type="unfinished">Удаление ошибок</translation>
+    </message>
+    <message>
+        <source>Error log is empty</source>
+        <translation type="unfinished">Журнал ошибок пуст</translation>
+    </message>
+    <message>
+        <source>Error code:</source>
+        <translation type="unfinished">Код ошибки:</translation>
+    </message>
+    <message>
+        <source>Function:</source>
+        <translation type="unfinished">Функция:</translation>
+    </message>
+    <message>
+        <source>Message:</source>
+        <translation type="unfinished">Сообщение:</translation>
     </message>
 </context>
 <context>
@@ -520,37 +532,6 @@ Do a swype to the right to select a contact</source>
     </message>
 </context>
 <context>
-    <name>ErrorsPage</name>
-    <message>
-        <source>Clear errors</source>
-        <translation>Очистить ошибки</translation>
-    </message>
-    <message>
-        <source>Error log is empty</source>
-        <translation>Журнал ошибок пуст</translation>
-    </message>
-    <message>
-        <source>Error log</source>
-        <translation>Журнал ошибок</translation>
-    </message>
-    <message>
-        <source>Error code:</source>
-        <translation>Код ошибки:</translation>
-    </message>
-    <message>
-        <source>Function:</source>
-        <translation>Функция:</translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
-        <translation>Удаление ошибок</translation>
-    </message>
-    <message>
-        <source>Message:</source>
-        <translation>Сообщение:</translation>
-    </message>
-</context>
-<context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
@@ -632,6 +613,10 @@ Do a swype to the right to select a contact</source>
         <source>Downloading media</source>
         <translation>Загрузка медиа</translation>
     </message>
+    <message>
+        <source>Install Sticker set</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageQuotedItem</name>
@@ -644,7 +629,7 @@ Do a swype to the right to select a contact</source>
     <name>MessageSearchItem</name>
     <message>
         <source>You:</source>
-        <translation type="unfinished">Вы:</translation>
+        <translation>Вы:</translation>
     </message>
 </context>
 <context>
@@ -868,7 +853,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Select a Sticker Set from below</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите набор стикеров внизу</translation>
     </message>
 </context>
 <context>

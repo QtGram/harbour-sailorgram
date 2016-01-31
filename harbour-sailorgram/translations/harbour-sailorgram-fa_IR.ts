@@ -379,20 +379,32 @@ messages</source>
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Debug</source>
-        <translation>اشکال‌زدایی</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation>بازآوری</translation>
-    </message>
-    <message>
-        <source>Contacts:</source>
-        <translation>آشنایان:</translation>
-    </message>
-    <message>
         <source>Error log</source>
         <translation>خطانگاره</translation>
+    </message>
+    <message>
+        <source>Clear errors</source>
+        <translation type="unfinished">پاک‌کردن خطاها</translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
+        <translation type="unfinished">در حال حذف خطاها</translation>
+    </message>
+    <message>
+        <source>Error log is empty</source>
+        <translation type="unfinished">خطانگاره خالی است</translation>
+    </message>
+    <message>
+        <source>Error code:</source>
+        <translation type="unfinished">کد خطا:</translation>
+    </message>
+    <message>
+        <source>Function:</source>
+        <translation type="unfinished">عملکرد:</translation>
+    </message>
+    <message>
+        <source>Message:</source>
+        <translation type="unfinished">پیام:</translation>
     </message>
 </context>
 <context>
@@ -516,37 +528,6 @@ Do a swype to the right to select a contact</source>
     </message>
 </context>
 <context>
-    <name>ErrorsPage</name>
-    <message>
-        <source>Clear errors</source>
-        <translation>پاک‌کردن خطاها</translation>
-    </message>
-    <message>
-        <source>Error log is empty</source>
-        <translation>خطانگاره خالی است</translation>
-    </message>
-    <message>
-        <source>Error log</source>
-        <translation>خطانگاره</translation>
-    </message>
-    <message>
-        <source>Error code:</source>
-        <translation>کد خطا:</translation>
-    </message>
-    <message>
-        <source>Function:</source>
-        <translation>عملکرد:</translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
-        <translation>در حال حذف خطاها</translation>
-    </message>
-    <message>
-        <source>Message:</source>
-        <translation>پیام:</translation>
-    </message>
-</context>
-<context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
@@ -627,6 +608,10 @@ Do a swype to the right to select a contact</source>
     <message>
         <source>Downloading media</source>
         <translation>در حال بارگیری رسانه</translation>
+    </message>
+    <message>
+        <source>Install Sticker set</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

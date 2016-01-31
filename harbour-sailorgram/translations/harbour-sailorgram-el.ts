@@ -93,7 +93,7 @@
     </message>
     <message>
         <source>Icon Designers</source>
-        <translation type="unfinished"></translation>
+        <translation>Σχεδιαστές εικονιδίων</translation>
     </message>
 </context>
 <context>
@@ -315,12 +315,14 @@ Minimum length is 5 characters.</source>
     <message>
         <source>Unread
 message</source>
-        <translation type="unfinished"></translation>
+        <translation>Μη αναγνωσμένο
+μήνυμα</translation>
     </message>
     <message>
         <source>Unread
 messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Μη αναγνωσμένα
+μηνύματα</translation>
     </message>
     <message>
         <source>Disconnected</source>
@@ -332,7 +334,7 @@ messages</source>
     </message>
     <message>
         <source>Recent chats:</source>
-        <translation type="unfinished"></translation>
+        <translation>Πρόσφατες συνομιλίες: </translation>
     </message>
 </context>
 <context>
@@ -379,20 +381,32 @@ messages</source>
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Debug</source>
-        <translation>Debug</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation>Ανανέωση</translation>
-    </message>
-    <message>
-        <source>Contacts:</source>
-        <translation>Επαφές:</translation>
-    </message>
-    <message>
         <source>Error log</source>
         <translation>Καταγραφή σφαλμάτων</translation>
+    </message>
+    <message>
+        <source>Clear errors</source>
+        <translation type="unfinished">Καθαρισμός καταγραφής σφαλμάτων</translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
+        <translation type="unfinished">Τα σφάλματα διαγράφονται</translation>
+    </message>
+    <message>
+        <source>Error log is empty</source>
+        <translation type="unfinished">Το αρχείο καταγραφής σφαλμάτων είναι άδειο</translation>
+    </message>
+    <message>
+        <source>Error code:</source>
+        <translation type="unfinished">Κωδικός σφάλματος</translation>
+    </message>
+    <message>
+        <source>Function:</source>
+        <translation type="unfinished">Λειτουργία:</translation>
+    </message>
+    <message>
+        <source>Message:</source>
+        <translation type="unfinished">Μήνυμα:</translation>
     </message>
 </context>
 <context>
@@ -519,37 +533,6 @@ Do a swype to the right to select a contact</source>
     </message>
 </context>
 <context>
-    <name>ErrorsPage</name>
-    <message>
-        <source>Clear errors</source>
-        <translation>Καθαρισμός καταγραφής σφαλμάτων</translation>
-    </message>
-    <message>
-        <source>Error log is empty</source>
-        <translation>Το αρχείο καταγραφής σφαλμάτων είναι άδειο</translation>
-    </message>
-    <message>
-        <source>Error log</source>
-        <translation>Καταγραφή σφαλμάτων</translation>
-    </message>
-    <message>
-        <source>Error code:</source>
-        <translation>Κωδικός σφάλματος</translation>
-    </message>
-    <message>
-        <source>Function:</source>
-        <translation>Λειτουργία:</translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
-        <translation>Τα σφάλματα διαγράφονται</translation>
-    </message>
-    <message>
-        <source>Message:</source>
-        <translation>Μήνυμα:</translation>
-    </message>
-</context>
-<context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
@@ -630,6 +613,10 @@ Do a swype to the right to select a contact</source>
     <message>
         <source>Downloading media</source>
         <translation>Γίνεται λήψη πολυμέσων </translation>
+    </message>
+    <message>
+        <source>Install Sticker set</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -748,31 +735,31 @@ Do a swype to the right to select a contact</source>
     <name>SelectorImagesPage</name>
     <message>
         <source>Android storage</source>
-        <translation type="unfinished">Αποθήκευση Android</translation>
+        <translation>Αποθήκευση Android</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished">Κάρτα SD</translation>
+        <translation>Κάρτα SD</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished">Home</translation>
+        <translation>Home</translation>
     </message>
     <message>
         <source>Sort ascending</source>
-        <translation type="unfinished"></translation>
+        <translation>Αύξουσα ταξινόμηση</translation>
     </message>
     <message>
         <source>Sort descending</source>
-        <translation type="unfinished"></translation>
+        <translation>Φθίνουσα ταξινόμηση</translation>
     </message>
     <message>
         <source>Sort by name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ταξινόμηση κατά όνομα</translation>
     </message>
     <message>
         <source>Sort by date</source>
-        <translation type="unfinished"></translation>
+        <translation>Ταξινόμηση κατά ημερομηνία</translation>
     </message>
     <message>
         <source>Send</source>
@@ -950,7 +937,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>%1 added %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 προστέθηκαν %2</translation>
     </message>
 </context>
 <context>
@@ -1009,19 +996,19 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>Πληκτρολογεί...</translation>
     </message>
     <message>
         <source>%1 is typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 πληκτρολογεί...</translation>
     </message>
     <message>
         <source>%1 and %2 are typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 και %2 πληκτρολογούν...</translation>
     </message>
     <message>
         <source>%1 members are typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 μέλη πληκτρολογούν...</translation>
     </message>
 </context>
 <context>
@@ -1040,7 +1027,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Ενέργειες</translation>
+        <translation>Ενέργειες</translation>
     </message>
 </context>
 <context>

@@ -379,20 +379,32 @@ messages</source>
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Debug</source>
-        <translation>Адладка</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation>Абнавіць</translation>
-    </message>
-    <message>
-        <source>Contacts:</source>
-        <translation>Кантакты:</translation>
-    </message>
-    <message>
         <source>Error log</source>
         <translation>Дзённік памылак</translation>
+    </message>
+    <message>
+        <source>Clear errors</source>
+        <translation type="unfinished">Ачысьціць памылкі</translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
+        <translation type="unfinished">Выдаленне памылак</translation>
+    </message>
+    <message>
+        <source>Error log is empty</source>
+        <translation type="unfinished">Дзённік памылак пусты</translation>
+    </message>
+    <message>
+        <source>Error code:</source>
+        <translation type="unfinished">Код памылкі:</translation>
+    </message>
+    <message>
+        <source>Function:</source>
+        <translation type="unfinished">Функцыя:</translation>
+    </message>
+    <message>
+        <source>Message:</source>
+        <translation type="unfinished">Паведамленне:</translation>
     </message>
 </context>
 <context>
@@ -516,37 +528,6 @@ Do a swype to the right to select a contact</source>
     </message>
 </context>
 <context>
-    <name>ErrorsPage</name>
-    <message>
-        <source>Clear errors</source>
-        <translation>Ачысьціць памылкі</translation>
-    </message>
-    <message>
-        <source>Error log is empty</source>
-        <translation>Дзённік памылак пусты</translation>
-    </message>
-    <message>
-        <source>Error log</source>
-        <translation>Дзённік памылак</translation>
-    </message>
-    <message>
-        <source>Error code:</source>
-        <translation>Код памылкі:</translation>
-    </message>
-    <message>
-        <source>Function:</source>
-        <translation>Функцыя:</translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
-        <translation>Выдаленне памылак</translation>
-    </message>
-    <message>
-        <source>Message:</source>
-        <translation>Паведамленне:</translation>
-    </message>
-</context>
-<context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
@@ -627,6 +608,10 @@ Do a swype to the right to select a contact</source>
     <message>
         <source>Downloading media</source>
         <translation>Медыя выпампоўваецца</translation>
+    </message>
+    <message>
+        <source>Install Sticker set</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

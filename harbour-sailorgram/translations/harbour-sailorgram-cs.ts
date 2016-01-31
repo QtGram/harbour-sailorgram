@@ -379,20 +379,32 @@ messages</source>
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Debug</source>
-        <translation>Zkoušet</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation>Aktulizovat</translation>
-    </message>
-    <message>
-        <source>Contacts:</source>
-        <translation>Kontakty:</translation>
-    </message>
-    <message>
         <source>Error log</source>
         <translation>Chybní protokol</translation>
+    </message>
+    <message>
+        <source>Clear errors</source>
+        <translation type="unfinished">Vymazat chyby</translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
+        <translation type="unfinished">Vymazání chyb</translation>
+    </message>
+    <message>
+        <source>Error log is empty</source>
+        <translation type="unfinished">Chybní protokol je prázdný</translation>
+    </message>
+    <message>
+        <source>Error code:</source>
+        <translation type="unfinished">Kód chyby</translation>
+    </message>
+    <message>
+        <source>Function:</source>
+        <translation type="unfinished">Funkce:</translation>
+    </message>
+    <message>
+        <source>Message:</source>
+        <translation type="unfinished">Zpráva:</translation>
     </message>
 </context>
 <context>
@@ -518,37 +530,6 @@ Do a swype to the right to select a contact</translation>
     </message>
 </context>
 <context>
-    <name>ErrorsPage</name>
-    <message>
-        <source>Clear errors</source>
-        <translation>Vymazat chyby</translation>
-    </message>
-    <message>
-        <source>Error log is empty</source>
-        <translation>Chybní protokol je prázdný</translation>
-    </message>
-    <message>
-        <source>Error log</source>
-        <translation>Chybný protokol</translation>
-    </message>
-    <message>
-        <source>Error code:</source>
-        <translation>Kód chyby</translation>
-    </message>
-    <message>
-        <source>Function:</source>
-        <translation>Funkce:</translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
-        <translation>Vymazání chyb</translation>
-    </message>
-    <message>
-        <source>Message:</source>
-        <translation>Zpráva:</translation>
-    </message>
-</context>
-<context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
@@ -629,6 +610,10 @@ Do a swype to the right to select a contact</translation>
     <message>
         <source>Downloading media</source>
         <translation>Stáhnutí media</translation>
+    </message>
+    <message>
+        <source>Install Sticker set</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

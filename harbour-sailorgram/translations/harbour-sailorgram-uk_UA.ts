@@ -379,20 +379,32 @@ messages</source>
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Debug</source>
-        <translation>Відлагодження</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation>Оновити</translation>
-    </message>
-    <message>
-        <source>Contacts:</source>
-        <translation>Контакти</translation>
-    </message>
-    <message>
         <source>Error log</source>
         <translation>Лог помилок</translation>
+    </message>
+    <message>
+        <source>Clear errors</source>
+        <translation type="unfinished">Очистити помилки</translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
+        <translation type="unfinished">Видаляємо помилки</translation>
+    </message>
+    <message>
+        <source>Error log is empty</source>
+        <translation type="unfinished">Лог помилок порожній</translation>
+    </message>
+    <message>
+        <source>Error code:</source>
+        <translation type="unfinished">Код помилки</translation>
+    </message>
+    <message>
+        <source>Function:</source>
+        <translation type="unfinished">Функція:</translation>
+    </message>
+    <message>
+        <source>Message:</source>
+        <translation type="unfinished">Повідомлення:</translation>
     </message>
 </context>
 <context>
@@ -518,37 +530,6 @@ Do a swype to the right to select a contact</source>
     </message>
 </context>
 <context>
-    <name>ErrorsPage</name>
-    <message>
-        <source>Clear errors</source>
-        <translation>Очистити помилки</translation>
-    </message>
-    <message>
-        <source>Error log is empty</source>
-        <translation>Лог помилок порожній</translation>
-    </message>
-    <message>
-        <source>Error log</source>
-        <translation>Лог помилок</translation>
-    </message>
-    <message>
-        <source>Error code:</source>
-        <translation>Код помилки</translation>
-    </message>
-    <message>
-        <source>Function:</source>
-        <translation>Функція:</translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
-        <translation>Видаляємо помилки</translation>
-    </message>
-    <message>
-        <source>Message:</source>
-        <translation>Повідомлення:</translation>
-    </message>
-</context>
-<context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
@@ -629,6 +610,10 @@ Do a swype to the right to select a contact</source>
     <message>
         <source>Downloading media</source>
         <translation>Завантажуємо медіа-дані</translation>
+    </message>
+    <message>
+        <source>Install Sticker set</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

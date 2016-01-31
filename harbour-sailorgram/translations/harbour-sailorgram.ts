@@ -376,19 +376,31 @@ messages</source>
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Debug</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Contacts:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Error log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error log is empty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error code:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Function:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Message:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -513,37 +525,6 @@ Do a swype to the right to select a contact</source>
     </message>
 </context>
 <context>
-    <name>ErrorsPage</name>
-    <message>
-        <source>Clear errors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Error log is empty</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Error log</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Error code:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Function:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Message:</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
@@ -623,6 +604,10 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Downloading media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Install Sticker set</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

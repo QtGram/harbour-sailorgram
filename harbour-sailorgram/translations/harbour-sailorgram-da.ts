@@ -381,20 +381,32 @@ meddelelser</translation>
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Debug</source>
-        <translation>Debug</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation>Ajourfør</translation>
-    </message>
-    <message>
-        <source>Contacts:</source>
-        <translation>Kontakter:</translation>
-    </message>
-    <message>
         <source>Error log</source>
         <translation>Fejllog</translation>
+    </message>
+    <message>
+        <source>Clear errors</source>
+        <translation type="unfinished">Nulstil fejl</translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
+        <translation type="unfinished">Sletter fejl</translation>
+    </message>
+    <message>
+        <source>Error log is empty</source>
+        <translation type="unfinished">Fejllog er tom</translation>
+    </message>
+    <message>
+        <source>Error code:</source>
+        <translation type="unfinished">Fejlkode:</translation>
+    </message>
+    <message>
+        <source>Function:</source>
+        <translation type="unfinished">Funktion:</translation>
+    </message>
+    <message>
+        <source>Message:</source>
+        <translation type="unfinished">Meddelelse:</translation>
     </message>
 </context>
 <context>
@@ -520,37 +532,6 @@ Stryg til venstre for at vælge en kontakt</translation>
     </message>
 </context>
 <context>
-    <name>ErrorsPage</name>
-    <message>
-        <source>Clear errors</source>
-        <translation>Nulstil fejl</translation>
-    </message>
-    <message>
-        <source>Error log is empty</source>
-        <translation>Fejllog er tom</translation>
-    </message>
-    <message>
-        <source>Error log</source>
-        <translation>Fejllog</translation>
-    </message>
-    <message>
-        <source>Error code:</source>
-        <translation>Fejlkode:</translation>
-    </message>
-    <message>
-        <source>Function:</source>
-        <translation>Funktion:</translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
-        <translation>Sletter fejl</translation>
-    </message>
-    <message>
-        <source>Message:</source>
-        <translation>Meddelelse:</translation>
-    </message>
-</context>
-<context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
@@ -631,6 +612,10 @@ Stryg til venstre for at vælge en kontakt</translation>
     <message>
         <source>Downloading media</source>
         <translation>Henter media</translation>
+    </message>
+    <message>
+        <source>Install Sticker set</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

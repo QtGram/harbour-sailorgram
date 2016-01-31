@@ -152,7 +152,6 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/pages/settings/ChatSettingsPage.qml \
     qml/pages/settings/DebugSettingsPage.qml \
     qml/components/DebugLabel.qml \
-    qml/pages/settings/debug/ErrorsPage.qml \
     qml/models/ErrorsModel.qml
 
 # to disable building translations every time, comment out the

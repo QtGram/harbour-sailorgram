@@ -381,20 +381,32 @@ Nachrichten</translation>
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Debug</source>
-        <translation>Debug</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation>Aktualisieren</translation>
-    </message>
-    <message>
-        <source>Contacts:</source>
-        <translation>Kontakte:</translation>
-    </message>
-    <message>
         <source>Error log</source>
         <translation>Error log</translation>
+    </message>
+    <message>
+        <source>Clear errors</source>
+        <translation type="unfinished">Fehler löschen</translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
+        <translation type="unfinished">Fehler löschen</translation>
+    </message>
+    <message>
+        <source>Error log is empty</source>
+        <translation type="unfinished">Error log ist leer</translation>
+    </message>
+    <message>
+        <source>Error code:</source>
+        <translation type="unfinished">Fehler code:</translation>
+    </message>
+    <message>
+        <source>Function:</source>
+        <translation type="unfinished">Funktion:</translation>
+    </message>
+    <message>
+        <source>Message:</source>
+        <translation type="unfinished">Nachricht:</translation>
     </message>
 </context>
 <context>
@@ -520,37 +532,6 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
     </message>
 </context>
 <context>
-    <name>ErrorsPage</name>
-    <message>
-        <source>Clear errors</source>
-        <translation>Fehler löschen</translation>
-    </message>
-    <message>
-        <source>Error log is empty</source>
-        <translation>Error log ist leer</translation>
-    </message>
-    <message>
-        <source>Error log</source>
-        <translation>Error log</translation>
-    </message>
-    <message>
-        <source>Error code:</source>
-        <translation>Fehler code:</translation>
-    </message>
-    <message>
-        <source>Function:</source>
-        <translation>Funktion:</translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
-        <translation>Fehler löschen</translation>
-    </message>
-    <message>
-        <source>Message:</source>
-        <translation>Nachricht:</translation>
-    </message>
-</context>
-<context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
@@ -632,6 +613,10 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
     <message>
         <source>Downloading media</source>
         <translation>Lade Media</translation>
+    </message>
+    <message>
+        <source>Install Sticker set</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

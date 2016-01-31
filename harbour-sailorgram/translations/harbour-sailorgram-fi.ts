@@ -381,20 +381,32 @@ viestit</translation>
 <context>
     <name>DebugSettingsPage</name>
     <message>
-        <source>Debug</source>
-        <translation>Vian korjaus</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation>Päivitä</translation>
-    </message>
-    <message>
-        <source>Contacts:</source>
-        <translation>Yhteydet:</translation>
-    </message>
-    <message>
         <source>Error log</source>
         <translation>Virheloki</translation>
+    </message>
+    <message>
+        <source>Clear errors</source>
+        <translation type="unfinished">Pyyhi virheet</translation>
+    </message>
+    <message>
+        <source>Deleting errors</source>
+        <translation type="unfinished">Virheet poistetaan</translation>
+    </message>
+    <message>
+        <source>Error log is empty</source>
+        <translation type="unfinished">Virheloki on tyhjä</translation>
+    </message>
+    <message>
+        <source>Error code:</source>
+        <translation type="unfinished">Virhekoodi:</translation>
+    </message>
+    <message>
+        <source>Function:</source>
+        <translation type="unfinished">Toiminnot:</translation>
+    </message>
+    <message>
+        <source>Message:</source>
+        <translation type="unfinished">Viesti:</translation>
     </message>
 </context>
 <context>
@@ -520,37 +532,6 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     </message>
 </context>
 <context>
-    <name>ErrorsPage</name>
-    <message>
-        <source>Clear errors</source>
-        <translation>Pyyhi virheet</translation>
-    </message>
-    <message>
-        <source>Error log is empty</source>
-        <translation>Virheloki on tyhjä</translation>
-    </message>
-    <message>
-        <source>Error log</source>
-        <translation>Virheloki</translation>
-    </message>
-    <message>
-        <source>Error code:</source>
-        <translation>Virhekoodi:</translation>
-    </message>
-    <message>
-        <source>Function:</source>
-        <translation>Toiminnot:</translation>
-    </message>
-    <message>
-        <source>Deleting errors</source>
-        <translation>Virheet poistetaan</translation>
-    </message>
-    <message>
-        <source>Message:</source>
-        <translation>Viesti:</translation>
-    </message>
-</context>
-<context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
@@ -631,6 +612,10 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     <message>
         <source>Downloading media</source>
         <translation>Ladataan mediatiedostoa</translation>
+    </message>
+    <message>
+        <source>Install Sticker set</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
