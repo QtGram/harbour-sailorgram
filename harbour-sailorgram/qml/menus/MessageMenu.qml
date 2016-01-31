@@ -51,7 +51,7 @@ ContextMenu
     MenuItem
     {
         text: qsTr("Cancel")
-        visible: false //FIXME: message.out && loader.item && loader.item.transferInProgress
+        visible: loader.item && loader.item.isUpload && loader.item.transferinProgress
         onClicked: cancelRequested()
     }
 }

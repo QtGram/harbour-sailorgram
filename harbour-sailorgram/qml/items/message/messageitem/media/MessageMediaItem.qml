@@ -14,7 +14,7 @@ Item
     property real contentWidth
     property real contentHeight
 
-    readonly property bool isUpload: message.upload.fileId !== 0
+    readonly property bool isUpload: filehandler.progressType === FileHandler.TypeProgressUpload
     readonly property bool transferInProgress: (progressPercent > 0) && (progressPercent < 100)
     readonly property bool hasMedia: message.media ? (message.media.classType !== TelegramConstants.typeMessageMediaEmpty) : false
 
@@ -66,11 +66,6 @@ Item
     }
 
     function cancelTransfer() {
-        if(isUpload) {
-            telegram.cancelSendGet(message.upload.fileId);
-            return;
-        }
-
         filehandler.cancelProgress();
     }
 
