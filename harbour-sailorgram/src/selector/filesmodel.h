@@ -27,7 +27,7 @@ class FilesModel : public QAbstractListModel
 public:
 
     enum Role { PathRole = 0, DateRole = 1, OrientationRole = 2 , UrlRole = 3, IsDirRole = 4, NameRole = 5 , IconRole = 6 };
-    enum Filter { NoFilter = 0, ImagesFilter = 1, DocumentsFilter = 2, VideosFilter = 3, AudiosFilter = 4 };
+    enum Filter { NoFilter = 0, ImageFilter = 1, DocumentFilter = 2, VideoFilter = 3, AudioFilter = 4 };
 
     struct Entry
     {

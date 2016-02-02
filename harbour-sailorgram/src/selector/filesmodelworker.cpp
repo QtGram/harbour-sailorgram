@@ -81,7 +81,7 @@ FilesModel::EntryList FilesModelWorker::scanDirectory(const QString &path, Files
                     case FilesModel::NoFilter:
                         break;
 
-                    case FilesModel::ImagesFilter:
+                    case FilesModel::ImageFilter:
                     {
                         if (type != QStringLiteral("image"))
                             continue;
@@ -89,7 +89,7 @@ FilesModel::EntryList FilesModelWorker::scanDirectory(const QString &path, Files
                         break;
                     }
 
-                    case FilesModel::DocumentsFilter:
+                    case FilesModel::DocumentFilter:
                     {
                         if (type != QStringLiteral("text"))
                             continue;
@@ -97,7 +97,7 @@ FilesModel::EntryList FilesModelWorker::scanDirectory(const QString &path, Files
                         break;
                     }
 
-                    case FilesModel::VideosFilter:
+                    case FilesModel::VideoFilter:
                     {
                         if (type != QStringLiteral("video"))
                             continue;
@@ -105,7 +105,7 @@ FilesModel::EntryList FilesModelWorker::scanDirectory(const QString &path, Files
                         break;
                     }
 
-                    case FilesModel::AudiosFilter:
+                    case FilesModel::AudioFilter:
                     {
                         if (type != QStringLiteral("audio"))
                             continue;

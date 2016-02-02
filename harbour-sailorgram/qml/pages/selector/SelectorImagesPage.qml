@@ -56,7 +56,7 @@ Dialog
         id: filesmodel
         folder: "StandardImagesFolder"
         sortRole: FilesModel.DateRole
-        filter: FilesModel.ImagesFilter
+        filter: FilesModel.ImageFilter
         sortOrder: Qt.DescendingOrder
         recursive: false
         directoriesFirst: true
