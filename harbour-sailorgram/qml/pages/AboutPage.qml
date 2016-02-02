@@ -120,7 +120,7 @@ Page
             Item
             {
                 width: parent.width
-                height: Theme.paddingLarge + lbldev.height + lblicondesigner.height + lblrepository.height + lbltranslationplatform.height + lblemojpack.height
+                height: Theme.paddingLarge + lbldev.height + lblicondesigner.height + lblicondesigner.height + lblrepository.height + lbltranslationplatform.height + lblemojpack.height
 
                 InfoLabel
                 {
