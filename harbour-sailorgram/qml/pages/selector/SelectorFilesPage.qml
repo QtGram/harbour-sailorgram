@@ -7,15 +7,24 @@ import "../../models"
 Dialog
 {
     property Context context
-    property string selectedFile
+    property var selectedFiles: []
     readonly property string rootPathLimit : "file:///"
 
     signal actionCompleted(string action, var data)
 
+    function sendFile(element) {
+        actionCompleted("file", element.toString());
+    }
+
+    //"this" is provided to the function by the caller
+    function filter(element) {
+        return element !== this;
+    }
+
     id: selectorfilespage
     allowedOrientations: defaultAllowedOrientations
-    canAccept: selectedFile.length > 0
-    onAccepted: actionCompleted("file", selectedFile)
+    canAccept: selectedFiles.length > 0
+    onAccepted: selectedFiles.forEach(sendFile)
 
     FolderListModel
     {
@@ -65,7 +74,7 @@ Dialog
         DialogHeader
         {
             id: header
-            acceptText: qsTr("Send")
+            acceptText: qsTr("Send %1 file(s)").arg(selectedFiles.length)
             title: folderlistmodel.folder.toString().replace("file:///", "/")
         }
 
@@ -90,7 +99,7 @@ Dialog
 
             delegate: ListItem {
                 property string fileUrl: model.fileURL.toString()
-                property bool isSelected: (selectedFile === fileUrl)
+                property bool isSelected: (selectedFiles.indexOf(model.fileURL) > -1)
 
                 contentHeight: Theme.itemSizeSmall
                 anchors { left: parent.left; right: parent.right }
@@ -100,7 +109,12 @@ Dialog
                     if (model.fileIsDir)
                         folderlistmodel.folder = model.fileURL;
                     else
-                        selectedFile = fileUrl;
+                        //selectedFiles needs to be reassigned every time it is manipulated because it doesn't emit signals otherwise
+                        if (isSelected) {
+                            selectedFiles = selectedFiles.filter(filter, model.fileURL);
+                        } else {
+                            selectedFiles = selectedFiles.concat([model.fileURL]);
+                        }
                 }
 
                 Image {
