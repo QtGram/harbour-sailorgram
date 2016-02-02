@@ -52,9 +52,9 @@ function colorizeBubble(message, context)
         return "transparent"
 
     if(message.out)
-        return Silica.Theme.rgba(Qt.tint(Silica.Theme.secondaryHighlightColor, Silica.Theme.rgba(Silica.Theme.highlightDimmerColor, 0.3)), context.bubblesopacity / 100.0);
+        return Silica.Theme.rgba(Qt.tint(Silica.Theme.secondaryHighlightColor, Silica.Theme.rgba(Silica.Theme.highlightDimmerColor, 0.3)), 1.0);
 
-    return Silica.Theme.rgba(Silica.Theme.secondaryColor, context.bubblesopacity / 100.0);
+    return Silica.Theme.rgba(Silica.Theme.secondaryColor, 1.0);
 }
 
 function colorizeLink(message, context)

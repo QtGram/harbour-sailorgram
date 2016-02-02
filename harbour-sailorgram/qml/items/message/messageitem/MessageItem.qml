@@ -102,30 +102,11 @@ ListItem
 
     onClicked: displayMedia()
 
-    Rectangle
+    MessageBubble
     {
-        id: bubble
-        radius: 4
-
-        visible: {
-            var bubblevisible = !context.bubbleshidden;
-
-            if(bubblevisible)
-            {
-                if(!TelegramHelper.isMediaMessage(message))
-                    return bubblevisible;
-
-                if(message.media.classType !== TelegramConstants.typeMessageMediaDocument)
-                    return bubblevisible;
-
-                if(context.telegram.documentIsSticker(message.media.document))
-                    return false;
-            }
-
-            return bubblevisible;
-        }
-
-        color: ColorScheme.colorizeBubble(message, context)
+        id: messagebubble
+        context: messageitem.context
+        message: messageitem.message
         anchors.fill: content
     }
 
