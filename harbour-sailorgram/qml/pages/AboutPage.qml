@@ -23,10 +23,10 @@ Page
                                                           readonly property string translators: "Kwentin, Jordi, objectifnul, Nerfiaux, milamber"; },
 
                                                QtObject { readonly property string language: qsTr("German");
-                                                          readonly property string translators: "Mee_Germany_Go, PawelSpoon, jupaja, kormarun, mdosch, nightmare, yoru, flacer"; },
+                                                          readonly property string translators: "Maldela, caprico, Mee_Germany_Go, PawelSpoon, Rootility, jupaja, kormarun, mdosch, nightmare, yoru"; },
 
                                                QtObject { readonly property string language: qsTr("Italian");
-                                                          readonly property string translators: "Watchmaker, Dax89, dallo28, koenigseggCCGT, massimo.grigolin"; },
+                                                          readonly property string translators: "Watchmaker, Dax89, ghostofasmile, tichy, dallo28, koenigseggCCGT, massimo.grigolin"; },
 
                                                QtObject { readonly property string language: qsTr("Persian");
                                                           readonly property string translators: "najafi"; },
@@ -38,16 +38,19 @@ Page
                                                           readonly property string translators: "pakoR"; },
 
                                                QtObject { readonly property string language: qsTr("Russian");
-                                                          readonly property string translators: "gri4994, lewa, iKozzz"; },
+                                                          readonly property string translators: "gri4994, lewa, HelgaLastivka, SYSSTEMS, atlz.kb, iKozzz"; },
 
                                                QtObject { readonly property string language: qsTr("Belaruian");
                                                           readonly property string translators: "iKozzz"; },
 
                                                QtObject { readonly property string language: qsTr("Spanish");
-                                                          readonly property string translators: "carmenfdezb, massimo.grigolin"; },
+                                                          readonly property string translators: "carmenfdezb, JustDevZero, klomiz, massimo.grigolin"; },
 
                                                QtObject { readonly property string language: qsTr("Greek");
-                                                          readonly property string translators: "pmelas"; } ]
+                                                          readonly property string translators: "pmelas"; },
+
+                                               QtObject { readonly property string language: qsTr("Ukrainian");
+                                                          readonly property string translators: "troyane, HelgaLastivka"; } ]
 
     id: aboutpage
     allowedOrientations: defaultAllowedOrientations
