@@ -114,7 +114,7 @@ Dialog
 
                 Image {
                     id: imgfilefolder
-                    source: (model.isDir ? "image://theme/icon-m-folder" : "image://theme/icon-m-other")
+                    source: model.icon
                     anchors { left: parent.left; margins: Theme.paddingMedium; verticalCenter: parent.verticalCenter }
                 }
 
