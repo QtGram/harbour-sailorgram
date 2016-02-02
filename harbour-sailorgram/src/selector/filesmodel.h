@@ -20,6 +20,7 @@ class FilesModel : public QAbstractListModel
     Q_PROPERTY(Qt::SortOrder sortOrder READ sortOrder WRITE setSortOrder NOTIFY sortOrderChanged)
     Q_PROPERTY(bool directoriesFirst READ directoriesFirst WRITE setDirectoriesFirst NOTIFY directoriesFirstChanged)
     Q_PROPERTY(QString folder READ folder WRITE setFolder NOTIFY folderChanged)
+    Q_PROPERTY(QString parentFolder READ parentFolder NOTIFY folderChanged)
     Q_PROPERTY(bool recursive READ recursive WRITE setRecursive NOTIFY recursiveChanged)
 
 public:
@@ -67,6 +68,7 @@ public:
     Qt::SortOrder sortOrder() const { return this->_request.sortOrder; }
     bool directoriesFirst() const { return this->_request.directoriesFirst; }
     QString folder() const { return this->_request.folder; }
+    QString parentFolder() const;
     bool recursive() const { return this->_request.recursive; }
     void setSortRole(FilesModel::Role);
     void setFilter(FilesModel::Filter);

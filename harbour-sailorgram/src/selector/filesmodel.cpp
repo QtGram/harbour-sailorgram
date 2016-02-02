@@ -4,6 +4,7 @@
 #include <QStandardPaths>
 #include <QUrl>
 #include <QThread>
+#include <QFileInfo>
 
 #include <algorithm>
 
@@ -103,6 +104,11 @@ void FilesModel::handleCompletedRequest(const FilesModel::Request &request, cons
     }
 }
 
+QString FilesModel::parentFolder() const
+{
+    return QFileInfo(this->_request.folder).canonicalPath();
+}
+
 void FilesModel::setSortOrder(Qt::SortOrder order)
 {
     if (this->_request.sortOrder == order)
@@ -157,6 +163,9 @@ void FilesModel::setFolder(const QString &folder)
         temp = FilesModel::_imagesdirpaths.value(0);
     else
         temp = folder;
+
+    if (temp.endsWith('/'))
+        temp.chop(1);
 
     if (this->_request.folder == temp)
         return;
