@@ -187,7 +187,7 @@ ListItem
         {
             id: quotedcontainer
             visible: quotedcontainer.item !== null
-            anchors.horizontalCenter: parent.horizontalCenter
+            anchors { left: parent.left; leftMargin: Theme.paddingMedium }
 
             Component.onCompleted: {
                 if(message.replyToMsgId) {

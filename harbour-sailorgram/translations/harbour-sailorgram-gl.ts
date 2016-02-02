@@ -95,6 +95,10 @@
         <source>Icon Designers</source>
         <translation>Deseñadores de iconas</translation>
     </message>
+    <message>
+        <source>Contributors</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AddContactPage</name>

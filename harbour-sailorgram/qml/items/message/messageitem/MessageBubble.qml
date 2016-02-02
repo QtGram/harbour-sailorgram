@@ -24,9 +24,6 @@ Item
 
             if(message.media.classType !== TelegramConstants.typeMessageMediaDocument)
                 return bubblevisible;
-
-            if(context.telegram.documentIsSticker(message.media.document))
-                return false;
         }
 
         return bubblevisible;
@@ -50,9 +47,10 @@ Item
         visible: context.angledbubbles
 
         anchors {
-            top: parent.top;
-            left: message.out ? parent.left : undefined
+            top: message.out ? undefined : parent.top
             right: message.out ? undefined : parent.right
+            bottom: !message.out ? undefined: parent.bottom
+            left: !message.out ? undefined : parent.left
         }
     }
 }
