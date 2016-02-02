@@ -1,13 +1,13 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import harbour.sailorgram.ImagesModel 1.0
+import harbour.sailorgram.FilesModel 1.0
 import "../../models"
 
 Dialog
 {
-    property alias directory: imagesmodel.rootDir
-    property alias sortRole: imagesmodel.sortRole
-    property alias sortOrder: imagesmodel.sortOrder
+    property alias folder: filesmodel.folder
+    property alias sortRole: filesmodel.sortRole
+    property alias sortOrder: filesmodel.sortOrder
     property var selectedFiles: []
     property Page rootPage
     property Context context
@@ -51,9 +51,11 @@ Dialog
     canAccept: selectedFiles.length > 0
     onAccepted: selectedFiles.forEach(sendImage)
 
-    ImagesModel {
-        id: imagesmodel
-        sortRole: ImagesModel.DateRole
+    FilesModel {
+        id: filesmodel
+        folder: "StandardImagesFolder"
+        sortRole: FilesModel.DateRole
+        filter: FilesModel.ImagesFilter
         sortOrder: Qt.DescendingOrder
         recursive: false
         directoriesFirst: true
@@ -74,13 +76,13 @@ Dialog
                 visible: context.sailorgram.androidStorage.length > 0
                 onClicked: {
                     if (!!rootPage) {
-                        rootPage.directory = context.sailorgram.androidStorage;
-                        rootPage.sortRole = ImagesModel.NameRole;
+                        rootPage.folder = context.sailorgram.androidStorage;
+                        rootPage.sortRole = filesmodel.NameRole;
                         rootPage.sortOrder = Qt.AscendingOrder;
                         pageStack.pop(rootPage);
                     } else {
-                        directory = context.sailorgram.androidStorage;
-                        sortRole = ImagesModel.NameRole;
+                        folder = context.sailorgram.androidStorage;
+                        sortRole = filesmodel.NameRole;
                         sortOrder = Qt.AscendingOrder;
                     }
                 }
@@ -91,13 +93,13 @@ Dialog
                 visible: context.sailorgram.sdcardFolder.length > 0
                 onClicked: {
                     if (!!rootPage) {
-                        rootPage.directory = context.sailorgram.sdcardFolder;
-                        rootPage.sortRole = ImagesModel.NameRole;
+                        rootPage.folder = context.sailorgram.sdcardFolder;
+                        rootPage.sortRole = filesmodel.NameRole;
                         rootPage.sortOrder = Qt.AscendingOrder;
                         pageStack.pop(rootPage);
                     } else {
-                        directory = context.sailorgram.sdcardFolder;
-                        sortRole = ImagesModel.NameRole;
+                        folder = context.sailorgram.sdcardFolder;
+                        sortRole = filesmodel.NameRole;
                         sortOrder = Qt.AscendingOrder;
                     }
                 }
@@ -107,13 +109,13 @@ Dialog
                 text: qsTr("Home")
                 onClicked: {
                     if (!!rootPage) {
-                        rootPage.directory = context.sailorgram.homeFolder;
-                        rootPage.sortRole = ImagesModel.NameRole;
+                        rootPage.folder = context.sailorgram.homeFolder;
+                        rootPage.sortRole = filesmodel.NameRole;
                         rootPage.sortOrder = Qt.AscendingOrder;
                         pageStack.pop(rootPage);
                     } else {
-                        directory = context.sailorgram.homeFolder;
-                        sortRole = ImagesModel.NameRole;
+                        folder = context.sailorgram.homeFolder;
+                        sortRole = filesmodel.NameRole;
                         sortOrder = Qt.AscendingOrder;
                     }
                 }
@@ -133,14 +135,14 @@ Dialog
 
             MenuItem {
                 text: qsTr("Sort by name")
-                visible: sortRole !== ImagesModel.NameRole
-                onClicked: sortRole = ImagesModel.NameRole
+                visible: sortRole !== filesmodel.NameRole
+                onClicked: sortRole = filesmodel.NameRole
             }
 
             MenuItem {
                 text: qsTr("Sort by date")
-                visible: sortRole !== ImagesModel.DateRole
-                onClicked: sortRole = ImagesModel.DateRole
+                visible: sortRole !== filesmodel.DateRole
+                onClicked: sortRole = filesmodel.DateRole
             }
         }
 
@@ -149,7 +151,7 @@ Dialog
             id: header
             acceptText: qsTr("Send %1 image(s)").arg(selectedFiles.length)
             cancelText: !!rootPage ? qsTr("Back") : qsTr("Cancel")
-            title: imagesmodel.rootDir.split('/').pop();
+            title: filesmodel.folder.split('/').pop();
         }
 
         SilicaGridView
@@ -160,7 +162,7 @@ Dialog
             quickScroll: true
             cellWidth: cellSize
             cellHeight: cellSize
-            model: imagesmodel
+            model: filesmodel
 
             delegate: BackgroundItem {
                 id: delegate
@@ -174,7 +176,7 @@ Dialog
                 onClicked: {
                     if (model.isDir) {
                         var nextPage = pageStack.push(Qt.resolvedUrl("SelectorImagesPage.qml"),
-                                                      { "directory": model.path,
+                                                      { "folder": model.path,
                                                         "context": context,
                                                         "sortRole": sortRole,
                                                         "sortOrder": sortOrder,

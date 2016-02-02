@@ -35,7 +35,7 @@
 #include "model/dialogscovermodel.h"
 #include "selector/audiorecorder.h"
 #include "selector/thumbnailprovider.h"
-#include "selector/imagesmodel.h"
+#include "selector/filesmodel.h"
 #include "iphb/insomniac.h"
 #include "sailorgram.h"
 
@@ -86,7 +86,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<Insomniac>("harbour.sailorgram.Insomniac", 1, 0, "Insomniac");
     qmlRegisterType<ScreenBlank>("harbour.sailorgram.DBus", 1, 0, "ScreenBlank");
     qmlRegisterType<AudioRecorder>("harbour.sailorgram.Selector", 1, 0, "AudioRecorder");
-    qmlRegisterType<ImagesModel>("harbour.sailorgram.ImagesModel", 1, 0, "ImagesModel");
+    qmlRegisterType<FilesModel>("harbour.sailorgram.FilesModel", 1, 0, "FilesModel");
     qmlRegisterType<DialogsCoverModel>("harbour.sailorgram.DialogsCoverModel", 1, 0, "DialogsCoverModel");
 
     QScopedPointer<QQuickView> view(SailfishApp::createView());

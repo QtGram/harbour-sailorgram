@@ -1,4 +1,4 @@
-#include "imagesmodelworker.h"
+#include "filesmodelworker.h"
 #include "exif/exif.h"
 
 #include <QFileInfoList>
@@ -6,11 +6,14 @@
 #include <QDateTime>
 
 
-ImagesModelWorker::ImagesModelWorker(QObject *parent) : QObject(parent)
+const QStringList FilesModelWorker::_imagesfilterlist(QStringList() << "*.jpg" << "*.jpeg" << "*.png" << "*.gif" << "*.bmp" << "*.pbm" << "*.pgm" << "*.ppm" << "*.xbm" << "*.xpm");
+
+
+FilesModelWorker::FilesModelWorker(QObject *parent) : QObject(parent)
 {
 }
 
-void ImagesModelWorker::handleRequest(const ImagesModel::Request &request)
+void FilesModelWorker::handleRequest(const FilesModel::Request &request)
 {
     if (request == this->_lastrequest)
     {
@@ -18,10 +21,12 @@ void ImagesModelWorker::handleRequest(const ImagesModel::Request &request)
         return;
     }
 
-    ImagesModel::EntryList entryList;
+    FilesModel::EntryList entryList;
 
-    if (request.rootDir != this->_lastrequest.rootDir || request.recursive != this->_lastrequest.recursive)
-        entryList = scanDirectory(request.rootDir, ImagesModel::_filterlist, request.recursive);
+    if (request.folder != this->_lastrequest.folder ||
+        request.recursive != this->_lastrequest.recursive ||
+        request.filter != this->_lastrequest.filter)
+        entryList = scanDirectory(request.folder, request.filter, request.recursive);
     else
         entryList = this->_lastlist;
 
@@ -33,15 +38,30 @@ void ImagesModelWorker::handleRequest(const ImagesModel::Request &request)
     emit requestComplete(request, entryList);
 }
 
-ImagesModel::EntryList ImagesModelWorker::scanDirectory(const QString &path, const QStringList &filterList, bool recursive)
+FilesModel::EntryList FilesModelWorker::scanDirectory(const QString &path, FilesModel::Filter filter, bool recursive)
 {
-    ImagesModel::EntryList entryList;
+    FilesModel::EntryList entryList;
 
     QDir directory(path);
 
     if (directory.exists())
     {
-        QFileInfoList list = directory.entryInfoList(filterList, QDir::NoDotAndDotDot | QDir::AllDirs | QDir::Files | QDir::Readable);
+        QFileInfoList list;
+
+        switch (filter)
+        {
+            case FilesModel::NoFilter:
+            {
+                list = directory.entryInfoList(QDir::NoDotAndDotDot | QDir::AllDirs | QDir::Files | QDir::Readable);
+                break;
+            }
+
+            case FilesModel::ImagesFilter:
+            {
+                list = directory.entryInfoList(FilesModelWorker::_imagesfilterlist, QDir::NoDotAndDotDot | QDir::AllDirs | QDir::Files | QDir::Readable);
+                break;
+            }
+        }
 
         entryList.reserve(list.size());
 
@@ -49,7 +69,7 @@ ImagesModel::EntryList ImagesModelWorker::scanDirectory(const QString &path, con
         {
             const QString filePath(fileInfo.absoluteFilePath());
 
-            ImagesModel::Entry entry;
+            FilesModel::Entry entry;
             entry.path = filePath;
             entry.path.squeeze();
             entry.date = fileInfo.lastModified().toMSecsSinceEpoch();
@@ -57,7 +77,7 @@ ImagesModel::EntryList ImagesModelWorker::scanDirectory(const QString &path, con
             if (fileInfo.isDir())
             {
                 if (recursive)
-                    entryList << scanDirectory(filePath, filterList, recursive);
+                    entryList << scanDirectory(filePath, filter, recursive);
                 else
                 {
                     entry.isDir = true;
@@ -107,7 +127,7 @@ ImagesModel::EntryList ImagesModelWorker::scanDirectory(const QString &path, con
     return entryList;
 }
 
-void ImagesModelWorker::sort(ImagesModel::EntryList *list, Qt::SortOrder sortOrder, ImagesModel::Role sortRole, bool directoriesFirst)
+void FilesModelWorker::sort(FilesModel::EntryList *list, Qt::SortOrder sortOrder, FilesModel::Role sortRole, bool directoriesFirst)
 {
     switch (sortOrder)
     {
@@ -115,27 +135,27 @@ void ImagesModelWorker::sort(ImagesModel::EntryList *list, Qt::SortOrder sortOrd
         {
             switch(sortRole)
             {
-                case ImagesModel::PathRole:
+                case FilesModel::PathRole:
                     std::sort(list->begin(), list->end(), lesserPathThan);
                     break;
 
-                case ImagesModel::UrlRole:
+                case FilesModel::UrlRole:
                     std::sort(list->begin(), list->end(), lesserPathThan);
                     break;
 
-                case ImagesModel::NameRole:
+                case FilesModel::NameRole:
                     std::sort(list->begin(), list->end(), lesserNameThan);
                     break;
 
-                case ImagesModel::DateRole:
+                case FilesModel::DateRole:
                     std::sort(list->begin(), list->end(), lesserDateThan);
                     break;
 
-                case ImagesModel::OrientationRole:
+                case FilesModel::OrientationRole:
                     std::sort(list->begin(), list->end(), lesserOrientationThan);
                     break;
 
-                case ImagesModel::IsDirRole:
+                case FilesModel::IsDirRole:
                     std::sort(list->begin(), list->end(), lesserIsDirThan);
                     break;
             }
@@ -146,27 +166,27 @@ void ImagesModelWorker::sort(ImagesModel::EntryList *list, Qt::SortOrder sortOrd
         {
             switch(sortRole)
             {
-                case ImagesModel::PathRole:
+                case FilesModel::PathRole:
                     std::sort(list->begin(), list->end(), biggerPathThan);
                     break;
 
-                case ImagesModel::UrlRole:
+                case FilesModel::UrlRole:
                     std::sort(list->begin(), list->end(), biggerPathThan);
                     break;
 
-                case ImagesModel::NameRole:
+                case FilesModel::NameRole:
                     std::sort(list->begin(), list->end(), biggerNameThan);
                     break;
 
-                case ImagesModel::DateRole:
+                case FilesModel::DateRole:
                     std::sort(list->begin(), list->end(), biggerDateThan);
                     break;
 
-                case ImagesModel::OrientationRole:
+                case FilesModel::OrientationRole:
                     std::sort(list->begin(), list->end(), biggerOrientationThan);
                     break;
 
-                case ImagesModel::IsDirRole:
+                case FilesModel::IsDirRole:
                     std::sort(list->begin(), list->end(), biggerIsDirThan);
                     break;
             }
@@ -178,52 +198,52 @@ void ImagesModelWorker::sort(ImagesModel::EntryList *list, Qt::SortOrder sortOrd
         std::stable_sort(list->begin(), list->end(), biggerIsDirThan);
 }
 
-bool ImagesModelWorker::lesserPathThan(const ImagesModel::Entry &e1, const ImagesModel::Entry &e2)
+bool FilesModelWorker::lesserPathThan(const FilesModel::Entry &e1, const FilesModel::Entry &e2)
 {
     return e1.path.compare(e2.path) < 0;
 }
 
-bool ImagesModelWorker::lesserNameThan(const ImagesModel::Entry &e1, const ImagesModel::Entry &e2)
+bool FilesModelWorker::lesserNameThan(const FilesModel::Entry &e1, const FilesModel::Entry &e2)
 {
     return e1.path.split('/').last().compare(e2.path.split('/').last()) < 0;
 }
 
-bool ImagesModelWorker::lesserDateThan(const ImagesModel::Entry &e1, const ImagesModel::Entry &e2)
+bool FilesModelWorker::lesserDateThan(const FilesModel::Entry &e1, const FilesModel::Entry &e2)
 {
     return e1.date < e2.date;
 }
 
-bool ImagesModelWorker::lesserOrientationThan(const ImagesModel::Entry &e1, const ImagesModel::Entry &e2)
+bool FilesModelWorker::lesserOrientationThan(const FilesModel::Entry &e1, const FilesModel::Entry &e2)
 {
     return e1.orientation < e2.orientation;
 }
 
-bool ImagesModelWorker::lesserIsDirThan(const ImagesModel::Entry &e1, const ImagesModel::Entry &e2)
+bool FilesModelWorker::lesserIsDirThan(const FilesModel::Entry &e1, const FilesModel::Entry &e2)
 {
     return !e1.isDir && e2.isDir;
 }
 
-bool ImagesModelWorker::biggerPathThan(const ImagesModel::Entry &e1, const ImagesModel::Entry &e2)
+bool FilesModelWorker::biggerPathThan(const FilesModel::Entry &e1, const FilesModel::Entry &e2)
 {
     return e1.path.compare(e2.path) > 0;
 }
 
-bool ImagesModelWorker::biggerNameThan(const ImagesModel::Entry &e1, const ImagesModel::Entry &e2)
+bool FilesModelWorker::biggerNameThan(const FilesModel::Entry &e1, const FilesModel::Entry &e2)
 {
     return e1.path.split('/').last().compare(e2.path.split('/').last()) > 0;
 }
 
-bool ImagesModelWorker::biggerDateThan(const ImagesModel::Entry &e1, const ImagesModel::Entry &e2)
+bool FilesModelWorker::biggerDateThan(const FilesModel::Entry &e1, const FilesModel::Entry &e2)
 {
     return e1.date > e2.date;
 }
 
-bool ImagesModelWorker::biggerOrientationThan(const ImagesModel::Entry &e1, const ImagesModel::Entry &e2)
+bool FilesModelWorker::biggerOrientationThan(const FilesModel::Entry &e1, const FilesModel::Entry &e2)
 {
     return e1.orientation > e2.orientation;
 }
 
-bool ImagesModelWorker::biggerIsDirThan(const ImagesModel::Entry &e1, const ImagesModel::Entry &e2)
+bool FilesModelWorker::biggerIsDirThan(const FilesModel::Entry &e1, const FilesModel::Entry &e2)
 {
     return e1.isDir && !e2.isDir;
 }
