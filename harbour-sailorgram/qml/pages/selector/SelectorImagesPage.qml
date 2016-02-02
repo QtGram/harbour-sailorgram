@@ -220,7 +220,7 @@ Dialog
                     sourceComponent: Label {
                         text: model.name
                         horizontalAlignment: Qt.AlignHCenter
-                        verticalAlignment: Qt.AlignVCenter
+                        verticalAlignment: Qt.AlignTop
                         wrapMode: Text.Wrap
                         clip: true
                     }
