@@ -164,10 +164,10 @@ void FilesModel::setFolder(const QString &folder)
     else
         temp = folder;
 
-    if (temp.endsWith('/'))
+    if (temp.endsWith('/') && temp.size() > 1)
         temp.chop(1);
 
-    if (this->_request.folder == temp)
+    if (this->_request.folder == temp || !temp.startsWith('/'))
         return;
 
     this->_request.folder = temp;
