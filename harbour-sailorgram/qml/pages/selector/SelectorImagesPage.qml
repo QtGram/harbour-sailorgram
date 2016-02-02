@@ -8,7 +8,7 @@ Dialog
     property alias directory: imagesmodel.rootDir
     property alias sortRole: imagesmodel.sortRole
     property alias sortOrder: imagesmodel.sortOrder
-    property string selectedFile
+    property var selectedFiles: []
     property Page rootPage
     property Context context
 
@@ -37,10 +37,19 @@ Dialog
 
     signal actionCompleted(string action, var data)
 
+    function sendImage(element) {
+        actionCompleted("image", element);
+    }
+
+    //"this" is provided to the function by the caller
+    function filter(element) {
+        return element !== this;
+    }
+
     id: selectorimagespage
     allowedOrientations: defaultAllowedOrientations
-    canAccept: selectedFile.length > 0
-    onAccepted: actionCompleted("image", selectedFile)
+    canAccept: selectedFiles.length > 0
+    onAccepted: selectedFiles.forEach(sendImage)
 
     ImagesModel {
         id: imagesmodel
@@ -138,7 +147,8 @@ Dialog
         DialogHeader
         {
             id: header
-            acceptText: qsTr("Send")
+            acceptText: qsTr("Send %1 image(s)").arg(selectedFiles.length)
+            cancelText: !!rootPage ? qsTr("Back") : qsTr("Cancel")
             title: imagesmodel.rootDir.split('/').pop();
         }
 
@@ -153,7 +163,9 @@ Dialog
             model: imagesmodel
 
             delegate: BackgroundItem {
-                property bool isSelected: (selectedFile === model.url)
+                id: delegate
+
+                property bool isSelected: (selectedFiles.indexOf(model.url) > -1)
 
                 width: cellSize
                 height: cellSize
@@ -166,12 +178,18 @@ Dialog
                                                         "context": context,
                                                         "sortRole": sortRole,
                                                         "sortOrder": sortOrder,
+                                                        "selectedFiles": selectedFiles,
                                                         "rootPage": !!rootPage ? rootPage : selectorimagespage } );
                         nextPage.actionCompleted.connect(selectorimagespage.actionCompleted);
+                        nextPage.rejected.connect(function () { selectorimagespage.selectedFiles = nextPage.selectedFiles; });
                     }
-                    else if (view.currentIndex !== index) {
-                        view.currentIndex = index;
-                        selectedFile = model.url.toString();
+                    else {
+                        //selectedFiles needs to be reassigned every time it is manipulated because it doesn't emit signals otherwise
+                        if (isSelected) {
+                            selectedFiles = selectedFiles.filter(filter, model.url);
+                        } else {
+                            selectedFiles = selectedFiles.concat([model.url]);
+                        }
                     }
                 }
 
@@ -198,6 +216,7 @@ Dialog
                     sourceComponent: Label {
                         text: model.name
                         horizontalAlignment: Qt.AlignHCenter
+                        verticalAlignment: Qt.AlignVCenter
                         wrapMode: Text.Wrap
                         clip: true
                     }
@@ -215,7 +234,7 @@ Dialog
                 }
 
                 Loader {
-                    active: index === view.currentIndex
+                    active: delegate.isSelected
                     anchors.fill: parent
 
                     sourceComponent: Rectangle {
