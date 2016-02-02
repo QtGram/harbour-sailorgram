@@ -398,27 +398,27 @@ messages</source>
     </message>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished">Очистить ошибки</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation type="unfinished">Удаление ошибок</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished">Журнал ошибок пуст</translation>
+        <translation>Журнал ошибок пуст</translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished">Код ошибки:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished">Функция:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished">Сообщение:</translation>
+        <translation>Сообщение:</translation>
     </message>
 </context>
 <context>
@@ -627,7 +627,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Install Sticker set</source>
-        <translation type="unfinished"></translation>
+        <translation>Установить набор стикеров</translation>
     </message>
 </context>
 <context>

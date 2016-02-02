@@ -12,9 +12,9 @@ QtObject
 {
     id: context
 
-    readonly property bool beta: true
-    readonly property int betanum: 19
-    readonly property string version: "0.73"
+    readonly property bool beta: false
+    readonly property int betanum: 1
+    readonly property string version: "0.79"
     readonly property int stepcount: 25
     property bool sendwithreturn: false
     property bool backgrounddisabled: false

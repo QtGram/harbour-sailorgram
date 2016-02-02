@@ -336,11 +336,11 @@ messages</source>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation type="unfinished"></translation>
+        <translation>Разлучана</translation>
     </message>
     <message>
         <source>Connected</source>
-        <translation type="unfinished">Падключана</translation>
+        <translation>Падключана</translation>
     </message>
     <message>
         <source>Recent chats:</source>
@@ -396,27 +396,27 @@ messages</source>
     </message>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished">Ачысьціць памылкі</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation type="unfinished">Выдаленне памылак</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished">Дзённік памылак пусты</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished">Код памылкі:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished">Функцыя:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished">Паведамленне:</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

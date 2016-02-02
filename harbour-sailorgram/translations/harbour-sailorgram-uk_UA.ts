@@ -396,27 +396,27 @@ messages</source>
     </message>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished">Очистити помилки</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation type="unfinished">Видаляємо помилки</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished">Лог помилок порожній</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished">Код помилки</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished">Функція:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished">Повідомлення:</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

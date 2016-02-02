@@ -398,27 +398,27 @@ meddelelser</translation>
     </message>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished">Nulstil fejl</translation>
+        <translation>Nulstiller fejl</translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation type="unfinished">Sletter fejl</translation>
+        <translation>Sletter fejl</translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished">Fejllog er tom</translation>
+        <translation>Fejllog er tom</translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished">Fejlkode:</translation>
+        <translation>Fejlkode:</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished">Funktion:</translation>
+        <translation>Funktion:</translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished">Meddelelse:</translation>
+        <translation>Meddelelse:</translation>
     </message>
 </context>
 <context>
@@ -627,7 +627,7 @@ Stryg til venstre for at vælge en kontakt</translation>
     </message>
     <message>
         <source>Install Sticker set</source>
-        <translation type="unfinished"></translation>
+        <translation>Installér Mærkesæt</translation>
     </message>
 </context>
 <context>
@@ -641,7 +641,7 @@ Stryg til venstre for at vælge en kontakt</translation>
     <name>MessageSearchItem</name>
     <message>
         <source>You:</source>
-        <translation type="unfinished">Dig:</translation>
+        <translation>Dig:</translation>
     </message>
 </context>
 <context>
@@ -738,7 +738,7 @@ Stryg til venstre for at vælge en kontakt</translation>
     </message>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Send</translation>
     </message>
 </context>
 <context>
@@ -773,7 +773,7 @@ Stryg til venstre for at vælge en kontakt</translation>
     </message>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Send</translation>
     </message>
 </context>
 <context>
@@ -861,11 +861,11 @@ Stryg til venstre for at vælge en kontakt</translation>
     <name>SelectorStickerPage</name>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Send</translation>
     </message>
     <message>
         <source>Select a Sticker Set from below</source>
-        <translation type="unfinished"></translation>
+        <translation>Vælg et Mærkesæt fra listen nedenfor</translation>
     </message>
 </context>
 <context>

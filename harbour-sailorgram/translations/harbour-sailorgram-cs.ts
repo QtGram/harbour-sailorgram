@@ -258,15 +258,15 @@ Minimální délka je 5 znaků .</translation>
     </message>
     <message>
         <source>Chat header visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Viditelná hlavička konverzace</translation>
     </message>
     <message>
         <source>Bubbles visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Viditelné bublinky</translation>
     </message>
     <message>
         <source>Bubble opacity</source>
-        <translation type="unfinished"></translation>
+        <translation>Neprůhlednost bublinky</translation>
     </message>
     <message>
         <source>Keyboard</source>
@@ -327,24 +327,24 @@ Minimální délka je 5 znaků .</translation>
     <message>
         <source>Unread
 message</source>
-        <translation type="unfinished"></translation>
+        <translation>Nečtená zpráva:</translation>
     </message>
     <message>
         <source>Unread
 messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Nečtené zprávy:</translation>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation>Odpojen</translation>
+        <translation>Odpojeno</translation>
     </message>
     <message>
         <source>Connected</source>
-        <translation>Připojen</translation>
+        <translation>Připojeno</translation>
     </message>
     <message>
         <source>Recent chats:</source>
-        <translation type="unfinished"></translation>
+        <translation>Poslední Rozhovory:</translation>
     </message>
 </context>
 <context>
@@ -396,27 +396,27 @@ messages</source>
     </message>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished">Vymazat chyby</translation>
+        <translation>Vymazat chyby</translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation type="unfinished">Vymazání chyb</translation>
+        <translation>Vymazání chyb</translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished">Chybní protokol je prázdný</translation>
+        <translation>Chybní protokol je prazdny</translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished">Kód chyby</translation>
+        <translation>Kód chyby</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished">Funkce:</translation>
+        <translation>Funkce:</translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished">Zpráva:</translation>
+        <translation>Zpráva:</translation>
     </message>
 </context>
 <context>
@@ -639,7 +639,7 @@ Do a swype to the right to select a contact</translation>
     <name>MessageSearchItem</name>
     <message>
         <source>You:</source>
-        <translation type="unfinished">Ty:</translation>
+        <translation>Ty:</translation>
     </message>
 </context>
 <context>
@@ -736,7 +736,7 @@ Do a swype to the right to select a contact</translation>
     </message>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Odeslat</translation>
     </message>
 </context>
 <context>
@@ -771,7 +771,7 @@ Do a swype to the right to select a contact</translation>
     </message>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Odeslat</translation>
     </message>
 </context>
 <context>
@@ -859,7 +859,7 @@ Do a swype to the right to select a contact</translation>
     <name>SelectorStickerPage</name>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Odeslat</translation>
     </message>
     <message>
         <source>Select a Sticker Set from below</source>

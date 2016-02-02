@@ -336,11 +336,11 @@ messages</source>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation type="unfinished"></translation>
+        <translation>قطع‌شده</translation>
     </message>
     <message>
         <source>Connected</source>
-        <translation type="unfinished">وصل‌شده</translation>
+        <translation>وصل‌شده</translation>
     </message>
     <message>
         <source>Recent chats:</source>
@@ -396,27 +396,27 @@ messages</source>
     </message>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished">پاک‌کردن خطاها</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation type="unfinished">در حال حذف خطاها</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished">خطانگاره خالی است</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished">کد خطا:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished">عملکرد:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished">پیام:</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

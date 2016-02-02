@@ -8,6 +8,28 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Wed Dec 31 2015 Antonio Davide Trogu <trogu.davide@gmail.com> 0.79-1
+- Implemented Sticker support
+- Implemented Daemon support
+- Full featured notification management
+- New sharing center which replaces the old file picker ( thanks thebootroo :) )
+- New cover implementation ( thanks toxip :) )
+- Emoji's engine now takes care of skin color/tone
+- Implemented support for Location type messages
+- Media Messages' caption is now displayed (if any)
+- It's possible to change the Bubble's opacity from settings
+- Added "soft" notification during conversation (a small "bip")
+- It' possibile to use a second style for bubbles (can be enabled in settings)
+- Sticker sets can be installed by long pressing it during a conversation
+- The client now sends/receives typing state to/from other users
+- Dropped HeartBeat
+- Improved UI
+- Performance boost
+- New icon ( thanks again toxip :) )
+- Updated LibQTelegram and TelegramQML to upstream
+- Minor Fixes
+- Updated Localizations
+
 * Wed Dec 31 2015 Antonio Davide Trogu <trogu.davide@gmail.com> 0.73-5
 - Fixed ContactPage issue
 - Fixed Cover Actions

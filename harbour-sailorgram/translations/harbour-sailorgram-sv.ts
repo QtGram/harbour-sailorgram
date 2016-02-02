@@ -97,7 +97,7 @@
     </message>
     <message>
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>Medhjälpare</translation>
     </message>
     <message>
         <source>Ukrainian</source>
@@ -278,7 +278,7 @@ Minimilängd är 5 tecken.</translation>
     </message>
     <message>
         <source>Bubbles with angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Bubblor med vinkel</translation>
     </message>
 </context>
 <context>
@@ -398,27 +398,27 @@ meddelanden</translation>
     </message>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished">Rensa felloggen</translation>
+        <translation>Rensa felloggen</translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation type="unfinished">Tar bort fel</translation>
+        <translation>Tar bort loggade fel</translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished">Felloggen är tom</translation>
+        <translation>Felloggen är tom</translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished">Felkod:</translation>
+        <translation>Felkod:</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished">Funktion:</translation>
+        <translation>Funktion:</translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished">Meddelande:</translation>
+        <translation>Meddelande:</translation>
     </message>
 </context>
 <context>
@@ -627,7 +627,7 @@ Svep åt vänster för att välja en kontakt</translation>
     </message>
     <message>
         <source>Install Sticker set</source>
-        <translation type="unfinished"></translation>
+        <translation>Installera märkesuppsättning</translation>
     </message>
 </context>
 <context>

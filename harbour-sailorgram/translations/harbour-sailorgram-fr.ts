@@ -398,27 +398,27 @@ non lus</translation>
     </message>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished">Supprimer les erreurs</translation>
+        <translation>Supprimer les erreurs</translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation type="unfinished">Suppression des erreurs</translation>
+        <translation>Suppression des erreurs</translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished">Le journal d&apos;erreur est vide</translation>
+        <translation>Le journal d&apos;erreurs est vide</translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished">Code d&apos;erreur :</translation>
+        <translation>Code d&apos;erreur :</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished">Fonction :</translation>
+        <translation>Fonction :</translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished">Message :</translation>
+        <translation>Message :</translation>
     </message>
 </context>
 <context>
@@ -627,7 +627,7 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
     </message>
     <message>
         <source>Install Sticker set</source>
-        <translation type="unfinished"></translation>
+        <translation>Installer un set de sticker</translation>
     </message>
 </context>
 <context>
@@ -641,7 +641,7 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
     <name>MessageSearchItem</name>
     <message>
         <source>You:</source>
-        <translation type="unfinished">Vous :</translation>
+        <translation>Vous :</translation>
     </message>
 </context>
 <context>
@@ -738,7 +738,7 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
     </message>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Envoyer</translation>
     </message>
 </context>
 <context>
@@ -773,7 +773,7 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
     </message>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Envoyer</translation>
     </message>
 </context>
 <context>
@@ -861,11 +861,11 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
     <name>SelectorStickerPage</name>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Envoyer</translation>
     </message>
     <message>
         <source>Select a Sticker Set from below</source>
-        <translation type="unfinished"></translation>
+        <translation>Choisir un set de Sticker ci-dessous</translation>
     </message>
 </context>
 <context>

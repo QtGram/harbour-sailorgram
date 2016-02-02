@@ -93,15 +93,15 @@
     </message>
     <message>
         <source>Icon Designers</source>
-        <translation type="unfinished"></translation>
+        <translation>Designer icona</translation>
     </message>
     <message>
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>Collaboratori</translation>
     </message>
     <message>
         <source>Ukrainian</source>
-        <translation type="unfinished"></translation>
+        <translation>Ucraino</translation>
     </message>
 </context>
 <context>
@@ -278,7 +278,7 @@ La lunghezza minima è di 5 caratteri.</translation>
     </message>
     <message>
         <source>Bubbles with angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Bolle con l&apos;angolo</translation>
     </message>
 </context>
 <context>
@@ -327,12 +327,14 @@ La lunghezza minima è di 5 caratteri.</translation>
     <message>
         <source>Unread
 message</source>
-        <translation type="unfinished"></translation>
+        <translation>Messaggio
+non letto</translation>
     </message>
     <message>
         <source>Unread
 messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Messaggi
+non letti</translation>
     </message>
     <message>
         <source>Disconnected</source>
@@ -344,7 +346,8 @@ messages</source>
     </message>
     <message>
         <source>Recent chats:</source>
-        <translation type="unfinished"></translation>
+        <translation>Chat
+recenti:</translation>
     </message>
 </context>
 <context>
@@ -396,27 +399,27 @@ messages</source>
     </message>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished">Cancella gli errori</translation>
+        <translation>Elimina errori</translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation type="unfinished">Rimozione errori:</translation>
+        <translation>Rimozione errori</translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished">Il log degli errori è vuoto</translation>
+        <translation>Il log degli errori è vuoto</translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished">Codice d&apos;errore:</translation>
+        <translation>Codice d&apos;errore:</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished">Funzione:</translation>
+        <translation>Funzione:</translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished">Messaggi:</translation>
+        <translation>Messaggio:</translation>
     </message>
 </context>
 <context>
@@ -625,7 +628,7 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Install Sticker set</source>
-        <translation type="unfinished"></translation>
+        <translation>Installa questi Sticker</translation>
     </message>
 </context>
 <context>
@@ -639,7 +642,7 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     <name>MessageSearchItem</name>
     <message>
         <source>You:</source>
-        <translation type="unfinished">Tu:</translation>
+        <translation>Tu:</translation>
     </message>
 </context>
 <context>
@@ -736,7 +739,7 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Invia</translation>
     </message>
 </context>
 <context>
@@ -771,7 +774,7 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Invia</translation>
     </message>
 </context>
 <context>
@@ -859,11 +862,11 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     <name>SelectorStickerPage</name>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Invia</translation>
     </message>
     <message>
         <source>Select a Sticker Set from below</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleziona un set di sticker</translation>
     </message>
 </context>
 <context>

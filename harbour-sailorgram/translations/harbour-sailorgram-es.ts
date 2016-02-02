@@ -97,7 +97,7 @@
     </message>
     <message>
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>Colaboradores</translation>
     </message>
     <message>
         <source>Ukrainian</source>
@@ -157,7 +157,7 @@
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation>El código de autorización que has introducido no es correcto</translation>
+        <translation>El código de autorización introducido no es correcto</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign In&apos;</source>
@@ -278,7 +278,7 @@ La longitud mínima es de 5 caracteres.</translation>
     </message>
     <message>
         <source>Bubbles with angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Globos de diálogo con ángulo</translation>
     </message>
 </context>
 <context>
@@ -396,27 +396,27 @@ messages</source>
     </message>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished">Limpiar errores</translation>
+        <translation>Borrar errores</translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation type="unfinished">Borrando errores</translation>
+        <translation>Borrando errores</translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished">El registro de errores está vacío</translation>
+        <translation>El registro de errores está vacío</translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished">Código de error:</translation>
+        <translation>Código de error:</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished">Función:</translation>
+        <translation>Función:</translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished">Mensaje:</translation>
+        <translation>Mensaje:</translation>
     </message>
 </context>
 <context>
@@ -625,7 +625,7 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
     </message>
     <message>
         <source>Install Sticker set</source>
-        <translation type="unfinished"></translation>
+        <translation>Instalar grupo de Stickers</translation>
     </message>
 </context>
 <context>
@@ -639,7 +639,7 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
     <name>MessageSearchItem</name>
     <message>
         <source>You:</source>
-        <translation type="unfinished">Tú:</translation>
+        <translation>Tú:</translation>
     </message>
 </context>
 <context>
@@ -736,7 +736,7 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
     </message>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Enviar</translation>
     </message>
 </context>
 <context>
@@ -771,7 +771,7 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
     </message>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Enviar</translation>
     </message>
 </context>
 <context>
@@ -859,11 +859,11 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
     <name>SelectorStickerPage</name>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Enviar</translation>
     </message>
     <message>
         <source>Select a Sticker Set from below</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecciona un grupo de Stickers</translation>
     </message>
 </context>
 <context>

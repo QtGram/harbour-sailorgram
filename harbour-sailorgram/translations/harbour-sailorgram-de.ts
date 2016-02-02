@@ -127,7 +127,7 @@
     <name>AddContactsPage</name>
     <message>
         <source>Add Chat Member</source>
-        <translation>Gesprächspartner hinzufügen</translation>
+        <translation>Mitglied hinzufügen</translation>
     </message>
 </context>
 <context>
@@ -224,11 +224,11 @@ Minimum sind 5 Zeichen.</translation>
     </message>
     <message>
         <source>Change title</source>
-        <translation>Titel änderen</translation>
+        <translation>Titel ändern</translation>
     </message>
     <message>
         <source>Add member</source>
-        <translation>Gesprächspartner hinzufügen</translation>
+        <translation>Mitglied hinzufügen</translation>
     </message>
 </context>
 <context>
@@ -239,7 +239,7 @@ Minimum sind 5 Zeichen.</translation>
     </message>
     <message>
         <source>Removing from group</source>
-        <translation>wird aus der Gruppe entfernt</translation>
+        <translation>Wird aus der Gruppe entfernt</translation>
     </message>
 </context>
 <context>
@@ -296,7 +296,7 @@ Minimum sind 5 Zeichen.</translation>
     </message>
     <message>
         <source>Login Again</source>
-        <translation>wieder anmelden </translation>
+        <translation>Erneut anmelden </translation>
     </message>
     <message>
         <source>Telegram Status</source>
@@ -328,7 +328,7 @@ Minimum sind 5 Zeichen.</translation>
         <source>Unread
 message</source>
         <translation>Ungelesene
-Nachrichten</translation>
+Nachricht</translation>
     </message>
     <message>
         <source>Unread
@@ -398,27 +398,27 @@ Nachrichten</translation>
     </message>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished">Fehler löschen</translation>
+        <translation>Fehler löschen</translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation type="unfinished">Fehler löschen</translation>
+        <translation>Fehler werden gelöscht</translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished">Error log ist leer</translation>
+        <translation>Error log ist leer</translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished">Fehler code:</translation>
+        <translation>Fehler code:</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished">Funktion:</translation>
+        <translation>Funktion:</translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished">Nachricht:</translation>
+        <translation>Nachricht:</translation>
     </message>
 </context>
 <context>
@@ -433,7 +433,7 @@ Nachrichten</translation>
     </message>
     <message>
         <source>Delete conversation</source>
-        <translation>Unterhaltung löschen</translation>
+        <translation>Chat löschen</translation>
     </message>
     <message>
         <source>Deleting secret chat</source>
@@ -445,7 +445,7 @@ Nachrichten</translation>
     </message>
     <message>
         <source>Deleting conversation</source>
-        <translation>Unterhaltung wird gelöscht</translation>
+        <translation>Chat wird gelöscht</translation>
     </message>
     <message>
         <source>Actions</source>
@@ -461,7 +461,7 @@ Nachrichten</translation>
     </message>
     <message>
         <source>Add to contacts</source>
-        <translation>zu Kontakten hinzufügen</translation>
+        <translation>Zu Kontakten hinzufügen</translation>
     </message>
 </context>
 <context>
@@ -501,7 +501,7 @@ Nachrichten</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation>Unterhaltung löschen</translation>
+        <translation>Chat löschen</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
@@ -547,8 +547,7 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
-        <translation>in der Galerie ablegen
-</translation>
+        <translation>In der Galerie ablegen</translation>
     </message>
     <message>
         <source>Image saved in Gallery</source>
@@ -628,7 +627,7 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Install Sticker set</source>
-        <translation type="unfinished"></translation>
+        <translation>Sticker Set installieren</translation>
     </message>
 </context>
 <context>
@@ -642,7 +641,7 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
     <name>MessageSearchItem</name>
     <message>
         <source>You:</source>
-        <translation type="unfinished">Du:</translation>
+        <translation>Du:</translation>
     </message>
 </context>
 <context>
@@ -709,7 +708,7 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
     <name>SecretDialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation>Mehr  Nachrichten laden</translation>
+        <translation>Weiter Nachrichten laden</translation>
     </message>
 </context>
 <context>
@@ -739,7 +738,7 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Senden</translation>
     </message>
 </context>
 <context>
@@ -774,7 +773,7 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Senden</translation>
     </message>
 </context>
 <context>
@@ -862,11 +861,11 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
     <name>SelectorStickerPage</name>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Senden</translation>
     </message>
     <message>
         <source>Select a Sticker Set from below</source>
-        <translation type="unfinished"></translation>
+        <translation>Wähle ein unteres Sticker-Set</translation>
     </message>
 </context>
 <context>
@@ -877,7 +876,7 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Chats</source>
-        <translation>Konversationen</translation>
+        <translation>Chats</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -892,7 +891,7 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
     <name>SignUpPage</name>
     <message>
         <source>Sign Up</source>
-        <translation>Anmelden</translation>
+        <translation>Registrieren</translation>
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
@@ -927,7 +926,7 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>%1 has joined the group</source>
-        <translation>%1 hat die Gruppe betreten</translation>
+        <translation>%1 ist der Gruppe beigetreten</translation>
     </message>
     <message>
         <source>%1 has joined the group via invite link</source>
@@ -947,22 +946,22 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>%1 added %2</source>
-        <translation>%1 hinzugefügt von %2</translation>
+        <translation>%1 fügte %2 hinzu</translation>
     </message>
 </context>
 <context>
     <name>TelegramHelper</name>
     <message>
         <source>Recently</source>
-        <translation>zuletzt</translation>
+        <translation>Zuletzt</translation>
     </message>
     <message>
         <source>Last Month</source>
-        <translation>letzten Monat</translation>
+        <translation>Letzten Monat</translation>
     </message>
     <message>
         <source>Last Week</source>
-        <translation>letzte Woche</translation>
+        <translation>Letzte Woche</translation>
     </message>
     <message>
         <source>Online</source>
@@ -1002,7 +1001,7 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Last Seen %1</source>
-        <translation>zuletzt gesehen %1</translation>
+        <translation>Zuletzt gesehen %1</translation>
     </message>
     <message>
         <source>Typing...</source>
@@ -1029,7 +1028,7 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Begin Secret Chat</source>
-        <translation>Beginne eine geheime Konversation</translation>
+        <translation>Beginne Geheimen Chat</translation>
     </message>
     <message>
         <source>Phone Number</source>

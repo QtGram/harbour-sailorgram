@@ -340,7 +340,7 @@ messages</source>
     </message>
     <message>
         <source>Connected</source>
-        <translation type="unfinished">Verbunden</translation>
+        <translation>Verbunden</translation>
     </message>
     <message>
         <source>Recent chats:</source>
@@ -396,11 +396,11 @@ messages</source>
     </message>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished">Fehler löschen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation type="unfinished">Lösche Fehler</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Error log is empty</source>
@@ -416,7 +416,7 @@ messages</source>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished">Nachricht:</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -876,7 +876,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Debug</source>
-        <translation type="unfinished">Debug</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Daemon</source>

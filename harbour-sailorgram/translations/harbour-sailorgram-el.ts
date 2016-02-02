@@ -398,27 +398,27 @@ messages</source>
     </message>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished">Καθαρισμός καταγραφής σφαλμάτων</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation type="unfinished">Τα σφάλματα διαγράφονται</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished">Το αρχείο καταγραφής σφαλμάτων είναι άδειο</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished">Κωδικός σφάλματος</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished">Λειτουργία:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished">Μήνυμα:</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

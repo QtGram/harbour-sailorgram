@@ -398,27 +398,27 @@ sen ler</translation>
     </message>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished">Limpar erros</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation type="unfinished">Borrando errores</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished">O log de errores está baleiro</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished">Código de erro:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished">Función:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished">Mensaxe:</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

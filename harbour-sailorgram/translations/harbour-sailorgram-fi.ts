@@ -398,27 +398,27 @@ viestit</translation>
     </message>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished">Pyyhi virheet</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation type="unfinished">Virheet poistetaan</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished">Virheloki on tyhjä</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished">Virhekoodi:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished">Toiminnot:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished">Viesti:</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -398,27 +398,27 @@ berichten</translation>
     </message>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished">Fouten wissen</translation>
+        <translation>Fouten wissen</translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation type="unfinished">Bezig met het verwijderen van de fouten</translation>
+        <translation>Bezig met het verwijderen van de fouten</translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished">Het foutenlogbestand is leeg</translation>
+        <translation>Het foutenlogbestand is leeg</translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished">Foutcode:</translation>
+        <translation>Foutcode:</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished">Functie:</translation>
+        <translation>Functie:</translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished">Bericht:</translation>
+        <translation>Bericht:</translation>
     </message>
 </context>
 <context>
@@ -627,7 +627,7 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     </message>
     <message>
         <source>Install Sticker set</source>
-        <translation type="unfinished"></translation>
+        <translation>Stickerverzameling installeren</translation>
     </message>
 </context>
 <context>
