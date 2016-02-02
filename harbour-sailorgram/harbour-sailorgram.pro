@@ -85,7 +85,9 @@ SOURCES += src/harbour-sailorgram.cpp \
     src/selector/imagesmodel.cpp \
     src/selector/exif/exif.cpp \
     src/selector/imagesmodelworker.cpp \
-    src/model/dialogscovermodel.cpp
+    src/model/dialogscovermodel.cpp \
+    src/iphb/libiphb.cpp \
+    src/iphb/insomniac.cpp
 
 OTHER_FILES += qml/harbour-sailorgram.qml \
     rpm/harbour-sailorgram.changes.in \
@@ -192,7 +194,11 @@ HEADERS += \
     src/selector/imagesmodel.h \
     src/selector/exif/exif.h \
     src/selector/imagesmodelworker.h \
-    src/model/dialogscovermodel.h
+    src/model/dialogscovermodel.h \
+    src/iphb/iphb_internal.h \
+    src/iphb/libiphb.h \
+    src/iphb/messages.h \
+    src/iphb/insomniac.h
 
 RESOURCES += \
     resources.qrc
@@ -241,4 +247,5 @@ DISTFILES += \
     qml/components/message/MessageContainer.qml \
     mce/10sailorgram-led.ini \
     qml/components/search/MessageSearchList.qml \
-    qml/items/search/MessageSearchItem.qml
+    qml/items/search/MessageSearchItem.qml \
+    qml/items/message/messageitem/MessageBubble.qml

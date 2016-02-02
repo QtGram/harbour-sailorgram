@@ -36,6 +36,7 @@
 #include "selector/audiorecorder.h"
 #include "selector/thumbnailprovider.h"
 #include "selector/imagesmodel.h"
+#include "iphb/insomniac.h"
 #include "sailorgram.h"
 
 bool hasDaemon(const QStringList& args)
@@ -82,6 +83,7 @@ int main(int argc, char *argv[])
     TelegramQmlInitializer::init("harbour.sailorgram.TelegramQml");
 
     qmlRegisterType<SailorGram>("harbour.sailorgram.SailorGram", 1, 0, "SailorGram");
+    qmlRegisterType<Insomniac>("harbour.sailorgram.Insomniac", 1, 0, "Insomniac");
     qmlRegisterType<ScreenBlank>("harbour.sailorgram.DBus", 1, 0, "ScreenBlank");
     qmlRegisterType<AudioRecorder>("harbour.sailorgram.Selector", 1, 0, "AudioRecorder");
     qmlRegisterType<ImagesModel>("harbour.sailorgram.ImagesModel", 1, 0, "ImagesModel");
