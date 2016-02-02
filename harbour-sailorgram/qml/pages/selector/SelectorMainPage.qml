@@ -5,6 +5,7 @@ import "../../models"
 Page
 {
     property Context context
+    property Page dialogPage
 
     readonly property string fileAction: "file"
     readonly property string imageAction: "image"
@@ -61,7 +62,8 @@ Page
                     height: grid.cellHeight
 
                     onClicked: {
-                        var page = pageStack.push(modelData ["page"], { "context": selectormainpage.context });
+                        var page = pageStack.push(modelData ["page"], { "context": selectormainpage.context,
+                                                                        "acceptDestination": dialogPage });
 
                         page.actionCompleted.connect(function(action, data) {
                             selectormainpage.actionCompleted(action, data);

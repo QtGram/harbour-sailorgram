@@ -113,7 +113,8 @@ InverseMouseArea
 
             onClicked: {
                 var returnpage = pageStack.currentPage;
-                var selector = pageStack.push(Qt.resolvedUrl("../../pages/selector/SelectorMainPage.qml"), { "context": dialogtextinput.context });
+                var selector = pageStack.push(Qt.resolvedUrl("../../pages/selector/SelectorMainPage.qml"), { "context": dialogtextinput.context,
+                                                                                                             "dialogPage": pageStack.currentPage });
 
                 selector.actionCompleted.connect(function(action, data) {
                     var peerid = TelegramHelper.peerId(dialogtextinput.dialog);

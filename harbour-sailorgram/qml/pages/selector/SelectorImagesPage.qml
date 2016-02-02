@@ -48,6 +48,7 @@ Dialog
 
     id: selectorimagespage
     allowedOrientations: defaultAllowedOrientations
+    acceptDestinationAction: PageStackAction.Pop
     canAccept: selectedFiles.length > 0
     onAccepted: selectedFiles.forEach(sendImage)
 
@@ -77,12 +78,12 @@ Dialog
                 onClicked: {
                     if (!!rootPage) {
                         rootPage.folder = context.sailorgram.androidStorage;
-                        rootPage.sortRole = filesmodel.NameRole;
+                        rootPage.sortRole = FilesModel.NameRole;
                         rootPage.sortOrder = Qt.AscendingOrder;
                         pageStack.pop(rootPage);
                     } else {
                         folder = context.sailorgram.androidStorage;
-                        sortRole = filesmodel.NameRole;
+                        sortRole = FilesModel.NameRole;
                         sortOrder = Qt.AscendingOrder;
                     }
                 }
@@ -94,12 +95,12 @@ Dialog
                 onClicked: {
                     if (!!rootPage) {
                         rootPage.folder = context.sailorgram.sdcardFolder;
-                        rootPage.sortRole = filesmodel.NameRole;
+                        rootPage.sortRole = FilesModel.NameRole;
                         rootPage.sortOrder = Qt.AscendingOrder;
                         pageStack.pop(rootPage);
                     } else {
                         folder = context.sailorgram.sdcardFolder;
-                        sortRole = filesmodel.NameRole;
+                        sortRole = FilesModel.NameRole;
                         sortOrder = Qt.AscendingOrder;
                     }
                 }
@@ -110,12 +111,12 @@ Dialog
                 onClicked: {
                     if (!!rootPage) {
                         rootPage.folder = context.sailorgram.homeFolder;
-                        rootPage.sortRole = filesmodel.NameRole;
+                        rootPage.sortRole = FilesModel.NameRole;
                         rootPage.sortOrder = Qt.AscendingOrder;
                         pageStack.pop(rootPage);
                     } else {
                         folder = context.sailorgram.homeFolder;
-                        sortRole = filesmodel.NameRole;
+                        sortRole = FilesModel.NameRole;
                         sortOrder = Qt.AscendingOrder;
                     }
                 }
@@ -181,6 +182,7 @@ Dialog
                                                         "sortRole": sortRole,
                                                         "sortOrder": sortOrder,
                                                         "selectedFiles": selectedFiles,
+                                                        "acceptDestination": acceptDestination,
                                                         "rootPage": !!rootPage ? rootPage : selectorimagespage } );
                         nextPage.actionCompleted.connect(selectorimagespage.actionCompleted);
                         nextPage.rejected.connect(function () { selectorimagespage.selectedFiles = nextPage.selectedFiles; });
@@ -188,7 +190,7 @@ Dialog
                     else {
                         //selectedFiles needs to be reassigned every time it is manipulated because it doesn't emit signals otherwise
                         if (isSelected) {
-                            selectedFiles = selectedFiles.filter(filter, model.url);
+                            selectedFiles = selectedFiles.filter(function (element) { return element !== model.url; });
                         } else {
                             selectedFiles = selectedFiles.concat([model.url]);
                         }

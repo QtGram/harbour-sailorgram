@@ -16,6 +16,7 @@ Dialog
 
     id: dlgselectorsticker
     allowedOrientations: defaultAllowedOrientations
+    acceptDestinationAction: PageStackAction.Pop
     canAccept: selectedSticker !== null
     onAccepted: actionCompleted("sticker", selectedSticker)
 

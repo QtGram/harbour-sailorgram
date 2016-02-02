@@ -12,6 +12,7 @@ Dialog
 
     id: selectorphotopage
     allowedOrientations: defaultAllowedOrientations
+    acceptDestinationAction: PageStackAction.Pop
     canAccept:(capturedFilePath !== "")
     onAccepted: actionCompleted("photocapture", capturedFilePath)
     onOrientationChanged: {

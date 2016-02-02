@@ -14,6 +14,7 @@ Dialog
 
     id: selectorsoundrecordpage
     allowedOrientations: defaultAllowedOrientations
+    acceptDestinationAction: PageStackAction.Pop
     canAccept: finished
     onAccepted: actionCompleted("soundrecord", context.sailorgram.voiceRecordPath)
 
