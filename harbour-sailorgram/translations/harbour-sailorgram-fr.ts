@@ -268,6 +268,10 @@ La longueur minimum est de 5 caractères.</translation>
         <source>Appearance</source>
         <translation>Apparence</translation>
     </message>
+    <message>
+        <source>Bubbles with angle</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConnectingLabel</name>

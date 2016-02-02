@@ -268,6 +268,10 @@ Minimální délka je 5 znaků .</translation>
         <source>Appearance</source>
         <translation>Vzhled</translation>
     </message>
+    <message>
+        <source>Bubbles with angle</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConnectingLabel</name>

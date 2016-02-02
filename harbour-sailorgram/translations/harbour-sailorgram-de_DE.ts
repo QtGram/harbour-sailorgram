@@ -268,6 +268,10 @@ Minimale Länge sind 5 Zeichen</translation>
         <source>Appearance</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Bubbles with angle</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConnectingLabel</name>

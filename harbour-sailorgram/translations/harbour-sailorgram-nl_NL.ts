@@ -268,6 +268,10 @@ De minimale lengte is 5 tekens.</translation>
         <source>Appearance</source>
         <translation>Uiterlijk</translation>
     </message>
+    <message>
+        <source>Bubbles with angle</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConnectingLabel</name>

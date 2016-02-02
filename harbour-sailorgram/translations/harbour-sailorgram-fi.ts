@@ -268,6 +268,10 @@ Vähimmäispituus on 5 merkkiä.</translation>
         <source>Appearance</source>
         <translation>Ulkonäkö</translation>
     </message>
+    <message>
+        <source>Bubbles with angle</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConnectingLabel</name>

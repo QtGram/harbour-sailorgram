@@ -268,6 +268,10 @@ Minimilängd är 5 tecken.</translation>
         <source>Appearance</source>
         <translation>Utseende</translation>
     </message>
+    <message>
+        <source>Bubbles with angle</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConnectingLabel</name>

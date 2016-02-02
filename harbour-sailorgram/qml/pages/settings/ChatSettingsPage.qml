@@ -16,11 +16,14 @@ Dialog
         context.backgrounddisabled = !tsenablebackground.checked;
         context.chatheaderhidden = !tsshowchatheader.checked;
         context.bubbleshidden = !tsbubblesvisible.checked;
+        context.angledbubbles = tsangledbubbles.checked;
         context.bubblesopacity = slbubblesopacity.value;
+
         Settings.set("sendwithreturn", tssendwithreturn.checked);
         Settings.set("backgrounddisabled", !tsenablebackground.checked);
         Settings.set("chatheaderhidden", !tsshowchatheader.checked);
         Settings.set("hidebubbles", !tsbubblesvisible.checked);
+        Settings.set("angledbubbles", tsangledbubbles.checked);
         Settings.set("bubblesopacity", slbubblesopacity.value);
     }
 
@@ -63,6 +66,15 @@ Dialog
                 anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
                 text: qsTr("Bubbles visible")
                 checked: !context.bubbleshidden
+            }
+
+            TextSwitch
+            {
+                id: tsangledbubbles
+                anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
+                text: qsTr("Bubbles with angle")
+                visible: tsbubblesvisible.checked
+                checked: context.angledbubbles
             }
 
             Slider

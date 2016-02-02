@@ -11,7 +11,7 @@ Item
     property Message message
 
     id: messagebubble
-    layer.enabled: context.bubbleshidden ? false : true
+    layer.enabled: (context.bubbleshidden || !context.angledbubbles) ? false : true
     opacity: context.bubblesopacity / 100.0
 
     visible: {
@@ -37,7 +37,7 @@ Item
         id: mainbubble
         color: ColorScheme.colorizeBubble(message, context)
         anchors.fill: parent
-        radius: 20
+        radius: context.angledbubbles ? 20 : 4
         smooth: true
     }
 
@@ -47,6 +47,7 @@ Item
         width: mainbubble.radius * 2
         height: mainbubble.radius * 2
         color: mainbubble.color
+        visible: context.angledbubbles
 
         anchors {
             top: parent.top;

@@ -268,6 +268,10 @@ Minimumslængde er fem tegn.</translation>
         <source>Appearance</source>
         <translation>Udseende</translation>
     </message>
+    <message>
+        <source>Bubbles with angle</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConnectingLabel</name>
