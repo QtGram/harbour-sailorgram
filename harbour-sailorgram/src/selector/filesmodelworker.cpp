@@ -4,9 +4,7 @@
 #include <QFileInfoList>
 #include <QDir>
 #include <QDateTime>
-
-
-const QStringList FilesModelWorker::_imagesfilterlist(QStringList() << "*.jpg" << "*.jpeg" << "*.png" << "*.gif" << "*.bmp" << "*.pbm" << "*.pgm" << "*.ppm" << "*.xbm" << "*.xpm");
+#include <QMimeDatabase>
 
 
 FilesModelWorker::FilesModelWorker(QObject *parent) : QObject(parent)
@@ -46,22 +44,8 @@ FilesModel::EntryList FilesModelWorker::scanDirectory(const QString &path, Files
 
     if (directory.exists())
     {
-        QFileInfoList list;
-
-        switch (filter)
-        {
-            case FilesModel::NoFilter:
-            {
-                list = directory.entryInfoList(QDir::NoDotAndDotDot | QDir::AllDirs | QDir::Files | QDir::Readable);
-                break;
-            }
-
-            case FilesModel::ImagesFilter:
-            {
-                list = directory.entryInfoList(FilesModelWorker::_imagesfilterlist, QDir::NoDotAndDotDot | QDir::AllDirs | QDir::Files | QDir::Readable);
-                break;
-            }
-        }
+        QFileInfoList list = directory.entryInfoList(QDir::NoDotAndDotDot | QDir::AllDirs | QDir::Files | QDir::Readable);
+        QMimeDatabase mimedb;
 
         entryList.reserve(list.size());
 
@@ -88,6 +72,51 @@ FilesModel::EntryList FilesModelWorker::scanDirectory(const QString &path, Files
 
             if (fileInfo.isFile())
             {
+                entry.type = mimedb.mimeTypeForFile(fileInfo, QMimeDatabase::MatchExtension);
+
+                QString type = entry.type.name().split('/').at(0);
+
+                switch(filter)
+                {
+                    case FilesModel::NoFilter:
+                        break;
+
+                    case FilesModel::ImagesFilter:
+                    {
+                        if (type != QStringLiteral("image"))
+                            continue;
+
+                        break;
+                    }
+
+                    case FilesModel::DocumentsFilter:
+                    {
+                        if (type != QStringLiteral("text"))
+                            continue;
+
+                        break;
+                    }
+
+                    case FilesModel::VideosFilter:
+                    {
+                        if (type != QStringLiteral("video"))
+                            continue;
+
+                        break;
+                    }
+
+                    case FilesModel::AudiosFilter:
+                    {
+                        if (type != QStringLiteral("audio"))
+                            continue;
+
+                        break;
+                    }
+
+                    default:
+                        break;
+                }
+
                 entry.isDir = false;
 
                 int orientation = 0;
@@ -158,6 +187,10 @@ void FilesModelWorker::sort(FilesModel::EntryList *list, Qt::SortOrder sortOrder
                 case FilesModel::IsDirRole:
                     std::sort(list->begin(), list->end(), lesserIsDirThan);
                     break;
+
+                case FilesModel::IconRole:
+                    std::sort(list->begin(), list->end(), lesserTypeThan);
+                    break;
             }
             break;
         }
@@ -188,6 +221,10 @@ void FilesModelWorker::sort(FilesModel::EntryList *list, Qt::SortOrder sortOrder
 
                 case FilesModel::IsDirRole:
                     std::sort(list->begin(), list->end(), biggerIsDirThan);
+                    break;
+
+                case FilesModel::IconRole:
+                    std::sort(list->begin(), list->end(), biggerTypeThan);
                     break;
             }
             break;
@@ -223,6 +260,11 @@ bool FilesModelWorker::lesserIsDirThan(const FilesModel::Entry &e1, const FilesM
     return !e1.isDir && e2.isDir;
 }
 
+bool FilesModelWorker::lesserTypeThan(const FilesModel::Entry &e1, const FilesModel::Entry &e2)
+{
+    return e1.type.name() < e2.type.name();
+}
+
 bool FilesModelWorker::biggerPathThan(const FilesModel::Entry &e1, const FilesModel::Entry &e2)
 {
     return e1.path.compare(e2.path) > 0;
@@ -246,4 +288,9 @@ bool FilesModelWorker::biggerOrientationThan(const FilesModel::Entry &e1, const 
 bool FilesModelWorker::biggerIsDirThan(const FilesModel::Entry &e1, const FilesModel::Entry &e2)
 {
     return e1.isDir && !e2.isDir;
+}
+
+bool FilesModelWorker::biggerTypeThan(const FilesModel::Entry &e1, const FilesModel::Entry &e2)
+{
+    return e1.type.name() > e2.type.name();
 }

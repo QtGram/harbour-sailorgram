@@ -3,6 +3,7 @@
 
 
 #include <QAbstractListModel>
+#include <QMimeType>
 
 
 class FilesModelWorker;
@@ -25,8 +26,8 @@ class FilesModel : public QAbstractListModel
 
 public:
 
-    enum Role { PathRole = 0, DateRole = 1, OrientationRole = 2 , UrlRole = 3, IsDirRole = 4, NameRole = 5 };
-    enum Filter { NoFilter = 0, ImagesFilter = 1 };
+    enum Role { PathRole = 0, DateRole = 1, OrientationRole = 2 , UrlRole = 3, IsDirRole = 4, NameRole = 5 , IconRole = 6 };
+    enum Filter { NoFilter = 0, ImagesFilter = 1, DocumentsFilter = 2, VideosFilter = 3, AudiosFilter = 4 };
 
     struct Entry
     {
@@ -34,6 +35,7 @@ public:
         qint64 date;
         int orientation;
         bool isDir;
+        QMimeType type;
     };
     typedef QList<Entry> EntryList;
 
@@ -93,8 +95,6 @@ private:
     QThread *_workerthread;
     FilesModel::EntryList _entries;
     FilesModel::Request _request;
-
-    static const QStringList _imagesdirpaths;
 
 private slots:
 
