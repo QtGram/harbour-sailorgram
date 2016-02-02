@@ -97,8 +97,7 @@ function printableDate(timestamp, full)
     if(now === date)
         return Qt.formatDateTime(date, "HH:mm");
 
-    var MS_PER_DAY = 1000 * 60 * 60 * 24;
-    var daydiff = (now - date) / MS_PER_DAY;
+    var daydiff = (now - date) / 86400000; // ms per day = 1000 * 60 * 60 * 24
 
     if(daydiff < 7)
         return Qt.formatDateTime(date, "ddd HH:mm");
