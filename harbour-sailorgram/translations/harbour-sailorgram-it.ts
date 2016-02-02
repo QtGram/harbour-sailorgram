@@ -99,6 +99,10 @@
         <source>Contributors</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Ukrainian</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AddContactPage</name>

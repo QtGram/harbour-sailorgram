@@ -141,7 +141,7 @@ Page
                 InfoLabel
                 {
                     id: lblicondesigner
-                    anchors { left: parent.left; top: lbldev.bottom; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
+                    anchors { left: parent.left; top: lblcontributors.bottom; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
                     title: qsTr("Icon Designers")
                     text: "gri4994 and toxip"
                 }
