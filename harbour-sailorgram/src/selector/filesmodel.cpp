@@ -90,18 +90,18 @@ QVariant FilesModel::data(const QModelIndex &index, int role) const
             if (this->_entries.at(row).isDir)
                 return "image://theme/icon-m-folder";
 
-            QString type = this->_entries.at(row).type.name().split('/').at(0);
+            QString category = this->_entries.at(row).type.split('/').at(0);
 
-            if (type == QStringLiteral("image"))
+            if (category == QStringLiteral("image"))
                 return "image://theme/icon-m-image";
 
-            if (type == QStringLiteral("video"))
+            if (category == QStringLiteral("video"))
                 return "image://theme/icon-m-video";
 
-            if (type == QStringLiteral("text"))
+            if (category == QStringLiteral("text"))
                 return "image://theme/icon-m-document";
 
-            if (type == QStringLiteral("audio"))
+            if (category == QStringLiteral("audio"))
                 return "image://theme/icon-m-music";
 
             return "image://theme/icon-m-other";
@@ -182,9 +182,9 @@ void FilesModel::setFolder(const QString &folder)
         temp = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation).value(0);
     else if (folder == QStringLiteral("StandardVideosFolder"))
         temp = QStandardPaths::standardLocations(QStandardPaths::MoviesLocation).value(0);
-    else if (folder == QStringLiteral("StandardDocumentsLocation"))
+    else if (folder == QStringLiteral("StandardDocumentsFolder"))
         temp = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).value(0);
-    else if (folder == QStringLiteral("StandardMusicLocation"))
+    else if (folder == QStringLiteral("StandardMusicFolder"))
         temp = QStandardPaths::standardLocations(QStandardPaths::MusicLocation).value(0);
     else
         temp = folder;

@@ -5,6 +5,7 @@
 #include <QDir>
 #include <QDateTime>
 #include <QMimeDatabase>
+#include <QMimeType>
 
 
 FilesModelWorker::FilesModelWorker(QObject *parent) : QObject(parent)
@@ -72,9 +73,9 @@ FilesModel::EntryList FilesModelWorker::scanDirectory(const QString &path, Files
 
             if (fileInfo.isFile())
             {
-                entry.type = mimedb.mimeTypeForFile(fileInfo, QMimeDatabase::MatchExtension);
+                entry.type = mimedb.mimeTypeForFile(fileInfo, QMimeDatabase::MatchExtension).name();
 
-                QString type = entry.type.name().split('/').at(0);
+                QString category = entry.type.split('/').at(0);
 
                 switch(filter)
                 {
@@ -83,7 +84,7 @@ FilesModel::EntryList FilesModelWorker::scanDirectory(const QString &path, Files
 
                     case FilesModel::ImageFilter:
                     {
-                        if (type != QStringLiteral("image"))
+                        if (category != QStringLiteral("image"))
                             continue;
 
                         break;
@@ -91,7 +92,7 @@ FilesModel::EntryList FilesModelWorker::scanDirectory(const QString &path, Files
 
                     case FilesModel::DocumentFilter:
                     {
-                        if (type != QStringLiteral("text"))
+                        if (category != QStringLiteral("text"))
                             continue;
 
                         break;
@@ -99,7 +100,7 @@ FilesModel::EntryList FilesModelWorker::scanDirectory(const QString &path, Files
 
                     case FilesModel::VideoFilter:
                     {
-                        if (type != QStringLiteral("video"))
+                        if (category != QStringLiteral("video"))
                             continue;
 
                         break;
@@ -107,7 +108,7 @@ FilesModel::EntryList FilesModelWorker::scanDirectory(const QString &path, Files
 
                     case FilesModel::AudioFilter:
                     {
-                        if (type != QStringLiteral("audio"))
+                        if (category != QStringLiteral("audio"))
                             continue;
 
                         break;
@@ -262,7 +263,7 @@ bool FilesModelWorker::lesserIsDirThan(const FilesModel::Entry &e1, const FilesM
 
 bool FilesModelWorker::lesserTypeThan(const FilesModel::Entry &e1, const FilesModel::Entry &e2)
 {
-    return e1.type.name() < e2.type.name();
+    return e1.type < e2.type;
 }
 
 bool FilesModelWorker::biggerPathThan(const FilesModel::Entry &e1, const FilesModel::Entry &e2)
@@ -292,5 +293,5 @@ bool FilesModelWorker::biggerIsDirThan(const FilesModel::Entry &e1, const FilesM
 
 bool FilesModelWorker::biggerTypeThan(const FilesModel::Entry &e1, const FilesModel::Entry &e2)
 {
-    return e1.type.name() > e2.type.name();
+    return e1.type > e2.type;
 }

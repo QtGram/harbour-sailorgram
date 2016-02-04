@@ -3,7 +3,6 @@
 
 
 #include <QAbstractListModel>
-#include <QMimeType>
 
 
 class FilesModelWorker;
@@ -35,7 +34,7 @@ public:
         qint64 date;
         int orientation;
         bool isDir;
-        QMimeType type;
+        QString type;
     };
     typedef QList<Entry> EntryList;
 
