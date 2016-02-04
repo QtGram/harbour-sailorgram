@@ -58,7 +58,7 @@ public:
     };
 
     explicit FilesModel(QObject *parent = Q_NULLPTR);
-    ~FilesModel();
+    virtual ~FilesModel();
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
     QVariant data(const QModelIndex &index, int role) const Q_DECL_OVERRIDE;
@@ -90,8 +90,11 @@ signals:
 
 private:
 
-    FilesModelWorker *_worker;
-    QThread *_workerthread;
+    static FilesModelWorker *_worker;
+    static QThread *_workerthread;
+    static uint _ref;
+    static bool _registered;
+
     FilesModel::EntryList _entries;
     FilesModel::Request _request;
 

@@ -8,10 +8,6 @@
 #include <QMimeType>
 
 
-FilesModelWorker::FilesModelWorker(QObject *parent) : QObject(parent)
-{
-}
-
 void FilesModelWorker::handleRequest(const FilesModel::Request &request)
 {
     if (request == this->_lastrequest)

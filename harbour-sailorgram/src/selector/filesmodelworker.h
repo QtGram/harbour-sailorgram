@@ -14,7 +14,8 @@ class FilesModelWorker : public QObject
 
 public:
 
-    explicit FilesModelWorker(QObject *parent = Q_NULLPTR);
+    FilesModelWorker() {}
+    ~FilesModelWorker() {}
 
 public slots:
 
