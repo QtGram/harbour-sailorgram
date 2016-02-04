@@ -75,6 +75,7 @@ Item
                     height: parent.height
                     color: Theme.highlightColor
                     elide: Text.ElideRight
+                    horizontalAlignment: Text.AlignLeft
 
                     width: {
                         var w = parent.width - msgstatus.contentWidth;
