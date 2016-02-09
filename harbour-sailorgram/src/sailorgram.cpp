@@ -311,7 +311,27 @@ void SailorGram::onNotificationClosed(uint)
     qint32 peerid = notification->remoteActions().first().toMap()["arguments"].toList().first().toInt();
 
     this->_notifications.remove(peerid);
+
+    if(this->_topmessages.contains(peerid))
+        this->_topmessages.remove(peerid);
+
     notification->deleteLater();
+}
+
+void SailorGram::onMessageUnreadedChanged()
+{
+    MessageObject* message = qobject_cast<MessageObject*>(this->sender());
+
+    if(message->unread())
+        return;
+
+    DialogObject* dialog = this->_telegram->messageDialog(message->id());
+
+    if(dialog == this->_telegram->nullDialog())
+        return;
+
+    this->closeNotification(dialog);
+    disconnect(message, SIGNAL(unreadChanged()), this, 0);
 }
 
 void SailorGram::onWakeUpRequested()
@@ -383,6 +403,19 @@ FileLocationObject* SailorGram::mediaLocation(MessageMediaObject *messagemediaob
     return locationobj;
 }
 
+void SailorGram::updatePendingState(MessageObject *message, quint32 peerid)
+{
+    if(this->_topmessages.contains(peerid)) // Top Message has been changed
+    {
+        MessageObject* oldmessage = this->_topmessages[peerid];
+        this->_topmessages.remove(peerid);
+        disconnect(oldmessage, SIGNAL(unreadChanged()), this, 0);
+    }
+
+    this->_topmessages[peerid] = message;
+    connect(message, SIGNAL(unreadChanged()), this, SLOT(onMessageUnreadedChanged()));
+}
+
 void SailorGram::moveMediaToDownloads(MessageMediaObject *messagemediaobject)
 {
     if(!this->_telegram)
@@ -418,7 +451,7 @@ void SailorGram::moveMediaToGallery(MessageMediaObject *messagemediaobject)
 
 void SailorGram::notify(MessageObject *message, const QString &name, const QString &elaboratedbody)
 {
-    if(!this->_telegram || this->_telegram->globalMute() || message->out() || (message->classType() == Message::typeMessageService))
+    if(!this->_telegram || this->_telegram->globalMute() || message->out() || !message->unread() || (message->classType() == Message::typeMessageService))
         return;
 
     UserData* userdata = this->_telegram->userData();
@@ -434,6 +467,7 @@ void SailorGram::notify(MessageObject *message, const QString &name, const QStri
     {
         UserObject* user = this->_telegram->user(message->fromId());
         QString photolocation = user->photo()->photoSmall()->download()->location();
+        this->updatePendingState(message, peerid);
         this->notify(name, elaboratedbody, photolocation, peerid);
     }
     else

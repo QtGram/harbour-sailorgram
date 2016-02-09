@@ -69,6 +69,7 @@ class SailorGram : public QObject
         FileLocationObject *mediaLocation(MessageMediaObject* messagemediaobject);
 
     private:
+        void updatePendingState(MessageObject* message, quint32 peerid);
         void moveMediaTo(FileLocationObject* locationobj, const QString& destination);
         void notify(const QString& summary, const QString& body, const QString &icon, qint32 peerid);
         void beep();
@@ -76,6 +77,7 @@ class SailorGram : public QObject
     private slots:
         void onApplicationStateChanged(Qt::ApplicationState state);
         void onNotificationClosed(uint);
+        void onMessageUnreadedChanged();
         void onWakeUpRequested();
         void updateLogLevel();
         void updateOnlineState();
@@ -92,6 +94,7 @@ class SailorGram : public QObject
 
     private:
         QHash<qint32, Notification*> _notifications;
+        QHash<qint32, MessageObject*> _topmessages;
         QMimeDatabase _mimedb;
         TelegramQml* _telegram;
         ConnectivityChecker* _connectivitychecker;

@@ -111,6 +111,10 @@ QtObject
             sailorgram.notify(msg, TelegramHelper.completeName(user), elaboratedtext);
         }
 
+        onMessagesChanged: {
+
+        }
+
         onPhoneNumberChanged: {
             var phonenumber = Settings.get("phonenumber");
 
