@@ -12,6 +12,7 @@
 #include <objects/types.h>
 #include "dbus/interface/sailorgraminterface.h"
 #include "dbus/notification/notification.h"
+#include "dbus/connectivitychecker.h"
 
 class SailorGram : public QObject
 {
@@ -74,13 +75,10 @@ class SailorGram : public QObject
 
     private slots:
         void onApplicationStateChanged(Qt::ApplicationState state);
-        void onOnlineStateChanged(bool isonline);
         void onNotificationClosed(uint);
         void onWakeUpRequested();
-        void onConnectedChanged();
         void updateLogLevel();
         void updateOnlineState();
-        void wakeSleep();
 
     signals:
         void autostartChanged();
@@ -96,6 +94,7 @@ class SailorGram : public QObject
         QHash<qint32, Notification*> _notifications;
         QMimeDatabase _mimedb;
         TelegramQml* _telegram;
+        ConnectivityChecker* _connectivitychecker;
         QNetworkConfigurationManager* _netcfgmanager;
         SailorgramInterface* _interface;
         DialogObject* _foregrounddialog;

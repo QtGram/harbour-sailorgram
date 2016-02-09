@@ -1,7 +1,7 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.DBus 1.0
-import harbour.sailorgram.Insomniac 1.0
+//import harbour.sailorgram.Insomniac 1.0
 import harbour.sailorgram.SailorGram 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../js/Settings.js" as Settings
@@ -39,6 +39,7 @@ QtObject
     property ContactsModel contacts: ContactsModel { }
     property DialogsModel dialogs: DialogsModel { }
 
+    /*
     property Insomniac insomniac: Insomniac { // Keeps updating dialogs during deep sleep
         repeat: true
         interval: 300 // 5 minutes
@@ -46,9 +47,39 @@ QtObject
         running: context.sailorgram.connected && (Qt.application.state !== Qt.ApplicationActive)
         onTimeout: dialogs.recheck()
     }
+    */
 
     property SailorGram sailorgram: SailorGram {
         telegram: context.telegram
+
+        onConnectedChanged: {
+            if(!context.sailorgram.connected)
+                return;
+
+            // Update dialogs
+            context.dialogs.recheck();
+        }
+
+        onOpenDialogRequested: {
+            if(pageStack.depth > 1)
+                pageStack.pop(dialogspage, PageStackAction.Immediate);
+
+            var dialog = context.telegram.dialog(peerid);
+
+            if(dialog === context.telegram.nullDialog)
+            {
+                console.warn("Invalid dialog for peerId = " + peerid);
+                return;
+            }
+
+            if(dialog.encrypted)
+                pageStack.push(Qt.resolvedUrl("../pages/secretdialogs/SecretDialogPage.qml"), { "context": context, "dialog": dialog }, PageStackAction.Immediate);
+            else
+                pageStack.push(Qt.resolvedUrl("../pages/dialogs/DialogPage.qml"), { "context": context, "dialog": dialog }, PageStackAction.Immediate);
+
+            if(Qt.application.state !== Qt.ApplicationActive)
+                mainwindow.activate();
+        }
     }
 
     property Telegram telegram: Telegram {
