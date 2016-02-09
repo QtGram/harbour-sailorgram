@@ -461,6 +461,10 @@ messages</source>
         <source>Add to contacts</source>
         <translation>Añadir a contactos</translation>
     </message>
+    <message>
+        <source>Chat information</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogItem</name>
@@ -654,6 +658,13 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
     </message>
 </context>
 <context>
+    <name>PeerProfile</name>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PhoneNumberPage</name>
     <message>
         <source>Next</source>
@@ -735,8 +746,8 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
         <translation>Volver</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Enviar</translation>
+        <source>Send %1 file(s)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -770,8 +781,16 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
         <translation>Ordenar por fecha</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Enviar</translation>
+        <source>Send %1 image(s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Volver</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Cancelar</translation>
     </message>
 </context>
 <context>

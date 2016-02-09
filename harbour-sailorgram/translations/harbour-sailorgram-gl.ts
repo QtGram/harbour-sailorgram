@@ -463,6 +463,10 @@ sen ler</translation>
         <source>Add to contacts</source>
         <translation>Engadir a contactos</translation>
     </message>
+    <message>
+        <source>Chat information</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogItem</name>
@@ -656,6 +660,13 @@ Desprace a dereita para seleccionar un contacto</translation>
     </message>
 </context>
 <context>
+    <name>PeerProfile</name>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PhoneNumberPage</name>
     <message>
         <source>Next</source>
@@ -737,7 +748,7 @@ Desprace a dereita para seleccionar un contacto</translation>
         <translation>Voltar</translation>
     </message>
     <message>
-        <source>Send</source>
+        <source>Send %1 file(s)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -772,8 +783,16 @@ Desprace a dereita para seleccionar un contacto</translation>
         <translation>Ordear por data</translation>
     </message>
     <message>
-        <source>Send</source>
+        <source>Send %1 image(s)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Voltar</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Cancelar</translation>
     </message>
 </context>
 <context>

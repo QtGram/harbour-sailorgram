@@ -463,6 +463,10 @@ messages</source>
         <source>Add to contacts</source>
         <translation>Добавить в контакты</translation>
     </message>
+    <message>
+        <source>Chat information</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogItem</name>
@@ -656,6 +660,13 @@ Do a swype to the right to select a contact</source>
     </message>
 </context>
 <context>
+    <name>PeerProfile</name>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PhoneNumberPage</name>
     <message>
         <source>Next</source>
@@ -737,7 +748,7 @@ Do a swype to the right to select a contact</source>
         <translation>Назад</translation>
     </message>
     <message>
-        <source>Send</source>
+        <source>Send %1 file(s)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -772,8 +783,16 @@ Do a swype to the right to select a contact</source>
         <translation>Сортировать по дате</translation>
     </message>
     <message>
-        <source>Send</source>
+        <source>Send %1 image(s)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Назад</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Отменить</translation>
     </message>
 </context>
 <context>

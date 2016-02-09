@@ -464,6 +464,10 @@ recenti:</translation>
         <source>Add to contacts</source>
         <translation>Aggiungi ai contatti</translation>
     </message>
+    <message>
+        <source>Chat information</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogItem</name>
@@ -657,6 +661,13 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
 </context>
 <context>
+    <name>PeerProfile</name>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PhoneNumberPage</name>
     <message>
         <source>Next</source>
@@ -738,8 +749,8 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
         <translation>Indietro</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Invia</translation>
+        <source>Send %1 file(s)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -773,8 +784,16 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
         <translation>Ordina per data</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Invia</translation>
+        <source>Send %1 image(s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Indietro</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Annulla</translation>
     </message>
 </context>
 <context>

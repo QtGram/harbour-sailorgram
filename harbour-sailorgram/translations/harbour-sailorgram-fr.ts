@@ -463,6 +463,10 @@ non lus</translation>
         <source>Add to contacts</source>
         <translation>Ajouter aux contacts</translation>
     </message>
+    <message>
+        <source>Chat information</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogItem</name>
@@ -656,6 +660,13 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
     </message>
 </context>
 <context>
+    <name>PeerProfile</name>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PhoneNumberPage</name>
     <message>
         <source>Next</source>
@@ -737,8 +748,8 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
         <translation>Retour</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Envoyer</translation>
+        <source>Send %1 file(s)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -772,8 +783,16 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
         <translation>Trier par date</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Envoyer</translation>
+        <source>Send %1 image(s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Retour</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Annuler</translation>
     </message>
 </context>
 <context>

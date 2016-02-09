@@ -463,6 +463,10 @@ meddelanden</translation>
         <source>Add to contacts</source>
         <translation>Lägg till i kontakter</translation>
     </message>
+    <message>
+        <source>Chat information</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogItem</name>
@@ -656,6 +660,13 @@ Svep åt vänster för att välja en kontakt</translation>
     </message>
 </context>
 <context>
+    <name>PeerProfile</name>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PhoneNumberPage</name>
     <message>
         <source>Next</source>
@@ -737,8 +748,8 @@ Svep åt vänster för att välja en kontakt</translation>
         <translation>Tillbaka</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Skicka</translation>
+        <source>Send %1 file(s)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -772,8 +783,16 @@ Svep åt vänster för att välja en kontakt</translation>
         <translation>Sortera efter datum</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Skicka</translation>
+        <source>Send %1 image(s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Tillbaka</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Avbryt</translation>
     </message>
 </context>
 <context>

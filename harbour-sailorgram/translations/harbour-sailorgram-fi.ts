@@ -463,6 +463,10 @@ viestit</translation>
         <source>Add to contacts</source>
         <translation>Lisää yhteyksiin</translation>
     </message>
+    <message>
+        <source>Chat information</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogItem</name>
@@ -656,6 +660,13 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     </message>
 </context>
 <context>
+    <name>PeerProfile</name>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PhoneNumberPage</name>
     <message>
         <source>Next</source>
@@ -737,7 +748,7 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
         <translation>Takaisin</translation>
     </message>
     <message>
-        <source>Send</source>
+        <source>Send %1 file(s)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -772,8 +783,16 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
         <translation>Järjestä päivämäärän mukaan</translation>
     </message>
     <message>
-        <source>Send</source>
+        <source>Send %1 image(s)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Takaisin</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Peruuta</translation>
     </message>
 </context>
 <context>
