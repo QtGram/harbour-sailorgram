@@ -746,7 +746,7 @@ Do a swype to the right to select a contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Send</source>
+        <source>Send %1 file(s)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -781,8 +781,16 @@ Do a swype to the right to select a contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Send</source>
+        <source>Send %1 image(s)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Відмінити</translation>
     </message>
 </context>
 <context>

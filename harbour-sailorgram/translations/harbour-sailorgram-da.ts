@@ -748,8 +748,8 @@ Stryg til venstre for at vælge en kontakt</translation>
         <translation>Tilbage</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Send</translation>
+        <source>Send %1 file(s)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -783,8 +783,16 @@ Stryg til venstre for at vælge en kontakt</translation>
         <translation>Sortér efter dato</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Send</translation>
+        <source>Send %1 image(s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Tilbage</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Annuller</translation>
     </message>
 </context>
 <context>

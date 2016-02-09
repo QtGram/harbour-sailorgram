@@ -25,7 +25,7 @@ Item
         {
             id: useravatar
             anchors.horizontalCenter: parent.horizontalCenter
-            width: parent.width * 0.3
+            width: Screen.width * 0.3
             height: width
             context: peerprofile.context
             dialog: peerprofile.dialog

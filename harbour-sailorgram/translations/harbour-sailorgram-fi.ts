@@ -748,7 +748,7 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
         <translation>Takaisin</translation>
     </message>
     <message>
-        <source>Send</source>
+        <source>Send %1 file(s)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -783,8 +783,16 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
         <translation>Järjestä päivämäärän mukaan</translation>
     </message>
     <message>
-        <source>Send</source>
+        <source>Send %1 image(s)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Takaisin</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Peruuta</translation>
     </message>
 </context>
 <context>

@@ -748,8 +748,8 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
         <translation>Terug</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Versturen</translation>
+        <source>Send %1 file(s)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -783,8 +783,16 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
         <translation>Sorteren op datum</translation>
     </message>
     <message>
-        <source>Send</source>
-        <translation>Versturen</translation>
+        <source>Send %1 image(s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Terug</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Annuleren</translation>
     </message>
 </context>
 <context>
