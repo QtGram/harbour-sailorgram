@@ -7,6 +7,7 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 
 RoundedImage
 {
+    property bool showType: true
     property Context context
     property Dialog dialog
     property Chat chat
@@ -40,7 +41,8 @@ RoundedImage
     fillMode: Image.PreserveAspectFit
     source: filehandler.filePath
 
-    Rectangle {
+    Rectangle
+    {
         id: imgfallback
         anchors.fill: parent
         color: Theme.secondaryHighlightColor
@@ -50,6 +52,7 @@ RoundedImage
         Label {
             anchors.centerIn: parent
             font.bold: true
+            font.pixelSize: parent.height * 0.6
             text: TelegramHelper.fallbackText(imgpeer.dialog, TelegramHelper.isChat(imgpeer.dialog) ? imgpeer.chat : imgpeer.user)
         }
     }
@@ -60,7 +63,7 @@ RoundedImage
         asynchronous: true
         anchors { bottom: parent.bottom; right: parent.right }
         fillMode: Image.PreserveAspectFit
-        visible: dialog && (dialog.encrypted || TelegramHelper.isChat(dialog))
+        visible: showType && dialog && (dialog.encrypted || TelegramHelper.isChat(dialog))
 
         source: {
             if(!dialog)

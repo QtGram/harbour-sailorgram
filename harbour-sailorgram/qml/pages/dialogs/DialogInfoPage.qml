@@ -86,18 +86,17 @@ Page
             id: content
             width: parent.width
 
-            PageHeader { title: TelegramHelper.isChat(dialog) ? chat.title : TelegramHelper.completeName(user) }
+            PageHeader { title: qsTr("Chat information") }
 
-            PeerItem
+            PeerProfile
             {
-                x: Theme.paddingMedium
-                width: parent.width - (x * 2)
-                height: Theme.itemSizeSmall
+                id: peerprofile
+                width: parent.width
                 context: dialoginfopage.context
                 dialog: dialoginfopage.dialog
                 chat: dialoginfopage.chat
                 user: dialoginfopage.user
-                showUsername: true
+                showType: false
             }
 
             SectionHeader { text: qsTr("Actions") }

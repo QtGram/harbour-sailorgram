@@ -463,6 +463,10 @@ non lus</translation>
         <source>Add to contacts</source>
         <translation>Ajouter aux contacts</translation>
     </message>
+    <message>
+        <source>Chat information</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogItem</name>
@@ -653,6 +657,13 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
     <message>
         <source>%1 member</source>
         <translation>%1 participant</translation>
+    </message>
+</context>
+<context>
+    <name>PeerProfile</name>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

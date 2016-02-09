@@ -461,5 +461,6 @@ void SailorGram::onConnectedChanged()
 
 void SailorGram::wakeSleep()
 {
+    qDebug() << Q_FUNC_INFO << this->_connected;
     this->_connected ? this->_telegram->wake() : this->_telegram->sleep();
 }

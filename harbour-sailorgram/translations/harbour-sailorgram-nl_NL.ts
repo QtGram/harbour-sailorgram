@@ -463,6 +463,10 @@ berichten</translation>
         <source>Add to contacts</source>
         <translation>Toevoegen aan contactpersonen</translation>
     </message>
+    <message>
+        <source>Chat information</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogItem</name>
@@ -653,6 +657,13 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     <message>
         <source>%1 member</source>
         <translation>%1 deelnemer</translation>
+    </message>
+</context>
+<context>
+    <name>PeerProfile</name>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

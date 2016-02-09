@@ -464,6 +464,10 @@ recenti:</translation>
         <source>Add to contacts</source>
         <translation>Aggiungi ai contatti</translation>
     </message>
+    <message>
+        <source>Chat information</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogItem</name>
@@ -654,6 +658,13 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     <message>
         <source>%1 member</source>
         <translation>%1 membro</translation>
+    </message>
+</context>
+<context>
+    <name>PeerProfile</name>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

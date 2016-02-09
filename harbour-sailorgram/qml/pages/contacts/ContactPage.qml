@@ -3,6 +3,7 @@ import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../../models"
 import "../../components"
+import "../../items/peer"
 import "../../items/user"
 import "../../js/TelegramHelper.js" as TelegramHelper
 
@@ -28,14 +29,13 @@ Page
 
             PageHeader { title: TelegramHelper.completeName(user) }
 
-            UserItem
+            PeerProfile
             {
-                x: Theme.paddingMedium
-                width: parent.width - (x * 2)
-                height: Theme.itemSizeSmall
+                id: peerprofile
+                width: parent.width
                 context: contactpage.context
                 user: contactpage.user
-                showUsername: true
+                showType: false
             }
 
             UserInfo

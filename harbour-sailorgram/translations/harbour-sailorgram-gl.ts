@@ -463,6 +463,10 @@ sen ler</translation>
         <source>Add to contacts</source>
         <translation>Engadir a contactos</translation>
     </message>
+    <message>
+        <source>Chat information</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogItem</name>
@@ -653,6 +657,13 @@ Desprace a dereita para seleccionar un contacto</translation>
     <message>
         <source>%1 member</source>
         <translation>%1 membro</translation>
+    </message>
+</context>
+<context>
+    <name>PeerProfile</name>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

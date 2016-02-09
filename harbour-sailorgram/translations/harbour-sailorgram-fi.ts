@@ -463,6 +463,10 @@ viestit</translation>
         <source>Add to contacts</source>
         <translation>Lisää yhteyksiin</translation>
     </message>
+    <message>
+        <source>Chat information</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogItem</name>
@@ -653,6 +657,13 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     <message>
         <source>%1 member</source>
         <translation>%1 jäsen</translation>
+    </message>
+</context>
+<context>
+    <name>PeerProfile</name>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

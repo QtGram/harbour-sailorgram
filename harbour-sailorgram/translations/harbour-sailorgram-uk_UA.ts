@@ -461,6 +461,10 @@ messages</source>
         <source>Add to contacts</source>
         <translation>Додати до контактів</translation>
     </message>
+    <message>
+        <source>Chat information</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogItem</name>
@@ -651,6 +655,13 @@ Do a swype to the right to select a contact</source>
     <message>
         <source>%1 member</source>
         <translation>%1 учасник(-ів)</translation>
+    </message>
+</context>
+<context>
+    <name>PeerProfile</name>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -249,4 +249,5 @@ DISTFILES += \
     qml/components/search/MessageSearchList.qml \
     qml/items/search/MessageSearchItem.qml \
     qml/items/message/messageitem/MessageBubble.qml \
-    qml/components/RoundedImage.qml
+    qml/components/RoundedImage.qml \
+    qml/items/peer/PeerProfile.qml

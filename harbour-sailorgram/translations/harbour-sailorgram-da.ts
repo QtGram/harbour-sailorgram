@@ -463,6 +463,10 @@ meddelelser</translation>
         <source>Add to contacts</source>
         <translation>Tilføj til kontakter</translation>
     </message>
+    <message>
+        <source>Chat information</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogItem</name>
@@ -653,6 +657,13 @@ Stryg til venstre for at vælge en kontakt</translation>
     <message>
         <source>%1 member</source>
         <translation>%1 medlem</translation>
+    </message>
+</context>
+<context>
+    <name>PeerProfile</name>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
