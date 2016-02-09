@@ -248,4 +248,5 @@ DISTFILES += \
     mce/10sailorgram-led.ini \
     qml/components/search/MessageSearchList.qml \
     qml/items/search/MessageSearchItem.qml \
-    qml/items/message/messageitem/MessageBubble.qml
+    qml/items/message/messageitem/MessageBubble.qml \
+    qml/components/RoundedImage.qml

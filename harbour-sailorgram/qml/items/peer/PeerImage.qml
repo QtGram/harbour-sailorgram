@@ -1,10 +1,11 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
+import "../../components"
 import "../../models"
 import "../../js/TelegramHelper.js" as TelegramHelper
 
-Image
+RoundedImage
 {
     property Context context
     property Dialog dialog
