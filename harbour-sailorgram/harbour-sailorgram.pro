@@ -82,12 +82,12 @@ SOURCES += src/harbour-sailorgram.cpp \
     src/dbus/notification/notificationmanagerproxy.cpp \
     src/selector/audiorecorder.cpp \
     src/selector/thumbnailprovider.cpp \
-    src/selector/imagesmodel.cpp \
     src/selector/exif/exif.cpp \
-    src/selector/imagesmodelworker.cpp \
     src/model/dialogscovermodel.cpp \
     src/iphb/libiphb.cpp \
-    src/iphb/insomniac.cpp
+    src/iphb/insomniac.cpp \
+    src/selector/filesmodel.cpp \
+    src/selector/filesmodelworker.cpp
 
 OTHER_FILES += qml/harbour-sailorgram.qml \
     rpm/harbour-sailorgram.changes.in \
@@ -191,14 +191,14 @@ HEADERS += \
     src/dbus/notification/notificationmanagerproxy.h \
     src/selector/audiorecorder.h \
     src/selector/thumbnailprovider.h \
-    src/selector/imagesmodel.h \
     src/selector/exif/exif.h \
-    src/selector/imagesmodelworker.h \
     src/model/dialogscovermodel.h \
     src/iphb/iphb_internal.h \
     src/iphb/libiphb.h \
     src/iphb/messages.h \
-    src/iphb/insomniac.h
+    src/iphb/insomniac.h \
+    src/selector/filesmodel.h \
+    src/selector/filesmodelworker.h
 
 RESOURCES += \
     resources.qrc

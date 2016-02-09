@@ -1,14 +1,14 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import harbour.sailorgram.ImagesModel 1.0
+import harbour.sailorgram.FilesModel 1.0
 import "../../models"
 
 Dialog
 {
-    property alias directory: imagesmodel.rootDir
-    property alias sortRole: imagesmodel.sortRole
-    property alias sortOrder: imagesmodel.sortOrder
-    property string selectedFile
+    property alias folder: filesmodel.folder
+    property alias sortRole: filesmodel.sortRole
+    property alias sortOrder: filesmodel.sortOrder
+    property var selectedFiles: []
     property Page rootPage
     property Context context
 
@@ -37,14 +37,26 @@ Dialog
 
     signal actionCompleted(string action, var data)
 
+    function sendImage(element) {
+        actionCompleted("image", element);
+    }
+
+    //"this" is provided to the function by the caller
+    function filter(element) {
+        return element !== this;
+    }
+
     id: selectorimagespage
     allowedOrientations: defaultAllowedOrientations
-    canAccept: selectedFile.length > 0
-    onAccepted: actionCompleted("image", selectedFile)
+    acceptDestinationAction: PageStackAction.Pop
+    canAccept: selectedFiles.length > 0
+    onAccepted: selectedFiles.forEach(sendImage)
 
-    ImagesModel {
-        id: imagesmodel
-        sortRole: ImagesModel.DateRole
+    FilesModel {
+        id: filesmodel
+        folder: "StandardImagesFolder"
+        sortRole: FilesModel.DateRole
+        filter: FilesModel.ImageFilter
         sortOrder: Qt.DescendingOrder
         recursive: false
         directoriesFirst: true
@@ -65,13 +77,13 @@ Dialog
                 visible: context.sailorgram.androidStorage.length > 0
                 onClicked: {
                     if (!!rootPage) {
-                        rootPage.directory = context.sailorgram.androidStorage;
-                        rootPage.sortRole = ImagesModel.NameRole;
+                        rootPage.folder = context.sailorgram.androidStorage;
+                        rootPage.sortRole = FilesModel.NameRole;
                         rootPage.sortOrder = Qt.AscendingOrder;
                         pageStack.pop(rootPage);
                     } else {
-                        directory = context.sailorgram.androidStorage;
-                        sortRole = ImagesModel.NameRole;
+                        folder = context.sailorgram.androidStorage;
+                        sortRole = FilesModel.NameRole;
                         sortOrder = Qt.AscendingOrder;
                     }
                 }
@@ -82,13 +94,13 @@ Dialog
                 visible: context.sailorgram.sdcardFolder.length > 0
                 onClicked: {
                     if (!!rootPage) {
-                        rootPage.directory = context.sailorgram.sdcardFolder;
-                        rootPage.sortRole = ImagesModel.NameRole;
+                        rootPage.folder = context.sailorgram.sdcardFolder;
+                        rootPage.sortRole = FilesModel.NameRole;
                         rootPage.sortOrder = Qt.AscendingOrder;
                         pageStack.pop(rootPage);
                     } else {
-                        directory = context.sailorgram.sdcardFolder;
-                        sortRole = ImagesModel.NameRole;
+                        folder = context.sailorgram.sdcardFolder;
+                        sortRole = FilesModel.NameRole;
                         sortOrder = Qt.AscendingOrder;
                     }
                 }
@@ -98,13 +110,13 @@ Dialog
                 text: qsTr("Home")
                 onClicked: {
                     if (!!rootPage) {
-                        rootPage.directory = context.sailorgram.homeFolder;
-                        rootPage.sortRole = ImagesModel.NameRole;
+                        rootPage.folder = context.sailorgram.homeFolder;
+                        rootPage.sortRole = FilesModel.NameRole;
                         rootPage.sortOrder = Qt.AscendingOrder;
                         pageStack.pop(rootPage);
                     } else {
-                        directory = context.sailorgram.homeFolder;
-                        sortRole = ImagesModel.NameRole;
+                        folder = context.sailorgram.homeFolder;
+                        sortRole = FilesModel.NameRole;
                         sortOrder = Qt.AscendingOrder;
                     }
                 }
@@ -124,22 +136,23 @@ Dialog
 
             MenuItem {
                 text: qsTr("Sort by name")
-                visible: sortRole !== ImagesModel.NameRole
-                onClicked: sortRole = ImagesModel.NameRole
+                visible: sortRole !== filesmodel.NameRole
+                onClicked: sortRole = filesmodel.NameRole
             }
 
             MenuItem {
                 text: qsTr("Sort by date")
-                visible: sortRole !== ImagesModel.DateRole
-                onClicked: sortRole = ImagesModel.DateRole
+                visible: sortRole !== filesmodel.DateRole
+                onClicked: sortRole = filesmodel.DateRole
             }
         }
 
         DialogHeader
         {
             id: header
-            acceptText: qsTr("Send")
-            title: imagesmodel.rootDir.split('/').pop();
+            acceptText: qsTr("Send %1 image(s)").arg(selectedFiles.length)
+            cancelText: !!rootPage ? qsTr("Back") : qsTr("Cancel")
+            title: filesmodel.folder.split('/').pop();
         }
 
         SilicaGridView
@@ -150,10 +163,12 @@ Dialog
             quickScroll: true
             cellWidth: cellSize
             cellHeight: cellSize
-            model: imagesmodel
+            model: filesmodel
 
             delegate: BackgroundItem {
-                property bool isSelected: (selectedFile === model.url)
+                id: delegate
+
+                property bool isSelected: (selectedFiles.indexOf(model.url) > -1)
 
                 width: cellSize
                 height: cellSize
@@ -162,16 +177,23 @@ Dialog
                 onClicked: {
                     if (model.isDir) {
                         var nextPage = pageStack.push(Qt.resolvedUrl("SelectorImagesPage.qml"),
-                                                      { "directory": model.path,
+                                                      { "folder": model.path,
                                                         "context": context,
                                                         "sortRole": sortRole,
                                                         "sortOrder": sortOrder,
+                                                        "selectedFiles": selectedFiles,
+                                                        "acceptDestination": acceptDestination,
                                                         "rootPage": !!rootPage ? rootPage : selectorimagespage } );
                         nextPage.actionCompleted.connect(selectorimagespage.actionCompleted);
+                        nextPage.rejected.connect(function () { selectorimagespage.selectedFiles = nextPage.selectedFiles; });
                     }
-                    else if (view.currentIndex !== index) {
-                        view.currentIndex = index;
-                        selectedFile = model.url.toString();
+                    else {
+                        //selectedFiles needs to be reassigned every time it is manipulated because it doesn't emit signals otherwise
+                        if (isSelected) {
+                            selectedFiles = selectedFiles.filter(function (element) { return element !== model.url; });
+                        } else {
+                            selectedFiles = selectedFiles.concat([model.url]);
+                        }
                     }
                 }
 
@@ -198,6 +220,7 @@ Dialog
                     sourceComponent: Label {
                         text: model.name
                         horizontalAlignment: Qt.AlignHCenter
+                        verticalAlignment: Qt.AlignTop
                         wrapMode: Text.Wrap
                         clip: true
                     }
@@ -215,7 +238,7 @@ Dialog
                 }
 
                 Loader {
-                    active: index === view.currentIndex
+                    active: delegate.isSelected
                     anchors.fill: parent
 
                     sourceComponent: Rectangle {

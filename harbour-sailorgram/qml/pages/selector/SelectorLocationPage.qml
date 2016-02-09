@@ -15,6 +15,7 @@ Dialog
 
     id: selectorlocationpage
     allowedOrientations: defaultAllowedOrientations
+    acceptDestinationAction: PageStackAction.Pop
     canAccept: !searching
     onAccepted: actionCompleted("location", { "latitude":  selectorlocationpage.latitude, "longitude": selectorlocationpage.longitude });
 
