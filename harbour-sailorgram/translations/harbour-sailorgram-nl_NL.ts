@@ -97,11 +97,11 @@
     </message>
     <message>
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>Bijdragers</translation>
     </message>
     <message>
         <source>Ukrainian</source>
-        <translation type="unfinished"></translation>
+        <translation>Oekraïens</translation>
     </message>
 </context>
 <context>
@@ -278,7 +278,7 @@ De minimale lengte is 5 tekens.</translation>
     </message>
     <message>
         <source>Bubbles with angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Gespreksballonnen met hoekgraad</translation>
     </message>
 </context>
 <context>

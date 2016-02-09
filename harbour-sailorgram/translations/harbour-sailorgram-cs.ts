@@ -97,11 +97,11 @@
     </message>
     <message>
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>Přispěvatelé</translation>
     </message>
     <message>
         <source>Ukrainian</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukrajinsky</translation>
     </message>
 </context>
 <context>
@@ -278,7 +278,7 @@ Minimální délka je 5 znaků .</translation>
     </message>
     <message>
         <source>Bubbles with angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Bublinky s úhlem</translation>
     </message>
 </context>
 <context>
@@ -340,7 +340,7 @@ messages</source>
     </message>
     <message>
         <source>Connected</source>
-        <translation>Připojeno</translation>
+        <translation>Spojeno</translation>
     </message>
     <message>
         <source>Recent chats:</source>
@@ -519,7 +519,7 @@ messages</source>
 Do a swype to the right to select a contact</source>
         <translation>Žádné rozhovory
 
-Do a swype to the right to select a contact</translation>
+Utři do prava aby jsi vybral kontakt</translation>
     </message>
 </context>
 <context>
@@ -629,7 +629,7 @@ Do a swype to the right to select a contact</translation>
     </message>
     <message>
         <source>Install Sticker set</source>
-        <translation type="unfinished"></translation>
+        <translation>Nainstalovat sadu nálepek</translation>
     </message>
 </context>
 <context>
@@ -882,7 +882,7 @@ Do a swype to the right to select a contact</translation>
     </message>
     <message>
         <source>Select a Sticker Set from below</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte sadu nálepek</translation>
     </message>
 </context>
 <context>
