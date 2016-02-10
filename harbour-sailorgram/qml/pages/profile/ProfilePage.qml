@@ -2,9 +2,8 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../../components"
-import "../../components/telegram"
 import "../../models"
-import "../../items/user"
+import "../../items/peer"
 import "../../js/TelegramHelper.js" as TelegramHelper
 
 Page
@@ -20,62 +19,56 @@ Page
         anchors.fill: parent
         contentHeight: content.height
 
-        TelegramPullDownMenu
-        {
-            context: profilepage.context
-
-            MenuItem
-            {
-                text: qsTr("Change Username")
-                onClicked: pageStack.push(Qt.resolvedUrl("ChangeUsernamePage.qml"), { "context": profilepage.context, "user": profilepage.user } )
-            }
-
-            MenuItem
-            {
-                text: qsTr("Change Picture")
-
-                onClicked: {
-                    var imgselector = pageStack.push(Qt.resolvedUrl("../selector/SelectorImagesPage.qml"), { "context": profilepage.context });
-
-                    imgselector.actionCompleted.connect(function(action, data) {
-                        context.telegram.setProfilePhoto(data);
-                    });
-                }
-            }
-        }
-
         Column
         {
             id: content
             width: parent.width
 
-            PageHeader
-            {
-                title: qsTr("Profile")
-            }
+            PageHeader { title: qsTr("Profile") }
 
-            UserItem
+            PeerProfile
             {
-                anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
-                height: Theme.itemSizeSmall
+                width: parent.width
                 context: profilepage.context
                 user: profilepage.user
-                showUsername: true
             }
 
-            SectionHeader
-            {
-                text: qsTr("Phone number")
-            }
+            SectionHeader { text: qsTr("Phone number") }
 
             Label
             {
                 anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
                 horizontalAlignment: Text.AlignLeft
                 verticalAlignment: Text.AlignVCenter
-                wrapMode: Text.WordWrap
                 font.pixelSize: Theme.fontSizeSmall
-                text: user.phone
+                text: TelegramHelper.completePhoneNumber(user.phone)
+            }
+
+            SectionHeader { text: qsTr("Actions"); visible: context.sailorgram.connected }
+
+            ClickableLabel
+            {
+                width: parent.width
+                height: Theme.itemSizeSmall
+                labelText: qsTr("Change Username")
+                visible: context.sailorgram.connected
+                onActionRequested: pageStack.push(Qt.resolvedUrl("ChangeUsernamePage.qml"), { "context": profilepage.context, "user": profilepage.user } )
+            }
+
+            ClickableLabel
+            {
+                width: parent.width
+                height: Theme.itemSizeSmall
+                labelText: qsTr("Change Picture")
+                visible: context.sailorgram.connected
+
+                onActionRequested: {
+                    var imgselector = pageStack.push(Qt.resolvedUrl("../selector/SelectorImagesPage.qml"), { "context": profilepage.context });
+
+                    imgselector.actionCompleted.connect(function(action, data) {
+                        context.telegram.setProfilePhoto(data);
+                    });
+                }
             }
         }
     }

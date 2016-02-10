@@ -707,6 +707,10 @@ Stryg til venstre for at vælge en kontakt</translation>
         <source>Change Username</source>
         <translation>Skift Brugernavn</translation>
     </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished">Handlinger</translation>
+    </message>
 </context>
 <context>
     <name>SecretDialogDiscarded</name>

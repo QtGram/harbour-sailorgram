@@ -705,6 +705,10 @@ Utři do prava aby jsi vybral kontakt</translation>
         <source>Change Username</source>
         <translation>Změnit uživatelské jméno</translation>
     </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished">Činnost</translation>
+    </message>
 </context>
 <context>
     <name>SecretDialogDiscarded</name>

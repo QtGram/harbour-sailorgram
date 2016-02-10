@@ -707,6 +707,10 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
         <source>Change Username</source>
         <translation>Gebruikersnaam wijzigen</translation>
     </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished">Acties</translation>
+    </message>
 </context>
 <context>
     <name>SecretDialogDiscarded</name>

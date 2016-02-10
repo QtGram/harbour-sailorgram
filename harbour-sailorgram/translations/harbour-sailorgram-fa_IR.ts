@@ -703,6 +703,10 @@ Do a swype to the right to select a contact</source>
         <source>Change Username</source>
         <translation>تغییر نام کاربری</translation>
     </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SecretDialogDiscarded</name>

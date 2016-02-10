@@ -707,6 +707,10 @@ Do a swype to the right to select a contact</source>
         <source>Change Username</source>
         <translation>Изменить юзернейм</translation>
     </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished">Действия</translation>
+    </message>
 </context>
 <context>
     <name>SecretDialogDiscarded</name>

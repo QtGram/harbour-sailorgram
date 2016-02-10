@@ -707,6 +707,10 @@ Svep åt vänster för att välja en kontakt</translation>
         <source>Change Username</source>
         <translation>Byt användarnamn</translation>
     </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished">Åtgärder</translation>
+    </message>
 </context>
 <context>
     <name>SecretDialogDiscarded</name>

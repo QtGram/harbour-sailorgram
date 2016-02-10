@@ -708,6 +708,10 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
         <source>Change Username</source>
         <translation>Cambia nome utente</translation>
     </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished">Azioni</translation>
+    </message>
 </context>
 <context>
     <name>SecretDialogDiscarded</name>

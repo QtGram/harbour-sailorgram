@@ -708,6 +708,10 @@ Do a swype to the right to select a contact</source>
         <source>Change Username</source>
         <translation>Αλλαγή ονόματος χρήστη</translation>
     </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished">Ενέργειες</translation>
+    </message>
 </context>
 <context>
     <name>SecretDialogDiscarded</name>

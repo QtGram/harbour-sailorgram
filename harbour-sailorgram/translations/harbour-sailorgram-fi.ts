@@ -707,6 +707,10 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
         <source>Change Username</source>
         <translation>Vaihda käyttäjänimi</translation>
     </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished">Toiminnot</translation>
+    </message>
 </context>
 <context>
     <name>SecretDialogDiscarded</name>
