@@ -354,11 +354,7 @@ QString SailorGram::mediaLocation(MessageMedia::MessageMediaType mediatype)
 void SailorGram::updatePendingState(MessageObject *message, quint32 peerid)
 {
     if(this->_topmessages.contains(peerid)) // Top Message has been changed
-    {
-        MessageObject* oldmessage = this->_topmessages[peerid];
         this->_topmessages.remove(peerid);
-        disconnect(oldmessage, SIGNAL(unreadChanged()), this, 0);
-    }
 
     this->_topmessages[peerid] = message;
     connect(message, SIGNAL(unreadChanged()), this, SLOT(onMessageUnreadedChanged()));
