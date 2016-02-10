@@ -280,6 +280,10 @@ Vähimmäispituus on 5 merkkiä.</translation>
         <source>Bubbles with angle</source>
         <translation>Puhekuplat kulmalla</translation>
     </message>
+    <message>
+        <source>Open media instantly</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConnectingLabel</name>

@@ -15,6 +15,7 @@ Dialog
         context.sendwithreturn = tssendwithreturn.checked;
         context.backgrounddisabled = !tsenablebackground.checked;
         context.chatheaderhidden = !tsshowchatheader.checked;
+        context.immediateopen = tsimmediateopen.checked;
         context.bubbleshidden = !tsbubblesvisible.checked;
         context.angledbubbles = tsangledbubbles.checked;
         context.bubblesopacity = slbubblesopacity.value;
@@ -22,6 +23,7 @@ Dialog
         Settings.set("sendwithreturn", tssendwithreturn.checked);
         Settings.set("backgrounddisabled", !tsenablebackground.checked);
         Settings.set("chatheaderhidden", !tsshowchatheader.checked);
+        Settings.set("immediateopen", tsimmediateopen.checked);
         Settings.set("hidebubbles", !tsbubblesvisible.checked);
         Settings.set("angledbubbles", tsangledbubbles.checked);
         Settings.set("bubblesopacity", slbubblesopacity.value);
@@ -58,6 +60,14 @@ Dialog
                 anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
                 text: qsTr("Chat header visible")
                 checked: !context.chatheaderhidden
+            }
+
+            TextSwitch
+            {
+                id: tsimmediateopen
+                anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
+                text: qsTr("Open media instantly")
+                checked: context.immediateopen
             }
 
             TextSwitch

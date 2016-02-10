@@ -280,6 +280,10 @@ Minimumslængde er fem tegn.</translation>
         <source>Bubbles with angle</source>
         <translation>Talebobler med dråbeform</translation>
     </message>
+    <message>
+        <source>Open media instantly</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConnectingLabel</name>

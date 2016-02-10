@@ -280,6 +280,10 @@ La longitud mínima es de 5 caracteres.</translation>
         <source>Bubbles with angle</source>
         <translation>Globos de diálogo con ángulo</translation>
     </message>
+    <message>
+        <source>Open media instantly</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConnectingLabel</name>

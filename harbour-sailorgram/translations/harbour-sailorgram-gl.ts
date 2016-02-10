@@ -280,6 +280,10 @@ A lonxitude mínima é de 5 caracteres.</translation>
         <source>Bubbles with angle</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Open media instantly</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConnectingLabel</name>

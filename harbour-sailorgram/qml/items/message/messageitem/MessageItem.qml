@@ -16,10 +16,7 @@ ListItem
     property Message message
 
     function remorseNeeded(mediatype, type) {
-        if(!mediacontainer.item)
-            return;
-
-        if(mediacontainer.item.fileHandler.downloaded) // No remorse for downloaded medias
+        if(context.immediateopen || !mediacontainer.item || mediacontainer.item.fileHandler.downloaded)
             return false;
 
         if((mediatype === TelegramConstants.typeMessageMediaVideo) || (mediatype === TelegramConstants.typeMessageMediaAudio))

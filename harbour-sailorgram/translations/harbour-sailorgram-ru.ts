@@ -280,6 +280,10 @@ Minimum length is 5 characters.</source>
         <source>Bubbles with angle</source>
         <translation>Пузыри с уголочком</translation>
     </message>
+    <message>
+        <source>Open media instantly</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConnectingLabel</name>

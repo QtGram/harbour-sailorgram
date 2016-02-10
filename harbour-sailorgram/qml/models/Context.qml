@@ -33,6 +33,7 @@ QtObject
     property bool chatheaderhidden: false
     property bool bubbleshidden: false
     property bool angledbubbles: false
+    property bool immediateopen: false
     property int bubblesopacity: 100
 
     function versionString() {

@@ -49,6 +49,7 @@ ApplicationWindow
                 context.sendwithreturn = parseInt(Settings.transactionGet(tx, "sendwithreturn"));
                 context.backgrounddisabled = parseInt(Settings.transactionGet(tx, "backgrounddisabled"));
                 context.chatheaderhidden = parseInt(Settings.transactionGet(tx, "chatheaderhidden"));
+                context.immediateopen = parseInt(Settings.transactionGet(tx, "immediateopen"));
                 context.bubbleshidden = parseInt(Settings.transactionGet(tx, "hidebubbles"));
                 context.angledbubbles = parseInt(Settings.transactionGet(tx, "angledbubbles"));
                 context.sailorgram.keepRunning = parseInt(Settings.transactionGet(tx, "keeprunning"));
