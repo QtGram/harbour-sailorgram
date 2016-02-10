@@ -90,11 +90,9 @@ Item
 
         onFilePathChanged: {
             var filepathstring = filePath.toString();
+            var isdownload = progressType === TelegramConstants.typeProgressDownload;
 
-            if((progressType !== TelegramConstants.typeProgressDownload) || (filepathstring.length <= 0) || (progressPercent < 100) || isSticker)
-                return;
-
-            if((targetType !== FileHandler.TypeTargetMediaDocument) || context.telegram.documentIsSticker(message.media.document))
+            if(!isdownload || (targetType !== FileHandler.TypeTargetMediaDocument) || isSticker || (filepathstring.length <= 0) || (progressPercent < 100))
                 return;
 
             var type = message.media.document.mimeType.split("/")[0];
@@ -102,7 +100,7 @@ Item
             if((type === "audio") || (type === "video") || (type === "image"))
                 return;
 
-            context.sailorgram.moveMediaToDownloads(message.media);
+            context.sailorgram.moveMediaToDownloads(filepathstring);
         }
     }
 }

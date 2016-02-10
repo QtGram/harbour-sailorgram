@@ -1,6 +1,7 @@
 import QtQuick 2.1
 import QtMultimedia 5.0
 import Sailfish.Silica 1.0
+import "../../../js/TelegramConstants.js" as TelegramConstants
 
 Rectangle
 {
@@ -95,7 +96,9 @@ Rectangle
             restoreOpacity();
 
             remorsepopup.execute(qsTr("Downloading media"), function() {
-                context.sailorgram.moveMediaToGallery(message.media);
+                context.sailorgram.moveMediaToGallery(fileHandler.filePath.toString(),
+                                                      videoplayer.hasVideo ? TelegramConstants.typeMessageMediaVideo : TelegramConstants.typeMessageMediaAudio);
+
                 popupmessage.show(qsTr("Media saved in Gallery"));
             });
         }

@@ -182,23 +182,15 @@ bool SailorGram::hasNoDaemonFile()
     return QFile::exists(dir.absoluteFilePath(SailorGram::NO_DAEMON_FILE));
 }
 
-void SailorGram::moveMediaTo(FileLocationObject *locationobj, const QString &destination)
+void SailorGram::moveMediaTo(const QString& mediafile, const QString &destination)
 {
-    if(!locationobj)
-        return;
-
-    QString filename = locationobj->fileName();
-    QUrl location(locationobj->download()->location());
-
-    if(filename.isEmpty())
-        filename = location.fileName();
-
-    QString destpath = destination + QDir::separator() + filename;
+    QFileInfo mediafileinfo(QUrl(mediafile).path());
+    QString destpath = QDir(destination).absoluteFilePath(mediafileinfo.fileName());
 
     if(QFile::exists(destpath)) // Don't overwrite existing files
         return;
 
-    QFile::copy(location.path(), destpath);
+    QFile::copy(mediafileinfo.absoluteFilePath(), destpath);
 }
 
 void SailorGram::notify(const QString &summary, const QString &body, const QString &icon, qint32 peerid)
@@ -345,62 +337,18 @@ void SailorGram::onWakeUpRequested()
     emit wakeUpRequested();
 }
 
-bool SailorGram::fileIsPhoto(const QString &filepath)
+QString SailorGram::mediaLocation(MessageMedia::MessageMediaType mediatype)
 {
-    if(filepath.isEmpty())
-        return false;
+    if(mediatype == MessageMedia::typeMessageMediaAudio)
+        return QStandardPaths::writableLocation(QStandardPaths::MusicLocation);
 
-    QUrl url(filepath);
-    QMimeType mime = this->_mimedb.mimeTypeForFile(url.path());
-    return mime.isValid() && (mime.name().split("/")[0] == "image");
-}
+    if(mediatype == MessageMedia::typeMessageMediaPhoto)
+        return QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
 
-bool SailorGram::fileIsVideo(const QString &filepath)
-{
-    if(filepath.isEmpty())
-        return false;
+    if(mediatype == MessageMedia::typeMessageMediaVideo)
+        return QStandardPaths::writableLocation(QStandardPaths::MoviesLocation);
 
-    QUrl url(filepath);
-    QMimeType mime = this->_mimedb.mimeTypeForFile(url.path());
-    return mime.isValid() && (mime.name().split("/")[0] == "video");
-}
-
-QString SailorGram::fileName(const QString &filepath)
-{
-    QUrl url(filepath);
-    return url.fileName();
-}
-
-FileLocationObject* SailorGram::mediaLocation(MessageMediaObject *messagemediaobject)
-{
-    if(!this->_telegram)
-        return NULL;
-
-    FileLocationObject* locationobj = NULL;
-
-    switch(messagemediaobject->classType())
-    {
-        case MessageMedia::typeMessageMediaAudio:
-            locationobj = this->_telegram->locationOfAudio(messagemediaobject->audio());
-            break;
-
-        case MessageMedia::typeMessageMediaDocument:
-            locationobj = this->_telegram->locationOfDocument(messagemediaobject->document());
-            break;
-
-        case MessageMedia::typeMessageMediaVideo:
-            locationobj = this->_telegram->locationOfVideo(messagemediaobject->video());
-            break;
-
-        case MessageMedia::typeMessageMediaPhoto:
-            locationobj = messagemediaobject->photo()->sizes()->last()->location();
-            break;
-
-        default:
-            break;
-    }
-
-    return locationobj;
+    return QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
 }
 
 void SailorGram::updatePendingState(MessageObject *message, quint32 peerid)
@@ -416,37 +364,14 @@ void SailorGram::updatePendingState(MessageObject *message, quint32 peerid)
     connect(message, SIGNAL(unreadChanged()), this, SLOT(onMessageUnreadedChanged()));
 }
 
-void SailorGram::moveMediaToDownloads(MessageMediaObject *messagemediaobject)
+void SailorGram::moveMediaToDownloads(const QString& mediafile)
 {
-    if(!this->_telegram)
-        return;
-
-    FileLocationObject* locationobj = this->mediaLocation(messagemediaobject);
-    this->moveMediaTo(locationobj, QStandardPaths::writableLocation(QStandardPaths::DownloadLocation));
+    this->moveMediaTo(mediafile, this->mediaLocation(MessageMedia::typeMessageMediaDocument));
 }
 
-void SailorGram::moveMediaToGallery(MessageMediaObject *messagemediaobject)
+void SailorGram::moveMediaToGallery(const QString& mediafile, MessageMedia::MessageMediaType mediatype)
 {
-    if(!this->_telegram)
-        return;
-
-    QString type;
-    FileLocationObject* locationobj = this->mediaLocation(messagemediaobject);
-
-    if(messagemediaobject->classType() == MessageMedia::typeMessageMediaDocument)
-    {
-        QString mime = messagemediaobject->document()->mimeType();
-        type = mime.split("/")[0];
-    }
-
-    if((messagemediaobject->classType() == MessageMedia::typeMessageMediaVideo) || (type == "video"))
-        this->moveMediaTo(locationobj, QStandardPaths::writableLocation(QStandardPaths::MoviesLocation));
-    else if((messagemediaobject->classType() == MessageMedia::typeMessageMediaAudio) || (type == "audio"))
-        this->moveMediaTo(locationobj, QStandardPaths::writableLocation(QStandardPaths::MusicLocation));
-    else if((messagemediaobject->classType() == MessageMedia::typeMessageMediaPhoto) || (type == "image"))
-        this->moveMediaTo(locationobj, QStandardPaths::writableLocation(QStandardPaths::PicturesLocation));
-    else
-        this->moveMediaToDownloads(messagemediaobject); // Fallback to Downloads folder
+    this->moveMediaTo(mediafile, this->mediaLocation(mediatype));
 }
 
 void SailorGram::notify(MessageObject *message, const QString &name, const QString &elaboratedbody)

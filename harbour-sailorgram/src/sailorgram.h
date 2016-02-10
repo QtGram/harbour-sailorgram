@@ -2,10 +2,8 @@
 #define SAILORGRAM_H
 
 #include <QGuiApplication>
-#include <QUrl>
-#include <QFile>
 #include <QStandardPaths>
-#include <QImage>
+#include <QFile>
 #include <QMimeDatabase>
 #include <telegramqml.h>
 #include <userdata.h>
@@ -59,18 +57,15 @@ class SailorGram : public QObject
         static bool hasNoDaemonFile();
 
     public slots:
-        bool fileIsPhoto(const QString& filepath);
-        bool fileIsVideo(const QString& filepath);
-        void moveMediaToDownloads(MessageMediaObject* messagemediaobject);
-        void moveMediaToGallery(MessageMediaObject* messagemediaobject);
+        void moveMediaToDownloads(const QString &mediafile);
+        void moveMediaToGallery(const QString &mediafile, MessageMedia::MessageMediaType mediatype);
         void notify(MessageObject* message, const QString& name, const QString &elaboratedbody);
         void closeNotification(DialogObject* dialog);
-        QString fileName(const QString& filepath);
-        FileLocationObject *mediaLocation(MessageMediaObject* messagemediaobject);
 
     private:
+        QString mediaLocation(MessageMedia::MessageMediaType mediatype);
         void updatePendingState(MessageObject* message, quint32 peerid);
-        void moveMediaTo(FileLocationObject* locationobj, const QString& destination);
+        void moveMediaTo(const QString &mediafile, const QString& destination);
         void notify(const QString& summary, const QString& body, const QString &icon, qint32 peerid);
         void beep();
 

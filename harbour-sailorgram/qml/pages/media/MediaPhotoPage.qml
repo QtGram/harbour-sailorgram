@@ -3,6 +3,7 @@ import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../../models"
 import "../../components"
+import "../../js/TelegramConstants.js" as TelegramConstants
 
 MediaPage
 {
@@ -21,7 +22,7 @@ MediaPage
                 text: qsTr("Save in Gallery")
 
                 onClicked: {
-                    context.sailorgram.moveMediaToGallery(message.media);
+                    context.sailorgram.moveMediaToGallery(fileHandler.fileName.toString(), TelegramConstants.typeMessageMediaPhoto);
                     popupmessage.show(qsTr("Image saved in Gallery"));
                 }
             }

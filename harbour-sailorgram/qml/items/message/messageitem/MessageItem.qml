@@ -89,6 +89,7 @@ ListItem
     id: messageitem
     contentWidth: parent.width
     contentHeight: content.height
+    onClicked: displayMedia()
 
     menu: MessageMenu {
         id: messagemenu
@@ -99,8 +100,6 @@ ListItem
         onCancelRequested: mediacontainer.item.cancelTransfer()
         onDownloadRequested: mediacontainer.item.download()
     }
-
-    onClicked: displayMedia()
 
     MessageBubble
     {

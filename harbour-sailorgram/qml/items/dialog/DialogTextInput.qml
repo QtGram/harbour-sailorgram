@@ -126,7 +126,7 @@ InverseMouseArea
                     else if(action === selector.stickerAction)
                         context.telegram.forwardDocument(peerid, data);
                     else
-                        context.telegram.sendFile(peerid, data); // NOTE: Needs Investigation
+                        context.telegram.sendFile(peerid, data);
 
                     pageStack.pop(returnpage);
                 });

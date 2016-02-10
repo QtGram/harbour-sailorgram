@@ -51,7 +51,7 @@ ContextMenu
     MenuItem
     {
         text: qsTr("Download")
-        visible: TelegramHelper.isMediaMessage(message) && messageMediaItem && !messageMediaItem.fileHandler.downloaded;
+        visible: TelegramHelper.isMediaMessage(message) && messageMediaItem //&& !messageMediaItem.fileHandler.downloaded;
 
         onClicked: {
             messageitem.remorseAction(qsTr("Downloading media"), function() {
