@@ -22,8 +22,7 @@ MediaPage
     {
         id: mediaplayer
         anchors.fill: parent
-        videoThumbnail: message.media.video.thumb.location.download.location
-        videoTitle: message.media.video.caption
+        videoThumbnail: fileHandler.thumbPath
         videoSource: fileHandler.filePath
     }
 

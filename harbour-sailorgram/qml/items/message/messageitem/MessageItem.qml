@@ -38,18 +38,19 @@ ListItem
         if(!mediacontainer.item)
             return;
 
-        if(!mediacontainer.item.fileHandler.downloaded) {
+        if(!mediacontainer.item.fileHandler.downloaded)
             mediacontainer.item.fileHandler.download();
-            return;
-        }
-
-        if((message.media.classType === TelegramConstants.typeMessageMediaPhoto) || (type === "image")) {
-            pageStack.push(Qt.resolvedUrl("../../../pages/media/MediaPhotoPage.qml"), { "context": messageitem.context, "message": messageitem.message, "fileHandler": mediacontainer.item.fileHandler });
-            return;
-        }
 
         if((message.media.classType === TelegramConstants.typeMessageMediaVideo) || (message.media.classType === TelegramConstants.typeMessageMediaAudio) || (type === "audio") || (type === "video")) {
             pageStack.push(Qt.resolvedUrl("../../../pages/media/MediaPlayerPage.qml"), { "context": messageitem.context, "message": messageitem.message, "fileHandler": mediacontainer.item.fileHandler });
+            return;
+        }
+
+        if(!mediacontainer.item.fileHandler.downloaded)
+            return;
+
+        if((message.media.classType === TelegramConstants.typeMessageMediaPhoto) || (type === "image")) {
+            pageStack.push(Qt.resolvedUrl("../../../pages/media/MediaPhotoPage.qml"), { "context": messageitem.context, "message": messageitem.message, "fileHandler": mediacontainer.item.fileHandler });
             return;
         }
 
@@ -111,7 +112,7 @@ ListItem
     Column
     {
         property bool isSticker: false
-        property real maxw: parent.width * 3 / 4
+        property real maxw: Screen.width * 3 / 4
 
         id: content
 

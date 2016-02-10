@@ -21,7 +21,6 @@ MessageMediaItem
     MediaPlayerTimings { id: mediaplayertimings }
 
     id: messagevideo
-
     contentWidth: fileHandler.imageSize.width
     contentHeight: thumb.height
 
@@ -30,6 +29,16 @@ MessageMediaItem
         id: videothumb
         anchors.centerIn: parent
         source: "image://theme/icon-m-play"
+        z: 2
+    }
+
+    ProgressCircle
+    {
+        anchors.centerIn: parent
+        width: Math.min(parent.width, parent.height) * 0.5
+        height: width
+        visible: messagevideo.transferInProgress
+        value: messagevideo.fileHandler.progressPercent / 100.0
         z: 2
     }
 
