@@ -87,7 +87,8 @@ SOURCES += src/harbour-sailorgram.cpp \
     src/iphb/libiphb.cpp \
     src/iphb/insomniac.cpp \
     src/selector/filesmodel.cpp \
-    src/selector/filesmodelworker.cpp
+    src/selector/filesmodelworker.cpp \
+    src/dbus/connectivitychecker.cpp
 
 OTHER_FILES += qml/harbour-sailorgram.qml \
     rpm/harbour-sailorgram.changes.in \
@@ -198,7 +199,8 @@ HEADERS += \
     src/iphb/messages.h \
     src/iphb/insomniac.h \
     src/selector/filesmodel.h \
-    src/selector/filesmodelworker.h
+    src/selector/filesmodelworker.h \
+    src/dbus/connectivitychecker.h
 
 RESOURCES += \
     resources.qrc

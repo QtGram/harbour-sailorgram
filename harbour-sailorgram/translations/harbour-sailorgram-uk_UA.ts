@@ -93,15 +93,15 @@
     </message>
     <message>
         <source>Icon Designers</source>
-        <translation type="unfinished"></translation>
+        <translation>Дизайнери піктограм</translation>
     </message>
     <message>
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>Учасники</translation>
     </message>
     <message>
         <source>Ukrainian</source>
-        <translation type="unfinished"></translation>
+        <translation>Українська</translation>
     </message>
 </context>
 <context>
@@ -134,15 +134,15 @@
     <name>AudioRecorder</name>
     <message>
         <source>Error : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка : %1</translation>
     </message>
     <message>
         <source>Recording...</source>
-        <translation type="unfinished"></translation>
+        <translation>Йде запис...</translation>
     </message>
     <message>
         <source>Stopped.</source>
-        <translation type="unfinished"></translation>
+        <translation>Зупинено.</translation>
     </message>
 </context>
 <context>
@@ -327,12 +327,14 @@ Minimum length is 5 characters.</source>
     <message>
         <source>Unread
 message</source>
-        <translation type="unfinished"></translation>
+        <translation>Непрочитане
+повідомлення</translation>
     </message>
     <message>
         <source>Unread
 messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Непрочитані
+повідомлення</translation>
     </message>
     <message>
         <source>Disconnected</source>
@@ -344,7 +346,7 @@ messages</source>
     </message>
     <message>
         <source>Recent chats:</source>
-        <translation type="unfinished"></translation>
+        <translation>Нещодавні чати:</translation>
     </message>
 </context>
 <context>
@@ -396,27 +398,27 @@ messages</source>
     </message>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Очистити помилки</translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Видаляємо помилки</translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>Лог помилок порожній</translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished"></translation>
+        <translation>Код помилки:</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished"></translation>
+        <translation>Функція:</translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished"></translation>
+        <translation>Повідомлення:</translation>
     </message>
 </context>
 <context>
@@ -629,7 +631,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Install Sticker set</source>
-        <translation type="unfinished"></translation>
+        <translation>Встановити набір стікерів</translation>
     </message>
 </context>
 <context>
@@ -643,7 +645,7 @@ Do a swype to the right to select a contact</source>
     <name>MessageSearchItem</name>
     <message>
         <source>You:</source>
-        <translation type="unfinished">Ви:</translation>
+        <translation>Ви:</translation>
     </message>
 </context>
 <context>
@@ -735,7 +737,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished"></translation>
+        <translation>Карта пам&apos;яті SD</translation>
     </message>
     <message>
         <source>Home</source>
@@ -743,7 +745,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Назад</translation>
     </message>
     <message>
         <source>Send %1 file(s)</source>
@@ -758,7 +760,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished"></translation>
+        <translation>Карта пам&apos;яті SD</translation>
     </message>
     <message>
         <source>Home</source>
@@ -766,19 +768,19 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Sort ascending</source>
-        <translation type="unfinished"></translation>
+        <translation>Сортувати по зростанню</translation>
     </message>
     <message>
         <source>Sort descending</source>
-        <translation type="unfinished"></translation>
+        <translation>Сортувати по спаданню</translation>
     </message>
     <message>
         <source>Sort by name</source>
-        <translation type="unfinished"></translation>
+        <translation>Сортувати по імені</translation>
     </message>
     <message>
         <source>Sort by date</source>
-        <translation type="unfinished"></translation>
+        <translation>Сортувати по даті</translation>
     </message>
     <message>
         <source>Send %1 image(s)</source>
@@ -786,7 +788,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Назад</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -816,27 +818,27 @@ Do a swype to the right to select a contact</source>
     <name>SelectorMainPage</name>
     <message>
         <source>Send file</source>
-        <translation type="unfinished"></translation>
+        <translation>Відправити файл</translation>
     </message>
     <message>
         <source>Image from gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>Зображення з галереї</translation>
     </message>
     <message>
         <source>Capture photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Зробити фото</translation>
     </message>
     <message>
         <source>Record sound</source>
-        <translation type="unfinished"></translation>
+        <translation>Записати звук</translation>
     </message>
     <message>
         <source>My location</source>
-        <translation type="unfinished"></translation>
+        <translation>Моє розташування</translation>
     </message>
     <message>
         <source>Sticker</source>
-        <translation type="unfinished"></translation>
+        <translation>Стікер</translation>
     </message>
     <message>
         <source>Browse files</source>
@@ -847,38 +849,38 @@ Do a swype to the right to select a contact</source>
     <name>SelectorSoundRecordPage</name>
     <message>
         <source>%1 sec</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 сек</translation>
     </message>
     <message>
         <source>~%1 B</source>
-        <translation type="unfinished"></translation>
+        <translation>~%1 Б</translation>
     </message>
     <message>
         <source>~%1 KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>~%1  КБ</translation>
     </message>
     <message>
         <source>~%1 MiB</source>
-        <translation type="unfinished"></translation>
+        <translation>~%1 МБ</translation>
     </message>
     <message>
         <source>~%1 GiB</source>
-        <translation type="unfinished"></translation>
+        <translation>~%1 ГБ</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Старт</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Стоп</translation>
     </message>
 </context>
 <context>
     <name>SelectorStickerPage</name>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Відправити</translation>
     </message>
     <message>
         <source>Select a Sticker Set from below</source>
@@ -1022,19 +1024,19 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>Набирає...</translation>
     </message>
     <message>
         <source>%1 is typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 набирає...</translation>
     </message>
     <message>
         <source>%1 and %2 are typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 і %2 набирають...</translation>
     </message>
     <message>
         <source>%1 members are typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 учасників набирають...</translation>
     </message>
 </context>
 <context>
@@ -1053,7 +1055,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Дії</translation>
+        <translation>Дії</translation>
     </message>
 </context>
 <context>

@@ -73,15 +73,15 @@
     </message>
     <message>
         <source>Translation Platform</source>
-        <translation>Übersetzungs-Platform</translation>
+        <translation>Übersetzungs-Plattform</translation>
     </message>
     <message>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>Schwedisch</translation>
     </message>
     <message>
         <source>Galician</source>
-        <translation>Gälisch</translation>
+        <translation>Galicisch</translation>
     </message>
     <message>
         <source>Belaruian</source>
@@ -89,19 +89,19 @@
     </message>
     <message>
         <source>Emoji Set</source>
-        <translation type="unfinished"></translation>
+        <translation>Emoji Sammlung</translation>
     </message>
     <message>
         <source>Icon Designers</source>
-        <translation type="unfinished"></translation>
+        <translation>Icon Designer</translation>
     </message>
     <message>
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>Mitwirkende</translation>
     </message>
     <message>
         <source>Ukrainian</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukrainisch</translation>
     </message>
 </context>
 <context>
@@ -112,11 +112,11 @@
     </message>
     <message>
         <source>First Name</source>
-        <translation type="unfinished">Vorname</translation>
+        <translation>Vorname</translation>
     </message>
     <message>
         <source>Last Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nachname</translation>
     </message>
     <message>
         <source>Telephone Number</source>
@@ -134,22 +134,22 @@
     <name>AudioRecorder</name>
     <message>
         <source>Error : %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler: %1</translation>
     </message>
     <message>
         <source>Recording...</source>
-        <translation type="unfinished"></translation>
+        <translation>Aufnahme läuft...</translation>
     </message>
     <message>
         <source>Stopped.</source>
-        <translation type="unfinished"></translation>
+        <translation>Abgebrochen.</translation>
     </message>
 </context>
 <context>
     <name>AuthorizationPage</name>
     <message>
         <source>Sign In</source>
-        <translation>Einloggen</translation>
+        <translation>Anmelden</translation>
     </message>
     <message>
         <source>Authorization Code</source>
@@ -157,55 +157,55 @@
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation>Sie haben einen falschen Autorisierungscode eingegeben</translation>
+        <translation>Du hast einen falschen Autorisierungscode eingegeben</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign In&apos;</source>
-        <translation>Warten Sie auf die SMS mit dem Aktivierungscode und gehen Sie auf &apos;einloggen&apos;</translation>
+        <translation>Warte auf die SMS mit dem Aktivierungscode und gehe auf &apos;Anmelden&apos;</translation>
     </message>
     <message>
         <source>Resend Activation Code</source>
-        <translation>Sende Aktivierungs-Code erneut</translation>
+        <translation>Aktivierungscode erneut senden </translation>
     </message>
     <message>
         <source>Sending Activation Code</source>
-        <translation>Sende Aktivierungs-Code</translation>
+        <translation>Aktivierungscode wird gesendet</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
 </context>
 <context>
     <name>ChangeChatTitle</name>
     <message>
         <source>Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Ändern</translation>
     </message>
 </context>
 <context>
     <name>ChangeUsernamePage</name>
     <message>
         <source>Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Ändern</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation>Nutzername</translation>
+        <translation>Benutzername</translation>
     </message>
     <message>
         <source>You can choose an username on Telegram. If you do, other people may contact you without knowing your phone number.
 
 You can use a-z, 0-9 and underscores.
 Minimum length is 5 characters.</source>
-        <translation>Du kannst einen Nutzernamen für Telegram wählen. Falls du dich dazu entscheidest, können dich andere Leute kontaktieren ohne deine Telefonnummer zu kennen
+        <translation>Du kannst bei Telegram einen Benutzernamen verwenden. So können dich Leute kontaktieren ohne deine Telefonnummer zu kennen.
 
-Erlaubte Zeichen sind a-z, 0-9 und _
-Minimale Länge sind 5 Zeichen</translation>
+Erlaubt sind a-z, 0-9 und Unterstrich.
+Minimum sind 5 Zeichen.</translation>
     </message>
     <message>
         <source>This username is already occupied</source>
-        <translation type="unfinished"></translation>
+        <translation>Der gewählte Benutzername ist nicht verfügbar</translation>
     </message>
 </context>
 <context>
@@ -228,7 +228,7 @@ Minimale Länge sind 5 Zeichen</translation>
     </message>
     <message>
         <source>Add member</source>
-        <translation type="unfinished"></translation>
+        <translation>Mitglieder hinzufügen</translation>
     </message>
 </context>
 <context>
@@ -239,46 +239,46 @@ Minimale Länge sind 5 Zeichen</translation>
     </message>
     <message>
         <source>Removing from group</source>
-        <translation>wird aus der Gruppe entfernt</translation>
+        <translation>Wird aus der Gruppe entfernt</translation>
     </message>
 </context>
 <context>
     <name>ChatSettingsPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Speichern</translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation>Nachricht mit Eingebetaste abschicken</translation>
+        <translation>Nachrichten mit Eingebetaste senden</translation>
     </message>
     <message>
         <source>Background enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Hintergrund anzeigen </translation>
     </message>
     <message>
         <source>Chat header visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Chat Kopfzeile anzeigen</translation>
     </message>
     <message>
         <source>Bubbles visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Sprechblasen sichtbar</translation>
     </message>
     <message>
         <source>Bubble opacity</source>
-        <translation type="unfinished"></translation>
+        <translation>Deckkraft</translation>
     </message>
     <message>
         <source>Keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Tastatur</translation>
     </message>
     <message>
         <source>Appearance</source>
-        <translation type="unfinished"></translation>
+        <translation>Darstellung</translation>
     </message>
     <message>
         <source>Bubbles with angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Sprechblasen mit einer Ecke</translation>
     </message>
 </context>
 <context>
@@ -292,11 +292,11 @@ Minimale Länge sind 5 Zeichen</translation>
     <name>ConnectionPage</name>
     <message>
         <source>Connecting</source>
-        <translation>Verbinden</translation>
+        <translation>Verbinde</translation>
     </message>
     <message>
         <source>Login Again</source>
-        <translation>Wieder anmelden</translation>
+        <translation>Erneut anmelden</translation>
     </message>
     <message>
         <source>Telegram Status</source>
@@ -308,7 +308,7 @@ Minimale Länge sind 5 Zeichen</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
 </context>
 <context>
@@ -319,7 +319,7 @@ Minimale Länge sind 5 Zeichen</translation>
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontakte</translation>
     </message>
 </context>
 <context>
@@ -327,16 +327,18 @@ Minimale Länge sind 5 Zeichen</translation>
     <message>
         <source>Unread
 message</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungelesene
+Nachricht</translation>
     </message>
     <message>
         <source>Unread
 messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungelesene
+Nachrichten</translation>
     </message>
     <message>
         <source>Disconnected</source>
-        <translation type="unfinished"></translation>
+        <translation>Nicht verbunden</translation>
     </message>
     <message>
         <source>Connected</source>
@@ -344,7 +346,7 @@ messages</source>
     </message>
     <message>
         <source>Recent chats:</source>
-        <translation type="unfinished"></translation>
+        <translation>Letzte Chats:</translation>
     </message>
 </context>
 <context>
@@ -362,30 +364,30 @@ messages</source>
     <name>CreateSecretDialogPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Neuer geheimer Chat</translation>
     </message>
 </context>
 <context>
     <name>DaemonSettingsPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Speichern</translation>
     </message>
     <message>
         <source>Keep running</source>
-        <translation type="unfinished"></translation>
+        <translation>Weiterhin ausführen</translation>
     </message>
     <message>
         <source>SailorGram keeps running in background even when closed</source>
-        <translation type="unfinished"></translation>
+        <translation>SailorGram im Hintergrund ausführen auch wenn geschlossen</translation>
     </message>
     <message>
         <source>Autostart</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatischer Start</translation>
     </message>
     <message>
         <source>SailorGram starts automatically</source>
-        <translation type="unfinished"></translation>
+        <translation>SailorGram startet automatisch</translation>
     </message>
 </context>
 <context>
@@ -396,70 +398,70 @@ messages</source>
     </message>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler löschen</translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler werden gelöscht</translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>:) Keine Fehler vorhanden</translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler-Code:</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished"></translation>
+        <translation>Funktion:</translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nachricht:</translation>
     </message>
 </context>
 <context>
     <name>DialogInfoPage</name>
     <message>
         <source>Delete secret chat</source>
-        <translation>Geheimes Gespräch löschen</translation>
+        <translation>Geheimen Chat löschen</translation>
     </message>
     <message>
         <source>Delete group</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppe löschen</translation>
     </message>
     <message>
         <source>Delete conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Chat löschen</translation>
     </message>
     <message>
         <source>Deleting secret chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Geheimer Chat wird gelöscht</translation>
     </message>
     <message>
         <source>Deleting group</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppe wird gelöscht</translation>
     </message>
     <message>
         <source>Deleting conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Chat wird gelöscht</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktionen</translation>
     </message>
     <message>
         <source>Enable notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Benachrichtigungen aktivieren</translation>
     </message>
     <message>
         <source>Disable notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Benachrichtigungen deaktivieren</translation>
     </message>
     <message>
         <source>Add to contacts</source>
-        <translation type="unfinished"></translation>
+        <translation>Zu Kontakten hinzufügen</translation>
     </message>
     <message>
         <source>Chat information</source>
@@ -470,14 +472,14 @@ messages</source>
     <name>DialogItem</name>
     <message>
         <source>You:</source>
-        <translation type="unfinished"></translation>
+        <translation>Du:</translation>
     </message>
 </context>
 <context>
     <name>DialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Weitere Nachrichten laden</translation>
     </message>
 </context>
 <context>
@@ -491,33 +493,35 @@ messages</source>
     <name>DialogsPage</name>
     <message>
         <source>Chats</source>
-        <translation type="unfinished">Chats</translation>
+        <translation>Chats</translation>
     </message>
     <message>
         <source>Connecting...</source>
-        <translation type="unfinished">Verbinde...</translation>
+        <translation>Verbinden...</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">löschen</translation>
+        <translation>Löschen</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Chat wird gelöscht</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Geheimer Chat wird gelöscht</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppe wird gelöscht</translation>
     </message>
     <message>
         <source>No Chats
 
 Do a swype to the right to select a contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Keine Chats vorhanden
+
+Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
 </context>
 <context>
@@ -528,7 +532,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Neuer geheimer Chat</translation>
     </message>
     <message>
         <source>New Group</source>
@@ -536,18 +540,18 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
 </context>
 <context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
-        <translation>In Galerie speichern</translation>
+        <translation>In der Galerie speichern</translation>
     </message>
     <message>
         <source>Image saved in Gallery</source>
@@ -558,18 +562,18 @@ Do a swype to the right to select a contact</source>
     <name>MediaPlayerToolBar</name>
     <message>
         <source>Downloading media</source>
-        <translation type="unfinished"></translation>
+        <translation>Datei wird heruntergeladen</translation>
     </message>
     <message>
         <source>Media saved in Gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>Datei in der Galerie gespeichert</translation>
     </message>
 </context>
 <context>
     <name>MessageAudio</name>
     <message>
         <source>Duration: %1</source>
-        <translation>Länge: %1</translation>
+        <translation>Dauer: %1</translation>
     </message>
     <message>
         <source>Audio recording</source>
@@ -584,15 +588,15 @@ Do a swype to the right to select a contact</source>
     <name>MessageItem</name>
     <message>
         <source>Downloading Media</source>
-        <translation>Medien werden heruntergeladen </translation>
+        <translation>Datei wird heruntergeladen</translation>
     </message>
     <message>
         <source>Opening Media</source>
-        <translation>Öffne Media</translation>
+        <translation>Datei wird geöffnet</translation>
     </message>
     <message>
         <source>Opening media</source>
-        <translation>Öffne Mediendatei</translation>
+        <translation>Öffne Datei</translation>
     </message>
 </context>
 <context>
@@ -607,7 +611,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Delete</source>
-        <translation>löschen</translation>
+        <translation>Löschen</translation>
     </message>
     <message>
         <source>Deleting Message</source>
@@ -619,29 +623,29 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Download</source>
-        <translation type="unfinished"></translation>
+        <translation>Download</translation>
     </message>
     <message>
         <source>Downloading media</source>
-        <translation type="unfinished"></translation>
+        <translation>Datei wird heruntergeladen</translation>
     </message>
     <message>
         <source>Install Sticker set</source>
-        <translation type="unfinished"></translation>
+        <translation>Sticker installieren</translation>
     </message>
 </context>
 <context>
     <name>MessageQuotedItem</name>
     <message>
         <source>You</source>
-        <translation type="unfinished"></translation>
+        <translation>Du</translation>
     </message>
 </context>
 <context>
     <name>MessageSearchItem</name>
     <message>
         <source>You:</source>
-        <translation type="unfinished"></translation>
+        <translation>Du:</translation>
     </message>
 </context>
 <context>
@@ -666,7 +670,7 @@ Do a swype to the right to select a contact</source>
     <name>PhoneNumberPage</name>
     <message>
         <source>Next</source>
-        <translation>weiter</translation>
+        <translation>Weiter</translation>
     </message>
     <message>
         <source>Phone Number</source>
@@ -678,18 +682,18 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Insert your phone number and press &apos;Next&apos;</source>
-        <translation>Trage deine Telefonnummer ein und gehe auf &apos;weiter&apos;</translation>
+        <translation>Trage deine Telefonnummer ein und gehe auf &apos;Weiter&apos;</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
 </context>
 <context>
     <name>ProfilePage</name>
     <message>
         <source>Change Picture</source>
-        <translation type="unfinished"></translation>
+        <translation>Profilbild ändern</translation>
     </message>
     <message>
         <source>Phone number</source>
@@ -708,40 +712,40 @@ Do a swype to the right to select a contact</source>
     <name>SecretDialogDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation>Geheimes Gespräch abgebrochen</translation>
+        <translation>Geheimer Chat abgebrochen</translation>
     </message>
 </context>
 <context>
     <name>SecretDialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Weitere Nachrichten laden</translation>
     </message>
 </context>
 <context>
     <name>SecretDialogWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>
-        <translation type="unfinished"></translation>
+        <translation>Warte bis %1 online geht</translation>
     </message>
 </context>
 <context>
     <name>SelectorFilesPage</name>
     <message>
         <source>Android storage</source>
-        <translation type="unfinished"></translation>
+        <translation>Android Speicher</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished"></translation>
+        <translation>SD Card</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Home</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Zurück</translation>
     </message>
     <message>
         <source>Send %1 file(s)</source>
@@ -752,31 +756,31 @@ Do a swype to the right to select a contact</source>
     <name>SelectorImagesPage</name>
     <message>
         <source>Android storage</source>
-        <translation type="unfinished"></translation>
+        <translation>Android Speicher</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished"></translation>
+        <translation>SD Card</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Home</translation>
     </message>
     <message>
         <source>Sort ascending</source>
-        <translation type="unfinished"></translation>
+        <translation>Aufsteigend sortieren</translation>
     </message>
     <message>
         <source>Sort descending</source>
-        <translation type="unfinished"></translation>
+        <translation>Absteigend sortieren</translation>
     </message>
     <message>
         <source>Sort by name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nach Namen ordnen</translation>
     </message>
     <message>
         <source>Sort by date</source>
-        <translation type="unfinished"></translation>
+        <translation>Nach Datum ordnen</translation>
     </message>
     <message>
         <source>Send %1 image(s)</source>
@@ -784,7 +788,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zurück</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -795,99 +799,99 @@ Do a swype to the right to select a contact</source>
     <name>SelectorLocationPage</name>
     <message>
         <source>Waiting for coordinates...</source>
-        <translation type="unfinished"></translation>
+        <translation>Auf Koordinaten warten...</translation>
     </message>
     <message>
         <source>Coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Koordinaten</translation>
     </message>
     <message>
         <source>lat: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Lat: %1</translation>
     </message>
     <message>
         <source>long: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Long: %1</translation>
     </message>
 </context>
 <context>
     <name>SelectorMainPage</name>
     <message>
         <source>Send file</source>
-        <translation type="unfinished"></translation>
+        <translation>Datei senden</translation>
     </message>
     <message>
         <source>Image from gallery</source>
-        <translation type="unfinished"></translation>
+        <translation>Bild aus der Galerie</translation>
     </message>
     <message>
         <source>Capture photo</source>
-        <translation type="unfinished"></translation>
+        <translation>Foto aufnehmen</translation>
     </message>
     <message>
         <source>Record sound</source>
-        <translation type="unfinished"></translation>
+        <translation>Audio aufnehmen</translation>
     </message>
     <message>
         <source>My location</source>
-        <translation type="unfinished"></translation>
+        <translation>Meine Position</translation>
     </message>
     <message>
         <source>Sticker</source>
-        <translation type="unfinished"></translation>
+        <translation>Sticker</translation>
     </message>
     <message>
         <source>Browse files</source>
-        <translation type="unfinished"></translation>
+        <translation>Dateien auswählen</translation>
     </message>
 </context>
 <context>
     <name>SelectorSoundRecordPage</name>
     <message>
         <source>%1 sec</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Sek.</translation>
     </message>
     <message>
         <source>~%1 B</source>
-        <translation type="unfinished"></translation>
+        <translation>~%1 B</translation>
     </message>
     <message>
         <source>~%1 KiB</source>
-        <translation type="unfinished"></translation>
+        <translation>~%1 KiB</translation>
     </message>
     <message>
         <source>~%1 MiB</source>
-        <translation type="unfinished"></translation>
+        <translation>~%1 MiB</translation>
     </message>
     <message>
         <source>~%1 GiB</source>
-        <translation type="unfinished"></translation>
+        <translation>~%1 GiB</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Start</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Stopp</translation>
     </message>
 </context>
 <context>
     <name>SelectorStickerPage</name>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Senden</translation>
     </message>
     <message>
         <source>Select a Sticker Set from below</source>
-        <translation type="unfinished"></translation>
+        <translation>Sticker auswählen</translation>
     </message>
 </context>
 <context>
     <name>SettingsPage</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <source>Chats</source>
@@ -895,11 +899,11 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Debug</source>
-        <translation type="unfinished"></translation>
+        <translation>Debug</translation>
     </message>
     <message>
         <source>Daemon</source>
-        <translation type="unfinished"></translation>
+        <translation>Dämon</translation>
     </message>
 </context>
 <context>
@@ -910,11 +914,11 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation>Sie haben einen falschen Autorisierungscode eingegeben</translation>
+        <translation>Du hast einen falschen Autorisierungscode eingegeben</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
-        <translation>Warten Sie auf die SMS mit dem Aktivierungscode und gehen Sie auf &apos;einloggen&apos;</translation>
+        <translation>Warte auf die SMS mit dem Aktivierungscode und gehe auf &apos;Einloggen&apos;</translation>
     </message>
     <message>
         <source>First Name</source>
@@ -930,7 +934,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
 </context>
 <context>
@@ -949,34 +953,34 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Secret chat created by ��%1��</source>
-        <translation type="unfinished"></translation>
+        <translation>Geheimer Chat erstellt von ��%1��</translation>
     </message>
     <message>
         <source>Group created by ��%1��</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppe erstellt von ��%1��</translation>
     </message>
     <message>
         <source>Group name changed to ��%1��</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppenname in ��%1�� geändert</translation>
     </message>
     <message>
         <source>%1 added %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 hat %2 hinzugefügt</translation>
     </message>
 </context>
 <context>
     <name>TelegramHelper</name>
     <message>
         <source>Recently</source>
-        <translation>kürzlich</translation>
+        <translation>kürzlich gesehen</translation>
     </message>
     <message>
         <source>Last Month</source>
-        <translation>letzten Monat</translation>
+        <translation>letzten Monat gesehen</translation>
     </message>
     <message>
         <source>Last Week</source>
-        <translation>letzte Woche</translation>
+        <translation>letzte Woche gesehen</translation>
     </message>
     <message>
         <source>Online</source>
@@ -1000,7 +1004,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Unsupported</source>
-        <translation>nicht unterstützt</translation>
+        <translation>Nicht unterstützt</translation>
     </message>
     <message>
         <source>Audio</source>
@@ -1008,7 +1012,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Photo</source>
-        <translation>Photo</translation>
+        <translation>Foto</translation>
     </message>
     <message>
         <source>Geo</source>
@@ -1016,23 +1020,23 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Last Seen %1</source>
-        <translation>Zuletzt gesehen %1</translation>
+        <translation>zuletzt %1 gesehen</translation>
     </message>
     <message>
         <source>Typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>Schreibt...</translation>
     </message>
     <message>
         <source>%1 is typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 schreibt...</translation>
     </message>
     <message>
         <source>%1 and %2 are typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 und %2 schreiben...</translation>
     </message>
     <message>
         <source>%1 members are typing...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Mitglieder schreiben...</translation>
     </message>
 </context>
 <context>
@@ -1047,11 +1051,11 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Phone Number</source>
-        <translation>Telefonnnummer</translation>
+        <translation>Telefonnummer</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktionen</translation>
     </message>
 </context>
 <context>

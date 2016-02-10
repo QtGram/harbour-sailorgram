@@ -12,6 +12,7 @@
 #include <objects/types.h>
 #include "dbus/interface/sailorgraminterface.h"
 #include "dbus/notification/notification.h"
+#include "dbus/connectivitychecker.h"
 
 class SailorGram : public QObject
 {
@@ -68,19 +69,18 @@ class SailorGram : public QObject
         FileLocationObject *mediaLocation(MessageMediaObject* messagemediaobject);
 
     private:
+        void updatePendingState(MessageObject* message, quint32 peerid);
         void moveMediaTo(FileLocationObject* locationobj, const QString& destination);
         void notify(const QString& summary, const QString& body, const QString &icon, qint32 peerid);
         void beep();
 
     private slots:
         void onApplicationStateChanged(Qt::ApplicationState state);
-        void onOnlineStateChanged(bool isonline);
         void onNotificationClosed(uint);
+        void onMessageUnreadedChanged();
         void onWakeUpRequested();
-        void onConnectedChanged();
         void updateLogLevel();
         void updateOnlineState();
-        void wakeSleep();
 
     signals:
         void autostartChanged();
@@ -94,8 +94,10 @@ class SailorGram : public QObject
 
     private:
         QHash<qint32, Notification*> _notifications;
+        QHash<qint32, MessageObject*> _topmessages;
         QMimeDatabase _mimedb;
         TelegramQml* _telegram;
+        ConnectivityChecker* _connectivitychecker;
         QNetworkConfigurationManager* _netcfgmanager;
         SailorgramInterface* _interface;
         DialogObject* _foregrounddialog;

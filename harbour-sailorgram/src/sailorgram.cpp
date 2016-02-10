@@ -6,7 +6,7 @@ const QString SailorGram::PUBLIC_KEY_FILE = "server.pub";
 const QString SailorGram::EMOJI_FOLDER = "emoji";
 const QString SailorGram::APPLICATION_PRETTY_NAME = "SailorGram";
 
-SailorGram::SailorGram(QObject *parent): QObject(parent), _telegram(NULL), _foregrounddialog(NULL), _connected(-1), _daemonized(false)
+SailorGram::SailorGram(QObject *parent): QObject(parent), _telegram(NULL), _connectivitychecker(NULL), _foregrounddialog(NULL), _connected(-1), _daemonized(false)
 {
     QDir cfgdir(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation));
     cfgdir.mkpath(qApp->applicationName() + QDir::separator() + qApp->applicationName() + QDir::separator() + SailorGram::CONFIG_FOLDER);
@@ -14,15 +14,12 @@ SailorGram::SailorGram(QObject *parent): QObject(parent), _telegram(NULL), _fore
     QDir cachedir(QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation));
     cachedir.mkpath(qApp->applicationName() + QDir::separator() + qApp->applicationName());
 
-    this->_netcfgmanager = new QNetworkConfigurationManager(this);
     this->_interface = new SailorgramInterface(this);
     this->_autostart = !SailorGram::hasNoDaemonFile();
 
     connect(qApp, SIGNAL(applicationStateChanged(Qt::ApplicationState)), this, SLOT(onApplicationStateChanged(Qt::ApplicationState)));
     connect(this, SIGNAL(daemonizedChanged()), this, SLOT(updateLogLevel()));
     connect(this, SIGNAL(daemonizedChanged()), this, SLOT(updateOnlineState()));
-    connect(this, SIGNAL(connectedChanged()), this, SLOT(wakeSleep()), Qt::QueuedConnection);
-    connect(this->_netcfgmanager, SIGNAL(onlineStateChanged(bool)), this, SLOT(onOnlineStateChanged(bool)));
     connect(this->_interface, SIGNAL(wakeUpRequested()), this, SLOT(onWakeUpRequested()));
     connect(this->_interface, SIGNAL(openDialogRequested(qint32)), this, SIGNAL(openDialogRequested(qint32)));
 }
@@ -44,7 +41,10 @@ bool SailorGram::daemonized() const
 
 bool SailorGram::connected() const
 {
-    return this->_connected;
+    if(!this->_connectivitychecker)
+        return false;
+
+    return this->_connectivitychecker->connected();
 }
 
 QString SailorGram::emojiPath() const
@@ -127,15 +127,14 @@ void SailorGram::setTelegram(TelegramQml *telegram)
 
     this->_telegram = telegram;
 
-    if(!this->_telegram->connected())
-        connect(this->_telegram, SIGNAL(connectedChanged()), this, SLOT(onConnectedChanged()));
-    else
-    {
-        this->_connected = true;
-        emit connectedChanged();
-    }
+    if(this->_connectivitychecker)
+        this->_connectivitychecker->deleteLater();
+
+    this->_connectivitychecker = new ConnectivityChecker(telegram, this);
+    connect(this->_connectivitychecker, SIGNAL(connectedChanged()), this, SIGNAL(connectedChanged()));
 
     emit telegramChanged();
+    emit connectedChanged();
 }
 
 void SailorGram::setForegroundDialog(DialogObject *dialog)
@@ -306,22 +305,33 @@ void SailorGram::onApplicationStateChanged(Qt::ApplicationState state)
     emit daemonizedChanged();
 }
 
-void SailorGram::onOnlineStateChanged(bool isonline)
-{
-    if(this->_connected == isonline)
-        return;
-
-    this->_connected = isonline;
-    emit connectedChanged();
-}
-
 void SailorGram::onNotificationClosed(uint)
 {
     Notification* notification = qobject_cast<Notification*>(this->sender());
     qint32 peerid = notification->remoteActions().first().toMap()["arguments"].toList().first().toInt();
 
     this->_notifications.remove(peerid);
+
+    if(this->_topmessages.contains(peerid))
+        this->_topmessages.remove(peerid);
+
     notification->deleteLater();
+}
+
+void SailorGram::onMessageUnreadedChanged()
+{
+    MessageObject* message = qobject_cast<MessageObject*>(this->sender());
+
+    if(message->unread())
+        return;
+
+    DialogObject* dialog = this->_telegram->messageDialog(message->id());
+
+    if(dialog == this->_telegram->nullDialog())
+        return;
+
+    this->closeNotification(dialog);
+    disconnect(message, SIGNAL(unreadChanged()), this, 0);
 }
 
 void SailorGram::onWakeUpRequested()
@@ -393,6 +403,19 @@ FileLocationObject* SailorGram::mediaLocation(MessageMediaObject *messagemediaob
     return locationobj;
 }
 
+void SailorGram::updatePendingState(MessageObject *message, quint32 peerid)
+{
+    if(this->_topmessages.contains(peerid)) // Top Message has been changed
+    {
+        MessageObject* oldmessage = this->_topmessages[peerid];
+        this->_topmessages.remove(peerid);
+        disconnect(oldmessage, SIGNAL(unreadChanged()), this, 0);
+    }
+
+    this->_topmessages[peerid] = message;
+    connect(message, SIGNAL(unreadChanged()), this, SLOT(onMessageUnreadedChanged()));
+}
+
 void SailorGram::moveMediaToDownloads(MessageMediaObject *messagemediaobject)
 {
     if(!this->_telegram)
@@ -428,7 +451,7 @@ void SailorGram::moveMediaToGallery(MessageMediaObject *messagemediaobject)
 
 void SailorGram::notify(MessageObject *message, const QString &name, const QString &elaboratedbody)
 {
-    if(!this->_telegram || this->_telegram->globalMute() || message->out() || (message->classType() == Message::typeMessageService))
+    if(!this->_telegram || this->_telegram->globalMute() || message->out() || !message->unread() || (message->classType() == Message::typeMessageService))
         return;
 
     UserData* userdata = this->_telegram->userData();
@@ -444,23 +467,9 @@ void SailorGram::notify(MessageObject *message, const QString &name, const QStri
     {
         UserObject* user = this->_telegram->user(message->fromId());
         QString photolocation = user->photo()->photoSmall()->download()->location();
+        this->updatePendingState(message, peerid);
         this->notify(name, elaboratedbody, photolocation, peerid);
     }
     else
         this->beep();
-}
-
-void SailorGram::onConnectedChanged()
-{
-    if(this->_connected == this->_telegram->connected())
-        return;
-
-    this->_connected = this->_telegram->connected();
-    emit connectedChanged();
-}
-
-void SailorGram::wakeSleep()
-{
-    qDebug() << Q_FUNC_INFO << this->_connected;
-    this->_connected ? this->_telegram->wake() : this->_telegram->sleep();
 }

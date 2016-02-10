@@ -97,11 +97,11 @@
     </message>
     <message>
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>Avustajat</translation>
     </message>
     <message>
         <source>Ukrainian</source>
-        <translation type="unfinished"></translation>
+        <translation>ukraina</translation>
     </message>
 </context>
 <context>
@@ -278,7 +278,7 @@ Vähimmäispituus on 5 merkkiä.</translation>
     </message>
     <message>
         <source>Bubbles with angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Puhekuplat kulmalla</translation>
     </message>
 </context>
 <context>
@@ -346,7 +346,7 @@ viestit</translation>
     </message>
     <message>
         <source>Recent chats:</source>
-        <translation>Uusimmat keskustelut:</translation>
+        <translation>Viimeisimmät:</translation>
     </message>
 </context>
 <context>
@@ -398,27 +398,27 @@ viestit</translation>
     </message>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Pyyhi viat</translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Poistetaan vikoja</translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>Virheloki on tyhjä</translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhekoodi:</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tehtävä:</translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished"></translation>
+        <translation>Viesti:</translation>
     </message>
 </context>
 <context>
@@ -631,7 +631,7 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     </message>
     <message>
         <source>Install Sticker set</source>
-        <translation type="unfinished"></translation>
+        <translation>Asenna tarrasarja</translation>
     </message>
 </context>
 <context>
@@ -645,7 +645,7 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     <name>MessageSearchItem</name>
     <message>
         <source>You:</source>
-        <translation type="unfinished">Sinä:</translation>
+        <translation>Sinä:</translation>
     </message>
 </context>
 <context>
@@ -880,11 +880,11 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     <name>SelectorStickerPage</name>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Lähetä</translation>
     </message>
     <message>
         <source>Select a Sticker Set from below</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse tarrasarja alapuolelta</translation>
     </message>
 </context>
 <context>

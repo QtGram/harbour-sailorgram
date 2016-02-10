@@ -97,11 +97,11 @@
     </message>
     <message>
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>Bidragydere</translation>
     </message>
     <message>
         <source>Ukrainian</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukrainsk</translation>
     </message>
 </context>
 <context>
@@ -278,7 +278,7 @@ Minimumslængde er fem tegn.</translation>
     </message>
     <message>
         <source>Bubbles with angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Talebobler med dråbeform</translation>
     </message>
 </context>
 <context>
@@ -398,7 +398,7 @@ meddelelser</translation>
     </message>
     <message>
         <source>Clear errors</source>
-        <translation>Nulstiller fejl</translation>
+        <translation>Nulstiller fejllog</translation>
     </message>
     <message>
         <source>Deleting errors</source>

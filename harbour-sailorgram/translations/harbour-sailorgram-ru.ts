@@ -97,11 +97,11 @@
     </message>
     <message>
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>Участники</translation>
     </message>
     <message>
         <source>Ukrainian</source>
-        <translation type="unfinished"></translation>
+        <translation>Украинский</translation>
     </message>
 </context>
 <context>
@@ -278,7 +278,7 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Bubbles with angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Пузыри с уголочком</translation>
     </message>
 </context>
 <context>
@@ -398,11 +398,11 @@ messages</source>
     </message>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Очистить ошибки</translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Удаление ошибок</translation>
     </message>
     <message>
         <source>Error log is empty</source>
@@ -410,11 +410,11 @@ messages</source>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished"></translation>
+        <translation>Код ошибки:</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished"></translation>
+        <translation>Функция:</translation>
     </message>
     <message>
         <source>Message:</source>
@@ -880,7 +880,7 @@ Do a swype to the right to select a contact</source>
     <name>SelectorStickerPage</name>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Отправить</translation>
     </message>
     <message>
         <source>Select a Sticker Set from below</source>

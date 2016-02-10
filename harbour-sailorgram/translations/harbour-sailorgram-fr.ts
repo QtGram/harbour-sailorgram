@@ -97,11 +97,11 @@
     </message>
     <message>
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>Contributeurs</translation>
     </message>
     <message>
         <source>Ukrainian</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukrainien</translation>
     </message>
 </context>
 <context>
@@ -278,7 +278,7 @@ La longueur minimum est de 5 caractères.</translation>
     </message>
     <message>
         <source>Bubbles with angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Bulles avec pointes</translation>
     </message>
 </context>
 <context>

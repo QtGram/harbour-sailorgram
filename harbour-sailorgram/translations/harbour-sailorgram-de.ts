@@ -97,11 +97,11 @@
     </message>
     <message>
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>Beitragende</translation>
     </message>
     <message>
         <source>Ukrainian</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukrainisch</translation>
     </message>
 </context>
 <context>
@@ -250,7 +250,7 @@ Minimum sind 5 Zeichen.</translation>
     </message>
     <message>
         <source>Send Messages by pressing Return Key</source>
-        <translation>Nachricht durch Drücken der Entertaste senden</translation>
+        <translation>Nachrichten mit Eingebetaste senden</translation>
     </message>
     <message>
         <source>Background enabled</source>
@@ -278,7 +278,7 @@ Minimum sind 5 Zeichen.</translation>
     </message>
     <message>
         <source>Bubbles with angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Sprechblasen mit Ecke</translation>
     </message>
 </context>
 <context>
@@ -346,7 +346,7 @@ Nachrichten</translation>
     </message>
     <message>
         <source>Recent chats:</source>
-        <translation>Kürzliche Chats:</translation>
+        <translation>Letzte Chats:</translation>
     </message>
 </context>
 <context>
@@ -505,7 +505,7 @@ Nachrichten</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation>Chat löschen</translation>
+        <translation>Chat wird gelöscht</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
@@ -519,9 +519,9 @@ Nachrichten</translation>
         <source>No Chats
 
 Do a swype to the right to select a contact</source>
-        <translation>Keine Chats
+        <translation>Keine Chats vorhanden
 
-Nach rechts wischen um einen Kontakt auszuwählen</translation>
+Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
 </context>
 <context>
@@ -678,7 +678,7 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Country Code</source>
-        <translation>Landeskennzahl </translation>
+        <translation>Landesvorwahl</translation>
     </message>
     <message>
         <source>Insert your phone number and press &apos;Next&apos;</source>
@@ -822,7 +822,7 @@ Nach rechts wischen um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Image from gallery</source>
-        <translation>Bild aus Galerie</translation>
+        <translation>Bild aus der Galerie</translation>
     </message>
     <message>
         <source>Capture photo</source>
