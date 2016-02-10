@@ -26,7 +26,6 @@ MessageMediaItem
             height: Theme.iconSizeMedium
             width: Theme.iconSizeMedium
             source: "image://theme/icon-m-sounds"
-            transferProgress: progressPercent
 
             Rectangle {
                 border.width: 1

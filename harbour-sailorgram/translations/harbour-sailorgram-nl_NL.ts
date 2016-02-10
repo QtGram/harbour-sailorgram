@@ -633,6 +633,10 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
         <source>Install Sticker set</source>
         <translation>Stickerverzameling installeren</translation>
     </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageQuotedItem</name>

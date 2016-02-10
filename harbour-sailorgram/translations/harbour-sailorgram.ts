@@ -626,6 +626,10 @@ Do a swype to the right to select a contact</source>
         <source>Install Sticker set</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageQuotedItem</name>

@@ -2,6 +2,7 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../../../../models"
+import "../../../../components/message"
 import "../../../../js/TelegramHelper.js" as TelegramHelper
 import "../../../../js/ColorScheme.js" as ColorScheme
 
@@ -10,14 +11,14 @@ MessageMediaItem
     property FileLocation fileLocation: context.telegram.locationOfDocument(message.media.document)
 
     id: messagedocument
-    contentWidth: imgpreview.width + Math.max(lbldummyinfo.contentWidth, lblsize.contentWidth + lblmime.contentWidth) + Theme.paddingMedium
+    contentWidth: imgpreview.width + Math.max(lbldummyinfo.contentWidth, lblmimesize.contentWidth) + Theme.paddingMedium
     contentHeight: row.height
 
     Row
     {
         id: row
         width: parent.width
-        height: imgpreview.height
+        height: info.height
         spacing: Theme.paddingMedium
 
         MessageThumbnail
@@ -25,8 +26,8 @@ MessageMediaItem
             id: imgpreview
             height: Theme.iconSizeMedium
             width: Theme.iconSizeMedium
+            anchors.verticalCenter: info.verticalCenter
             source: messagedocument.mediaThumbnail || "image://theme/icon-m-document"
-            transferProgress: progressPercent
 
             Rectangle {
                 border.width: 1
@@ -39,8 +40,8 @@ MessageMediaItem
         Column
         {
             id: info
-            width: parent.width
-            height: imgpreview.height
+            width: parent.width - imgpreview.width
+            spacing: Theme.paddingSmall
 
             Label { id: lbldummyinfo; text: lblinfo.text; visible: false }
 
@@ -48,37 +49,32 @@ MessageMediaItem
             {
                 id: lblinfo
                 width: parent.width
-                verticalAlignment: Text.AlignTop
                 horizontalAlignment: Text.AlignLeft
                 font.pixelSize: Theme.fontSizeExtraSmall
-                text: isUpload ? context.sailorgram.fileName(message.upload.location) : fileHandler.fileName
+                text: fileHandler.fileName
                 color: ColorScheme.colorizeText(message, context)
                 wrapMode: Text.NoWrap
                 elide: Text.ElideRight
             }
 
-            Row
+            Label
             {
-                id: sizemimerow
+                id: lblmimesize
                 width: parent.width
-                height: parent.height - lblinfo.contentHeight
-                spacing: Theme.paddingMedium
+                color: ColorScheme.colorizeText(message, context)
+                font.pixelSize: Theme.fontSizeExtraSmall
+                text: TelegramHelper.formatBytes(mediaSize, 2) + " " + message.media.document.mimeType
+            }
 
-                Label
-                {
-                    id: lblsize
-                    color: ColorScheme.colorizeText(message, context)
-                    font.pixelSize: Theme.fontSizeExtraSmall
-                    text: TelegramHelper.formatBytes(mediaSize, 2)
-                }
-
-                Label
-                {
-                    id: lblmime
-                    color: ColorScheme.colorizeText(message, context)
-                    font.pixelSize: Theme.fontSizeExtraSmall
-                    text: message.media.document.mimeType
-                }
+            MessageMediaProgressBar
+            {
+                id: progressbar
+                width: parent.width - Theme.paddingSmall
+                barHeight: Theme.paddingSmall
+                barColor: ColorScheme.colorizeText(message, context)
+                border { color: ColorScheme.colorizeLink(message, context); width: 1 }
+                visible: messagedocument.transferInProgress
+                value: messagedocument.fileHandler.progressPercent
             }
         }
     }

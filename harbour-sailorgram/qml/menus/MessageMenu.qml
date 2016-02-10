@@ -50,8 +50,14 @@ ContextMenu
 
     MenuItem
     {
-        text: qsTr("Download")
-        visible: TelegramHelper.isMediaMessage(message) && messageMediaItem //&& !messageMediaItem.fileHandler.downloaded;
+        text: {
+            if(TelegramHelper.isMediaMessage(message) && messageMediaItem && !messageMediaItem.transferInProgress)
+                return messageMediaItem.fileHandler.downloaded ? qsTr("Open") : qsTr("Download");
+
+            return "";
+        }
+
+        visible: text.length > 0
 
         onClicked: {
             messageitem.remorseAction(qsTr("Downloading media"), function() {
@@ -63,7 +69,7 @@ ContextMenu
     MenuItem
     {
         text: qsTr("Cancel")
-        visible: messageMediaItem && messageMediaItem.isUpload && messageMediaItem.transferInProgress
+        visible: messageMediaItem && !messageMediaItem.isUpload && messageMediaItem.transferInProgress
         onClicked: cancelRequested()
     }
 }

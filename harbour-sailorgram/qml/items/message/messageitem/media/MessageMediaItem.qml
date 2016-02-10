@@ -1,4 +1,5 @@
 import QtQuick 2.1
+import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../../../../models"
 import "../../../../js/TelegramConstants.js" as TelegramConstants
@@ -15,18 +16,7 @@ Item
     property real contentHeight
 
     readonly property bool isUpload: filehandler.progressType === FileHandler.TypeProgressUpload
-    readonly property bool transferInProgress: (progressPercent > 0) && (progressPercent < 100)
-    readonly property bool hasMedia: message.media ? (message.media.classType !== TelegramConstants.typeMessageMediaEmpty) : false
-
-    readonly property real progressPercent: {
-        if(filehandler.downloaded)
-            return 0;
-
-        if(isUpload)
-            return 100 * message.upload.uploaded / message.upload.totalSize;
-
-        return filehandler.progressPercent;
-    }
+    readonly property bool transferInProgress: (fileHandler.progressPercent > 0) && (fileHandler.progressPercent < 100)
 
     readonly property real mediaSize: { // Size in bytes
         if(isUpload)
@@ -77,7 +67,7 @@ Item
     }
 
     id: messagemediaitem
-    visible: hasMedia
+    visible: message.media ? (message.media.classType !== TelegramConstants.typeMessageMediaEmpty) : false
     width: Math.min(contentWidth, maxWidth)
     height: contentHeight
 

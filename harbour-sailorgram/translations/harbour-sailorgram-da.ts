@@ -633,6 +633,10 @@ Stryg til venstre for at vælge en kontakt</translation>
         <source>Install Sticker set</source>
         <translation>Installér Mærkesæt</translation>
     </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageQuotedItem</name>

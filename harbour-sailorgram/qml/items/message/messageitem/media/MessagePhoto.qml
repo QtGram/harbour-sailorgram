@@ -33,6 +33,5 @@ MessageMediaItem
         height: aspectRatio ? (width / aspectRatio) : 0
         cache: !messagephoto.fileHandler.downloaded
         source: messagephoto.mediaThumbnail
-        transferProgress: progressPercent
     }
 }

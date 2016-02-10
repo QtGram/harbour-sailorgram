@@ -633,6 +633,10 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
         <source>Install Sticker set</source>
         <translation>Installer un set de sticker</translation>
     </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageQuotedItem</name>

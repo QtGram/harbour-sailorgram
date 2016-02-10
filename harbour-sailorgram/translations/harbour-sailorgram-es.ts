@@ -631,6 +631,10 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
         <source>Install Sticker set</source>
         <translation>Instalar grupo de Stickers</translation>
     </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageQuotedItem</name>

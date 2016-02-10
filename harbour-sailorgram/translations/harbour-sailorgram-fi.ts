@@ -633,6 +633,10 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
         <source>Install Sticker set</source>
         <translation>Asenna tarrasarja</translation>
     </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageQuotedItem</name>

@@ -631,6 +631,10 @@ Utři do prava aby jsi vybral kontakt</translation>
         <source>Install Sticker set</source>
         <translation>Nainstalovat sadu nálepek</translation>
     </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageQuotedItem</name>

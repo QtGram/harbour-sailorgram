@@ -14,6 +14,5 @@ MessageMediaItem
         anchors.fill: parent
         cache: !messagesticker.fileHandler.downloaded
         source: messagesticker.mediaThumbnail
-        transferProgress: progressPercent
     }
 }
