@@ -469,7 +469,7 @@ berichten</translation>
     </message>
     <message>
         <source>Chat information</source>
-        <translation type="unfinished"></translation>
+        <translation>Gespreksinformatie</translation>
     </message>
 </context>
 <context>
@@ -671,7 +671,7 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     <name>PeerProfile</name>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Groep</translation>
     </message>
 </context>
 <context>
@@ -761,7 +761,7 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     </message>
     <message>
         <source>Send %1 file(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 bestand(en) versturen</translation>
     </message>
 </context>
 <context>
@@ -796,15 +796,15 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     </message>
     <message>
         <source>Send %1 image(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 afbeelding(en) versturen</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Terug</translation>
+        <translation>Terug</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Annuleren</translation>
+        <translation>Annuleren</translation>
     </message>
 </context>
 <context>

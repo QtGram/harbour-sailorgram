@@ -469,7 +469,7 @@ messages</source>
     </message>
     <message>
         <source>Chat information</source>
-        <translation type="unfinished"></translation>
+        <translation>Информация о чате</translation>
     </message>
 </context>
 <context>
@@ -671,7 +671,7 @@ Do a swype to the right to select a contact</source>
     <name>PeerProfile</name>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Группа</translation>
     </message>
 </context>
 <context>
@@ -761,7 +761,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Send %1 file(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Отправка %1 файла(-ов)</translation>
     </message>
 </context>
 <context>
@@ -796,15 +796,15 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Send %1 image(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Отправка %1 изображения(-ий)</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Назад</translation>
+        <translation>Назад</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Отменить</translation>
+        <translation>Отмена</translation>
     </message>
 </context>
 <context>

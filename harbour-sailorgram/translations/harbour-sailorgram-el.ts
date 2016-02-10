@@ -97,11 +97,11 @@
     </message>
     <message>
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>Συντελεστές</translation>
     </message>
     <message>
         <source>Ukrainian</source>
-        <translation type="unfinished"></translation>
+        <translation>Ουκρανικά</translation>
     </message>
 </context>
 <context>
@@ -278,7 +278,7 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Bubbles with angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Φυσαλίδες με γωνία</translation>
     </message>
     <message>
         <source>Open media instantly</source>
@@ -402,27 +402,27 @@ messages</source>
     </message>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Καθαρισμός σφαλμάτων</translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Τα σφάλματα διαγράφονται</translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>Το αρχείο καταγραφής σφαλμάτων είναι άδειο</translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished"></translation>
+        <translation>Κωδικός σφάλματος:</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished"></translation>
+        <translation>Λειτουργία:</translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished"></translation>
+        <translation>Μήνυμα</translation>
     </message>
 </context>
 <context>
@@ -469,7 +469,7 @@ messages</source>
     </message>
     <message>
         <source>Chat information</source>
-        <translation type="unfinished"></translation>
+        <translation>Πληροφορίες συνομιλίας</translation>
     </message>
 </context>
 <context>
@@ -636,7 +636,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Install Sticker set</source>
-        <translation type="unfinished"></translation>
+        <translation>Εγκατάσταση σετ αυτοκόλλητων</translation>
     </message>
     <message>
         <source>Open</source>
@@ -654,7 +654,7 @@ Do a swype to the right to select a contact</source>
     <name>MessageSearchItem</name>
     <message>
         <source>You:</source>
-        <translation type="unfinished">Εσύ:</translation>
+        <translation>Εσύ:</translation>
     </message>
 </context>
 <context>
@@ -672,7 +672,7 @@ Do a swype to the right to select a contact</source>
     <name>PeerProfile</name>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Ομάδα</translation>
     </message>
 </context>
 <context>
@@ -763,7 +763,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Send %1 file(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποστολή %1 αρχείου(ων)</translation>
     </message>
 </context>
 <context>
@@ -798,15 +798,15 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Send %1 image(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποστολή %1 εικόνας(ων)</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Επιστροφή</translation>
+        <translation>Επιστροφή</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Ακύρωση</translation>
+        <translation>Ακύρωση</translation>
     </message>
 </context>
 <context>
@@ -894,11 +894,11 @@ Do a swype to the right to select a contact</source>
     <name>SelectorStickerPage</name>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποστολή</translation>
     </message>
     <message>
         <source>Select a Sticker Set from below</source>
-        <translation type="unfinished"></translation>
+        <translation>Επέλεξε ένα σετ αυτοκόλλητων από τα παρακάτω</translation>
     </message>
 </context>
 <context>

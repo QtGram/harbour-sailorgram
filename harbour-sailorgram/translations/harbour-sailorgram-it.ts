@@ -470,7 +470,7 @@ recenti:</translation>
     </message>
     <message>
         <source>Chat information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informazioni sulla chat</translation>
     </message>
 </context>
 <context>
@@ -672,7 +672,7 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     <name>PeerProfile</name>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppo</translation>
     </message>
 </context>
 <context>
@@ -762,7 +762,7 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Send %1 file(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Invia %1 file</translation>
     </message>
 </context>
 <context>
@@ -797,15 +797,15 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Send %1 image(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Invia %1 immagine/i</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Indietro</translation>
+        <translation>Indietro</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Annulla</translation>
+        <translation>Annulla</translation>
     </message>
 </context>
 <context>

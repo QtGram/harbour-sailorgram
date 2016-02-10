@@ -142,7 +142,7 @@
     </message>
     <message>
         <source>Stopped.</source>
-        <translation>Abgebrochen.</translation>
+        <translation>Gestoppt</translation>
     </message>
 </context>
 <context>
@@ -161,7 +161,7 @@
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign In&apos;</source>
-        <translation>Warte auf die SMS mit dem Aktivierungscode und gehe auf &apos;Anmelden&apos;</translation>
+        <translation>Warte auf die SMS mit dem Aktivierungscode und gehe auf &quot;Anmelden&quot;</translation>
     </message>
     <message>
         <source>Resend Activation Code</source>
@@ -469,7 +469,7 @@ Nachrichten</translation>
     </message>
     <message>
         <source>Chat information</source>
-        <translation type="unfinished"></translation>
+        <translation>Info über Chat</translation>
     </message>
 </context>
 <context>
@@ -600,7 +600,7 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Opening media</source>
-        <translation>Öffne Datei</translation>
+        <translation>Datei wird geöffnet</translation>
     </message>
 </context>
 <context>
@@ -627,7 +627,7 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation>Download</translation>
+        <translation>Herunterladen</translation>
     </message>
     <message>
         <source>Downloading media</source>
@@ -671,7 +671,7 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     <name>PeerProfile</name>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppe</translation>
     </message>
 </context>
 <context>
@@ -690,7 +690,7 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Insert your phone number and press &apos;Next&apos;</source>
-        <translation>Trage deine Telefonnummer ein und gehe auf &apos;Weiter&apos;</translation>
+        <translation>Trage deine Telefonnummer ein und gehe auf &quot;Weiter&quot;</translation>
     </message>
     <message>
         <source>Exit</source>
@@ -749,7 +749,7 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation>SD Card</translation>
+        <translation>SD Karte</translation>
     </message>
     <message>
         <source>Home</source>
@@ -761,7 +761,7 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Send %1 file(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Datei(en) senden</translation>
     </message>
 </context>
 <context>
@@ -772,7 +772,7 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation>SD Card</translation>
+        <translation>SD Karte</translation>
     </message>
     <message>
         <source>Home</source>
@@ -796,15 +796,15 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Send %1 image(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Bild(er) senden</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Zurück</translation>
+        <translation>Zurück</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Abbrechen</translation>
+        <translation>Abbrechen</translation>
     </message>
 </context>
 <context>
@@ -930,7 +930,7 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
-        <translation>Warte auf die SMS mit dem Aktivierungscode und gehe auf &apos;Einloggen&apos;</translation>
+        <translation>Warte auf die SMS mit dem Aktivierungscode und gehe auf &quot;Einloggen&quot;</translation>
     </message>
     <message>
         <source>First Name</source>
@@ -984,15 +984,15 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     <name>TelegramHelper</name>
     <message>
         <source>Recently</source>
-        <translation>kürzlich gesehen</translation>
+        <translation>Kürzlich gesehen</translation>
     </message>
     <message>
         <source>Last Month</source>
-        <translation>letzten Monat gesehen</translation>
+        <translation>Letzten Monat gesehen</translation>
     </message>
     <message>
         <source>Last Week</source>
-        <translation>letzte Woche gesehen</translation>
+        <translation>Letzte Woche gesehen</translation>
     </message>
     <message>
         <source>Online</source>
@@ -1028,11 +1028,11 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Geo</source>
-        <translation>Geo</translation>
+        <translation>Position</translation>
     </message>
     <message>
         <source>Last Seen %1</source>
-        <translation>zuletzt %1 gesehen</translation>
+        <translation>Zuletzt %1 gesehen</translation>
     </message>
     <message>
         <source>Typing...</source>

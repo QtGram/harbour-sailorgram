@@ -467,7 +467,7 @@ messages</source>
     </message>
     <message>
         <source>Chat information</source>
-        <translation type="unfinished"></translation>
+        <translation>Información del chat</translation>
     </message>
 </context>
 <context>
@@ -669,7 +669,7 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
     <name>PeerProfile</name>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupo</translation>
     </message>
 </context>
 <context>
@@ -759,7 +759,7 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
     </message>
     <message>
         <source>Send %1 file(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Enviar %1 archivo(s)</translation>
     </message>
 </context>
 <context>
@@ -794,15 +794,15 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
     </message>
     <message>
         <source>Send %1 image(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Enviar %1 imagen(es)</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Volver</translation>
+        <translation>Volver</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
 </context>
 <context>

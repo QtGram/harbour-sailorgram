@@ -469,7 +469,7 @@ non lus</translation>
     </message>
     <message>
         <source>Chat information</source>
-        <translation type="unfinished"></translation>
+        <translation>Information sur la conversation</translation>
     </message>
 </context>
 <context>
@@ -671,7 +671,7 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
     <name>PeerProfile</name>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Groupe</translation>
     </message>
 </context>
 <context>
@@ -761,7 +761,7 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
     </message>
     <message>
         <source>Send %1 file(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Envoyer %1 fichier(s)</translation>
     </message>
 </context>
 <context>
@@ -796,15 +796,15 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
     </message>
     <message>
         <source>Send %1 image(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Envoyer %1 image(s)</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Retour</translation>
+        <translation>Retour</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Annuler</translation>
+        <translation>Annuler</translation>
     </message>
 </context>
 <context>

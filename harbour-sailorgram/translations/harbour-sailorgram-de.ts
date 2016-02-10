@@ -469,7 +469,7 @@ Nachrichten</translation>
     </message>
     <message>
         <source>Chat information</source>
-        <translation type="unfinished"></translation>
+        <translation>Info über Chat</translation>
     </message>
 </context>
 <context>
@@ -671,7 +671,7 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     <name>PeerProfile</name>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppe</translation>
     </message>
 </context>
 <context>
@@ -761,7 +761,7 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Send %1 file(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Datei(en) senden</translation>
     </message>
 </context>
 <context>
@@ -796,15 +796,15 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Send %1 image(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Bild(er) senden</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Zurück</translation>
+        <translation>Zurück</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Abbrechen</translation>
+        <translation>Abbrechen</translation>
     </message>
 </context>
 <context>

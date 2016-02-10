@@ -469,7 +469,7 @@ meddelanden</translation>
     </message>
     <message>
         <source>Chat information</source>
-        <translation type="unfinished"></translation>
+        <translation>Chattinformation</translation>
     </message>
 </context>
 <context>
@@ -671,7 +671,7 @@ Svep åt vänster för att välja en kontakt</translation>
     <name>PeerProfile</name>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupp</translation>
     </message>
 </context>
 <context>
@@ -761,7 +761,7 @@ Svep åt vänster för att välja en kontakt</translation>
     </message>
     <message>
         <source>Send %1 file(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Skicka %1 fil(er)</translation>
     </message>
 </context>
 <context>
@@ -796,15 +796,15 @@ Svep åt vänster för att välja en kontakt</translation>
     </message>
     <message>
         <source>Send %1 image(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Skicka %1 bild(er)</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Tillbaka</translation>
+        <translation>Tillbaka</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Avbryt</translation>
+        <translation>Avbryt</translation>
     </message>
 </context>
 <context>

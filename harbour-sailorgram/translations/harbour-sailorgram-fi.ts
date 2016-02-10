@@ -469,7 +469,7 @@ viestit</translation>
     </message>
     <message>
         <source>Chat information</source>
-        <translation type="unfinished"></translation>
+        <translation>Keskustelun tiedot</translation>
     </message>
 </context>
 <context>
@@ -671,7 +671,7 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     <name>PeerProfile</name>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Ryhmä</translation>
     </message>
 </context>
 <context>
@@ -761,7 +761,7 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     </message>
     <message>
         <source>Send %1 file(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Lähetä %1 tiedosto(a)</translation>
     </message>
 </context>
 <context>
@@ -796,15 +796,15 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     </message>
     <message>
         <source>Send %1 image(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Lähetä %1 kuva(a)</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Takaisin</translation>
+        <translation>Takaisin</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Peruuta</translation>
+        <translation>Peruuta</translation>
     </message>
 </context>
 <context>
