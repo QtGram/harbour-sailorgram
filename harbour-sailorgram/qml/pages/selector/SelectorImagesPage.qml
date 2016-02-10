@@ -37,20 +37,12 @@ Dialog
 
     signal actionCompleted(string action, var data)
 
-    function sendImage(element) {
-        actionCompleted("image", element);
-    }
-
-    //"this" is provided to the function by the caller
-    function filter(element) {
-        return element !== this;
-    }
-
     id: selectorimagespage
     allowedOrientations: defaultAllowedOrientations
     acceptDestinationAction: PageStackAction.Pop
     canAccept: selectedFiles.length > 0
-    onAccepted: selectedFiles.forEach(sendImage)
+    onAccepted: selectedFiles.forEach(function (element) { actionCompleted("image", element); })
+    onRejected: if (!!rootPage) { rootPage.selectedFiles = selectedFiles; }
 
     FilesModel {
         id: filesmodel
@@ -184,8 +176,7 @@ Dialog
                                                         "selectedFiles": selectedFiles,
                                                         "acceptDestination": acceptDestination,
                                                         "rootPage": !!rootPage ? rootPage : selectorimagespage } );
-                        nextPage.actionCompleted.connect(selectorimagespage.actionCompleted);
-                        nextPage.rejected.connect(function () { selectorimagespage.selectedFiles = nextPage.selectedFiles; });
+                        nextPage.actionCompleted.connect(actionCompleted);
                     }
                     else {
                         //selectedFiles needs to be reassigned every time it is manipulated because it doesn't emit signals otherwise
