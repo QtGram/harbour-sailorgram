@@ -11,7 +11,7 @@ MessageMediaItem
     property FileLocation fileLocation: context.telegram.locationOfDocument(message.media.document)
 
     id: messagedocument
-    contentWidth: imgpreview.width + Math.max(lbldummyinfo.contentWidth, lblmimesize.contentWidth) + Theme.paddingMedium
+    contentWidth: imgpreview.width + Math.max(lbldummyinfo.contentWidth, lbldummymimesize.contentWidth) + Theme.paddingMedium
     contentHeight: row.height
 
     Row
@@ -44,11 +44,12 @@ MessageMediaItem
             spacing: Theme.paddingSmall
 
             Label { id: lbldummyinfo; text: lblinfo.text; visible: false }
+            Label { id: lbldummymimesize; text: lblmimesize.text; visible: false }
 
             Label
             {
                 id: lblinfo
-                width: parent.width
+                width: parent.width - Theme.paddingSmall
                 horizontalAlignment: Text.AlignLeft
                 font.pixelSize: Theme.fontSizeExtraSmall
                 text: fileHandler.fileName
@@ -60,10 +61,12 @@ MessageMediaItem
             Label
             {
                 id: lblmimesize
-                width: parent.width
+                width: parent.width - Theme.paddingSmall
                 color: ColorScheme.colorizeText(message, context)
                 font.pixelSize: Theme.fontSizeExtraSmall
                 text: TelegramHelper.formatBytes(mediaSize, 2) + " " + message.media.document.mimeType
+                wrapMode: Text.NoWrap
+                elide: Text.ElideRight
             }
 
             MessageMediaProgressBar
