@@ -34,7 +34,7 @@ Item
         id: mainbubble
         color: ColorScheme.colorizeBubble(message, context)
         anchors.fill: parent
-        radius: context.angledbubbles ? 20 : 4
+        radius: context.bubbleradius
         smooth: true
     }
 

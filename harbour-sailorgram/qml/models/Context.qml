@@ -17,6 +17,17 @@ QtObject
     readonly property int betanum: 1
     readonly property string version: "0.79"
     readonly property int stepcount: 25
+
+    readonly property int bubbleradius: {
+        if(context.angledbubbles)
+            return 20;
+
+        if(!context.bubbleshidden)
+            return 4;
+
+        return 0;
+    }
+
     property bool sendwithreturn: false
     property bool backgrounddisabled: false
     property bool chatheaderhidden: false
