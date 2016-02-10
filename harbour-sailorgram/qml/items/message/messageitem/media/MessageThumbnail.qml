@@ -4,6 +4,5 @@ Image
 {
     id: messagethumbnail
     asynchronous: true
-    visible: (status === Image.Ready)
     fillMode: Image.PreserveAspectFit
 }

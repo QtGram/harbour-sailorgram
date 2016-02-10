@@ -3,6 +3,8 @@ import QtGraphicalEffects 1.0
 
 Item
 {
+    property alias cache: image.cache
+    property alias radius: mask.radius
     property alias asynchronous: image.asynchronous
     property alias source: image.source
     property alias fillMode: image.fillMode

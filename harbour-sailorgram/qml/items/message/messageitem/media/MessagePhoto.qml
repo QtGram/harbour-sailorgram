@@ -22,7 +22,17 @@ MessageMediaItem
         id: imgdownload
         anchors.centerIn: parent
         source: "image://theme/icon-m-cloud-download"
-        visible: !messagephoto.fileHandler.downloaded
+        visible: !messagephoto.fileHandler.downloaded && !messagephoto.transferInProgress
+        z: 2
+    }
+
+    ProgressCircle
+    {
+        anchors.centerIn: parent
+        width: Math.min(parent.width, parent.height) * 0.5
+        height: width
+        visible: messagephoto.transferInProgress
+        value: messagephoto.fileHandler.progressPercent / 100.0
         z: 2
     }
 
@@ -32,6 +42,12 @@ MessageMediaItem
         width: parent.width
         height: aspectRatio ? (width / aspectRatio) : 0
         cache: !messagephoto.fileHandler.downloaded
-        source: messagephoto.mediaThumbnail
+
+        source: {
+            if(!messagephoto.fileHandler.downloaded || messagephoto.transferInProgress)
+                return messagephoto.fileHandler.thumbPath;
+
+            return messagephoto.fileHandler.filePath;
+        }
     }
 }

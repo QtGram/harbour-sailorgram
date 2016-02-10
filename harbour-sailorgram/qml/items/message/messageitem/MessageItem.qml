@@ -38,8 +38,10 @@ ListItem
         if(!mediacontainer.item)
             return;
 
-        if(!mediacontainer.item.fileHandler.downloaded)
+        if(!mediacontainer.item.fileHandler.downloaded) {
             mediacontainer.item.fileHandler.download();
+            return;
+        }
 
         if((message.media.classType === TelegramConstants.typeMessageMediaPhoto) || (type === "image")) {
             pageStack.push(Qt.resolvedUrl("../../../pages/media/MediaPhotoPage.qml"), { "context": messageitem.context, "message": messageitem.message, "fileHandler": mediacontainer.item.fileHandler });
@@ -50,9 +52,6 @@ ListItem
             pageStack.push(Qt.resolvedUrl("../../../pages/media/MediaPlayerPage.qml"), { "context": messageitem.context, "message": messageitem.message, "fileHandler": mediacontainer.item.fileHandler });
             return;
         }
-
-        if(!mediacontainer.item.fileHandler.downloaded)
-            return;
 
         popupmessage.show(qsTr("Opening media"));
         Qt.openUrlExternally(mediacontainer.item.fileHandler.filePath);
