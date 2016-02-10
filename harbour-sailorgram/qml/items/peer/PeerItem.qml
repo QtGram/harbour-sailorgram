@@ -17,7 +17,7 @@ Item
     PeerImage
     {
         id: peerimage
-        anchors { left: parent.left; top: parent.top }
+        anchors { right: parent.right; top: parent.top; rightMargin: Theme.horizontalPageMargin }
         width: peeritem.height
         height: peeritem.height
         context: peeritem.context
@@ -28,7 +28,7 @@ Item
 
     Column
     {
-        anchors { left: peerimage.right; top: parent.top; right: parent.right; leftMargin: Theme.paddingSmall }
+        anchors { left: parent.left; top: parent.top; right: peerimage.left; rightMargin: Theme.paddingSmall }
 
         Row
         {
@@ -52,6 +52,7 @@ Item
                 width: parent.width
                 elide: Text.ElideRight
                 text: TelegramHelper.isChat(dialog) ? chat.title : TelegramHelper.completeName(user)
+                horizontalAlignment: Qt.AlignRight
             }
         }
 
@@ -64,17 +65,21 @@ Item
             text: user ? "@" + user.username : ""
             font.pixelSize: Theme.fontSizeExtraSmall
             color: Theme.secondaryHighlightColor
+            horizontalAlignment: Qt.AlignRight
         }
 
         Row
         {
+            width: parent.width
             height: peeritem.height - rowtitle.height
 
             Label
             {
                 id: lblinfo
+                width: parent.width
                 font.pixelSize: Theme.fontSizeExtraSmall
                 color: Theme.highlightColor
+                horizontalAlignment: Qt.AlignRight
 
                 text: {
                     if(dialog.typingUsers.length > 0)
