@@ -3,6 +3,7 @@ import Sailfish.Silica 1.0
 import harbour.sailorgram.DBus 1.0
 //import harbour.sailorgram.Insomniac 1.0
 import harbour.sailorgram.SailorGram 1.0
+import harbour.sailorgram.Model 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../js/Settings.js" as Settings
 import "../js/TelegramHelper.js" as TelegramHelper
@@ -36,7 +37,7 @@ QtObject
     property ScreenBlank screenblank: ScreenBlank { }
     property ErrorsModel errors: ErrorsModel { }
     property StickersModel stickers: StickersModel { }
-    property ContactsModel contacts: ContactsModel { }
+    property SailorgramContactsModel contacts: SailorgramContactsModel { }
     property DialogsModel dialogs: DialogsModel { }
 
     /*

@@ -34,10 +34,19 @@ Page
             }
         }
 
+        id: lvcontacts
         anchors.fill: parent
         spacing: Theme.paddingMedium
         header: PageHeader { title: qsTr("Contacts") }
         model: context.contacts
+
+        section.property: "firstLetter"
+        section.criteria: ViewSection.FirstCharacter
+
+        section.delegate: SectionHeader {
+            text: section
+            font.pixelSize: Theme.fontSizeMedium
+        }
 
         delegate: ListItem {
             contentWidth: parent.width
@@ -46,16 +55,16 @@ Page
             menu: UserMenu {
                 id: usermenu
                 context: contactspage.context
-                user: context.telegram.user(item.userId)
+                user: model.user
             }
 
-            onClicked: pageStack.push(Qt.resolvedUrl("../dialogs/DialogPage.qml"), { "context": contactspage.context, "dialog": context.telegram.fakeDialogObject(item.userId, false) } )
+            onClicked: pageStack.push(Qt.resolvedUrl("../dialogs/DialogPage.qml"), { "context": contactspage.context, "dialog": context.telegram.fakeDialogObject(model.contact.userId, false) } )
 
             UserItem {
                 id: useritem
                 anchors.fill: parent
                 context: contactspage.context
-                user: context.telegram.user(item.userId)
+                user: model.user
             }
         }
     }
