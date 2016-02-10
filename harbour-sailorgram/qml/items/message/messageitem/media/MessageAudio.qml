@@ -17,7 +17,7 @@ MessageMediaItem
     {
         id: row
         width: parent.width
-        height: imgpreview.height
+        height: info.height
         spacing: Theme.paddingMedium
 
         MessageThumbnail
@@ -25,6 +25,7 @@ MessageMediaItem
             id: imgpreview
             height: Theme.iconSizeMedium
             width: Theme.iconSizeMedium
+            anchors.verticalCenter: info.verticalCenter
             source: "image://theme/icon-m-sounds"
 
             Rectangle {
@@ -39,15 +40,12 @@ MessageMediaItem
         {
             id: info
             width: parent.width
-            height: imgpreview.height
-            spacing: Theme.paddingSmall
 
             Label { id: lbldummyinfo; text: lblinfo.text; visible: false }
 
             Label
             {
                 id: lblinfo
-                height: parent.height / 3
                 verticalAlignment: Text.AlignTop
                 horizontalAlignment: Text.AlignLeft
                 font.pixelSize: Theme.fontSizeExtraSmall
@@ -61,7 +59,6 @@ MessageMediaItem
             {
                 id: lblsize
                 color: ColorScheme.colorizeText(message, context)
-                height: parent.height / 3
                 font.pixelSize: Theme.fontSizeExtraSmall
                 text: qsTr("Size: %1").arg(TelegramHelper.formatBytes(mediaSize, 2))
             }
@@ -70,7 +67,6 @@ MessageMediaItem
             {
                 id: lblduration
                 color: ColorScheme.colorizeText(message, context)
-                height: parent.height / 3
                 font.pixelSize: Theme.fontSizeExtraSmall
                 text: qsTr("Duration: %1").arg(mediaplayertimings.displayDuration(message.media.audio.duration))
             }
