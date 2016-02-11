@@ -116,6 +116,12 @@ CoverBackground
                 color: item.unreadCount > 0 ? Theme.highlightColor : Theme.primaryColor
 
                 text: {
+                    if(item.encrypted) {
+                        var encchat = context.telegram.encryptedChat(item.peer.userId)
+                        var encuser = context.telegram.user((encchat.adminId === context.telegram.me) ? encchat.participantId : encchat.adminId);
+                        return (item.unreadCount > 0) ? (item.unreadCount + " "  + TelegramHelper.completeName(encuser)) : TelegramHelper.completeName(encuser);
+                    }
+
                     if(TelegramHelper.isChat(item)) {
                         var chat = context.telegram.chat(item.peer.chatId);
                         return (item.unreadCount > 0) ? (item.unreadCount + " " + chat.title) : chat.title;
