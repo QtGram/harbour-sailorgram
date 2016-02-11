@@ -281,7 +281,7 @@ Minimilängd är 5 tecken.</translation>
         <translation>Bubblor med vinkel</translation>
     </message>
     <message>
-        <source>Open media instantly</source>
+        <source>Open media without waiting</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

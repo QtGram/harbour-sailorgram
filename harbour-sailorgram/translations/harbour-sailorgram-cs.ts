@@ -281,7 +281,7 @@ Minimální délka je 5 znaků .</translation>
         <translation>Bublinky s úhlem</translation>
     </message>
     <message>
-        <source>Open media instantly</source>
+        <source>Open media without waiting</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

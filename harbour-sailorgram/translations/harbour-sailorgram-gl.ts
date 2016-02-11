@@ -281,7 +281,7 @@ A lonxitude mínima é de 5 caracteres.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Open media instantly</source>
+        <source>Open media without waiting</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

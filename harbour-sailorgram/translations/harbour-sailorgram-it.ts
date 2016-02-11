@@ -281,7 +281,7 @@ La lunghezza minima è di 5 caratteri.</translation>
         <translation>Bolle con l&apos;angolo</translation>
     </message>
     <message>
-        <source>Open media instantly</source>
+        <source>Open media without waiting</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

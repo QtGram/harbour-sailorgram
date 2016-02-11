@@ -281,7 +281,7 @@ Minimumslængde er fem tegn.</translation>
         <translation>Talebobler med dråbeform</translation>
     </message>
     <message>
-        <source>Open media instantly</source>
+        <source>Open media without waiting</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

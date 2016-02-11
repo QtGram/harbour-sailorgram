@@ -281,7 +281,7 @@ Minimum length is 5 characters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Open media instantly</source>
+        <source>Open media without waiting</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

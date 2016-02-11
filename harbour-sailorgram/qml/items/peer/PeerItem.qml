@@ -30,30 +30,13 @@ Item
     {
         anchors { left: parent.left; top: parent.top; right: peerimage.left; rightMargin: Theme.paddingSmall }
 
-        Row
+        Label
         {
-            id: rowtitle
+            id: lbltitle
             width: parent.width
-            height: lbltitle.contentHeight
-            spacing: Theme.paddingSmall
-
-            Image
-            {
-                id: imgsecure
-                source: "image://theme/icon-s-secure"
-                anchors.verticalCenter: lbltitle.verticalCenter
-                fillMode: Image.PreserveAspectFit
-                visible: peeritem.dialog.encrypted
-            }
-
-            Label
-            {
-                id: lbltitle
-                width: parent.width
-                elide: Text.ElideRight
-                text: TelegramHelper.isChat(dialog) ? chat.title : TelegramHelper.completeName(user)
-                horizontalAlignment: Qt.AlignRight
-            }
+            elide: Text.ElideRight
+            text: TelegramHelper.isChat(dialog) ? chat.title : TelegramHelper.completeName(user)
+            horizontalAlignment: Qt.AlignRight
         }
 
         Label
@@ -68,33 +51,27 @@ Item
             horizontalAlignment: Qt.AlignRight
         }
 
-        Row
+        Label
         {
+            id: lblinfo
             width: parent.width
-            height: peeritem.height - rowtitle.height
+            font.pixelSize: Theme.fontSizeExtraSmall
+            color: Theme.highlightColor
+            horizontalAlignment: Qt.AlignRight
 
-            Label
-            {
-                id: lblinfo
-                width: parent.width
-                font.pixelSize: Theme.fontSizeExtraSmall
-                color: Theme.highlightColor
-                horizontalAlignment: Qt.AlignRight
+            text: {
+                if(dialog.typingUsers.length > 0)
+                    return TelegramHelper.typingUsers(context, dialog);
 
-                text: {
-                    if(dialog.typingUsers.length > 0)
-                        return TelegramHelper.typingUsers(context, dialog);
+                if(TelegramHelper.isChat(dialog)) {
 
-                    if(TelegramHelper.isChat(dialog)) {
+                    if(chat.participantsCount === 1)
+                        return qsTr("%1 member").arg(chat.participantsCount);
 
-                        if(chat.participantsCount === 1)
-                            return qsTr("%1 member").arg(chat.participantsCount);
-
-                        return qsTr("%1 members").arg(chat.participantsCount);
-                    }
-
-                    return TelegramHelper.userStatus(user);
+                    return qsTr("%1 members").arg(chat.participantsCount);
                 }
+
+                return TelegramHelper.userStatus(user);
             }
         }
     }

@@ -281,7 +281,7 @@ Minimum sind 5 Zeichen.</translation>
         <translation>Sprechblasen mit Ecke</translation>
     </message>
     <message>
-        <source>Open media instantly</source>
+        <source>Open media without waiting</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

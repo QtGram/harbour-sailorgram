@@ -281,7 +281,7 @@ La longitud mínima es de 5 caracteres.</translation>
         <translation>Globos de diálogo con ángulo</translation>
     </message>
     <message>
-        <source>Open media instantly</source>
+        <source>Open media without waiting</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

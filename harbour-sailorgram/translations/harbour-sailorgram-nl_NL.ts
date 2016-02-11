@@ -281,7 +281,7 @@ De minimale lengte is 5 tekens.</translation>
         <translation>Gespreksballonnen met hoekgraad</translation>
     </message>
     <message>
-        <source>Open media instantly</source>
+        <source>Open media without waiting</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
