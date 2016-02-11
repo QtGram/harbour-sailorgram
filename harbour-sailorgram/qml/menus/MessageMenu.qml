@@ -8,12 +8,20 @@ import "../js/TelegramConstants.js" as TelegramConstants
 
 ContextMenu
 {
+    signal replyRequested()
     signal downloadRequested()
     signal cancelRequested()
 
     property Context context
     property Message message
     property MessageMediaItem messageMediaItem
+
+    MenuItem
+    {
+        text: qsTr("Reply")
+        visible: message.classType !== TelegramConstants.typeMessageService
+        onClicked: replyRequested();
+    }
 
     MenuItem
     {

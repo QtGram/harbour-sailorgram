@@ -9,12 +9,22 @@ InverseMouseArea
 {
     property MessagesModel messagesModel
     property Context context
+    property Message replyMessage
     property var dialog
 
+    signal messageSent()
+
+    function focusTextArea() {
+        textarea.forceActiveFocus();
+    }
+
     function sendMessage() {
-        messagesModel.sendMessage(textarea.text.trim());
+        messagesModel.sendMessage(textarea.text.trim(), (replyMessage ? replyMessage.id : 0));
+
         Qt.inputMethod.commit();
         textarea.text = "";
+
+        messageSent();
     }
 
     id: dialogtextinput

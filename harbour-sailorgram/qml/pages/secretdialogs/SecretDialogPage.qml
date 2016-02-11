@@ -121,11 +121,29 @@ Page
                 context: secretdialogpage.context
                 messageTypesPool: messageview.messageTypesPool
                 message: item
+
+                onReplyRequested: {
+                    dialogreplypreview.message = item;
+                }
             }
 
             header: Item {
                 width: messageview.width
-                height: dialogtextinput.visible ? dialogtextinput.height : headerarea.height
+
+                height: {
+                    var h = 0;
+
+                    if(dialogtextinput.visible)
+                        h += dialogtextinput.height;
+
+                    if(dialogreplypreview.visible)
+                        h += dialogreplypreview.height;
+
+                    if(!dialogtextinput.visible && !dialogreplypreview.visible)
+                        h = headerarea.height;
+
+                    return h;
+                }
             }
 
             Column {
@@ -134,6 +152,20 @@ Page
                 parent: messageview.contentItem
                 width: parent.width
 
+                DialogReplyPreview {
+                    id: dialogreplypreview
+                    width: parent.width
+                    context: secretdialogpage.context
+
+                    onVisibleChanged: {
+                        if(!visible)
+                            return;
+
+                        messageview.positionViewAtBeginning();
+                        dialogtextinput.focusTextArea();
+                    }
+                }
+
                 DialogTextInput {
                     id: dialogtextinput
                     width: parent.width
@@ -141,6 +173,10 @@ Page
                     context: secretdialogpage.context
                     dialog: secretdialogpage.dialog
                     visible: chat && (chat.classType !== TelegramConstants.typeEncryptedChatDiscarded) && (chat.classType !== TelegramConstants.typeEncryptedChatWaiting)
+
+                    onMessageSent: {
+                        dialogreplypreview.message = null;
+                    }
                 }
 
                 SecretDialogDiscarded {

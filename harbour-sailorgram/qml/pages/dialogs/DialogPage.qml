@@ -127,11 +127,23 @@ Page
                 context: dialogpage.context
                 messageTypesPool: messageview.messageTypesPool
                 message: item
+
+                onReplyRequested: {
+                    dialogreplypreview.message = item;
+                }
             }
 
             header: Item {
                 width: messageview.width
-                height: dialogtextinput.height
+
+                height: {
+                    var h = dialogtextinput.height;
+
+                    if(dialogreplypreview.visible)
+                        h += dialogreplypreview.height;
+
+                    return h;
+                }
             }
 
             Column {
@@ -140,12 +152,31 @@ Page
                 parent: messageview.contentItem
                 width: parent.width
 
+                DialogReplyPreview {
+                    id: dialogreplypreview
+                    width: parent.width
+                    context: dialogpage.context
+
+                    onVisibleChanged: {
+                        if(!visible)
+                            return;
+
+                        messageview.positionViewAtBeginning();
+                        dialogtextinput.focusTextArea();
+                    }
+                }
+
                 DialogTextInput {
                     id: dialogtextinput
                     width: parent.width
                     messagesModel: messagesmodel
                     context: dialogpage.context
                     dialog: dialogpage.dialog
+                    replyMessage: dialogreplypreview.message
+
+                    onMessageSent: {
+                        dialogreplypreview.message = null;
+                    }
                 }
             }
         }

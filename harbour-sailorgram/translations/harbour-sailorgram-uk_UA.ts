@@ -487,6 +487,17 @@ messages</source>
     </message>
 </context>
 <context>
+    <name>DialogReplyPreview</name>
+    <message>
+        <source>You</source>
+        <translation type="unfinished">Ви</translation>
+    </message>
+    <message>
+        <source>Reply to: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DialogTextInput</name>
     <message>
         <source>Message...</source>
@@ -639,6 +650,10 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reply</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

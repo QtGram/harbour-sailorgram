@@ -15,6 +15,8 @@ ListItem
     property MessageTypesPool messageTypesPool
     property Message message
 
+    signal replyRequested()
+
     function remorseNeeded(mediatype, type) {
         if(context.immediateopen || !mediacontainer.item || mediacontainer.item.fileHandler.downloaded)
             return false;
@@ -96,6 +98,7 @@ ListItem
 
         onCancelRequested: mediacontainer.item.cancelTransfer()
         onDownloadRequested: mediacontainer.item.download()
+        onReplyRequested: messageitem.replyRequested()
     }
 
     MessageBubble

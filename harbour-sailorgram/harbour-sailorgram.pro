@@ -255,4 +255,5 @@ DISTFILES += \
     qml/items/message/messageitem/MessageBubble.qml \
     qml/components/RoundedImage.qml \
     qml/items/peer/PeerProfile.qml \
-    qml/components/message/MessageMediaProgressBar.qml
+    qml/components/message/MessageMediaProgressBar.qml \
+    qml/items/dialog/DialogReplyPreview.qml
