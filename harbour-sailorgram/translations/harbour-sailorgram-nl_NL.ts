@@ -650,7 +650,7 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Openen</translation>
     </message>
     <message>
         <source>Reply</source>
@@ -732,7 +732,7 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Acties</translation>
+        <translation>Acties</translation>
     </message>
 </context>
 <context>

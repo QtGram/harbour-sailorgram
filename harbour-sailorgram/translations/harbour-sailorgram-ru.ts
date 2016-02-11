@@ -650,7 +650,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть</translation>
     </message>
     <message>
         <source>Reply</source>
@@ -732,7 +732,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Действия</translation>
+        <translation>Действия</translation>
     </message>
 </context>
 <context>

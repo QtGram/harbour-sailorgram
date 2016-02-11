@@ -650,7 +650,7 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Avaa</translation>
     </message>
     <message>
         <source>Reply</source>
@@ -732,7 +732,7 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Toiminnot</translation>
+        <translation>Toiminnot</translation>
     </message>
 </context>
 <context>

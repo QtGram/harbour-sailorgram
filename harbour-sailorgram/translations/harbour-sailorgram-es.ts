@@ -648,7 +648,7 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir</translation>
     </message>
     <message>
         <source>Reply</source>
@@ -730,7 +730,7 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Acciones</translation>
+        <translation>Acciones</translation>
     </message>
 </context>
 <context>

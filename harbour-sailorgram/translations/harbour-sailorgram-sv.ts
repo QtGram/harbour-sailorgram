@@ -650,7 +650,7 @@ Svep åt vänster för att välja en kontakt</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Öppna</translation>
     </message>
     <message>
         <source>Reply</source>
@@ -732,7 +732,7 @@ Svep åt vänster för att välja en kontakt</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Åtgärder</translation>
+        <translation>Åtgärder</translation>
     </message>
 </context>
 <context>

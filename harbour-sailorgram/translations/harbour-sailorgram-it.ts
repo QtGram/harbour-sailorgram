@@ -651,7 +651,7 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Apri</translation>
     </message>
     <message>
         <source>Reply</source>
@@ -733,7 +733,7 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Azioni</translation>
+        <translation>Azioni</translation>
     </message>
 </context>
 <context>

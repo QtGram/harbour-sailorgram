@@ -650,7 +650,7 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Öffnen</translation>
     </message>
     <message>
         <source>Reply</source>
@@ -732,7 +732,7 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Aktionen</translation>
+        <translation>Aktionen</translation>
     </message>
 </context>
 <context>
