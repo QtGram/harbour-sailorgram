@@ -66,7 +66,7 @@ Dialog
             {
                 id: tsimmediateopen
                 anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
-                text: qsTr("Open media instantly")
+                text: qsTr("Open media without waiting")
                 checked: context.immediateopen
             }
 
