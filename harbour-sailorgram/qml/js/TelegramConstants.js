@@ -33,6 +33,14 @@ var typeMessageMediaAudio = 0xc6b68300;
 var typeMessageMediaWebPage = 0xa32dd600;
 var typeMessageMediaVenue = 0x7912b71;
 
+/* Document Media Attributes Constants */
+var typeDocumentAttributeImageSize = 0x6c37c15c;
+var typeDocumentAttributeAnimated = 0x11b58939;
+var typeDocumentAttributeSticker = 0x3a556302;
+var typeDocumentAttributeVideo = 0x5910cccb;
+var typeDocumentAttributeAudio = 0x51448e5;
+var typeDocumentAttributeFilename = 0x15590068;
+
 /* Secret Chat Constants */
 var typeEncryptedChatWaiting = 0x3bf703dc;
 var typeEncryptedChatRequested = 0xc878527e;

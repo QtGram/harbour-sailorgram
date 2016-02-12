@@ -9,7 +9,7 @@ import "../../../../js/ColorScheme.js" as ColorScheme
 MessageMediaItem
 {
     id: messageaudio
-    contentWidth: imgpreview.width + Math.max(lbldummyinfo.contentWidth, lbldummysize.contentWidth + lbldummyduration.contentWidth) + Theme.paddingMedium
+    contentWidth: imgpreview.width + Math.max(lbldummyinfo.contentWidth, Math.max(lbldummysize.contentWidth, lbldummyduration.contentWidth)) + Theme.paddingMedium
     contentHeight: row.height
 
     MediaPlayerTimings { id: mediaplayertimings }

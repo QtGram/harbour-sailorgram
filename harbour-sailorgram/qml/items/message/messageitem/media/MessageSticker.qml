@@ -12,7 +12,7 @@ MessageMediaItem
     {
         id: thumb
         anchors.fill: parent
-        cache: !messagesticker.fileHandler.downloaded
-        source: messagesticker.mediaThumbnail
+        cache: !fileHandler.downloaded
+        source: fileHandler.downloaded ? fileHandler.filePath : fileHandler.thumbPath
     }
 }

@@ -18,7 +18,7 @@ MessageMediaItem
     {
         id: row
         width: parent.width
-        height: info.height
+        height: Math.max(info.height, imgpreview.height)
         spacing: Theme.paddingMedium
 
         MessageThumbnail
@@ -27,7 +27,7 @@ MessageMediaItem
             height: Theme.iconSizeMedium
             width: Theme.iconSizeMedium
             anchors.verticalCenter: info.verticalCenter
-            source: messagedocument.mediaThumbnail || "image://theme/icon-m-document"
+            source: fileHandler.thumbPath
 
             Rectangle {
                 border.width: 1

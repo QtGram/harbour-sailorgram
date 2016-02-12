@@ -1,10 +1,13 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
+import "../../../items/message/messageitem/media"
 import "../../../models"
 import "../../../js/ColorScheme.js" as ColorScheme
 import "../../../js/TelegramHelper.js" as TelegramHelper
 import "../../../js/TelegramAction.js" as TelegramAction
+import "../../../js/TelegramMedia.js" as TelegramMedia
+import "../../../js/TelegramConstants.js" as TelegramConstants
 
 Item
 {
@@ -19,6 +22,14 @@ Item
     width: {
         var w = Math.max(dummytextcontent.contentWidth, dummyuser.contentWidth) + quotedindicatorrect.width + row.spacing
         return Math.min(w, maxWidth);
+    }
+
+    FileHandler
+    {
+        id: filehandler
+        telegram: context.telegram
+        target: replyToMessage
+        defaultThumbnail: TelegramMedia.defaultThumbnail(replyToMessage)
     }
 
     Text
@@ -56,6 +67,15 @@ Item
             height: column.height
         }
 
+        MessageThumbnail
+        {
+            id: imgmedia
+            width: parent.height
+            height: parent.height
+            source: filehandler.thumbPath
+            visible: TelegramHelper.isMediaMessage(replyToMessage)
+        }
+
         Column
         {
             id: column
@@ -78,7 +98,7 @@ Item
                     if(TelegramHelper.isServiceMessage(replyToMessage))
                         return "";
 
-                    if(message.out)
+                    if(replyToMessage.out)
                         return qsTr("You");
 
                     return TelegramHelper.completeName(context.telegram.user(replyToMessage.fromId))
@@ -93,7 +113,6 @@ Item
                 width: parent.width
                 horizontalAlignment: Text.AlignLeft
                 emojiPath: context.sailorgram.emojiPath
-                rawText: TelegramHelper.isServiceMessage(replyToMessage) ? TelegramAction.actionType(context.telegram, dialog, replyToMessage) : replyToMessage.message
                 verticalAlignment: Text.AlignTop
                 wrapMode: Text.Wrap
                 elide: Text.ElideRight
@@ -101,6 +120,19 @@ Item
                 visible: text.length > 0
                 color: ColorScheme.colorizeText(message, context)
                 linkColor: ColorScheme.colorizeLink(message, context)
+
+                rawText: {
+                    if(TelegramHelper.isServiceMessage(replyToMessage))
+                        return TelegramAction.actionType(context.telegram, dialog, replyToMessage);
+
+                    if(TelegramHelper.isSticker(context, replyToMessage))
+                        return "Sticker";
+
+                    if(TelegramHelper.isMediaMessage(replyToMessage) && (replyToMessage.media.classType === TelegramConstants.typeMessageMediaDocument))
+                        return filehandler.fileName;
+
+                    return TelegramHelper.messageContent(replyToMessage);
+                }
             }
         }
     }

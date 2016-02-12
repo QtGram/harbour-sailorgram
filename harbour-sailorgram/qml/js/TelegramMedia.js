@@ -1,17 +1,51 @@
 .pragma library
 
 .import Sailfish.Silica 1.0 as Silica
+.import "TelegramConstants.js" as TelegramConstants
 
-function thumbnailSize(originalsize, isportrait)
+function defaultThumbnail(message)
 {
-    var padding = Silica.Theme.paddingLarge * 4;
+    if(!message || !message.media)
+        return "image://theme/icon-m-other";
 
-    // Check if the image fits to screen
-    if((originalsize.width < (Silica.Screen.width - padding)) && (originalsize.height < (Silica.Screen.height - padding)))
-        return originalsize;
+    var mediatype = message.media.classType;
 
-    // Scale the image
-    var scaledw = Math.min(isportrait ? Silica.Screen.width : Silica.Screen.height, originalsize.width) - padding;
-    var scaledh = (originalsize.height / originalsize.width) * scaledw;
-    return Qt.size(scaledw, scaledh);
+    if(mediatype === TelegramConstants.typeMessageMediaPhoto)
+        return "image://theme/icon-m-image";
+
+    if(mediatype === TelegramConstants.typeMessageMediaAudio)
+        return "image://theme/icon-m-music";
+
+    if(mediatype === TelegramConstants.typeMessageMediaVideo)
+        return "image://theme/icon-m-video";
+
+    if(mediatype === TelegramConstants.typeMessageMediaGeo)
+        return "image://theme/icon-m-location";
+
+    if(mediatype === TelegramConstants.typeMessageMediaDocument)
+    {
+        var document = message.media.document;
+        var attributes = document.attributes;
+
+        for(var i = 0; i < attributes.length; i++)
+        {
+            var attribute = attributes[i].classType;
+
+            if(attribute === TelegramConstants.typeDocumentAttributeSticker)
+                return ""; // No default thumbnail for stickers
+
+            if(attribute === TelegramConstants.typeDocumentAttributeVideo)
+                return "image://theme/icon-m-video";
+
+            if(attribute === TelegramConstants.typeDocumentAttributeAudio)
+                return "image://theme/icon-m-music";
+
+            if(attribute === TelegramConstants.typeDocumentAttributeImageSize)
+                return "image://theme/icon-m-image";
+        }
+
+        return "image://theme/icon-m-document";
+    }
+
+    return "image://theme/icon-m-other";
 }

@@ -2,6 +2,7 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../../../../models"
+import "../../../../js/TelegramMedia.js" as TelegramMedia
 import "../../../../js/TelegramConstants.js" as TelegramConstants
 
 Item
@@ -37,24 +38,6 @@ Item
         return 0;
     }
 
-    readonly property string mediaThumbnail: {
-        if(!message.media)
-            return "";
-
-        if(context.telegram.documentIsSticker(message.media.document))
-        {
-            if(fileHandler.downloaded)
-                return filehandler.filePath;
-
-            return filehandler.thumbPath;
-        }
-
-        if((message.media.classType === TelegramConstants.typeMessageMediaPhoto) && filehandler.downloaded)
-            return filehandler.filePath;
-
-        return fileHandler.thumbPath;
-    }
-
     function cancelTransfer() {
         filehandler.cancelProgress();
     }
@@ -76,7 +59,7 @@ Item
         id: filehandler
         telegram: messagemediaitem.context.telegram
         target: messagemediaitem.message
-        defaultThumbnail: "image://theme/icon-m-other"
+        defaultThumbnail: TelegramMedia.defaultThumbnail(messagemediaitem.message)
 
         onFilePathChanged: {
             var filepathstring = filePath.toString();
