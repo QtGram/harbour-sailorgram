@@ -484,10 +484,6 @@ messages</source>
 <context>
     <name>DialogReplyPreview</name>
     <message>
-        <source>You</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Reply to: %1</source>
         <translation type="unfinished"></translation>
     </message>

@@ -489,10 +489,6 @@ viestit</translation>
 <context>
     <name>DialogReplyPreview</name>
     <message>
-        <source>You</source>
-        <translation type="unfinished">Sinä</translation>
-    </message>
-    <message>
         <source>Reply to: %1</source>
         <translation type="unfinished"></translation>
     </message>

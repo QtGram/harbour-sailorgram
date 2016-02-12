@@ -57,9 +57,9 @@ function colorizeBubble(message, context)
     return Silica.Theme.rgba(Silica.Theme.secondaryColor, 1.0);
 }
 
-function colorizeLink(message, context)
+function colorizeLink(message, context, ignorebubble)
 {
-    if(context.bubbleshidden)
+    if(ignorebubble || context.bubbleshidden)
     {
         var linkcolor = Silica.Theme.rgba(Silica.Theme.highlightColor, 1.0);
         return reverseColor(linkcolor, 2.5);

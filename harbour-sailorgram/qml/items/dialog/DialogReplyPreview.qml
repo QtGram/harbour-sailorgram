@@ -20,7 +20,6 @@ Item
     Column
     {
         id: column
-        height: lbluser.contentHeight + mtctextcontent.contentHeight
 
         anchors {
             left: parent.left
@@ -46,8 +45,7 @@ Item
                 if(!message)
                     return "";
 
-                var destname = message.out ? qsTr("You") : TelegramHelper.completeName(context.telegram.user(message.fromId));
-                return qsTr("Reply to: %1").arg(destname);
+                return qsTr("Reply to: %1").arg(TelegramHelper.completeName(context.telegram.user(message.fromId)));
             }
         }
 
@@ -66,7 +64,7 @@ Item
             maximumLineCount: 3
             visible: text.length > 0
             color: Theme.primaryColor
-            linkColor: message ? ColorScheme.colorizeLink(message, context) : Theme.highlightColor
+            linkColor: message ? ColorScheme.colorizeLink(message, context, true) : Theme.highlightColor
         }
     }
 
@@ -75,7 +73,8 @@ Item
         id: btnclose
         width: parent.height
         anchors { top: parent.top; right: parent.right; bottom: parent.bottom; rightMargin: Theme.paddingSmall }
-        icon.source: "image://theme/icon-s-clear-opaque-cross"
+        icon.source: "qrc:///res/close.png"
+        icon.sourceSize: Qt.size(width * 0.5, height * 0.5)
 
         onClicked: {
             dialogreplypreview.message = null;

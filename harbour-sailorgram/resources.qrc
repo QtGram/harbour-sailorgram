@@ -11,5 +11,6 @@
         <file>qml/cover/alarmcover.png</file>
         <file>res/daemon.png</file>
         <file>res/sailorgram-cover.png</file>
+        <file>res/close.png</file>
     </qresource>
 </RCC>
