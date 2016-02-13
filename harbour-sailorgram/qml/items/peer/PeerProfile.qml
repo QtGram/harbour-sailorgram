@@ -31,6 +31,43 @@ Item
             dialog: peerprofile.dialog
             chat: peerprofile.chat
             user: peerprofile.user
+
+            FileHandler
+            {
+                id: bigimagehandler
+                telegram: context.telegram
+                target: {
+                    if(user)
+                        return user.photo.photoBig;
+                    if(chat)
+                        return chat.photo.photoBig;
+                    return null;
+                }
+                onTargetTypeChanged: {
+                    if(downloaded)
+                        return;
+                    download();
+                }
+            }
+
+            MouseArea
+            {
+                anchors.fill: parent
+                onClicked: {
+                    var photoId = 0;
+                    if(user)
+                        photoId = user.photo.photoId;
+                    else if(chat)
+                        photoId = chat.photo.photoId;
+                    if(photoId !== 0)
+                    pageStack.push(
+                        Qt.resolvedUrl("../../pages/media/MediaPhotoPage.qml"),
+                        {
+                            "context":     peerprofile.context,
+                            "fileHandler": bigimagehandler
+                        });
+                }
+            }
         }
 
         Label
