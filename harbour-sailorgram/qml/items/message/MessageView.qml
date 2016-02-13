@@ -15,7 +15,7 @@ SilicaListView
     id: messageview
     currentIndex: -1
     verticalLayoutDirection: ListView.BottomToTop
-    spacing: Theme.paddingLarge
+    spacing: Theme.paddingMedium
     cacheBuffer: (pageStack.currentPage.isPortrait ? Screen.height : Screen.width) * 2
     clip: true
 

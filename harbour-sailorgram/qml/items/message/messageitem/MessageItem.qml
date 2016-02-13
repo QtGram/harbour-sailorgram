@@ -89,7 +89,6 @@ ListItem
     contentWidth: parent.width
     contentHeight: content.height
     onClicked: displayMedia()
-    highlighted: message.unread ? true : down
 
     menu: MessageMenu {
         id: messagemenu
