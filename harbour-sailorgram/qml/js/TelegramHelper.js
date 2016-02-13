@@ -129,6 +129,9 @@ function typingUsers(context, dialog)
 
 function isServiceMessage(message)
 {
+    if(!message)
+        return false;
+
     if(message.classType === TelegramConstants.typeMessageService)
         return true;
 
@@ -140,7 +143,7 @@ function isServiceMessage(message)
 
 function isMediaMessage(message)
 {
-    if(!message.media)
+    if(!message || !message.media)
         return false;
 
     if(message.media.classType === TelegramConstants.typeMessageMediaEmpty)

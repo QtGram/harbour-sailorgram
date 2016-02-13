@@ -28,35 +28,12 @@ Page
 
         pageStack.pushAttached(Qt.resolvedUrl("../dialogs/DialogInfoPage.qml"), { "context": secretdialogpage.context, "dialog": secretdialogpage.dialog, "user": secretdialogpage.user });
 
-        messagesmodel.telegram = secretdialogpage.context.telegram;
-        messagesmodel.dialog = secretdialogpage.dialog;
-        messagesmodel.setReaded();
+        messageview.messagesModel.telegram = secretdialogpage.context.telegram;
+        messageview.messagesModel.dialog = secretdialogpage.dialog;
+        messageview.messagesModel.setReaded();
 
         context.sailorgram.foregroundDialog = secretdialogpage.dialog;
         context.sailorgram.closeNotification(dialog);
-    }
-
-    RemorsePopup { id: remorsepopup }
-
-    Connections
-    {
-        target: Qt.application
-
-        onStateChanged: {
-            if(Qt.application.state !== Qt.ApplicationActive)
-                return;
-
-            messagesmodel.setReaded();
-        }
-    }
-
-    Timer
-    {
-        id: refreshtimer
-        repeat: true
-        interval: 10000
-        running: !context.sailorgram.daemonized
-        onTriggered: messagesmodel.refresh()
     }
 
     PopupMessage
@@ -76,16 +53,8 @@ Page
             MenuItem
             {
                 text: qsTr("Load more messages")
-                onClicked: messagesmodel.loadMore();
+                onClicked: messageview.messagesModel.loadMore();
             }
-        }
-
-        BusyIndicator
-        {
-            anchors.centerIn: parent
-            size: BusyIndicatorSize.Large
-            running: context.sailorgram.connected && messagesmodel.refreshing && (messageview.count <= 0)
-            z: running ? 2 : 0
         }
 
         PeerItem
@@ -105,16 +74,19 @@ Page
             anchors { left: parent.left; top: header.bottom; right: parent.right; bottom: parent.bottom }
             context: secretdialogpage.context
 
-            model: MessagesModel {
-                id: messagesmodel
-                stepCount: context.stepcount
+            headerHeight: {
+                var h = 0;
 
-                onCountChanged: {
-                    if((count <= 0) || (Qt.application.state !== Qt.ApplicationActive))
-                        return;
+                if(dialogtextinput.visible)
+                    h += dialogtextinput.height;
 
-                    messagesmodel.setReaded(); /* We are in this chat, always mark these messages as read */
-                }
+                if(dialogreplypreview.visible)
+                    h += dialogreplypreview.height;
+
+                if(!dialogtextinput.visible && !dialogreplypreview.visible)
+                    h = headerarea.height;
+
+                return h;
             }
 
             delegate: MessageItem {
@@ -124,25 +96,7 @@ Page
 
                 onReplyRequested: {
                     dialogreplypreview.message = item;
-                }
-            }
-
-            header: Item {
-                width: messageview.width
-
-                height: {
-                    var h = 0;
-
-                    if(dialogtextinput.visible)
-                        h += dialogtextinput.height;
-
-                    if(dialogreplypreview.visible)
-                        h += dialogreplypreview.height;
-
-                    if(!dialogtextinput.visible && !dialogreplypreview.visible)
-                        h = headerarea.height;
-
-                    return h;
+                    messageview.scrollToBottom();
                 }
             }
 
@@ -156,20 +110,12 @@ Page
                     id: dialogreplypreview
                     width: parent.width
                     context: secretdialogpage.context
-
-                    onVisibleChanged: {
-                        if(!visible)
-                            return;
-
-                        messageview.positionViewAtBeginning();
-                        dialogtextinput.focusTextArea();
-                    }
                 }
 
                 DialogTextInput {
                     id: dialogtextinput
                     width: parent.width
-                    messagesModel: messagesmodel
+                    messagesModel: messageview.messagesModel
                     context: secretdialogpage.context
                     dialog: secretdialogpage.dialog
                     visible: chat && (chat.classType !== TelegramConstants.typeEncryptedChatDiscarded) && (chat.classType !== TelegramConstants.typeEncryptedChatWaiting)

@@ -33,35 +33,12 @@ Page
 
         pageStack.pushAttached(Qt.resolvedUrl("DialogInfoPage.qml"), { "context": dialogpage.context, "dialog": dialogpage.dialog, "chat": dialogpage.chat, "user": dialogpage.user });
 
-        messagesmodel.telegram = dialogpage.context.telegram;
-        messagesmodel.dialog = dialogpage.dialog;
-        messagesmodel.setReaded();
+        messageview.messagesModel.telegram = dialogpage.context.telegram;
+        messageview.messagesModel.dialog = dialogpage.dialog;
+        messageview.messagesModel.setReaded();
 
         context.sailorgram.foregroundDialog = dialogpage.dialog;
         context.sailorgram.closeNotification(dialog);
-    }
-
-    RemorsePopup { id: remorsepopup }
-
-    Connections
-    {
-        target: Qt.application
-
-        onStateChanged: {
-            if(Qt.application.state !== Qt.ApplicationActive)
-                return;
-
-            messagesmodel.setReaded();
-        }
-    }
-
-    Timer
-    {
-        id: refreshtimer
-        repeat: true
-        interval: 10000
-        running: !context.sailorgram.daemonized
-        onTriggered: messagesmodel.refresh()
     }
 
     PopupMessage
@@ -81,16 +58,8 @@ Page
             MenuItem
             {
                 text: qsTr("Load more messages")
-                onClicked: messagesmodel.loadMore();
+                onClicked: messageview.messagesModel.loadMore();
             }
-        }
-
-        BusyIndicator
-        {
-            anchors.centerIn: parent
-            size: BusyIndicatorSize.Large
-            running: context.sailorgram.connected && messagesmodel.refreshing && (messagesmodel.count <= 0)
-            z: running ? 2 : 0
         }
 
         PeerItem
@@ -107,20 +76,27 @@ Page
 
         MessageView
         {
+            property bool displayKeyboard: false
+
             id: messageview
             anchors { left: parent.left; top: header.bottom; right: parent.right; bottom: parent.bottom }
             context: dialogpage.context
 
-            model: MessagesModel {
-                id: messagesmodel
-                stepCount: context.stepcount
+            headerHeight: {
+                var h = dialogtextinput.height;
 
-                onCountChanged: {
-                    if((count <= 0) || (Qt.application.state !== Qt.ApplicationActive))
-                        return;
+                if(dialogreplypreview.visible)
+                    h += dialogreplypreview.height;
 
-                    messagesmodel.setReaded(); /* We are in this chat, always mark these messages as read */
-                }
+                return h;
+            }
+
+            onAtYEndChanged: {
+                if(!atYEnd || !displayKeyboard)
+                    return;
+
+                dialogtextinput.focusTextArea();
+                displayKeyboard = false;
             }
 
             delegate: MessageItem {
@@ -129,21 +105,9 @@ Page
                 message: item
 
                 onReplyRequested: {
+                    messageview.displayKeyboard = true;
                     dialogreplypreview.message = item;
                     messageview.scrollToBottom();
-                }
-            }
-
-            header: Item {
-                width: messageview.width
-
-                height: {
-                    var h = dialogtextinput.height;
-
-                    if(dialogreplypreview.visible)
-                        h += dialogreplypreview.height;
-
-                    return h;
                 }
             }
 
@@ -162,7 +126,7 @@ Page
                 DialogTextInput {
                     id: dialogtextinput
                     width: parent.width
-                    messagesModel: messagesmodel
+                    messagesModel: messageview.messagesModel
                     context: dialogpage.context
                     dialog: dialogpage.dialog
                     replyMessage: dialogreplypreview.message
