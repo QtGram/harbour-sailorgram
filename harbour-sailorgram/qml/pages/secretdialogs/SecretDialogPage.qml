@@ -26,7 +26,8 @@ Page
         if(status !== PageStatus.Active)
             return;
 
-        pageStack.pushAttached(Qt.resolvedUrl("../dialogs/DialogInfoPage.qml"), { "context": secretdialogpage.context, "dialog": secretdialogpage.dialog, "user": secretdialogpage.user });
+        if(!canNavigateForward)
+            pageStack.pushAttached(Qt.resolvedUrl("../dialogs/DialogInfoPage.qml"), { "context": secretdialogpage.context, "dialog": secretdialogpage.dialog, "user": secretdialogpage.user });
 
         messageview.messagesModel.telegram = secretdialogpage.context.telegram;
         messageview.messagesModel.dialog = secretdialogpage.dialog;
