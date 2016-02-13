@@ -11,7 +11,7 @@ Item
     property Component locationComponent: Component {  MessageLocation { } }
     property Component stickerComponent: Component { MessageSticker { } }
 
-    property Component messageQuotedComponent: Component { MessageQuotedItem { } }
+    property Component messagePreview: Component { MessagePreview { } }
 
     id: messagetypespool
 }

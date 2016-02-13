@@ -130,6 +130,7 @@ Page
 
                 onReplyRequested: {
                     dialogreplypreview.message = item;
+                    messageview.scrollToBottom();
                 }
             }
 
@@ -156,14 +157,6 @@ Page
                     id: dialogreplypreview
                     width: parent.width
                     context: dialogpage.context
-
-                    onVisibleChanged: {
-                        if(!visible)
-                            return;
-
-                        messageview.positionViewAtBeginning();
-                        dialogtextinput.focusTextArea();
-                    }
                 }
 
                 DialogTextInput {

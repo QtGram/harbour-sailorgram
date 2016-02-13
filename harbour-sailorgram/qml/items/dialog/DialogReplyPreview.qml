@@ -14,12 +14,15 @@ Item
     signal closeRequested()
 
     id: dialogreplypreview
-    height: column.height
+    height: messagepreview.height
     visible: message !== null
 
-    Column
+    MessagePreview
     {
-        id: column
+        id: messagepreview
+        context: dialogreplypreview.context
+        message: dialogreplypreview.message
+        showQuoteRect: false
 
         anchors {
             left: parent.left
@@ -28,43 +31,6 @@ Item
             leftMargin: Theme.paddingSmall
             rightMargin: Theme.paddingSmall
             topMargin: Theme.paddingSmall
-        }
-
-        Label
-        {
-            id: lbluser
-            width: parent.width
-            color: Theme.primaryColor
-            font.bold: true
-            font.pixelSize: Theme.fontSizeExtraSmall
-            wrapMode: Text.NoWrap
-            elide: Text.ElideRight
-            verticalAlignment: Text.AlignVCenter
-
-            text: {
-                if(!message)
-                    return "";
-
-                return qsTr("Reply to: %1").arg(TelegramHelper.completeName(context.telegram.user(message.fromId)));
-            }
-        }
-
-        MessageTextContent
-        {
-            id: mtctextcontent
-            font.pixelSize: Theme.fontSizeExtraSmall
-            font.italic: true
-            width: parent.width
-            horizontalAlignment: Text.AlignLeft
-            emojiPath: context.sailorgram.emojiPath
-            rawText: message ? message.message : ""
-            verticalAlignment: Text.AlignTop
-            wrapMode: Text.Wrap
-            elide: Text.ElideRight
-            maximumLineCount: 3
-            visible: text.length > 0
-            color: Theme.primaryColor
-            linkColor: message ? ColorScheme.colorizeLink(message, context, true) : Theme.highlightColor
         }
     }
 

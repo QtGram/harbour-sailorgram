@@ -487,13 +487,6 @@ non lus</translation>
     </message>
 </context>
 <context>
-    <name>DialogReplyPreview</name>
-    <message>
-        <source>Reply to: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>DialogTextInput</name>
     <message>
         <source>Message...</source>
@@ -654,10 +647,10 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
     </message>
 </context>
 <context>
-    <name>MessageQuotedItem</name>
+    <name>MessagePreview</name>
     <message>
         <source>You</source>
-        <translation>Vous</translation>
+        <translation type="unfinished">Vous</translation>
     </message>
 </context>
 <context>

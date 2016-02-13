@@ -487,13 +487,6 @@ sen ler</translation>
     </message>
 </context>
 <context>
-    <name>DialogReplyPreview</name>
-    <message>
-        <source>Reply to: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>DialogTextInput</name>
     <message>
         <source>Message...</source>
@@ -654,10 +647,10 @@ Desprace a dereita para seleccionar un contacto</translation>
     </message>
 </context>
 <context>
-    <name>MessageQuotedItem</name>
+    <name>MessagePreview</name>
     <message>
         <source>You</source>
-        <translation>Ti</translation>
+        <translation type="unfinished">Ti</translation>
     </message>
 </context>
 <context>

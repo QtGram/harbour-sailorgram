@@ -487,13 +487,6 @@ Nachrichten</translation>
     </message>
 </context>
 <context>
-    <name>DialogReplyPreview</name>
-    <message>
-        <source>Reply to: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>DialogTextInput</name>
     <message>
         <source>Message...</source>
@@ -654,10 +647,10 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
 </context>
 <context>
-    <name>MessageQuotedItem</name>
+    <name>MessagePreview</name>
     <message>
         <source>You</source>
-        <translation>Du</translation>
+        <translation type="unfinished">Du</translation>
     </message>
 </context>
 <context>

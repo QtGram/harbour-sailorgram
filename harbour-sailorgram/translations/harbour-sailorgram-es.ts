@@ -485,13 +485,6 @@ messages</source>
     </message>
 </context>
 <context>
-    <name>DialogReplyPreview</name>
-    <message>
-        <source>Reply to: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>DialogTextInput</name>
     <message>
         <source>Message...</source>
@@ -652,10 +645,10 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
     </message>
 </context>
 <context>
-    <name>MessageQuotedItem</name>
+    <name>MessagePreview</name>
     <message>
         <source>You</source>
-        <translation>Tú</translation>
+        <translation type="unfinished">Tú</translation>
     </message>
 </context>
 <context>

@@ -487,13 +487,6 @@ viestit</translation>
     </message>
 </context>
 <context>
-    <name>DialogReplyPreview</name>
-    <message>
-        <source>Reply to: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>DialogTextInput</name>
     <message>
         <source>Message...</source>
@@ -654,10 +647,10 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     </message>
 </context>
 <context>
-    <name>MessageQuotedItem</name>
+    <name>MessagePreview</name>
     <message>
         <source>You</source>
-        <translation>Sinä</translation>
+        <translation type="unfinished">Sinä</translation>
     </message>
 </context>
 <context>

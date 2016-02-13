@@ -226,7 +226,6 @@ DISTFILES += \
     qml/pages/contacts/AddContactPage.qml \
     qml/js/TextElaborator.js \
     qml/items/message/messageitem/MessageTextContent.qml \
-    qml/items/message/messageitem/MessageQuotedItem.qml \
     qml/js/ColorScheme.js \
     qml/js/TelegramMedia.js \
     dbus/org.harbour.sailorgram.service \
@@ -256,4 +255,5 @@ DISTFILES += \
     qml/components/RoundedImage.qml \
     qml/items/peer/PeerProfile.qml \
     qml/components/message/MessageMediaProgressBar.qml \
-    qml/items/dialog/DialogReplyPreview.qml
+    qml/items/dialog/DialogReplyPreview.qml \
+    qml/items/message/messageitem/MessagePreview.qml

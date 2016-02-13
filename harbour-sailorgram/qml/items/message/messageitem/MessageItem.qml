@@ -190,8 +190,13 @@ ListItem
 
             Component.onCompleted: {
                 if(message.replyToMsgId) {
-                    var params = { "context": messageitem.context, "message": messageitem.message, "maxWidth": content.maxw - 2 * Theme.paddingMedium };
-                    messageTypesPool.messageQuotedComponent.createObject(quotedcontainer, params);
+                    var params = { "context": messageitem.context,
+                                   "message": context.telegram.message(message.replyToMsgId),
+                                   "textColor": ColorScheme.colorizeText(message, context),
+                                   "linkColor": ColorScheme.colorizeLink(message, context),
+                                   "maxWidth": content.maxw - 2 * Theme.paddingMedium };
+
+                    messageTypesPool.messagePreview.createObject(quotedcontainer, params);
                 }
             }
         }

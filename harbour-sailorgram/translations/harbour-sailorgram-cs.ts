@@ -485,13 +485,6 @@ messages</source>
     </message>
 </context>
 <context>
-    <name>DialogReplyPreview</name>
-    <message>
-        <source>Reply to: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>DialogTextInput</name>
     <message>
         <source>Message...</source>
@@ -652,10 +645,10 @@ Utři do prava aby jsi vybral kontakt</translation>
     </message>
 </context>
 <context>
-    <name>MessageQuotedItem</name>
+    <name>MessagePreview</name>
     <message>
         <source>You</source>
-        <translation>Ty</translation>
+        <translation type="unfinished">Ty</translation>
     </message>
 </context>
 <context>

@@ -487,13 +487,6 @@ meddelelser</translation>
     </message>
 </context>
 <context>
-    <name>DialogReplyPreview</name>
-    <message>
-        <source>Reply to: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>DialogTextInput</name>
     <message>
         <source>Message...</source>
@@ -654,10 +647,10 @@ Stryg til venstre for at vælge en kontakt</translation>
     </message>
 </context>
 <context>
-    <name>MessageQuotedItem</name>
+    <name>MessagePreview</name>
     <message>
         <source>You</source>
-        <translation>Dig</translation>
+        <translation type="unfinished">Dig</translation>
     </message>
 </context>
 <context>
