@@ -73,7 +73,7 @@ MediaPage
             {
                 anchors.centerIn: parent
                 size: BusyIndicatorSize.Medium
-                running: (fileHandler.progressPercent > 0) && (fileHandler.progressPercent < 100)
+                running: !fileHandler.downloaded && (fileHandler.progressPercent > 0) && (fileHandler.progressPercent < 100)
             }
         }
     }
