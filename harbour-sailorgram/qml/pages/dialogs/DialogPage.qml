@@ -34,9 +34,11 @@ Page
         if(!canNavigateForward)
             pageStack.pushAttached(Qt.resolvedUrl("DialogInfoPage.qml"), { "context": dialogpage.context, "dialog": dialogpage.dialog, "chat": dialogpage.chat, "user": dialogpage.user });
 
+        if(context.sailorgram.foregroundDialog === dialogpage.dialog)
+            messageview.messagesModel.setReaded();
+
         messageview.messagesModel.telegram = dialogpage.context.telegram;
         messageview.messagesModel.dialog = dialogpage.dialog;
-        messageview.messagesModel.setReaded();
 
         context.sailorgram.foregroundDialog = dialogpage.dialog;
         context.sailorgram.closeNotification(dialog);
