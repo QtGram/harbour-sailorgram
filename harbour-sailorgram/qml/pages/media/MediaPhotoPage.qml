@@ -22,7 +22,7 @@ MediaPage
                 text: qsTr("Save in Gallery")
 
                 onClicked: {
-                    context.sailorgram.moveMediaToGallery(fileHandler.fileName.toString(), TelegramConstants.typeMessageMediaPhoto);
+                    context.sailorgram.moveMediaToGallery(fileHandler.filePath.toString(), TelegramConstants.typeMessageMediaPhoto);
                     popupmessage.show(qsTr("Image saved in Gallery"));
                 }
             }

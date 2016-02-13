@@ -186,10 +186,6 @@ void SailorGram::moveMediaTo(const QString& mediafile, const QString &destinatio
 {
     QFileInfo mediafileinfo(QUrl(mediafile).path());
     QString destpath = QDir(destination).absoluteFilePath(mediafileinfo.fileName());
-
-    if(QFile::exists(destpath)) // Don't overwrite existing files
-        return;
-
     QFile::copy(mediafileinfo.absoluteFilePath(), destpath);
 }
 
@@ -337,7 +333,7 @@ void SailorGram::onWakeUpRequested()
     emit wakeUpRequested();
 }
 
-QString SailorGram::mediaLocation(MessageMedia::MessageMediaType mediatype)
+QString SailorGram::mediaLocation(quint32 mediatype)
 {
     if(mediatype == MessageMedia::typeMessageMediaAudio)
         return QStandardPaths::writableLocation(QStandardPaths::MusicLocation);
@@ -365,7 +361,7 @@ void SailorGram::moveMediaToDownloads(const QString& mediafile)
     this->moveMediaTo(mediafile, this->mediaLocation(MessageMedia::typeMessageMediaDocument));
 }
 
-void SailorGram::moveMediaToGallery(const QString& mediafile, MessageMedia::MessageMediaType mediatype)
+void SailorGram::moveMediaToGallery(const QString& mediafile, quint32 mediatype)
 {
     this->moveMediaTo(mediafile, this->mediaLocation(mediatype));
 }

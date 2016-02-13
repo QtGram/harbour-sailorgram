@@ -58,12 +58,12 @@ class SailorGram : public QObject
 
     public slots:
         void moveMediaToDownloads(const QString &mediafile);
-        void moveMediaToGallery(const QString &mediafile, MessageMedia::MessageMediaType mediatype);
+        void moveMediaToGallery(const QString &mediafile, quint32 mediatype);
         void notify(MessageObject* message, const QString& name, const QString &elaboratedbody);
         void closeNotification(DialogObject* dialog);
 
     private:
-        QString mediaLocation(MessageMedia::MessageMediaType mediatype);
+        QString mediaLocation(quint32 mediatype);
         void updatePendingState(MessageObject* message, quint32 peerid);
         void moveMediaTo(const QString &mediafile, const QString& destination);
         void notify(const QString& summary, const QString& body, const QString &icon, qint32 peerid);
