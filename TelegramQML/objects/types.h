@@ -4539,6 +4539,8 @@ class TELEGRAMQMLSHARED_EXPORT MessageMediaObject : public TqObject
     Q_PROPERTY(QString phoneNumber READ phoneNumber WRITE setPhoneNumber NOTIFY phoneNumberChanged)
     Q_PROPERTY(qint32 userId READ userId WRITE setUserId NOTIFY userIdChanged)
     Q_PROPERTY(VideoObject* video READ video WRITE setVideo NOTIFY videoChanged)
+    Q_PROPERTY(QString venueTitle READ venueTitle WRITE setVenueTitle NOTIFY venueTitleChanged)
+    Q_PROPERTY(QString venueAddress READ venueAddress WRITE setVenueAddress NOTIFY venueAddressChanged)
     Q_PROPERTY(QByteArray encryptKey READ encryptKey WRITE setEncryptKey NOTIFY encryptKeyChanged)
     Q_PROPERTY(QByteArray encryptIv READ encryptIv WRITE setEncryptIv NOTIFY encryptIvChanged)
     Q_PROPERTY(quint32 classType READ classType WRITE setClassType NOTIFY classTypeChanged)
@@ -4556,6 +4558,8 @@ public:
         _phoneNumber = another.phoneNumber();
         _userId = another.userId();
         _video = new VideoObject(another.video(), this);
+        _venueTitle = another.title();
+        _venueAddress = another.address();
         _encryptKey = QByteArray();
         _encryptIv = QByteArray();
         _classType = another.classType();
@@ -4690,6 +4694,30 @@ public:
         Q_EMIT changed();
     }
 
+    QString venueTitle() const {
+        return _venueTitle;
+    }
+
+    void setVenueTitle(const QString& value) {
+        if( value == _venueTitle )
+            return;
+
+        _venueTitle = value;
+        Q_EMIT venueTitleChanged();
+    }
+
+    QString venueAddress() const {
+        return _venueAddress;
+    }
+
+    void setVenueAddress(const QString& value) {
+        if( value == _venueAddress )
+            return;
+
+        _venueAddress = value;
+        Q_EMIT venueAddressChanged();
+    }
+
     QByteArray encryptKey() const {
         return _encryptKey;
     }
@@ -4748,6 +4776,10 @@ public:
         Q_EMIT userIdChanged();
         *_video = another.video();
         Q_EMIT videoChanged();
+        _venueTitle = another.title();
+        Q_EMIT venueTitleChanged();
+        _venueAddress = another.address();
+        Q_EMIT venueAddressChanged();
         _classType = another.classType();
         Q_EMIT classTypeChanged();
 
@@ -4766,6 +4798,8 @@ Q_SIGNALS:
     void phoneNumberChanged();
     void userIdChanged();
     void videoChanged();
+    void venueTitleChanged();
+    void venueAddressChanged();
     void encryptKeyChanged();
     void encryptIvChanged();
     void classTypeChanged();
@@ -4781,6 +4815,8 @@ private:
     QString _phoneNumber;
     qint32 _userId;
     VideoObject* _video;
+    QString _venueTitle;
+    QString _venueAddress;
     QByteArray _encryptKey;
     QByteArray _encryptIv;
     quint32 _classType;
