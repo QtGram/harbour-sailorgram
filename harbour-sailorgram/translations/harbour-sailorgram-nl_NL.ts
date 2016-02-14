@@ -282,7 +282,7 @@ De minimale lengte is 5 tekens.</translation>
     </message>
     <message>
         <source>Open media without waiting</source>
-        <translation type="unfinished"></translation>
+        <translation>Media direct openen (dus niet wachten)</translation>
     </message>
 </context>
 <context>
@@ -643,14 +643,14 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     </message>
     <message>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Beantwoorden</translation>
     </message>
 </context>
 <context>
     <name>MessagePreview</name>
     <message>
         <source>You</source>
-        <translation type="unfinished">U</translation>
+        <translation>U</translation>
     </message>
 </context>
 <context>

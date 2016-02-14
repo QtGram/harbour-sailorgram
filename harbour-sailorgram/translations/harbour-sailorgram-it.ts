@@ -282,7 +282,7 @@ La lunghezza minima è di 5 caratteri.</translation>
     </message>
     <message>
         <source>Open media without waiting</source>
-        <translation type="unfinished"></translation>
+        <translation>Apri i media senza attendere</translation>
     </message>
 </context>
 <context>
@@ -350,8 +350,7 @@ non letti</translation>
     </message>
     <message>
         <source>Recent chats:</source>
-        <translation>Chat
-recenti:</translation>
+        <translation>Chat recenti:</translation>
     </message>
 </context>
 <context>
@@ -644,14 +643,14 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Rispondi</translation>
     </message>
 </context>
 <context>
     <name>MessagePreview</name>
     <message>
         <source>You</source>
-        <translation type="unfinished">Tu</translation>
+        <translation>Tu</translation>
     </message>
 </context>
 <context>

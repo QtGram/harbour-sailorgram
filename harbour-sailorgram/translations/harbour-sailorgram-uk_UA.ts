@@ -650,7 +650,7 @@ Do a swype to the right to select a contact</source>
     <name>MessagePreview</name>
     <message>
         <source>You</source>
-        <translation type="unfinished">Ви</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

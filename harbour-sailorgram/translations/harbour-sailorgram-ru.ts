@@ -97,7 +97,7 @@
     </message>
     <message>
         <source>Contributors</source>
-        <translation>Участники</translation>
+        <translation>Участники разработки</translation>
     </message>
     <message>
         <source>Ukrainian</source>
@@ -282,7 +282,7 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Open media without waiting</source>
-        <translation type="unfinished"></translation>
+        <translation>Открывать файлы при получении</translation>
     </message>
 </context>
 <context>
@@ -643,14 +643,14 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Ответить</translation>
     </message>
 </context>
 <context>
     <name>MessagePreview</name>
     <message>
         <source>You</source>
-        <translation type="unfinished">Вы</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -675,7 +675,7 @@ Do a swype to the right to select a contact</source>
     <name>PeerProfile</name>
     <message>
         <source>Group</source>
-        <translation>Группа</translation>
+        <translation>Беседа</translation>
     </message>
 </context>
 <context>
@@ -758,7 +758,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Send %1 file(s)</source>
-        <translation>Отправка %1 файла(-ов)</translation>
+        <translation>Отправить %1 файл(а(ов))</translation>
     </message>
 </context>
 <context>
@@ -793,7 +793,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Send %1 image(s)</source>
-        <translation>Отправка %1 изображения(-ий)</translation>
+        <translation>Отправить %1 изображение(я(ий)</translation>
     </message>
     <message>
         <source>Back</source>
@@ -827,7 +827,7 @@ Do a swype to the right to select a contact</source>
     <name>SelectorMainPage</name>
     <message>
         <source>Send file</source>
-        <translation>Отправить файл</translation>
+        <translation>Прикрепить</translation>
     </message>
     <message>
         <source>Image from gallery</source>
@@ -839,11 +839,11 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Record sound</source>
-        <translation>Записать сообщение</translation>
+        <translation>Аудиосообщение</translation>
     </message>
     <message>
         <source>My location</source>
-        <translation>Моя локация</translation>
+        <translation>Геолокация</translation>
     </message>
     <message>
         <source>Sticker</source>
@@ -851,7 +851,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Browse files</source>
-        <translation>Просмотреть файлы</translation>
+        <translation>Файл</translation>
     </message>
 </context>
 <context>

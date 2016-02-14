@@ -282,7 +282,7 @@ Minimumslængde er fem tegn.</translation>
     </message>
     <message>
         <source>Open media without waiting</source>
-        <translation type="unfinished"></translation>
+        <translation>Åben media uden ventetid</translation>
     </message>
 </context>
 <context>
@@ -469,7 +469,7 @@ meddelelser</translation>
     </message>
     <message>
         <source>Chat information</source>
-        <translation type="unfinished"></translation>
+        <translation>Chatinformation</translation>
     </message>
 </context>
 <context>
@@ -639,18 +639,18 @@ Stryg til venstre for at vælge en kontakt</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Åben</translation>
     </message>
     <message>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Svar</translation>
     </message>
 </context>
 <context>
     <name>MessagePreview</name>
     <message>
         <source>You</source>
-        <translation type="unfinished">Dig</translation>
+        <translation>Dig</translation>
     </message>
 </context>
 <context>
@@ -675,7 +675,7 @@ Stryg til venstre for at vælge en kontakt</translation>
     <name>PeerProfile</name>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppe</translation>
     </message>
 </context>
 <context>
@@ -721,7 +721,7 @@ Stryg til venstre for at vælge en kontakt</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Handlinger</translation>
+        <translation>Handlinger</translation>
     </message>
 </context>
 <context>
@@ -758,7 +758,7 @@ Stryg til venstre for at vælge en kontakt</translation>
     </message>
     <message>
         <source>Send %1 file(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Send %1 fil(er)</translation>
     </message>
 </context>
 <context>
@@ -793,15 +793,15 @@ Stryg til venstre for at vælge en kontakt</translation>
     </message>
     <message>
         <source>Send %1 image(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Send %1 billed(er)</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Tilbage</translation>
+        <translation>Tilbage</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Annuller</translation>
+        <translation>Annuller</translation>
     </message>
 </context>
 <context>

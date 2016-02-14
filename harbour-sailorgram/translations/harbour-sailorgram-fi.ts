@@ -282,7 +282,7 @@ Vähimmäispituus on 5 merkkiä.</translation>
     </message>
     <message>
         <source>Open media without waiting</source>
-        <translation type="unfinished"></translation>
+        <translation>Avaa mediatiedosto ilman viivettä</translation>
     </message>
 </context>
 <context>
@@ -643,14 +643,14 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     </message>
     <message>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Vastaa</translation>
     </message>
 </context>
 <context>
     <name>MessagePreview</name>
     <message>
         <source>You</source>
-        <translation type="unfinished">Sinä</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

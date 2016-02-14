@@ -97,11 +97,11 @@
     </message>
     <message>
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>Contribuintes</translation>
     </message>
     <message>
         <source>Ukrainian</source>
-        <translation type="unfinished"></translation>
+        <translation>Ucraniano</translation>
     </message>
 </context>
 <context>
@@ -278,11 +278,11 @@ A lonxitude mínima é de 5 caracteres.</translation>
     </message>
     <message>
         <source>Bubbles with angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Burbullas con angulo</translation>
     </message>
     <message>
         <source>Open media without waiting</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir a multimedia sen agardar</translation>
     </message>
 </context>
 <context>
@@ -402,27 +402,27 @@ sen ler</translation>
     </message>
     <message>
         <source>Clear errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrar erros</translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrando erros</translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>O log de erros está baleiro</translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation type="unfinished"></translation>
+        <translation>Código do erro:</translation>
     </message>
     <message>
         <source>Function:</source>
-        <translation type="unfinished"></translation>
+        <translation>Funcion:</translation>
     </message>
     <message>
         <source>Message:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mensaxe:</translation>
     </message>
 </context>
 <context>
@@ -469,7 +469,7 @@ sen ler</translation>
     </message>
     <message>
         <source>Chat information</source>
-        <translation type="unfinished"></translation>
+        <translation>Información da conversa</translation>
     </message>
 </context>
 <context>
@@ -635,29 +635,29 @@ Desprace a dereita para seleccionar un contacto</translation>
     </message>
     <message>
         <source>Install Sticker set</source>
-        <translation type="unfinished"></translation>
+        <translation>Instalar set de Sticker</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir</translation>
     </message>
     <message>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Respostar</translation>
     </message>
 </context>
 <context>
     <name>MessagePreview</name>
     <message>
         <source>You</source>
-        <translation type="unfinished">Ti</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MessageSearchItem</name>
     <message>
         <source>You:</source>
-        <translation type="unfinished">Ti:</translation>
+        <translation>Ti:</translation>
     </message>
 </context>
 <context>
@@ -675,7 +675,7 @@ Desprace a dereita para seleccionar un contacto</translation>
     <name>PeerProfile</name>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupo</translation>
     </message>
 </context>
 <context>
@@ -721,7 +721,7 @@ Desprace a dereita para seleccionar un contacto</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Accións</translation>
+        <translation>Accións</translation>
     </message>
 </context>
 <context>
@@ -758,7 +758,7 @@ Desprace a dereita para seleccionar un contacto</translation>
     </message>
     <message>
         <source>Send %1 file(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Enviar %1 arquivo(s)</translation>
     </message>
 </context>
 <context>
@@ -793,15 +793,15 @@ Desprace a dereita para seleccionar un contacto</translation>
     </message>
     <message>
         <source>Send %1 image(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Enviar %1 imaxe(s)</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Voltar</translation>
+        <translation>Voltar</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
 </context>
 <context>
@@ -889,11 +889,11 @@ Desprace a dereita para seleccionar un contacto</translation>
     <name>SelectorStickerPage</name>
     <message>
         <source>Send</source>
-        <translation type="unfinished"></translation>
+        <translation>Enviar</translation>
     </message>
     <message>
         <source>Select a Sticker Set from below</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione un set de Sticker</translation>
     </message>
 </context>
 <context>

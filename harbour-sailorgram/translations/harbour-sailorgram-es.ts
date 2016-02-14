@@ -282,7 +282,7 @@ La longitud mínima es de 5 caracteres.</translation>
     </message>
     <message>
         <source>Open media without waiting</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir multimedia sin esperar</translation>
     </message>
 </context>
 <context>
@@ -641,14 +641,14 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
     </message>
     <message>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Responder</translation>
     </message>
 </context>
 <context>
     <name>MessagePreview</name>
     <message>
         <source>You</source>
-        <translation type="unfinished">Tú</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -282,7 +282,7 @@ Minimilängd är 5 tecken.</translation>
     </message>
     <message>
         <source>Open media without waiting</source>
-        <translation type="unfinished"></translation>
+        <translation>Öppna media utan fördröjning</translation>
     </message>
 </context>
 <context>
@@ -643,14 +643,14 @@ Svep åt vänster för att välja en kontakt</translation>
     </message>
     <message>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Svara</translation>
     </message>
 </context>
 <context>
     <name>MessagePreview</name>
     <message>
         <source>You</source>
-        <translation type="unfinished">Du</translation>
+        <translation>Du</translation>
     </message>
 </context>
 <context>

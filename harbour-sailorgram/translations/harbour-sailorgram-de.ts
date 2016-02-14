@@ -282,7 +282,7 @@ Minimum sind 5 Zeichen.</translation>
     </message>
     <message>
         <source>Open media without waiting</source>
-        <translation type="unfinished"></translation>
+        <translation>Medien sofort öffnen</translation>
     </message>
 </context>
 <context>
@@ -643,14 +643,14 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Antworten</translation>
     </message>
 </context>
 <context>
     <name>MessagePreview</name>
     <message>
         <source>You</source>
-        <translation type="unfinished">Du</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

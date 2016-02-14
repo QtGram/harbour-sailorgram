@@ -48,6 +48,11 @@ emoji.files = $$PWD/res/emoji/*.png
 emoji.path = /usr/share/$$TARGET/emoji
 INSTALLS += emoji
 
+# Sticker Set
+#stickers.files = $$PWD/res/stickers/telegram/*.webp
+#stickers.path = /usr/share/$$TARGET/stickers/telegram
+#INSTALLS += stickers
+
 # Lipstick Config
 lipstick_config.files = $$PWD/lipstick/*.conf
 lipstick_config.path = /usr/share/lipstick/notificationcategories

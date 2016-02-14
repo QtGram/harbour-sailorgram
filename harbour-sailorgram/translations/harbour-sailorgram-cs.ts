@@ -648,7 +648,7 @@ Utři do prava aby jsi vybral kontakt</translation>
     <name>MessagePreview</name>
     <message>
         <source>You</source>
-        <translation type="unfinished">Ty</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
