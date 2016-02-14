@@ -9,18 +9,26 @@ import "../../items/dialog"
 import "../../items/message"
 import "../../items/message/messageitem"
 import "../../js/TelegramHelper.js" as TelegramHelper
+import "../../js/TelegramConstants.js" as TelegramConstants
 
 Page
 {
     property Context context
     property Dialog dialog
     property Chat chat
+    property EncryptedChat encryptedChat
     property User user
 
     id: dialogpage
     allowedOrientations: defaultAllowedOrientations
 
     Component.onCompleted: {
+        if(dialog.encrypted) {
+            chat = context.telegram.encryptedChat(dialog.peer.userId);
+            user = context.telegram.user(chat.adminId === context.telegram.me);
+            return;
+        }
+
         if(TelegramHelper.isChat(dialog))
             chat = context.telegram.chat(dialog.peer.chatId);
         else
@@ -36,9 +44,6 @@ Page
 
         if(context.sailorgram.foregroundDialog === dialogpage.dialog)
             messageview.messagesModel.setReaded();
-
-        messageview.messagesModel.telegram = dialogpage.context.telegram;
-        messageview.messagesModel.dialog = dialogpage.dialog;
 
         context.sailorgram.foregroundDialog = dialogpage.dialog;
         context.sailorgram.closeNotification(dialog);
@@ -79,65 +84,33 @@ Page
 
         MessageView
         {
-            property bool displayKeyboard: false
-
             id: messageview
             anchors { left: parent.left; top: header.bottom; right: parent.right; bottom: parent.bottom }
             context: dialogpage.context
+            dialog: dialogpage.dialog
 
-            headerHeight: {
-                var h = dialogtextinput.height;
+            discadedDialog: {
+                if(!dialogpage.encryptedChat || dialogpage.dialog.encrypted)
+                    return false;
 
-                if(dialogreplypreview.visible)
-                    h += dialogreplypreview.height;
-
-                return h;
+                return dialogpage.encryptedChat.classType === TelegramConstants.typeEncryptedChatDiscarded;
             }
 
-            onAtYEndChanged: {
-                if(!atYEnd || !displayKeyboard)
-                    return;
+            waitingDialog: {
+                if(!dialogpage.encryptedChat || dialogpage.dialog.encrypted)
+                    return false;
 
-                dialogtextinput.focusTextArea();
-                displayKeyboard = false;
+                return dialogpage.encryptedChat.classType === TelegramConstants.typeEncryptedChatWaiting;
             }
 
-            delegate: MessageItem {
-                context: dialogpage.context
-                messageTypesPool: messageview.messageTypesPool
-                message: item
+            waitingUserName: {
+                if(!dialogpage.encryptedChat || !dialogpage.user || dialogpage.dialog.encrypted)
+                    return "";
 
-                onReplyRequested: {
-                    messageview.displayKeyboard = true;
-                    dialogreplypreview.message = item;
-                    messageview.scrollToBottom();
-                }
-            }
+                if(dialogpage.encryptedChat !== TelegramConstants.typeEncryptedChatWaiting)
+                    return "";
 
-            Column {
-                id: headerarea
-                y: messageview.headerItem.y
-                parent: messageview.contentItem
-                width: parent.width
-
-                DialogReplyPreview {
-                    id: dialogreplypreview
-                    width: parent.width
-                    context: dialogpage.context
-                }
-
-                DialogTextInput {
-                    id: dialogtextinput
-                    width: parent.width
-                    messagesModel: messageview.messagesModel
-                    context: dialogpage.context
-                    dialog: dialogpage.dialog
-                    replyMessage: dialogreplypreview.message
-
-                    onMessageSent: {
-                        dialogreplypreview.message = null;
-                    }
-                }
+                return TelegramHelper.completeName(dialogpage.user);
             }
         }
     }

@@ -1,21 +1,12 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 1.0
-import "../../js/TelegramConstants.js" as TelegramConstants
 
-Item
+Label
 {
-    property EncryptedChat chat
-
     id: secretdialogdiscarded
     visible: chat && (chat.classType === TelegramConstants.typeEncryptedChatDiscarded);
     height: Theme.itemSizeSmall
-
-    Label
-    {
-        anchors.fill: parent
-        horizontalAlignment: Text.AlignHCenter
-        verticalAlignment: Text.AlignVCenter
-        text: qsTr("Secret chat cancelled")
-    }
+    horizontalAlignment: Text.AlignHCenter
+    verticalAlignment: Text.AlignVCenter
+    text: qsTr("Secret chat cancelled")
 }

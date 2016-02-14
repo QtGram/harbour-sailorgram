@@ -45,15 +45,6 @@ Page
     property Component conversationItemComponent
     property Component secretConversationItemComponent
 
-    function displayDialog(dialog) {
-        if(dialog.encrypted) {
-            pageStack.push(Qt.resolvedUrl("../secretdialogs/SecretDialogPage.qml"), { "context": dialogspage.context, "dialog": dialog });
-            return;
-        }
-
-        pageStack.push(Qt.resolvedUrl("DialogPage.qml"), { "context": dialogspage.context, "dialog": dialog })
-    }
-
     id: dialogspage
     allowedOrientations: defaultAllowedOrientations
 
@@ -118,7 +109,7 @@ Page
                     id: dialogitem
                     contentWidth: parent.width
                     contentHeight: Theme.itemSizeSmall
-                    onClicked: displayDialog(item)
+                    onClicked: pageStack.push(Qt.resolvedUrl("DialogPage.qml"), { "context": dialogspage.context, "dialog": item })
 
                     menu: ContextMenu {
                         MenuItem {
