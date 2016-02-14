@@ -15,6 +15,7 @@ Row
     readonly property real contentWidth: Math.max(dummytextcontent.contentWidth, dummyuser.contentWidth) + (showQuoteRect ? rect.width : 0) + spacing
 
     property Context context
+    property Dialog dialog
     property Message message
     property real maxWidth
     property string titlePrefix: ""

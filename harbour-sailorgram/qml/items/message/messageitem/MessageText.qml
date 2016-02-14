@@ -9,6 +9,7 @@ import "../../../js/TelegramAction.js" as TelegramAction
 Item
 {
     property Context context
+    property Dialog dialog
     property Message message
 
     property real calculatedWidth: TelegramHelper.isServiceMessage(message) ?

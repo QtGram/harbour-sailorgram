@@ -10,7 +10,6 @@ import "../../items/message/messageitem"
 
 SilicaListView
 {
-    property alias messagesModel: messagesmodel
     property alias waitingUserName: secretdialogwaiting.waitingUser
     property bool discadedDialog: false
     property bool waitingDialog: false
@@ -25,6 +24,14 @@ SilicaListView
     spacing: Theme.paddingMedium
     cacheBuffer: Screen.height
     clip: true
+
+    function setReaded() {
+        messagesmodel.setReaded();
+    }
+
+    function loadMore() {
+        messagesmodel.loadMore();
+    }
 
     onAtYEndChanged: {
         if(!atYEnd || !displayKeyboard)
@@ -71,6 +78,7 @@ SilicaListView
     delegate: MessageItem {
         context: messageview.context
         messageTypesPool: messageview.messageTypesPool
+        dialog: messageview.dialog
         message: item
 
         onReplyRequested: {
@@ -90,6 +98,7 @@ SilicaListView
             id: dialogreplypreview
             width: parent.width
             context: messageview.context
+            dialog: messageview.dialog
         }
 
         DialogTextInput {

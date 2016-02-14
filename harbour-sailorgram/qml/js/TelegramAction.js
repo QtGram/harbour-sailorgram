@@ -6,7 +6,7 @@
 function actionType(telegram, dialog, message) {
    var action = message.action;
 
-   if(!action)
+   if(!dialog || !action)
        return "???";
 
    if(action.classType === TelegramConstants.typeMessageActionChatCreate) {

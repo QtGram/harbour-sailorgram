@@ -13,6 +13,7 @@ ListItem
 {
     property Context context
     property MessageTypesPool messageTypesPool
+    property Dialog dialog
     property Message message
 
     signal replyRequested()
@@ -251,6 +252,7 @@ ListItem
 
             maxWidth: content.maxw - 2 * Theme.paddingMedium
             context: messageitem.context
+            dialog: messageitem.dialog
             message: messageitem.message
         }
     }

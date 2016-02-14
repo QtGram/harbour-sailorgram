@@ -44,8 +44,8 @@ Page
         if(!canNavigateForward)
             pageStack.pushAttached(Qt.resolvedUrl("DialogInfoPage.qml"), { "context": dialogpage.context, "dialog": dialogpage.dialog, "chat": dialogpage.chat, "user": dialogpage.user });
 
-        messageview.messagesModel.dialog = dialogpage.dialog
-        messageview.messagesModel.setReaded();
+        messageview.dialog = dialogpage.dialog
+        messageview.setReaded();
 
         context.sailorgram.foregroundDialog = dialogpage.dialog;
         context.sailorgram.closeNotification(dialog);
@@ -68,7 +68,7 @@ Page
             MenuItem
             {
                 text: qsTr("Load more messages")
-                onClicked: messageview.messagesModel.loadMore();
+                onClicked: messageview.loadMore();
             }
         }
 
