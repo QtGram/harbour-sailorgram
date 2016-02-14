@@ -23,16 +23,18 @@ Page
     allowedOrientations: defaultAllowedOrientations
 
     Component.onCompleted: {
+        var peerid = TelegramHelper.peerId(dialog);
+
         if(dialog.encrypted) {
-            chat = context.telegram.encryptedChat(dialog.peer.userId);
-            user = context.telegram.user(chat.adminId === context.telegram.me);
+            encryptedChat = context.telegram.encryptedChat(peerid);
+            user = context.telegram.user(TelegramHelper.encryptedUserId(context, encryptedChat));
             return;
         }
 
         if(TelegramHelper.isChat(dialog))
-            chat = context.telegram.chat(dialog.peer.chatId);
+            chat = context.telegram.chat(peerid);
         else
-            user = context.telegram.user(dialog.peer.userId);
+            user = context.telegram.user(peerid);
     }
 
     onStatusChanged: {

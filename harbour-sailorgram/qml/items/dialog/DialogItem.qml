@@ -9,20 +9,29 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 import "../../js/TelegramAction.js" as TelegramAction
 import "../../js/TelegramConstants.js" as TelegramConstants
 
-Item
+ListItem
 {
     property Context context
     property var dialog
     property User user
     property Chat chat
+    property EncryptedChat encryptedChat
     property bool muted: context.telegram.userData.isMuted(TelegramHelper.peerId(dialogitem.dialog))
     property Message message: context.telegram.message(dialog.topMessage);
 
     onDialogChanged: {
+        var peerid = TelegramHelper.peerId(dialogitem.dialog);
+
+        if(dialog.encrypted) {
+            encryptedChat = context.telegram.encryptedChat(peerid);
+            user = context.telegram.user(TelegramHelper.encryptedUserId(context, encryptedChat));
+            return;
+        }
+
         if(TelegramHelper.isChat(dialog))
-            chat = context.telegram.chat(dialog.peer.chatId);
+            chat = context.telegram.chat(peerid);
         else
-            user = context.telegram.user(dialog.peer.userId);
+            user = context.telegram.user(peerid);
     }
 
     id: dialogitem
@@ -70,12 +79,18 @@ Item
 
                 Label {
                     id: lbltitle
-                    text: TelegramHelper.isChat(dialog) ? chat.title : TelegramHelper.completeName(user)
                     verticalAlignment: Text.AlignVCenter
                     height: parent.height
                     color: Theme.highlightColor
                     elide: Text.ElideRight
                     horizontalAlignment: Text.AlignLeft
+
+                    text: {
+                        if(TelegramHelper.isChat(dialog))
+                            return chat.title;
+
+                        return TelegramHelper.completeName(user);
+                    }
 
                     width: {
                         var w = parent.width - msgstatus.contentWidth;

@@ -31,19 +31,16 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
-import "../../models"
 import "../../components"
+import "../../models"
 import "../../components/search"
 import "../../menus/dialog"
 import "../../items/dialog"
 import "../../js/TelegramHelper.js" as TelegramHelper
-import "../../js/TelegramConstants.js" as TelegramConstants
 
 Page
 {
     property Context context
-    property Component conversationItemComponent
-    property Component secretConversationItemComponent
 
     id: dialogspage
     allowedOrientations: defaultAllowedOrientations
@@ -87,7 +84,7 @@ Page
 
             onMessageClicked: {
                 var dialog = context.telegram.messageDialog(message.id);
-                displayDialog(dialog);
+                pageStack.push(Qt.resolvedUrl("DialogPage.qml"), { "context": dialogspage.context, "dialog": dialog })
             }
 
             SilicaListView
@@ -105,10 +102,12 @@ Page
                 anchors { left: parent.left; top: searchlist.searchBox.bottom; right: parent.right; bottom: parent.bottom }
                 visible: searchlist.count <= 0
 
-                delegate: ListItem {
+                delegate: DialogItem {
                     id: dialogitem
                     contentWidth: parent.width
                     contentHeight: Theme.itemSizeSmall
+                    context: dialogspage.context
+                    dialog: item
                     onClicked: pageStack.push(Qt.resolvedUrl("DialogPage.qml"), { "context": dialogspage.context, "dialog": item })
 
                     menu: ContextMenu {
@@ -133,28 +132,6 @@ Page
                                 });
                             }
                         }
-                    }
-
-                    Component.onCompleted: {
-                        if(!item.encrypted && !conversationItemComponent) {
-                            conversationItemComponent = Qt.createComponent("../../items/dialog/DialogItem.qml");
-
-                            if(conversationItemComponent.status === Component.Error) {
-                                console.log(conversationItemComponent.errorString());
-                                return;
-                            }
-                        }
-                        else if(item.encrypted && !secretConversationItemComponent) {
-                            secretConversationItemComponent = Qt.createComponent("../../items/secretdialog/SecretDialogItem.qml");
-
-                            if(secretConversationItemComponent.status === Component.Error) {
-                                console.log(secretConversationItemComponent.errorString());
-                                return;
-                            }
-                        }
-
-                        var c = !item.encrypted ? conversationItemComponent : secretConversationItemComponent;
-                        c.createObject(contentItem, {"anchors.fill": contentItem, "context": dialogspage.context, "dialog": item });
                     }
                 }
             }

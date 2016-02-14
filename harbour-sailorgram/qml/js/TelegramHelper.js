@@ -166,9 +166,17 @@ function isSticker(context, message)
     return false;
 }
 
+function encryptedUserId(context, encryptedchat)
+{
+    if(encryptedchat.adminId === context.telegram.me)
+        return encryptedchat.participantId;
+
+    return encryptedchat.adminId;
+}
+
 function peerId(dialog)
 {
-    if(dialog.peer.classType === TelegramConstants.typePeerChat)
+    if(!dialog.encrypted && (dialog.peer.classType === TelegramConstants.typePeerChat))
         return dialog.peer.chatId;
 
     return dialog.peer.userId;
