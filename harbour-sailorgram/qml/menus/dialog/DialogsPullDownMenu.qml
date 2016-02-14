@@ -9,8 +9,11 @@ import "../../js/TelegramConstants.js" as TelegramConstants
 PullDownMenu
 {
     property Context context
+    property bool showSearchField: false
 
     id: dialogspulldownmenu
+
+    onShowSearchFieldChanged: searchfield.text = showSearchField ? qsTr("Hide Search Field") : qsTr("Show Search Field")
 
     MenuItem
     {
@@ -43,6 +46,13 @@ PullDownMenu
         text: qsTr("New Group")
         context: dialogspulldownmenu.context
         onClicked: pageStack.push(Qt.resolvedUrl("../../pages/chat/CreateChatPage.qml"), { "context": dialogspulldownmenu.context })
+    }
+
+    MenuItem
+    {
+        id: searchfield
+        text: qsTr("Show Search Field")
+        onClicked: showSearchField = showSearchField ? false : true
     }
 }
 
