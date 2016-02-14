@@ -28,6 +28,9 @@ QtObject
         return 0;
     }
 
+    readonly property string hereAppId: "MqR7KyY6dZpTbKiFwc3h"
+    readonly property string hereAppCode: "zfYp6V9Ou_wDQn4NVqMofA"
+
     property bool sendwithreturn: false
     property bool backgrounddisabled: false
     property bool chatheaderhidden: false
@@ -43,6 +46,14 @@ QtObject
             ver += " BETA " + betanum;
 
         return ver;
+    }
+
+    function locationThumbnail(latitude, longitude, width, height, z) {
+        return "https://maps.nlp.nokia.com/mia/1.6/mapview?" + "app_id=" + hereAppId + "&"
+                                                             + "app_code=" + hereAppCode + "&"
+                                                             + "nord&f=0&poithm=1&poilbl=0&"
+                                                             + "ctr=" + latitude + "," + longitude + "&"
+                                                             + "w=" + width + "&h=" + height + "&z=" + z;
     }
 
     property Document currentSticker: null
