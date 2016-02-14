@@ -44,8 +44,8 @@ Page
         if(!canNavigateForward)
             pageStack.pushAttached(Qt.resolvedUrl("DialogInfoPage.qml"), { "context": dialogpage.context, "dialog": dialogpage.dialog, "chat": dialogpage.chat, "user": dialogpage.user });
 
-        if(context.sailorgram.foregroundDialog === dialogpage.dialog)
-            messageview.messagesModel.setReaded();
+        messageview.messagesModel.dialog = dialogpage.dialog
+        messageview.messagesModel.setReaded();
 
         context.sailorgram.foregroundDialog = dialogpage.dialog;
         context.sailorgram.closeNotification(dialog);
@@ -89,7 +89,6 @@ Page
             id: messageview
             anchors { left: parent.left; top: header.bottom; right: parent.right; bottom: parent.bottom }
             context: dialogpage.context
-            dialog: dialogpage.dialog
 
             discadedDialog: {
                 if(!dialogpage.encryptedChat || dialogpage.dialog.encrypted)
