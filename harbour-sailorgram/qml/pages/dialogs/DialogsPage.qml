@@ -64,7 +64,6 @@ Page
         {
             id: dialogsmenu
             context: dialogspage.context
-            onShowSearchFieldChanged: searchlist.state = dialogsmenu.showSearchField ? "SearchBoxVisible" : "SearchBoxHidden"
         }
 
         PageHeader
@@ -102,7 +101,7 @@ Page
                 spacing: Theme.paddingMedium
                 clip: true
                 model: context.dialogs
-                anchors { left: parent.left; top: searchlist.top; right: parent.right; bottom: parent.bottom }
+                anchors { left: parent.left; top: searchlist.searchBox.bottom; right: parent.right; bottom: parent.bottom }
                 visible: searchlist.count <= 0
 
                 delegate: DialogItem {
@@ -138,26 +137,6 @@ Page
                     }
                 }
             }
-
-            states: [
-                State {
-                    name: "SearchBoxVisible"
-                    AnchorChanges { target: lvdialogs; anchors.top: searchlist.searchBox.bottom }
-                    PropertyChanges { target: searchlist.searchBox; visible: true }
-                },
-                State {
-                    name: "SearchBoxHidden"
-                    PropertyChanges { target: searchlist.searchBox; text: "" }
-                    PropertyChanges { target: searchlist.searchBox; visible: false }
-                    AnchorChanges { target: lvdialogs; anchors.top: searchlist.top }
-                }
-            ]
-
-            transitions: Transition {
-                AnchorAnimation { duration: 150 }
-            }
-
-            Component.onCompleted: searchlist.state = "SearchBoxHidden"
         }
     }
 }

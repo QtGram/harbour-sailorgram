@@ -9,11 +9,8 @@ import "../../js/TelegramConstants.js" as TelegramConstants
 PullDownMenu
 {
     property Context context
-    property bool showSearchField: false
 
     id: dialogspulldownmenu
-
-    onShowSearchFieldChanged: searchfield.text = showSearchField ? qsTr("Hide Search Field") : qsTr("Show Search Field")
 
     MenuItem
     {
@@ -51,8 +48,8 @@ PullDownMenu
     MenuItem
     {
         id: searchfield
-        text: qsTr("Show Search Field")
-        onClicked: showSearchField = showSearchField ? false : true
+        text: context.showsearchfield ? qsTr("Hide Search Field") : qsTr("Show Search Field")
+        onClicked: context.showsearchfield = context.showsearchfield ? false : true
     }
 }
 

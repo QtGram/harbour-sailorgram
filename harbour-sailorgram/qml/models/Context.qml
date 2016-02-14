@@ -34,6 +34,7 @@ QtObject
     property bool bubbleshidden: false
     property bool angledbubbles: false
     property bool immediateopen: false
+    property bool showsearchfield: false
     property int bubblesopacity: 100
 
     function versionString() {
