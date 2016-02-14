@@ -13,12 +13,27 @@ Item
     signal messageClicked(var message)
 
     id: searchlist
-    height: searchbox.height + lvsearch.contentHeight
+    height: {
+        var h = lvsearch.contentHeight;
+        if(searchbox.visible)
+            h += searchbox.height;
+        return h;
+    }
 
     SearchField
     {
         id: searchbox
         anchors { left: parent.left; right: parent.right }
+        visible: context.showsearchfield
+        height: visible ? Theme.itemSizeSmall : 0
+
+        Behavior on height { NumberAnimation { duration: 150 } }
+
+        onVisibleChanged: {
+            if(visible)
+                return;
+            text = "";
+        }
     }
 
     SilicaListView
