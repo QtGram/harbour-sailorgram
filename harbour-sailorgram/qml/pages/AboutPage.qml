@@ -135,7 +135,7 @@ Page
                     id: lblcontributors
                     anchors { left: parent.left; top: lbldev.bottom; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
                     title: qsTr("Contributors")
-                    text: "toxip, thebootroo, Maldela"
+                    text: "toxip, thebootroo, Maldela, mentaljam"
                 }
 
                 InfoLabel

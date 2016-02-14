@@ -20,7 +20,7 @@ Item
     Label
     {
         id: lblconnecting
-        text: qsTr("Connecting...")
+        text: qsTr("Not connected")
         anchors { left: busyindicator.right; top: parent.top; bottom: parent.bottom; leftMargin: Theme.paddingMedium }
         color: Theme.secondaryHighlightColor
         verticalAlignment: Text.AlignVCenter
