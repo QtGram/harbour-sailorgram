@@ -58,8 +58,8 @@ ListItem
         PeerImage
         {
             id: conversationimage
-            width: dialogitem.height
-            height: dialogitem.height
+            width: dialogitem.contentHeight
+            height: dialogitem.contentHeight
             context: dialogitem.context
             dialog: dialogitem.dialog
             chat: dialogitem.chat
@@ -73,7 +73,7 @@ ListItem
 
             Row
             {
-                height: dialogitem.height / 2
+                height: dialogitem.contentHeight / 2
                 anchors { left: parent.left; right: parent.right; rightMargin: Theme.paddingMedium }
                 spacing: Theme.paddingSmall
 
@@ -129,7 +129,7 @@ ListItem
 
             Row
             {
-                height: dialogitem.height / 2
+                height: dialogitem.contentHeight / 2
                 anchors { left: parent.left; right: parent.right; rightMargin: Theme.paddingMedium }
 
                 Label

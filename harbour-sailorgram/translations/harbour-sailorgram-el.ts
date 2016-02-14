@@ -733,14 +733,6 @@ Do a swype to the right to select a contact</source>
     </message>
 </context>
 <context>
-    <name>SecretDialogPage</name>
-    <message>
-        <source>Load more messages</source>
-        <translation>Φόρτωση περισσοτέρων μηνυμάτων
-</translation>
-    </message>
-</context>
-<context>
     <name>SecretDialogWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>

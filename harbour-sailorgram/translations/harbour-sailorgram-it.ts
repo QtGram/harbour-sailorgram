@@ -733,13 +733,6 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
 </context>
 <context>
-    <name>SecretDialogPage</name>
-    <message>
-        <source>Load more messages</source>
-        <translation>Carica altri messaggi</translation>
-    </message>
-</context>
-<context>
     <name>SecretDialogWaiting</name>
     <message>
         <source>Waiting for %1 to get online</source>

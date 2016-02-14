@@ -212,13 +212,11 @@ DISTFILES += \
     qml/items/dialog/DialogItem.qml \
     qml/pages/dialogs/DialogsPage.qml \
     qml/items/secretdialog/SecretDialogDiscarded.qml \
-    qml/items/secretdialog/SecretDialogItem.qml \
     qml/pages/dialogs/DialogInfoPage.qml \
     qml/pages/dialogs/DialogPage.qml \
     qml/items/message/MessageView.qml \
     qml/components/telegram/TelegramBackground.qml \
     qml/items/dialog/DialogTextInput.qml \
-    qml/pages/secretdialogs/SecretDialogPage.qml \
     qml/pages/secretdialogs/CreateSecretDialogPage.qml \
     qml/items/secretdialog/SecretDialogWaiting.qml \
     qml/pages/contacts/ContactsPage.qml \
