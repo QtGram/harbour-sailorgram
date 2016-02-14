@@ -49,7 +49,9 @@ Page
         if(dialogspage.status !== PageStatus.Active)
             return;
 
-        pageStack.pushAttached(Qt.resolvedUrl("../contacts/ContactsPage.qml"), { "context": dialogspage.context });
+        if(!canNavigateForward)
+            pageStack.pushAttached(Qt.resolvedUrl("../contacts/ContactsPage.qml"), { "context": dialogspage.context });
+
         context.sailorgram.foregroundDialog = null; // Reset Foreground Dialog
         context.dialogs.telegram = context.telegram; // Balance load: Load after DialogsPage is displayed
     }
