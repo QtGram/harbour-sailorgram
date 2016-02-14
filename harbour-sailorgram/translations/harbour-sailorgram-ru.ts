@@ -288,8 +288,8 @@ Minimum length is 5 characters.</source>
 <context>
     <name>ConnectingLabel</name>
     <message>
-        <source>Connecting...</source>
-        <translation>Подключение...</translation>
+        <source>Not connected</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -288,8 +288,8 @@ La longueur minimum est de 5 caractères.</translation>
 <context>
     <name>ConnectingLabel</name>
     <message>
-        <source>Connecting...</source>
-        <translation>Connexion en cours ...</translation>
+        <source>Not connected</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

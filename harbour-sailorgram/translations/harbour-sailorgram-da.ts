@@ -288,8 +288,8 @@ Minimumslængde er fem tegn.</translation>
 <context>
     <name>ConnectingLabel</name>
     <message>
-        <source>Connecting...</source>
-        <translation>Forbinder...</translation>
+        <source>Not connected</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

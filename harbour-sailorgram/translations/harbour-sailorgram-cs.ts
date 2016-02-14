@@ -288,8 +288,8 @@ Minimální délka je 5 znaků .</translation>
 <context>
     <name>ConnectingLabel</name>
     <message>
-        <source>Connecting...</source>
-        <translation>Připojuji...</translation>
+        <source>Not connected</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

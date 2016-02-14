@@ -288,8 +288,8 @@ De minimale lengte is 5 tekens.</translation>
 <context>
     <name>ConnectingLabel</name>
     <message>
-        <source>Connecting...</source>
-        <translation>Bezig met verbinden...</translation>
+        <source>Not connected</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -61,6 +61,11 @@ ListItem
         if(!message.media)
             return;
 
+        if(message.media.classType === TelegramConstants.typeMessageMediaGeo) {
+            Qt.openUrlExternally("geo:" + message.media.geo.lat + "," + message.media.geo.longitude)
+            return;
+        }
+
         var type = "";
         var canbeviewed = (message.media.classType === TelegramConstants.typeMessageMediaPhoto) ||
                           (message.media.classType === TelegramConstants.typeMessageMediaVideo) ||
