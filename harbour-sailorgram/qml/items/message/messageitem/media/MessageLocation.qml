@@ -1,29 +1,47 @@
 import QtQuick 2.1
+import Sailfish.Silica 1.0
+import "../"
+import "../../../../js/ColorScheme.js" as ColorScheme
+import "../../../../js/TelegramConstants.js" as TelegramConstants
 
 MessageMediaItem
 {
-    readonly property string appId: "MqR7KyY6dZpTbKiFwc3h"
-    readonly property string appCode: "zfYp6V9Ou_wDQn4NVqMofA"
-
-    function locationThumbnail(latitude, longitude, z)
-    {
-        return "https://maps.nlp.nokia.com/mia/1.6/mapview?" + "app_id=" + appId + "&"
-                                                             + "app_code=" + appCode + "&"
-                                                             + "nord&f=0&poithm=1&poilbl=0&"
-                                                             + "ctr=" + latitude + "," + longitude + "&"
-                                                             + "w=" + width + "&h=" + height + "&z=" + z;
-    }
-
     id: messagelocation
     contentWidth: maxWidth
     contentHeight: maxWidth
+
+    MessageTextContent
+    {
+        id: mtctextcontent
+        width: parent.width
+        verticalAlignment: Text.AlignTop
+        font.pixelSize: Theme.fontSizeSmall
+        emojiPath: context.sailorgram.emojiPath
+        wrapMode: Text.Wrap
+        visible: message.media.classType === TelegramConstants.typeMessageMediaVenue
+        height: visible ? undefined : 0
+        color: ColorScheme.colorizeText(message, context)
+        linkColor: ColorScheme.colorizeLink(message, context)
+
+        rawText: {
+            return message.media.venueTitle + "\n" +
+                   message.media.venueAddress;
+        }
+
+        horizontalAlignment: {
+            if(!message.out)
+                return Text.AlignRight;
+
+            return Text.AlignLeft;
+        }
+    }
 
     Image
     {
         id: mapthumbnail
         asynchronous: true
         cache: true
-        anchors.fill: parent
-        source: locationThumbnail(message.media.geo.lat, message.media.geo.longitude, 14);
+        anchors { left: parent.left; right: parent.right; top: mtctextcontent.bottom; bottom: parent.bottom }
+        source: context.locationThumbnail(message.media.geo.lat, message.media.geo.longitude, width, height, 14);
     }
 }
