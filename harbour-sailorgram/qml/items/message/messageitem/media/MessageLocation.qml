@@ -19,6 +19,7 @@ MessageMediaItem
         emojiPath: context.sailorgram.emojiPath
         wrapMode: Text.Wrap
         visible: message.media.classType === TelegramConstants.typeMessageMediaVenue
+        height: visible ? undefined : 0
         color: ColorScheme.colorizeText(message, context)
         linkColor: ColorScheme.colorizeLink(message, context)
 
