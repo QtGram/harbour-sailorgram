@@ -31,7 +31,7 @@ var typeMessageMediaUnsupported = 0x9f84f49e;
 var typeMessageMediaDocument = 0x2fda2204;
 var typeMessageMediaAudio = 0xc6b68300;
 var typeMessageMediaWebPage = 0xa32dd600;
-var typeMessageMediaVenue = 0x7912b71;
+var typeMessageMediaVenue = 0x7912b71f;
 
 /* Document Media Attributes Constants */
 var typeDocumentAttributeImageSize = 0x6c37c15c;

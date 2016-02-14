@@ -62,7 +62,7 @@ ListItem
         if(!message.media)
             return;
 
-        if(message.media.classType === TelegramConstants.typeMessageMediaGeo) {
+        if((message.media.classType === TelegramConstants.typeMessageMediaGeo) || (message.media.classType === TelegramConstants.typeMessageMediaVenue)) {
             Qt.openUrlExternally("geo:" + message.media.geo.lat + "," + message.media.geo.longitude)
             return;
         }
@@ -234,7 +234,7 @@ ListItem
                     messageTypesPool.audioComponent.createObject(mediacontainer, params);
                 else if(message.media.classType === TelegramConstants.typeMessageMediaVideo)
                     messageTypesPool.videoComponent.createObject(mediacontainer, params);
-                else if(message.media.classType === TelegramConstants.typeMessageMediaGeo)
+                else if((message.media.classType === TelegramConstants.typeMessageMediaGeo) || (message.media.classType === TelegramConstants.typeMessageMediaVenue))
                     messageTypesPool.locationComponent.createObject(mediacontainer, params);
             }
         }
