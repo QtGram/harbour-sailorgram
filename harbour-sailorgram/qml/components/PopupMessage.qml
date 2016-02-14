@@ -46,7 +46,6 @@ Rectangle
             verticalAlignment: Text.AlignVCenter
             wrapMode: Text.NoWrap
             elide: Text.ElideRight
-            clip: true
         }
 
         onClicked: {

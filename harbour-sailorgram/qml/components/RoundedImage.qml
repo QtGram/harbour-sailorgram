@@ -22,7 +22,6 @@ Item
     {
         id: mask
         anchors.fill: parent
-        clip: true
         radius: width * 0.5
         visible: false
         color: "black"
