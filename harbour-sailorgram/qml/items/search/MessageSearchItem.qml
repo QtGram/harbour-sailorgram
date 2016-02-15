@@ -134,7 +134,7 @@ ListItem
                         if(TelegramHelper.isServiceMessage(message))
                             return TelegramAction.actionType(context.telegram, dialog, message);
 
-                        return TelegramHelper.firstMessageLine(message);
+                        return TelegramHelper.firstMessageLine(context, message);
                     }
                 }
             }

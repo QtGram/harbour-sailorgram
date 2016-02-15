@@ -1026,10 +1026,6 @@ Do a swype to the right to select a contact</source>
         <translation>Φώτο</translation>
     </message>
     <message>
-        <source>Geo</source>
-        <translation>Γέω</translation>
-    </message>
-    <message>
         <source>Last Seen %1</source>
         <translation>Τελευταία Επίσκεψη %1</translation>
     </message>
@@ -1048,6 +1044,14 @@ Do a swype to the right to select a contact</source>
     <message>
         <source>%1 members are typing...</source>
         <translation>%1 μέλη πληκτρολογούν...</translation>
+    </message>
+    <message>
+        <source>Sticker</source>
+        <translation type="unfinished">Ετικέτα </translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

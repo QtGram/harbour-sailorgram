@@ -1024,10 +1024,6 @@ Svep åt vänster för att välja en kontakt</translation>
         <translation>Foto</translation>
     </message>
     <message>
-        <source>Geo</source>
-        <translation>Geo</translation>
-    </message>
-    <message>
         <source>Last Seen %1</source>
         <translation>Sågs senast %1</translation>
     </message>
@@ -1046,6 +1042,14 @@ Svep åt vänster för att välja en kontakt</translation>
     <message>
         <source>%1 members are typing...</source>
         <translation>%1 medlemmar skriver...</translation>
+    </message>
+    <message>
+        <source>Sticker</source>
+        <translation type="unfinished">Märke</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

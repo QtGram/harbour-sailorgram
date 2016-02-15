@@ -130,7 +130,7 @@ Row
                 if(TelegramHelper.isMediaMessage(message) && (message.media.classType === TelegramConstants.typeMessageMediaDocument))
                     return filehandler.fileName;
 
-                return TelegramHelper.messageContent(message);
+                return TelegramHelper.messageContent(context, message);
             }
         }
     }

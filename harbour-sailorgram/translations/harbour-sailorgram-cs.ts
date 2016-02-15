@@ -1022,10 +1022,6 @@ Utři do prava aby jsi vybral kontakt</translation>
         <translation>Fotka</translation>
     </message>
     <message>
-        <source>Geo</source>
-        <translation>GPS</translation>
-    </message>
-    <message>
         <source>Last Seen %1</source>
         <translation>Naposled uviděn %1</translation>
     </message>
@@ -1044,6 +1040,14 @@ Utři do prava aby jsi vybral kontakt</translation>
     <message>
         <source>%1 members are typing...</source>
         <translation>%1 členú psají</translation>
+    </message>
+    <message>
+        <source>Sticker</source>
+        <translation type="unfinished">Nálepka</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

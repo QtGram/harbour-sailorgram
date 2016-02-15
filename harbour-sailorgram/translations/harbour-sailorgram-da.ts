@@ -1024,10 +1024,6 @@ Stryg til venstre for at vælge en kontakt</translation>
         <translation>Foto</translation>
     </message>
     <message>
-        <source>Geo</source>
-        <translation>Geo</translation>
-    </message>
-    <message>
         <source>Last Seen %1</source>
         <translation>Sidst Set %1</translation>
     </message>
@@ -1046,6 +1042,14 @@ Stryg til venstre for at vælge en kontakt</translation>
     <message>
         <source>%1 members are typing...</source>
         <translation>%1 medlemmer skriver...</translation>
+    </message>
+    <message>
+        <source>Sticker</source>
+        <translation type="unfinished">Mærke</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

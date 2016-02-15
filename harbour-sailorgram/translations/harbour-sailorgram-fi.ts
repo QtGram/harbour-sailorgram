@@ -1024,10 +1024,6 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
         <translation>Kuva</translation>
     </message>
     <message>
-        <source>Geo</source>
-        <translation>Sijainti</translation>
-    </message>
-    <message>
         <source>Last Seen %1</source>
         <translation>Viimeksi paikalla: %1</translation>
     </message>
@@ -1046,6 +1042,14 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     <message>
         <source>%1 members are typing...</source>
         <translation>%1 jäsentä kirjoittaa...</translation>
+    </message>
+    <message>
+        <source>Sticker</source>
+        <translation type="unfinished">Tarra</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

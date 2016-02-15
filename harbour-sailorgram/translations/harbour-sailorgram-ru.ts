@@ -1024,10 +1024,6 @@ Do a swype to the right to select a contact</source>
         <translation>Фото</translation>
     </message>
     <message>
-        <source>Geo</source>
-        <translation>Местоположение</translation>
-    </message>
-    <message>
         <source>Last Seen %1</source>
         <translation>Был в сети в %1</translation>
     </message>
@@ -1046,6 +1042,14 @@ Do a swype to the right to select a contact</source>
     <message>
         <source>%1 members are typing...</source>
         <translation>%1 пишут...</translation>
+    </message>
+    <message>
+        <source>Sticker</source>
+        <translation type="unfinished">Стикер</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

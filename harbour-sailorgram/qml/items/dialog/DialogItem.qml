@@ -182,10 +182,7 @@ ListItem
                     linkColor: Theme.secondaryColor
 
                     color: {
-                        if(dialog.typingUsers.length > 0)
-                            return Theme.highlightColor;
-
-                        if(TelegramHelper.isServiceMessage(message))
+                        if((dialog.typingUsers.length > 0) || TelegramHelper.isServiceMessage(message) || TelegramHelper.isMediaMessage(message))
                             return Theme.highlightColor;
 
                         return Theme.primaryColor;
@@ -211,7 +208,7 @@ ListItem
                         if(TelegramHelper.isServiceMessage(message))
                             return TelegramAction.actionType(context.telegram, dialog, message);
 
-                        return TelegramHelper.firstMessageLine(message);
+                        return TelegramHelper.firstMessageLine(context, message);
                     }
                 }
 

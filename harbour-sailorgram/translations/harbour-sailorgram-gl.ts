@@ -1024,10 +1024,6 @@ Desprace a dereita para seleccionar un contacto</translation>
         <translation>Foto</translation>
     </message>
     <message>
-        <source>Geo</source>
-        <translation>Xeo</translation>
-    </message>
-    <message>
         <source>Last Seen %1</source>
         <translation>Última vez %1</translation>
     </message>
@@ -1046,6 +1042,14 @@ Desprace a dereita para seleccionar un contacto</translation>
     <message>
         <source>%1 members are typing...</source>
         <translation>%1 membro esta escribindo...</translation>
+    </message>
+    <message>
+        <source>Sticker</source>
+        <translation type="unfinished">Sticker</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

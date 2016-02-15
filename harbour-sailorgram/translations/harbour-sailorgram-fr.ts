@@ -1024,10 +1024,6 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
         <translation>Photo</translation>
     </message>
     <message>
-        <source>Geo</source>
-        <translation>Géo</translation>
-    </message>
-    <message>
         <source>Last Seen %1</source>
         <translation>Dernière connexion : %1</translation>
     </message>
@@ -1046,6 +1042,14 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
     <message>
         <source>%1 members are typing...</source>
         <translation>%1 participants écrivent ...</translation>
+    </message>
+    <message>
+        <source>Sticker</source>
+        <translation type="unfinished">Sticker</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -182,14 +182,18 @@ function peerId(dialog)
     return dialog.peer.userId;
 }
 
-function messageContent(message)
+function messageContent(context, message)
 {
     if(message.media)
     {
         switch(message.media.classType)
         {
-            case TelegramConstants.typeMessageMediaDocument:
+            case TelegramConstants.typeMessageMediaDocument: {
+                if(context.telegram.documentIsSticker(message.media.document))
+                    return qsTr("Sticker");
+
                 return qsTr("Document");
+            }
 
             case TelegramConstants.typeMessageMediaContact:
                 return qsTr("Contact");
@@ -207,7 +211,8 @@ function messageContent(message)
                 return qsTr("Photo");
 
             case TelegramConstants.typeMessageMediaGeo:
-                return qsTr("Geo");
+            case TelegramConstants.typeMessageMediaVenue:
+                return qsTr("Position");
 
             default:
                 break;
@@ -217,9 +222,9 @@ function messageContent(message)
     return message.message;
 }
 
-function firstMessageLine(message)
+function firstMessageLine(context, message)
 {
-    var content = messageContent(message)
+    var content = messageContent(context, message)
     return content.split("\n")[0];
 }
 

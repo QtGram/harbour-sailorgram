@@ -1017,10 +1017,6 @@ Do a swype to the right to select a contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Geo</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Last Seen %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1038,6 +1034,14 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>%1 members are typing...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sticker</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Position</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

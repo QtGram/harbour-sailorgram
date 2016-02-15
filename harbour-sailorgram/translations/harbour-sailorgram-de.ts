@@ -1024,10 +1024,6 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
         <translation>Foto</translation>
     </message>
     <message>
-        <source>Geo</source>
-        <translation>Position</translation>
-    </message>
-    <message>
         <source>Last Seen %1</source>
         <translation>Zuletzt gesehen %1</translation>
     </message>
@@ -1046,6 +1042,14 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     <message>
         <source>%1 members are typing...</source>
         <translation>%1 Mitglieder schreiben...</translation>
+    </message>
+    <message>
+        <source>Sticker</source>
+        <translation type="unfinished">Sticker</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
