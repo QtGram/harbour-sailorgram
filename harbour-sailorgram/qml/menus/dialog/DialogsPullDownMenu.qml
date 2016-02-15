@@ -44,5 +44,12 @@ PullDownMenu
         context: dialogspulldownmenu.context
         onClicked: pageStack.push(Qt.resolvedUrl("../../pages/chat/CreateChatPage.qml"), { "context": dialogspulldownmenu.context })
     }
+
+    MenuItem
+    {
+        id: searchfield
+        text: context.showsearchfield ? qsTr("Hide Search Field") : qsTr("Show Search Field")
+        onClicked: context.showsearchfield = context.showsearchfield ? false : true
+    }
 }
 
