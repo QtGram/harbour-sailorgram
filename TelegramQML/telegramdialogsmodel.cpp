@@ -66,6 +66,7 @@ void TelegramDialogsModel::setTelegram(TelegramQml *tgo)
         disconnect( p->telegram->userData(), SIGNAL(valueChanged(QString)), this, SLOT(userDataChanged()) );
 
         disconnect(p->telegram, SIGNAL(authLoggedInChanged()), this, SLOT(recheck()));
+        disconnect(p->telegram, SIGNAL(connectedChanged), this, SLOT(recheck()));
     }
 
     p->telegram = tgo;
@@ -79,6 +80,7 @@ void TelegramDialogsModel::setTelegram(TelegramQml *tgo)
         connect( p->telegram->userData(), SIGNAL(valueChanged(QString)), this, SLOT(userDataChanged()) );
 
         connect(p->telegram, SIGNAL(authLoggedInChanged()), this, SLOT(recheck()), Qt::QueuedConnection);
+        connect(p->telegram, SIGNAL(connectedChanged), this, SLOT(recheck()), Qt::QueuedConnection);
     }
 
     recheck();
@@ -196,7 +198,7 @@ void TelegramDialogsModel::recheck()
         return;
 
     Telegram *tgObject = p->telegram->telegram();
-    if(tgObject)
+    if(tgObject && tgObject->isConnected())
         tgObject->messagesGetDialogs(0,0,1000);
 }
 

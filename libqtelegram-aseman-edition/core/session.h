@@ -71,7 +71,6 @@ Q_SIGNALS:
     void updatesCombined(const QList<Update> &updates, const QList<User> &users, const QList<Chat> &chats, qint32 date, qint32 seqStart, qint32 seq);
     void updates(const QList<Update> &udts, const QList<User> &users, const QList<Chat> &chats, qint32 date, qint32 seq);
 
-
 private:
     struct EncryptedMsg {
         // unencrypted header

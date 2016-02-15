@@ -40,10 +40,11 @@ public:
     explicit Connection(const QString &host = QString::null, qint32 port = -1, QObject *parent = 0);
     virtual ~Connection();
 
-    void connectToServer();
-
 Q_SIGNALS:
     void fatalError();
+
+public Q_SLOTS:
+    void connectToServer();
 
 protected:
     void setupSocket();
@@ -55,22 +56,18 @@ protected:
     virtual void processRpcAnswer(QByteArray response) = 0;
     virtual void processConnected() = 0;
 
-    void timerEvent(QTimerEvent *event);
-
     Asserter mAsserter;
 
 private:
-    qint32 mReconnectTimerId;
     QByteArray mBuffer;
     qint32 mOpLength;
-
-    void stopReconnecting();
 
 protected Q_SLOTS:
     void onConnected();
     void onDisconnected();
     void onReadyRead();
     void onError(QAbstractSocket::SocketError error);
+    void onStateChanged(QAbstractSocket::SocketState);
 };
 
 #endif // CONNECTION_H

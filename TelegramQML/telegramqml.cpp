@@ -2620,6 +2620,9 @@ void TelegramQml::updatesGetState()
     if(!p->telegram)
         return;
 
+    if (!p->telegram->isConnected())
+        return;
+
     p->telegram->updatesGetState();
 }
 
@@ -5153,8 +5156,9 @@ void TelegramQml::timerEvent(QTimerEvent *e)
 {
     if( e->timerId() == p->upd_dialogs_timer )
     {
-        if( p->telegram )
+        if( p->telegram && p->telegram->isConnected() ) {
             p->telegram->messagesGetDialogs(0,0,1000);
+        }
 
         killTimer(p->upd_dialogs_timer);
         p->upd_dialogs_timer = 0;

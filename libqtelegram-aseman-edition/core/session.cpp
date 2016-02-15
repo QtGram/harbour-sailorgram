@@ -96,6 +96,9 @@ qint64 Session::generateNextMsgId() {
 }
 
 void Session::processConnected() {
+    // ack all pending server response messages. This happens when socket has been connected
+    // previously and after reconnection some acks are pending to be sent.
+    ackAll();
     Q_EMIT sessionReady(m_dc);
 }
 
@@ -631,6 +634,12 @@ void Session::ackAll() {
 }
 
 void Session::sendAcks(const QList<qint64> &msgIds) {
+    // verify that socket is connected. Don't send acks if state is other than connected.
+    // In case the socket is not connected, pending acks will be sent when socket is
+    // connected back again.
+    if (state() != QAbstractSocket::ConnectedState) {
+        return;
+    }
     OutboundPkt p(mSettings);
     p.appendInt(TL_MsgsAck);
     p.appendInt(CoreTypes::typeVector);
