@@ -5,6 +5,7 @@ import "../../../models"
 import "../../../js/ColorScheme.js" as ColorScheme
 import "../../../js/TelegramHelper.js" as TelegramHelper
 import "../../../js/TelegramAction.js" as TelegramAction
+import "../../../js/TelegramConstants.js" as TelegramConstants
 
 Item
 {
@@ -52,6 +53,7 @@ Item
         {
             id: mtctextcontent
             width: parent.width
+            height: visible ? undefined : 0
             verticalAlignment: Text.AlignTop
             font.pixelSize: TelegramHelper.isServiceMessage(message) ? Theme.fontSizeExtraSmall : Theme.fontSizeSmall
             font.italic: TelegramHelper.isServiceMessage(message)
@@ -65,8 +67,13 @@ Item
                 if(TelegramHelper.isServiceMessage(message))
                     return TelegramAction.actionType(context.telegram, dialog, message);
 
-                if(TelegramHelper.isMediaMessage(message) && (message.media.caption.length > 0))
-                    return message.media.caption;
+                if(TelegramHelper.isMediaMessage(message)) {
+                    if(message.media.classType === TelegramConstants.typeMessageMediaWebPage)
+                        return ""; // There is MessageWebPage for that
+
+                    if(message.media.caption.length > 0)
+                        return message.media.caption;
+                }
 
                 return message.message;
             }

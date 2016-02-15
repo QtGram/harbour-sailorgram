@@ -36,10 +36,9 @@ MessageMediaItem
         }
     }
 
-    Image
+    MessageThumbnail
     {
         id: mapthumbnail
-        asynchronous: true
         cache: true
         anchors { left: parent.left; right: parent.right; top: mtctextcontent.bottom; bottom: parent.bottom }
         source: context.locationThumbnail(message.media.geo.lat, message.media.geo.longitude, width, height, 14);

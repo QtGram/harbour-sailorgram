@@ -119,14 +119,10 @@ QtObject
         }
 
         onIncomingMessage: {
-            var elaboratedtext = TextElaborator.elaborateNotify(TelegramHelper.messageContent(msg), sailorgram.emojiPath, Theme.fontSizeSmall);
+            var elaboratedtext = TextElaborator.elaborateNotify(TelegramHelper.messageContent(context, msg), sailorgram.emojiPath, Theme.fontSizeSmall);
             var user = context.telegram.user(msg.fromId);
 
             sailorgram.notify(msg, TelegramHelper.completeName(user), elaboratedtext);
-        }
-
-        onMessagesChanged: {
-
         }
 
         onPhoneNumberChanged: {

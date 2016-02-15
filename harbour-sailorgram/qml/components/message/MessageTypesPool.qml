@@ -9,6 +9,7 @@ Item
     property Component audioComponent: Component { MessageAudio { } }
     property Component videoComponent: Component { MessageVideo { } }
     property Component locationComponent: Component {  MessageLocation { } }
+    property Component webpageComponent: Component {  MessageWebPage { } }
     property Component stickerComponent: Component { MessageSticker { } }
 
     property Component messagePreview: Component { MessagePreview { } }

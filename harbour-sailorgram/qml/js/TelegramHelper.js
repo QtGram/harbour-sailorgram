@@ -184,6 +184,9 @@ function peerId(dialog)
 
 function messageContent(context, message)
 {
+    if(!message)
+        return "";
+
     if(message.media)
     {
         switch(message.media.classType)
