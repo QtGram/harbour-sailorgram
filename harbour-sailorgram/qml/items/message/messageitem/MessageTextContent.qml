@@ -10,7 +10,7 @@ Label
 
     id: messagetextcontent
     textFormat: Text.StyledText
-    text: TextElaborator.elaborate(rawText, emojiPath, font.pixelSize, linkColor)
+    text: TextElaborator.elaborate(rawText, emojiPath, font.pixelSize, linkColor, openUrls)
 
     onLinkActivated: {
         if(!openUrls)

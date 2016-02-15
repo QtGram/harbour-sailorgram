@@ -2,19 +2,22 @@
 
 .import "Emoji.js" as Emoji
 
-function linkify(s)
+function linkify(s, openurls)
 {
     //URLs starting with http://, https://, or ftp://
     var rgxhttpurl = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim;
-    s = s.replace(rgxhttpurl, '<a href="$1" target="_blank">$1</a>');
+    s = s.replace(rgxhttpurl, (openurls === true) ? '<a href="$1" target="_blank">$1</a>' :
+                                                    '<u>$1</u>');
 
     //URLs starting with "www." (without // before it, or it'd re-link the ones done above).
     var rgxwwwurl = /(^|[^\/])(www\.[\S]+(\b|$))/gim;
-    s = s.replace(rgxwwwurl, '$1<a href="http://$2">$2</a>');
+    s = s.replace(rgxwwwurl, (openurls === true) ? '$1<a href="http://$2">$2</a> ' :
+                                                   '<u>$2</u>');
 
     //Change email addresses to mailto:: links.
     var rgxmailto = /(([a-zA-Z0-9\-\_\.])+@[a-zA-Z\_]+?(\.[a-zA-Z]{2,6})+)/gim;
-    s = s.replace(rgxmailto, '<a href="mailto:$1">$1</a>');
+    s = s.replace(rgxmailto, (openurls === true) ? '<a href="mailto:$1">$1</a>' :
+                                                   '<u>$1</u>');
 
     return s;
 }
@@ -50,13 +53,13 @@ function replaceNewlines(s)
     return s.replace(/(?:\r\n|\r|\n)/g, "<br/>");
 }
 
-function elaborate(s, emojipath, height, highlightcolor)
+function elaborate(s, emojipath, height, highlightcolor, openurls)
 {
     var res = replaceAmpersand(s);
     res = replaceLtGt(res);
     res = replaceNewlines(res);
     res = Emoji.emojify(res, height, emojipath, false);
-    res = linkify(res);
+    res = linkify(res, openurls);
     res = mentionify(res, highlightcolor);
     return "<span>" + res + "</span>";
 }
