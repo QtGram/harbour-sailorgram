@@ -2674,7 +2674,6 @@ class TELEGRAMQMLSHARED_EXPORT PhotoObject : public TqObject
 
 public:
     PhotoObject(const Photo & another, QObject *parent = 0) : TqObject(parent){
-        (void)another;
         _id = another.id();
         _date = another.date();
         _sizes = new PhotoSizeList(another.sizes(), this);
@@ -2816,6 +2815,301 @@ private:
 
 Q_DECLARE_METATYPE(PhotoObject*)
 
+class TELEGRAMQMLSHARED_EXPORT WebPageObject: public TqObject
+{
+    Q_OBJECT
+
+    Q_PROPERTY(qint64 id READ id WRITE setId NOTIFY idChanged)
+    Q_PROPERTY(QString author READ author WRITE setAuthor NOTIFY authorChanged)
+    Q_PROPERTY(qint32 date READ date WRITE setDate NOTIFY dateChanged)
+    Q_PROPERTY(QString description READ description WRITE setDescription NOTIFY descriptionChanged)
+    Q_PROPERTY(QString displayUrl READ displayUrl WRITE setDisplayUrl NOTIFY displayUrlChanged)
+    Q_PROPERTY(qint32 duration READ duration WRITE setDuration NOTIFY durationChanged)
+    Q_PROPERTY(qint32 embedHeight READ embedHeight WRITE setEmbedHeight NOTIFY embedHeightChanged)
+    Q_PROPERTY(QString embedType READ embedType WRITE setEmbedType NOTIFY embedTypeChanged)
+    Q_PROPERTY(QString embedUrl READ embedUrl WRITE setEmbedUrl NOTIFY embedUrlChanged)
+    Q_PROPERTY(qint32 embedWidth READ embedWidth WRITE setEmbedWidth NOTIFY embedWidthChanged)
+    Q_PROPERTY(PhotoObject* photo READ photo WRITE setPhoto NOTIFY photoChanged)
+    Q_PROPERTY(QString siteName READ siteName WRITE setSiteName NOTIFY siteNameChanged)
+    Q_PROPERTY(QString title READ title WRITE setTitle NOTIFY titleChanged)
+    Q_PROPERTY(QString url READ url WRITE setUrl NOTIFY urlChanged)
+    Q_PROPERTY(quint32 classType READ classType WRITE setClassType NOTIFY classTypeChanged)
+
+public:
+    WebPageObject(const WebPage & another, QObject* parent = 0): TqObject(parent) {
+        _id = another.id();
+        _author = another.author();
+        _date = another.date();
+        _description = another.description();
+        _displayUrl = another.displayUrl();
+        _duration = another.duration();
+        _embedHeight = another.embedHeight();
+        _embedType = another.embedType();
+        _embedUrl = another.embedUrl();
+        _embedWidth = another.embedWidth();
+        _photo = new PhotoObject(another.photo(), this);
+        _siteName = another.siteName();
+        _title = another.title();
+        _url = another.url();
+        _classType = another.classType();
+    }
+
+    WebPageObject(QObject* parent = 0) :
+        TqObject(parent),
+        _photo(0){}
+    ~WebPageObject(){}
+
+    quint64 id() const {
+        return _id;
+    }
+
+    void setId(qint64 value) {
+        if( value == _id )
+            return;
+        _id = value;
+        Q_EMIT idChanged();
+        Q_EMIT changed();
+    }
+
+    QString author() const {
+        return _author;
+    }
+
+    void setAuthor(const QString& value) {
+        if( value == _author )
+            return;
+        _author = value;
+        Q_EMIT authorChanged();
+        Q_EMIT changed();
+    }
+
+    qint32 date() const {
+        return _date;
+    }
+
+    void setDate(qint32 value) {
+        if( value == _date )
+            return;
+        _date = value;
+        Q_EMIT dateChanged();
+        Q_EMIT changed();
+    }
+
+    QString description() const {
+        return _description;
+    }
+
+    void setDescription(const QString& value) {
+        if( value == _description )
+            return;
+        _description = value;
+        Q_EMIT descriptionChanged();
+        Q_EMIT changed();
+    }
+
+    QString displayUrl() const {
+        return _displayUrl;
+    }
+
+    void setDisplayUrl(const QString& value) {
+        if( value == _displayUrl )
+            return;
+        _displayUrl = value;
+        Q_EMIT displayUrlChanged();
+        Q_EMIT changed();
+    }
+
+    qint32 duration() const {
+        return _duration;
+    }
+
+    void setDuration(qint32 value) {
+        if( value == _duration )
+            return;
+        _duration = value;
+        Q_EMIT durationChanged();
+        Q_EMIT changed();
+    }
+
+    qint32 embedHeight() const {
+        return _embedHeight;
+    }
+
+    void setEmbedHeight(qint32 value) {
+        if( value == _embedHeight )
+            return;
+        _embedHeight = value;
+        Q_EMIT embedHeightChanged();
+        Q_EMIT changed();
+    }
+
+    QString embedType() const {
+        return _embedType;
+    }
+
+    void setEmbedType(const QString& value) {
+        if( value == _embedType )
+            return;
+        _embedType = value;
+        Q_EMIT embedTypeChanged();
+        Q_EMIT changed();
+    }
+
+    QString embedUrl() const {
+        return _embedUrl;
+    }
+
+    void setEmbedUrl(const QString& value) {
+        if( value == _embedUrl )
+            return;
+        _embedUrl = value;
+        Q_EMIT embedUrlChanged();
+        Q_EMIT changed();
+    }
+
+    qint32 embedWidth() const {
+        return _embedWidth;
+    }
+
+    void setEmbedWidth(qint32 value) {
+        if( value == _embedWidth )
+            return;
+        _embedWidth = value;
+        Q_EMIT embedWidthChanged();
+        Q_EMIT changed();
+    }
+
+    PhotoObject* photo() const {
+        return _photo;
+    }
+
+    void setPhoto(PhotoObject* value) {
+        if( value == _photo )
+            return;
+        _photo = value;
+        Q_EMIT photoChanged();
+        Q_EMIT changed();
+    }
+
+    QString siteName() const {
+        return _siteName;
+    }
+
+    void setSiteName(const QString& value) {
+        if( value == _siteName )
+            return;
+        _siteName = value;
+        Q_EMIT siteNameChanged();
+        Q_EMIT changed();
+    }
+
+    QString title() const {
+        return _title;
+    }
+
+    void setTitle(const QString& value) {
+        if( value == _title )
+            return;
+        _title = value;
+        Q_EMIT titleChanged();
+        Q_EMIT changed();
+    }
+
+    QString url() const {
+        return _url;
+    }
+
+    void setUrl(const QString& value) {
+        if( value == _url )
+            return;
+        _url = value;
+        Q_EMIT urlChanged();
+        Q_EMIT changed();
+    }
+
+    quint32 classType() const {
+        return _classType;
+    }
+
+    void setClassType(quint32 value) {
+        if( value == _classType )
+            return;
+        _classType = value;
+        Q_EMIT classTypeChanged();
+        Q_EMIT changed();
+    }
+
+    void operator= ( const WebPage & another ) {
+        _id = another.id();
+        Q_EMIT idChanged();
+        _author = another.author();
+        Q_EMIT authorChanged();
+        _date = another.date();
+        Q_EMIT dateChanged();
+        _description = another.description();
+        Q_EMIT descriptionChanged();
+        _displayUrl = another.displayUrl();
+        Q_EMIT displayUrlChanged();
+        _duration = another.duration();
+        Q_EMIT durationChanged();
+        _embedHeight = another.embedHeight();
+        Q_EMIT embedHeightChanged();
+        _embedType = another.embedType();
+        Q_EMIT embedTypeChanged();
+        _embedUrl = another.embedUrl();
+        Q_EMIT embedUrlChanged();
+        _embedWidth = another.embedWidth();
+        Q_EMIT embedWidthChanged();
+        *_photo = another.photo();
+        Q_EMIT photoChanged();
+        _siteName = another.siteName();
+        Q_EMIT siteNameChanged();
+        _title = another.title();
+        Q_EMIT titleChanged();
+        _url = another.url();
+        Q_EMIT urlChanged();
+        _classType = another.classType();
+        Q_EMIT classTypeChanged();
+    }
+
+Q_SIGNALS:
+    void changed();
+    void authorChanged();
+    void dateChanged();
+    void descriptionChanged();
+    void displayUrlChanged();
+    void durationChanged();
+    void embedHeightChanged();
+    void embedTypeChanged();
+    void embedUrlChanged();
+    void embedWidthChanged();
+    void idChanged();
+    void photoChanged();
+    void siteNameChanged();
+    void titleChanged();
+    void urlChanged();
+    void classTypeChanged();
+
+private:
+    QString _author;
+    qint32 _date;
+    QString _description;
+    QString _displayUrl;
+    qint32 _duration;
+    qint32 _embedHeight;
+    QString _embedType;
+    QString _embedUrl;
+    qint32 _embedWidth;
+    qint64 _id;
+    PhotoObject* _photo;
+    QString _siteName;
+    QString _title;
+    QString _url;
+    quint32 _classType;
+};
+
+Q_DECLARE_METATYPE(WebPageObject*)
+
 class TELEGRAMQMLSHARED_EXPORT WallPaperObject : public TqObject
 {
     Q_OBJECT
@@ -2828,7 +3122,6 @@ class TELEGRAMQMLSHARED_EXPORT WallPaperObject : public TqObject
 
 public:
     WallPaperObject(const WallPaper & another, QObject *parent = 0) : TqObject(parent){
-        (void)another;
         _bgColor = another.bgColor();
         _color = another.color();
         _id = another.id();
@@ -4539,6 +4832,7 @@ class TELEGRAMQMLSHARED_EXPORT MessageMediaObject : public TqObject
     Q_PROPERTY(QString phoneNumber READ phoneNumber WRITE setPhoneNumber NOTIFY phoneNumberChanged)
     Q_PROPERTY(qint32 userId READ userId WRITE setUserId NOTIFY userIdChanged)
     Q_PROPERTY(VideoObject* video READ video WRITE setVideo NOTIFY videoChanged)
+    Q_PROPERTY(WebPageObject* webpage READ webpage WRITE setWebpage NOTIFY webpageChanged)
     Q_PROPERTY(QString venueTitle READ venueTitle WRITE setVenueTitle NOTIFY venueTitleChanged)
     Q_PROPERTY(QString venueAddress READ venueAddress WRITE setVenueAddress NOTIFY venueAddressChanged)
     Q_PROPERTY(QByteArray encryptKey READ encryptKey WRITE setEncryptKey NOTIFY encryptKeyChanged)
@@ -4558,6 +4852,7 @@ public:
         _phoneNumber = another.phoneNumber();
         _userId = another.userId();
         _video = new VideoObject(another.video(), this);
+        _webpage = new WebPageObject(another.webpage(), this);
         _venueTitle = another.title();
         _venueAddress = another.address();
         _encryptKey = QByteArray();
@@ -4571,7 +4866,8 @@ public:
         _document(0),
         _geo(0),
         _photo(0),
-        _video(0){}
+        _video(0),
+        _webpage(0){}
     ~MessageMediaObject(){}
 
     AudioObject* audio() const {
@@ -4694,6 +4990,18 @@ public:
         Q_EMIT changed();
     }
 
+    WebPageObject* webpage() const {
+        return _webpage;
+    }
+
+    void setWebpage(WebPageObject* value) {
+        if( value == _webpage )
+            return;
+        _webpage = value;
+        Q_EMIT webpageChanged();
+        Q_EMIT changed();
+    }
+
     QString venueTitle() const {
         return _venueTitle;
     }
@@ -4704,6 +5012,7 @@ public:
 
         _venueTitle = value;
         Q_EMIT venueTitleChanged();
+        Q_EMIT changed();
     }
 
     QString venueAddress() const {
@@ -4716,6 +5025,7 @@ public:
 
         _venueAddress = value;
         Q_EMIT venueAddressChanged();
+        Q_EMIT changed();
     }
 
     QByteArray encryptKey() const {
@@ -4776,6 +5086,8 @@ public:
         Q_EMIT userIdChanged();
         *_video = another.video();
         Q_EMIT videoChanged();
+        *_webpage = another.webpage();
+        Q_EMIT webpageChanged();
         _venueTitle = another.title();
         Q_EMIT venueTitleChanged();
         _venueAddress = another.address();
@@ -4798,6 +5110,7 @@ Q_SIGNALS:
     void phoneNumberChanged();
     void userIdChanged();
     void videoChanged();
+    void webpageChanged();
     void venueTitleChanged();
     void venueAddressChanged();
     void encryptKeyChanged();
@@ -4815,6 +5128,7 @@ private:
     QString _phoneNumber;
     qint32 _userId;
     VideoObject* _video;
+    WebPageObject* _webpage;
     QString _venueTitle;
     QString _venueAddress;
     QByteArray _encryptKey;

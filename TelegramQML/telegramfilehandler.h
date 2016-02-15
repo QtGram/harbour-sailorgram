@@ -63,7 +63,8 @@ public:
         TypeObjectPhotoSizeList,
         TypeObjectPhotoSize,
         TypeObjectUserProfilePhoto,
-        TypeObjectChatPhoto
+        TypeObjectChatPhoto,
+        TypeObjectWebPage
     };
 
     enum ProgressType {

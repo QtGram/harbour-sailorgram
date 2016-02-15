@@ -643,6 +643,9 @@ FileLocationObject *TelegramFileHandler::analizeObject(QObject *target, int *tar
         else
         if(media->classType() == MessageMedia::typeMessageMediaGeo)
             object = media->geo();
+        else
+        if(media->classType() == MessageMedia::typeMessageMediaWebPage)
+            object = media->webpage();
     }
         break;
 
@@ -666,6 +669,16 @@ FileLocationObject *TelegramFileHandler::analizeObject(QObject *target, int *tar
         if(targetPointer) *targetPointer = static_cast<VideoObject*>(target);
         break;
 
+    case TypeObjectWebPage:
+    {
+        PhotoObject* photo = static_cast<WebPageObject*>(target)->photo();
+        object = p->telegram->locationOfPhoto(photo);
+        p->thumb_location = p->telegram->locationOfThumbPhoto(photo);
+        if(targetType) *targetType = TypeTargetMediaPhoto;
+        if(targetPointer) *targetPointer = photo;
+    }
+        break;
+
     case TypeObjectGeoPoint:
         object = 0;
         if(targetType) *targetType = TypeTargetMediaGeoPoint;
@@ -677,6 +690,7 @@ FileLocationObject *TelegramFileHandler::analizeObject(QObject *target, int *tar
         if(targetType) *targetType = TypeTargetMediaContact;
         if(targetPointer) *targetPointer = object;
         break;
+
 
     case TypeObjectPhoto:
     {
@@ -790,6 +804,9 @@ TelegramFileHandler::ObjectType TelegramFileHandler::detectObjectType(QObject *o
     else
     if(qobject_cast<VideoObject*>(obj))
         objectType = TypeObjectVideo;
+    else
+    if(qobject_cast<WebPageObject*>(obj))
+        objectType = TypeObjectWebPage;
     else
     if(qobject_cast<GeoPointObject*>(obj))
         objectType = TypeObjectGeoPoint;
