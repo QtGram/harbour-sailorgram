@@ -180,6 +180,7 @@ ListItem
                     maximumLineCount: 1
                     emojiPath: context.sailorgram.emojiPath
                     linkColor: Theme.secondaryColor
+                    openUrls: false
 
                     color: {
                         if((dialog.typingUsers.length > 0) || TelegramHelper.isServiceMessage(message) || TelegramHelper.isMediaMessage(message))

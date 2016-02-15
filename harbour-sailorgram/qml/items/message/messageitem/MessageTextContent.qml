@@ -4,11 +4,18 @@ import "../../../js/TextElaborator.js" as TextElaborator
 
 Label
 {
+    property bool openUrls: true
     property string emojiPath
     property string rawText
 
     id: messagetextcontent
     textFormat: Text.StyledText
     text: TextElaborator.elaborate(rawText, emojiPath, font.pixelSize, linkColor)
-    onLinkActivated: Qt.openUrlExternally(link)
+
+    onLinkActivated: {
+        if(!openUrls)
+            return;
+
+        Qt.openUrlExternally(link);
+    }
 }
