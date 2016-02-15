@@ -550,6 +550,14 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
         <source>Exit</source>
         <translation>Beenden</translation>
     </message>
+    <message>
+        <source>Hide Search Field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Search Field</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MediaPhotoPage</name>

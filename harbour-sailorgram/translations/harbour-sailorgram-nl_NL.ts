@@ -550,6 +550,14 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
         <source>Exit</source>
         <translation>Afsluiten</translation>
     </message>
+    <message>
+        <source>Hide Search Field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Search Field</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MediaPhotoPage</name>

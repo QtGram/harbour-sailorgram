@@ -89,8 +89,6 @@ SOURCES += src/harbour-sailorgram.cpp \
     src/selector/thumbnailprovider.cpp \
     src/selector/exif/exif.cpp \
     src/model/dialogscovermodel.cpp \
-    src/iphb/libiphb.cpp \
-    src/iphb/insomniac.cpp \
     src/selector/filesmodel.cpp \
     src/selector/filesmodelworker.cpp \
     src/dbus/connectivitychecker.cpp \
@@ -200,10 +198,6 @@ HEADERS += \
     src/selector/thumbnailprovider.h \
     src/selector/exif/exif.h \
     src/model/dialogscovermodel.h \
-    src/iphb/iphb_internal.h \
-    src/iphb/libiphb.h \
-    src/iphb/messages.h \
-    src/iphb/insomniac.h \
     src/selector/filesmodel.h \
     src/selector/filesmodelworker.h \
     src/dbus/connectivitychecker.h \

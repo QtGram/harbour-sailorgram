@@ -548,6 +548,14 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
         <source>Exit</source>
         <translation>Salir</translation>
     </message>
+    <message>
+        <source>Hide Search Field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Search Field</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MediaPhotoPage</name>

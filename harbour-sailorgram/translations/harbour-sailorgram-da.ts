@@ -550,6 +550,14 @@ Stryg til venstre for at vælge en kontakt</translation>
         <source>Exit</source>
         <translation>Afslut</translation>
     </message>
+    <message>
+        <source>Hide Search Field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Search Field</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MediaPhotoPage</name>

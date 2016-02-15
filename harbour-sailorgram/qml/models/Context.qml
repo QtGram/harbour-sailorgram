@@ -1,7 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.DBus 1.0
-//import harbour.sailorgram.Insomniac 1.0
 import harbour.sailorgram.SailorGram 1.0
 import harbour.sailorgram.Model 1.0
 import harbour.sailorgram.TelegramQml 1.0
@@ -63,16 +62,6 @@ QtObject
     property StickersModel stickers: StickersModel { }
     property SailorgramContactsModel contacts: SailorgramContactsModel { }
     property DialogsModel dialogs: DialogsModel { }
-
-    /*
-    property Insomniac insomniac: Insomniac { // Keeps updating dialogs during deep sleep
-        repeat: true
-        interval: 300 // 5 minutes
-        timerWindow: 10
-        running: context.sailorgram.connected && (Qt.application.state !== Qt.ApplicationActive)
-        onTimeout: dialogs.recheck()
-    }
-    */
 
     property SailorGram sailorgram: SailorGram {
         telegram: context.telegram

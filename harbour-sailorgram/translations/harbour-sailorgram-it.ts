@@ -550,6 +550,14 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
         <source>Exit</source>
         <translation>Esci</translation>
     </message>
+    <message>
+        <source>Hide Search Field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Search Field</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MediaPhotoPage</name>

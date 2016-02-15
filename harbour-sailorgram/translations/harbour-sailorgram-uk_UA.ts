@@ -550,6 +550,14 @@ Do a swype to the right to select a contact</source>
         <source>Exit</source>
         <translation>Вийти</translation>
     </message>
+    <message>
+        <source>Hide Search Field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Search Field</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MediaPhotoPage</name>

@@ -550,6 +550,14 @@ Desprace a dereita para seleccionar un contacto</translation>
         <source>Exit</source>
         <translation>Sair</translation>
     </message>
+    <message>
+        <source>Hide Search Field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Search Field</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MediaPhotoPage</name>
