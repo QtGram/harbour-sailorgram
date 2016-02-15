@@ -29,9 +29,9 @@ MessageMediaItem
 
     contentHeight: {
         if(hasPureImage)
-            return lbldummytextcontent.contentHeight + (aspectRatio ? maxWidth / aspectRatio : 0)
+            return Math.min(lbldummytextcontent.contentHeight + (aspectRatio ? maxWidth / aspectRatio : 0), maxWidth);
 
-        return lbldummytextcontent.contentHeight + lbldummytitle.contentHeight + lbldummydescription.contentHeight;
+        return Math.min(lbldummytextcontent.contentHeight + lbldummytitle.contentHeight + lbldummydescription.contentHeight, maxWidth);
     }
 
     Label { id: lbldummytextcontent; text: mtctextcontent.text; textFormat: Text.StyledText; font.pixelSize: mtctextcontent.font.pixelSize; wrapMode: Text.NoWrap; visible: false }

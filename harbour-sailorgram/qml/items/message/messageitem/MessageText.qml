@@ -68,7 +68,7 @@ Item
                     return TelegramAction.actionType(context.telegram, dialog, message);
 
                 if(TelegramHelper.isMediaMessage(message)) {
-                    if(message.media.classType === TelegramConstants.typeMessageMediaWebPage)
+                    if((message.media.classType === TelegramConstants.typeMessageMediaWebPage) && (message.media.webpage.url.length > 0))
                         return ""; // There is MessageWebPage for that
 
                     if(message.media.caption.length > 0)

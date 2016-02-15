@@ -234,7 +234,7 @@ ListItem
                     messageTypesPool.audioComponent.createObject(mediacontainer, params);
                 else if(message.media.classType === TelegramConstants.typeMessageMediaVideo)
                     messageTypesPool.videoComponent.createObject(mediacontainer, params);
-                else if(message.media.classType === TelegramConstants.typeMessageMediaWebPage)
+                else if((message.media.classType === TelegramConstants.typeMessageMediaWebPage) && (message.media.webpage.url.length > 0))
                     messageTypesPool.webpageComponent.createObject(mediacontainer, params);
                 else if((message.media.classType === TelegramConstants.typeMessageMediaGeo) || (message.media.classType === TelegramConstants.typeMessageMediaVenue))
                     messageTypesPool.locationComponent.createObject(mediacontainer, params);

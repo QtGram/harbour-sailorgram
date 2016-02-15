@@ -22,9 +22,6 @@ function defaultThumbnail(message)
     if((mediatype === TelegramConstants.typeMessageMediaGeo) || (mediatype === TelegramConstants.typeMessageMediaVenue))
         return "image://theme/icon-m-location";
 
-    if(mediatype === TelegramConstants.typeMessageMediaWebPage)
-        return "image://theme/icon-m-link";
-
     if(mediatype === TelegramConstants.typeMessageMediaDocument)
     {
         var document = message.media.document;
