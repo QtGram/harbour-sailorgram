@@ -93,7 +93,7 @@ MessageMediaItem
             MessageTextContent
             {
                 id: mtcdescription
-                anchors { left: parent.left; top: mtctitle.top; right: parent.right }
+                anchors { left: parent.left; top: mtctitle.bottom; right: parent.right }
                 horizontalAlignment: Text.AlignLeft
                 verticalAlignment: Text.AlignTop
                 font.pixelSize: Theme.fontSizeSmall
