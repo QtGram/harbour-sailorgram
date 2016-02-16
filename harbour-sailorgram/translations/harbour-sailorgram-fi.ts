@@ -610,6 +610,10 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
         <source>Opening media</source>
         <translation>Avataan mediatiedostoa</translation>
     </message>
+    <message>
+        <source>Forwarded from %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageMenu</name>

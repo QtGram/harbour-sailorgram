@@ -127,6 +127,14 @@ function typingUsers(context, dialog)
     return "";
 }
 
+function isForwardedMessage(message)
+{
+    if(!message)
+        return false;
+
+    return message.fwdFromId !== 0;
+}
+
 function isServiceMessage(message)
 {
     if(!message)

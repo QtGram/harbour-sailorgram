@@ -610,6 +610,10 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
         <source>Opening media</source>
         <translation>Ouverture du média</translation>
     </message>
+    <message>
+        <source>Forwarded from %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageMenu</name>

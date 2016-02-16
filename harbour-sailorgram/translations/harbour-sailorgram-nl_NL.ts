@@ -610,6 +610,10 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
         <source>Opening media</source>
         <translation>Bezig met het openen van de media</translation>
     </message>
+    <message>
+        <source>Forwarded from %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageMenu</name>

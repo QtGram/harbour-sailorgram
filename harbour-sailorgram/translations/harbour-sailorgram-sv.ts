@@ -610,6 +610,10 @@ Svep åt vänster för att välja en kontakt</translation>
         <source>Opening media</source>
         <translation>Öppnar media</translation>
     </message>
+    <message>
+        <source>Forwarded from %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageMenu</name>

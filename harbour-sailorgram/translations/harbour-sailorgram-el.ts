@@ -611,6 +611,10 @@ Do a swype to the right to select a contact</source>
         <source>Opening media</source>
         <translation>Ανοιγμα πολυμέσου</translation>
     </message>
+    <message>
+        <source>Forwarded from %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageMenu</name>

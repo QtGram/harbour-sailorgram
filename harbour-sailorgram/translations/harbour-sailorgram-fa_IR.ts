@@ -606,6 +606,10 @@ Do a swype to the right to select a contact</source>
         <source>Opening media</source>
         <translation>در حال بازکردن رسانه</translation>
     </message>
+    <message>
+        <source>Forwarded from %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageMenu</name>

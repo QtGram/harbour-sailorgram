@@ -608,6 +608,10 @@ Utři do prava aby jsi vybral kontakt</translation>
         <source>Opening media</source>
         <translation>Otevírání media</translation>
     </message>
+    <message>
+        <source>Forwarded from %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageMenu</name>

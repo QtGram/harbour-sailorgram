@@ -167,11 +167,18 @@ ListItem
             }
 
             color: ColorScheme.colorizeText(message, context)
-            visible: !TelegramHelper.isServiceMessage(message) && !message.out
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: Theme.fontSizeSmall
             font.bold: true
             wrapMode: Text.NoWrap
+            elide: Text.ElideRight
+
+            visible: {
+                if(TelegramHelper.isForwardedMessage(message))
+                    return true;
+
+                return !TelegramHelper.isServiceMessage(message) && !message.out;
+            }
 
             horizontalAlignment: {
                 if(message.out)
@@ -181,6 +188,9 @@ ListItem
             }
 
             text: {
+                if(TelegramHelper.isForwardedMessage(message))
+                    return qsTr("Forwarded from %1").arg(TelegramHelper.completeName(context.telegram.user(message.fwdFromId)));
+
                 if(TelegramHelper.isServiceMessage(message) || message.out)
                     return "";
 

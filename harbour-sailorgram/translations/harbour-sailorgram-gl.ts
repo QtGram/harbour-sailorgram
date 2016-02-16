@@ -610,6 +610,10 @@ Desprace a dereita para seleccionar un contacto</translation>
         <source>Opening media</source>
         <translation>Abrindo media</translation>
     </message>
+    <message>
+        <source>Forwarded from %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageMenu</name>
