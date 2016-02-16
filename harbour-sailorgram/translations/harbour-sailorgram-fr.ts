@@ -278,18 +278,18 @@ La longueur minimum est de 5 caractères.</translation>
     </message>
     <message>
         <source>Bubbles with angle</source>
-        <translation>Bulles avec pointes</translation>
+        <translation>Bulles aux coins arrondis</translation>
     </message>
     <message>
         <source>Open media without waiting</source>
-        <translation>Ouvrir le média sans délai</translation>
+        <translation>Ouvrir directement le média</translation>
     </message>
 </context>
 <context>
     <name>ConnectingLabel</name>
     <message>
         <source>Not connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Non connecté</translation>
     </message>
 </context>
 <context>
@@ -552,11 +552,11 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
     </message>
     <message>
         <source>Hide Search Field</source>
-        <translation type="unfinished"></translation>
+        <translation>masquer le champ Recherche</translation>
     </message>
     <message>
         <source>Show Search Field</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher le champ Recherche</translation>
     </message>
 </context>
 <context>
@@ -662,7 +662,7 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
     <name>MessagePreview</name>
     <message>
         <source>You</source>
-        <translation type="unfinished"></translation>
+        <translation>Vous</translation>
     </message>
 </context>
 <context>
@@ -1057,11 +1057,11 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
     </message>
     <message>
         <source>Sticker</source>
-        <translation type="unfinished">Sticker</translation>
+        <translation>Sticker</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Position</translation>
     </message>
 </context>
 <context>

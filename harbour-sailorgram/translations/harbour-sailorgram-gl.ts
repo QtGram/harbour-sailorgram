@@ -57,7 +57,7 @@
     </message>
     <message>
         <source>An unofficial Telegram Client for SailfishOS</source>
-        <translation>Un cliente non oficial de Telegram para SailfishOS</translation>
+        <translation>Cliente non oficial de Telegram para SailfishOS</translation>
     </message>
     <message>
         <source>Developer</source>
@@ -662,7 +662,7 @@ Desprace a dereita para seleccionar un contacto</translation>
     <name>MessagePreview</name>
     <message>
         <source>You</source>
-        <translation type="unfinished"></translation>
+        <translation>Ti</translation>
     </message>
 </context>
 <context>

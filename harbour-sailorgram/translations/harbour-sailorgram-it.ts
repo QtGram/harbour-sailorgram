@@ -205,7 +205,7 @@ La lunghezza minima è di 5 caratteri.</translation>
     </message>
     <message>
         <source>This username is already occupied</source>
-        <translation>Username già preso</translation>
+        <translation>Nome utente non disponibile</translation>
     </message>
 </context>
 <context>
@@ -262,11 +262,11 @@ La lunghezza minima è di 5 caratteri.</translation>
     </message>
     <message>
         <source>Bubbles visible</source>
-        <translation>Bolle visibili</translation>
+        <translation>Fumetti visibili</translation>
     </message>
     <message>
         <source>Bubble opacity</source>
-        <translation>Opacità bolla</translation>
+        <translation>Opacità fumetti</translation>
     </message>
     <message>
         <source>Keyboard</source>
@@ -278,7 +278,7 @@ La lunghezza minima è di 5 caratteri.</translation>
     </message>
     <message>
         <source>Bubbles with angle</source>
-        <translation>Bolle con l&apos;angolo</translation>
+        <translation>Fumetti con l&apos;angolo</translation>
     </message>
     <message>
         <source>Open media without waiting</source>
@@ -289,7 +289,7 @@ La lunghezza minima è di 5 caratteri.</translation>
     <name>ConnectingLabel</name>
     <message>
         <source>Not connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Non connesso</translation>
     </message>
 </context>
 <context>
@@ -308,7 +308,7 @@ La lunghezza minima è di 5 caratteri.</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation>Log errore</translation>
+        <translation>Log degli errori</translation>
     </message>
     <message>
         <source>Exit</source>
@@ -350,7 +350,7 @@ non letti</translation>
     </message>
     <message>
         <source>Recent chats:</source>
-        <translation>Chat recenti:</translation>
+        <translation>Conversazioni recenti:</translation>
     </message>
 </context>
 <context>
@@ -368,7 +368,7 @@ non letti</translation>
     <name>CreateSecretDialogPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation>Nuova chat segreta</translation>
+        <translation>Nuova conversazione segreta</translation>
     </message>
 </context>
 <context>
@@ -429,7 +429,7 @@ non letti</translation>
     <name>DialogInfoPage</name>
     <message>
         <source>Delete secret chat</source>
-        <translation>Elimina chat segreta</translation>
+        <translation>Elimina conversazione segreta</translation>
     </message>
     <message>
         <source>Delete group</source>
@@ -441,7 +441,7 @@ non letti</translation>
     </message>
     <message>
         <source>Deleting secret chat</source>
-        <translation>Elimina chat segreta</translation>
+        <translation>Elimina conversazione segreta</translation>
     </message>
     <message>
         <source>Deleting group</source>
@@ -469,7 +469,7 @@ non letti</translation>
     </message>
     <message>
         <source>Chat information</source>
-        <translation>Informazioni sulla chat</translation>
+        <translation>Informazioni sulla conversazione</translation>
     </message>
 </context>
 <context>
@@ -513,7 +513,7 @@ non letti</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation>Rimozione chat segreta</translation>
+        <translation>Rimozione conversazione segreta</translation>
     </message>
     <message>
         <source>Deleting Group</source>
@@ -523,7 +523,7 @@ non letti</translation>
         <source>No Chats
 
 Do a swype to the right to select a contact</source>
-        <translation>Nessuna Chat
+        <translation>Nessuna conversazione
 
 Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
@@ -536,7 +536,7 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation>Nuova chat segreta</translation>
+        <translation>Nuova conversazione segreta</translation>
     </message>
     <message>
         <source>New Group</source>
@@ -552,11 +552,11 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Hide Search Field</source>
-        <translation type="unfinished"></translation>
+        <translation>Nascondi ricerca</translation>
     </message>
     <message>
         <source>Show Search Field</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra ricerca</translation>
     </message>
 </context>
 <context>
@@ -647,7 +647,7 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Install Sticker set</source>
-        <translation>Installa questi Sticker</translation>
+        <translation>Installa set di Adesivi</translation>
     </message>
     <message>
         <source>Open</source>
@@ -740,7 +740,7 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     <name>SecretDialogDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation>Chat segreta rimossa</translation>
+        <translation>Conversazione segreta rimossa</translation>
     </message>
 </context>
 <context>
@@ -754,7 +754,7 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     <name>SelectorFilesPage</name>
     <message>
         <source>Android storage</source>
-        <translation>Storage Android</translation>
+        <translation>Spazio di archiviazione Android</translation>
     </message>
     <message>
         <source>SD Card</source>
@@ -777,7 +777,7 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     <name>SelectorImagesPage</name>
     <message>
         <source>Android storage</source>
-        <translation>Storage Android</translation>
+        <translation>Spazio di archiviazione Android</translation>
     </message>
     <message>
         <source>SD Card</source>
@@ -789,7 +789,7 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Sort ascending</source>
-        <translation>Ordina dal più vecchio</translation>
+        <translation>Ordina dal meno recente</translation>
     </message>
     <message>
         <source>Sort descending</source>
@@ -859,11 +859,11 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Sticker</source>
-        <translation>Sticker</translation>
+        <translation>Adesivo</translation>
     </message>
     <message>
         <source>Browse files</source>
-        <translation>Altri files</translation>
+        <translation>Altri file</translation>
     </message>
 </context>
 <context>
@@ -905,7 +905,7 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Select a Sticker Set from below</source>
-        <translation>Seleziona un set di sticker</translation>
+        <translation>Seleziona un set di Adesivi</translation>
     </message>
 </context>
 <context>
@@ -916,7 +916,7 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Chats</source>
-        <translation>Chat</translation>
+        <translation>Conversazioni</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -974,7 +974,7 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Secret chat created by ��%1��</source>
-        <translation>Chat segreta creata da «%1»</translation>
+        <translation>Conversazione segreta creata da «%1»</translation>
     </message>
     <message>
         <source>Group created by ��%1��</source>
@@ -1057,11 +1057,11 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Sticker</source>
-        <translation type="unfinished">Sticker</translation>
+        <translation>Adesivi</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Posizione</translation>
     </message>
 </context>
 <context>
@@ -1072,7 +1072,7 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Begin Secret Chat</source>
-        <translation>Inizia chat segreta</translation>
+        <translation>Inizia conversazione segreta</translation>
     </message>
     <message>
         <source>Phone Number</source>

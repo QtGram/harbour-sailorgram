@@ -402,11 +402,11 @@ viestit</translation>
     </message>
     <message>
         <source>Clear errors</source>
-        <translation>Pyyhi viat</translation>
+        <translation>Pyyhi virheet</translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation>Poistetaan vikoja</translation>
+        <translation>Poistetaan virheet</translation>
     </message>
     <message>
         <source>Error log is empty</source>
@@ -662,7 +662,7 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     <name>MessagePreview</name>
     <message>
         <source>You</source>
-        <translation type="unfinished"></translation>
+        <translation>Sinä</translation>
     </message>
 </context>
 <context>

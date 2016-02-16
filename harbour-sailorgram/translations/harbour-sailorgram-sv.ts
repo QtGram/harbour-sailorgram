@@ -289,7 +289,7 @@ Minimilängd är 5 tecken.</translation>
     <name>ConnectingLabel</name>
     <message>
         <source>Not connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Inte ansluten</translation>
     </message>
 </context>
 <context>
@@ -552,11 +552,11 @@ Svep åt vänster för att välja en kontakt</translation>
     </message>
     <message>
         <source>Hide Search Field</source>
-        <translation type="unfinished"></translation>
+        <translation>Dölj sökfältet</translation>
     </message>
     <message>
         <source>Show Search Field</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa sökfältet</translation>
     </message>
 </context>
 <context>
@@ -1057,11 +1057,11 @@ Svep åt vänster för att välja en kontakt</translation>
     </message>
     <message>
         <source>Sticker</source>
-        <translation type="unfinished">Märke</translation>
+        <translation>Märke</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Position</translation>
     </message>
 </context>
 <context>

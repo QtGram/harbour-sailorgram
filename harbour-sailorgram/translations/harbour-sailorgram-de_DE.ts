@@ -228,7 +228,7 @@ Minimum sind 5 Zeichen.</translation>
     </message>
     <message>
         <source>Add member</source>
-        <translation>Mitglieder hinzufügen</translation>
+        <translation>Mitglied hinzufügen</translation>
     </message>
 </context>
 <context>
@@ -410,7 +410,7 @@ Nachrichten</translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation>:) Keine Fehler vorhanden</translation>
+        <translation>:-) Keine Fehler vorhanden</translation>
     </message>
     <message>
         <source>Error code:</source>
@@ -662,7 +662,7 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     <name>MessagePreview</name>
     <message>
         <source>You</source>
-        <translation type="unfinished"></translation>
+        <translation>Du</translation>
     </message>
 </context>
 <context>

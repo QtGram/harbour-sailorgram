@@ -289,7 +289,7 @@ Minimumslængde er fem tegn.</translation>
     <name>ConnectingLabel</name>
     <message>
         <source>Not connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikke forbundet</translation>
     </message>
 </context>
 <context>
@@ -552,11 +552,11 @@ Stryg til venstre for at vælge en kontakt</translation>
     </message>
     <message>
         <source>Hide Search Field</source>
-        <translation type="unfinished"></translation>
+        <translation>Gem Søgefelt</translation>
     </message>
     <message>
         <source>Show Search Field</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis Søgefelt</translation>
     </message>
 </context>
 <context>
@@ -1057,11 +1057,11 @@ Stryg til venstre for at vælge en kontakt</translation>
     </message>
     <message>
         <source>Sticker</source>
-        <translation type="unfinished">Mærke</translation>
+        <translation>Mærke</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Position</translation>
     </message>
 </context>
 <context>

@@ -16,7 +16,7 @@ QtObject
     readonly property string hereAppCode: "zfYp6V9Ou_wDQn4NVqMofA"
     readonly property string version: "0.79"
     readonly property bool beta: true
-    readonly property int betanum: 4
+    readonly property int betanum: 5
     readonly property int stepcount: 25
 
     readonly property int bubbleradius: {

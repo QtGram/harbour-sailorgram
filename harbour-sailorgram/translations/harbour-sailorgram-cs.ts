@@ -649,7 +649,7 @@ Utři do prava aby jsi vybral kontakt</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít</translation>
     </message>
     <message>
         <source>Reply</source>
@@ -660,7 +660,7 @@ Utři do prava aby jsi vybral kontakt</translation>
     <name>MessagePreview</name>
     <message>
         <source>You</source>
-        <translation type="unfinished"></translation>
+        <translation>Ty</translation>
     </message>
 </context>
 <context>
@@ -685,7 +685,7 @@ Utři do prava aby jsi vybral kontakt</translation>
     <name>PeerProfile</name>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Skupina</translation>
     </message>
 </context>
 <context>
@@ -731,7 +731,7 @@ Utři do prava aby jsi vybral kontakt</translation>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Činnost</translation>
+        <translation>Akce</translation>
     </message>
 </context>
 <context>
@@ -768,7 +768,7 @@ Utři do prava aby jsi vybral kontakt</translation>
     </message>
     <message>
         <source>Send %1 file(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Odeslat %1 soubor(u)</translation>
     </message>
 </context>
 <context>
@@ -803,15 +803,15 @@ Utři do prava aby jsi vybral kontakt</translation>
     </message>
     <message>
         <source>Send %1 image(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Odeslat %1 obrazku</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Zpět</translation>
+        <translation>Zpět</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Anulovat</translation>
+        <translation>Anulovat</translation>
     </message>
 </context>
 <context>

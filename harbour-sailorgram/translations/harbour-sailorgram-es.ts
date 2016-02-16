@@ -289,7 +289,7 @@ La longitud mínima es de 5 caracteres.</translation>
     <name>ConnectingLabel</name>
     <message>
         <source>Not connected</source>
-        <translation type="unfinished"></translation>
+        <translation>No conectado</translation>
     </message>
 </context>
 <context>
@@ -550,11 +550,11 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
     </message>
     <message>
         <source>Hide Search Field</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocultar campo de búsqueda</translation>
     </message>
     <message>
         <source>Show Search Field</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar campo de búsqueda</translation>
     </message>
 </context>
 <context>
@@ -660,7 +660,7 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
     <name>MessagePreview</name>
     <message>
         <source>You</source>
-        <translation type="unfinished"></translation>
+        <translation>Tú</translation>
     </message>
 </context>
 <context>
@@ -1055,11 +1055,11 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
     </message>
     <message>
         <source>Sticker</source>
-        <translation type="unfinished">Sticker</translation>
+        <translation>Sticker</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Posición</translation>
     </message>
 </context>
 <context>

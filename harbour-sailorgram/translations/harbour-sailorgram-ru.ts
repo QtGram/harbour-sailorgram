@@ -289,7 +289,7 @@ Minimum length is 5 characters.</source>
     <name>ConnectingLabel</name>
     <message>
         <source>Not connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Не в сети</translation>
     </message>
 </context>
 <context>
@@ -552,11 +552,11 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Hide Search Field</source>
-        <translation type="unfinished"></translation>
+        <translation>Скрыть поле поиска</translation>
     </message>
     <message>
         <source>Show Search Field</source>
-        <translation type="unfinished"></translation>
+        <translation>Показать поле поиска</translation>
     </message>
 </context>
 <context>
@@ -662,7 +662,7 @@ Do a swype to the right to select a contact</source>
     <name>MessagePreview</name>
     <message>
         <source>You</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы</translation>
     </message>
 </context>
 <context>
@@ -1057,11 +1057,11 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Sticker</source>
-        <translation type="unfinished">Стикер</translation>
+        <translation>Стикер</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Позиция</translation>
     </message>
 </context>
 <context>
