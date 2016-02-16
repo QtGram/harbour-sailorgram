@@ -2,6 +2,7 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
 import "../../../../models"
+import "../../../../components"
 import "../../../../components/message"
 import "../../../../js/TelegramHelper.js" as TelegramHelper
 import "../../../../js/ColorScheme.js" as ColorScheme
@@ -11,7 +12,7 @@ MessageMediaItem
     property FileLocation fileLocation: context.telegram.locationOfDocument(message.media.document)
 
     id: messagedocument
-    contentWidth: imgpreview.width + Math.max(lbldummyinfo.contentWidth, lbldummymimesize.contentWidth) + Theme.paddingMedium
+    contentWidth: imgpreview.width + Math.max(lblinfo.calculatedWidth, lblmimesize.calculatedWidth) + Theme.paddingMedium
     contentHeight: row.height
 
     Row
@@ -43,10 +44,7 @@ MessageMediaItem
             width: parent.width - imgpreview.width
             spacing: Theme.paddingSmall
 
-            Label { id: lbldummyinfo; text: lblinfo.text; visible: false }
-            Label { id: lbldummymimesize; text: lblmimesize.text; visible: false }
-
-            Label
+            ResizableLabel
             {
                 id: lblinfo
                 width: parent.width - Theme.paddingSmall
@@ -58,7 +56,7 @@ MessageMediaItem
                 elide: Text.ElideRight
             }
 
-            Label
+            ResizableLabel
             {
                 id: lblmimesize
                 width: parent.width - Theme.paddingSmall

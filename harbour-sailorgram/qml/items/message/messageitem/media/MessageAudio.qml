@@ -1,6 +1,7 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
+import "../../../../components"
 import "../../../../components/message"
 import "../../../../components/mediaplayer/mediacomponents"
 import "../../../../js/TelegramHelper.js" as TelegramHelper
@@ -9,7 +10,7 @@ import "../../../../js/ColorScheme.js" as ColorScheme
 MessageMediaItem
 {
     id: messageaudio
-    contentWidth: imgpreview.width + Math.max(lbldummyinfo.contentWidth, Math.max(lbldummysize.contentWidth, lbldummyduration.contentWidth)) + Theme.paddingMedium
+    contentWidth: imgpreview.width + Math.max(lblinfo.calculatedWidth, Math.max(lblsize.calculatedWidth, lblduration.calculatedWidth)) + Theme.paddingMedium
     contentHeight: row.height
 
     MediaPlayerTimings { id: mediaplayertimings }
@@ -42,11 +43,7 @@ MessageMediaItem
             id: info
             width: parent.width - imgpreview.width
 
-            Label { id: lbldummyinfo; text: lblinfo.text; visible: false }
-            Label { id: lbldummysize; text: lblsize.text; visible: false }
-            Label { id: lbldummyduration; text: lblduration.text; visible: false }
-
-            Label
+            ResizableLabel
             {
                 id: lblinfo
                 width: parent.width
@@ -59,7 +56,7 @@ MessageMediaItem
                 elide: Text.ElideRight
             }
 
-            Label
+            ResizableLabel
             {
                 id: lblsize
                 width: parent.width
@@ -70,7 +67,7 @@ MessageMediaItem
                 elide: Text.ElideRight
             }
 
-            Label
+            ResizableLabel
             {
                 id: lblduration
                 width: parent.width

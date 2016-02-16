@@ -1,8 +1,9 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
-import "../../../items/message/messageitem/media"
 import "../../../models"
+import "../../../components"
+import "../../../items/message/messageitem/media"
 import "../../../js/ColorScheme.js" as ColorScheme
 import "../../../js/TelegramHelper.js" as TelegramHelper
 import "../../../js/TelegramAction.js" as TelegramAction
@@ -12,7 +13,7 @@ import "../../../js/TelegramConstants.js" as TelegramConstants
 Row
 {
     property alias showQuoteRect: rect.visible
-    readonly property real contentWidth: Math.max(dummytextcontent.contentWidth, dummyuser.contentWidth) + (showQuoteRect ? rect.width : 0) + spacing
+    readonly property real contentWidth: Math.max(mtctextcontent.calculatedWidth, lbluser.calculatedWidth) + (showQuoteRect ? rect.width : 0) + spacing
 
     property Context context
     property Dialog dialog
@@ -33,26 +34,6 @@ Row
         telegram: context.telegram
         target: messagepreview.message
         defaultThumbnail: TelegramMedia.defaultThumbnail(message)
-    }
-
-    Text
-    {
-        id: dummytextcontent
-        visible: false
-        font.pixelSize: mtctextcontent.font.pixelSize
-        font.italic: mtctextcontent.font.italic
-        text: mtctextcontent.rawText
-        wrapMode: mtctextcontent.wrapMode
-    }
-
-    Text
-    {
-        id: dummyuser
-        visible: false
-        font.bold: true
-        font.pixelSize: Theme.fontSizeTiny
-        text: lbluser.text
-        wrapMode: lbluser.wrapMode
     }
 
     Rectangle
@@ -78,7 +59,7 @@ Row
         width: parent.width
         height: lbluser.contentHeight + mtctextcontent.contentHeight
 
-        Label
+        ResizableLabel
         {
             id: lbluser
             width: parent.width - Theme.paddingSmall

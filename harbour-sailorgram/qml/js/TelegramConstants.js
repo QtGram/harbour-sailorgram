@@ -33,6 +33,10 @@ var typeMessageMediaAudio = 0xc6b68300;
 var typeMessageMediaWebPage = 0xa32dd600;
 var typeMessageMediaVenue = 0x7912b71f;
 
+/* Photo Constants */
+var typePhotoEmpty = 0x2331b22d;
+var typePhoto = 0xc3838076;
+
 /* Document Media Attributes Constants */
 var typeDocumentAttributeImageSize = 0x6c37c15c;
 var typeDocumentAttributeAnimated = 0x11b58939;

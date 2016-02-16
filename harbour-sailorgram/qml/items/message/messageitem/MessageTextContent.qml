@@ -1,8 +1,9 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
+import "../../../components"
 import "../../../js/TextElaborator.js" as TextElaborator
 
-Label
+ResizableLabel
 {
     property bool openUrls: true
     property string emojiPath

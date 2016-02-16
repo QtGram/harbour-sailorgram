@@ -189,6 +189,9 @@ function messageContent(context, message)
 
     if(message.media)
     {
+        if(message.media.caption.length > 0)
+            return message.media.caption;
+
         switch(message.media.classType)
         {
             case TelegramConstants.typeMessageMediaDocument: {

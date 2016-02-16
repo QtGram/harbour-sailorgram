@@ -13,34 +13,12 @@ Item
     property Dialog dialog
     property Message message
 
-    property real calculatedWidth: TelegramHelper.isServiceMessage(message) ?
-                                       dummytextcontent.contentWidth :
-                                       Math.max(dummytextcontent.contentWidth, dummymsgstatus.contentWidth);
+    property real calculatedWidth: TelegramHelper.isServiceMessage(message) ? mtctextcontent.calculatedWidth :
+                                                                              Math.max(mtctextcontent.calculatedWidth, msgstatus.calculatedWidth);
     property real maxWidth
 
     id: messagetext
     height: content.height + Theme.paddingSmall
-
-    Text
-    {
-        id: dummytextcontent
-        width: maxWidth
-        wrapMode: mtctextcontent.wrapMode
-        font.pixelSize: mtctextcontent.font.pixelSize
-        font.italic: mtctextcontent.font.italic
-        text: mtctextcontent.text
-        visible: false
-    }
-
-    Text
-    {
-        id: dummymsgstatus
-        width: parent.width
-        font.pixelSize: msgstatus.font.pixelSize
-        font.italic: msgstatus.font.italic
-        text: msgstatus.text
-        visible: false
-    }
 
     Column
     {
