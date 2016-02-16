@@ -325,6 +325,14 @@ Minimum length is 5 characters.</source>
         <source>Contacts</source>
         <translation>Контакти</translation>
     </message>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished">Профіль</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Налаштування</translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>
@@ -527,28 +535,17 @@ Do a swype to the right to select a contact</source>
 
 Зробіть свайп вправо для того щоб обрати контакт</translation>
     </message>
-</context>
-<context>
-    <name>DialogsPullDownMenu</name>
     <message>
-        <source>Profile</source>
-        <translation>Профіль</translation>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation>Новий секретний чат</translation>
+        <translation type="unfinished">Новий секретний чат</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation>Нова група</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Налаштування</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation>Вийти</translation>
+        <translation type="unfinished">Нова група</translation>
     </message>
     <message>
         <source>Hide Search Field</source>

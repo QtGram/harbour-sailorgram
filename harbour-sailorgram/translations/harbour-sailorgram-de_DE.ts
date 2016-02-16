@@ -325,6 +325,14 @@ Minimum sind 5 Zeichen.</translation>
         <source>Contacts</source>
         <translation>Kontakte</translation>
     </message>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished">Profil</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Einstellungen</translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>
@@ -527,28 +535,17 @@ Do a swype to the right to select a contact</source>
 
 Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
-</context>
-<context>
-    <name>DialogsPullDownMenu</name>
     <message>
-        <source>Profile</source>
-        <translation>Profil</translation>
+        <source>Exit</source>
+        <translation type="unfinished">Schließen</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation>Neuer geheimer Chat</translation>
+        <translation type="unfinished">Neuer geheimer Chat</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation>Neue Gruppe</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Einstellungen</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation>Schließen</translation>
+        <translation type="unfinished">Neue Gruppe</translation>
     </message>
     <message>
         <source>Hide Search Field</source>

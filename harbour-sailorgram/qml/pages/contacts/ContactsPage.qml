@@ -23,14 +23,24 @@ Page
     {
         PullDownMenu
         {
-            property Context context
-
             id: userspulldownmenu
 
             MenuItem
             {
+                text: qsTr("Settings")
+                onClicked: pageStack.push(Qt.resolvedUrl("../settings/SettingsPage.qml"), { "context": contactspage.context })
+            }
+
+            MenuItem
+            {
+                text: qsTr("Profile")
+                onClicked: pageStack.push(Qt.resolvedUrl("../profile/ProfilePage.qml"), { "context": contactspage.context })
+            }
+
+            MenuItem
+            {
                 text: qsTr("Add Contact")
-                onClicked: pageStack.push(Qt.resolvedUrl("AddContactPage.qml"), { "context": context });
+                onClicked: pageStack.push(Qt.resolvedUrl("AddContactPage.qml"), { "context": contactspage.context });
             }
         }
 

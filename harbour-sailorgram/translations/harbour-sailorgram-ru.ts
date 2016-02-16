@@ -325,6 +325,14 @@ Minimum length is 5 characters.</source>
         <source>Contacts</source>
         <translation>Контакты</translation>
     </message>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished">Профиль</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Настройки</translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>
@@ -527,36 +535,25 @@ Do a swype to the right to select a contact</source>
 
 Свайпните вправо, чтобы выбрать контакта</translation>
     </message>
-</context>
-<context>
-    <name>DialogsPullDownMenu</name>
     <message>
-        <source>Profile</source>
-        <translation>Профиль</translation>
+        <source>Exit</source>
+        <translation type="unfinished">Выйти</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation>Создать тайный диалог</translation>
+        <translation type="unfinished">Создать тайный диалог</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation>Создать беседу</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Настройки</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation>Выйти</translation>
+        <translation type="unfinished">Создать беседу</translation>
     </message>
     <message>
         <source>Hide Search Field</source>
-        <translation>Скрыть поле поиска</translation>
+        <translation type="unfinished">Скрыть поле поиска</translation>
     </message>
     <message>
         <source>Show Search Field</source>
-        <translation>Показать поле поиска</translation>
+        <translation type="unfinished">Показать поле поиска</translation>
     </message>
 </context>
 <context>

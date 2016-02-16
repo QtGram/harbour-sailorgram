@@ -325,6 +325,14 @@ De minimale lengte is 5 tekens.</translation>
         <source>Contacts</source>
         <translation>Contactpersonen</translation>
     </message>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished">Profiel</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Instellingen</translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>
@@ -527,36 +535,25 @@ Do a swype to the right to select a contact</source>
 
 Veeg naar rechts om een contactpersoon te selecteren</translation>
     </message>
-</context>
-<context>
-    <name>DialogsPullDownMenu</name>
     <message>
-        <source>Profile</source>
-        <translation>Profiel</translation>
+        <source>Exit</source>
+        <translation type="unfinished">Afsluiten</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation>Nieuw geheim gesprek</translation>
+        <translation type="unfinished">Nieuw geheim gesprek</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation>Nieuwe groep</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Instellingen</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation>Afsluiten</translation>
+        <translation type="unfinished">Nieuwe groep</translation>
     </message>
     <message>
         <source>Hide Search Field</source>
-        <translation>Zoekveld verbergen</translation>
+        <translation type="unfinished">Zoekveld verbergen</translation>
     </message>
     <message>
         <source>Show Search Field</source>
-        <translation>Zoekveld weergeven</translation>
+        <translation type="unfinished">Zoekveld weergeven</translation>
     </message>
 </context>
 <context>

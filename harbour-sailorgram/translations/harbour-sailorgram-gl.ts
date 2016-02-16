@@ -325,6 +325,14 @@ A lonxitude mínima é de 5 caracteres.</translation>
         <source>Contacts</source>
         <translation>Contactos</translation>
     </message>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished">Perfil</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Preferencias</translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>
@@ -527,28 +535,17 @@ Do a swype to the right to select a contact</source>
 
 Desprace a dereita para seleccionar un contacto</translation>
     </message>
-</context>
-<context>
-    <name>DialogsPullDownMenu</name>
     <message>
-        <source>Profile</source>
-        <translation>Perfil</translation>
+        <source>Exit</source>
+        <translation type="unfinished">Sair</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation>Novo chat segredo</translation>
+        <translation type="unfinished">Novo chat segredo</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation>Novo grupo</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Preferencias</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation>Sair</translation>
+        <translation type="unfinished">Novo grupo</translation>
     </message>
     <message>
         <source>Hide Search Field</source>

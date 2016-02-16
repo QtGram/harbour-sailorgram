@@ -325,6 +325,14 @@ Vähimmäispituus on 5 merkkiä.</translation>
         <source>Contacts</source>
         <translation>Yhteydet</translation>
     </message>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished">Profiili</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Asetukset</translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>
@@ -527,28 +535,17 @@ Do a swype to the right to select a contact</source>
 
 Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     </message>
-</context>
-<context>
-    <name>DialogsPullDownMenu</name>
     <message>
-        <source>Profile</source>
-        <translation>Profiili</translation>
+        <source>Exit</source>
+        <translation type="unfinished">Poistu</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation>Uusi salainen keskustelu</translation>
+        <translation type="unfinished">Uusi salainen keskustelu</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation>Uusi ryhmä</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Asetukset</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation>Poistu</translation>
+        <translation type="unfinished">Uusi ryhmä</translation>
     </message>
     <message>
         <source>Hide Search Field</source>

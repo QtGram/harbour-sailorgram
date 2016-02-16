@@ -325,6 +325,14 @@ La longitud mínima es de 5 caracteres.</translation>
         <source>Contacts</source>
         <translation>Contactos</translation>
     </message>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished">Perfil</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Ajustes</translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>
@@ -525,36 +533,25 @@ Do a swype to the right to select a contact</source>
 
 Desliza hacia la derecha para seleccionar un contacto</translation>
     </message>
-</context>
-<context>
-    <name>DialogsPullDownMenu</name>
     <message>
-        <source>Profile</source>
-        <translation>Perfil</translation>
+        <source>Exit</source>
+        <translation type="unfinished">Salir</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation>Nuevo chat secreto</translation>
+        <translation type="unfinished">Nuevo chat secreto</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation>Nuevo grupo</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Ajustes</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation>Salir</translation>
+        <translation type="unfinished">Nuevo grupo</translation>
     </message>
     <message>
         <source>Hide Search Field</source>
-        <translation>Ocultar campo de búsqueda</translation>
+        <translation type="unfinished">Ocultar campo de búsqueda</translation>
     </message>
     <message>
         <source>Show Search Field</source>
-        <translation>Mostrar campo de búsqueda</translation>
+        <translation type="unfinished">Mostrar campo de búsqueda</translation>
     </message>
 </context>
 <context>

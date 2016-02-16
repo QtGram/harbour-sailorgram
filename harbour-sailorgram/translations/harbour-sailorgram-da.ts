@@ -325,6 +325,14 @@ Minimumslængde er fem tegn.</translation>
         <source>Contacts</source>
         <translation>Kontakter</translation>
     </message>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished">Profil</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Indstillinger</translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>
@@ -527,36 +535,25 @@ Do a swype to the right to select a contact</source>
 
 Stryg til venstre for at vælge en kontakt</translation>
     </message>
-</context>
-<context>
-    <name>DialogsPullDownMenu</name>
     <message>
-        <source>Profile</source>
-        <translation>Profil</translation>
+        <source>Exit</source>
+        <translation type="unfinished">Afslut</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation>Ny Hemmelig Samtale</translation>
+        <translation type="unfinished">Ny Hemmelig Samtale</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation>Ny gruppe</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Indstillinger</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation>Afslut</translation>
+        <translation type="unfinished">Ny Gruppe</translation>
     </message>
     <message>
         <source>Hide Search Field</source>
-        <translation>Gem Søgefelt</translation>
+        <translation type="unfinished">Gem Søgefelt</translation>
     </message>
     <message>
         <source>Show Search Field</source>
-        <translation>Vis Søgefelt</translation>
+        <translation type="unfinished">Vis Søgefelt</translation>
     </message>
 </context>
 <context>

@@ -99,14 +99,16 @@ Page
             running: true
         }
 
-        Row
+        Item
         {
-            anchors { horizontalCenter: parent.horizontalCenter; bottom: parent.bottom; bottomMargin: Theme.paddingLarge }
+            visible: !timlogin.running
+            anchors { left: parent.left; bottom: parent.bottom; right: parent.right }
+            height: Theme.itemSizeExtraLarge
 
             Button
             {
                 text: qsTr("Login Again")
-                visible: !timlogin.running
+                anchors { left: parent.left; leftMargin: Theme.paddingLarge }
 
                 onClicked: {
                     if(context.telegram.phoneNumber.length > 0) {
@@ -120,7 +122,7 @@ Page
             Button
             {
                 text: qsTr("Error log")
-                visible: !timlogin.running
+                anchors { right: parent.right; rightMargin: Theme.paddingLarge }
 
                 onClicked: {
                     pageStack.pushAttached(Qt.resolvedUrl("../settings/DebugSettingsPage.qml"), { "context": connectionpage.context });

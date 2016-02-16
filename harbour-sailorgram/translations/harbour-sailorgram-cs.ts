@@ -325,6 +325,14 @@ Minimální délka je 5 znaků .</translation>
         <source>Contacts</source>
         <translation>Kontakty</translation>
     </message>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished">Profil</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Nastavení</translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>
@@ -525,28 +533,17 @@ Do a swype to the right to select a contact</source>
 
 Utři do prava aby jsi vybral kontakt</translation>
     </message>
-</context>
-<context>
-    <name>DialogsPullDownMenu</name>
     <message>
-        <source>Profile</source>
-        <translation>Profil</translation>
+        <source>Exit</source>
+        <translation type="unfinished">Ukončit</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation>Nový tajný rozhovor</translation>
+        <translation type="unfinished">Nový tajný rozhovor</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation>Nová skupina</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Nastavení</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation>Ukončit</translation>
+        <translation type="unfinished">Nová skupina</translation>
     </message>
     <message>
         <source>Hide Search Field</source>

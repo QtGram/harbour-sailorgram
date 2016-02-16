@@ -325,6 +325,14 @@ Minimum length is 5 characters.</source>
         <source>Contacts</source>
         <translation>Επαφές</translation>
     </message>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished">Προφίλ</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Ρυθμίσεις</translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>
@@ -528,28 +536,17 @@ Do a swype to the right to select a contact</source>
 
 Σύρατε προς τα δεξιά για να επιλέξετε μια επαφή</translation>
     </message>
-</context>
-<context>
-    <name>DialogsPullDownMenu</name>
     <message>
-        <source>Profile</source>
-        <translation>Προφίλ</translation>
+        <source>Exit</source>
+        <translation type="unfinished">Έξοδος</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation>Νέα μυστική συνομιλία</translation>
+        <translation type="unfinished">Νέα μυστική συνομιλία</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation>Νέα Ομάδα</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Ρυθμίσεις</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation>Έξοδος</translation>
+        <translation type="unfinished">Νέα Ομάδα</translation>
     </message>
     <message>
         <source>Hide Search Field</source>

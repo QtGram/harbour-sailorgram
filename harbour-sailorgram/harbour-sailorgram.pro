@@ -207,7 +207,6 @@ RESOURCES += \
     resources.qrc
 
 DISTFILES += \
-    qml/menus/dialog/DialogsPullDownMenu.qml \
     qml/items/dialog/DialogItem.qml \
     qml/pages/dialogs/DialogsPage.qml \
     qml/items/secretdialog/SecretDialogDiscarded.qml \

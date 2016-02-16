@@ -325,6 +325,14 @@ La lunghezza minima è di 5 caratteri.</translation>
         <source>Contacts</source>
         <translation>Contatti</translation>
     </message>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished">Profilo</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Impostazioni</translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>
@@ -527,36 +535,25 @@ Do a swype to the right to select a contact</source>
 
 Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
-</context>
-<context>
-    <name>DialogsPullDownMenu</name>
     <message>
-        <source>Profile</source>
-        <translation>Profilo</translation>
+        <source>Exit</source>
+        <translation type="unfinished">Esci</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation>Nuova conversazione segreta</translation>
+        <translation type="unfinished">Nuova conversazione segreta</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation>Nuovo gruppo</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Impostazioni</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation>Esci</translation>
+        <translation type="unfinished">Nuovo gruppo</translation>
     </message>
     <message>
         <source>Hide Search Field</source>
-        <translation>Nascondi ricerca</translation>
+        <translation type="unfinished">Nascondi ricerca</translation>
     </message>
     <message>
         <source>Show Search Field</source>
-        <translation>Mostra ricerca</translation>
+        <translation type="unfinished">Mostra ricerca</translation>
     </message>
 </context>
 <context>

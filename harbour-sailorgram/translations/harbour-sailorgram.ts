@@ -322,6 +322,14 @@ Minimum length is 5 characters.</source>
         <source>Contacts</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>
@@ -520,11 +528,8 @@ messages</source>
 Do a swype to the right to select a contact</source>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>DialogsPullDownMenu</name>
     <message>
-        <source>Profile</source>
+        <source>Exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -533,14 +538,6 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>New Group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

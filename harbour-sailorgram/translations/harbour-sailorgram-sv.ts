@@ -325,6 +325,14 @@ Minimilängd är 5 tecken.</translation>
         <source>Contacts</source>
         <translation>Kontakter</translation>
     </message>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished">Profil</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Inställningar</translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>
@@ -527,36 +535,25 @@ Do a swype to the right to select a contact</source>
 
 Svep åt vänster för att välja en kontakt</translation>
     </message>
-</context>
-<context>
-    <name>DialogsPullDownMenu</name>
     <message>
-        <source>Profile</source>
-        <translation>Profil</translation>
+        <source>Exit</source>
+        <translation type="unfinished">Avsluta</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation>Ny hemlig chatt</translation>
+        <translation type="unfinished">Ny hemlig chatt</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation>Ny grupp</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Inställningar</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation>Avsluta</translation>
+        <translation type="unfinished">Ny grupp</translation>
     </message>
     <message>
         <source>Hide Search Field</source>
-        <translation>Dölj sökfältet</translation>
+        <translation type="unfinished">Dölj sökfältet</translation>
     </message>
     <message>
         <source>Show Search Field</source>
-        <translation>Visa sökfältet</translation>
+        <translation type="unfinished">Visa sökfältet</translation>
     </message>
 </context>
 <context>

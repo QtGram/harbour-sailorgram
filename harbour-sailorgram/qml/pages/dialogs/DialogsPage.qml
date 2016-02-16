@@ -31,10 +31,10 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
+import "./../../components/telegram"
 import "../../components"
 import "../../models"
 import "../../components/search"
-import "../../menus/dialog"
 import "../../items/dialog"
 import "../../js/TelegramHelper.js" as TelegramHelper
 
@@ -82,10 +82,37 @@ Page
     {
         anchors.fill: parent
 
-        DialogsPullDownMenu
+        PullDownMenu
         {
             id: dialogsmenu
-            context: dialogspage.context
+
+            MenuItem
+            {
+                text: qsTr("Exit")
+                visible: context.sailorgram.keepRunning
+                onClicked: Qt.quit()
+            }
+
+            TelegramMenuItem
+            {
+                text: qsTr("New Secret Chat")
+                context: dialogspage.context
+                onClicked: pageStack.push(Qt.resolvedUrl("../../pages/secretdialogs/CreateSecretDialogPage.qml"), { "context": dialogspage.context })
+            }
+
+            TelegramMenuItem
+            {
+                text: qsTr("New Group")
+                context: dialogspage.context
+                onClicked: pageStack.push(Qt.resolvedUrl("../../pages/chat/CreateChatPage.qml"), { "context": dialogspage.context })
+            }
+
+            MenuItem
+            {
+                id: searchfield
+                text: context.showsearchfield ? qsTr("Hide Search Field") : qsTr("Show Search Field")
+                onClicked: context.showsearchfield = context.showsearchfield ? false : true
+            }
         }
 
         PageHeader
