@@ -149,6 +149,25 @@ function isServiceMessage(message)
     return false;
 }
 
+function webPageHasThumb(message)
+{
+    if(!message)
+        return false;
+
+    if(message.media.classType !== TelegramConstants.typeMessageMediaWebPage)
+        return false;
+
+    return message.media.webpage.photo.classType !== TelegramConstants.typePhotoEmpty;
+}
+
+function isWebPage(message)
+{
+    if(!message)
+        return false;
+
+    return message.media.classType === TelegramConstants.typeMessageMediaWebPage;
+}
+
 function isMediaMessage(message)
 {
     if(!message || !message.media)

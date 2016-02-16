@@ -1,6 +1,7 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
+import "../../../components"
 import "../../../components/message"
 import "../../../models"
 import "../../../menus"
@@ -136,7 +137,7 @@ ListItem
             var w = messagetext.calculatedWidth;
 
             if(lbluser.visible)
-                w = Math.max(w, lbluser.contentWidth);
+                w = Math.max(w, lbluser.calculatedWidth);
 
             if(quotedcontainer.item)
                 w = Math.max(w, quotedcontainer.item.width);
@@ -155,7 +156,7 @@ ListItem
             height: Theme.paddingMedium
         }
 
-        Label
+        ResizableLabel
         {
             id: lbluser
 
@@ -172,6 +173,7 @@ ListItem
             font.bold: true
             wrapMode: Text.NoWrap
             elide: Text.ElideRight
+            textFormat: Text.StyledText
 
             visible: {
                 if(TelegramHelper.isForwardedMessage(message))
@@ -188,13 +190,15 @@ ListItem
             }
 
             text: {
-                if(TelegramHelper.isForwardedMessage(message))
-                    return qsTr("Forwarded from %1").arg(TelegramHelper.completeName(context.telegram.user(message.fwdFromId)));
-
-                if(TelegramHelper.isServiceMessage(message) || message.out)
+                if(TelegramHelper.isServiceMessage(message))
                     return "";
 
-                return TelegramHelper.completeName(context.telegram.user(message.fromId))
+                var completename = message.out ? "" : TelegramHelper.completeName(context.telegram.user(message.fromId));
+
+                if(TelegramHelper.isForwardedMessage(message))
+                    return " <i>(" + qsTr("Forwarded from %1").arg(TelegramHelper.completeName(context.telegram.user(message.fwdFromId))) + ")</i>";
+
+                return completename;
             }
         }
 

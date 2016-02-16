@@ -13,7 +13,11 @@ import "../../../js/TelegramConstants.js" as TelegramConstants
 Row
 {
     property alias showQuoteRect: rect.visible
-    readonly property real contentWidth: Math.max(mtctextcontent.calculatedWidth, lbluser.calculatedWidth) + (showQuoteRect ? rect.width : 0) + spacing
+
+    readonly property real contentWidth: {
+        var w = imgmedia.visible ? imgmedia.width : 0;
+        return w + Math.max(mtctextcontent.calculatedWidth, lbluser.calculatedWidth) + (showQuoteRect ? rect.width : 0) + spacing;
+    }
 
     property Context context
     property Dialog dialog
@@ -49,15 +53,27 @@ Row
         id: imgmedia
         width: parent.height
         height: parent.height
-        source: filehandler.thumbPath
-        visible: TelegramHelper.isMediaMessage(message)
+        source: filehandler.downloaded ? filehandler.filePath : filehandler.thumbPath
+
+        visible: {
+            if(TelegramHelper.isWebPage(message) && !TelegramHelper.webPageHasThumb(message))
+                return false;
+
+            return TelegramHelper.isMediaMessage(message);
+        }
+
+        fillMode: {
+            if(TelegramHelper.isWebPage(message) && TelegramHelper.webPageHasThumb(message))
+                return Image.PreserveAspectCrop;
+
+            return Image.PreserveAspectFit;
+        }
     }
 
     Column
     {
         id: column
-        width: parent.width
-        height: lbluser.contentHeight + mtctextcontent.contentHeight
+        width: parent.width - (imgmedia.visible ? imgmedia.width : 0)
 
         ResizableLabel
         {
@@ -97,6 +113,7 @@ Row
             visible: text.length > 0
             color: messagepreview.textColor
             linkColor: messagepreview.linkColor
+            openUrls: false
 
             rawText: {
                 if(!message)

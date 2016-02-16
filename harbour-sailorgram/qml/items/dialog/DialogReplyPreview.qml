@@ -25,13 +25,12 @@ Item
         dialog: dialogreplypreview.dialog
         message: dialogreplypreview.message
         showQuoteRect: false
+        width: parent.width - btnclose.width - Theme.paddingSmall
 
         anchors {
             left: parent.left
             top: parent.top
-            right: btnclose.left
             leftMargin: Theme.paddingSmall
-            rightMargin: Theme.paddingSmall
             topMargin: Theme.paddingSmall
         }
     }
@@ -39,7 +38,7 @@ Item
     IconButton
     {
         id: btnclose
-        width: parent.height
+        width: messagepreview.height
         anchors { top: parent.top; right: parent.right; bottom: parent.bottom; rightMargin: Theme.paddingSmall }
         icon.source: "qrc:///res/close.png"
         icon.sourceSize: Qt.size(width * 0.5, height * 0.5)
@@ -50,4 +49,3 @@ Item
         }
     }
 }
-
