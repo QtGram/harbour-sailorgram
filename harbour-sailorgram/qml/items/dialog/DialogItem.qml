@@ -183,14 +183,14 @@ ListItem
                     openUrls: false
 
                     color: {
-                        if((dialog.typingUsers.length > 0) || TelegramHelper.isServiceMessage(message) || TelegramHelper.isMediaMessage(message))
+                        if((dialog.typingUsers.length > 0) || TelegramHelper.isServiceMessage(message) || (TelegramHelper.isMediaMessage(message) && (message.media.caption.length <= 0)))
                             return Theme.highlightColor;
 
                         return Theme.primaryColor;
                     }
 
                     font.italic: {
-                        if(TelegramHelper.isServiceMessage(message) || (dialog.typingUsers.length > 0))
+                        if(dialog.typingUsers.length > 0)
                             return true;
 
                         if(TelegramHelper.isMediaMessage(message) && (message.media.classType === TelegramConstants.typeMessageMediaDocument) && context.telegram.documentIsSticker(message.media.document))
