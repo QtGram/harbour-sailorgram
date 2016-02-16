@@ -12,9 +12,11 @@ QtObject
 {
     id: context
 
+    readonly property string hereAppId: "MqR7KyY6dZpTbKiFwc3h"
+    readonly property string hereAppCode: "zfYp6V9Ou_wDQn4NVqMofA"
+    readonly property string version: "0.79"
     readonly property bool beta: true
     readonly property int betanum: 4
-    readonly property string version: "0.79"
     readonly property int stepcount: 25
 
     readonly property int bubbleradius: {
@@ -26,9 +28,6 @@ QtObject
 
         return 0;
     }
-
-    readonly property string hereAppId: "MqR7KyY6dZpTbKiFwc3h"
-    readonly property string hereAppCode: "zfYp6V9Ou_wDQn4NVqMofA"
 
     property bool sendwithreturn: false
     property bool backgrounddisabled: false
@@ -72,27 +71,6 @@ QtObject
 
             // Update dialogs
             context.dialogs.recheck();
-        }
-
-        onOpenDialogRequested: {
-            if(pageStack.depth > 1)
-                pageStack.pop(dialogspage, PageStackAction.Immediate);
-
-            var dialog = context.telegram.dialog(peerid);
-
-            if(dialog === context.telegram.nullDialog)
-            {
-                console.warn("Invalid dialog for peerId = " + peerid);
-                return;
-            }
-
-            if(dialog.encrypted)
-                pageStack.push(Qt.resolvedUrl("../pages/secretdialogs/SecretDialogPage.qml"), { "context": context, "dialog": dialog }, PageStackAction.Immediate);
-            else
-                pageStack.push(Qt.resolvedUrl("../pages/dialogs/DialogPage.qml"), { "context": context, "dialog": dialog }, PageStackAction.Immediate);
-
-            if(Qt.application.state !== Qt.ApplicationActive)
-                mainwindow.activate();
         }
     }
 
