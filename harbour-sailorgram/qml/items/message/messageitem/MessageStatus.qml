@@ -23,6 +23,9 @@ ResizableLabel
     font.pixelSize: Theme.fontSizeTiny
 
     text: {
+        if(!message)
+            return "";
+
         if(dateOnly)
             return TelegramHelper.printableDate(message.date);
 

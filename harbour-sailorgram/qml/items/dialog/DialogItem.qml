@@ -120,7 +120,7 @@ ListItem
                     height: parent.height
                     color: Theme.primaryColor
                     horizontalAlignment: Text.AlignRight
-                    dateOnly: TelegramHelper.isServiceMessage(message) || !dialogitem.message.out
+                    dateOnly: message ? (TelegramHelper.isServiceMessage(message) || !dialogitem.message.out) : false
                     dateFirst: false
                     ticksColor: Theme.highlightColor
                     visible: true
