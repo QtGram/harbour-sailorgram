@@ -80,7 +80,7 @@ void TelegramDialogsModel::setTelegram(TelegramQml *tgo)
         connect( p->telegram->userData(), SIGNAL(valueChanged(QString)), this, SLOT(userDataChanged()) );
 
         connect(p->telegram, SIGNAL(authLoggedInChanged()), this, SLOT(recheck()), Qt::QueuedConnection);
-        connect(p->telegram, SIGNAL(connectedChanged), this, SLOT(recheck()), Qt::QueuedConnection);
+        connect(p->telegram, SIGNAL(connectedChanged()), this, SLOT(recheck()), Qt::QueuedConnection);
     }
 
     recheck();
