@@ -183,7 +183,7 @@ ListItem
                     openUrls: false
 
                     color: {
-                        if((dialog.typingUsers.length > 0) || TelegramHelper.isServiceMessage(message) || (TelegramHelper.isMediaMessage(message) && (message.media.caption.length <= 0)))
+                        if((dialog.typingUsers.length > 0) || TelegramHelper.isServiceMessage(message) || TelegramHelper.isMediaMessage(message))
                             return Theme.highlightColor;
 
                         return Theme.primaryColor;
