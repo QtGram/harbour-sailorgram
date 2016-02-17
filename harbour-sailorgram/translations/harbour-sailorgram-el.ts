@@ -282,14 +282,14 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Open media without waiting</source>
-        <translation type="unfinished"></translation>
+        <translation>Άνοιγμα πολυμέσων χωρίς αναμονή</translation>
     </message>
 </context>
 <context>
     <name>ConnectingLabel</name>
     <message>
         <source>Not connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Μη συνδεμένο</translation>
     </message>
 </context>
 <context>
@@ -327,11 +327,11 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Profile</source>
-        <translation type="unfinished">Προφίλ</translation>
+        <translation>Προφίλ</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Ρυθμίσεις</translation>
+        <translation>Ρυθμίσεις</translation>
     </message>
 </context>
 <context>
@@ -491,23 +491,23 @@ messages</source>
     <name>DialogItemMenu</name>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Διαγραφή συνομιλίας</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Η μυστική συνομιλία διαγράφεται</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Η ομάδα διαγράφεται</translation>
     </message>
     <message>
         <source>Mark as read</source>
-        <translation type="unfinished"></translation>
+        <translation>Σημείωσε σαν διαβασμένο</translation>
     </message>
 </context>
 <context>
@@ -522,11 +522,11 @@ messages</source>
     <name>DialogReplyPreview</name>
     <message>
         <source>Message to forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Μήνυμα προς διαβίβαση</translation>
     </message>
     <message>
         <source>Reply to</source>
-        <translation type="unfinished"></translation>
+        <translation>Απάντηση προς</translation>
     </message>
 </context>
 <context>
@@ -556,23 +556,23 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished">Έξοδος</translation>
+        <translation>Έξοδος</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Νέα μυστική συνομιλία</translation>
+        <translation>Νέα μυστική συνομιλία</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation type="unfinished">Νέα Ομάδα</translation>
+        <translation>Νέα Ομάδα</translation>
     </message>
     <message>
         <source>Hide Search Field</source>
-        <translation type="unfinished"></translation>
+        <translation>Απόκρυψη πεδίου αναζήτησης</translation>
     </message>
     <message>
         <source>Show Search Field</source>
-        <translation type="unfinished"></translation>
+        <translation>Εμφάνιση πεδίου αναζήτησης</translation>
     </message>
 </context>
 <context>
@@ -628,7 +628,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Forwarded from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Διαβιβασμένο από %1</translation>
     </message>
 </context>
 <context>
@@ -667,22 +667,22 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Ανοιγμα</translation>
     </message>
     <message>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Απάντηση</translation>
     </message>
     <message>
         <source>Forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Διαβίβαση</translation>
     </message>
 </context>
 <context>
     <name>MessagePreview</name>
     <message>
         <source>You</source>
-        <translation type="unfinished"></translation>
+        <translation>Εσύ</translation>
     </message>
 </context>
 <context>
@@ -753,7 +753,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Actions</source>
-        <translation type="unfinished">Ενέργειες</translation>
+        <translation>Ενέργειες</translation>
     </message>
 </context>
 <context>
@@ -1078,11 +1078,11 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Sticker</source>
-        <translation type="unfinished">Ετικέτα </translation>
+        <translation>Ετικέτα </translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>θέση</translation>
     </message>
 </context>
 <context>

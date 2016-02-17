@@ -358,7 +358,7 @@ non letti</translation>
     </message>
     <message>
         <source>Recent chats:</source>
-        <translation>Conversazioni recenti:</translation>
+        <translation>Chat recenti:</translation>
     </message>
 </context>
 <context>
@@ -376,7 +376,7 @@ non letti</translation>
     <name>CreateSecretDialogPage</name>
     <message>
         <source>New Secret Chat</source>
-        <translation>Nuova conversazione segreta</translation>
+        <translation>Nuova chat segreta</translation>
     </message>
 </context>
 <context>
@@ -437,7 +437,7 @@ non letti</translation>
     <name>DialogInfoPage</name>
     <message>
         <source>Delete secret chat</source>
-        <translation>Elimina conversazione segreta</translation>
+        <translation>Elimina chat segreta</translation>
     </message>
     <message>
         <source>Delete group</source>
@@ -449,7 +449,7 @@ non letti</translation>
     </message>
     <message>
         <source>Deleting secret chat</source>
-        <translation>Elimina conversazione segreta</translation>
+        <translation>Elimina chat segreta</translation>
     </message>
     <message>
         <source>Deleting group</source>
@@ -477,7 +477,7 @@ non letti</translation>
     </message>
     <message>
         <source>Chat information</source>
-        <translation>Informazioni sulla conversazione</translation>
+        <translation>Informazioni sulla chat</translation>
     </message>
 </context>
 <context>
@@ -662,7 +662,7 @@ Scorri a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Install Sticker set</source>
-        <translation>Installa set di Adesivi</translation>
+        <translation>Installa questi Sticker</translation>
     </message>
     <message>
         <source>Open</source>
@@ -759,7 +759,7 @@ Scorri a destra per selezionare un contatto</translation>
     <name>SecretDialogDiscarded</name>
     <message>
         <source>Secret chat cancelled</source>
-        <translation>Conversazione segreta rimossa</translation>
+        <translation>Chat segreta rimossa</translation>
     </message>
 </context>
 <context>
@@ -878,7 +878,7 @@ Scorri a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Sticker</source>
-        <translation>Adesivo</translation>
+        <translation>Sticker</translation>
     </message>
     <message>
         <source>Browse files</source>
@@ -924,7 +924,7 @@ Scorri a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Select a Sticker Set from below</source>
-        <translation>Seleziona un set di Adesivi</translation>
+        <translation>Seleziona un set di Sticker</translation>
     </message>
 </context>
 <context>
@@ -993,7 +993,7 @@ Scorri a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Secret chat created by ��%1��</source>
-        <translation>Conversazione segreta creata da «%1»</translation>
+        <translation>Chat segreta creata da «%1»</translation>
     </message>
     <message>
         <source>Group created by ��%1��</source>
@@ -1076,7 +1076,7 @@ Scorri a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Sticker</source>
-        <translation>Adesivi</translation>
+        <translation>Sticker</translation>
     </message>
     <message>
         <source>Position</source>
@@ -1091,7 +1091,7 @@ Scorri a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Begin Secret Chat</source>
-        <translation>Inizia conversazione segreta</translation>
+        <translation>Inizia chat segreta</translation>
     </message>
     <message>
         <source>Phone Number</source>

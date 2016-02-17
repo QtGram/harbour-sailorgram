@@ -327,11 +327,11 @@ La longueur minimum est de 5 caractères.</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation type="unfinished">Profil</translation>
+        <translation>Profil</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Paramètres</translation>
+        <translation>Paramètres</translation>
     </message>
 </context>
 <context>
@@ -491,23 +491,23 @@ non lus</translation>
     <name>DialogItemMenu</name>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Supprimer</translation>
+        <translation>Supprimer</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Supprimer la conversation</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Supprimer la conversation secrète</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Supprimer le groupe</translation>
     </message>
     <message>
         <source>Mark as read</source>
-        <translation type="unfinished"></translation>
+        <translation>Marquer comme lu</translation>
     </message>
 </context>
 <context>
@@ -521,11 +521,11 @@ non lus</translation>
     <name>DialogReplyPreview</name>
     <message>
         <source>Message to forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Message à faire suivre</translation>
     </message>
     <message>
         <source>Reply to</source>
-        <translation type="unfinished"></translation>
+        <translation>Répondre</translation>
     </message>
 </context>
 <context>
@@ -555,23 +555,23 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished">Quitter</translation>
+        <translation>Quitter</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Nouvelle conversation secrète</translation>
+        <translation>Nouvelle conversation secrète</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation type="unfinished">Nouveau groupe</translation>
+        <translation>Nouveau groupe</translation>
     </message>
     <message>
         <source>Hide Search Field</source>
-        <translation type="unfinished"></translation>
+        <translation>Masquer la recherche</translation>
     </message>
     <message>
         <source>Show Search Field</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher la recherche</translation>
     </message>
 </context>
 <context>
@@ -674,7 +674,7 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
     </message>
     <message>
         <source>Forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Transférer</translation>
     </message>
 </context>
 <context>

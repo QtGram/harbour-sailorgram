@@ -289,7 +289,7 @@ A lonxitude mínima é de 5 caracteres.</translation>
     <name>ConnectingLabel</name>
     <message>
         <source>Not connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Non conectado</translation>
     </message>
 </context>
 <context>
@@ -327,11 +327,11 @@ A lonxitude mínima é de 5 caracteres.</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation type="unfinished">Perfil</translation>
+        <translation>Perfil</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Preferencias</translation>
+        <translation>Axustes</translation>
     </message>
 </context>
 <context>
@@ -491,23 +491,23 @@ sen ler</translation>
     <name>DialogItemMenu</name>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Borrar</translation>
+        <translation>Borrar</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrando conversa</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrando chat segredo</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrando grupo</translation>
     </message>
     <message>
         <source>Mark as read</source>
-        <translation type="unfinished"></translation>
+        <translation>Marcar coma lido</translation>
     </message>
 </context>
 <context>
@@ -521,11 +521,11 @@ sen ler</translation>
     <name>DialogReplyPreview</name>
     <message>
         <source>Message to forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Reenviar mensaxe</translation>
     </message>
     <message>
         <source>Reply to</source>
-        <translation type="unfinished"></translation>
+        <translation>Respostar a</translation>
     </message>
 </context>
 <context>
@@ -555,23 +555,23 @@ Desprace a dereita para seleccionar un contacto</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished">Sair</translation>
+        <translation>Sair</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Novo chat segredo</translation>
+        <translation>Novo chat segredo</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation type="unfinished">Novo grupo</translation>
+        <translation>Novo grupo</translation>
     </message>
     <message>
         <source>Hide Search Field</source>
-        <translation type="unfinished"></translation>
+        <translation>Agochar a busqueda</translation>
     </message>
     <message>
         <source>Show Search Field</source>
-        <translation type="unfinished"></translation>
+        <translation>Amosar busqueda</translation>
     </message>
 </context>
 <context>
@@ -627,7 +627,7 @@ Desprace a dereita para seleccionar un contacto</translation>
     </message>
     <message>
         <source>Forwarded from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Reenviado por %1</translation>
     </message>
 </context>
 <context>
@@ -674,7 +674,7 @@ Desprace a dereita para seleccionar un contacto</translation>
     </message>
     <message>
         <source>Forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Reenviar</translation>
     </message>
 </context>
 <context>
@@ -1076,11 +1076,11 @@ Desprace a dereita para seleccionar un contacto</translation>
     </message>
     <message>
         <source>Sticker</source>
-        <translation type="unfinished">Sticker</translation>
+        <translation>Sticker</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Posición</translation>
     </message>
 </context>
 <context>

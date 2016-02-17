@@ -327,11 +327,11 @@ Minimum sind 5 Zeichen.</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation type="unfinished">Profil</translation>
+        <translation>Profil</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Einstellungen</translation>
+        <translation>Einstellungen</translation>
     </message>
 </context>
 <context>
@@ -491,23 +491,23 @@ Nachrichten</translation>
     <name>DialogItemMenu</name>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Löschen</translation>
+        <translation>Löschen</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Chat wird gelöscht</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Geheimer Chat wird gelöscht</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppe wird gelöscht</translation>
     </message>
     <message>
         <source>Mark as read</source>
-        <translation type="unfinished"></translation>
+        <translation>Als gelesen markieren</translation>
     </message>
 </context>
 <context>
@@ -521,11 +521,11 @@ Nachrichten</translation>
     <name>DialogReplyPreview</name>
     <message>
         <source>Message to forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Weiterzuleitende Nachricht</translation>
     </message>
     <message>
         <source>Reply to</source>
-        <translation type="unfinished"></translation>
+        <translation>Antworten</translation>
     </message>
 </context>
 <context>
@@ -555,23 +555,23 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished">Beenden</translation>
+        <translation>Schließen</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Neuer Geheimer Chat</translation>
+        <translation>Neuer geheimer Chat</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation type="unfinished">Neue Gruppe</translation>
+        <translation>Neue Gruppe</translation>
     </message>
     <message>
         <source>Hide Search Field</source>
-        <translation type="unfinished"></translation>
+        <translation>Suchfeld verbergen</translation>
     </message>
     <message>
         <source>Show Search Field</source>
-        <translation type="unfinished"></translation>
+        <translation>Suchfeld anzeigen</translation>
     </message>
 </context>
 <context>
@@ -627,7 +627,7 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Forwarded from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Weitergeleitet von %1</translation>
     </message>
 </context>
 <context>
@@ -674,7 +674,7 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Weiterleiten</translation>
     </message>
 </context>
 <context>

@@ -489,23 +489,23 @@ messages</source>
     <name>DialogItemMenu</name>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Borrar</translation>
+        <translation>Borrar</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrando conversación</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrando chat secreto</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrando grupo</translation>
     </message>
     <message>
         <source>Mark as read</source>
-        <translation type="unfinished"></translation>
+        <translation>Marcar como leído</translation>
     </message>
 </context>
 <context>
@@ -519,11 +519,11 @@ messages</source>
     <name>DialogReplyPreview</name>
     <message>
         <source>Message to forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Reenviar mensaje a</translation>
     </message>
     <message>
         <source>Reply to</source>
-        <translation type="unfinished"></translation>
+        <translation>Responder a</translation>
     </message>
 </context>
 <context>
@@ -672,7 +672,7 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
     </message>
     <message>
         <source>Forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Reenviar</translation>
     </message>
 </context>
 <context>
