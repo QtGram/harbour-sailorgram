@@ -198,7 +198,7 @@ ListItem
                 var completename = message.out ? "" : TelegramHelper.completeName(context.telegram.user(message.fromId));
 
                 if(TelegramHelper.isForwardedMessage(message))
-                    return " <i>(" + qsTr("Forwarded from %1").arg(TelegramHelper.completeName(context.telegram.user(message.fwdFromId))) + ")</i>";
+                    completename += " <i>(" + qsTr("Forwarded from %1").arg(TelegramHelper.completeName(context.telegram.user(message.fwdFromId))) + ")</i>";
 
                 return completename;
             }
