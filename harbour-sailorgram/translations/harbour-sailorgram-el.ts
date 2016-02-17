@@ -495,15 +495,15 @@ messages</source>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished">Η συνομιλία διαγράφεται</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished">Η μυστική συνομιλία διαγράφεται</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished">Η ομάδα διαγράφεται</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Mark as read</source>

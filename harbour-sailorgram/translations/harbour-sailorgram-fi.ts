@@ -289,7 +289,7 @@ Vähimmäispituus on 5 merkkiä.</translation>
     <name>ConnectingLabel</name>
     <message>
         <source>Not connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei yhdistettynä</translation>
     </message>
 </context>
 <context>
@@ -495,15 +495,15 @@ viestit</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished">Poistetaan keskustelu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished">Poistetaan salainen keskustelu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished">Poistetaan ryhmä</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Mark as read</source>
@@ -1076,11 +1076,11 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     </message>
     <message>
         <source>Sticker</source>
-        <translation type="unfinished">Tarra</translation>
+        <translation>Tarra</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Sijainti</translation>
     </message>
 </context>
 <context>

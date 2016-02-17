@@ -495,15 +495,15 @@ messages</source>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished">Удаление диалога</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished">Удаление тайного диалога</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished">Удаление беседы</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Mark as read</source>
@@ -567,11 +567,11 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Hide Search Field</source>
-        <translation type="unfinished">Скрыть поле поиска</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Show Search Field</source>
-        <translation type="unfinished">Показать поле поиска</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

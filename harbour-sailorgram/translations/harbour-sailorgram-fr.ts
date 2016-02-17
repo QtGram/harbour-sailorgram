@@ -495,15 +495,15 @@ non lus</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished">Suppression de la conversation</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished">Suppression de conversation secrète</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished">Suppression du groupe</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Mark as read</source>
@@ -567,11 +567,11 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
     </message>
     <message>
         <source>Hide Search Field</source>
-        <translation type="unfinished">masquer le champ Recherche</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Show Search Field</source>
-        <translation type="unfinished">Afficher le champ Recherche</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

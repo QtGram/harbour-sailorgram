@@ -327,11 +327,11 @@ Minimilängd är 5 tecken.</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation type="unfinished">Profil</translation>
+        <translation>Profil</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Inställningar</translation>
+        <translation>Inställningar</translation>
     </message>
 </context>
 <context>
@@ -491,23 +491,23 @@ meddelanden</translation>
     <name>DialogItemMenu</name>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Ta bort</translation>
+        <translation>Ta bort</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished">Tar bort konversation</translation>
+        <translation>Tar bort konversation</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished">Tar bort hemlig chatt</translation>
+        <translation>Tar bort hemlig chatt</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished">Tar bort grupp</translation>
+        <translation>Tar bort grupp</translation>
     </message>
     <message>
         <source>Mark as read</source>
-        <translation type="unfinished"></translation>
+        <translation>Markera som läst</translation>
     </message>
 </context>
 <context>
@@ -521,11 +521,11 @@ meddelanden</translation>
     <name>DialogReplyPreview</name>
     <message>
         <source>Message to forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Meddelande att vidarebefordra</translation>
     </message>
     <message>
         <source>Reply to</source>
-        <translation type="unfinished"></translation>
+        <translation>Svar till</translation>
     </message>
 </context>
 <context>
@@ -555,23 +555,23 @@ Svep åt vänster för att välja en kontakt</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished">Avsluta</translation>
+        <translation>Avsluta</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Ny hemlig chatt</translation>
+        <translation>Ny hemlig chatt</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation type="unfinished">Ny grupp</translation>
+        <translation>Ny grupp</translation>
     </message>
     <message>
         <source>Hide Search Field</source>
-        <translation type="unfinished">Dölj sökfältet</translation>
+        <translation>Dölj sökfält</translation>
     </message>
     <message>
         <source>Show Search Field</source>
-        <translation type="unfinished">Visa sökfältet</translation>
+        <translation>Visa sökfält</translation>
     </message>
 </context>
 <context>
@@ -627,7 +627,7 @@ Svep åt vänster för att välja en kontakt</translation>
     </message>
     <message>
         <source>Forwarded from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidarebefordrad från %1</translation>
     </message>
 </context>
 <context>
@@ -674,7 +674,7 @@ Svep åt vänster för att välja en kontakt</translation>
     </message>
     <message>
         <source>Forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidarebefordra</translation>
     </message>
 </context>
 <context>

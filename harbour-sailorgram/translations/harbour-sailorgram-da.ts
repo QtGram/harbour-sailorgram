@@ -495,15 +495,15 @@ meddelelser</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished">Sletter Samtale</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished">Sletter Hemmelig Samtale</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished">Sletter Gruppe</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Mark as read</source>
@@ -567,11 +567,11 @@ Stryg til venstre for at vælge en kontakt</translation>
     </message>
     <message>
         <source>Hide Search Field</source>
-        <translation type="unfinished">Gem Søgefelt</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Show Search Field</source>
-        <translation type="unfinished">Vis Søgefelt</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

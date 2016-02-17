@@ -327,11 +327,11 @@ De minimale lengte is 5 tekens.</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation type="unfinished">Profiel</translation>
+        <translation>Profiel</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Instellingen</translation>
+        <translation>Instellingen</translation>
     </message>
 </context>
 <context>
@@ -491,23 +491,23 @@ berichten</translation>
     <name>DialogItemMenu</name>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Verwijderen</translation>
+        <translation>Verwijderen</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished">Bezig met verwijderen van gesprek</translation>
+        <translation>Bezig met het verwijderen van het gesprek</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished">Bezig met verwijderen van geheim gesprek</translation>
+        <translation>Bezig met het verwijderen van het geheime chatgesprek</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished">Bezig met verwijderen van groep</translation>
+        <translation>Bezig met het verwijderen van de groep</translation>
     </message>
     <message>
         <source>Mark as read</source>
-        <translation type="unfinished"></translation>
+        <translation>Markeren als gelezen</translation>
     </message>
 </context>
 <context>
@@ -521,11 +521,11 @@ berichten</translation>
     <name>DialogReplyPreview</name>
     <message>
         <source>Message to forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Door te sturen bericht</translation>
     </message>
     <message>
         <source>Reply to</source>
-        <translation type="unfinished"></translation>
+        <translation>Beantwoord</translation>
     </message>
 </context>
 <context>
@@ -555,23 +555,23 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished">Afsluiten</translation>
+        <translation>Afsluiten</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Nieuw geheim gesprek</translation>
+        <translation>Nieuw geheim chatgesprek</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation type="unfinished">Nieuwe groep</translation>
+        <translation>Nieuwe groep</translation>
     </message>
     <message>
         <source>Hide Search Field</source>
-        <translation type="unfinished">Zoekveld verbergen</translation>
+        <translation>Zoekveld verbergen</translation>
     </message>
     <message>
         <source>Show Search Field</source>
-        <translation type="unfinished">Zoekveld weergeven</translation>
+        <translation>Zoekveld weergeven</translation>
     </message>
 </context>
 <context>
@@ -627,7 +627,7 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     </message>
     <message>
         <source>Forwarded from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Doorgestuurd door %1</translation>
     </message>
 </context>
 <context>
@@ -674,7 +674,7 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     </message>
     <message>
         <source>Forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Doorsturen</translation>
     </message>
 </context>
 <context>
@@ -866,7 +866,7 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     </message>
     <message>
         <source>Capture photo</source>
-        <translation>Foto nemen</translation>
+        <translation>Foto maken</translation>
     </message>
     <message>
         <source>Record sound</source>

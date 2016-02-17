@@ -493,15 +493,15 @@ messages</source>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished">Vymazání konverzace</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished">Vymazání tajného rozhovoru</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished">Vymazání skupiny</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Mark as read</source>

@@ -495,15 +495,15 @@ sen ler</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished">Borrando conversa</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished">Borrando chat segredo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished">Borrando grupo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Mark as read</source>

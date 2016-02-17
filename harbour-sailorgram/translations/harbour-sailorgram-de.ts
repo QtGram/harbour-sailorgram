@@ -495,15 +495,15 @@ Nachrichten</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished">Chat wird gelöscht</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished">Geheimer Chat wird gelöscht</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished">Gruppe wird gelöscht</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Mark as read</source>
@@ -567,11 +567,11 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Hide Search Field</source>
-        <translation type="unfinished">Suchfeld verbergen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Show Search Field</source>
-        <translation type="unfinished">Suchfeld anzeigen</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

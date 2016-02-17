@@ -289,7 +289,7 @@ Minimum sind 5 Zeichen.</translation>
     <name>ConnectingLabel</name>
     <message>
         <source>Not connected</source>
-        <translation type="unfinished"></translation>
+        <translation>NIcht verbunden</translation>
     </message>
 </context>
 <context>
@@ -495,15 +495,15 @@ Nachrichten</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished">Chat wird gelöscht</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished">Geheimer Chat wird gelöscht</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished">Gruppe wird gelöscht</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Mark as read</source>
@@ -1076,11 +1076,11 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Sticker</source>
-        <translation type="unfinished">Sticker</translation>
+        <translation>Sticker</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Position</translation>
     </message>
 </context>
 <context>

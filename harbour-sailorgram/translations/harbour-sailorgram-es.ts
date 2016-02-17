@@ -327,11 +327,11 @@ La longitud mínima es de 5 caracteres.</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation type="unfinished">Perfil</translation>
+        <translation>Perfil</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Ajustes</translation>
+        <translation>Ajustes</translation>
     </message>
 </context>
 <context>
@@ -493,15 +493,15 @@ messages</source>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished">Borrando conversación</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished">Borrando chat secreto</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished">Borrando grupo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Mark as read</source>
@@ -553,23 +553,23 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished">Salir</translation>
+        <translation>Salir</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Nuevo chat secreto</translation>
+        <translation>Nuevo chat secreto</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation type="unfinished">Nuevo grupo</translation>
+        <translation>Nuevo grupo</translation>
     </message>
     <message>
         <source>Hide Search Field</source>
-        <translation type="unfinished">Ocultar campo de búsqueda</translation>
+        <translation>Ocultar campo de búsqueda</translation>
     </message>
     <message>
         <source>Show Search Field</source>
-        <translation type="unfinished">Mostrar campo de búsqueda</translation>
+        <translation>Mostrar campo de búsqueda</translation>
     </message>
 </context>
 <context>
@@ -625,7 +625,7 @@ Desliza hacia la derecha para seleccionar un contacto</translation>
     </message>
     <message>
         <source>Forwarded from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Reenviado desde %1</translation>
     </message>
 </context>
 <context>

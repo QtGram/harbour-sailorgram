@@ -327,11 +327,11 @@ La lunghezza minima è di 5 caratteri.</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation type="unfinished">Profilo</translation>
+        <translation>Profilo</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Impostazioni</translation>
+        <translation>Impostazioni</translation>
     </message>
 </context>
 <context>
@@ -491,23 +491,23 @@ non letti</translation>
     <name>DialogItemMenu</name>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Elimina</translation>
+        <translation>Elimina</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished">Rimozione conversazione</translation>
+        <translation>Elimina conversazione</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished">Rimozione conversazione segreta</translation>
+        <translation>Elimina chat segreta</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished">Rimozione gruppo</translation>
+        <translation>Elimina gruppo</translation>
     </message>
     <message>
         <source>Mark as read</source>
-        <translation type="unfinished"></translation>
+        <translation>Segna come letto</translation>
     </message>
 </context>
 <context>
@@ -521,11 +521,11 @@ non letti</translation>
     <name>DialogReplyPreview</name>
     <message>
         <source>Message to forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Messaggio da inoltrare</translation>
     </message>
     <message>
         <source>Reply to</source>
-        <translation type="unfinished"></translation>
+        <translation>Risposta a</translation>
     </message>
 </context>
 <context>
@@ -551,27 +551,27 @@ non letti</translation>
 Do a swype to the right to select a contact</source>
         <translation>Nessuna conversazione
 
-Esegui uno swipe a destra per selezionare un contatto</translation>
+Scorri a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished">Esci</translation>
+        <translation>Esci</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Nuova conversazione segreta</translation>
+        <translation>Nuova chat segreta</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation type="unfinished">Nuovo gruppo</translation>
+        <translation>Nuovo gruppo</translation>
     </message>
     <message>
         <source>Hide Search Field</source>
-        <translation type="unfinished">Nascondi ricerca</translation>
+        <translation>Nascondi ricerca</translation>
     </message>
     <message>
         <source>Show Search Field</source>
-        <translation type="unfinished">Mostra ricerca</translation>
+        <translation>Mostra ricerca</translation>
     </message>
 </context>
 <context>
@@ -627,7 +627,7 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Forwarded from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Inoltrato da %1</translation>
     </message>
 </context>
 <context>
@@ -674,7 +674,7 @@ Esegui uno swipe a destra per selezionare un contatto</translation>
     </message>
     <message>
         <source>Forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Inoltra</translation>
     </message>
 </context>
 <context>
