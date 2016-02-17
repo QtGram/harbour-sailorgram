@@ -20,13 +20,13 @@ Page
                                                           readonly property string translators: "tattuh, ari_jarvio, reviewjolla"; },
 
                                                QtObject { readonly property string language: qsTr("French");
-                                                          readonly property string translators: "Kwentin, Jordi, objectifnul, Nerfiaux, milamber"; },
+                                                          readonly property string translators: "Kwentin, Jordi, objectifnul, Nerfiaux, milamber, g.lanternier"; },
 
                                                QtObject { readonly property string language: qsTr("German");
                                                           readonly property string translators: "Maldela, caprico, Mee_Germany_Go, PawelSpoon, Rootility, jupaja, kormarun, mdosch, nightmare, yoru"; },
 
                                                QtObject { readonly property string language: qsTr("Italian");
-                                                          readonly property string translators: "Watchmaker, Dax89, ghostofasmile, tichy, dallo28, koenigseggCCGT, massimo.grigolin"; },
+                                                          readonly property string translators: "Watchmaker, Dax89, ghostofasmile, tichy, dallo28, koenigseggCCGT, massimo.grigolin, tichy"; },
 
                                                QtObject { readonly property string language: qsTr("Persian");
                                                           readonly property string translators: "najafi"; },
