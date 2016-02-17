@@ -12,15 +12,11 @@ Dialog
 
     signal actionCompleted(string action, var data)
 
-    function sendFile(element) {
-        actionCompleted("file", element);
-    }
-
     id: selectorfilespage
     allowedOrientations: defaultAllowedOrientations
     acceptDestinationAction: PageStackAction.Pop
     canAccept: selectedFiles.length > 0
-    onAccepted: selectedFiles.forEach(sendFile)
+    onAccepted: selectedFiles.forEach(function (element) { actionCompleted("file", element); })
 
     FilesModel
     {
