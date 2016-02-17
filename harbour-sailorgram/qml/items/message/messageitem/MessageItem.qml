@@ -18,6 +18,7 @@ ListItem
     property Message message
 
     signal replyRequested()
+    signal forwardRequested()
 
     function remorseNeeded(mediatype, type) {
         if(context.immediateopen || !mediacontainer.item || mediacontainer.item.fileHandler.downloaded)
@@ -106,6 +107,7 @@ ListItem
         onCancelRequested: mediacontainer.item.cancelTransfer()
         onDownloadRequested: mediacontainer.item.download()
         onReplyRequested: messageitem.replyRequested()
+        onForwardRequested: messageitem.forwardRequested()
     }
 
     MessageBubble

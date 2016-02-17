@@ -5,6 +5,8 @@ Item
 {
     property alias labelText: lbltext.text
     property alias labelFont: lbltext.font
+    property alias labelVerticalAlignment: lbltext.verticalAlignment
+    property alias labelHorizontalAlignment: lbltext.horizontalAlignment
     property bool remorseRequired: false
     property string remorseMessage
 

@@ -9,6 +9,7 @@ import "../js/TelegramConstants.js" as TelegramConstants
 ContextMenu
 {
     signal replyRequested()
+    signal forwardRequested()
     signal downloadRequested()
     signal cancelRequested()
 
@@ -21,6 +22,13 @@ ContextMenu
         text: qsTr("Reply")
         visible: message.classType !== TelegramConstants.typeMessageService
         onClicked: replyRequested();
+    }
+
+    MenuItem
+    {
+        text: qsTr("Forward")
+        visible: message.classType !== TelegramConstants.typeMessageService
+        onClicked: forwardRequested();
     }
 
     MenuItem

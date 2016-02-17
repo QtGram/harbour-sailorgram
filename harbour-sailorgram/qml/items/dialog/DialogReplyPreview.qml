@@ -11,6 +11,7 @@ Item
     property Context context
     property Dialog dialog
     property Message message
+    property bool isForward
 
     signal closeRequested()
 
@@ -25,6 +26,8 @@ Item
         dialog: dialogreplypreview.dialog
         message: dialogreplypreview.message
         showQuoteRect: false
+        titlePrefix: isForward ? qsTr("Message to forward") : qsTr("Reply to")
+        showUser: !isForward
         width: parent.width - btnclose.width - Theme.paddingSmall
 
         anchors {

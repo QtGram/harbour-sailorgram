@@ -51,6 +51,9 @@ SilicaListView
             if(dialogtextinput.visible)
                 h += dialogtextinput.height;
 
+            if(messagefwdgridview.visible)
+                h += messagefwdgridview.height;
+
             if(dialogreplypreview.visible)
                 h += dialogreplypreview.height;
 
@@ -83,7 +86,15 @@ SilicaListView
 
         onReplyRequested: {
             messageview.displayKeyboard = true;
+            dialogreplypreview.isForward = false;
             dialogreplypreview.message = item;
+            messageview.scrollToBottom();
+        }
+
+        onForwardRequested: {
+            dialogreplypreview.isForward = true;
+            dialogreplypreview.message = item;
+            messagefwdgridview.message = item;
             messageview.scrollToBottom();
         }
     }
@@ -93,12 +104,27 @@ SilicaListView
         y: messageview.headerItem.y
         parent: messageview.contentItem
         width: parent.width
+        spacing: Theme.paddingMedium
 
         DialogReplyPreview {
             id: dialogreplypreview
             width: parent.width
             context: messageview.context
             dialog: messageview.dialog
+
+            onCloseRequested: {
+                messagefwdgridview.message = null;
+            }
+        }
+
+        MessageForwardGridView {
+            id: messagefwdgridview
+            width: parent.width
+            context: messageview.context
+
+            onMessageForwarded: {
+                dialogreplypreview.message = null;
+            }
         }
 
         DialogTextInput {
@@ -112,6 +138,7 @@ SilicaListView
 
             onMessageSent: {
                 dialogreplypreview.message = null;
+                messagefwdgridview.message = null;
             }
         }
 

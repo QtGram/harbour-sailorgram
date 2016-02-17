@@ -24,6 +24,7 @@ Row
     property Message message
     property real maxWidth
     property string titlePrefix: ""
+    property bool showUser: true
     property color textColor: Theme.primaryColor
     property color linkColor: Theme.highlightColor
 
@@ -90,6 +91,12 @@ Row
             text: {
                 if(!message || TelegramHelper.isServiceMessage(message))
                     return "";
+
+                if(!showUser)
+                    return titlePrefix;
+
+                if(titlePrefix.length > 0)
+                    titlePrefix += " ";
 
                 if(message.out)
                     return titlePrefix + qsTr("You");
