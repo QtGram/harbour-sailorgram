@@ -169,14 +169,14 @@ Page
                     onMarkAsReadRequested: context.telegram.messagesReadHistory(TelegramHelper.peerId(item));
 
                     onDeleteRequested: {
-                        dialogitem.remorseAction(msg, function() {
+                        dialogitem.remorseAction(remorsemsg, function() {
                             var peerid = TelegramHelper.peerId(item);
                             item.unreadCount = 0;
 
                             if(item.encrypted)
                                 context.telegram.messagesDiscardEncryptedChat(peerid, true);
                             else
-                                context.telegram.messagesDeleteHistory(peerid, false, true);
+                                context.telegram.messagesDeleteHistory(peerid, true);
                         });
                     }
                 }
