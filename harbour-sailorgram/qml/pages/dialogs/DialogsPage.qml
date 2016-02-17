@@ -166,6 +166,7 @@ Page
 
                 menu: DialogItemMenu {
                     dialog: item
+                    onMarkAsReadRequested: context.telegram.messagesReadHistory(TelegramHelper.peerId(item));
 
                     onDeleteRequested: {
                         dialogitem.remorseAction(msg, function() {

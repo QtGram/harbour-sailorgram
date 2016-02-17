@@ -500,6 +500,10 @@ messages</source>
         <source>Deleting Group</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Mark as read</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogPage</name>

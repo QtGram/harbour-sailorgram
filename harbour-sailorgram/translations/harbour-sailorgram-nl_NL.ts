@@ -505,6 +505,10 @@ berichten</translation>
         <source>Deleting Group</source>
         <translation type="unfinished">Bezig met verwijderen van groep</translation>
     </message>
+    <message>
+        <source>Mark as read</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogPage</name>

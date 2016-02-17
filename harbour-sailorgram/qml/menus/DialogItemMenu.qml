@@ -7,8 +7,15 @@ ContextMenu
     property var dialog
 
     signal deleteRequested(string remorsemsg)
+    signal markAsReadRequested()
 
     id: dialogitemmenu
+
+    MenuItem
+    {
+        text: qsTr("Mark as read")
+        onClicked: markAsReadRequested();
+    }
 
     MenuItem
     {

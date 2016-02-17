@@ -505,6 +505,10 @@ Nachrichten</translation>
         <source>Deleting Group</source>
         <translation type="unfinished">Gruppe wird gelöscht</translation>
     </message>
+    <message>
+        <source>Mark as read</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogPage</name>
