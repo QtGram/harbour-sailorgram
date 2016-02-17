@@ -488,6 +488,25 @@ meddelanden</translation>
     </message>
 </context>
 <context>
+    <name>DialogItemMenu</name>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Ta bort</translation>
+    </message>
+    <message>
+        <source>Deleting Conversation</source>
+        <translation type="unfinished">Tar bort konversation</translation>
+    </message>
+    <message>
+        <source>Deleting Secret Chat</source>
+        <translation type="unfinished">Tar bort hemlig chatt</translation>
+    </message>
+    <message>
+        <source>Deleting Group</source>
+        <translation type="unfinished">Tar bort grupp</translation>
+    </message>
+</context>
+<context>
     <name>DialogPage</name>
     <message>
         <source>Load more messages</source>
@@ -510,22 +529,6 @@ meddelanden</translation>
     <message>
         <source>Connecting...</source>
         <translation>Ansluter...</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Ta bort</translation>
-    </message>
-    <message>
-        <source>Deleting Conversation</source>
-        <translation>Tar bort konversation</translation>
-    </message>
-    <message>
-        <source>Deleting Secret Chat</source>
-        <translation>Tar bort hemlig chatt</translation>
-    </message>
-    <message>
-        <source>Deleting Group</source>
-        <translation>Tar bort grupp</translation>
     </message>
     <message>
         <source>No Chats

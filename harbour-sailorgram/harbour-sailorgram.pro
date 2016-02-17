@@ -254,4 +254,5 @@ DISTFILES += \
     qml/items/dialog/DialogReplyPreview.qml \
     qml/items/message/messageitem/MessagePreview.qml \
     qml/items/message/messageitem/media/MessageWebPage.qml \
-    qml/components/ResizableLabel.qml
+    qml/components/ResizableLabel.qml \
+    qml/menus/DialogItemMenu.qml

@@ -488,6 +488,25 @@ viestit</translation>
     </message>
 </context>
 <context>
+    <name>DialogItemMenu</name>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Poista</translation>
+    </message>
+    <message>
+        <source>Deleting Conversation</source>
+        <translation type="unfinished">Poistetaan keskustelu</translation>
+    </message>
+    <message>
+        <source>Deleting Secret Chat</source>
+        <translation type="unfinished">Poistetaan salainen keskustelu</translation>
+    </message>
+    <message>
+        <source>Deleting Group</source>
+        <translation type="unfinished">Poistetaan ryhmä</translation>
+    </message>
+</context>
+<context>
     <name>DialogPage</name>
     <message>
         <source>Load more messages</source>
@@ -510,22 +529,6 @@ viestit</translation>
     <message>
         <source>Connecting...</source>
         <translation>Yhdistää...</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Poista</translation>
-    </message>
-    <message>
-        <source>Deleting Conversation</source>
-        <translation>Poistetaan keskustelu</translation>
-    </message>
-    <message>
-        <source>Deleting Secret Chat</source>
-        <translation>Poistetaan salainen keskustelu</translation>
-    </message>
-    <message>
-        <source>Deleting Group</source>
-        <translation>Poistetaan ryhmä</translation>
     </message>
     <message>
         <source>No Chats

@@ -488,6 +488,25 @@ Nachrichten</translation>
     </message>
 </context>
 <context>
+    <name>DialogItemMenu</name>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Löschen</translation>
+    </message>
+    <message>
+        <source>Deleting Conversation</source>
+        <translation type="unfinished">Chat wird gelöscht</translation>
+    </message>
+    <message>
+        <source>Deleting Secret Chat</source>
+        <translation type="unfinished">Geheimer Chat wird gelöscht</translation>
+    </message>
+    <message>
+        <source>Deleting Group</source>
+        <translation type="unfinished">Gruppe wird gelöscht</translation>
+    </message>
+</context>
+<context>
     <name>DialogPage</name>
     <message>
         <source>Load more messages</source>
@@ -510,22 +529,6 @@ Nachrichten</translation>
     <message>
         <source>Connecting...</source>
         <translation>Verbinden...</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Löschen</translation>
-    </message>
-    <message>
-        <source>Deleting Conversation</source>
-        <translation>Chat wird gelöscht</translation>
-    </message>
-    <message>
-        <source>Deleting Secret Chat</source>
-        <translation>Geheimer Chat wird gelöscht</translation>
-    </message>
-    <message>
-        <source>Deleting Group</source>
-        <translation>Gruppe wird gelöscht</translation>
     </message>
     <message>
         <source>No Chats

@@ -488,6 +488,25 @@ non lus</translation>
     </message>
 </context>
 <context>
+    <name>DialogItemMenu</name>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Supprimer</translation>
+    </message>
+    <message>
+        <source>Deleting Conversation</source>
+        <translation type="unfinished">Suppression de la conversation</translation>
+    </message>
+    <message>
+        <source>Deleting Secret Chat</source>
+        <translation type="unfinished">Suppression de conversation secrète</translation>
+    </message>
+    <message>
+        <source>Deleting Group</source>
+        <translation type="unfinished">Suppression du groupe</translation>
+    </message>
+</context>
+<context>
     <name>DialogPage</name>
     <message>
         <source>Load more messages</source>
@@ -510,22 +529,6 @@ non lus</translation>
     <message>
         <source>Connecting...</source>
         <translation>Connexion en cours ...</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Supprimer</translation>
-    </message>
-    <message>
-        <source>Deleting Conversation</source>
-        <translation>Suppression de la conversation</translation>
-    </message>
-    <message>
-        <source>Deleting Secret Chat</source>
-        <translation>Suppression de conversation secrète</translation>
-    </message>
-    <message>
-        <source>Deleting Group</source>
-        <translation>Suppression du groupe</translation>
     </message>
     <message>
         <source>No Chats

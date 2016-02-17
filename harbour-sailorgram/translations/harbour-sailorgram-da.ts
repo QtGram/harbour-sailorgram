@@ -488,6 +488,25 @@ meddelelser</translation>
     </message>
 </context>
 <context>
+    <name>DialogItemMenu</name>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Slet</translation>
+    </message>
+    <message>
+        <source>Deleting Conversation</source>
+        <translation type="unfinished">Sletter Samtale</translation>
+    </message>
+    <message>
+        <source>Deleting Secret Chat</source>
+        <translation type="unfinished">Sletter Hemmelig Samtale</translation>
+    </message>
+    <message>
+        <source>Deleting Group</source>
+        <translation type="unfinished">Sletter Gruppe</translation>
+    </message>
+</context>
+<context>
     <name>DialogPage</name>
     <message>
         <source>Load more messages</source>
@@ -510,22 +529,6 @@ meddelelser</translation>
     <message>
         <source>Connecting...</source>
         <translation>Forbinder...</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Slet</translation>
-    </message>
-    <message>
-        <source>Deleting Conversation</source>
-        <translation>Sletter Samtale</translation>
-    </message>
-    <message>
-        <source>Deleting Secret Chat</source>
-        <translation>Sletter Hemmelig Samtale</translation>
-    </message>
-    <message>
-        <source>Deleting Group</source>
-        <translation>Sletter Gruppe</translation>
     </message>
     <message>
         <source>No Chats

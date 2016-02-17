@@ -18,8 +18,8 @@ Item
     {
         id: peerimage
         anchors { right: parent.right; top: parent.top; rightMargin: Theme.horizontalPageMargin }
-        width: peeritem.height
-        height: peeritem.height
+        width: peeritem.height - Theme.paddingSmall
+        height: peeritem.height - Theme.paddingSmall
         context: peeritem.context
         dialog: peeritem.dialog
         chat: peeritem.chat

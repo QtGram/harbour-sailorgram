@@ -486,6 +486,25 @@ messages</source>
     </message>
 </context>
 <context>
+    <name>DialogItemMenu</name>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Borrar</translation>
+    </message>
+    <message>
+        <source>Deleting Conversation</source>
+        <translation type="unfinished">Borrando conversación</translation>
+    </message>
+    <message>
+        <source>Deleting Secret Chat</source>
+        <translation type="unfinished">Borrando chat secreto</translation>
+    </message>
+    <message>
+        <source>Deleting Group</source>
+        <translation type="unfinished">Borrando grupo</translation>
+    </message>
+</context>
+<context>
     <name>DialogPage</name>
     <message>
         <source>Load more messages</source>
@@ -508,22 +527,6 @@ messages</source>
     <message>
         <source>Connecting...</source>
         <translation>Conectando...</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Borrar</translation>
-    </message>
-    <message>
-        <source>Deleting Conversation</source>
-        <translation>Borrando conversación</translation>
-    </message>
-    <message>
-        <source>Deleting Secret Chat</source>
-        <translation>Borrando chat secreto</translation>
-    </message>
-    <message>
-        <source>Deleting Group</source>
-        <translation>Borrando grupo</translation>
     </message>
     <message>
         <source>No Chats

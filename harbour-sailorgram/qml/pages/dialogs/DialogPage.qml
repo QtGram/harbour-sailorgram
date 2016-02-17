@@ -75,12 +75,19 @@ Page
         {
             id: header
             visible: !context.chatheaderhidden
-            anchors { left: parent.left; top: parent.top; right: parent.right; leftMargin: Theme.horizontalPageMargin; topMargin: context.chatheaderhidden ? 0 : Theme.paddingMedium }
             height: context.chatheaderhidden ? 0 : (dialogpage.isPortrait ? Theme.itemSizeSmall : Theme.itemSizeExtraSmall)
             context: dialogpage.context
             dialog: dialogpage.dialog
             chat: dialogpage.chat
             user: dialogpage.user
+
+            anchors {
+                left: parent.left
+                top: parent.top
+                right: parent.right
+                leftMargin: Theme.horizontalPageMargin
+                topMargin: context.chatheaderhidden ? 0 : Theme.paddingMedium
+            }
         }
 
         MessageView

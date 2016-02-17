@@ -488,6 +488,25 @@ messages</source>
     </message>
 </context>
 <context>
+    <name>DialogItemMenu</name>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Διαγραφή</translation>
+    </message>
+    <message>
+        <source>Deleting Conversation</source>
+        <translation type="unfinished">Η συνομιλία διαγράφεται</translation>
+    </message>
+    <message>
+        <source>Deleting Secret Chat</source>
+        <translation type="unfinished">Η μυστική συνομιλία διαγράφεται</translation>
+    </message>
+    <message>
+        <source>Deleting Group</source>
+        <translation type="unfinished">Η ομάδα διαγράφεται</translation>
+    </message>
+</context>
+<context>
     <name>DialogPage</name>
     <message>
         <source>Load more messages</source>
@@ -511,22 +530,6 @@ messages</source>
     <message>
         <source>Connecting...</source>
         <translation>Συνδέοντας</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Διαγραφή</translation>
-    </message>
-    <message>
-        <source>Deleting Conversation</source>
-        <translation>Η συνομιλία διαγράφεται</translation>
-    </message>
-    <message>
-        <source>Deleting Secret Chat</source>
-        <translation>Η μυστική συνομιλία διαγράφεται</translation>
-    </message>
-    <message>
-        <source>Deleting Group</source>
-        <translation>Η ομάδα διαγράφεται</translation>
     </message>
     <message>
         <source>No Chats

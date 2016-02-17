@@ -486,6 +486,25 @@ messages</source>
     </message>
 </context>
 <context>
+    <name>DialogItemMenu</name>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Vymazat</translation>
+    </message>
+    <message>
+        <source>Deleting Conversation</source>
+        <translation type="unfinished">Vymazání konverzace</translation>
+    </message>
+    <message>
+        <source>Deleting Secret Chat</source>
+        <translation type="unfinished">Vymazání tajného rozhovoru</translation>
+    </message>
+    <message>
+        <source>Deleting Group</source>
+        <translation type="unfinished">Vymazání skupiny</translation>
+    </message>
+</context>
+<context>
     <name>DialogPage</name>
     <message>
         <source>Load more messages</source>
@@ -508,22 +527,6 @@ messages</source>
     <message>
         <source>Connecting...</source>
         <translation>Připojování...</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Vymazat</translation>
-    </message>
-    <message>
-        <source>Deleting Conversation</source>
-        <translation>Vymazání konverzace</translation>
-    </message>
-    <message>
-        <source>Deleting Secret Chat</source>
-        <translation>Vymazání tajného rozhovoru</translation>
-    </message>
-    <message>
-        <source>Deleting Group</source>
-        <translation>Vymazání skupiny</translation>
     </message>
     <message>
         <source>No Chats

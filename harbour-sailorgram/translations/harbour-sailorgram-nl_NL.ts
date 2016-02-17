@@ -488,6 +488,25 @@ berichten</translation>
     </message>
 </context>
 <context>
+    <name>DialogItemMenu</name>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Verwijderen</translation>
+    </message>
+    <message>
+        <source>Deleting Conversation</source>
+        <translation type="unfinished">Bezig met verwijderen van gesprek</translation>
+    </message>
+    <message>
+        <source>Deleting Secret Chat</source>
+        <translation type="unfinished">Bezig met verwijderen van geheim gesprek</translation>
+    </message>
+    <message>
+        <source>Deleting Group</source>
+        <translation type="unfinished">Bezig met verwijderen van groep</translation>
+    </message>
+</context>
+<context>
     <name>DialogPage</name>
     <message>
         <source>Load more messages</source>
@@ -510,22 +529,6 @@ berichten</translation>
     <message>
         <source>Connecting...</source>
         <translation>Bezig met verbinden...</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Verwijderen</translation>
-    </message>
-    <message>
-        <source>Deleting Conversation</source>
-        <translation>Bezig met verwijderen van gesprek</translation>
-    </message>
-    <message>
-        <source>Deleting Secret Chat</source>
-        <translation>Bezig met verwijderen van geheim gesprek</translation>
-    </message>
-    <message>
-        <source>Deleting Group</source>
-        <translation>Bezig met verwijderen van groep</translation>
     </message>
     <message>
         <source>No Chats

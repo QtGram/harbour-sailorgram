@@ -34,6 +34,7 @@ import harbour.sailorgram.TelegramQml 1.0
 import "./../../components/telegram"
 import "../../components"
 import "../../models"
+import "../../menus"
 import "../../components/search"
 import "../../items/dialog"
 import "../../js/TelegramHelper.js" as TelegramHelper
@@ -111,7 +112,15 @@ Page
             {
                 id: searchfield
                 text: context.showsearchfield ? qsTr("Hide Search Field") : qsTr("Show Search Field")
-                onClicked: context.showsearchfield = context.showsearchfield ? false : true
+
+                onClicked: {
+                    context.showsearchfield = context.showsearchfield ? false : true;
+
+                    if(context.showsearchfield)
+                        lvdialogs.positionViewAtBeginning();
+                    else
+                        lvdialogs.headerItem.resetSearchBox();
+                }
             }
         }
 
@@ -126,63 +135,48 @@ Page
             }
         }
 
-        MessageSearchList
+        SilicaListView
         {
-            id: searchlist
-            width: parent.width
-            context: dialogspage.context
-            anchors { left: parent.left; top: pageheader.bottom; right: parent.right; bottom: parent.bottom }
+            ViewPlaceholder { enabled: (lvdialogs.count <= 0 && (lvdialogs.headerItem.count <= 0)); text: qsTr("No Chats\n\nDo a swype to the right to select a contact") }
 
-            onMessageClicked: {
-                var dialog = context.telegram.messageDialog(message.id);
-                pageStack.push(Qt.resolvedUrl("DialogPage.qml"), { "context": dialogspage.context, "dialog": dialog })
+            id: lvdialogs
+            anchors { left: parent.left; top: pageheader.bottom; right: parent.right; bottom: parent.bottom }
+            model: (lvdialogs.headerItem.count > 0) ? null : context.dialogs
+            spacing: Theme.paddingMedium
+            clip: true
+
+            header: MessageSearchList {
+                id: messagesearchlist
+                width: parent.width
+                context: dialogspage.context
+
+                onMessageClicked: {
+                    var dialog = context.telegram.messageDialog(message.id);
+                    pageStack.push(Qt.resolvedUrl("DialogPage.qml"), { "context": dialogspage.context, "dialog": dialog })
+                }
             }
 
-            SilicaListView
-            {
-                ViewPlaceholder
-                {
-                    enabled: lvdialogs.count <= 0
-                    text: qsTr("No Chats\n\nDo a swype to the right to select a contact")
-                }
+            delegate: DialogItem {
+                id: dialogitem
+                contentWidth: parent.width
+                contentHeight: Theme.itemSizeSmall
+                context: dialogspage.context
+                dialog: item
+                onClicked: pageStack.push(Qt.resolvedUrl("DialogPage.qml"), { "context": dialogspage.context, "dialog": item })
 
-                id: lvdialogs
-                spacing: Theme.paddingMedium
-                clip: true
-                model: context.dialogs
-                anchors { left: parent.left; top: searchlist.searchBox.bottom; right: parent.right; bottom: parent.bottom }
-                visible: searchlist.count <= 0
-
-                delegate: DialogItem {
-                    id: dialogitem
-                    contentWidth: parent.width
-                    contentHeight: Theme.itemSizeSmall
-                    context: dialogspage.context
+                menu: DialogItemMenu {
                     dialog: item
-                    onClicked: pageStack.push(Qt.resolvedUrl("DialogPage.qml"), { "context": dialogspage.context, "dialog": item })
 
-                    menu: ContextMenu {
-                        MenuItem {
-                            text: qsTr("Delete")
+                    onDeleteRequested: {
+                        dialogitem.remorseAction(msg, function() {
+                            var peerid = TelegramHelper.peerId(item);
+                            item.unreadCount = 0;
 
-                            onClicked: {
-                                var msg = qsTr("Deleting Conversation");
-
-                                if(item.encrypted)
-                                    msg = qsTr("Deleting Secret Chat");
-                                else if(TelegramHelper.isChat(item))
-                                    msg = qsTr("Deleting Group");
-
-                                dialogitem.remorseAction(msg, function() {
-                                    item.unreadCount = 0;
-
-                                    if(item.encrypted)
-                                        context.telegram.messagesDiscardEncryptedChat(item.peer.userId, true);
-                                    else
-                                        context.telegram.messagesDeleteHistory(TelegramHelper.peerId(item), true, false, true);
-                                });
-                            }
-                        }
+                            if(item.encrypted)
+                                context.telegram.messagesDiscardEncryptedChat(peerid, true);
+                            else
+                                context.telegram.messagesDeleteHistory(peerid, false, true);
+                        });
                     }
                 }
             }

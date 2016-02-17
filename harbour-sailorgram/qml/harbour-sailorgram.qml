@@ -22,11 +22,16 @@ ApplicationWindow
                 context.immediateopen = parseInt(Settings.transactionGet(tx, "immediateopen"));
                 context.bubbleshidden = parseInt(Settings.transactionGet(tx, "hidebubbles"));
                 context.angledbubbles = parseInt(Settings.transactionGet(tx, "angledbubbles"));
+                context.showsearchfield = parseInt(Settings.transactionGet(tx, "showsearchfield"));
                 context.sailorgram.keepRunning = parseInt(Settings.transactionGet(tx, "keeprunning"));
 
                 var opacity = Settings.transactionGet(tx, "bubblesopacity");
                 context.bubblesopacity = (opacity === false) ? 100 : parseInt(opacity);
             });
+        }
+
+        Component.onDestruction: {
+            Settings.set("showsearchfield", context.showsearchfield ? 1 : 0);
         }
     }
 

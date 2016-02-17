@@ -488,6 +488,25 @@ messages</source>
     </message>
 </context>
 <context>
+    <name>DialogItemMenu</name>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Удалить</translation>
+    </message>
+    <message>
+        <source>Deleting Conversation</source>
+        <translation type="unfinished">Удаление диалога</translation>
+    </message>
+    <message>
+        <source>Deleting Secret Chat</source>
+        <translation type="unfinished">Удаление тайного диалога</translation>
+    </message>
+    <message>
+        <source>Deleting Group</source>
+        <translation type="unfinished">Удаление беседы</translation>
+    </message>
+</context>
+<context>
     <name>DialogPage</name>
     <message>
         <source>Load more messages</source>
@@ -510,22 +529,6 @@ messages</source>
     <message>
         <source>Connecting...</source>
         <translation>Подключение...</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>Удалить</translation>
-    </message>
-    <message>
-        <source>Deleting Conversation</source>
-        <translation>Удаление диалога</translation>
-    </message>
-    <message>
-        <source>Deleting Secret Chat</source>
-        <translation>Удаление тайного диалога</translation>
-    </message>
-    <message>
-        <source>Deleting Group</source>
-        <translation>Удаление беседы</translation>
     </message>
     <message>
         <source>No Chats

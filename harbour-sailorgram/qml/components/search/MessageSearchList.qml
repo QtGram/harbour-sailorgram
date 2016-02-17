@@ -7,16 +7,22 @@ import "../../items/search"
 Item
 {
     property Context context
-    property alias searchBox: searchbox
     property alias count: lvsearch.count
 
     signal messageClicked(var message)
 
+    function resetSearchBox() {
+        searchbox.text = "";
+    }
+
     id: searchlist
+
     height: {
         var h = lvsearch.contentHeight;
+
         if(searchbox.visible)
             h += searchbox.height;
+
         return h;
     }
 
@@ -26,14 +32,6 @@ Item
         anchors { left: parent.left; right: parent.right }
         visible: context.showsearchfield
         height: visible ? Theme.itemSizeSmall : 0
-
-        Behavior on height { NumberAnimation { duration: 150 } }
-
-        onVisibleChanged: {
-            if(visible)
-                return;
-            text = "";
-        }
     }
 
     SilicaListView
