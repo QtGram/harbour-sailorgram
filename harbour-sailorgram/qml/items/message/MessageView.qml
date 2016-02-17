@@ -52,13 +52,13 @@ SilicaListView
                 h += dialogtextinput.height;
 
             if(messagefwdgridview.visible)
-                h += messagefwdgridview.height;
+                h += messagefwdgridview.height + Theme.paddingMedium;
 
             if(dialogreplypreview.visible)
                 h += dialogreplypreview.height;
 
             if(!dialogtextinput.visible && !dialogreplypreview.visible)
-                h = headerarea.height;
+                h = headerarea.height + Theme.paddingMedium;
 
             return h;
         }
