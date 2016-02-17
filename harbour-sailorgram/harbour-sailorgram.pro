@@ -16,7 +16,7 @@ CONFIG += \
     sailfishapp \
     c++11
 
-QT += sql dbus multimedia concurrent
+QT += sql dbus multimedia
 
 include($$PWD/../config.pri)
 
