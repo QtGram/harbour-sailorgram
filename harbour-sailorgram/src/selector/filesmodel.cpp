@@ -7,14 +7,24 @@
 #include <QFileInfo>
 
 
+QMutex FilesModel::_mutex;
 FilesModelWorker *FilesModel::_worker(Q_NULLPTR);
 QThread *FilesModel::_workerthread(Q_NULLPTR);
 uint FilesModel::_ref(0);
-bool FilesModel::_registered(false);
+volatile bool FilesModel::_registered(false);
 
 
 FilesModel::FilesModel(QObject *parent) : QAbstractListModel(parent)
 {
+    if (!FilesModel::_registered)
+    {
+        FilesModel::_registered = true;
+
+        qRegisterMetaType<FilesModel::EntryList>("FilesModel::EntryList");
+        qRegisterMetaType<FilesModel::Request>("FilesModel::Request");
+    }
+
+    FilesModel::_mutex.lock();
     FilesModel::_ref++;
 
     if (FilesModel::_ref == 1)
@@ -26,20 +36,15 @@ FilesModel::FilesModel(QObject *parent) : QAbstractListModel(parent)
         FilesModel::_workerthread->start();
     }
 
-    if (!FilesModel::_registered)
-    {
-        qRegisterMetaType<FilesModel::EntryList>("FilesModel::EntryList");
-        qRegisterMetaType<FilesModel::Request>("FilesModel::Request");
-
-        FilesModel::_registered = true;
-    }
-
     connect(this, &FilesModel::newRequest, FilesModel::_worker, &FilesModelWorker::handleRequest);
     connect(FilesModel::_worker, &FilesModelWorker::requestComplete, this, &FilesModel::handleCompletedRequest);
+
+    FilesModel::_mutex.unlock();
 }
 
 FilesModel::~FilesModel()
 {
+    FilesModel::_mutex.lock();
     FilesModel::_ref--;
 
     if (FilesModel::_ref == 0)
@@ -48,6 +53,8 @@ FilesModel::~FilesModel()
         FilesModel::_workerthread->quit();
         FilesModel::_workerthread->deleteLater();
     }
+
+    FilesModel::_mutex.unlock();
 }
 
 QHash<int, QByteArray> FilesModel::roleNames() const

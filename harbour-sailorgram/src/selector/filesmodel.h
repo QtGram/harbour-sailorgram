@@ -3,6 +3,7 @@
 
 
 #include <QAbstractListModel>
+#include <QMutex>
 
 
 class FilesModelWorker;
@@ -90,10 +91,11 @@ signals:
 
 private:
 
+    static QMutex _mutex;
     static FilesModelWorker *_worker;
     static QThread *_workerthread;
     static uint _ref;
-    static bool _registered;
+    static volatile bool _registered;
 
     FilesModel::EntryList _entries;
     FilesModel::Request _request;
