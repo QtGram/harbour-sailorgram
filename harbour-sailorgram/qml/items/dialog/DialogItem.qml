@@ -152,7 +152,7 @@ ListItem
                     }
 
                     text: {
-                        if(!TelegramHelper.isServiceMessage(message) && (dialog.typingUsers.length <= 0))
+                        if(message && !TelegramHelper.isServiceMessage(message) && (dialog.typingUsers.length <= 0))
                         {
                             if(TelegramHelper.isChat(dialog))
                             {
