@@ -19,11 +19,11 @@ InverseMouseArea
     }
 
     function sendMessage() {
-        messagesModel.sendMessage(textarea.text.trim(), (replyMessage ? replyMessage.id : 0));
+        var sendtext = context.sendwithreturn ? (textarea.text.trim().replace(/\r\n|\n|\r/gm, "")) : textarea.text.trim();
+        messagesModel.sendMessage(sendtext, (replyMessage ? replyMessage.id : 0));
 
         Qt.inputMethod.commit();
         textarea.text = "";
-
         messageSent();
     }
 
@@ -87,9 +87,10 @@ InverseMouseArea
             topMargin: Theme.paddingMedium
         }
 
+        EnterKey.enabled: text.trim().length > 0
 
         EnterKey.onClicked: {
-            if(!context.sendwithreturn || (text.length <= 0))
+            if(!context.sendwithreturn || (text.trim().length <= 0))
                 return;
 
             sendMessage();
