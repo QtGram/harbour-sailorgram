@@ -128,14 +128,14 @@ Dialog
 
             MenuItem {
                 text: qsTr("Sort by name")
-                visible: sortRole !== filesmodel.NameRole
-                onClicked: sortRole = filesmodel.NameRole
+                visible: sortRole !== FilesModel.NameRole
+                onClicked: sortRole = FilesModel.NameRole
             }
 
             MenuItem {
                 text: qsTr("Sort by date")
-                visible: sortRole !== filesmodel.DateRole
-                onClicked: sortRole = filesmodel.DateRole
+                visible: sortRole !== FilesModel.DateRole
+                onClicked: sortRole = FilesModel.DateRole
             }
         }
 
