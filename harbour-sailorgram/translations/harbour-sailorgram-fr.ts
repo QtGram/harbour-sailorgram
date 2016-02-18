@@ -495,15 +495,15 @@ non lus</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation>Supprimer la conversation</translation>
+        <translation>Suppression de la conversation</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation>Supprimer la conversation secrète</translation>
+        <translation>Suppression de la conversation secrète</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation>Supprimer le groupe</translation>
+        <translation>Suppression du groupe</translation>
     </message>
     <message>
         <source>Mark as read</source>
@@ -525,7 +525,7 @@ non lus</translation>
     </message>
     <message>
         <source>Reply to</source>
-        <translation>Répondre</translation>
+        <translation>Répondre à</translation>
     </message>
 </context>
 <context>
@@ -627,7 +627,7 @@ Faites un swype vers la droite pour sélectionner un contact</translation>
     </message>
     <message>
         <source>Forwarded from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Transmis par %1</translation>
     </message>
 </context>
 <context>

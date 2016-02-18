@@ -327,11 +327,11 @@ Minimumslængde er fem tegn.</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation type="unfinished">Profil</translation>
+        <translation>Profil</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Indstillinger</translation>
+        <translation>Indstillinger</translation>
     </message>
 </context>
 <context>
@@ -491,23 +491,23 @@ meddelelser</translation>
     <name>DialogItemMenu</name>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Slet</translation>
+        <translation>Slet</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Sletter Samtale</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Sletter Hemmelig Samtale</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Sletter Gruppe</translation>
     </message>
     <message>
         <source>Mark as read</source>
-        <translation type="unfinished"></translation>
+        <translation>Markér som læst</translation>
     </message>
 </context>
 <context>
@@ -521,11 +521,11 @@ meddelelser</translation>
     <name>DialogReplyPreview</name>
     <message>
         <source>Message to forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Meddelelse der videresendes</translation>
     </message>
     <message>
         <source>Reply to</source>
-        <translation type="unfinished"></translation>
+        <translation>Svar til</translation>
     </message>
 </context>
 <context>
@@ -555,23 +555,23 @@ Stryg til venstre for at vælge en kontakt</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished">Afslut</translation>
+        <translation>Afslut</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Ny Hemmelig Samtale</translation>
+        <translation>Ny Hemmelig Samtale</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation type="unfinished">Ny Gruppe</translation>
+        <translation>Ny Gruppe</translation>
     </message>
     <message>
         <source>Hide Search Field</source>
-        <translation type="unfinished"></translation>
+        <translation>Grm Søgefelt</translation>
     </message>
     <message>
         <source>Show Search Field</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis Søgefelt</translation>
     </message>
 </context>
 <context>
@@ -627,7 +627,7 @@ Stryg til venstre for at vælge en kontakt</translation>
     </message>
     <message>
         <source>Forwarded from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Videresendt fra %1</translation>
     </message>
 </context>
 <context>
@@ -674,7 +674,7 @@ Stryg til venstre for at vælge en kontakt</translation>
     </message>
     <message>
         <source>Forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Videresend</translation>
     </message>
 </context>
 <context>

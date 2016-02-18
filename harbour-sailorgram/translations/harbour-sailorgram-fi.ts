@@ -327,11 +327,11 @@ Vähimmäispituus on 5 merkkiä.</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation type="unfinished">Profiili</translation>
+        <translation>Profiili</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Asetukset</translation>
+        <translation>Asetukset</translation>
     </message>
 </context>
 <context>
@@ -491,23 +491,23 @@ viestit</translation>
     <name>DialogItemMenu</name>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Poista</translation>
+        <translation>Poista</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Keskustelu poistetaan</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Poistetaan salainen keskustelu</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Ryhmä poistetaan</translation>
     </message>
     <message>
         <source>Mark as read</source>
-        <translation type="unfinished"></translation>
+        <translation>Merkitse luetuksi</translation>
     </message>
 </context>
 <context>
@@ -521,11 +521,11 @@ viestit</translation>
     <name>DialogReplyPreview</name>
     <message>
         <source>Message to forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Edelleenlähetettävä viesti</translation>
     </message>
     <message>
         <source>Reply to</source>
-        <translation type="unfinished"></translation>
+        <translation>Vastaanottaja: </translation>
     </message>
 </context>
 <context>
@@ -555,23 +555,23 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished">Poistu</translation>
+        <translation>Poistu</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Uusi salainen keskustelu</translation>
+        <translation>Uusi salainen keskustelu</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation type="unfinished">Uusi ryhmä</translation>
+        <translation>Uusi ryhmä</translation>
     </message>
     <message>
         <source>Hide Search Field</source>
-        <translation type="unfinished"></translation>
+        <translation>Piilota hakukenttä</translation>
     </message>
     <message>
         <source>Show Search Field</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä hakukenttä</translation>
     </message>
 </context>
 <context>
@@ -627,7 +627,7 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     </message>
     <message>
         <source>Forwarded from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Välitetty käyttäjältä: %1</translation>
     </message>
 </context>
 <context>
@@ -674,7 +674,7 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     </message>
     <message>
         <source>Forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Lähetä edelleen</translation>
     </message>
 </context>
 <context>

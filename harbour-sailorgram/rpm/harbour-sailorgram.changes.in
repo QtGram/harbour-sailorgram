@@ -8,6 +8,35 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Thu Feb 18 2016 Antonio Davide Trogu <trogu.davide@gmail.com> 0.80-1
+- Notifications will be deleted if a message is readed from another client
+- It's possible to send multiple files from file picker (thanks goes to Maldela for the implementation)
+- Secret chats are now visible in Sailorgram's cover
+- It's possible to reply to messages
+- SearchBox will be scrolled along with the chats
+- Searchbox's hidden by default ( thanks to mentaljam for the implementation :) )
+- SearchBox's visible setting is persistent
+- Implemented message forwarding
+- Messages can be marked as readed directly from the Chat page
+- Moved "Settings" and "Profile" menu in Contacts page
+- Profile images are now clickable ( thanks to mentaljam for the implementation :) )
+- Pinch to zoom enabled in Image Viewer ( thanks to mentaljam for the implementation :) )
+- Quoted media messages are now visible
+- Unified single chats, groups and secret chats components
+- Location type messages will be opened with Maps application
+- Implemented Webpage media messages
+- Implemented Venue media messages
+- Deleted 0.5x and 0.6x legacy code
+- Removed more legacy code from media messages, improved appereance and behavior
+- Improved connection reliability
+- Redesigned Profile page
+- Redesigned Contacts page
+- Fixed an unwanted newline when sending messages using the enter key
+- Polished UI
+- Updated LibQTelegram and TelegramQML to upstream
+- Minor Fixes
+- Updated Localizations
+
 * Wed Dec 31 2015 Antonio Davide Trogu <trogu.davide@gmail.com> 0.79-1
 - Implemented Sticker support
 - Implemented Daemon support

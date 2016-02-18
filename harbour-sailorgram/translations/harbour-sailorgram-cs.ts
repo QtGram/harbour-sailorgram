@@ -258,7 +258,7 @@ Minimální délka je 5 znaků .</translation>
     </message>
     <message>
         <source>Chat header visible</source>
-        <translation>Viditelná hlavička konverzace</translation>
+        <translation>Viditelná hlavička rozhovoru</translation>
     </message>
     <message>
         <source>Bubbles visible</source>
@@ -282,14 +282,14 @@ Minimální délka je 5 znaků .</translation>
     </message>
     <message>
         <source>Open media without waiting</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít média bez čekání</translation>
     </message>
 </context>
 <context>
     <name>ConnectingLabel</name>
     <message>
         <source>Not connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Nespojen</translation>
     </message>
 </context>
 <context>
@@ -327,11 +327,11 @@ Minimální délka je 5 znaků .</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation type="unfinished">Profil</translation>
+        <translation>Profil</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Nastavení</translation>
+        <translation>Nastavení</translation>
     </message>
 </context>
 <context>
@@ -356,7 +356,7 @@ messages</source>
     </message>
     <message>
         <source>Recent chats:</source>
-        <translation>Poslední Rozhovory:</translation>
+        <translation>Poslední rozhovory:</translation>
     </message>
 </context>
 <context>
@@ -443,7 +443,7 @@ messages</source>
     </message>
     <message>
         <source>Delete conversation</source>
-        <translation>Vymazat konverzaci</translation>
+        <translation>Vymazat rozhovor</translation>
     </message>
     <message>
         <source>Deleting secret chat</source>
@@ -455,7 +455,7 @@ messages</source>
     </message>
     <message>
         <source>Deleting conversation</source>
-        <translation>Vymazání konverzace</translation>
+        <translation>Vymazání rozhovoru</translation>
     </message>
     <message>
         <source>Actions</source>
@@ -475,7 +475,7 @@ messages</source>
     </message>
     <message>
         <source>Chat information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informace o rozhovoru</translation>
     </message>
 </context>
 <context>
@@ -489,23 +489,23 @@ messages</source>
     <name>DialogItemMenu</name>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Vymazat</translation>
+        <translation>Vymazat</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Vymazání rozhovoru</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Vymazání tajného rozhovoru</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Vymazání skupiny</translation>
     </message>
     <message>
         <source>Mark as read</source>
-        <translation type="unfinished"></translation>
+        <translation>Označit jako přečtené</translation>
     </message>
 </context>
 <context>
@@ -519,11 +519,11 @@ messages</source>
     <name>DialogReplyPreview</name>
     <message>
         <source>Message to forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Zpráva pro předání</translation>
     </message>
     <message>
         <source>Reply to</source>
-        <translation type="unfinished"></translation>
+        <translation>Odpovědět</translation>
     </message>
 </context>
 <context>
@@ -553,23 +553,23 @@ Utři do prava aby jsi vybral kontakt</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished">Ukončit</translation>
+        <translation>Ukončit</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Nový tajný rozhovor</translation>
+        <translation>Nový tajný rozhovor</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation type="unfinished">Nová skupina</translation>
+        <translation>Nová skupina</translation>
     </message>
     <message>
         <source>Hide Search Field</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrýt pole vyhledávání</translation>
     </message>
     <message>
         <source>Show Search Field</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit pole vyhledávání</translation>
     </message>
 </context>
 <context>
@@ -625,7 +625,7 @@ Utři do prava aby jsi vybral kontakt</translation>
     </message>
     <message>
         <source>Forwarded from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Přeposláno od %1</translation>
     </message>
 </context>
 <context>
@@ -668,11 +668,11 @@ Utři do prava aby jsi vybral kontakt</translation>
     </message>
     <message>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Odpovědět</translation>
     </message>
     <message>
         <source>Forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Přeposlat</translation>
     </message>
 </context>
 <context>
@@ -1074,11 +1074,11 @@ Utři do prava aby jsi vybral kontakt</translation>
     </message>
     <message>
         <source>Sticker</source>
-        <translation type="unfinished">Nálepka</translation>
+        <translation>Nálepka</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Pozice</translation>
     </message>
 </context>
 <context>

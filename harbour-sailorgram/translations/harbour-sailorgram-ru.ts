@@ -327,11 +327,11 @@ Minimum length is 5 characters.</source>
     </message>
     <message>
         <source>Profile</source>
-        <translation type="unfinished">Профиль</translation>
+        <translation>Профиль</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Настройки</translation>
+        <translation>Настройки</translation>
     </message>
 </context>
 <context>
@@ -491,23 +491,23 @@ messages</source>
     <name>DialogItemMenu</name>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Удалить</translation>
+        <translation>Удалить</translation>
     </message>
     <message>
         <source>Deleting Conversation</source>
-        <translation type="unfinished"></translation>
+        <translation>Удаление диалога</translation>
     </message>
     <message>
         <source>Deleting Secret Chat</source>
-        <translation type="unfinished"></translation>
+        <translation>Удаление секретного диалога</translation>
     </message>
     <message>
         <source>Deleting Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Удаление беседы</translation>
     </message>
     <message>
         <source>Mark as read</source>
-        <translation type="unfinished"></translation>
+        <translation>Отметить как прочитанное</translation>
     </message>
 </context>
 <context>
@@ -521,11 +521,11 @@ messages</source>
     <name>DialogReplyPreview</name>
     <message>
         <source>Message to forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Переслать сообщение</translation>
     </message>
     <message>
         <source>Reply to</source>
-        <translation type="unfinished"></translation>
+        <translation>Ответить</translation>
     </message>
 </context>
 <context>
@@ -555,23 +555,23 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished">Выйти</translation>
+        <translation>Выйти</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation type="unfinished">Создать тайный диалог</translation>
+        <translation>Создать тайный диалог</translation>
     </message>
     <message>
         <source>New Group</source>
-        <translation type="unfinished">Создать беседу</translation>
+        <translation>Создать беседу</translation>
     </message>
     <message>
         <source>Hide Search Field</source>
-        <translation type="unfinished"></translation>
+        <translation>Скрыть строку поиска</translation>
     </message>
     <message>
         <source>Show Search Field</source>
-        <translation type="unfinished"></translation>
+        <translation>Показать строку поиска</translation>
     </message>
 </context>
 <context>
@@ -627,7 +627,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Forwarded from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Переслано от %1</translation>
     </message>
 </context>
 <context>
@@ -674,7 +674,7 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Переслать</translation>
     </message>
 </context>
 <context>
