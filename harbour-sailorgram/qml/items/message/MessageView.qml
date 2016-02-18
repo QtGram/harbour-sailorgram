@@ -10,10 +10,9 @@ import "../../items/message/messageitem"
 
 SilicaListView
 {
-    property alias waitingUserName: secretdialogwaiting.waitingUser
+    property bool waitingUserName: false
     property bool discadedDialog: false
     property bool waitingDialog: false
-    property bool displayKeyboard: false
     property Context context
     property Dialog dialog
     property MessageTypesPool messageTypesPool: MessageTypesPool { }
@@ -31,37 +30,6 @@ SilicaListView
 
     function loadMore() {
         messagesmodel.loadMore();
-    }
-
-    onAtYEndChanged: {
-        if(!atYEnd || !displayKeyboard)
-            return;
-
-        dialogtextinput.focusTextArea();
-        displayKeyboard = false;
-    }
-
-    header: Item {
-        id: headeritem
-        width: messageview.width
-
-        height: {
-            var h = 0;
-
-            if(dialogtextinput.visible)
-                h += dialogtextinput.height;
-
-            if(messagefwdgridview.visible)
-                h += messagefwdgridview.height + Theme.paddingMedium;
-
-            if(dialogreplypreview.visible)
-                h += dialogreplypreview.height;
-
-            if(!dialogtextinput.visible && !dialogreplypreview.visible)
-                h = headerarea.height + Theme.paddingMedium;
-
-            return h;
-        }
     }
 
     model: MessagesModel {
@@ -85,25 +53,23 @@ SilicaListView
         message: item
 
         onReplyRequested: {
-            messageview.displayKeyboard = true;
-            dialogreplypreview.isForward = false;
-            dialogreplypreview.message = item;
-            messageview.scrollToBottom();
+            messageview.headerItem.dialogReplyPreview.isForward = false;
+            messageview.headerItem.dialogReplyPreview.message = item;
         }
 
         onForwardRequested: {
-            dialogreplypreview.isForward = true;
-            dialogreplypreview.message = item;
-            messagefwdgridview.message = item;
-            messageview.scrollToBottom();
+            messageview.headerItem.dialogReplyPreview.isForward = true;
+            messageview.headerItem.dialogReplyPreview.message = item;
+            messageview.headerItem.messageFwdGridView.message = item;
         }
     }
 
-    Column {
-        id: headerarea
-        y: messageview.headerItem.y
-        parent: messageview.contentItem
-        width: parent.width
+    header: Column {
+        property alias dialogReplyPreview: dialogreplypreview
+        property alias messageFwdGridView: messagefwdgridview
+
+        id: bottomarea
+        width: messageview.width
         spacing: Theme.paddingMedium
 
         DialogReplyPreview {
@@ -114,6 +80,14 @@ SilicaListView
 
             onCloseRequested: {
                 messagefwdgridview.message = null;
+            }
+
+            onVisibleChanged: {
+                if(!visible)
+                    return;
+
+                dialogtextinput.focusTextArea();
+                messageview.scrollToBottom();
             }
         }
 
@@ -152,6 +126,7 @@ SilicaListView
             id: secretdialogwaiting
             width: parent.width
             visible: waitingDialog
+            waitingUser: waitingUserName
         }
     }
 
