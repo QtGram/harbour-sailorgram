@@ -42,7 +42,7 @@ Item
     {
         id: btnclose
         width: messagepreview.height
-        anchors { top: parent.top; right: parent.right; bottom: parent.bottom; rightMargin: Theme.paddingSmall }
+        anchors { top: parent.top; right: parent.right; bottom: parent.bottom }
         icon.source: "qrc:///res/close.png"
         icon.sourceSize: Qt.size(width * 0.5, height * 0.5)
 

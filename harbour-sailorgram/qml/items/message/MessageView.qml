@@ -82,8 +82,8 @@ SilicaListView
                 messagefwdgridview.message = null;
             }
 
-            onVisibleChanged: {
-                if(!visible)
+            onMessageChanged: {
+                if(!message)
                     return;
 
                 dialogtextinput.focusTextArea();
