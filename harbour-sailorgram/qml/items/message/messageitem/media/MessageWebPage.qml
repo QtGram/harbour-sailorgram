@@ -121,9 +121,12 @@ MessageMediaItem
             }
 
             source: {
-                if(!messagewebpage.fileHandler.downloaded || messagewebpage.transferInProgress)
+                if(!messagewebpage.fileHandler.downloaded || messagewebpage.transferInProgress) {
+                    console.log(message.id + " " + messagewebpage.fileHandler.thumbPath);
                     return messagewebpage.fileHandler.thumbPath;
+                }
 
+                console.log(message.id + " " + messagewebpage.fileHandler.filePath);
                 return messagewebpage.fileHandler.filePath;
             }
         }
