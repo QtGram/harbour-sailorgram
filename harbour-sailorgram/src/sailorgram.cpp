@@ -282,6 +282,29 @@ void SailorGram::beep()
     notification.publish();
 }
 
+void SailorGram::delayedCloseNotification()
+{
+    QTimer* timer = qobject_cast<QTimer*>(this->sender());
+
+    if(!this->_deletednotifications.contains(timer->timerId()))
+    {
+        timer->deleteLater();
+        return;
+    }
+
+    MessageObject* message = this->_deletednotifications[timer->timerId()];
+    DialogObject* dialog = this->_telegram->messageDialog(message->id());
+
+    if(dialog == this->_telegram->nullDialog())
+        return;
+
+    this->closeNotification(dialog);
+    disconnect(message, SIGNAL(unreadChanged()), this, 0);
+
+    this->_deletednotifications.remove(timer->timerId());
+    timer->deleteLater();
+}
+
 void SailorGram::onApplicationStateChanged(Qt::ApplicationState state)
 {
     bool active = state == Qt::ApplicationActive;
@@ -313,13 +336,14 @@ void SailorGram::onMessageUnreadedChanged()
     if(message->unread())
         return;
 
-    DialogObject* dialog = this->_telegram->messageDialog(message->id());
+    QTimer* timer = new QTimer(this);
+    timer->setTimerType(Qt::VeryCoarseTimer);
+    timer->setSingleShot(true);
 
-    if(dialog == this->_telegram->nullDialog())
-        return;
+    connect(timer, SIGNAL(timeout()), this, SLOT(delayedCloseNotification()));
 
-    this->closeNotification(dialog);
-    disconnect(message, SIGNAL(unreadChanged()), this, 0);
+    this->_deletednotifications[timer->timerId()] = message;
+    timer->start(2000); // 2 seconds
 }
 
 void SailorGram::onWakeUpRequested()

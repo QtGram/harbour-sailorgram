@@ -76,6 +76,7 @@ class SailorGram : public QObject
         void onWakeUpRequested();
         void updateLogLevel();
         void updateOnlineState();
+        void delayedCloseNotification();
 
     signals:
         void autostartChanged();
@@ -88,6 +89,7 @@ class SailorGram : public QObject
         void openDialogRequested(qint32 peerid);
 
     private:
+        QHash<int, MessageObject*> _deletednotifications;
         QHash<qint32, Notification*> _notifications;
         QHash<qint32, MessageObject*> _topmessages;
         QMimeDatabase _mimedb;
