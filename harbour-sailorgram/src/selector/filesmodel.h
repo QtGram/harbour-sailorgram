@@ -52,6 +52,7 @@ public:
                    recursive == r2.recursive &&
                    sortOrder == r2.sortOrder &&
                    sortRole == r2.sortRole &&
+                   filter == r2.filter &&
                    folder == r2.folder;
         }
     };
