@@ -82,6 +82,8 @@ int main(int argc, char *argv[])
 
     TelegramQmlInitializer::init("harbour.sailorgram.TelegramQml");
 
+    FilesModel::registerMetaTypes();
+
     qmlRegisterType<SailorGram>("harbour.sailorgram.SailorGram", 1, 0, "SailorGram");
     qmlRegisterType<ScreenBlank>("harbour.sailorgram.DBus", 1, 0, "ScreenBlank");
     qmlRegisterType<AudioRecorder>("harbour.sailorgram.Selector", 1, 0, "AudioRecorder");

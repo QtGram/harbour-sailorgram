@@ -3,6 +3,7 @@
 
 
 #include <QAbstractListModel>
+#include <QMutex>
 
 
 class FilesModelWorker;
@@ -10,8 +11,6 @@ class QThread;
 
 class FilesModel : public QAbstractListModel
 {
-    friend class FilesModelWorker;
-
     Q_OBJECT
     Q_ENUMS(Role)
     Q_ENUMS(Filter)
@@ -53,9 +52,12 @@ public:
                    recursive == r2.recursive &&
                    sortOrder == r2.sortOrder &&
                    sortRole == r2.sortRole &&
+                   filter == r2.filter &&
                    folder == r2.folder;
         }
     };
+
+    static void registerMetaTypes();
 
     explicit FilesModel(QObject *parent = Q_NULLPTR);
     virtual ~FilesModel();
@@ -90,10 +92,10 @@ signals:
 
 private:
 
+    static QMutex _mutex;
     static FilesModelWorker *_worker;
     static QThread *_workerthread;
     static uint _ref;
-    static bool _registered;
 
     FilesModel::EntryList _entries;
     FilesModel::Request _request;
