@@ -11,8 +11,6 @@ class QThread;
 
 class FilesModel : public QAbstractListModel
 {
-    friend class FilesModelWorker;
-
     Q_OBJECT
     Q_ENUMS(Role)
     Q_ENUMS(Filter)
@@ -58,6 +56,8 @@ public:
         }
     };
 
+    static void registerMetaTypes();
+
     explicit FilesModel(QObject *parent = Q_NULLPTR);
     virtual ~FilesModel();
 
@@ -95,7 +95,6 @@ private:
     static FilesModelWorker *_worker;
     static QThread *_workerthread;
     static uint _ref;
-    static volatile bool _registered;
 
     FilesModel::EntryList _entries;
     FilesModel::Request _request;

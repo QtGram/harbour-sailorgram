@@ -11,19 +11,16 @@ QMutex FilesModel::_mutex;
 FilesModelWorker *FilesModel::_worker(Q_NULLPTR);
 QThread *FilesModel::_workerthread(Q_NULLPTR);
 uint FilesModel::_ref(0);
-volatile bool FilesModel::_registered(false);
+
+void FilesModel::registerMetaTypes()
+{
+    qRegisterMetaType<FilesModel::EntryList>("FilesModel::EntryList");
+    qRegisterMetaType<FilesModel::Request>("FilesModel::Request");
+}
 
 
 FilesModel::FilesModel(QObject *parent) : QAbstractListModel(parent)
 {
-    if (!FilesModel::_registered)
-    {
-        FilesModel::_registered = true;
-
-        qRegisterMetaType<FilesModel::EntryList>("FilesModel::EntryList");
-        qRegisterMetaType<FilesModel::Request>("FilesModel::Request");
-    }
-
     FilesModel::_mutex.lock();
     FilesModel::_ref++;
 
