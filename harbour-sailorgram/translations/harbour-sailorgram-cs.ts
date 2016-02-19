@@ -289,7 +289,7 @@ Minimální délka je 5 znaků .</translation>
     <name>ConnectingLabel</name>
     <message>
         <source>Not connected</source>
-        <translation>Nespojen</translation>
+        <translation>Nespojeno</translation>
     </message>
 </context>
 <context>
@@ -352,7 +352,7 @@ messages</source>
     </message>
     <message>
         <source>Connected</source>
-        <translation>Spojeno</translation>
+        <translation>Připojeno</translation>
     </message>
     <message>
         <source>Recent chats:</source>

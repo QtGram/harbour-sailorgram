@@ -9,7 +9,7 @@
     </message>
     <message>
         <source>Dutch</source>
-        <translation>Hol­län­disch</translation>
+        <translation>Niederländisch</translation>
     </message>
     <message>
         <source>Finnish</source>
@@ -73,7 +73,7 @@
     </message>
     <message>
         <source>Translation Platform</source>
-        <translation>Übersetzungsplatform</translation>
+        <translation>Übersetzungsplattform</translation>
     </message>
     <message>
         <source>Swedish</source>
@@ -89,7 +89,7 @@
     </message>
     <message>
         <source>Emoji Set</source>
-        <translation>Emoji Set</translation>
+        <translation>Emoji Sammlung</translation>
     </message>
     <message>
         <source>Icon Designers</source>
@@ -97,7 +97,7 @@
     </message>
     <message>
         <source>Contributors</source>
-        <translation>Beitragende</translation>
+        <translation>Mitwirkende</translation>
     </message>
     <message>
         <source>Ukrainian</source>
@@ -134,7 +134,7 @@
     <name>AudioRecorder</name>
     <message>
         <source>Error : %1</source>
-        <translation>Fehler : %1</translation>
+        <translation>Fehler: %1</translation>
     </message>
     <message>
         <source>Recording...</source>
@@ -153,11 +153,11 @@
     </message>
     <message>
         <source>Authorization Code</source>
-        <translation>Authentifizierungscode</translation>
+        <translation>Autorisierungscode</translation>
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation>Du hast einen falschen Authentifizierungscode eingegeben.</translation>
+        <translation>Du hast einen falschen Autorisierungscode eingegeben</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign In&apos;</source>
@@ -165,11 +165,11 @@
     </message>
     <message>
         <source>Resend Activation Code</source>
-        <translation>Authentifizierungscode noch senden</translation>
+        <translation>Aktivierungscode erneut senden </translation>
     </message>
     <message>
         <source>Sending Activation Code</source>
-        <translation>sende Authentifizierungscode</translation>
+        <translation>Aktivierungscode wird gesendet</translation>
     </message>
     <message>
         <source>Exit</source>
@@ -191,21 +191,22 @@
     </message>
     <message>
         <source>Username</source>
-        <translation>Nutzername</translation>
+        <translation>Benutzername</translation>
     </message>
     <message>
         <source>You can choose an username on Telegram. If you do, other people may contact you without knowing your phone number.
 
 You can use a-z, 0-9 and underscores.
 Minimum length is 5 characters.</source>
-        <translation>Du kannst bei Telegram einen Nutzernamen verwenden. So können dich Leute kontaktieren ohne deine Telefonnummer zu kennen.
+        <translation>Du kannst bei Telegram einen Benutzernamen verwenden. So können dich Leute kontaktieren ohne deine Telefonnummer zu kennen.
 
 Erlaubt sind a-z, 0-9 und Unterstrich.
+
 Minimum sind 5 Zeichen.</translation>
     </message>
     <message>
         <source>This username is already occupied</source>
-        <translation>Dieser Nutzername wird bereits verwendet</translation>
+        <translation>Dieser Benutzername wird bereits verwendet</translation>
     </message>
 </context>
 <context>
@@ -254,11 +255,11 @@ Minimum sind 5 Zeichen.</translation>
     </message>
     <message>
         <source>Background enabled</source>
-        <translation>Hintergrundbild aktiviert</translation>
+        <translation>Hintergrund anzeigen </translation>
     </message>
     <message>
         <source>Chat header visible</source>
-        <translation>Chat Kopfzeile sichtbar</translation>
+        <translation>Chat Kopfzeile anzeigen</translation>
     </message>
     <message>
         <source>Bubbles visible</source>
@@ -266,7 +267,7 @@ Minimum sind 5 Zeichen.</translation>
     </message>
     <message>
         <source>Bubble opacity</source>
-        <translation>Deckkraft Sprechblase</translation>
+        <translation>Deckkraft der Sprechblasen</translation>
     </message>
     <message>
         <source>Keyboard</source>
@@ -278,7 +279,7 @@ Minimum sind 5 Zeichen.</translation>
     </message>
     <message>
         <source>Bubbles with angle</source>
-        <translation>Sprechblasen mit Ecke</translation>
+        <translation>Eckige Sprechblasen</translation>
     </message>
     <message>
         <source>Open media without waiting</source>
@@ -308,7 +309,7 @@ Minimum sind 5 Zeichen.</translation>
     </message>
     <message>
         <source>Error log</source>
-        <translation>Error log</translation>
+        <translation>Fehlerprotokoll</translation>
     </message>
     <message>
         <source>Exit</source>
@@ -358,7 +359,7 @@ Nachrichten</translation>
     </message>
     <message>
         <source>Recent chats:</source>
-        <translation>Letzte Chats:</translation>
+        <translation>Kürzliche Chats:</translation>
     </message>
 </context>
 <context>
@@ -387,7 +388,7 @@ Nachrichten</translation>
     </message>
     <message>
         <source>Keep running</source>
-        <translation>Im Hintergrund aktiv lassen</translation>
+        <translation>Im Hintergrund weiterhin ausführen</translation>
     </message>
     <message>
         <source>SailorGram keeps running in background even when closed</source>
@@ -395,7 +396,7 @@ Nachrichten</translation>
     </message>
     <message>
         <source>Autostart</source>
-        <translation>Autostart</translation>
+        <translation>Automatischer Start</translation>
     </message>
     <message>
         <source>SailorGram starts automatically</source>
@@ -406,23 +407,23 @@ Nachrichten</translation>
     <name>DebugSettingsPage</name>
     <message>
         <source>Error log</source>
-        <translation>Error log</translation>
+        <translation>Fehlerprotokoll</translation>
     </message>
     <message>
         <source>Clear errors</source>
-        <translation>Fehler löschen</translation>
+        <translation>Fehlermeldungen löschen</translation>
     </message>
     <message>
         <source>Deleting errors</source>
-        <translation>Fehler werden gelöscht</translation>
+        <translation>Fehlermeldungen werden gelöscht</translation>
     </message>
     <message>
         <source>Error log is empty</source>
-        <translation>Error log ist leer</translation>
+        <translation>Fehlerprotokoll ist leer</translation>
     </message>
     <message>
         <source>Error code:</source>
-        <translation>Fehler code:</translation>
+        <translation>Fehler Code:</translation>
     </message>
     <message>
         <source>Function:</source>
@@ -449,7 +450,7 @@ Nachrichten</translation>
     </message>
     <message>
         <source>Deleting secret chat</source>
-        <translation>Geheimen Chat löschen</translation>
+        <translation>Geheimer Chat wird gelöscht</translation>
     </message>
     <message>
         <source>Deleting group</source>
@@ -514,7 +515,7 @@ Nachrichten</translation>
     <name>DialogPage</name>
     <message>
         <source>Load more messages</source>
-        <translation>Mehr  Nachrichten laden</translation>
+        <translation>Weitere Nachrichten laden</translation>
     </message>
 </context>
 <context>
@@ -555,11 +556,11 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation>Schließen</translation>
+        <translation>Beenden</translation>
     </message>
     <message>
         <source>New Secret Chat</source>
-        <translation>Neuer geheimer Chat</translation>
+        <translation>Neuer Geheimer Chat</translation>
     </message>
     <message>
         <source>New Group</source>
@@ -592,22 +593,22 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>
-        <translation>In der Galerie ablegen</translation>
+        <translation>In der Galerie speichern</translation>
     </message>
     <message>
         <source>Image saved in Gallery</source>
-        <translation>Bild wurde in der Galerie abgelegt</translation>
+        <translation>Bild in der Galerie gespeichert</translation>
     </message>
 </context>
 <context>
     <name>MediaPlayerToolBar</name>
     <message>
         <source>Downloading media</source>
-        <translation>Lade Media</translation>
+        <translation>Medien werden heruntergeladen</translation>
     </message>
     <message>
         <source>Media saved in Gallery</source>
-        <translation>Medien wurden in der Galerie abgelegt</translation>
+        <translation>Medien in Galerie gespeichert</translation>
     </message>
 </context>
 <context>
@@ -618,7 +619,7 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Audio recording</source>
-        <translation>Tonaufnahme</translation>
+        <translation>Audioaufnahme</translation>
     </message>
     <message>
         <source>Size: %1</source>
@@ -629,11 +630,11 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     <name>MessageItem</name>
     <message>
         <source>Downloading Media</source>
-        <translation>Lade Media</translation>
+        <translation>Medien werden heruntergeladen</translation>
     </message>
     <message>
         <source>Opening Media</source>
-        <translation>Öffne Media</translation>
+        <translation>Medien werden geöffnet</translation>
     </message>
     <message>
         <source>Opening media</source>
@@ -676,7 +677,7 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Install Sticker set</source>
-        <translation>Sticker Set installieren</translation>
+        <translation>Sticker Sammlung installieren</translation>
     </message>
     <message>
         <source>Open</source>
@@ -750,7 +751,7 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     <name>ProfilePage</name>
     <message>
         <source>Change Picture</source>
-        <translation>Bild ändern</translation>
+        <translation>Profilbild ändern</translation>
     </message>
     <message>
         <source>Phone number</source>
@@ -762,7 +763,7 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Change Username</source>
-        <translation>Nutzernamen ändern</translation>
+        <translation>Benutzernamen ändern</translation>
     </message>
     <message>
         <source>Actions</source>
@@ -884,7 +885,7 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Record sound</source>
-        <translation>Ton aufnehmen</translation>
+        <translation>Audio aufnehmen</translation>
     </message>
     <message>
         <source>My location</source>
@@ -927,7 +928,7 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>Stop</translation>
+        <translation>Stopp</translation>
     </message>
 </context>
 <context>
@@ -938,7 +939,7 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Select a Sticker Set from below</source>
-        <translation>Wähle ein unteres Sticker-Set</translation>
+        <translation>Wähle eine der folgenden Sticker Sammlungen</translation>
     </message>
 </context>
 <context>
@@ -957,7 +958,7 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Daemon</source>
-        <translation>Dämon</translation>
+        <translation>Hintergrunddienst</translation>
     </message>
 </context>
 <context>
@@ -968,11 +969,11 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>You have entered a wrong Authorization Code</source>
-        <translation>Du hast einen falschen  Authentifizierungscode eingegeben </translation>
+        <translation>Du hast einen falschen Autorisierungscode eingegeben</translation>
     </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
-        <translation>Warte auf die SMS mit dem Authentifizierungscode und wähle dann &quot;Anmelden&quot;</translation>
+        <translation>Warte auf die SMS mit dem Autorisierungscode und wähle dann &quot;Anmelden&quot;</translation>
     </message>
     <message>
         <source>First Name</source>
@@ -984,7 +985,7 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>Authorization Code</source>
-        <translation>Authentifizierungscode</translation>
+        <translation>Autorisierungscode</translation>
     </message>
     <message>
         <source>Exit</source>
@@ -1003,7 +1004,7 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     </message>
     <message>
         <source>%1 has joined the group via invite link</source>
-        <translation>%1 hat die Gruppe via Link betreten</translation>
+        <translation>%1 ist der Gruppe via Link beigetreten</translation>
     </message>
     <message>
         <source>Secret chat created by ��%1��</source>
@@ -1026,7 +1027,7 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     <name>TelegramHelper</name>
     <message>
         <source>Recently</source>
-        <translation>Zuletzt</translation>
+        <translation>Kürzlich gesehen</translation>
     </message>
     <message>
         <source>Last Month</source>

@@ -8,7 +8,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
-* Thu Feb 18 2016 Antonio Davide Trogu <trogu.davide@gmail.com> 0.80-1
+* Thu Feb 18 2016 Antonio Davide Trogu <trogu.davide@gmail.com> 0.80-2
+- REV2: Improved message forwarding
+- REV2: Fixed Audio recording
 - Notifications will be deleted if a message is readed from another client
 - It's possible to send multiple files from file picker (thanks goes to Maldela for the implementation)
 - Secret chats are now visible in Sailorgram's cover
