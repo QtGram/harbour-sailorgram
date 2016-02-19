@@ -140,8 +140,10 @@ InverseMouseArea
 
                     if(action === selector.locationAction)
                         context.telegram.sendGeo(peerid, data.latitude, data.longitude);
-                    else if(action === selector.soundRecordAction)
+                    else if(action === selector.soundRecordAction) {
+                        console.log(action + " " + data);
                         context.telegram.sendFile(peerid, data, false, true);
+                    }
                     else if(action === selector.stickerAction)
                         context.telegram.forwardDocument(peerid, data);
                     else

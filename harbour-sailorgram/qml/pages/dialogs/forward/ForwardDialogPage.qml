@@ -13,6 +13,14 @@ Page
 
     id: fwddialogpage
 
+    Component.onCompleted: {
+        context.dialogs.stopUpdating = true;
+    }
+
+    Component.onDestruction: {
+        context.dialogs.stopUpdating = false;
+    }
+
     onStatusChanged: {
         if(status !== PageStatus.Active)
             return;
