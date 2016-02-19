@@ -46,6 +46,10 @@ Page
     id: dialogspage
     allowedOrientations: defaultAllowedOrientations
 
+    Component.onCompleted: {
+        context.mainPage = dialogspage;
+    }
+
     onStatusChanged: {
         if(dialogspage.status !== PageStatus.Active)
             return;

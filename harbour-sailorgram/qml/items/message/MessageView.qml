@@ -7,6 +7,7 @@ import "../../components/message"
 import "../../items/dialog"
 import "../../items/secretdialog"
 import "../../items/message/messageitem"
+import "../../js/TelegramHelper.js" as TelegramHelper
 
 SilicaListView
 {
@@ -15,6 +16,7 @@ SilicaListView
     property bool waitingDialog: false
     property Context context
     property Dialog dialog
+    property Message forwardedMessage
     property MessageTypesPool messageTypesPool: MessageTypesPool { }
 
     id: messageview
@@ -54,19 +56,30 @@ SilicaListView
 
         onReplyRequested: {
             messageview.headerItem.dialogReplyPreview.isForward = false;
+            messageview.headerItem.dialogReplyPreview.isForward = false;
             messageview.headerItem.dialogReplyPreview.message = item;
         }
 
         onForwardRequested: {
-            messageview.headerItem.dialogReplyPreview.isForward = true;
-            messageview.headerItem.dialogReplyPreview.message = item;
-            messageview.headerItem.messageFwdGridView.message = item;
+            var fwdpage = pageStack.push(Qt.resolvedUrl("../../pages/dialogs/forward/ForwardDialogPage.qml"), { "context": messageview.context });
+
+            fwdpage.forwardRequested.connect(function(peerid, iscontact) {
+                if(TelegramHelper.peerId(messageview.dialog) === peerid) {
+                    messageview.headerItem.dialogReplyPreview.isForward = true;
+                    messageview.headerItem.dialogReplyPreview.message = item;
+                    pageStack.pop();
+                    return;
+                }
+
+                var dialog = iscontact ? context.telegram.fakeDialogObject(peerid, false) : context.telegram.dialog(peerid);
+                pageStack.replaceAbove(context.mainPage, Qt.resolvedUrl("../../pages/dialogs/DialogPage.qml"), { "context": context, "dialog": dialog, "forwardedMessage": item });
+            });
         }
     }
 
     header: Column {
         property alias dialogReplyPreview: dialogreplypreview
-        property alias messageFwdGridView: messagefwdgridview
+        property alias dialogTextInput: dialogtextinput
 
         id: bottomarea
         width: messageview.width
@@ -77,9 +90,11 @@ SilicaListView
             width: parent.width
             context: messageview.context
             dialog: messageview.dialog
+            isForward: forwardedMessage !== null
+            message: forwardedMessage
 
             onCloseRequested: {
-                messagefwdgridview.message = null;
+                dialogtextinput.isForward = false;
             }
 
             onMessageChanged: {
@@ -91,28 +106,20 @@ SilicaListView
             }
         }
 
-        MessageForwardGridView {
-            id: messagefwdgridview
-            width: parent.width
-            context: messageview.context
-
-            onMessageForwarded: {
-                dialogreplypreview.message = null;
-            }
-        }
-
         DialogTextInput {
             id: dialogtextinput
             width: parent.width
             messagesModel: messagesmodel
             context: messageview.context
             dialog: messageview.dialog
+            isForward: forwardedMessage !== null
             replyMessage: dialogreplypreview.message
             visible: !discadedDialog && !waitingDialog
+            onForwardRequested: context.telegram.forwardMessages([dialogreplypreview.message.id], TelegramHelper.peerId(messageview.dialog)); // Forward in this chat
 
             onMessageSent: {
+                forwardedMessage = null;
                 dialogreplypreview.message = null;
-                messagefwdgridview.message = null;
             }
         }
 

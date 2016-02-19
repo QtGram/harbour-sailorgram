@@ -256,5 +256,7 @@ DISTFILES += \
     qml/items/message/messageitem/media/MessageWebPage.qml \
     qml/components/ResizableLabel.qml \
     qml/menus/DialogItemMenu.qml \
-    qml/components/message/MessageForwardGridView.qml \
-    qml/items/message/ForwardMessageItem.qml
+    qml/pages/dialogs/forward/ForwardDialogPage.qml \
+    qml/pages/dialogs/forward/ForwardContactPage.qml \
+    qml/items/message/forward/ForwardDialogItem.qml \
+    qml/items/message/forward/ForwardContactItem.qml

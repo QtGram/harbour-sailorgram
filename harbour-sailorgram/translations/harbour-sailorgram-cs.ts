@@ -573,6 +573,20 @@ Utři do prava aby jsi vybral kontakt</translation>
     </message>
 </context>
 <context>
+    <name>ForwardContactPage</name>
+    <message>
+        <source>Forward to contact</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ForwardDialogPage</name>
+    <message>
+        <source>Forward to chat</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MediaPhotoPage</name>
     <message>
         <source>Save in Gallery</source>

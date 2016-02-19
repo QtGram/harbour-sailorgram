@@ -17,6 +17,7 @@ Page
     property Chat chat
     property EncryptedChat encryptedChat
     property User user
+    property Message forwardedMessage
 
     id: dialogpage
     allowedOrientations: defaultAllowedOrientations
@@ -95,6 +96,7 @@ Page
             id: messageview
             anchors { left: parent.left; top: header.bottom; right: parent.right; bottom: parent.bottom }
             context: dialogpage.context
+            forwardedMessage: dialogpage.forwardedMessage
 
             discadedDialog: {
                 if(!dialogpage.encryptedChat || dialogpage.dialog.encrypted)

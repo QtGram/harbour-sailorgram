@@ -1,11 +1,11 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.TelegramQml 1.0
-import "../../models"
-import "../../items/peer"
-import "../../js/TelegramHelper.js" as TelegramHelper
+import "../../../models"
+import "../../../items/peer"
+import "../../../js/TelegramHelper.js" as TelegramHelper
 
-ListItem
+BackgroundItem
 {
     property Context context
     property var dialog
@@ -13,10 +13,10 @@ ListItem
     property Chat chat
     property EncryptedChat encryptedChat
 
-    id: forwardmessageitem
+    id: forwarddialogitem
 
     onDialogChanged: {
-        var peerid = TelegramHelper.peerId(forwardmessageitem.dialog);
+        var peerid = TelegramHelper.peerId(forwarddialogitem.dialog);
 
         if(dialog.encrypted) {
             encryptedChat = context.telegram.encryptedChat(peerid);
@@ -36,10 +36,10 @@ ListItem
         anchors.horizontalCenter: parent.horizontalCenter
         width: parent.height - lbltitle.contentHeight
         height: width
-        context: forwardmessageitem.context
-        dialog: forwardmessageitem.dialog
-        chat: forwardmessageitem.chat
-        user: forwardmessageitem.user
+        context: forwarddialogitem.context
+        dialog: forwarddialogitem.dialog
+        chat: forwarddialogitem.chat
+        user: forwarddialogitem.user
     }
 
     Label

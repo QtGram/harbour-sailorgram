@@ -11,16 +11,24 @@ InverseMouseArea
     property Context context
     property Message replyMessage
     property var dialog
+    property bool isForward
 
     signal messageSent()
+    signal forwardRequested()
 
     function focusTextArea() {
         textarea.forceActiveFocus();
     }
 
     function sendMessage() {
-        var sendtext = context.sendwithreturn ? (textarea.text.trim().replace(/\r\n|\n|\r/gm, "")) : textarea.text.trim();
-        messagesModel.sendMessage(sendtext, (replyMessage ? replyMessage.id : 0));
+
+        if(!isForward)
+        {
+            var sendtext = context.sendwithreturn ? (textarea.text.trim().replace(/\r\n|\n|\r/gm, "")) : textarea.text.trim();
+            messagesModel.sendMessage(sendtext, (replyMessage ? replyMessage.id : 0));
+        }
+        else
+            forwardRequested();
 
         Qt.inputMethod.commit();
         textarea.text = "";
@@ -87,10 +95,10 @@ InverseMouseArea
             topMargin: Theme.paddingMedium
         }
 
-        EnterKey.enabled: text.trim().length > 0
+        EnterKey.enabled: text.trim().length > 0 || isForward
 
         EnterKey.onClicked: {
-            if(!context.sendwithreturn || (text.trim().length <= 0))
+            if(!context.sendwithreturn)
                 return;
 
             sendMessage();
@@ -111,7 +119,7 @@ InverseMouseArea
         IconButton
         {
             id: btnsend
-            visible: !context.sendwithreturn && textarea.text.length > 0
+            visible: isForward || (!context.sendwithreturn && textarea.text.length > 0)
             icon.source: "image://theme/icon-m-message"
             onClicked: sendMessage()
         }
@@ -119,7 +127,7 @@ InverseMouseArea
         IconButton
         {
             id: btnselectmedia
-            visible: textarea.text.length <= 0
+            visible: !isForward && textarea.text.length <= 0
             icon.source: "image://theme/icon-m-attach"
 
             onClicked: {

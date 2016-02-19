@@ -55,6 +55,7 @@ QtObject
                                                              + "w=" + width + "&h=" + height + "&z=" + z;
     }
 
+    property Page mainPage: null
     property Document currentSticker: null
     property ScreenBlank screenblank: ScreenBlank { }
     property ErrorsModel errors: ErrorsModel { }
