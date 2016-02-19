@@ -36,7 +36,7 @@ Page
             {
                 width: parent.width
                 height: Theme.itemSizeSmall
-                icon: "image://theme/icon-s-message"
+                icon: "image://theme/icon-m-sms"
                 text: qsTr("Chats")
                 onActionRequested: pageStack.push(Qt.resolvedUrl("ChatSettingsPage.qml"), { "context": settingspage.context })
             }
