@@ -107,7 +107,7 @@ QString SailorGram::androidStorage() const
 QString SailorGram::voiceRecordPath() const
 {
     QDir cachefolder = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
-    return cachefolder.absoluteFilePath("voice-rec.wav");
+    return cachefolder.absoluteFilePath("voice-rec.ogg");
 }
 
 TelegramQml *SailorGram::telegram() const

@@ -7,7 +7,7 @@
 AudioRecorder::AudioRecorder(QObject * parent) : QObject(parent)
 {
     this->_audiorecorder = new QAudioRecorder(this);
-    this->_outputfile = QStandardPaths::writableLocation(QStandardPaths::CacheLocation)  % "/voice-rec.wav";
+    this->_outputfile = QStandardPaths::writableLocation(QStandardPaths::CacheLocation)  % "/voice-rec.ogg";
     QFile::remove(this->_outputfile);
 
     qWarning() << "Supported codecs" << this->_audiorecorder->supportedAudioCodecs();
@@ -49,13 +49,13 @@ void AudioRecorder::start()
     this->_audiorecorder->setAudioInput(this->_audiorecorder->defaultAudioInput());
 
     QAudioEncoderSettings settings;
-    settings.setCodec("audio/PCM");
-    settings.setChannelCount(2);
-    settings.setSampleRate(11025);
+    settings.setCodec("audio/vorbis");
+    settings.setChannelCount(1);
+    settings.setSampleRate(48000);
     //settings.setBitRate(96000); // NOTE : MP3 only
     settings.setEncodingMode(QMultimedia::ConstantBitRateEncoding);
 
-    this->_audiorecorder->setEncodingSettings(settings, QVideoEncoderSettings(), "wav");
+    this->_audiorecorder->setEncodingSettings(settings, QVideoEncoderSettings(), "ogg");
     this->_audiorecorder->setOutputLocation(QUrl(this->_outputfile));
     this->_audiorecorder->record();
 }
