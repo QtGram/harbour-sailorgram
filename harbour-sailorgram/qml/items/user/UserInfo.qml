@@ -64,12 +64,34 @@ Item
             visible: user.phone.length > 0
         }
 
-        Label
+        BackgroundItem
         {
-            x: Theme.paddingMedium
-            width: parent.width - (x * 2)
-            text: TelegramHelper.phoneNumber(user)
-            visible: user.phone.length > 0
+            id: phoneitem
+            height: phonelabel.height + phonemenu.height
+
+            onPressAndHold: phonemenu.show(phoneitem)
+
+            Label
+            {
+                id: phonelabel
+                anchors { left: parent.left; leftMargin: Theme.paddingMedium; top: parent.top; right: parent.right; rightMargin: Theme.paddingMedium }
+                height: Theme.itemSizeSmall
+                verticalAlignment: Text.AlignVCenter
+                text: TelegramHelper.phoneNumber(user)
+                visible: user.phone.length > 0
+            }
+
+            ContextMenu
+            {
+                id: phonemenu
+
+                MenuItem
+                {
+                    text: qsTr("Copy to clipboard")
+
+                    onClicked: Clipboard.text = phonelabel.text
+                }
+            }
         }
     }
 }
