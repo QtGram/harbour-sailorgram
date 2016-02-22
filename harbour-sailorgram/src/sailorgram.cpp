@@ -186,6 +186,16 @@ void SailorGram::moveMediaTo(const QString& mediafile, const QString &destinatio
 {
     QFileInfo mediafileinfo(QUrl(mediafile).path());
     QString destpath = QDir(destination).absoluteFilePath(mediafileinfo.fileName());
+
+    if (QFile(destpath).exists())
+    {
+        QString basename = mediafileinfo.baseName();
+        QString suffix   = mediafileinfo.completeSuffix();
+        quint32 copy = 0;
+        while (QFile(destpath).exists())
+            destpath = QDir(destination).absoluteFilePath(basename + QString(" (%1).").arg(++copy) + suffix);
+    }
+
     QFile::copy(mediafileinfo.absoluteFilePath(), destpath);
 }
 
