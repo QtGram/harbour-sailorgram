@@ -142,7 +142,8 @@ Dialog
         DialogHeader
         {
             id: header
-            acceptText: qsTr("Send %1 image(s)").arg(selectedFiles.length)
+            acceptText: selectedFiles.length ? qsTr("Send %n image(s)", "", selectedFiles.length) :
+                                               qsTr("Select images")
             cancelText: !!rootPage ? qsTr("Back") : qsTr("Cancel")
             title: filesmodel.folder.split('/').pop();
         }
