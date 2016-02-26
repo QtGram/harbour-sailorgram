@@ -65,7 +65,8 @@ Dialog
         DialogHeader
         {
             id: header
-            acceptText: qsTr("Send %1 file(s)").arg(selectedFiles.length)
+            acceptText: selectedFiles.length ? qsTr("Send %n file(s)", "", selectedFiles.length) :
+                                               qsTr("Select files")
             title: filesmodel.folder
         }
 
