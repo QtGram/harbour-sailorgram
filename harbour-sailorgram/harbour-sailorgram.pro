@@ -99,6 +99,7 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     rpm/harbour-sailorgram.spec \
     rpm/harbour-sailorgram.yaml \
     translations/*.ts \
+    translations/translations.json \
     lipstick/*.conf \
     harbour-sailorgram.desktop \
     qml/pages/login/ConnectionPage.qml \
@@ -184,7 +185,7 @@ TRANSLATIONS += translations/harbour-sailorgram-be.ts \
                 translations/harbour-sailorgram-nl_NL.ts \
                 translations/harbour-sailorgram-ru.ts \
                 translations/harbour-sailorgram-sv.ts \
-                translations/harbour-sailorgram-uk_UA.ts
+                translations/harbour-sailorgram-uk_UA.ts \
                 translations/harbour-sailorgram.ts
 
 HEADERS += \

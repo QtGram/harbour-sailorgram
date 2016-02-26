@@ -794,8 +794,15 @@ Do a swype to the right to select a contact</source>
         <source>Back</source>
         <translation type="unfinished"></translation>
     </message>
+    <message numerus="yes">
+        <source>Send %n file(s)</source>
+        <translation>
+            <numerusform>Send %n file</numerusform>
+            <numerusform>Send %n files</numerusform>
+        </translation>
+    </message>
     <message>
-        <source>Send %1 file(s)</source>
+        <source>Select files</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -830,15 +837,22 @@ Do a swype to the right to select a contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Send %1 image(s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Back</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <source>Send %n image(s)</source>
+        <translation>
+            <numerusform>Send %n image</numerusform>
+            <numerusform>Send %n images</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Select images</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -999,6 +1013,10 @@ Do a swype to the right to select a contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>%1 added %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Secret chat created by ��%1��</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1008,10 +1026,6 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Group name changed to ��%1��</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 added %2</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1106,6 +1120,10 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Actions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
