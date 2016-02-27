@@ -11,6 +11,7 @@
 #include "dbus/interface/sailorgraminterface.h"
 #include "dbus/notification/notification.h"
 #include "dbus/connectivitychecker.h"
+#include "item/translationinfoitem.h"
 
 class SailorGram : public QObject
 {
@@ -29,6 +30,7 @@ class SailorGram : public QObject
     Q_PROPERTY(QString picturesFolder READ picturesFolder CONSTANT FINAL)
     Q_PROPERTY(QString androidStorage READ androidStorage CONSTANT FINAL)
     Q_PROPERTY(QString voiceRecordPath READ voiceRecordPath CONSTANT FINAL)
+    Q_PROPERTY(QList<QObject *> translations READ translations CONSTANT FINAL)
     Q_PROPERTY(DialogObject* foregroundDialog READ foregroundDialog WRITE setForegroundDialog NOTIFY foregroundDialogChanged)
 
     public:
@@ -48,6 +50,7 @@ class SailorGram : public QObject
         QString voiceRecordPath() const;
         TelegramQml* telegram() const;
         DialogObject* foregroundDialog() const;
+        QList<QObject *> translations();
         void setTelegram(TelegramQml* telegram);
         void setForegroundDialog(DialogObject* dialog);
         void setKeepRunning(bool keep);

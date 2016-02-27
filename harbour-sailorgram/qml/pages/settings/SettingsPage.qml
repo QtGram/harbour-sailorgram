@@ -14,7 +14,7 @@ Page
         if(settingspage.status !== PageStatus.Active)
             return;
 
-        pageStack.pushAttached(Qt.resolvedUrl("../AboutPage.qml"), { "context": settingspage.context });
+        pageStack.pushAttached(Qt.resolvedUrl("../about/AboutPage.qml"), { "context": settingspage.context });
     }
 
     SilicaFlickable

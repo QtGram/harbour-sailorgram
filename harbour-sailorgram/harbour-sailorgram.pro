@@ -92,7 +92,8 @@ SOURCES += src/harbour-sailorgram.cpp \
     src/selector/filesmodel.cpp \
     src/selector/filesmodelworker.cpp \
     src/dbus/connectivitychecker.cpp \
-    src/model/sailorgramcontactsmodel.cpp
+    src/model/sailorgramcontactsmodel.cpp \
+    src/item/translationinfoitem.cpp
 
 OTHER_FILES += qml/harbour-sailorgram.qml \
     rpm/harbour-sailorgram.changes.in \
@@ -104,6 +105,7 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     harbour-sailorgram.desktop \
     qml/pages/login/ConnectionPage.qml \
     server.pub \
+    update_translations_json.sh \
     qml/pages/login/PhoneNumberPage.qml \
     qml/pages/login/AuthorizationPage.qml \
     qml/js/Settings.js \
@@ -148,8 +150,10 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/pages/media/MediaPlayerPage.qml \
     qml/components/mediaplayer/mediacomponents/MediaPlayerLoadingBar.qml \
     qml/components/ConnectionStatus.qml \
-    qml/pages/AboutPage.qml \
-    qml/components/InfoLabel.qml \
+    qml/pages/about/AboutPage.qml \
+    qml/pages/about/TranslationsPage.qml \
+    qml/pages/about/DevelopersPage.qml \
+    qml/pages/about/ThirdPartyPage.qml \
     qml/items/message/messageitem/MessageStatus.qml \
     qml/pages/settings/SettingsPage.qml \
     qml/pages/chat/ChangeChatTitle.qml \
@@ -160,7 +164,9 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/pages/settings/ChatSettingsPage.qml \
     qml/pages/settings/DebugSettingsPage.qml \
     qml/components/DebugLabel.qml \
-    qml/models/ErrorsModel.qml
+    qml/models/ErrorsModel.qml \
+    qml/components/CollaboratorsLabel.qml \
+    qml/components/ThirdPartyLabel.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line
@@ -202,7 +208,8 @@ HEADERS += \
     src/selector/filesmodel.h \
     src/selector/filesmodelworker.h \
     src/dbus/connectivitychecker.h \
-    src/model/sailorgramcontactsmodel.h
+    src/model/sailorgramcontactsmodel.h \
+    src/item/translationinfoitem.h
 
 RESOURCES += \
     resources.qrc
@@ -260,4 +267,9 @@ DISTFILES += \
     qml/pages/dialogs/forward/ForwardDialogPage.qml \
     qml/pages/dialogs/forward/ForwardContactPage.qml \
     qml/items/message/forward/ForwardDialogItem.qml \
-    qml/items/message/forward/ForwardContactItem.qml
+    qml/items/message/forward/ForwardContactItem.qml \
+    qml/components/CollaboratorsLabel.qml \
+    qml/pages/about/AboutPage.qml \
+    qml/pages/about/TranslationsPage.qml \
+    qml/pages/about/DevelopersPage.qml \
+    qml/pages/about/ThirdPartyPage.qml

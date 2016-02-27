@@ -12,5 +12,6 @@
         <file>res/daemon.png</file>
         <file>res/sailorgram-cover.png</file>
         <file>res/close.png</file>
+        <file>translations/translations.json</file>
     </qresource>
 </RCC>

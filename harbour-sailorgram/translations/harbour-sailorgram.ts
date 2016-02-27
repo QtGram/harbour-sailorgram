@@ -1,52 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="en">
 <context>
     <name>AboutPage</name>
-    <message>
-        <source>Danish</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Dutch</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Finnish</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>German</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Russian</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Spanish</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Czech</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>French</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Italian</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Persian</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Greek</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>About SailorGram</source>
         <translation type="unfinished"></translation>
@@ -60,47 +16,31 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Developer</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>GitHub Repository</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Translators</source>
+        <source>Report an Issue</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Translation Platform</source>
+        <source>SailorGram is distributed under the GPLv3 license</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Swedish</source>
+        <source>License</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Galician</source>
+        <source>Developers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Belaruian</source>
+        <source>Translations</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Emoji Set</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Icon Designers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Contributors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ukrainian</source>
+        <source>Third Party</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -425,6 +365,25 @@ messages</source>
     </message>
     <message>
         <source>Message:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DevelopersPage</name>
+    <message>
+        <source>Developers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contributors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Icon Designers</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1101,6 +1060,55 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Position</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ThirdPartyLabel</name>
+    <message>
+        <source>License</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Project Page</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ThirdPartyPage</name>
+    <message>
+        <source>Third Party</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The GPLv3 license</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attribution 4.0 International (CC BY 4.0)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TranslationsPage</name>
+    <message>
+        <source>Translation Platform</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Coordinators</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translators</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reviewers</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

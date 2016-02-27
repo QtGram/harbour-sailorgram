@@ -120,6 +120,22 @@ DialogObject *SailorGram::foregroundDialog() const
     return this->_foregrounddialog;
 }
 
+QList<QObject *> SailorGram::translations()
+{
+    QList<QObject *> trlist;
+    QFile jsonfile(":/translations/translations.json");
+    if (jsonfile.open(QFile::ReadOnly))
+    {
+        QJsonParseError error;
+        QJsonDocument json = QJsonDocument::fromJson(jsonfile.readAll(), &error);
+        if (error.error != QJsonParseError::NoError)
+            return trlist;
+        foreach (QJsonValue jsonarrayvalue, json.array())
+            trlist.append(new TranslationInfoItem(jsonarrayvalue.toObject()));
+    }
+    return trlist;
+}
+
 void SailorGram::setTelegram(TelegramQml *telegram)
 {
     if(this->_telegram == telegram)
