@@ -54,7 +54,8 @@ Files:
   - '%{_datadir}/dbus-1/services/*.service'
   - '%{_libdir}/systemd/user/harbour-sailorgram-notifications.service'
   - '%{_libdir}/systemd/user/post-user-session.target.wants/harbour-sailorgram-notifications.service'
-  - '/etc/mce/10sailorgram-led.ini'
+  - '%{_sysconfdir}/mce/10sailorgram-led.ini'
+  - '%exclude %{_libdir}/cmake/*'
 
 # For more information about yaml and what's supported in Sailfish OS
 # build system, please see https://wiki.merproject.org/wiki/Spectacle

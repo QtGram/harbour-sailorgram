@@ -28,16 +28,6 @@ webp.files = $$OUT_PWD/../webp-plugin/plugins/imageformats/*.so
 webp.path = /usr/share/$$TARGET/lib/imageformats
 INSTALLS += webp
 
-# TelegramQml
-libtelegram_qml.files = $$OUT_PWD/../TelegramQML/*.so*
-libtelegram_qml.path = /usr/share/$$TARGET/lib
-INSTALLS += libtelegram_qml
-
-# LibQTelegram-ae
-libqtelegram_ae.files = $$OUT_PWD/../libqtelegram-aseman-edition/*.so*
-libqtelegram_ae.path = /usr/share/$$TARGET/lib
-INSTALLS += libqtelegram_ae
-
 # Telegram Public Key
 server_pub.files = $$PWD/server.pub
 server_pub.path = /usr/share/$$TARGET
