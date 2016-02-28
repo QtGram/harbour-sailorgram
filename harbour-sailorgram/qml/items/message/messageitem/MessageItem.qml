@@ -61,29 +61,37 @@ ListItem
     }
 
     function displayMedia() {
-        if(!message.media)
+        var media = message.media;
+        if(!media)
             return;
 
-        if((message.media.classType === TelegramConstants.typeMessageMediaGeo) || (message.media.classType === TelegramConstants.typeMessageMediaVenue)) {
-            Qt.openUrlExternally("geo:" + message.media.geo.lat + "," + message.media.geo.longitude)
+        var classtype = media.classType;
+
+        if((classtype === TelegramConstants.typeMessageMediaGeo) || (classtype === TelegramConstants.typeMessageMediaVenue)) {
+            Qt.openUrlExternally("geo:" + media.geo.lat + "," + media.geo.longitude)
+            return;
+        }
+
+        if(classtype === TelegramConstants.typeMessageMediaContact) {
+            Qt.openUrlExternally("tel:" + media.phoneNumber)
             return;
         }
 
         var type = "";
-        var canbeviewed = (message.media.classType === TelegramConstants.typeMessageMediaPhoto) ||
-                          (message.media.classType === TelegramConstants.typeMessageMediaVideo) ||
-                          (message.media.classType === TelegramConstants.typeMessageMediaAudio);
+        var canbeviewed = (classtype === TelegramConstants.typeMessageMediaPhoto) ||
+                          (classtype === TelegramConstants.typeMessageMediaVideo) ||
+                          (classtype === TelegramConstants.typeMessageMediaAudio);
 
-        if(message.media.classType === TelegramConstants.typeMessageMediaDocument) {
+        if(classtype === TelegramConstants.typeMessageMediaDocument) {
             if(context.telegram.documentIsSticker(message.media.document))
                 return;
 
-            var mime = message.media.document.mimeType;
+            var mime = media.document.mimeType;
             type = mime.split("/")[0];
             canbeviewed = ((type === "video") || (type === "audio") || (type === "image")) ? true : false;
         }
 
-        if(!remorseNeeded(message.media.classType, type)) {
+        if(!remorseNeeded(classtype, type)) {
             openOrDownloadMedia(canbeviewed, type);
             return;
         }
@@ -230,13 +238,14 @@ ListItem
             visible: mediacontainer.item !== null
 
             Component.onCompleted: {
-                if(!message.media)
+                var media = message.media;
+                if(!media)
                     return;
 
                 var params = { "context": messageitem.context, "message": messageitem.message, "maxWidth": content.maxw - 2 * Theme.paddingMedium };
 
-                if(message.media.classType === TelegramConstants.typeMessageMediaDocument) {
-                    if(context.telegram.documentIsSticker(message.media.document))
+                if(media.classType === TelegramConstants.typeMessageMediaDocument) {
+                    if(context.telegram.documentIsSticker(media.document))
                         messageTypesPool.stickerComponent.createObject(mediacontainer, params);
                     else
                         messageTypesPool.documentComponent.createObject(mediacontainer, params);
@@ -244,16 +253,19 @@ ListItem
                     return;
                 }
 
-                if(message.media.classType === TelegramConstants.typeMessageMediaPhoto)
+                var classtype = media.classType;
+                if(classtype === TelegramConstants.typeMessageMediaPhoto)
                     messageTypesPool.photoComponent.createObject(mediacontainer, params);
-                else if(message.media.classType === TelegramConstants.typeMessageMediaAudio)
+                else if(classtype === TelegramConstants.typeMessageMediaAudio)
                     messageTypesPool.audioComponent.createObject(mediacontainer, params);
-                else if(message.media.classType === TelegramConstants.typeMessageMediaVideo)
+                else if(classtype === TelegramConstants.typeMessageMediaVideo)
                     messageTypesPool.videoComponent.createObject(mediacontainer, params);
-                else if((message.media.classType === TelegramConstants.typeMessageMediaWebPage) && (message.media.webpage.url.length > 0))
+                else if((classtype === TelegramConstants.typeMessageMediaWebPage) && (media.webpage.url.length > 0))
                     messageTypesPool.webpageComponent.createObject(mediacontainer, params);
-                else if((message.media.classType === TelegramConstants.typeMessageMediaGeo) || (message.media.classType === TelegramConstants.typeMessageMediaVenue))
+                else if((classtype === TelegramConstants.typeMessageMediaGeo) || (classtype === TelegramConstants.typeMessageMediaVenue))
                     messageTypesPool.locationComponent.createObject(mediacontainer, params);
+                else if(classtype === TelegramConstants.typeMessageMediaContact)
+                    messageTypesPool.contactComponent.createObject(mediacontainer, params);
             }
         }
 

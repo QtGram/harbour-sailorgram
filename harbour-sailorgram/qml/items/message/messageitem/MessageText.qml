@@ -37,7 +37,7 @@ Item
             font.italic: TelegramHelper.isServiceMessage(message)
             emojiPath: context.sailorgram.emojiPath
             wrapMode: Text.Wrap
-            visible: text.length > 0
+            visible: rawText.length > 0
             color: ColorScheme.colorizeText(message, context)
             linkColor: ColorScheme.colorizeLink(message, context)
 

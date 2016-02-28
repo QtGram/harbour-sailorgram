@@ -2,25 +2,31 @@
 
 .import Sailfish.Silica 1.0 as Silica
 .import "TelegramConstants.js" as TelegramConstants
+.import "ColorScheme.js" as ColorScheme
 
-function defaultThumbnail(message)
+function defaultThumbnail(message, context)
 {
+    var color = context ? ColorScheme.colorizeText(message, context) : Silica.Theme.primaryColor;
+
     if(!message || !message.media)
-        return "image://theme/icon-m-other";
+        return "image://theme/icon-m-other?" + color;
 
     var mediatype = message.media.classType;
 
     if(mediatype === TelegramConstants.typeMessageMediaPhoto)
-        return "image://theme/icon-m-image";
+        return "image://theme/icon-m-image?" + color;
 
     if(mediatype === TelegramConstants.typeMessageMediaAudio)
-        return "image://theme/icon-m-music";
+        return "image://theme/icon-m-music?" + color;
 
     if(mediatype === TelegramConstants.typeMessageMediaVideo)
-        return "image://theme/icon-m-video";
+        return "image://theme/icon-m-video?" + color;
 
     if((mediatype === TelegramConstants.typeMessageMediaGeo) || (mediatype === TelegramConstants.typeMessageMediaVenue))
-        return "image://theme/icon-m-location";
+        return "image://theme/icon-m-location?" + color;
+
+    if(mediatype === TelegramConstants.typeMessageMediaContact)
+        return "image://theme/icon-m-person?" + color;
 
     if(mediatype === TelegramConstants.typeMessageMediaDocument)
     {
@@ -35,17 +41,17 @@ function defaultThumbnail(message)
                 return ""; // No default thumbnail for stickers
 
             if(attribute === TelegramConstants.typeDocumentAttributeVideo)
-                return "image://theme/icon-m-video";
+                return "image://theme/icon-m-video?" + color;
 
             if(attribute === TelegramConstants.typeDocumentAttributeAudio)
-                return "image://theme/icon-m-music";
+                return "image://theme/icon-m-music?" + color;
 
             if(attribute === TelegramConstants.typeDocumentAttributeImageSize)
-                return "image://theme/icon-m-image";
+                return "image://theme/icon-m-image?" + color;
         }
 
-        return "image://theme/icon-m-document";
+        return "image://theme/icon-m-document?" + color;
     }
 
-    return "image://theme/icon-m-other";
+    return "image://theme/icon-m-other?" + color;
 }

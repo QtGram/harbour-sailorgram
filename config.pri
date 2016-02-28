@@ -4,3 +4,9 @@ TELEGRAMQML_LIB_DIR = $$OUT_PWD/../TelegramQML
 TELEGRAMQML_INCLUDE_PATH = $$PWD/TelegramQML
 BUILD_MODE += lib
 CONFIG += no_install
+
+!isEqual(TARGET, "harbour-sailorgram") {
+    target = $$TARGET
+    target.path = /usr/share/harbour-sailorgram/lib
+    INSTALLS += target
+}

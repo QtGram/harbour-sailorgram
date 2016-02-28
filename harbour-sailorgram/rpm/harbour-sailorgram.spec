@@ -6,6 +6,8 @@
 Name:       harbour-sailorgram
 
 # >> macros
+%define __provides_exclude_from ^%{_datadir}/.*$
+%define __requires_exclude ^libqtelegram-ae|libtelegramqml|.*$
 # << macros
 
 %{!?qtc_qmake:%define qtc_qmake %qmake}
@@ -38,7 +40,6 @@ BuildRequires:  desktop-file-utils
 %description
 An unofficial Telegram Client for SailfishOS
 
-%define _unpackaged_files_terminate_build 0
 
 %prep
 %setup -q -n %{name}-%{version}
@@ -90,6 +91,7 @@ killall harbour-sailorgram || true
 fi
 
 # << preun
+
 %post
 # >> post
 systemctl-user restart mce.service
@@ -108,6 +110,7 @@ systemctl-user restart harbour-sailorgram-notifications.service
 %{_datadir}/dbus-1/services/*.service
 %{_libdir}/systemd/user/harbour-sailorgram-notifications.service
 %{_libdir}/systemd/user/post-user-session.target.wants/harbour-sailorgram-notifications.service
-/etc/mce/10sailorgram-led.ini
+%{_sysconfdir}/mce/10sailorgram-led.ini
+%exclude %{_libdir}/cmake/*
 # >> files
 # << files

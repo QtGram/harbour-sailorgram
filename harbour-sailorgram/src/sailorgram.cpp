@@ -47,6 +47,11 @@ bool SailorGram::connected() const
     return this->_connectivitychecker->connected();
 }
 
+bool SailorGram::hasContact(const qint64 &id) const
+{
+    return _telegram->contacts().contains(id);
+}
+
 QString SailorGram::emojiPath() const
 {
     return qApp->applicationDirPath() + QDir::separator() + "../share/" + qApp->applicationName() + QDir::separator() + SailorGram::EMOJI_FOLDER + QDir::separator();
@@ -118,6 +123,22 @@ TelegramQml *SailorGram::telegram() const
 DialogObject *SailorGram::foregroundDialog() const
 {
     return this->_foregrounddialog;
+}
+
+QList<QObject *> SailorGram::translations()
+{
+    QList<QObject *> trlist;
+    QFile jsonfile(":/translations/translations.json");
+    if (jsonfile.open(QFile::ReadOnly))
+    {
+        QJsonParseError error;
+        QJsonDocument json = QJsonDocument::fromJson(jsonfile.readAll(), &error);
+        if (error.error != QJsonParseError::NoError)
+            return trlist;
+        foreach (QJsonValue jsonarrayvalue, json.array())
+            trlist.append(new TranslationInfoItem(jsonarrayvalue.toObject()));
+    }
+    return trlist;
 }
 
 void SailorGram::setTelegram(TelegramQml *telegram)

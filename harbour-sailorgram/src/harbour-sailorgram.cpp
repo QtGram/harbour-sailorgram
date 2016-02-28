@@ -74,6 +74,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<FilesModel>("harbour.sailorgram.FilesModel", 1, 0, "FilesModel");
     qmlRegisterType<SailorgramContactsModel>("harbour.sailorgram.Model", 1, 0, "SailorgramContactsModel");
     qmlRegisterType<DialogsCoverModel>("harbour.sailorgram.Model", 1, 0, "DialogsCoverModel");
+    qmlRegisterType<TranslationInfoItem>("harbour.sailorgram.Model", 1, 0, "TranslationItem");
 
     QScopedPointer<QQuickView> view(SailfishApp::createView());
     QQmlEngine* engine = view->engine();

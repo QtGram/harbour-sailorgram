@@ -132,8 +132,19 @@ Row
                 if(TelegramHelper.isSticker(context, message))
                     return "Sticker";
 
-                if(TelegramHelper.isMediaMessage(message) && (message.media.classType === TelegramConstants.typeMessageMediaDocument))
-                    return filehandler.fileName;
+                if(TelegramHelper.isMediaMessage(message))
+                {
+                    var media = message.media;
+                    switch(media.classType)
+                    {
+                        case TelegramConstants.typeMessageMediaDocument:
+                            return filehandler.fileName;
+                        case TelegramConstants.typeMessageMediaContact:
+                            return media.firstName + " " + media.lastName + "\n" + media.phoneNumber;
+                    }
+                }
+
+
 
                 return TelegramHelper.messageContent(context, message);
             }

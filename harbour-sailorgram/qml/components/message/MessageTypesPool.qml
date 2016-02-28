@@ -11,6 +11,7 @@ Item
     property Component locationComponent: Component {  MessageLocation { } }
     property Component webpageComponent: Component {  MessageWebPage { } }
     property Component stickerComponent: Component { MessageSticker { } }
+    property Component contactComponent: Component { MessageContact { } }
 
     property Component messagePreview: Component { MessagePreview { } }
 
