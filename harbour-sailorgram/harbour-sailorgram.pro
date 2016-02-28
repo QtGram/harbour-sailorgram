@@ -107,6 +107,7 @@ OTHER_FILES += qml/harbour-sailorgram.qml \
     qml/items/message/messageitem/media/MessageMediaItem.qml \
     qml/items/message/messageitem/media/MessagePhoto.qml \
     qml/items/message/messageitem/media/MessageDocument.qml \
+    qml/items/message/messageitem/media/MessageContact.qml \
     qml/components/PopupMessage.qml \
     qml/menus/UserMenu.qml \
     qml/components/ClickableLabel.qml \

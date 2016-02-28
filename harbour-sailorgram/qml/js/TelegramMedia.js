@@ -25,6 +25,9 @@ function defaultThumbnail(message, context)
     if((mediatype === TelegramConstants.typeMessageMediaGeo) || (mediatype === TelegramConstants.typeMessageMediaVenue))
         return "image://theme/icon-m-location?" + color;
 
+    if(mediatype === TelegramConstants.typeMessageMediaContact)
+        return "image://theme/icon-m-person?" + color;
+
     if(mediatype === TelegramConstants.typeMessageMediaDocument)
     {
         var document = message.media.document;

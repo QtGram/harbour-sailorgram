@@ -39,6 +39,7 @@ class SailorGram : public QObject
         bool keepRunning() const;
         bool daemonized() const;
         bool connected() const;
+        Q_INVOKABLE bool hasContact(const qint64 &id) const;
         int interval() const;
         QString emojiPath() const;
         QString configPath() const;

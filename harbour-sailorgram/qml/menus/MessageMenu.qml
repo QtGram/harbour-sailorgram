@@ -19,6 +19,26 @@ ContextMenu
 
     MenuItem
     {
+        text: qsTr("Add to Telegram")
+        visible: {
+            var media = message.media;
+            var userid = media.userId;
+            return media.classType === TelegramConstants.typeMessageMediaContact &&
+                   userid > 0 && !context.sailorgram.hasContact(userid);
+        }
+        onClicked: {
+            var media = message.media;
+            pageStack.push(Qt.resolvedUrl("../pages/contacts/AddContactPage.qml"), {
+                               "context": context,
+                               "firstname": media.firstName,
+                               "lastname": media.lastName,
+                               "telephonenumber": media.phoneNumber
+                           });
+        }
+    }
+
+    MenuItem
+    {
         text: qsTr("Reply")
         visible: message.classType !== TelegramConstants.typeMessageService
         onClicked: replyRequested();

@@ -23,17 +23,21 @@ Item
         if(isUpload)
             return message.upload.totalSize;
 
-        if(!message.media)
+        var media = message.media;
+
+        if(!media)
             return 0;
 
-        if((message.media.classType === TelegramConstants.typeMessageMediaPhoto) && message.media.photo.sizes.last)
-            return message.media.photo.sizes.last.size;
-        else if(message.media.classType === TelegramConstants.typeMessageMediaVideo)
-            return message.media.video.size;
-        else if(message.media.classType === TelegramConstants.typeMessageMediaAudio)
-            return message.media.audio.size;
-        else if(message.media.classType === TelegramConstants.typeMessageMediaDocument)
-            return message.media.document.size;
+        var classtype = media.classType;
+
+        if((classtype === TelegramConstants.typeMessageMediaPhoto) && media.photo.sizes.last)
+            return media.photo.sizes.last.size;
+        else if(classtype === TelegramConstants.typeMessageMediaVideo)
+            return media.video.size;
+        else if(classtype === TelegramConstants.typeMessageMediaAudio)
+            return media.audio.size;
+        else if(classtype === TelegramConstants.typeMessageMediaDocument)
+            return media.document.size;
 
         return 0;
     }
@@ -58,8 +62,17 @@ Item
     {
         id: filehandler
         telegram: messagemediaitem.context.telegram
-        target: messagemediaitem.message
-        defaultThumbnail: TelegramMedia.defaultThumbnail(messagemediaitem.message)
+        target: {
+            var media = messagemediaitem.message.media;
+            if(media.classType === TelegramConstants.typeMessageMediaContact)
+            {
+                var userid = media.userId;
+                if(userid > 0)
+                    return messagemediaitem.context.telegram.user(userid).photo.photoSmall;
+            }
+            return messagemediaitem.message;
+        }
+        defaultThumbnail: TelegramMedia.defaultThumbnail(messagemediaitem.message, messagemediaitem.context)
 
         onFilePathChanged: {
             var filepathstring = filePath.toString();

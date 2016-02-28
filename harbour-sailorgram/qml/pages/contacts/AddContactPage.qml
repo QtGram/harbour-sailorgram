@@ -10,6 +10,12 @@ Dialog
     property string telephonenumber
     id: addcontactdlg
 
+    Component.onCompleted: {
+        tf_nameid.text = firstname;
+        tf_lastnameid.text = lastname;
+        tf_telephoneid.text = telephonenumber;
+    }
+
     onAccepted:
     {
         firstname = tf_nameid.text

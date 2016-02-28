@@ -47,6 +47,11 @@ bool SailorGram::connected() const
     return this->_connectivitychecker->connected();
 }
 
+bool SailorGram::hasContact(const qint64 &id) const
+{
+    return _telegram->contacts().contains(id);
+}
+
 QString SailorGram::emojiPath() const
 {
     return qApp->applicationDirPath() + QDir::separator() + "../share/" + qApp->applicationName() + QDir::separator() + SailorGram::EMOJI_FOLDER + QDir::separator();
