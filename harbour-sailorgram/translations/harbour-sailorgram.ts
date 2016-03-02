@@ -221,6 +221,10 @@ Minimum length is 5 characters.</source>
         <source>Open media without waiting</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Load images automatically</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConnectingLabel</name>
@@ -274,16 +278,6 @@ Minimum length is 5 characters.</source>
 <context>
     <name>CoverPage</name>
     <message>
-        <source>Unread
-message</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unread
-messages</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Disconnected</source>
         <translation type="unfinished"></translation>
     </message>
@@ -294,6 +288,16 @@ messages</source>
     <message>
         <source>Recent chats:</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <source>Unread
+message(s)</source>
+        <translation>
+            <numerusform>Unread
+message</numerusform>
+            <numerusform>Unread
+messages</numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -642,6 +646,10 @@ Do a swype to the right to select a contact</source>
         <source>Forward</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Add to Telegram</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessagePreview</name>
@@ -659,13 +667,12 @@ Do a swype to the right to select a contact</source>
 </context>
 <context>
     <name>PeerItem</name>
-    <message>
-        <source>%1 members</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 member</source>
-        <translation type="unfinished"></translation>
+    <message numerus="yes">
+        <source>%n member(s)</source>
+        <translation>
+            <numerusform>%n member</numerusform>
+            <numerusform>%n members</numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -1051,16 +1058,19 @@ Do a swype to the right to select a contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 members are typing...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Sticker</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Position</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <source>%n member(s) are typing...</source>
+        <translation>
+            <numerusform>%n member is typing...</numerusform>
+            <numerusform>%n members are typing...</numerusform>
+        </translation>
     </message>
 </context>
 <context>

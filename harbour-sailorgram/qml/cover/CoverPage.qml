@@ -56,7 +56,7 @@ CoverBackground
             Label
             {
                 id: unreadLabel
-                text: (context.telegram.unreadCount == 1) ? qsTr("Unread\nmessage") : qsTr("Unread\nmessages")
+                text: qsTr("Unread\nmessage(s)", "", context.telegram.unreadCount)
                 font.pixelSize: Theme.fontSizeExtraSmall
                 font.family: Theme.fontFamilyHeading
                 font.weight: Font.Light

@@ -63,13 +63,8 @@ Item
                 if(dialog.typingUsers.length > 0)
                     return TelegramHelper.typingUsers(context, dialog);
 
-                if(TelegramHelper.isChat(dialog)) {
-
-                    if(chat.participantsCount === 1)
-                        return qsTr("%1 member").arg(chat.participantsCount);
-
-                    return qsTr("%1 members").arg(chat.participantsCount);
-                }
+                if(TelegramHelper.isChat(dialog))
+                    return qsTr("%n member(s)", "", chat.participantsCount);
 
                 return TelegramHelper.userStatus(user);
             }

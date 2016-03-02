@@ -122,7 +122,7 @@ function typingUsers(context, dialog)
         return qsTr("%1 and %2 are typing...").arg(userDisplayName(user1)).arg(userDisplayName(user2));
     }
     else if(dialog.typingUsers.length > 2)
-        return qsTr("%1 members are typing...").arg(dialog.typingUsers.length);
+        return qsTr("%n member(s) are typing...", "", dialog.typingUsers.length);
 
     return "";
 }
