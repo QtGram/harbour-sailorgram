@@ -4,8 +4,9 @@ import Sailfish.Silica 1.0
 MessageMediaItem
 {
     property real aspectRatio: {
-        var w = fileHandler.imageSize.width;
-        var h = fileHandler.imageSize.height;
+        var imagesize = fileHandler.imageSize;
+        var w = imagesize.width;
+        var h = imagesize.height;
 
         if(!w || !h)
             return 0;
@@ -16,6 +17,8 @@ MessageMediaItem
     id: messagephoto
     contentWidth: fileHandler.imageSize.width
     contentHeight: thumb.height
+
+    Component.onCompleted: if(context.autoloadimages && !fileHandler.downloaded) fileHandler.download()
 
     Image
     {
@@ -42,7 +45,7 @@ MessageMediaItem
         width: parent.width
         height: aspectRatio ? (width / aspectRatio) : 0
         cache: !messagephoto.fileHandler.downloaded
-
+        blurRadius: messagephoto.fileHandler.downloaded && !messagephoto.transferInProgress ? 0.0 : 32.0
         source: {
             if(!messagephoto.fileHandler.downloaded || messagephoto.transferInProgress)
                 return messagephoto.fileHandler.thumbPath;
