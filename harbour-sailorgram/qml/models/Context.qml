@@ -35,6 +35,7 @@ QtObject
     property bool bubbleshidden: false
     property bool angledbubbles: false
     property bool immediateopen: false
+    property bool autoloadimages:false
     property bool showsearchfield: false
     property int bubblesopacity: 100
 

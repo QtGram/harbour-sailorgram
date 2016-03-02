@@ -17,7 +17,7 @@ Item
     property real contentHeight
 
     readonly property bool isUpload: filehandler.progressType === FileHandler.TypeProgressUpload
-    readonly property bool transferInProgress: (fileHandler.progressPercent > 0) && (fileHandler.progressPercent < 100)
+    readonly property bool transferInProgress: fileHandler.progressType !== FileHandler.TypeProgressEmpty
 
     readonly property real mediaSize: { // Size in bytes
         if(isUpload)

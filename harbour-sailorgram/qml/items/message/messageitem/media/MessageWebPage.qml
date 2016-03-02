@@ -6,11 +6,15 @@ import "../../../../js/TelegramConstants.js" as TelegramConstants
 
 MessageMediaItem
 {
-    readonly property bool hasPureImage: (message.media.webpage.title.length <= 0) && (message.media.webpage.description.length <= 0)
+    readonly property bool hasPureImage: {
+        var webpage = message.media.webpage;
+        return (webpage.title.length <= 0) && (webpage.description.length <= 0);
+    }
 
     readonly property real aspectRatio: {
-        var w = fileHandler.imageSize.width;
-        var h = fileHandler.imageSize.height;
+        var imagesize = fileHandler.imageSize;
+        var w = imagesize.width;
+        var h = imagesize.height;
 
         if(!w || !h)
             return 0;
@@ -33,6 +37,8 @@ MessageMediaItem
 
         return mtctextcontent.calculatedHeight + mtctitle.calculatedHeight + mtcdescription.calculatedHeight;
     }
+
+    Component.onCompleted: if(context.autoloadimages && !fileHandler.downloaded) fileHandler.download()
 
     MessageTextContent
     {
@@ -109,6 +115,7 @@ MessageMediaItem
             anchors { right: parent.right; top: parent.top; bottom: parent.bottom; rightMargin: Theme.paddingSmall }
             visible: message.media.webpage.photo.classType !== TelegramConstants.typePhotoEmpty
             fillMode: Image.PreserveAspectCrop
+            blurRadius: messagewebpage.fileHandler.downloaded && !messagewebpage.transferInProgress ? 0.0 : 32.0
 
             width: {
                 if(!visible)

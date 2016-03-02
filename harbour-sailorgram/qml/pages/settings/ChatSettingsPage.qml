@@ -16,6 +16,7 @@ Dialog
         context.backgrounddisabled = !tsenablebackground.checked;
         context.chatheaderhidden = !tsshowchatheader.checked;
         context.immediateopen = tsimmediateopen.checked;
+        context.autoloadimages = tsautoloadimages.checked;
         context.bubbleshidden = !tsbubblesvisible.checked;
         context.angledbubbles = tsangledbubbles.checked;
         context.bubblesopacity = slbubblesopacity.value;
@@ -24,6 +25,7 @@ Dialog
         Settings.set("backgrounddisabled", !tsenablebackground.checked);
         Settings.set("chatheaderhidden", !tsshowchatheader.checked);
         Settings.set("immediateopen", tsimmediateopen.checked);
+        Settings.set("autoloadimages", tsautoloadimages.checked);
         Settings.set("hidebubbles", !tsbubblesvisible.checked);
         Settings.set("angledbubbles", tsangledbubbles.checked);
         Settings.set("bubblesopacity", slbubblesopacity.value);
@@ -68,6 +70,14 @@ Dialog
                 anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
                 text: qsTr("Open media without waiting")
                 checked: context.immediateopen
+            }
+
+            TextSwitch
+            {
+                id: tsautoloadimages
+                anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
+                text: qsTr("Load images automatically")
+                checked: context.autoloadimages
             }
 
             TextSwitch

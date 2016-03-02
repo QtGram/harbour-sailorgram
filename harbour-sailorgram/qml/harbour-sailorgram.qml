@@ -20,6 +20,7 @@ ApplicationWindow
                 context.backgrounddisabled = parseInt(Settings.transactionGet(tx, "backgrounddisabled"));
                 context.chatheaderhidden = parseInt(Settings.transactionGet(tx, "chatheaderhidden"));
                 context.immediateopen = parseInt(Settings.transactionGet(tx, "immediateopen"));
+                context.autoloadimages = parseInt(Settings.transactionGet(tx, "autoloadimages"));
                 context.bubbleshidden = parseInt(Settings.transactionGet(tx, "hidebubbles"));
                 context.angledbubbles = parseInt(Settings.transactionGet(tx, "angledbubbles"));
                 context.showsearchfield = parseInt(Settings.transactionGet(tx, "showsearchfield"));
