@@ -97,6 +97,8 @@ InverseMouseArea
 
         EnterKey.enabled: text.trim().length > 0 || isForward
 
+        EnterKey.iconSource: context.sendwithreturn ? "image://theme/icon-m-enter-accept" : "image://theme/icon-m-enter"
+
         EnterKey.onClicked: {
             if(!context.sendwithreturn)
                 return;
