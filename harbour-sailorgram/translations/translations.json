@@ -1,1 +1,233 @@
-
+[
+    {
+        "coordinators": [], 
+        "language_code": "be", 
+        "translators": [
+            "iKozzz", 
+            "XiveZ"
+        ], 
+        "reviewers": []
+    }, 
+    {
+        "coordinators": [
+            "PawelSpoon"
+        ], 
+        "language_code": "cs", 
+        "translators": [], 
+        "reviewers": []
+    }, 
+    {
+        "coordinators": [
+            "flywheeldk"
+        ], 
+        "language_code": "da", 
+        "translators": [], 
+        "reviewers": []
+    }, 
+    {
+        "coordinators": [
+            "Vistaus"
+        ], 
+        "language_code": "nl_NL", 
+        "translators": [], 
+        "reviewers": []
+    }, 
+    {
+        "coordinators": [], 
+        "language_code": "en_DE", 
+        "translators": [
+            "yoru"
+        ], 
+        "reviewers": []
+    }, 
+    {
+        "coordinators": [
+            "ari_jarvio", 
+            "reviewjolla"
+        ], 
+        "language_code": "fi", 
+        "translators": [], 
+        "reviewers": [
+            "tattuh"
+        ]
+    }, 
+    {
+        "coordinators": [
+            "Kwentin"
+        ], 
+        "language_code": "fr", 
+        "translators": [
+            "Nerfiaux", 
+            "g.lanternier", 
+            "milamber"
+        ], 
+        "reviewers": [
+            "objectifnul", 
+            "Jordi"
+        ]
+    }, 
+    {
+        "coordinators": [], 
+        "language_code": "fr_FR", 
+        "translators": [
+            "g.lanternier"
+        ], 
+        "reviewers": []
+    }, 
+    {
+        "coordinators": [], 
+        "language_code": "gl", 
+        "translators": [
+            "pakoR"
+        ], 
+        "reviewers": []
+    }, 
+    {
+        "coordinators": [
+            "PawelSpoon"
+        ], 
+        "language_code": "de", 
+        "translators": [
+            "Mee_Germany_Go", 
+            "monkeyisland", 
+            "hwesselmann", 
+            "Rootility", 
+            "Maldela", 
+            "caprico", 
+            "yoru", 
+            "mdosch", 
+            "kormarun", 
+            "jupaja", 
+            "nightmare"
+        ], 
+        "reviewers": [
+            "nomeutente"
+        ]
+    }, 
+    {
+        "coordinators": [], 
+        "language_code": "de_AT", 
+        "translators": [
+            "PawelSpoon"
+        ], 
+        "reviewers": []
+    }, 
+    {
+        "coordinators": [], 
+        "language_code": "de_DE", 
+        "translators": [
+            "nomeutente", 
+            "kormarun", 
+            "flacer", 
+            "yoru"
+        ], 
+        "reviewers": []
+    }, 
+    {
+        "coordinators": [
+            "pmelas"
+        ], 
+        "language_code": "el", 
+        "translators": [], 
+        "reviewers": []
+    }, 
+    {
+        "coordinators": [
+            "Dax89"
+        ], 
+        "language_code": "it", 
+        "translators": [
+            "massimo.grigolin", 
+            "palikao", 
+            "koenigseggCCGT"
+        ], 
+        "reviewers": [
+            "ghostofasmile", 
+            "dallo28", 
+            "nomeutente", 
+            "tichy", 
+            "Watchmaker"
+        ]
+    }, 
+    {
+        "coordinators": [
+            "ly3tp"
+        ], 
+        "language_code": "lt_LT", 
+        "translators": [], 
+        "reviewers": []
+    }, 
+    {
+        "coordinators": [
+            "najafi"
+        ], 
+        "language_code": "fa_IR", 
+        "translators": [], 
+        "reviewers": []
+    }, 
+    {
+        "coordinators": [], 
+        "language_code": "ro", 
+        "translators": [
+            "alinelena"
+        ], 
+        "reviewers": []
+    }, 
+    {
+        "coordinators": [
+            "gri4994"
+        ], 
+        "language_code": "ru", 
+        "translators": [
+            "iKozzz", 
+            "HelgaLastivka", 
+            "iAncelad", 
+            "atlz.kb", 
+            "SYSSTEMS", 
+            "mentaljam"
+        ], 
+        "reviewers": [
+            "lewa"
+        ]
+    }, 
+    {
+        "coordinators": [
+            "carmenfdezb"
+        ], 
+        "language_code": "es", 
+        "translators": [
+            "JustDevZero", 
+            "ferlanero", 
+            "massimo.grigolin"
+        ], 
+        "reviewers": [
+            "klomiz"
+        ]
+    }, 
+    {
+        "coordinators": [
+            "eson"
+        ], 
+        "language_code": "sv", 
+        "translators": [], 
+        "reviewers": []
+    }, 
+    {
+        "coordinators": [], 
+        "language_code": "uk", 
+        "translators": [
+            "HelgaLastivka", 
+            "atlz.kb"
+        ], 
+        "reviewers": []
+    }, 
+    {
+        "coordinators": [], 
+        "language_code": "uk_UA", 
+        "translators": [
+            "HelgaLastivka", 
+            "troyane"
+        ], 
+        "reviewers": []
+    }
+]
