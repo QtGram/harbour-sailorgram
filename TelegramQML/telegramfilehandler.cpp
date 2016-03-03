@@ -670,13 +670,7 @@ FileLocationObject *TelegramFileHandler::analizeObject(QObject *target, int *tar
         break;
 
     case TypeObjectWebPage:
-    {
-        PhotoObject* photo = static_cast<WebPageObject*>(target)->photo();
-        object = p->telegram->locationOfPhoto(photo);
-        p->thumb_location = p->telegram->locationOfThumbPhoto(photo);
-        if(targetType) *targetType = TypeTargetMediaPhoto;
-        if(targetPointer) *targetPointer = photo;
-    }
+        object = static_cast<WebPageObject*>(target)->photo();
         break;
 
     case TypeObjectGeoPoint:
