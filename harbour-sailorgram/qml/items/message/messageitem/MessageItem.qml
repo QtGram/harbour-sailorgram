@@ -12,6 +12,7 @@ import "../../../js/TelegramHelper.js" as TelegramHelper
 
 ListItem
 {
+    property bool selected: false
     property Context context
     property MessageTypesPool messageTypesPool
     property Dialog dialog
@@ -102,6 +103,7 @@ ListItem
     }
 
     id: messageitem
+    anchors { topMargin: Theme.paddingSmall; bottomMargin: Theme.paddingSmall }
     contentWidth: parent.width
     contentHeight: content.height
     onClicked: displayMedia()
@@ -244,17 +246,15 @@ ListItem
 
                 var params = { "context": messageitem.context, "message": messageitem.message, "maxWidth": content.maxw - 2 * Theme.paddingMedium };
 
-                if(media.classType === TelegramConstants.typeMessageMediaDocument) {
+                var classtype = media.classType;
+
+                if(classtype === TelegramConstants.typeMessageMediaDocument) {
                     if(context.telegram.documentIsSticker(media.document))
                         messageTypesPool.stickerComponent.createObject(mediacontainer, params);
                     else
                         messageTypesPool.documentComponent.createObject(mediacontainer, params);
-
-                    return;
                 }
-
-                var classtype = media.classType;
-                if(classtype === TelegramConstants.typeMessageMediaPhoto)
+                else if(classtype === TelegramConstants.typeMessageMediaPhoto)
                     messageTypesPool.photoComponent.createObject(mediacontainer, params);
                 else if(classtype === TelegramConstants.typeMessageMediaAudio)
                     messageTypesPool.audioComponent.createObject(mediacontainer, params);
