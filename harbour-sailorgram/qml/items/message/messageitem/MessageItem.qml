@@ -125,6 +125,7 @@ ListItem
         id: messagebubble
         context: messageitem.context
         message: messageitem.message
+        anchors { topMargin: Theme.paddingSmall; bottomMargin: Theme.paddingSmall }
         anchors.fill: content
     }
 
