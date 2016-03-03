@@ -14,15 +14,16 @@ SilicaListView
     property bool waitingUserName: false
     property bool discadedDialog: false
     property bool waitingDialog: false
+    property bool selectionMode: false
     property Context context
     property Dialog dialog
     property Message forwardedMessage
     property MessageTypesPool messageTypesPool: MessageTypesPool { }
+    property var selectedItems: []
 
     id: messageview
     currentIndex: -1
     verticalLayoutDirection: ListView.BottomToTop
-    spacing: Theme.paddingMedium
     cacheBuffer: Screen.height
     clip: true
 
@@ -33,6 +34,29 @@ SilicaListView
     function loadMore() {
         messagesmodel.loadMore();
     }
+
+    function selectAll() {
+        if(!selectionMode)
+            return;
+        for(var i = 0; i < messagesmodel.count; ++i)
+            selectedItems.push(i);
+        selectedItemsChanged();
+    }
+
+    function clearSelection() {
+        selectedItems = [];
+    }
+
+    function deleteSelected() {
+        if(!selectionMode)
+            return;
+        var ids = [];
+        selectedItems.forEach(function(i) { ids.push(messagesmodel.get(i)["item"].id) });
+        clearSelection();
+        context.telegram.deleteMessages(ids);
+    }
+
+    onSelectionModeChanged: if(!selectionMode) clearSelection()
 
     model: MessagesModel {
         id: messagesmodel
@@ -53,9 +77,11 @@ SilicaListView
         messageTypesPool: messageview.messageTypesPool
         dialog: messageview.dialog
         message: item
+        selected: selectedItems.indexOf(model.index) > -1
+        highlighted: messageview.selectionMode ? selected : pressed
+        showMenuOnPressAndHold: !messageview.selectionMode
 
         onReplyRequested: {
-            messageview.headerItem.dialogReplyPreview.isForward = false;
             messageview.headerItem.dialogReplyPreview.isForward = false;
             messageview.headerItem.dialogReplyPreview.message = item;
         }
@@ -75,6 +101,17 @@ SilicaListView
                 pageStack.replaceAbove(context.mainPage, Qt.resolvedUrl("../../pages/dialogs/DialogPage.qml"), { "context": context, "dialog": dialog, "forwardedMessage": item });
             });
         }
+
+        onClicked: {
+            if(messageview.selectionMode)
+            {
+                if(selected)
+                    messageview.selectedItems.splice(messageview.selectedItems.indexOf(model.index), 1);
+                else
+                    messageview.selectedItems.push(model.index);
+                selectedItemsChanged();
+            }
+        }
     }
 
     header: Column {
@@ -84,6 +121,10 @@ SilicaListView
         id: bottomarea
         width: messageview.width
         spacing: Theme.paddingMedium
+        height: messageview.selectionMode ? 0 : undefined
+
+        Behavior on height { NumberAnimation { duration: 250 } }
+
 
         DialogReplyPreview {
             id: dialogreplypreview
