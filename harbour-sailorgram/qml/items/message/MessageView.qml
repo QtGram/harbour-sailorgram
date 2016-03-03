@@ -23,7 +23,6 @@ SilicaListView
 
     id: messageview
     currentIndex: -1
-    spacing: context.bubbleshidden ? 0 : Theme.paddingMedium
     verticalLayoutDirection: ListView.BottomToTop
     cacheBuffer: Screen.height
     clip: true
