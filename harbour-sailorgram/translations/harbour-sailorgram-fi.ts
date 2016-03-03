@@ -4,50 +4,6 @@
 <context>
     <name>AboutPage</name>
     <message>
-        <source>Danish</source>
-        <translation>tanska</translation>
-    </message>
-    <message>
-        <source>Dutch</source>
-        <translation>hollanti</translation>
-    </message>
-    <message>
-        <source>Finnish</source>
-        <translation>suomi</translation>
-    </message>
-    <message>
-        <source>German</source>
-        <translation>saksa</translation>
-    </message>
-    <message>
-        <source>Russian</source>
-        <translation>venäjä</translation>
-    </message>
-    <message>
-        <source>Spanish</source>
-        <translation>espanja</translation>
-    </message>
-    <message>
-        <source>Czech</source>
-        <translation>tsekki</translation>
-    </message>
-    <message>
-        <source>French</source>
-        <translation>ranska</translation>
-    </message>
-    <message>
-        <source>Italian</source>
-        <translation>italia</translation>
-    </message>
-    <message>
-        <source>Persian</source>
-        <translation>persia</translation>
-    </message>
-    <message>
-        <source>Greek</source>
-        <translation>kreikka</translation>
-    </message>
-    <message>
         <source>About SailorGram</source>
         <translation>Tietoa SailorGramista:</translation>
     </message>
@@ -60,48 +16,32 @@
         <translation>Telegramin epävirallinen asiakassovellus SailfishOS:lle.</translation>
     </message>
     <message>
-        <source>Developer</source>
-        <translation>Kehittäjä</translation>
-    </message>
-    <message>
         <source>GitHub Repository</source>
         <translation>GitHub sijoituspaikka</translation>
     </message>
     <message>
-        <source>Translators</source>
-        <translation>Kääntäjät:</translation>
+        <source>Report an Issue</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Translation Platform</source>
-        <translation>Käännösten julkaisualusta</translation>
+        <source>SailorGram is distributed under the GPLv3 license</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Swedish</source>
-        <translation>ruotsi</translation>
+        <source>License</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Galician</source>
-        <translation>galicia</translation>
+        <source>Developers</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Belaruian</source>
-        <translation>valkovenäjä</translation>
+        <source>Translations</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Emoji Set</source>
-        <translation>Emoji-kokoelma</translation>
-    </message>
-    <message>
-        <source>Icon Designers</source>
-        <translation>Kuvan suunnittelijat</translation>
-    </message>
-    <message>
-        <source>Contributors</source>
-        <translation>Avustajat</translation>
-    </message>
-    <message>
-        <source>Ukrainian</source>
-        <translation>ukraina</translation>
+        <source>Third Party</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -284,6 +224,10 @@ Vähimmäispituus on 5 merkkiä.</translation>
         <source>Open media without waiting</source>
         <translation>Avaa mediatiedosto ilman viivettä</translation>
     </message>
+    <message>
+        <source>Load images automatically</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConnectingLabel</name>
@@ -337,18 +281,6 @@ Vähimmäispituus on 5 merkkiä.</translation>
 <context>
     <name>CoverPage</name>
     <message>
-        <source>Unread
-message</source>
-        <translation>Lukematon
-viesti</translation>
-    </message>
-    <message>
-        <source>Unread
-messages</source>
-        <translation>Lukemattomat
-viestit</translation>
-    </message>
-    <message>
         <source>Disconnected</source>
         <translation>Ei yhteyttä</translation>
     </message>
@@ -359,6 +291,14 @@ viestit</translation>
     <message>
         <source>Recent chats:</source>
         <translation>Viimeisimmät:</translation>
+    </message>
+    <message numerus="yes">
+        <source>Unread
+message(s)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -431,6 +371,25 @@ viestit</translation>
     <message>
         <source>Message:</source>
         <translation>Viesti:</translation>
+    </message>
+</context>
+<context>
+    <name>DevelopersPage</name>
+    <message>
+        <source>Developers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contributors</source>
+        <translation type="unfinished">Avustajat</translation>
+    </message>
+    <message>
+        <source>Icon Designers</source>
+        <translation type="unfinished">Kuvan suunnittelijat</translation>
     </message>
 </context>
 <context>
@@ -515,6 +474,26 @@ viestit</translation>
     <message>
         <source>Load more messages</source>
         <translation>Lataa lisää viestejä</translation>
+    </message>
+    <message>
+        <source>Cancel selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting Messages</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -690,6 +669,10 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
         <source>Forward</source>
         <translation>Lähetä edelleen</translation>
     </message>
+    <message>
+        <source>Add to Telegram</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessagePreview</name>
@@ -707,13 +690,12 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
 </context>
 <context>
     <name>PeerItem</name>
-    <message>
-        <source>%1 members</source>
-        <translation>%1 jäsentä</translation>
-    </message>
-    <message>
-        <source>%1 member</source>
-        <translation>%1 jäsen</translation>
+    <message numerus="yes">
+        <source>%n member(s)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -801,9 +783,16 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
         <source>Back</source>
         <translation>Takaisin</translation>
     </message>
+    <message numerus="yes">
+        <source>Send %n file(s)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
     <message>
-        <source>Send %1 file(s)</source>
-        <translation>Lähetä %1 tiedosto(a)</translation>
+        <source>Select files</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -837,16 +826,23 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
         <translation>Järjestä päivämäärän mukaan</translation>
     </message>
     <message>
-        <source>Send %1 image(s)</source>
-        <translation>Lähetä %1 kuva(a)</translation>
-    </message>
-    <message>
         <source>Back</source>
         <translation>Takaisin</translation>
     </message>
     <message>
         <source>Cancel</source>
         <translation>Peruuta</translation>
+    </message>
+    <message numerus="yes">
+        <source>Send %n image(s)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Select images</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1085,16 +1081,68 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
         <translation>%1 ja %2 kirjoittavat...</translation>
     </message>
     <message>
-        <source>%1 members are typing...</source>
-        <translation>%1 jäsentä kirjoittaa...</translation>
-    </message>
-    <message>
         <source>Sticker</source>
         <translation>Tarra</translation>
     </message>
     <message>
         <source>Position</source>
         <translation>Sijainti</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n member(s) are typing...</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+</context>
+<context>
+    <name>ThirdPartyLabel</name>
+    <message>
+        <source>License</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Project Page</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ThirdPartyPage</name>
+    <message>
+        <source>Third Party</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The GPLv3 license</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attribution 4.0 International (CC BY 4.0)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TranslationsPage</name>
+    <message>
+        <source>Translation Platform</source>
+        <translation type="unfinished">Käännösten julkaisualusta</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Coordinators</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translators</source>
+        <translation type="unfinished">Kääntäjät:</translation>
+    </message>
+    <message>
+        <source>Reviewers</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1114,6 +1162,10 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     <message>
         <source>Actions</source>
         <translation>Toiminnot</translation>
+    </message>
+    <message>
+        <source>Copy to clipboard</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

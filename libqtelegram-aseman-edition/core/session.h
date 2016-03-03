@@ -46,8 +46,6 @@ public:
     qint64 sendQuery(OutboundPkt &outboundPkt, QueryMethods *methods, const QVariant &extra = QVariant(), const QString &name = QString());
 
     inline qint64 sessionId() { return m_sessionId; }
-    inline bool initConnectionNeeded() { return m_initConnectionNeeded; }
-    inline void setInitConnectionNeeded(bool initConnectionNeeded) { m_initConnectionNeeded = initConnectionNeeded; }
     inline qint64 clientLastMsgId() { return m_clientLastMsgId; }
     inline qint32 seqNo() { return m_seqNo; }
     inline void setSeqNo(qint32 seqNo) { m_seqNo = seqNo; }

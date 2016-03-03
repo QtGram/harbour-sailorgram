@@ -272,10 +272,6 @@ qint64 Api::helpGetConfig() {
     CHECK_SESSION
     DEBUG_FUNCTION
     OutboundPkt p(mSettings);
-    if (mMainSession->initConnectionNeeded()) {
-        p.initConnection();
-        mMainSession->setInitConnectionNeeded(false);
-    }
     Functions::Help::getConfig(&p);
     return mMainSession->sendQuery(p, &helpGetConfigMethods, QVariant(), __FUNCTION__ );
 }
@@ -289,10 +285,6 @@ qint64 Api::helpGetInviteText(const QString &langCode) {
     CHECK_SESSION
     DEBUG_FUNCTION
     OutboundPkt p(mSettings);
-    if (mMainSession->initConnectionNeeded()) {
-        p.initConnection();
-        mMainSession->setInitConnectionNeeded(false);
-    }
     Functions::Help::getInviteText(&p, langCode);
     return mMainSession->sendQuery(p, &helpGetInviteTextMethods, QVariant(), __FUNCTION__ );
 }
@@ -313,10 +305,6 @@ qint64 Api::authCheckPhone(const QString &phoneNumber) {
     CHECK_SESSION
     DEBUG_FUNCTION
     OutboundPkt p(mSettings);
-    if (mMainSession->initConnectionNeeded()) {
-        p.initConnection();
-        mMainSession->setInitConnectionNeeded(false);
-    }
     Functions::Auth::checkPhone(&p, phoneNumber);
     qint64 resultId = mMainSession->sendQuery(p, &authCheckPhoneMethods, QVariant(), __FUNCTION__ );
     Q_EMIT authCheckPhoneSent(resultId, phoneNumber);
@@ -456,10 +444,6 @@ qint64 Api::authImportAuthorization(qint32 id, const QByteArray &bytes) {
     CHECK_SESSION
     DEBUG_FUNCTION
     OutboundPkt p(mSettings);
-    if (mMainSession->initConnectionNeeded()) {
-        p.initConnection();
-        mMainSession->setInitConnectionNeeded(false);
-    }
     Functions::Auth::importAuthorization(&p, id, bytes);
     return mMainSession->sendQuery(p, &authImportAuthorizationMethods, QVariant(), __FUNCTION__ );
 }
@@ -1167,10 +1151,6 @@ qint64 Api::messagesReadHistory(const InputPeer &peer, qint32 maxId, qint32 offs
     CHECK_SESSION
     DEBUG_FUNCTION
     OutboundPkt p(mSettings);
-    if (mMainSession->initConnectionNeeded()) {
-        p.initConnection();
-        mMainSession->setInitConnectionNeeded(false);
-    }
     Functions::Messages::readHistory(&p, peer, maxId, offset);
     return mMainSession->sendQuery(p, &messagesReadHistoryMethods, QVariant(), __FUNCTION__ );
 }
@@ -1702,10 +1682,6 @@ void Api::onUploadSaveFilePartAnswer(Query *q, InboundPkt &inboundPkt) {
 qint64 Api::uploadSaveFilePart(Session *session, qint64 fileId, qint32 filePart, const QByteArray &bytes) {
     Q_ASSERT(session);
     OutboundPkt p(mSettings);
-    if (session->initConnectionNeeded()) {
-        p.initConnection();
-        session->setInitConnectionNeeded(false);
-    }
     Functions::Upload::saveFilePart(&p, fileId, filePart, bytes);
     QVariant extra = fileId;
     return session->sendQuery(p, &uploadSaveFilePartMethods, extra);
@@ -1719,10 +1695,6 @@ void Api::onUploadSaveBigFilePartAnswer(Query *q, InboundPkt &inboundPkt) {
 qint64 Api::uploadSaveBigFilePart(Session *session, qint64 fileId, qint32 filePart, qint32 fileTotalParts, const QByteArray &bytes) {
     Q_ASSERT(session);
     OutboundPkt p(mSettings);
-    if (session->initConnectionNeeded()) {
-        p.initConnection();
-        session->setInitConnectionNeeded(false);
-    }
     Functions::Upload::saveBigFilePart(&p, fileId, filePart, fileTotalParts, bytes);
     QVariant extra = fileId;
     return session->sendQuery(p, &uploadSaveBigFilePartMethods, extra);
@@ -1740,10 +1712,6 @@ void Api::onUploadGetFileAnswer(Query *q, InboundPkt &inboundPkt) {
 qint64 Api::uploadGetFile(Session *session, const InputFileLocation &location, qint32 offset, qint32 limit) {
     Q_ASSERT(session);
     OutboundPkt p(mSettings);
-    if (session->initConnectionNeeded()) {
-        p.initConnection();
-        session->setInitConnectionNeeded(false);
-    }
     Functions::Upload::getFile(&p, location, offset, limit);
     return session->sendQuery(p, &uploadGetFileMethods, QVariant(), __FUNCTION__ );
 }

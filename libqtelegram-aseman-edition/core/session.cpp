@@ -508,6 +508,17 @@ qint64 Session::sendQuery(OutboundPkt &outboundPkt, QueryMethods *methods, const
     qint32 *data = outboundPkt.buffer();
     qint32 ints = outboundPkt.length();
 
+    // prepend init connection header to outboundPkt if initConnectionNeeded
+    // Note: 'wrap' needs to be declare outside of if to persist until encriptSendMessage is completed
+    OutboundPkt wrap(mSettings);
+    if (m_initConnectionNeeded) {
+        wrap.initConnection();
+        wrap.appendOutboundPkt(outboundPkt);
+        data = wrap.buffer();
+        ints = wrap.length();
+        m_initConnectionNeeded = false;
+    }
+
     qCDebug(TG_CORE_SESSION) << "Sending query of size" << 4 * ints << "to DC" << m_dc->id() << "at" << peerName() << ":" << peerPort() << "by session" << QString::number(m_sessionId, 16);
 
     Query *q = new Query(this);

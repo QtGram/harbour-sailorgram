@@ -4,50 +4,6 @@
 <context>
     <name>AboutPage</name>
     <message>
-        <source>Danish</source>
-        <translation>Dánsky</translation>
-    </message>
-    <message>
-        <source>Dutch</source>
-        <translation>Holandsky</translation>
-    </message>
-    <message>
-        <source>Finnish</source>
-        <translation>Finsky</translation>
-    </message>
-    <message>
-        <source>German</source>
-        <translation>Německy</translation>
-    </message>
-    <message>
-        <source>Russian</source>
-        <translation>Rusky</translation>
-    </message>
-    <message>
-        <source>Spanish</source>
-        <translation>Španělsky</translation>
-    </message>
-    <message>
-        <source>Czech</source>
-        <translation>Česky</translation>
-    </message>
-    <message>
-        <source>French</source>
-        <translation>Francouzky</translation>
-    </message>
-    <message>
-        <source>Italian</source>
-        <translation>Italsky</translation>
-    </message>
-    <message>
-        <source>Persian</source>
-        <translation>Persky</translation>
-    </message>
-    <message>
-        <source>Greek</source>
-        <translation>Řecky</translation>
-    </message>
-    <message>
         <source>About SailorGram</source>
         <translation>O SailorGram</translation>
     </message>
@@ -60,48 +16,32 @@
         <translation>Neoficiální Telegram klient pro SailfishOS</translation>
     </message>
     <message>
-        <source>Developer</source>
-        <translation>Vývojář</translation>
-    </message>
-    <message>
         <source>GitHub Repository</source>
         <translation>GitHub repository</translation>
     </message>
     <message>
-        <source>Translators</source>
-        <translation>Překladateli</translation>
+        <source>Report an Issue</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Translation Platform</source>
-        <translation>Překladní platforma</translation>
+        <source>SailorGram is distributed under the GPLv3 license</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Swedish</source>
-        <translation>Švédsky</translation>
+        <source>License</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Galician</source>
-        <translation>Galícky</translation>
+        <source>Developers</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Belaruian</source>
-        <translation>Bělorusky</translation>
+        <source>Translations</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Emoji Set</source>
-        <translation>Soubor emoji</translation>
-    </message>
-    <message>
-        <source>Icon Designers</source>
-        <translation>Icon designer</translation>
-    </message>
-    <message>
-        <source>Contributors</source>
-        <translation>Přispěvatelé</translation>
-    </message>
-    <message>
-        <source>Ukrainian</source>
-        <translation>Ukrajinsky</translation>
+        <source>Third Party</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -284,6 +224,10 @@ Minimální délka je 5 znaků .</translation>
         <source>Open media without waiting</source>
         <translation>Otevřít média bez čekání</translation>
     </message>
+    <message>
+        <source>Load images automatically</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConnectingLabel</name>
@@ -337,16 +281,6 @@ Minimální délka je 5 znaků .</translation>
 <context>
     <name>CoverPage</name>
     <message>
-        <source>Unread
-message</source>
-        <translation>Nečtená zpráva:</translation>
-    </message>
-    <message>
-        <source>Unread
-messages</source>
-        <translation>Nečtené zprávy:</translation>
-    </message>
-    <message>
         <source>Disconnected</source>
         <translation>Odpojeno</translation>
     </message>
@@ -357,6 +291,15 @@ messages</source>
     <message>
         <source>Recent chats:</source>
         <translation>Poslední rozhovory:</translation>
+    </message>
+    <message numerus="yes">
+        <source>Unread
+message(s)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -429,6 +372,25 @@ messages</source>
     <message>
         <source>Message:</source>
         <translation>Zpráva:</translation>
+    </message>
+</context>
+<context>
+    <name>DevelopersPage</name>
+    <message>
+        <source>Developers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contributors</source>
+        <translation type="unfinished">Přispěvatelé</translation>
+    </message>
+    <message>
+        <source>Icon Designers</source>
+        <translation type="unfinished">Icon designer</translation>
     </message>
 </context>
 <context>
@@ -513,6 +475,26 @@ messages</source>
     <message>
         <source>Load more messages</source>
         <translation>Načíst další zprávy</translation>
+    </message>
+    <message>
+        <source>Cancel selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting Messages</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -688,6 +670,10 @@ Utři do prava aby jsi vybral kontakt</translation>
         <source>Forward</source>
         <translation>Přeposlat</translation>
     </message>
+    <message>
+        <source>Add to Telegram</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessagePreview</name>
@@ -705,13 +691,13 @@ Utři do prava aby jsi vybral kontakt</translation>
 </context>
 <context>
     <name>PeerItem</name>
-    <message>
-        <source>%1 members</source>
-        <translation>%1 členú</translation>
-    </message>
-    <message>
-        <source>%1 member</source>
-        <translation>%1 člen</translation>
+    <message numerus="yes">
+        <source>%n member(s)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -799,9 +785,17 @@ Utři do prava aby jsi vybral kontakt</translation>
         <source>Back</source>
         <translation>Zpět</translation>
     </message>
+    <message numerus="yes">
+        <source>Send %n file(s)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
     <message>
-        <source>Send %1 file(s)</source>
-        <translation>Odeslat %1 soubor(u)</translation>
+        <source>Select files</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -835,16 +829,24 @@ Utři do prava aby jsi vybral kontakt</translation>
         <translation>Řadit podle data</translation>
     </message>
     <message>
-        <source>Send %1 image(s)</source>
-        <translation>Odeslat %1 obrazku</translation>
-    </message>
-    <message>
         <source>Back</source>
         <translation>Zpět</translation>
     </message>
     <message>
         <source>Cancel</source>
         <translation>Anulovat</translation>
+    </message>
+    <message numerus="yes">
+        <source>Send %n image(s)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Select images</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1083,16 +1085,69 @@ Utři do prava aby jsi vybral kontakt</translation>
         <translation>%1 and %2 psají</translation>
     </message>
     <message>
-        <source>%1 members are typing...</source>
-        <translation>%1 členú psají</translation>
-    </message>
-    <message>
         <source>Sticker</source>
         <translation>Nálepka</translation>
     </message>
     <message>
         <source>Position</source>
         <translation>Pozice</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n member(s) are typing...</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+</context>
+<context>
+    <name>ThirdPartyLabel</name>
+    <message>
+        <source>License</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Project Page</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ThirdPartyPage</name>
+    <message>
+        <source>Third Party</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The GPLv3 license</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attribution 4.0 International (CC BY 4.0)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TranslationsPage</name>
+    <message>
+        <source>Translation Platform</source>
+        <translation type="unfinished">Překladní platforma</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Coordinators</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translators</source>
+        <translation type="unfinished">Překladateli</translation>
+    </message>
+    <message>
+        <source>Reviewers</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1112,6 +1167,10 @@ Utři do prava aby jsi vybral kontakt</translation>
     <message>
         <source>Actions</source>
         <translation>Činnost</translation>
+    </message>
+    <message>
+        <source>Copy to clipboard</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

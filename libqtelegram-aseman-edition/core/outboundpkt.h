@@ -42,6 +42,7 @@ public:
     void forwardPtr(qint32 positions);
     void initConnection();
 
+    void appendOutboundPkt(OutboundPkt& other);
     void appendInts(const qint32 *what, qint32 len);
     void appendInt(qint32 x);
     void appendLong(qint64 x);

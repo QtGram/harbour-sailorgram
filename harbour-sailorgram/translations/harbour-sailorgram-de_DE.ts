@@ -4,50 +4,6 @@
 <context>
     <name>AboutPage</name>
     <message>
-        <source>Danish</source>
-        <translation>Dänisch</translation>
-    </message>
-    <message>
-        <source>Dutch</source>
-        <translation>Niederländisch</translation>
-    </message>
-    <message>
-        <source>Finnish</source>
-        <translation>Finnisch</translation>
-    </message>
-    <message>
-        <source>German</source>
-        <translation>Deutsch</translation>
-    </message>
-    <message>
-        <source>Russian</source>
-        <translation>Russisch</translation>
-    </message>
-    <message>
-        <source>Spanish</source>
-        <translation>Spanisch</translation>
-    </message>
-    <message>
-        <source>Czech</source>
-        <translation>Tschechisch</translation>
-    </message>
-    <message>
-        <source>French</source>
-        <translation>Französisch</translation>
-    </message>
-    <message>
-        <source>Italian</source>
-        <translation>Italienisch</translation>
-    </message>
-    <message>
-        <source>Persian</source>
-        <translation>Persisch</translation>
-    </message>
-    <message>
-        <source>Greek</source>
-        <translation>Griechisch</translation>
-    </message>
-    <message>
         <source>About SailorGram</source>
         <translation>Über SailorGram</translation>
     </message>
@@ -60,48 +16,32 @@
         <translation>Ein inoffizieller Telegram Client für SailfishOS</translation>
     </message>
     <message>
-        <source>Developer</source>
-        <translation>Entwickler</translation>
-    </message>
-    <message>
         <source>GitHub Repository</source>
         <translation>GitHub Repository</translation>
     </message>
     <message>
-        <source>Translators</source>
-        <translation>Übersetzer</translation>
+        <source>Report an Issue</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Translation Platform</source>
-        <translation>Übersetzungs-Plattform</translation>
+        <source>SailorGram is distributed under the GPLv3 license</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Swedish</source>
-        <translation>Schwedisch</translation>
+        <source>License</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Galician</source>
-        <translation>Galicisch</translation>
+        <source>Developers</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Belaruian</source>
-        <translation>Weißrussisch</translation>
+        <source>Translations</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Emoji Set</source>
-        <translation>Emoji Sammlung</translation>
-    </message>
-    <message>
-        <source>Icon Designers</source>
-        <translation>Icon Designer</translation>
-    </message>
-    <message>
-        <source>Contributors</source>
-        <translation>Mitwirkende</translation>
-    </message>
-    <message>
-        <source>Ukrainian</source>
-        <translation>Ukrainisch</translation>
+        <source>Third Party</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -284,6 +224,10 @@ Minimum sind 5 Zeichen.</translation>
         <source>Open media without waiting</source>
         <translation>Medien sofort öffnen</translation>
     </message>
+    <message>
+        <source>Load images automatically</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConnectingLabel</name>
@@ -337,18 +281,6 @@ Minimum sind 5 Zeichen.</translation>
 <context>
     <name>CoverPage</name>
     <message>
-        <source>Unread
-message</source>
-        <translation>Ungelesene
-Nachricht</translation>
-    </message>
-    <message>
-        <source>Unread
-messages</source>
-        <translation>Ungelesene
-Nachrichten</translation>
-    </message>
-    <message>
         <source>Disconnected</source>
         <translation>Nicht verbunden</translation>
     </message>
@@ -359,6 +291,14 @@ Nachrichten</translation>
     <message>
         <source>Recent chats:</source>
         <translation>Letzte Chats:</translation>
+    </message>
+    <message numerus="yes">
+        <source>Unread
+message(s)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -431,6 +371,25 @@ Nachrichten</translation>
     <message>
         <source>Message:</source>
         <translation>Nachricht:</translation>
+    </message>
+</context>
+<context>
+    <name>DevelopersPage</name>
+    <message>
+        <source>Developers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contributors</source>
+        <translation type="unfinished">Mitwirkende</translation>
+    </message>
+    <message>
+        <source>Icon Designers</source>
+        <translation type="unfinished">Icon Designer</translation>
     </message>
 </context>
 <context>
@@ -515,6 +474,26 @@ Nachrichten</translation>
     <message>
         <source>Load more messages</source>
         <translation>Weitere Nachrichten laden</translation>
+    </message>
+    <message>
+        <source>Cancel selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting Messages</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -690,6 +669,10 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
         <source>Forward</source>
         <translation>Weiterleiten</translation>
     </message>
+    <message>
+        <source>Add to Telegram</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessagePreview</name>
@@ -707,13 +690,12 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
 </context>
 <context>
     <name>PeerItem</name>
-    <message>
-        <source>%1 members</source>
-        <translation>%1 Mitglieder</translation>
-    </message>
-    <message>
-        <source>%1 member</source>
-        <translation>%1 Mitglied</translation>
+    <message numerus="yes">
+        <source>%n member(s)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -801,9 +783,16 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
         <source>Back</source>
         <translation>Zurück</translation>
     </message>
+    <message numerus="yes">
+        <source>Send %n file(s)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
     <message>
-        <source>Send %1 file(s)</source>
-        <translation>%1 Datei(en) senden</translation>
+        <source>Select files</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -837,16 +826,23 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
         <translation>Nach Datum ordnen</translation>
     </message>
     <message>
-        <source>Send %1 image(s)</source>
-        <translation>%1 Bild(er) senden</translation>
-    </message>
-    <message>
         <source>Back</source>
         <translation>Zurück</translation>
     </message>
     <message>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
+    </message>
+    <message numerus="yes">
+        <source>Send %n image(s)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Select images</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1085,16 +1081,68 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
         <translation>%1 und %2 schreiben...</translation>
     </message>
     <message>
-        <source>%1 members are typing...</source>
-        <translation>%1 Mitglieder schreiben...</translation>
-    </message>
-    <message>
         <source>Sticker</source>
         <translation>Sticker</translation>
     </message>
     <message>
         <source>Position</source>
         <translation>Position</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n member(s) are typing...</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+</context>
+<context>
+    <name>ThirdPartyLabel</name>
+    <message>
+        <source>License</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Project Page</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ThirdPartyPage</name>
+    <message>
+        <source>Third Party</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The GPLv3 license</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attribution 4.0 International (CC BY 4.0)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TranslationsPage</name>
+    <message>
+        <source>Translation Platform</source>
+        <translation type="unfinished">Übersetzungs-Plattform</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Coordinators</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translators</source>
+        <translation type="unfinished">Übersetzer</translation>
+    </message>
+    <message>
+        <source>Reviewers</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1114,6 +1162,10 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     <message>
         <source>Actions</source>
         <translation>Aktionen</translation>
+    </message>
+    <message>
+        <source>Copy to clipboard</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

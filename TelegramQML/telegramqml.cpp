@@ -1304,7 +1304,13 @@ QString TelegramQml::fileLocation(FileLocationObject *l)
 
     QDir().mkpath(dpath);
 
-    const QStringList & av_files = QDir(dpath).entryList(QDir::Files);
+    // For known file type extensions (e.g. stickers -> .webp), don't loop over the whole cache dir
+    // as looping over a big cache is very slow.
+    if (isSticker) {
+        return dpath + "/" + fname + ".webp";
+    }
+
+    const QStringList & av_files = QDir(dpath).entryList({fname + "*"}, QDir::Files);
     Q_FOREACH( const QString & f, av_files )
         if( QFileInfo(f).baseName() == fname )
             return dpath + "/" + f;
@@ -1318,8 +1324,6 @@ QString TelegramQml::fileLocation(FileLocationObject *l)
 
         QFile::rename(old_path, result);
     }
-    if(isSticker && result.right(5) != ".webp")
-        result += ".webp";
 
     return result;
 }
@@ -4245,8 +4249,12 @@ void TelegramQml::uploadGetFile_slt(qint64 id, const StorageFileType &type, qint
             if(!sfx.isEmpty())
                 sfx = "."+sfx;
 
-            QFile::rename(download_file, download_file+sfx);
-            download->setLocation(FILES_PRE_STR + download_file+sfx);
+            if (download_file.right(sfx.length()) != sfx) {
+                QFile::rename(download_file, download_file+sfx);
+                download->setLocation(FILES_PRE_STR + download_file+sfx);
+            } else {
+                download->setLocation(FILES_PRE_STR + download_file);
+            }
         }
         else
             download->setLocation(FILES_PRE_STR + download_file);

@@ -87,6 +87,10 @@ void OutboundPkt::appendData(const void *data, qint32 len) {
     m_packetPtr += len >> 2;
 }
 
+void OutboundPkt::appendOutboundPkt(OutboundPkt& other) {
+    appendInts(other.buffer(), other.length());
+}
+
 void OutboundPkt::appendInts (const qint32 *what, qint32 len) {
     Q_ASSERT(m_packetPtr + len <= m_packetBuffer + PACKET_BUFFER_SIZE);
     memcpy (m_packetPtr, what, len * 4);

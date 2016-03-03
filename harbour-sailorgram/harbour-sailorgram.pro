@@ -12,13 +12,10 @@
 # The name of your application
 TARGET = harbour-sailorgram
 
-CONFIG += \
-    sailfishapp \
-    c++11
-
-QT += sql dbus multimedia
-
 include($$PWD/../config.pri)
+
+CONFIG += sailfishapp
+QT += sql dbus multimedia
 
 LIBS += -L$$LIBQTELEGRAM_LIB_DIR -L$$TELEGRAMQML_LIB_DIR -lqtelegram-ae -ltelegramqml
 INCLUDEPATH += $$LIBQTELEGRAM_INCLUDE_PATH $$TELEGRAMQML_INCLUDE_PATH
