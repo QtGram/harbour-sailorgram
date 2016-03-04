@@ -16,6 +16,8 @@ Page
         anchors.fill: parent
         contentHeight: content.height
 
+        VerticalScrollDecorator { flickable: parent }
+
         PullDownMenu
         {
             MenuItem
