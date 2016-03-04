@@ -15,12 +15,12 @@ TranslationInfoItem::TranslationInfoItem(const QJsonObject &jsonobject, QObject 
     _translators(jsonobject.value("translators").toVariant().toStringList()),
     _reviewers(jsonobject.value("reviewers").toVariant().toStringList())
 {
-    QLocale trlocale(jsonobject.value("language_code").toString());
+    QString trcode = jsonobject.value("language_code").toString();
+    QLocale trlocale(trcode);
     _name = trlocale.nativeLanguageName();
     _name[0] = _name[0].toUpper();
-    QString trcountry = trlocale.nativeCountryName();
-    if(!trcountry.isEmpty())
-        _name += " (" + trcountry + ")";
+    if (trcode.length() > 2)
+        _name += " (" + trlocale.nativeCountryName() + ")";
 }
 
 QString TranslationInfoItem::name() const
