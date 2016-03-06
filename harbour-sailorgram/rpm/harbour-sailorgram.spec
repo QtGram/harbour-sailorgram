@@ -104,7 +104,7 @@ systemctl-user restart harbour-sailorgram-notifications.service
 %{_bindir}/%{name}
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
-%{_datadir}/icons/hicolor/86x86/apps/%{name}.png
+%{_datadir}/icons/hicolor/*/apps/%{name}.png
 %{_datadir}/lipstick/notificationcategories/*.conf
 %{_datadir}/ngfd/events.d/*.ini
 %{_datadir}/dbus-1/services/*.service
