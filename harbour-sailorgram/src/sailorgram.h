@@ -5,9 +5,10 @@
 #include <QStandardPaths>
 #include <QFile>
 #include <QMimeDatabase>
-#include <telegramqml.h>
-#include <userdata.h>
-#include <objects/types.h>
+#include <QNetworkConfigurationManager>
+#include <telegramengine.h>
+#include <telegram/objects/dialogobject.h>
+#include <telegram/objects/messageobject.h>
 #include "dbus/interface/sailorgraminterface.h"
 #include "dbus/notification/notification.h"
 #include "dbus/connectivitychecker.h"
@@ -18,10 +19,11 @@ class SailorGram : public QObject
     Q_OBJECT
 
     Q_PROPERTY(bool autostart READ autostart WRITE setAutostart NOTIFY autostartChanged)
+    Q_PROPERTY(bool globalMute READ globalMute WRITE setGlobalMute NOTIFY globalMuteChanged)
     Q_PROPERTY(bool keepRunning READ keepRunning WRITE setKeepRunning NOTIFY keepRunningChanged)
     Q_PROPERTY(bool daemonized READ daemonized NOTIFY daemonizedChanged)
     Q_PROPERTY(bool connected READ connected NOTIFY connectedChanged)
-    Q_PROPERTY(TelegramQml* telegram READ telegram WRITE setTelegram NOTIFY telegramChanged)
+    Q_PROPERTY(TelegramEngine* engine READ engine WRITE setEngine NOTIFY engineChanged)
     Q_PROPERTY(QString emojiPath READ emojiPath CONSTANT FINAL)
     Q_PROPERTY(QString configPath READ configPath CONSTANT FINAL)
     Q_PROPERTY(QString publicKey READ publicKey CONSTANT FINAL)
@@ -30,16 +32,16 @@ class SailorGram : public QObject
     Q_PROPERTY(QString picturesFolder READ picturesFolder CONSTANT FINAL)
     Q_PROPERTY(QString androidStorage READ androidStorage CONSTANT FINAL)
     Q_PROPERTY(QString voiceRecordPath READ voiceRecordPath CONSTANT FINAL)
+    Q_PROPERTY(QString currentPeerKey READ currentPeerKey WRITE setCurrentPeerKey NOTIFY currentPeerKeyChanged)
     Q_PROPERTY(QList<QObject *> translations READ translations CONSTANT FINAL)
-    Q_PROPERTY(DialogObject* foregroundDialog READ foregroundDialog WRITE setForegroundDialog NOTIFY foregroundDialogChanged)
 
     public:
         explicit SailorGram(QObject *parent = 0);
         bool autostart();
+        bool globalMute() const;
         bool keepRunning() const;
         bool daemonized() const;
         bool connected() const;
-        Q_INVOKABLE bool hasContact(const qint64 &id) const;
         int interval() const;
         QString emojiPath() const;
         QString configPath() const;
@@ -49,28 +51,29 @@ class SailorGram : public QObject
         QString picturesFolder() const;
         QString androidStorage() const;
         QString voiceRecordPath() const;
-        TelegramQml* telegram() const;
-        DialogObject* foregroundDialog() const;
+        const QString& currentPeerKey() const;
+        TelegramEngine* engine() const;
         QList<QObject *> translations();
-        void setTelegram(TelegramQml* telegram);
-        void setForegroundDialog(DialogObject* dialog);
+        void setEngine(TelegramEngine* engine);
+        void setCurrentPeerKey(const QString& peerkey);
         void setKeepRunning(bool keep);
+        void setGlobalMute(bool globalmute);
         void setAutostart(bool autostart);
 
     public:
-        static bool hasNoDaemonFile();
+        static bool hasDaemonFile();
 
     public slots:
         void moveMediaToDownloads(const QString &mediafile);
         void moveMediaToGallery(const QString &mediafile, quint32 mediatype);
-        void notify(MessageObject* message, const QString& name, const QString &elaboratedbody);
-        void closeNotification(DialogObject* dialog);
+        void notify(const QString& title, const QString& body, const QString &peerkey);
+        void closeNotification(const QString& peerkey);
 
     private:
         QString mediaLocation(quint32 mediatype);
-        void updatePendingState(MessageObject* message, quint32 peerid);
+        void updatePendingState(const QString& peerkey);
         void moveMediaTo(const QString &mediafile, const QString& destination);
-        void notify(const QString& summary, const QString& body, const QString &icon, qint32 peerid);
+        void sendNotify(const QString& title, const QString& body, const QString &peerkey);
         void beep();
 
     private slots:
@@ -78,36 +81,37 @@ class SailorGram : public QObject
         void onNotificationClosed(uint);
         void onMessageUnreadedChanged();
         void onWakeUpRequested();
-        void updateLogLevel();
         void updateOnlineState();
         void delayedCloseNotification();
 
     signals:
+        void globalMuteChanged();
         void autostartChanged();
         void keepRunningChanged();
         void daemonizedChanged();
         void connectedChanged();
-        void telegramChanged();
+        void engineChanged();
         void wakeUpRequested();
-        void foregroundDialogChanged();
+        void currentPeerKeyChanged();
         void openDialogRequested(qint32 peerid);
 
     private:
         QHash<int, MessageObject*> _deletednotifications;
-        QHash<qint32, Notification*> _notifications;
-        QHash<qint32, MessageObject*> _topmessages;
+        QHash<QString, Notification*> _notifications;
+        QHash<QString, MessageObject*> _topmessages;
         QMimeDatabase _mimedb;
-        TelegramQml* _telegram;
+        TelegramEngine* _engine;
         ConnectivityChecker* _connectivitychecker;
         QNetworkConfigurationManager* _netcfgmanager;
         SailorgramInterface* _interface;
-        DialogObject* _foregrounddialog;
+        QString _currentpeerkey;
         int _connected;
         bool _daemonized;
+        bool _globalmute;
         bool _autostart;
 
     private:
-        static const QString NO_DAEMON_FILE;
+        static const QString DAEMON_FILE;
         static const QString CONFIG_FOLDER;
         static const QString PUBLIC_KEY_FILE;
         static const QString EMOJI_FOLDER;

@@ -20,7 +20,7 @@ Dialog
     }
 
     onAccepted: {
-        context.telegram.phoneNumber = TelegramHelper.completePhoneNumber(tfcountrycode.text + tfphonenumber.text);
+        context.engine.phoneNumber = TelegramHelper.completePhoneNumber(tfcountrycode.text + tfphonenumber.text);
     }
 
     SilicaFlickable

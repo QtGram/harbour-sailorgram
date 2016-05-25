@@ -45,9 +45,9 @@ QString telegram_settings_auth_path(const QString &configPath, const QString &ph
     return pathDir + '/' + AUTH_KEY_FILE;
 }
 
-bool telegram_settings_read_fnc(const QString &configPath, const QString &phone, QVariantMap &map)
+bool telegram_settings_read_fnc(Telegram *tg, QVariantMap &map)
 {
-    const QString configFilename = telegram_settings_auth_path(configPath, phone);
+    const QString configFilename = telegram_settings_auth_path(tg->configPath(), tg->phoneNumber());
 
     QSettings settings(configFilename, QSettings::IniFormat);
     const QStringList &keys = settings.allKeys();
@@ -57,9 +57,9 @@ bool telegram_settings_read_fnc(const QString &configPath, const QString &phone,
     return true;
 }
 
-bool telegram_settings_write_fnc(const QString &configPath, const QString &phone, const QVariantMap &map)
+bool telegram_settings_write_fnc(Telegram *tg, const QVariantMap &map)
 {
-    const QString configFilename = telegram_settings_auth_path(configPath, phone);
+    const QString configFilename = telegram_settings_auth_path(tg->configPath(), tg->phoneNumber());
 
     QSettings settings(configFilename, QSettings::IniFormat);
     QMapIterator<QString,QVariant> i(map);
@@ -72,17 +72,17 @@ bool telegram_settings_write_fnc(const QString &configPath, const QString &phone
     return true;
 }
 
-Settings::ReadFunc _telegram_settings_read_fnc = telegram_settings_read_fnc;
-Settings::WriteFunc _telegram_settings_write_fnc = telegram_settings_write_fnc;
-
-Settings::Settings() :
+Settings::Settings(Telegram *telegram) :
     m_defaultHostPort(0),
     m_defaultHostDcId(0),
     m_appId(0),
     m_workingDcConfigAvailabe(false),
     m_pubKey(0),
     m_phoneNumber(""),
-    m_baseConfigDirectory("") {
+    m_baseConfigDirectory(""),
+    mTelegram(telegram),
+    _telegram_settings_read_fnc(telegram_settings_read_fnc),
+    _telegram_settings_write_fnc(telegram_settings_write_fnc) {
 }
 
 Settings::~Settings() {
@@ -230,6 +230,8 @@ void Settings::writeAuthFile() {
         map[ar + ST_DC_NUM] = m_dcsList[i]->id();
         map[ar + ST_HOST] = m_dcsList[i]->host();
         map[ar + ST_PORT] = m_dcsList[i]->port();
+        map[ar + ST_IPV6] = m_dcsList[i]->ipv6();
+        map[ar + ST_MEDIA] = m_dcsList[i]->mediaOnly();
         map[ar + ST_DC_STATE] = m_dcsList[i]->state();
 
         if (m_dcsList[i]->authKeyId()) {
@@ -241,14 +243,14 @@ void Settings::writeAuthFile() {
         map[ar + ST_EXPIRES] = m_dcsList[i]->expires();
     }
 
-    if(!_telegram_settings_write_fnc(m_baseConfigDirectory, m_phoneNumber, map))
-        telegram_settings_write_fnc(m_baseConfigDirectory, m_phoneNumber, map);
+    if(!_telegram_settings_write_fnc(mTelegram, map))
+        telegram_settings_write_fnc(mTelegram, map);
 }
 
 void Settings::readAuthFile() {
     QVariantMap map;
-    if(!_telegram_settings_read_fnc(m_baseConfigDirectory, m_phoneNumber, map))
-        telegram_settings_read_fnc(m_baseConfigDirectory, m_phoneNumber, map);
+    if(!_telegram_settings_read_fnc(mTelegram, map))
+        telegram_settings_read_fnc(mTelegram, map);
 
     QString pre = testMode() ? ST_TEST : ST_PRODUCTION;
     pre += "/";
@@ -272,6 +274,8 @@ void Settings::readAuthFile() {
         DC* dc = new DC(dcNum);
         dc->setHost(map.value(ar+ST_HOST).toString());
         dc->setPort(map.value(ar+ST_PORT, 0).toInt());
+        dc->setIpv6(map.value(ar+ST_IPV6).toBool());
+        dc->setMediaOnly(map.value(ar+ST_MEDIA).toBool());
         dc->setState((DC::DcState)map.value(ar+ST_DC_STATE, DC::init).toInt());
         dc->setAuthKeyId(map.value(ar+ST_AUTH_KEY_ID, 0).toLongLong());
         if (dc->state() >= DC::authKeyCreated) {
@@ -284,7 +288,7 @@ void Settings::readAuthFile() {
         qCDebug(TG_CORE_SETTINGS) << "DC | id:" << dc->id() << ", state:" << dc->state() <<
                     ", host:" << dc->host() << ", port:" << dc->port() <<
                     ", expires:" << dc->expires() << ", authKeyId:" << dc->authKeyId() <<
-                    ", serverSalt:" << dc->serverSalt();
+                    ", serverSalt:" << dc->serverSalt() << ", ipv6" << dc->ipv6();
 
         m_dcsList.insert(dcNum, dc);
     }
@@ -309,9 +313,9 @@ void Settings::setAuthConfigMethods(Settings::ReadFunc readFunc, Settings::Write
     _telegram_settings_write_fnc = writeFunc;
 }
 
-void Settings::clearAuth(const QString &configPath, const QString &phone)
+void Settings::clearAuth()
 {
-    _telegram_settings_write_fnc(configPath, phone, QVariantMap());
+    _telegram_settings_write_fnc(mTelegram, QVariantMap());
 }
 
 void Settings::readSecretFile() {

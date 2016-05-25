@@ -1,6 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 1.0
+import harbour.sailorgram.TelegramQml 2.0
 import "../../models"
 import "../../components"
 import "../../js/Settings.js" as Settings
@@ -26,7 +26,7 @@ Page
 
         timlogin.restart();
         timdisplaystatus.restart();
-        context.telegram.phoneNumber = phonenumber;
+        context.engine.phoneNumber = phonenumber;
     }
 
     Timer
@@ -111,7 +111,7 @@ Page
                 anchors { left: parent.left; leftMargin: Theme.paddingLarge }
 
                 onClicked: {
-                    if(context.telegram.phoneNumber.length > 0) {
+                    if(context.engine.phoneNumber.length > 0) {
                         pageStack.replace(Qt.resolvedUrl("AuthorizationPage.qml"), { "context": connectionpage.context, "resendCode": true });
                     }
                     else

@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
     QStringList args = application->arguments();
     bool daemonized = args.contains("-daemon");
 
-    if(daemonized && SailorGram::hasNoDaemonFile())
+    if(daemonized && !SailorGram::hasDaemonFile())
         return 0;
 
     QDBusConnection sessionbus = QDBusConnection::sessionBus();
@@ -65,7 +65,6 @@ int main(int argc, char *argv[])
     }
 
     TelegramQmlInitializer::init("harbour.sailorgram.TelegramQml");
-
     FilesModel::registerMetaTypes();
 
     qmlRegisterType<SailorGram>("harbour.sailorgram.SailorGram", 1, 0, "SailorGram");

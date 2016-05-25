@@ -6,13 +6,16 @@ MessageMediaItem
     id: messagesticker
     contentWidth: maxWidth
     contentHeight: maxWidth
-    fileHandler.onTargetTypeChanged: fileHandler.download(); // Autodownload stickers
+
+    downloadHandler {
+        onSourceChanged: downloadHandler.download(); // Autodownload stickers
+    }
 
     MessageThumbnail
     {
         id: thumb
         anchors.fill: parent
-        cache: !fileHandler.downloaded
-        source: fileHandler.downloaded ? fileHandler.filePath : fileHandler.thumbPath
+        cache: !downloadHandler.downloaded
+        source: downloadHandler.downloaded ? downloadHandler.destination : downloadHandler.thumbnail
     }
 }

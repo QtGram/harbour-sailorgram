@@ -1,54 +1,19 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 1.0
+import harbour.sailorgram.TelegramQml 2.0 as Telegram
 import "../../models"
 import "../../items/peer"
 import "../../items/user"
 import "../../items/message/messageitem"
 import "../../js/TelegramHelper.js" as TelegramHelper
 import "../../js/TelegramAction.js" as TelegramAction
-import "../../js/TelegramConstants.js" as TelegramConstants
 
 ListItem
 {
     property Context context
-    property var dialog
-    property User user
-    property Chat chat
-    property EncryptedChat encryptedChat
-    property bool muted: context.telegram.userData.isMuted(TelegramHelper.peerId(dialogitem.dialog))
-    property Message message: context.telegram.message(dialog.topMessage);
-
-    onDialogChanged: {
-        var peerid = TelegramHelper.peerId(dialogitem.dialog);
-
-        if(dialog.encrypted) {
-            encryptedChat = context.telegram.encryptedChat(peerid);
-            user = context.telegram.user(TelegramHelper.encryptedUserId(context, encryptedChat));
-            return;
-        }
-
-        if(TelegramHelper.isChat(dialog))
-            chat = context.telegram.chat(peerid);
-        else
-            user = context.telegram.user(peerid);
-    }
+    property var dialogModelItem
 
     id: dialogitem
-
-    Connections
-    {
-        target: context.telegram.userData
-
-        onMuteChanged: {
-            var peerid = TelegramHelper.peerId(dialog);
-
-            if(id !== peerid)
-                return;
-
-            dialogitem.muted = context.telegram.userData.isMuted(id);
-        }
-    }
 
     Row
     {
@@ -61,9 +26,11 @@ ListItem
             width: dialogitem.contentHeight
             height: dialogitem.contentHeight
             context: dialogitem.context
-            dialog: dialogitem.dialog
-            chat: dialogitem.chat
-            user: dialogitem.user
+            peer: dialogModelItem.peer
+            fallbackTitle: dialogModelItem.title
+            isChat: dialogModelItem.chat !== null
+            isBroadcast: dialogModelItem.chat && dialogModelItem.chat.broadcast
+            isSecretChat: dialogModelItem.isSecretChat
         }
 
         Column
@@ -79,18 +46,13 @@ ListItem
 
                 Label {
                     id: lbltitle
+                    font { family: Theme.fontFamilyHeading; pixelSize: Theme.fontSizeSmall }
                     verticalAlignment: Text.AlignVCenter
                     height: parent.height
                     color: Theme.highlightColor
                     elide: Text.ElideRight
                     horizontalAlignment: Text.AlignLeft
-
-                    text: {
-                        if(TelegramHelper.isChat(dialog))
-                            return chat.title;
-
-                        return TelegramHelper.completeName(user);
-                    }
+                    text: dialogModelItem.title
 
                     width: {
                         var w = parent.width - msgstatus.contentWidth;
@@ -106,24 +68,33 @@ ListItem
                     id: imgmute
                     width: Theme.iconSizeSmall
                     height: Theme.iconSizeSmall
-                    visible: dialogitem.muted
                     source: "image://theme/icon-m-speaker-mute"
                     anchors.verticalCenter: parent.verticalCenter
                     fillMode: Image.PreserveAspectFit
+                    visible: dialogModelItem.mute
                 }
 
                 MessageStatus
                 {
                     id: msgstatus
-                    context: dialogitem.context
-                    message: dialogitem.message
                     height: parent.height
-                    color: Theme.primaryColor
                     horizontalAlignment: Text.AlignRight
-                    dateOnly: message ? (TelegramHelper.isServiceMessage(message) || !dialogitem.message.out) : false
-                    dateFirst: false
+                    context: dialogitem.context
+                    color: Theme.primaryColor
                     ticksColor: Theme.highlightColor
+                    messageType: dialogModelItem.messageType
+                    messageOut: dialogModelItem.messageOut
+                    messageDate: dialogModelItem.messageDate
+                    messageUnread: dialogModelItem.messageUnread
+                    dateFirst: false
                     visible: true
+
+                    dateOnly: {
+                        if(!dialogModelItem.topMessage)
+                            return false;
+
+                        return (dialogModelItem.messageType === Telegram.Enums.TypeActionMessage) || !dialogModelItem.messageOut;
+                    }
                 }
             }
 
@@ -142,25 +113,21 @@ ListItem
                     font.pixelSize: Theme.fontSizeExtraSmall
 
                     visible: {
-                        if(TelegramHelper.isServiceMessage(message) || (dialog.typingUsers.length > 0))
+                        if((dialogModelItem.messageType === Telegram.Enums.TypeActionMessage) || (dialogModelItem.typing.length > 0))
                             return false;
 
-                        if(TelegramHelper.isChat(dialog))
+                        if(dialogModelItem.chat && !dialogModelItem.chat.broadcast)
                             return true;
 
-                        return message && message.out;
+                        return dialogModelItem.topMessage && dialogModelItem.messageOut;
                     }
 
                     text: {
-                        if(message && !TelegramHelper.isServiceMessage(message) && (dialog.typingUsers.length <= 0))
-                        {
-                            if(TelegramHelper.isChat(dialog))
-                            {
-                                var user = context.telegram.user(message.fromId);
-                                return TelegramHelper.userDisplayName(user) + ": ";
-                            }
+                        if(dialogModelItem.topMessage && (dialogModelItem.messageType !== Telegram.Enums.TypeActionMessage) && (dialogModelItem.typing.length <= 0)) {
+                            if(dialogModelItem.chat && !dialogModelItem.chat.broadcast && dialogModelItem.messageUser)
+                                return TelegramHelper.userDisplayName(dialogModelItem.messageUser) + ": ";
 
-                            if(message && message.out)
+                            if(dialogModelItem.messageOut)
                                 return qsTr("You:") + " ";
                         }
 
@@ -170,7 +137,7 @@ ListItem
 
                 MessageTextContent
                 {
-                    id: lbllastmessage
+                    id: mtcmessage
                     width: parent.width - rectunread.width - lblfrom.contentWidth
                     height: parent.height
                     elide: Text.ElideRight
@@ -183,43 +150,44 @@ ListItem
                     openUrls: false
 
                     color: {
-                        if((dialog.typingUsers.length > 0) || TelegramHelper.isServiceMessage(message) || TelegramHelper.isMediaMessage(message))
+                        if((dialogModelItem.typing.length > 0) || (dialogModelItem.messageType !== Telegram.Enums.TypeTextMessage))
                             return Theme.highlightColor;
 
                         return Theme.primaryColor;
                     }
 
                     font.italic: {
-                        if(dialog.typingUsers.length > 0)
+                        if(dialogModelItem.typing.length > 0)
                             return true;
 
-                        if(TelegramHelper.isMediaMessage(message) && (message.media.classType === TelegramConstants.typeMessageMediaDocument) && context.telegram.documentIsSticker(message.media.document))
+                        if(dialogModelItem.messageType !== Telegram.Enums.TypeTextMessage)
                             return true;
 
                         return false;
                     }
 
                     rawText: {
-                        if(dialog.typingUsers.length > 0)
-                            return TelegramHelper.typingUsers(context, dialog);
+                        if(dialogModelItem.typing.length > 0) {
+                            if(dialogModelItem.chat)
+                                return TelegramHelper.typingUsers(context, dialogModelItem.typing);
 
-                        if(!message)
-                            return "";
+                            return qsTr("Typing...");
+                        }
 
-                        if(TelegramHelper.isServiceMessage(message))
-                            return TelegramAction.actionType(context.telegram, dialog, message);
+                        if(dialogModelItem.messageType === Telegram.Enums.TypeActionMessage)
+                            return TelegramAction.actionType(dialogModelItem.topMessage.action, dialogModelItem.user, null, dialogModelItem.isSecretChat);
 
-                        return TelegramHelper.firstMessageLine(context, message);
+                        return TelegramHelper.firstMessageLine(context, dialogModelItem.topMessage.message);
                     }
                 }
 
                 Rectangle
                 {
                     id: rectunread
-                    width: dialog.unreadCount > 0 ? parent.height : 0
+                    width: dialogModelItem.unreadCount > 0 ? parent.height : 0
                     height: parent.height
                     color: Theme.secondaryHighlightColor
-                    visible: dialog.unreadCount > 0
+                    visible: dialogModelItem.unreadCount > 0
                     radius: width * 0.5
 
                     Label
@@ -229,7 +197,7 @@ ListItem
                         verticalAlignment: Text.AlignVCenter
                         horizontalAlignment: Text.AlignHCenter
                         font.bold: true
-                        text: dialog.unreadCount
+                        text: dialogModelItem.unreadCount
                     }
                 }
             }

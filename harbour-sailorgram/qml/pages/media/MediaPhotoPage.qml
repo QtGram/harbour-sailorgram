@@ -1,7 +1,7 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import Sailfish.Gallery 1.0
-import harbour.sailorgram.TelegramQml 1.0
+import harbour.sailorgram.TelegramQml 2.0
 import "../../models"
 import "../../components"
 import "../../js/TelegramConstants.js" as TelegramConstants
@@ -10,6 +10,11 @@ MediaPage
 {
     id: mediaphotopage
     allowedOrientations: defaultAllowedOrientations
+
+    Component.onCompleted: {
+         if(!imageHandler.downloaded)
+             imageHandler.download();
+    }
 
     SilicaFlickable
     {
@@ -23,7 +28,7 @@ MediaPage
                 text: qsTr("Save in Gallery")
 
                 onClicked: {
-                    context.sailorgram.moveMediaToGallery(fileHandler.filePath.toString(), TelegramConstants.typeMessageMediaPhoto);
+                    context.sailorgram.moveMediaToGallery(imageHandler.destination, TelegramConstants.typeMessageMediaPhoto); //FIXME: !!!
                     popupmessage.show(qsTr("Image saved in Gallery"));
                 }
             }
@@ -40,13 +45,13 @@ MediaPage
             id: image
             anchors.fill: parent
             enableZoom: !flickable.moving
-            source: fileHandler.filePath
+            source: imageHandler.downloaded ? imageHandler.destination : imageHandler.thumbnail
 
             BusyIndicator
             {
                 anchors.centerIn: parent
                 size: BusyIndicatorSize.Medium
-                running: !fileHandler.downloaded && (fileHandler.progressPercent > 0) && (fileHandler.progressPercent < 100)
+                running: imageHandler.downloading
             }
         }
     }

@@ -289,15 +289,11 @@ Minimum length is 5 characters.</source>
         <source>Recent chats:</source>
         <translation type="unfinished"></translation>
     </message>
-    <message numerus="yes">
+    <message>
         <source>Unread
 message(s)</source>
-        <translation>
-            <numerusform>Unread
-message</numerusform>
-            <numerusform>Unread
-messages</numerusform>
-        </translation>
+        <translation type="unfinished">Unread
+message</translation>
     </message>
 </context>
 <context>
@@ -442,6 +438,10 @@ messages</numerusform>
     <name>DialogItem</name>
     <message>
         <source>You:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Typing...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -687,12 +687,9 @@ Do a swype to the right to select a contact</source>
 </context>
 <context>
     <name>PeerItem</name>
-    <message numerus="yes">
-        <source>%n member(s)</source>
-        <translation>
-            <numerusform>%n member</numerusform>
-            <numerusform>%n members</numerusform>
-        </translation>
+    <message>
+        <source>Typing...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -960,10 +957,6 @@ Do a swype to the right to select a contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You have entered a wrong Authorization Code</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -973,10 +966,6 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Last Name (Optional)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Authorization Code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1014,25 +1003,17 @@ Do a swype to the right to select a contact</source>
         <source>Group name changed to ��%1��</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>��%1�� updated group photo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The group was upgraded to a supergroup</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TelegramHelper</name>
-    <message>
-        <source>Recently</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Last Month</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Last Week</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Unknown</source>
         <translation type="unfinished"></translation>
@@ -1050,23 +1031,11 @@ Do a swype to the right to select a contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unsupported</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Audio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Photo</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Last Seen %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Typing...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1091,6 +1060,14 @@ Do a swype to the right to select a contact</source>
             <numerusform>%n member is typing...</numerusform>
             <numerusform>%n members are typing...</numerusform>
         </translation>
+    </message>
+    <message>
+        <source>Unsupported media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown media</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

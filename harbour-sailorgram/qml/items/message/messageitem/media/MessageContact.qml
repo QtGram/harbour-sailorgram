@@ -1,6 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 1.0
+import harbour.sailorgram.TelegramQml 2.0
 import "../../../../models"
 import "../../../../components"
 import "../../../../items/peer"
@@ -24,7 +24,7 @@ MessageMediaItem
 
     Component.onCompleted: {
         if(user)
-            fileHandler.download()
+            downloadHandler.download()
     }
 
     Row
@@ -40,14 +40,14 @@ MessageMediaItem
             anchors.verticalCenter: info.verticalCenter
             height: Theme.iconSizeMedium
             width: Theme.iconSizeMedium
-            source: user ? fileHandler.filePath : fileHandler.thumbPath;
+            //image: user ? fileHandler.filePath : fileHandler.thumbPath;
 
             Rectangle
             {
                 anchors.fill: parent
                 color: Theme.highlightDimmerColor
                 radius: image.width * 0.5
-                visible: !fileHandler.downloaded && user
+                visible: !downloadHandler.downloaded && user
 
                 Label
                 {
@@ -56,9 +56,11 @@ MessageMediaItem
                     font.pixelSize: parent.height * 0.6
                     visible: parent.visible
                     text: {
+                        /* FIXME:
                         if(user)
                             return TelegramHelper.fallbackText(null, user);
                         else
+                        */
                             return "";
                     }
                 }
@@ -76,13 +78,15 @@ MessageMediaItem
                 width: parent.width - Theme.paddingSmall
                 horizontalAlignment: Text.AlignLeft
                 font.pixelSize: Theme.fontSizeSmall
+
                 text: {
                     var media = message.media;
                     if(media.firstName && media.lastName)
                         return media.firstName + " " + media.lastName;
                     return media.firstName + media.lastName;
                 }
-                color: ColorScheme.colorizeText(message, context)
+
+                color: ColorScheme.colorizeTextItem(messageModelItem, context)
                 wrapMode: Text.NoWrap
                 elide: Text.ElideRight
             }

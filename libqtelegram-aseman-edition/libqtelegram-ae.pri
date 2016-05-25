@@ -2,14 +2,18 @@ QT += gui
 QT += network
 QT += multimedia
 
-DEFINES += LQTG_DISABLE_LOG
-
 win32 {
     isEmpty(OPENSSL_LIB_DIR): OPENSSL_LIB_DIR = $${DESTDIR}
     isEmpty(OPENSSL_INCLUDE_PATH): OPENSSL_INCLUDE_PATH = $${DESTDIR}/include
 
-    LIBS += -L$${OPENSSL_LIB_DIR} -lssleay32 -lcrypto -lz
+    LIBS += -L$${OPENSSL_LIB_DIR} -lssleay32
     INCLUDEPATH += $${OPENSSL_INCLUDE_PATH}
+    
+    win32-msvc* {
+        LIBS += -llibeay32 -lzlibstat -lUser32 -lAdvapi32 -lGdi32
+    } else {
+        LIBS += -lcrypto -lz
+    }
 } else {
     isEmpty(OPENSSL_INCLUDE_PATH): OPENSSL_INCLUDE_PATH = /usr/include/ /usr/local/include/
     isEmpty(OPENSSL_LIB_DIR) {
@@ -41,7 +45,6 @@ SOURCES += \
     $$PWD/core/eventtimer.cpp \
     $$PWD/core/settings.cpp \
     $$PWD/core/dcprovider.cpp \
-    $$PWD/core/api.cpp \
     $$PWD/core/sessionmanager.cpp \
     $$PWD/core/inboundpkt.cpp \
     $$PWD/core/abstractapi.cpp \
@@ -80,7 +83,6 @@ HEADERS += \
     $$PWD/core/sessionmanager.h \
     $$PWD/core/dcprovider.h \
     $$PWD/core/abstractapi.h \
-    $$PWD/core/api.h \
     $$PWD/core/inboundpkt.h \
     $$PWD/core/dcauth.h \
     $$PWD/core/endpoint.h \

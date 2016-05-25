@@ -1,6 +1,5 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 1.0
 import harbour.sailorgram.Model 1.0
 import "../components/cover"
 import "../models"
@@ -13,7 +12,7 @@ CoverBackground
 
     function preparePages() /* Remove Current Chat Page, if any */
     {
-        if(!context.sailorgram.foregroundDialog)
+        if(!context.sailorgram.currentPeerKey)
             return;
 
         pageStack.pop();
@@ -35,7 +34,7 @@ CoverBackground
 
     Column
     {
-        id: statusColumn
+        id: colstatus
         anchors { top: parent.top; left: parent.left; right: parent.right; topMargin: Theme.paddingMedium; leftMargin: Theme.paddingLarge; rightMargin: Theme.paddingSmall }
         height: unreadItem.height + statusLabel.height
 
@@ -48,7 +47,7 @@ CoverBackground
             Label
             {
                 id: unreadCount
-                text: context.telegram.unreadCount
+                text: context.notifications.globalUnreadCount
                 font.pixelSize: Theme.fontSizeHuge
                 font.family: Theme.fontFamilyHeading
             }
@@ -56,7 +55,7 @@ CoverBackground
             Label
             {
                 id: unreadLabel
-                text: qsTr("Unread\nmessage(s)", "", context.telegram.unreadCount)
+                text: qsTr("Unread\nmessage(s)")
                 font.pixelSize: Theme.fontSizeExtraSmall
                 font.family: Theme.fontFamilyHeading
                 font.weight: Font.Light
@@ -84,8 +83,9 @@ CoverBackground
     Column
     {
         id: messagesColumn
+
         anchors {
-            top: statusColumn.bottom
+            top: colstatus.bottom
             bottom: parent.bottom
             left: parent.left
             right: parent.right
@@ -113,23 +113,8 @@ CoverBackground
                 elide: Text.ElideRight
                 truncationMode: TruncationMode.Fade
                 font.pixelSize: Theme.fontSizeSmall
-                color: item.unreadCount > 0 ? Theme.highlightColor : Theme.primaryColor
-
-                text: {
-                    if(item.encrypted) {
-                        var encchat = context.telegram.encryptedChat(item.peer.userId)
-                        var encuser = context.telegram.user((encchat.adminId === context.telegram.me) ? encchat.participantId : encchat.adminId);
-                        return (item.unreadCount > 0) ? (item.unreadCount + " "  + TelegramHelper.completeName(encuser)) : TelegramHelper.completeName(encuser);
-                    }
-
-                    if(TelegramHelper.isChat(item)) {
-                        var chat = context.telegram.chat(item.peer.chatId);
-                        return (item.unreadCount > 0) ? (item.unreadCount + " " + chat.title) : chat.title;
-                    }
-
-                    var user = context.telegram.user(item.peer.userId);
-                    return (item.unreadCount > 0) ? (item.unreadCount + " "  + TelegramHelper.completeName(user)) : TelegramHelper.completeName(user);
-                }
+                color: (model.unreadCount > 0) ? Theme.highlightColor : Theme.primaryColor
+                text: (model.unreadCount > 0) ? (model.unreadCount + " " + model.title) : model.title;
             }
         }
     }
@@ -152,10 +137,10 @@ CoverBackground
 
         CoverAction
         {
-            iconSource: context.telegram.globalMute ? "noalarmcover.png" : "alarmcover.png"
+            iconSource: context.sailorgram.globalMute ? "noalarmcover.png" : "alarmcover.png"
 
             onTriggered: {
-                context.telegram.globalMute = !context.telegram.globalMute;
+                context.sailorgram.globalMute = !context.sailorgram.globalMute;
             }
         }
     }

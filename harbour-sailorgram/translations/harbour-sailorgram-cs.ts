@@ -292,14 +292,10 @@ Minimální délka je 5 znaků .</translation>
         <source>Recent chats:</source>
         <translation>Poslední rozhovory:</translation>
     </message>
-    <message numerus="yes">
+    <message>
         <source>Unread
 message(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -444,7 +440,11 @@ message(s)</source>
     <name>DialogItem</name>
     <message>
         <source>You:</source>
-        <translation>Ty:</translation>
+        <translation type="unfinished">Ty:</translation>
+    </message>
+    <message>
+        <source>Typing...</source>
+        <translation type="unfinished">Píše...</translation>
     </message>
 </context>
 <context>
@@ -691,20 +691,16 @@ Utři do prava aby jsi vybral kontakt</translation>
 </context>
 <context>
     <name>PeerItem</name>
-    <message numerus="yes">
-        <source>%n member(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
+    <message>
+        <source>Typing...</source>
+        <translation type="unfinished">Píše...</translation>
     </message>
 </context>
 <context>
     <name>PeerProfile</name>
     <message>
         <source>Group</source>
-        <translation>Skupina</translation>
+        <translation type="unfinished">Skupina</translation>
     </message>
 </context>
 <context>
@@ -967,10 +963,6 @@ Utři do prava aby jsi vybral kontakt</translation>
         <translation>Registrace</translation>
     </message>
     <message>
-        <source>You have entered a wrong Authorization Code</source>
-        <translation>Falešný autorizační kód</translation>
-    </message>
-    <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
         <translation>Počkejte na SMS s aktivačným kódem a stiskněte &apos;Registrace&apos;</translation>
     </message>
@@ -981,10 +973,6 @@ Utři do prava aby jsi vybral kontakt</translation>
     <message>
         <source>Last Name (Optional)</source>
         <translation>Příjmení (volitelný)</translation>
-    </message>
-    <message>
-        <source>Authorization Code</source>
-        <translation>Autorizační kód</translation>
     </message>
     <message>
         <source>Exit</source>
@@ -1021,25 +1009,17 @@ Utři do prava aby jsi vybral kontakt</translation>
         <source>%1 added %2</source>
         <translation>1% přidán od %2</translation>
     </message>
+    <message>
+        <source>��%1�� updated group photo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The group was upgraded to a supergroup</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TelegramHelper</name>
-    <message>
-        <source>Recently</source>
-        <translation>Nedávno</translation>
-    </message>
-    <message>
-        <source>Last Month</source>
-        <translation>Poslední měsíc</translation>
-    </message>
-    <message>
-        <source>Last Week</source>
-        <translation>Poslední týden</translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <translation>Online</translation>
-    </message>
     <message>
         <source>Unknown</source>
         <translation>Neznámý</translation>
@@ -1057,24 +1037,12 @@ Utři do prava aby jsi vybral kontakt</translation>
         <translation>Video</translation>
     </message>
     <message>
-        <source>Unsupported</source>
-        <translation>Nepodporovaný</translation>
-    </message>
-    <message>
         <source>Audio</source>
         <translation>Audio</translation>
     </message>
     <message>
         <source>Photo</source>
         <translation>Fotka</translation>
-    </message>
-    <message>
-        <source>Last Seen %1</source>
-        <translation>Naposled uviděn %1</translation>
-    </message>
-    <message>
-        <source>Typing...</source>
-        <translation>Píše...</translation>
     </message>
     <message>
         <source>%1 is typing...</source>
@@ -1099,6 +1067,14 @@ Utři do prava aby jsi vybral kontakt</translation>
             <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
+    </message>
+    <message>
+        <source>Unsupported media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown media</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

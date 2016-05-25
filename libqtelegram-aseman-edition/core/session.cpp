@@ -58,7 +58,7 @@ Session::~Session() {
 
 void Session::close() {
     if (this->state() != QAbstractSocket::UnconnectedState) {
-        connect(this, SIGNAL(disconnected()), SLOT(onDisconnected()));
+        connect(this, &QAbstractSocket::disconnected, this, &Session::onDisconnected);
         this->disconnectFromHost();
     } else {
         Q_EMIT sessionClosed(m_sessionId);
@@ -287,37 +287,33 @@ void Session::workRpcResult(InboundPkt &inboundPkt, qint64 msgId) {
 void Session::workUpdateShort(InboundPkt &inboundPkt, qint64 msgId) {
     qCDebug(TG_CORE_SESSION) << "workUpdateShort: msgId =" << QString::number(msgId, 16);
     UpdatesType upd(&inboundPkt);
-    Q_EMIT updateShort(upd.update(), upd.date());
+    Q_EMIT updates(upd);
 }
 
 void Session::workUpdatesCombined(InboundPkt &inboundPkt, qint64 msgId) {
     qCDebug(TG_CORE_SESSION) << "workUpdatesCombined: msgId =" << QString::number(msgId, 16);
     UpdatesType upd(&inboundPkt);
-    Q_EMIT updatesCombined(upd.updates(), upd.users(), upd.chats(), upd.date(), upd.seqStart(), upd.seq());
+    Q_EMIT updates(upd);
 }
 
 void Session::workUpdates(InboundPkt &inboundPkt, qint64 msgId) {
     qCDebug(TG_CORE_SESSION) << "workUpdates: msgId =" << QString::number(msgId, 16);
     UpdatesType upd(&inboundPkt);
-    Q_EMIT updates(upd.updates(), upd.users(), upd.chats(), upd.date(), upd.seq());
+    Q_EMIT updates(upd);
 }
 
 void Session::workUpdateShortMessage(InboundPkt &inboundPkt, qint64 msgId) {
     qCDebug(TG_CORE_SESSION) << "workUpdateShortMessage: msgId =" << QString::number(msgId, 16);
     Q_UNUSED(msgId)
     UpdatesType upd(&inboundPkt);
-    bool unread = (upd.flags() & 0x1);
-    bool out = (upd.flags() & 0x2);
-    Q_EMIT updateShortMessage(upd.id(), upd.userId(), upd.message(), upd.pts(), upd.ptsCount(), upd.date(), upd.fwdFromId(), upd.fwdDate(), upd.replyToMsgId(), unread, out);
+    Q_EMIT updates(upd);
 }
 
 void Session::workUpdateShortChatMessage(InboundPkt &inboundPkt, qint64 msgId) {
     qCDebug(TG_CORE_SESSION) << "workUpdateShortChatMessage: msgId =" << QString::number(msgId, 16);
     Q_UNUSED(msgId)
     UpdatesType upd(&inboundPkt);
-    bool unread = (upd.flags() & 0x1);
-    bool out = (upd.flags() & 0x2);
-    Q_EMIT updateShortChatMessage(upd.id(), upd.fromId(), upd.chatId(), upd.message(), upd.pts(), upd.ptsCount(), upd.date(), upd.fwdFromId(), upd.date(), upd.replyToMsgId(), unread, out);
+    Q_EMIT updates(upd);
 }
 
 void Session::workPacked(InboundPkt &inboundPkt, qint64 msgId) {
@@ -381,8 +377,7 @@ void Session::workNewDetailedInfo(InboundPkt &inboundPkt, qint64 msgId) {
 void Session::workUpdatesTooLong(InboundPkt &inboundPkt, qint64 msgId) {
     qCDebug(TG_CORE_SESSION) << "workUpdatesTooLong: msgId =" << QString::number(msgId, 16);
     UpdatesType upd(&inboundPkt);
-    Q_UNUSED(upd)
-    Q_EMIT updatesTooLong();
+    Q_EMIT updates(upd);
 }
 
 void Session::workBadMsgNotification(InboundPkt &inboundPkt, qint64 msgId) {
@@ -524,6 +519,7 @@ qint64 Session::sendQuery(OutboundPkt &outboundPkt, QueryMethods *methods, const
     Query *q = new Query(this);
     q->setData(data, ints);
     q->setMsgId(encryptSendMessage(data, ints, 1));
+    q->setMainMsgId(q->msgId());
     q->setSeqNo(m_seqNo - 1);
     qCDebug(TG_CORE_SESSION) << "msgId is" << QString::number(q->msgId(), 16);
     q->setMethods(methods);
@@ -532,7 +528,7 @@ qint64 Session::sendQuery(OutboundPkt &outboundPkt, QueryMethods *methods, const
     q->setName(name);
 
     if (mSettings->resendQueries()) {
-        connect(q, SIGNAL(timeout(Query*)), this, SLOT(resendQuery(Query*)), Qt::UniqueConnection);
+        connect(q, &Query::timeout, this, &Session::resendQuery, Qt::UniqueConnection);
         q->startTimer(QUERY_TIMEOUT);
     }
 
@@ -626,7 +622,7 @@ void Session::queryOnError(InboundPkt &inboundPkt, qint64 msgId) {
 
 void Session::addToPendingAcks(qint64 msgId) {
     EventTimer *t = new EventTimer(msgId, ACK_TIMEOUT, this);
-    connect(t, SIGNAL(timerTimeout(qint64)), this, SLOT(ack(qint64)));
+    connect(t, &EventTimer::timerTimeout, this, &Session::ack);
     t->start(); //timeout of 60 secs
     m_pendingAcks[msgId] = t;
     if (m_pendingAcks.size() > MAX_PENDING_ACKS) {

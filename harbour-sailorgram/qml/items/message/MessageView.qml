@@ -1,6 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 1.0
+import harbour.sailorgram.TelegramQml 2.0
 import "../../models"
 import "../../components/telegram"
 import "../../components/message"
@@ -16,7 +16,7 @@ SilicaListView
     property bool waitingDialog: false
     property bool selectionMode: false
     property Context context
-    property Dialog dialog
+    property var dialogModelItem
     property Message forwardedMessage
     property MessageTypesPool messageTypesPool: MessageTypesPool { }
     property var selectedItems: []
@@ -27,12 +27,12 @@ SilicaListView
     cacheBuffer: Screen.height
     clip: true
 
-    function setReaded() {
-        messagesmodel.setReaded();
+    function markAsRead() {
+        messagesmodel.markAsRead();
     }
 
-    function loadMore() {
-        messagesmodel.loadMore();
+    function loadBack() {
+        messagesmodel.loadBack();
     }
 
     function selectAll() {
@@ -50,33 +50,37 @@ SilicaListView
     function deleteSelected() {
         if(!selectionMode)
             return;
+
         var ids = [];
-        selectedItems.forEach(function(i) { ids.push(messagesmodel.get(i)["item"].id) });
+
+        selectedItems.forEach(function(i) { ids.push(messagesmodel.get(i)["item"].id) }); //FIXME: !!!
         clearSelection();
-        context.telegram.deleteMessages(ids);
+        messagesmodel.deleteMessages(ids);
     }
 
-    onSelectionModeChanged: if(!selectionMode) clearSelection()
+    onSelectionModeChanged: {
+        if(!selectionMode)
+            clearSelection();
+    }
 
-    model: MessagesModel {
+    model: MessageListModel {
         id: messagesmodel
-        stepCount: context.stepcount
-        telegram: context.telegram
-        dialog: messageview.dialog
+        engine: context.engine
+        currentPeer: dialogModelItem.peer
 
         onCountChanged: {
             if((count <= 0) || (Qt.application.state !== Qt.ApplicationActive))
                 return;
 
-            messagesmodel.setReaded(); /* We are in this chat, always mark these messages as read */
+            messagesmodel.markAsRead(); // We are in this chat, always mark these messages as read
         }
     }
 
     delegate: MessageItem {
         context: messageview.context
         messageTypesPool: messageview.messageTypesPool
-        dialog: messageview.dialog
-        message: item
+        dialogModelItem: messageview.dialogModelItem
+        messageModelItem: model
         selected: selectedItems.indexOf(model.index) > -1
         highlighted: messageview.selectionMode ? selected : pressed
         showMenuOnPressAndHold: !messageview.selectionMode
@@ -130,7 +134,7 @@ SilicaListView
             id: dialogreplypreview
             width: parent.width
             context: messageview.context
-            dialog: messageview.dialog
+            //FIXME: dialog: messageview.dialog
             isForward: forwardedMessage !== null
             message: forwardedMessage
 
@@ -150,9 +154,9 @@ SilicaListView
         DialogTextInput {
             id: dialogtextinput
             width: parent.width
-            messagesModel: messagesmodel
+            messageListModel: messagesmodel
             context: messageview.context
-            dialog: messageview.dialog
+            peer: dialogModelItem.peer
             isForward: forwardedMessage !== null
             replyMessage: dialogreplypreview.message
             visible: !discadedDialog && !waitingDialog

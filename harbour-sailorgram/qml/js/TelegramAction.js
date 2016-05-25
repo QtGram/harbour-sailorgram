@@ -1,42 +1,42 @@
 .pragma library
 
-.import "TelegramConstants.js" as TelegramConstants
+.import harbour.sailorgram.TelegramQml 2.0 as Telegram
 .import "TelegramHelper.js" as TelegramHelper
 
-function actionType(telegram, dialog, message) {
-   var action = message.action;
+function actionType(serviceitem, fromuser, touser, issecretchat) {
+    if(serviceitem.classType === Telegram.MessageAction.TypeMessageActionChatCreate) {
+        if(issecretchat === true)
+            return qsTr("Secret chat created by «%1»").arg(TelegramHelper.completeName(fromuser));
 
-   if(!dialog || !action)
-       return "???";
+        return qsTr("Group created by «%1»").arg(TelegramHelper.completeName(fromuser));
+    }
 
-   if(action.classType === TelegramConstants.typeMessageActionChatCreate) {
-       var userid = message.fromId;
+    if(serviceitem.classType === Telegram.MessageAction.typeMessageActionChatAddUser) {
+        if(touser)
+            return qsTr("%1 added %2").arg(TelegramHelper.completeName(fromuser)).arg(TelegramHelper.completeName(touser));
 
-       if(dialog.encrypted) {
-           var chat = telegram.encryptedChat(dialog.peer.userId);
-           userid = chat.adminId;
+        return qsTr("%1 has joined the group").arg(TelegramHelper.completeName(fromuser));
+    }
 
-           return qsTr("Secret chat created by «%1»").arg(TelegramHelper.completeName(telegram.user(userid)));
-       }
+    if(serviceitem.classType === Telegram.MessageAction.TypeMessageActionChatJoinedByLink)
+        return qsTr("%1 has joined the group via invite link").arg(TelegramHelper.completeName(fromuser));
 
-       return qsTr("Group created by «%1»").arg(TelegramHelper.completeName(telegram.user(userid)));
-   }
+    if(serviceitem.classType === Telegram.MessageAction.TypeMessageActionChatDeleteUser)
+        return qsTr("%1 has left the group").arg(TelegramHelper.completeName(fromuser));
 
-   if(action.classType === TelegramConstants.typeMessageActionChatAddUser) {
-       if(message.fromId)
-           return qsTr("%1 added %2").arg(TelegramHelper.completeName(telegram.user(message.fromId))).arg(TelegramHelper.completeName(telegram.user(action.userId)));
+    if(serviceitem.classType === Telegram.MessageAction.TypeMessageActionChatEditPhoto)
+        return qsTr("«%1» updated group photo").arg(TelegramHelper.completeName(fromuser));
 
-       return qsTr("%1 has joined the group").arg(TelegramHelper.completeName(telegram.user(action.userId)));
-   }
+    if(serviceitem.classType === Telegram.MessageAction.TypeMessageActionChatEditTitle)
+        return qsTr("Group name changed to «%1»").arg(serviceitem.title);
 
-   if(action.classType === TelegramConstants.typeMessageActionChatJoinedByLink)
-       return qsTr("%1 has joined the group via invite link").arg(TelegramHelper.completeName(telegram.user(message.fromId)));
+    if(serviceitem.classType === Telegram.MessageAction.TypeMessageActionChatMigrateTo) {
+        if(serviceitem.channelId)
+            return qsTr("The group was upgraded to a supergroup");
 
-   if(action.classType === TelegramConstants.typeMessageActionChatDeleteUser)
-       return qsTr("%1 has left the group").arg(TelegramHelper.completeName(telegram.user(action.userId)));
+        if(serviceitem.title.length > 0)
+            return serviceitem.title;
+    }
 
-   if(action.classType === TelegramConstants.typeMessageActionChatEditTitle)
-       return qsTr("Group name changed to «%1»").arg(action.title);
-
-   return "???";
+    return "Unhandled Action: " + serviceitem.classType;
 }

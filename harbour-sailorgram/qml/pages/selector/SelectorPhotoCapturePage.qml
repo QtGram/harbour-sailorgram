@@ -2,19 +2,32 @@ import QtQuick 2.1
 import QtQuick.Window 2.1
 import QtMultimedia 5.0
 import Sailfish.Silica 1.0
+import harbour.sailorgram.TelegramQml 2.0 as Telegram
 
 Dialog
 {
     property int capturedOrientation : -1
     property string capturedFilePath    : ""
 
-    signal actionCompleted(string action, var data)
+    signal actionCompleted(int actiontype, var data)
+    signal actionRequested(int actiontype)
+    signal actionRejected()
 
     id: selectorphotopage
     allowedOrientations: defaultAllowedOrientations
     acceptDestinationAction: PageStackAction.Pop
     canAccept:(capturedFilePath !== "")
-    onAccepted: actionCompleted("photocapture", capturedFilePath)
+
+    onStatusChanged: {
+        if(status !== PageStatus.Active)
+            return;
+
+        actionRequested(Telegram.SendMessageAction.TypeSendMessageUploadPhotoAction);
+    }
+
+    onAccepted: actionCompleted(Telegram.SendMessageAction.TypeSendMessageUploadPhotoAction, capturedFilePath);
+    onRejected: actionRejected();
+
     onOrientationChanged: {
         switch(orientation) {
             case Orientation.Landscape:

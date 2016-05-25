@@ -7,14 +7,11 @@ Page
     property Context context
     property Page dialogPage
 
-    readonly property string fileAction: "file"
-    readonly property string imageAction: "image"
-    readonly property string locationAction: "location"
-    readonly property string photoCaptureAction: "photocapture"
-    readonly property string soundRecordAction: "soundrecord"
-    readonly property string stickerAction: "sticker"
+    readonly property int stickerAction: -1
 
-    signal actionCompleted(string action, var data)
+    signal actionCompleted(int actiontype, var data)
+    signal actionRequested(int actiontype)
+    signal actionRejected()
 
     id: selectormainpage
     allowedOrientations: defaultAllowedOrientations
@@ -23,7 +20,7 @@ Page
         if(status !== PageStatus.Active)
             return;
 
-        context.stickers.telegram = context.telegram; // Preload stickers
+        //context.stickers.telegram = context.telegram; // Preload stickers
     }
 
     PageHeader { id: header; title: qsTr ("Send file") }
@@ -65,8 +62,16 @@ Page
                         var page = pageStack.push(modelData ["page"], { "context": selectormainpage.context,
                                                                         "acceptDestination": dialogPage });
 
-                        page.actionCompleted.connect(function(action, data) {
-                            selectormainpage.actionCompleted(action, data);
+                        page.actionCompleted.connect(function(actiontype, data) {
+                            selectormainpage.actionCompleted(actiontype, data);
+                        });
+
+                        page.actionRequested.connect(function(actiontype) {
+                            selectormainpage.actionRequested(actiontype);
+                        });
+
+                        page.actionRejected.connect(function() {
+                            selectormainpage.actionRejected();
                         });
                     }
 

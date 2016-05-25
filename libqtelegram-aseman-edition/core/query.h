@@ -38,6 +38,8 @@ public:
 
     qint64 msgId() { return m_msgId; }
     void setMsgId(qint64 msgId) { m_msgId = msgId; }
+    qint64 mainMsgId() { return m_mainMsgId; }
+    void setMainMsgId(qint64 mainMsgId) { m_mainMsgId = mainMsgId; }
     qint32 dataLength() { return m_dataLength; }
     qint32 seqNo() { return m_seqNo; }
     void setSeqNo(qint32 seqNo) { m_seqNo = seqNo; }
@@ -53,7 +55,6 @@ public:
     void setData(void *data, qint32 dataLength);
     qint32 decreaseResends();
 
-
 Q_SIGNALS:
     void timeout(Query *q);
 
@@ -62,6 +63,7 @@ protected:
 
 private:
     qint64 m_msgId;
+    qint64 m_mainMsgId;
     qint32 m_dataLength;
     qint32 m_seqNo;
     void *m_data;

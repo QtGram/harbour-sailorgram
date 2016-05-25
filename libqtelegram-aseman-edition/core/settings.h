@@ -46,6 +46,8 @@
 #define ST_DCS_ARRAY "dcs"
 #define ST_HOST "host"
 #define ST_PORT "port"
+#define ST_IPV6 "ipv6"
+#define ST_MEDIA "mediaOnly"
 #define ST_AUTH_KEY_ID "authKeyId"
 #define ST_AUTH_KEY "authKey"
 #define ST_SERVER_SALT "serverSalt"
@@ -82,12 +84,12 @@
 Q_DECLARE_LOGGING_CATEGORY(TG_CORE_SETTINGS)
 
 class DC;
-
+class Telegram;
 class LIBQTELEGRAMSHARED_EXPORT Settings : public QObject
 {
     Q_OBJECT
 public:
-    Settings();
+    Settings(Telegram *telegram);
     ~Settings();
     Settings(const Settings &); // hide copy constructor
     Settings& operator=(const Settings &); // hide asignment
@@ -134,11 +136,11 @@ public:
     bool removeAuthFile();
     void writeCrashFile();
 
-    typedef bool (*ReadFunc)(const QString &configPath, const QString &phone, QVariantMap &map);
-    typedef bool (*WriteFunc)(const QString &configPath, const QString &phone, const QVariantMap &map);
+    typedef bool (*ReadFunc)(Telegram *tg, QVariantMap &map);
+    typedef bool (*WriteFunc)(Telegram *tg, const QVariantMap &map);
 
-    static void setAuthConfigMethods(ReadFunc readFunc, WriteFunc writeFunc);
-    static void clearAuth(const QString &configPath, const QString &phone);
+    void setAuthConfigMethods(ReadFunc readFunc, WriteFunc writeFunc);
+    void clearAuth();
 
 private:
     void readAuthFile();
@@ -176,6 +178,10 @@ private:
     QByteArray mP;
     QList<SecretChat *> mSecretChats;
 
+    Telegram *mTelegram;
+
+    ReadFunc _telegram_settings_read_fnc;
+    WriteFunc _telegram_settings_write_fnc;
 };
 
 #endif // SETTINGS_H

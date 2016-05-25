@@ -38,13 +38,13 @@ Connection::Connection(const QString &host, qint32 port, QObject *parent) :
     mOpLength(0) {
     mBuffer.clear();
 
-    connect(this, SIGNAL(connected()), SLOT(onConnected()));
-    connect(this, SIGNAL(disconnected()), SLOT(onDisconnected()));
-    connect(this, SIGNAL(readyRead()), SLOT(onReadyRead()));
-    connect(this, SIGNAL(error(QAbstractSocket::SocketError)), SLOT(onError(QAbstractSocket::SocketError)));
-    connect(this, SIGNAL(stateChanged(QAbstractSocket::SocketState)), SLOT(onStateChanged(QAbstractSocket::SocketState)));
+    connect(this, &QTcpSocket::connected, this, &Connection::onConnected);
+    connect(this, &QTcpSocket::disconnected, this, &Connection::onDisconnected);
+    connect(this, &QTcpSocket::readyRead, this, &Connection::onReadyRead);
+    connect(this, static_cast<void (QAbstractSocket::*)(QAbstractSocket::SocketError)>(&QAbstractSocket::error), this, &Connection::onError);
+    connect(this, &QTcpSocket::stateChanged, this, &Connection::onStateChanged);
 
-    connect(&mAsserter,SIGNAL(fatalError()), SIGNAL(fatalError()));
+    connect(&mAsserter, &Asserter::fatalError, this, &Connection::fatalError);
 }
 
 Connection::~Connection() {
@@ -112,6 +112,7 @@ QByteArray Connection::readAll() {
 void Connection::connectToServer() {
     Q_ASSERT(!m_host.isEmpty());
     Q_ASSERT(m_port);
+
     connectToHost(m_host, m_port);
 }
 
@@ -162,7 +163,11 @@ void Connection::onError(QAbstractSocket::SocketError error) {
         // From http://doc.qt.io/qt-5/qabstractsocket.html#error
         // "When this signal is emitted, the socket may not be ready for a reconnect attempt."
         // Let's wait for the event loop spin once
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 4, 0))
+        QTimer::singleShot(reconnectionDelay, this, &Connection::connectToServer);
+#else
         QTimer::singleShot(reconnectionDelay, this, SLOT(connectToServer()));
+#endif
     }
 }
 

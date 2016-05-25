@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import harbour.sailorgram.FilesModel 1.0
+import harbour.sailorgram.TelegramQml 2.0 as Telegram
 import "../../models"
 
 Dialog
@@ -35,14 +36,34 @@ Dialog
     readonly property real cellSize: isPortrait ? width / numCellColumnsPortrait : width / numCellColumnsLandscape
     readonly property real maxCellSize: Math.max(Screen.height / numCellColumnsLandscape, Screen.width / numCellColumnsPortrait)
 
-    signal actionCompleted(string action, var data)
+    signal actionCompleted(int actiontype, var data)
+    signal actionRequested(int actiontype)
+    signal actionRejected()
 
     id: selectorimagespage
     allowedOrientations: defaultAllowedOrientations
     acceptDestinationAction: PageStackAction.Pop
     canAccept: selectedFiles.length > 0
-    onAccepted: selectedFiles.forEach(function (element) { actionCompleted("image", element); })
-    onRejected: if (!!rootPage) { rootPage.selectedFiles = selectedFiles; }
+
+    onStatusChanged: {
+        if(status !== PageStatus.Active)
+            return;
+
+        actionRequested(Telegram.SendMessageAction.TypeSendMessageUploadPhotoAction);
+    }
+
+    onAccepted: {
+        selectedFiles.forEach(function (element) {
+            actionCompleted(Telegram.SendMessageAction.TypeSendMessageUploadPhotoAction, element); });
+    }
+
+    onRejected: {
+        if (!!rootPage) {
+            rootPage.selectedFiles = selectedFiles;
+        }
+
+        actionRejected();
+    }
 
     FilesModel {
         id: filesmodel

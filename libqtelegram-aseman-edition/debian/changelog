@@ -1,3 +1,27 @@
+libqtelegram-ae (1.0.0-2aseman1-xenial) xenial; urgency=medium
+
+  * Port to the new code-generator 2.0
+  * All objects and type created dynamicaly and from Telegram Schema
+  * Add C++11 callbacks support
+  * New structure for all objects
+  * Make TelegramAPI and Telegram classes more standard
+  * Add Error signals for all methods
+  * Add auto retry for all queries
+  * Add ability to store last called method arguments
+  * Add protected function support to the Telegram
+  * Improvement on the auth file store method
+  * Convert all object and types functions to the inline functions
+  * Add QObject types alongside normal types classes
+  * Add Documents
+  * Add new type of file uploader/downloader system
+  * Add auto error handlering instead of the assert (prefer error handler and avoid crash)
+  * Updated to the last Telegram API (currently API53). So all of the telegram features are support currently.
+  * It's biggest update of the libqtelegram-ae
+  * Many bugfix and Improvements
+  * Change version to the 1.0.0
+
+ -- Aseman Team <contact@aseman.co>  Tue, 12 Jan 2016 01:30:00 +0330
+ 
 libqtelegram-ae (0.6.1-1aseman1-wily) wily; urgency=medium
 
   * Add auto reconnect support

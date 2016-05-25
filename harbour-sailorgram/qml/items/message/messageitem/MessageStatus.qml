@@ -1,6 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 1.0
+import harbour.sailorgram.TelegramQml 2.0
 import "../../../models"
 import "../../../components"
 import "../../../js/ColorScheme.js" as ColorScheme
@@ -8,37 +8,36 @@ import "../../../js/TelegramHelper.js" as TelegramHelper
 
 ResizableLabel
 {
-    property Context context
-    property Message message
     property color ticksColor: messagestatus.color
     property bool dateFirst: true
     property bool dateOnly: false
+    property Context context
+    property string messageDate
+    property bool messageUnread
+    property bool messageType
+    property bool messageOut
 
     id: messagestatus
-    visible: !TelegramHelper.isServiceMessage(message)
-    color: ColorScheme.colorizeText(message, context)
+    visible: messageType !== Enums.TypeActionMessage
+    color: ColorScheme.colorizeText(messageType, messageOut, context)
+    horizontalAlignment: messageOut ? Text.AlignLeft : Text.AlignRight
     verticalAlignment: Text.AlignVCenter
-    horizontalAlignment: message.out ? Text.AlignLeft : Text.AlignRight
-    textFormat: Text.StyledText
     font.pixelSize: Theme.fontSizeTiny
+    textFormat: Text.StyledText
 
     text: {
-        if(!message)
-            return "";
-
         if(dateOnly)
-            return TelegramHelper.printableDate(message.date);
+            return messageDate;
 
         var status = "";
 
         if(dateFirst)
-            status += TelegramHelper.printableDate(message.date) + " ";
+            status += messageDate + " ";
 
-        if(message.out)
-        {
+        if(messageOut) {
             status += "<font color=\"" + ticksColor + "\">";
 
-            if(!message.unread)
+            if(!messageUnread)
                 status += " <b>✓✓</b> ";
             else
                 status += " <b>✓</b> ";
@@ -47,7 +46,7 @@ ResizableLabel
         }
 
         if(!dateFirst)
-            status += " " + TelegramHelper.printableDate(message.date);
+            status += " " + messageDate;
 
         return status;
     }

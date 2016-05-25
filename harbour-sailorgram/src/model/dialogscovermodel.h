@@ -2,14 +2,13 @@
 #define DIALOGSCOVERMODEL_H
 
 #include <QAbstractListModel>
-#include <telegramdialogsmodel.h>
-#include <objects/types.h>
+#include <telegramdialoglistmodel.h>
 
 class DialogsCoverModel : public QAbstractListModel
 {
     Q_OBJECT
 
-    Q_PROPERTY(TelegramDialogsModel* dialogsModel READ dialogsModel WRITE setDialogsModel NOTIFY dialogsModelChanged)
+    Q_PROPERTY(TelegramDialogListModel* dialogsModel READ dialogsModel WRITE setDialogsModel NOTIFY dialogsModelChanged)
     Q_PROPERTY(int maxDialogs READ maxDialogs WRITE setMaxDialogs NOTIFY maxDialogsChanged)
 
     public:
@@ -17,8 +16,8 @@ class DialogsCoverModel : public QAbstractListModel
 
     public:
         explicit DialogsCoverModel(QObject *parent = 0);
-        TelegramDialogsModel* dialogsModel() const;
-        void setDialogsModel(TelegramDialogsModel* dialogsmodel);
+        TelegramDialogListModel* dialogsModel() const;
+        void setDialogsModel(TelegramDialogListModel* dialoglistmodel);
         int maxDialogs() const;
         void setMaxDialogs(int i);
 
@@ -32,7 +31,7 @@ class DialogsCoverModel : public QAbstractListModel
         void maxDialogsChanged();
 
     private:
-        TelegramDialogsModel* _dialogsmodel;
+        TelegramDialogListModel* _telegramdialoglistmodel;
         int _maxdialogs;
 };
 

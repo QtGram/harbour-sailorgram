@@ -292,13 +292,10 @@ Minimum length is 5 characters.</source>
         <source>Recent chats:</source>
         <translation>Πρόσφατες συνομιλίες: </translation>
     </message>
-    <message numerus="yes">
+    <message>
         <source>Unread
 message(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -443,7 +440,11 @@ message(s)</source>
     <name>DialogItem</name>
     <message>
         <source>You:</source>
-        <translation>Εσύ:</translation>
+        <translation type="unfinished">Εσύ:</translation>
+    </message>
+    <message>
+        <source>Typing...</source>
+        <translation type="unfinished">Πληκτρολογεί...</translation>
     </message>
 </context>
 <context>
@@ -691,19 +692,16 @@ Do a swype to the right to select a contact</source>
 </context>
 <context>
     <name>PeerItem</name>
-    <message numerus="yes">
-        <source>%n member(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
+    <message>
+        <source>Typing...</source>
+        <translation type="unfinished">Πληκτρολογεί...</translation>
     </message>
 </context>
 <context>
     <name>PeerProfile</name>
     <message>
         <source>Group</source>
-        <translation>Ομάδα</translation>
+        <translation type="unfinished">Ομάδα</translation>
     </message>
 </context>
 <context>
@@ -964,10 +962,6 @@ Do a swype to the right to select a contact</source>
         <translation>Εγγραφή</translation>
     </message>
     <message>
-        <source>You have entered a wrong Authorization Code</source>
-        <translation>Έχετε εισάγει λανθασμένο Κωδικό Εξουσιοδότησης</translation>
-    </message>
-    <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
         <translation>Περιμένετε για το SMS που περιέχει τον κωδικό ενεργοποίησης και πατήστε &apos;Εγγραφή&apos;</translation>
     </message>
@@ -978,11 +972,6 @@ Do a swype to the right to select a contact</source>
     <message>
         <source>Last Name (Optional)</source>
         <translation>Επίθετο (προαιρετικό)</translation>
-    </message>
-    <message>
-        <source>Authorization Code</source>
-        <translation> Κωδικός Εξουσιοδότησης
-</translation>
     </message>
     <message>
         <source>Exit</source>
@@ -1019,25 +1008,17 @@ Do a swype to the right to select a contact</source>
         <source>%1 added %2</source>
         <translation>%1 προστέθηκαν %2</translation>
     </message>
+    <message>
+        <source>��%1�� updated group photo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The group was upgraded to a supergroup</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TelegramHelper</name>
-    <message>
-        <source>Recently</source>
-        <translation>Πρόσφατα</translation>
-    </message>
-    <message>
-        <source>Last Month</source>
-        <translation>Προηγούμενο Μήνα</translation>
-    </message>
-    <message>
-        <source>Last Week</source>
-        <translation>Προηγούμενη εβδομάδα</translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <translation>Συνδεδεμένο</translation>
-    </message>
     <message>
         <source>Unknown</source>
         <translation>Άγνωστο</translation>
@@ -1055,24 +1036,12 @@ Do a swype to the right to select a contact</source>
         <translation>Βίντεο</translation>
     </message>
     <message>
-        <source>Unsupported</source>
-        <translation>Μη υποστηριζόμενο</translation>
-    </message>
-    <message>
         <source>Audio</source>
         <translation>Ηχητικό</translation>
     </message>
     <message>
         <source>Photo</source>
         <translation>Φώτο</translation>
-    </message>
-    <message>
-        <source>Last Seen %1</source>
-        <translation>Τελευταία Επίσκεψη %1</translation>
-    </message>
-    <message>
-        <source>Typing...</source>
-        <translation>Πληκτρολογεί...</translation>
     </message>
     <message>
         <source>%1 is typing...</source>
@@ -1096,6 +1065,14 @@ Do a swype to the right to select a contact</source>
             <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
+    </message>
+    <message>
+        <source>Unsupported media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown media</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

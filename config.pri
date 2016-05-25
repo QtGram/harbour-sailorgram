@@ -11,3 +11,7 @@ CONFIG += no_install c++11
     target.path = /usr/share/harbour-sailorgram/lib
     INSTALLS += target
 }
+
+isEqual(TARGET, "qtelegram-ae") {
+    CONFIG += typeobjects
+}

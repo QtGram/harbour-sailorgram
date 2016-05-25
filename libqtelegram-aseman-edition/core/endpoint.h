@@ -26,18 +26,25 @@
 class Endpoint
 {
 public:
-    Endpoint() {}
-    explicit Endpoint(const QString &host, qint32 port) : m_host(host), m_port(port) {}
+    Endpoint() : m_port(0), m_ipv6(false) {}
+    explicit Endpoint(const QString &host, qint32 port) : m_host(host), m_port(port), m_ipv6(false) {}
     virtual ~Endpoint() {}
 
     QString host() const { return m_host; }
     qint32 port() const { return m_port; }
     void setHost(const QString &host) { m_host = host; }
     void setPort(qint32 port) { m_port = port; }
+    bool ipv6() const { return m_ipv6; }
+    void setIpv6(bool ipv6) { m_ipv6 = ipv6; }
 
 protected:
     QString m_host;
     qint32 m_port;
+    bool m_ipv6;
 };
 
 #endif // ENDPOINT_H
+
+
+
+

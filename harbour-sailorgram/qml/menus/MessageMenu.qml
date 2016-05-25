@@ -1,6 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 1.0
+import harbour.sailorgram.TelegramQml 2.0
 import "../models"
 import "../items/message/messageitem/media"
 import "../js/TelegramHelper.js" as TelegramHelper
@@ -14,18 +14,15 @@ ContextMenu
     signal cancelRequested()
 
     property Context context
-    property Message message
+    property var modelItem
     property MessageMediaItem messageMediaItem
 
     MenuItem
     {
         text: qsTr("Add to Telegram")
-        visible: {
-            var media = message.media;
-            var userid = media.userId;
-            return media.classType === TelegramConstants.typeMessageMediaContact &&
-                   userid > 0 && !context.sailorgram.hasContact(userid);
-        }
+        visible: modelItem.messageType === Enums.TypeContactMessage
+
+        /* FIXME:
         onClicked: {
             var media = message.media;
             pageStack.push(Qt.resolvedUrl("../pages/contacts/AddContactPage.qml"), {
@@ -35,29 +32,30 @@ ContextMenu
                                "telephonenumber": media.phoneNumber
                            });
         }
+        */
     }
 
     MenuItem
     {
         text: qsTr("Reply")
-        visible: message.classType !== TelegramConstants.typeMessageService
+        visible: modelItem.messageType !== Enums.TypeActionMessage
         onClicked: replyRequested();
     }
 
     MenuItem
     {
         text: qsTr("Forward")
-        visible: message.classType !== TelegramConstants.typeMessageService
+        visible: modelItem.messageType !== Enums.TypeActionMessage
         onClicked: forwardRequested();
     }
 
     MenuItem
     {
         text: qsTr("Copy")
-        visible: !message.media || (message.media.classType === TelegramConstants.typeMessageMediaEmpty)
+        visible: modelItem.messageType === Enums.TypeTextMessage;
 
         onClicked: {
-            Clipboard.text = message.message;
+            Clipboard.text = modelItem.message;
             popupmessage.show(qsTr("Message copied to clipboard"));
         }
     }
@@ -87,8 +85,8 @@ ContextMenu
     MenuItem
     {
         text: {
-            if(TelegramHelper.isMediaMessage(message) && messageMediaItem && !messageMediaItem.transferInProgress)
-                return messageMediaItem.fileHandler.downloaded ? qsTr("Open") : qsTr("Download");
+            if(messageMediaItem && !messageMediaItem.downloadHandler.downloading)
+                return messageMediaItem.downloadHandler.downloaded ? qsTr("Open") : qsTr("Download");
 
             return "";
         }
@@ -105,7 +103,7 @@ ContextMenu
     MenuItem
     {
         text: qsTr("Cancel")
-        visible: messageMediaItem && !messageMediaItem.isUpload && messageMediaItem.transferInProgress
+        visible: messageMediaItem && messageMediaItem.downloadHandler.downloading
         onClicked: cancelRequested()
     }
 }

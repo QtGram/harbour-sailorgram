@@ -1,67 +1,50 @@
 #include "sailorgramcontactsmodel.h"
+#include <telegram/objects/userobject.h>
 
 SailorgramContactsModel::SailorgramContactsModel(QObject *parent) : QIdentityProxyModel(parent)
 {
-    this->_telegramcontactsmodel = new TelegramContactsModel(this);
-    this->setSourceModel(this->_telegramcontactsmodel);
+    this->_telegramdialoglistmodel = new TelegramDialogListModel(this);
+    this->_telegramdialoglistmodel->setVisibility(TelegramDialogListModel::VisibilityContacts | TelegramDialogListModel::VisibilityEmptyDialogs);
+    this->_telegramdialoglistmodel->setSortFlag((QList<qint32>() << TelegramDialogListModel::SortByName << TelegramDialogListModel::SortByOnline));
+    this->setSourceModel(this->_telegramdialoglistmodel);
 
-    connect(this->_telegramcontactsmodel, SIGNAL(telegramChanged()), this, SIGNAL(telegramChanged()));
-    connect(this->_telegramcontactsmodel, SIGNAL(countChanged()), this, SIGNAL(countChanged()));
-    connect(this->_telegramcontactsmodel, SIGNAL(initializingChanged()), this, SIGNAL(initializingChanged()));
+    connect(this->_telegramdialoglistmodel, &TelegramDialogListModel::engineChanged, this, &SailorgramContactsModel::engineChanged);
+    connect(this->_telegramdialoglistmodel, &TelegramDialogListModel::countChanged, this, &SailorgramContactsModel::countChanged);
 }
 
-TelegramQml *SailorgramContactsModel::telegram() const
+TelegramEngine *SailorgramContactsModel::engine() const
 {
-    return this->_telegramcontactsmodel->telegram();
+    return this->_telegramdialoglistmodel->engine();
 }
 
-void SailorgramContactsModel::setTelegram(TelegramQml *telegram)
+void SailorgramContactsModel::setEngine(TelegramEngine *engine)
 {
-    this->_telegramcontactsmodel->setTelegram(telegram);
+    this->_telegramdialoglistmodel->setEngine(engine);
 }
 
 int SailorgramContactsModel::count() const
 {
-    return this->_telegramcontactsmodel->count();
-}
-
-bool SailorgramContactsModel::initializing() const
-{
-    return this->_telegramcontactsmodel->initializing();
+    return this->_telegramdialoglistmodel->count();
 }
 
 QVariant SailorgramContactsModel::data(const QModelIndex &proxyIndex, int role) const
 {
-    if(!this->_telegramcontactsmodel)
-        return QVariant();
-
     QModelIndex sourceindex = this->mapToSource(proxyIndex);
 
-    if((role == SailorgramContactsModel::UserRole) || (role == SailorgramContactsModel::LetterRole))
+    if(role == SailorgramContactsModel::FirstLetterRole)
     {
-        ContactObject* contact = this->_telegramcontactsmodel->data(sourceindex, TelegramContactsModel::ItemRole).value<ContactObject*>();
-        TelegramQml* telegram = this->_telegramcontactsmodel->telegram();
-        UserObject* user = telegram->user(contact->userId());
-
-        if(role == SailorgramContactsModel::UserRole)
-            return QVariant::fromValue(user);
-
-        // Letter Role
+        UserObject* user = this->_telegramdialoglistmodel->data(sourceindex, TelegramDialogListModel::RoleUserItem).value<UserObject*>();
         return !user->firstName().isEmpty() ? user->firstName().mid(0, 1).toUpper() : user->lastName().mid(0, 1).toUpper();
     }
-    else if(role == SailorgramContactsModel::ContactRole)
-        return this->_telegramcontactsmodel->data(sourceindex, TelegramContactsModel::ItemRole);
 
-    return this->_telegramcontactsmodel->data(sourceindex, role);
+    return this->_telegramdialoglistmodel->data(sourceindex, role);
 }
 
 QHash<int, QByteArray> SailorgramContactsModel::roleNames() const
 {
-    QHash<int, QByteArray> roles;
+    QHash<int, QByteArray> roles = this->_telegramdialoglistmodel->roleNames();
 
-    roles[SailorgramContactsModel::ContactRole] = "contact";
-    roles[SailorgramContactsModel::UserRole] = "user";
-    roles[SailorgramContactsModel::LetterRole] = "firstLetter";
+    roles[SailorgramContactsModel::FirstLetterRole] = "firstLetter";
     return roles;
 }
 

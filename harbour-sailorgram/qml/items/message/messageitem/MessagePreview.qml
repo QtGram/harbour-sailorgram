@@ -1,6 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 1.0
+import harbour.sailorgram.TelegramQml 2.0
 import "../../../models"
 import "../../../components"
 import "../../../items/message/messageitem/media"
@@ -22,6 +22,8 @@ Row
     property Context context
     property Dialog dialog
     property Message message
+    property var messageType
+    property var peer
     property real maxWidth
     property string titlePrefix: ""
     property bool showUser: true
@@ -33,12 +35,11 @@ Row
     width: Math.min(contentWidth, maxWidth)
     height: column.height
 
-    FileHandler
+    DownloadHandler
     {
-        id: filehandler
-        telegram: context.telegram
-        target: messagepreview.message
-        defaultThumbnail: TelegramMedia.defaultThumbnail(message)
+        id: downloadhandler
+        engine: context.engine
+        source: messagepreview.message
     }
 
     Rectangle
@@ -54,13 +55,13 @@ Row
         id: imgmedia
         width: parent.height
         height: parent.height
-        source: filehandler.downloaded ? filehandler.filePath : filehandler.thumbPath
+        source: downloadhandler.downloaded ? downloadhandler.destination : downloadhandler.thumbnail
 
         visible: {
             if(TelegramHelper.isWebPage(message) && !TelegramHelper.webPageHasThumb(message))
                 return false;
 
-            return TelegramHelper.isMediaMessage(message);
+            return messagepreview.messageType !== Enums.TypeTextMessage;
         }
 
         fillMode: {
@@ -80,7 +81,7 @@ Row
         {
             id: lbluser
             width: parent.width - Theme.paddingSmall
-            visible: !TelegramHelper.isServiceMessage(message)
+            visible: messageType !== Enums.TypeActionMessage
             color: messagepreview.textColor
             font.bold: true
             font.pixelSize: Theme.fontSizeTiny
@@ -89,7 +90,7 @@ Row
             verticalAlignment: Text.AlignVCenter
 
             text: {
-                if(!message || TelegramHelper.isServiceMessage(message))
+                if(!message || (messagepreview.messageType === Enums.TypeActionMessage))
                     return "";
 
                 if(!showUser)
@@ -101,7 +102,7 @@ Row
                 if(message.out)
                     return titlePrefix + qsTr("You");
 
-                return titlePrefix + TelegramHelper.completeName(context.telegram.user(message.fromId))
+                return titlePrefix + TelegramHelper.completeName(peer);
             }
         }
 
@@ -126,27 +127,29 @@ Row
                 if(!message)
                     return "";
 
-                if(TelegramHelper.isServiceMessage(message))
-                    return TelegramAction.actionType(context.telegram, dialog, message);
+                if(messagepreview.messageType === Enums.TypeActionMessage)
+                    return "!!!"; //FIXME: TelegramAction.actionType(context.telegram, dialog, message);
 
-                if(TelegramHelper.isSticker(context, message))
+                if(messagepreview.messageType === Enums.TypeStickerMessage)
                     return "Sticker";
 
-                if(TelegramHelper.isMediaMessage(message))
+                /*
+                if(messagepreview.messageType === Enums.TypeDocumentMessage)
+                    return downloa
+
+                if(messagepreview.messageType !== Enums.TypeTextMessage)
                 {
-                    var media = message.media;
                     switch(media.classType)
                     {
                         case TelegramConstants.typeMessageMediaDocument:
-                            return filehandler.fileName;
+                            return downloadhandler.fileName;
                         case TelegramConstants.typeMessageMediaContact:
                             return media.firstName + " " + media.lastName + "\n" + media.phoneNumber;
                     }
                 }
+                */
 
-
-
-                return TelegramHelper.messageContent(context, message);
+                return message.message;
             }
         }
     }

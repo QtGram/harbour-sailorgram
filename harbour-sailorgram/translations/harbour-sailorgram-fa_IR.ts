@@ -292,12 +292,10 @@ Minimum length is 5 characters.</source>
         <source>Recent chats:</source>
         <translation type="unfinished"></translation>
     </message>
-    <message numerus="yes">
+    <message>
         <source>Unread
 message(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-        </translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -442,6 +440,10 @@ message(s)</source>
     <name>DialogItem</name>
     <message>
         <source>You:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Typing...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -687,11 +689,9 @@ Do a swype to the right to select a contact</source>
 </context>
 <context>
     <name>PeerItem</name>
-    <message numerus="yes">
-        <source>%n member(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-        </translation>
+    <message>
+        <source>Typing...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -957,10 +957,6 @@ Do a swype to the right to select a contact</source>
         <translation>نام‌نویسی</translation>
     </message>
     <message>
-        <source>You have entered a wrong Authorization Code</source>
-        <translation>کد تأیید را اشتباه وارد کرده اید</translation>
-    </message>
-    <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
         <translation>منتظر پیامک حاوی کد فعال‌سازی بمانید، و «نام‌نویسی» را بزنید </translation>
     </message>
@@ -971,10 +967,6 @@ Do a swype to the right to select a contact</source>
     <message>
         <source>Last Name (Optional)</source>
         <translation>نام خانوادگی (اختیاری)</translation>
-    </message>
-    <message>
-        <source>Authorization Code</source>
-        <translation>کد تأیید</translation>
     </message>
     <message>
         <source>Exit</source>
@@ -1011,25 +1003,17 @@ Do a swype to the right to select a contact</source>
         <source>%1 added %2</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>��%1�� updated group photo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The group was upgraded to a supergroup</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TelegramHelper</name>
-    <message>
-        <source>Recently</source>
-        <translation>به تازگی</translation>
-    </message>
-    <message>
-        <source>Last Month</source>
-        <translation>ماه پیش</translation>
-    </message>
-    <message>
-        <source>Last Week</source>
-        <translation>هفته‌ی پیش</translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <translation>برخط</translation>
-    </message>
     <message>
         <source>Unknown</source>
         <translation>نامشخص</translation>
@@ -1047,24 +1031,12 @@ Do a swype to the right to select a contact</source>
         <translation>ویدئو</translation>
     </message>
     <message>
-        <source>Unsupported</source>
-        <translation>پشتیبانی‌نشده</translation>
-    </message>
-    <message>
         <source>Audio</source>
         <translation>صوت</translation>
     </message>
     <message>
         <source>Photo</source>
         <translation>عکس</translation>
-    </message>
-    <message>
-        <source>Last Seen %1</source>
-        <translation>آخرین بار %1 دیده شده</translation>
-    </message>
-    <message>
-        <source>Typing...</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>%1 is typing...</source>
@@ -1087,6 +1059,14 @@ Do a swype to the right to select a contact</source>
         <translation type="unfinished">
             <numerusform></numerusform>
         </translation>
+    </message>
+    <message>
+        <source>Unsupported media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown media</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

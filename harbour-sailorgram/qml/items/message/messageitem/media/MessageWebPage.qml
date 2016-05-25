@@ -7,12 +7,15 @@ import "../../../../js/TelegramConstants.js" as TelegramConstants
 MessageMediaItem
 {
     readonly property bool hasPureImage: {
-        var webpage = message.media.webpage;
+        if(!messageModelItem)
+            return false;
+
+        var webpage = messageModelItem.mediaItem.webpage;
         return (webpage.title.length <= 0) && (webpage.description.length <= 0);
     }
 
     readonly property real aspectRatio: {
-        var imagesize = fileHandler.imageSize;
+        var imagesize = downloadHandler.imageSize;
         var w = imagesize.width;
         var h = imagesize.height;
 
@@ -26,7 +29,7 @@ MessageMediaItem
 
     contentWidth: {
         if(hasPureImage)
-            return Math.max(mtctextcontent.calculatedWidth, fileHandler.imageSize.width);
+            return Math.max(mtctextcontent.calculatedWidth, downloadHandler.imageSize.width);
 
         return Math.max(mtctextcontent.calculatedWidth, mtctitle.calculatedWidth, mtcdescription.calculatedWidth);
     }
@@ -38,7 +41,10 @@ MessageMediaItem
         return mtctextcontent.calculatedHeight + mtctitle.calculatedHeight + mtcdescription.calculatedHeight;
     }
 
-    Component.onCompleted: if(context.autoloadimages && !fileHandler.downloaded) fileHandler.download()
+    Component.onCompleted: {
+        if(context.autoloadimages && !downloadHandler.downloaded)
+            downloadHandler.download();
+    }
 
     MessageTextContent
     {
@@ -49,10 +55,10 @@ MessageMediaItem
         font.pixelSize: Theme.fontSizeSmall
         wrapMode: Text.NoWrap
         elide: Text.ElideRight
-        color: ColorScheme.colorizeText(message, context)
-        linkColor: ColorScheme.colorizeLink(message, context)
+        color: ColorScheme.colorizeTextItem(messageModelItem, context)
+        linkColor: ColorScheme.colorizeLink(messageModelItem, context)
         emojiPath: context.sailorgram.emojiPath
-        rawText: message.media.webpage.url
+        rawText: messageModelItem ? messageModelItem.mediaItem.webpage.url : ""
     }
 
     Item
@@ -85,10 +91,10 @@ MessageMediaItem
                 wrapMode: Text.Wrap
                 maximumLineCount: 2
                 elide: Text.ElideRight
-                color: ColorScheme.colorizeText(message, context)
-                linkColor: ColorScheme.colorizeLink(message, context)
+                color: ColorScheme.colorizeTextItem(messageModelItem, context)
+                linkColor: ColorScheme.colorizeLink(messageModelItem, context)
                 emojiPath: context.sailorgram.emojiPath
-                rawText: message.media.webpage.title
+                rawText: messageModelItem ? messageModelItem.mediaItem.webpage.title : ""
             }
 
             MessageTextContent
@@ -101,10 +107,10 @@ MessageMediaItem
                 wrapMode: Text.Wrap
                 maximumLineCount: 2
                 elide: Text.ElideRight
-                color: ColorScheme.colorizeText(message, context)
-                linkColor: ColorScheme.colorizeLink(message, context)
+                color: ColorScheme.colorizeTextItem(messageModelItem, context)
+                linkColor: ColorScheme.colorizeLink(messageModelItem, context)
                 emojiPath: context.sailorgram.emojiPath
-                rawText: message.media.webpage.description
+                rawText: messageModelItem ? messageModelItem.mediaItem.webpage.description : ""
             }
         }
 
@@ -113,9 +119,9 @@ MessageMediaItem
             id: webpagethumb
             height: parent.height
             anchors { right: parent.right; top: parent.top; bottom: parent.bottom; rightMargin: Theme.paddingSmall }
-            visible: message.media.webpage.photo.classType !== TelegramConstants.typePhotoEmpty
+            visible: webpagethumb.status === Image.Ready
             fillMode: Image.PreserveAspectCrop
-            blurRadius: messagewebpage.fileHandler.downloaded && !messagewebpage.transferInProgress ? 0.0 : 32.0
+            blurRadius: messagewebpage.downloadHandler.downloaded && !messagewebpage.downloadHandler.downloading ? 0.0 : 32.0
 
             width: {
                 if(!visible)
@@ -128,10 +134,10 @@ MessageMediaItem
             }
 
             source: {
-                if(!messagewebpage.fileHandler.downloaded || messagewebpage.transferInProgress)
-                    return messagewebpage.fileHandler.thumbPath;
+                if(!messagewebpage.downloadHandler.downloaded || messagewebpage.downloadHandler.downloading)
+                    return messagewebpage.downloadHandler.thumbnail;
 
-                return messagewebpage.fileHandler.filePath;
+                return messagewebpage.downloadHandler.destination;
             }
         }
     }

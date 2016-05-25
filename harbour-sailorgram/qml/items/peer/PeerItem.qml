@@ -1,15 +1,12 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 1.0
 import "../../models"
 import "../../js/TelegramHelper.js" as TelegramHelper
 
 Item
 {
     property Context context
-    property var dialog
-    property Chat chat
-    property User user
+    property var dialogModelItem
     property bool showUsername: false
 
     id: peeritem
@@ -21,9 +18,10 @@ Item
         width: peeritem.height - Theme.paddingSmall
         height: peeritem.height - Theme.paddingSmall
         context: peeritem.context
-        dialog: peeritem.dialog
-        chat: peeritem.chat
-        user: peeritem.user
+        peer: dialogModelItem.peer
+        fallbackTitle: dialogModelItem.title
+        isChat: dialogModelItem.chat !== null
+        isSecretChat: dialogModelItem.isSecretChat
     }
 
     Column
@@ -35,7 +33,7 @@ Item
             id: lbltitle
             width: parent.width
             elide: Text.ElideRight
-            text: TelegramHelper.isChat(dialog) ? chat.title : TelegramHelper.completeName(user)
+            text: dialogModelItem.title
             horizontalAlignment: Qt.AlignRight
         }
 
@@ -44,8 +42,8 @@ Item
             id: lblusername
             width: parent.width
             elide: Text.ElideRight
-            visible: !TelegramHelper.isChat(dialog) && showUsername
-            text: user ? "@" + user.username : ""
+            visible: !dialogModelItem.chat && showUsername
+            text: dialogModelItem.user ? "@" + dialogModelItem.user.username : ""
             font.pixelSize: Theme.fontSizeExtraSmall
             color: Theme.secondaryHighlightColor
             horizontalAlignment: Qt.AlignRight
@@ -60,13 +58,14 @@ Item
             horizontalAlignment: Qt.AlignRight
 
             text: {
-                if(dialog.typingUsers.length > 0)
-                    return TelegramHelper.typingUsers(context, dialog);
+                if(dialogModelItem.typing.length > 0) {
+                    if(!dialogModelItem.chat)
+                        return qsTr("Typing...");
 
-                if(TelegramHelper.isChat(dialog))
-                    return qsTr("%n member(s)", "", chat.participantsCount);
+                    return TelegramHelper.typingUsers(context, dialogModelItem.typing);
+                }
 
-                return TelegramHelper.userStatus(user);
+                return dialogModelItem.statusText;
             }
         }
     }

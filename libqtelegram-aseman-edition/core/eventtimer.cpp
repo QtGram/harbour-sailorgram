@@ -21,7 +21,11 @@ EventTimer::EventTimer(qint64 msgId, qint32 timeout, QObject *parent) :
 
     this->setSingleShot(true);
     this->setInterval(timeout);
-    connect(this, SIGNAL(timeout()), this, SLOT(onTimeout()));
+    connect(this, &QTimer::timeout, this, &EventTimer::onTimeout);
+}
+
+EventTimer::~EventTimer()
+{
 }
 
 void EventTimer::onTimeout() {

@@ -1,16 +1,13 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 1.0
+import harbour.sailorgram.TelegramQml 2.0 as Telegram
 import "../../../../components/mediaplayer/mediacomponents"
-import "../../../../js/TelegramHelper.js" as TelegramHelper
 
 MessageMediaItem
 {
-    property FileLocation fileLocation: context.telegram.locationOfVideo(message.media.video)
-
     property real aspectRatio: {
-        var w = fileHandler.imageSize.width;
-        var h = fileHandler.imageSize.height;
+        var w = downloadHandler.imageSize.width;
+        var h = downloadHandler.imageSize.height;
 
         if(!w || !h)
             return 0;
@@ -21,7 +18,7 @@ MessageMediaItem
     MediaPlayerTimings { id: mediaplayertimings }
 
     id: messagevideo
-    contentWidth: fileHandler.imageSize.width
+    contentWidth: downloadHandler.imageSize.width
     contentHeight: thumb.height
 
     Image
@@ -37,8 +34,8 @@ MessageMediaItem
         anchors.centerIn: parent
         width: Math.min(parent.width, parent.height) * 0.5
         height: width
-        visible: messagevideo.transferInProgress
-        value: messagevideo.fileHandler.progressPercent / 100.0
+        visible: downloadHandler.downloading
+        //FIXME: value: messagevideo.downloadHandler.progressPercent / 100.0
         z: 2
     }
 
@@ -48,6 +45,6 @@ MessageMediaItem
         width: parent.width
         height: aspectRatio ? (width / aspectRatio) : 0
         cache: false
-        source: fileHandler.thumbPath
+        source: downloadHandler.thumbnail
     }
 }

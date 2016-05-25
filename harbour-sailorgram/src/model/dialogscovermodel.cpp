@@ -1,29 +1,29 @@
 #include "dialogscovermodel.h"
 
-DialogsCoverModel::DialogsCoverModel(QObject *parent) : QAbstractListModel(parent), _dialogsmodel(NULL), _maxdialogs(0)
+DialogsCoverModel::DialogsCoverModel(QObject *parent) : QAbstractListModel(parent), _telegramdialoglistmodel(NULL), _maxdialogs(0)
 {
 
 }
 
-TelegramDialogsModel *DialogsCoverModel::dialogsModel() const
+TelegramDialogListModel *DialogsCoverModel::dialogsModel() const
 {
-    return this->_dialogsmodel;
+    return this->_telegramdialoglistmodel;
 }
 
-void DialogsCoverModel::setDialogsModel(TelegramDialogsModel *dialogsmodel)
+void DialogsCoverModel::setDialogsModel(TelegramDialogListModel *dialoglistmodel)
 {
-    if(this->_dialogsmodel == dialogsmodel)
+    if(this->_telegramdialoglistmodel == dialoglistmodel)
         return;
 
     this->beginResetModel();
 
-    if(this->_dialogsmodel)
-        disconnect(this->_dialogsmodel, SIGNAL(countChanged()), this, NULL);
+    if(this->_telegramdialoglistmodel)
+        disconnect(this->_telegramdialoglistmodel, &TelegramDialogListModel::countChanged, this, NULL);
 
-    this->_dialogsmodel = dialogsmodel;
+    this->_telegramdialoglistmodel = dialoglistmodel;
     this->endResetModel();
 
-    connect(this->_dialogsmodel, SIGNAL(countChanged()), this, SIGNAL(layoutChanged()));
+    connect(this->_telegramdialoglistmodel, SIGNAL(countChanged()), this, SIGNAL(layoutChanged())); // Old Syntax, for now
 }
 
 int DialogsCoverModel::maxDialogs() const
@@ -43,23 +43,25 @@ void DialogsCoverModel::setMaxDialogs(int i)
 QHash<int, QByteArray> DialogsCoverModel::roleNames() const
 {
     QHash<int, QByteArray> roles;
-    roles[DialogsCoverModel::ItemRole] = "item";
+
+    if(this->_telegramdialoglistmodel)
+        roles = this->_telegramdialoglistmodel->roleNames();
 
     return roles;
 }
 
 QVariant DialogsCoverModel::data(const QModelIndex &index, int role) const
 {
-    if(this->_dialogsmodel && (role == DialogsCoverModel::ItemRole))
-        return QVariant::fromValue(this->_dialogsmodel->at(index.row()));
+    if(!this->_telegramdialoglistmodel)
+        return QVariant();
 
-    return QVariant();
+    return this->_telegramdialoglistmodel->data(index, role);
 }
 
 int DialogsCoverModel::rowCount(const QModelIndex& parent) const
 {
-    if(!this->_dialogsmodel)
+    if(!this->_telegramdialoglistmodel)
         return 0;
 
-    return qMin(this->_dialogsmodel->rowCount(parent), this->_maxdialogs);
+    return qMin(this->_telegramdialoglistmodel->rowCount(parent), this->_maxdialogs);
 }

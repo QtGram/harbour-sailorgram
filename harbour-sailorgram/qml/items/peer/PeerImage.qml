@@ -1,45 +1,27 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 1.0
 import "../../components"
 import "../../models"
 import "../../js/TelegramHelper.js" as TelegramHelper
 
 RoundedImage
 {
-    property bool showType: true
     property Context context
-    property Dialog dialog
-    property Chat chat
-    property User user
-
-    FileHandler
-    {
-        id: filehandler
-        telegram: context.telegram
-
-        target: {
-            if(user)
-                return user.photo.photoSmall;
-
-            if(chat)
-                return chat.photo.photoSmall;
-
-            return null;
-        }
-
-        onTargetTypeChanged: {
-            if(downloaded)
-                return;
-
-            download();
-        }
-    }
+    property var peer
+    property string fallbackTitle
+    property bool showType: true
+    property bool isChat: false
+    property bool isBroadcast: false
+    property bool isSecretChat: false
 
     id: imgpeer
-    asynchronous: true
-    fillMode: Image.PreserveAspectFit
-    source: filehandler.filePath
+
+    imageHandler {
+        engine: context.engine
+        source: imgpeer.peer
+        fillMode: Image.PreserveAspectFit
+        asynchronous: true
+    }
 
     Rectangle
     {
@@ -47,13 +29,13 @@ RoundedImage
         anchors.fill: parent
         color: Theme.secondaryHighlightColor
         radius: imgpeer.width * 0.5
-        visible: !filehandler.downloaded || (imgpeer.status === Image.Error)
+        visible: !imgpeer.imageHandler.thumbnailDownloaded || (imgpeer.status === Image.Error)
 
         Label {
             anchors.centerIn: parent
             font.bold: true
             font.pixelSize: parent.height * 0.6
-            text: TelegramHelper.fallbackText(imgpeer.dialog, TelegramHelper.isChat(imgpeer.dialog) ? imgpeer.chat : imgpeer.user)
+            text: TelegramHelper.fallbackText(fallbackTitle)
         }
     }
 
@@ -63,16 +45,18 @@ RoundedImage
         asynchronous: true
         anchors { bottom: parent.bottom; right: parent.right }
         fillMode: Image.PreserveAspectFit
-        visible: showType && dialog && (dialog.encrypted || TelegramHelper.isChat(dialog))
+        width: Theme.iconSizeSmall
+        height: Theme.iconSizeSmall
+        visible: showType && (isChat || isBroadcast || isSecretChat)
 
         source: {
-            if(!dialog)
-                return "";
-
-            if(dialog.encrypted)
+            if(isSecretChat)
                 return "image://theme/icon-s-secure"
 
-            if(TelegramHelper.isChat(dialog))
+            if(isBroadcast)
+                return "qrc:///res/broadcast.png";
+
+            if(isChat)
                 return "image://theme/icon-s-chat";
 
             return "";

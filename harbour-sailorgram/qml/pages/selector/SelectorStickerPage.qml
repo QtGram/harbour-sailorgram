@@ -2,7 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import QtLocation 5.0
 import QtPositioning 5.0
-import harbour.sailorgram.TelegramQml 1.0 as TelegramQml
+import harbour.sailorgram.TelegramQml 2.0 as Telegram
 import harbour.sailorgram.SailorGram 1.0
 import "../../models"
 import "../../items/sticker"
@@ -12,16 +12,18 @@ Dialog
     property Context context
     property var selectedSticker: null
 
-    signal actionCompleted(string action, var data)
+    signal actionCompleted(int actiontype, var data)
+    signal actionRequested(int actiontype)
+    signal actionRejected()
 
     id: dlgselectorsticker
     allowedOrientations: defaultAllowedOrientations
     acceptDestinationAction: PageStackAction.Pop
     canAccept: selectedSticker !== null
-    onAccepted: actionCompleted("sticker", selectedSticker)
+    onAccepted: actionCompleted(-1, selectedSticker)
 
     onStatusChanged: {
-        if(dlgselectorsticker.status !== PageStatus.Active)
+        if(status !== PageStatus.Active)
             return;
 
         context.stickers.telegram = context.telegram;

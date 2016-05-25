@@ -292,13 +292,10 @@ Vähimmäispituus on 5 merkkiä.</translation>
         <source>Recent chats:</source>
         <translation>Viimeisimmät:</translation>
     </message>
-    <message numerus="yes">
+    <message>
         <source>Unread
 message(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -443,7 +440,11 @@ message(s)</source>
     <name>DialogItem</name>
     <message>
         <source>You:</source>
-        <translation>Sinä:</translation>
+        <translation type="unfinished">Sinä:</translation>
+    </message>
+    <message>
+        <source>Typing...</source>
+        <translation type="unfinished">Kirjoittaa...</translation>
     </message>
 </context>
 <context>
@@ -690,19 +691,16 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
 </context>
 <context>
     <name>PeerItem</name>
-    <message numerus="yes">
-        <source>%n member(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
+    <message>
+        <source>Typing...</source>
+        <translation type="unfinished">Kirjoittaa...</translation>
     </message>
 </context>
 <context>
     <name>PeerProfile</name>
     <message>
         <source>Group</source>
-        <translation>Ryhmä</translation>
+        <translation type="unfinished">Ryhmä</translation>
     </message>
 </context>
 <context>
@@ -963,10 +961,6 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
         <translation>Rekisteröidy</translation>
     </message>
     <message>
-        <source>You have entered a wrong Authorization Code</source>
-        <translation>Olet antanut väärän pääsykoodin.</translation>
-    </message>
-    <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
         <translation>Odota tekstiviestiä, jossa on aktivointikoodi. Valitse sitten &quot;Kirjaudu&quot;.</translation>
     </message>
@@ -977,10 +971,6 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     <message>
         <source>Last Name (Optional)</source>
         <translation>Sukunimi (vapaaehtoinen)</translation>
-    </message>
-    <message>
-        <source>Authorization Code</source>
-        <translation>Pääsykoodi</translation>
     </message>
     <message>
         <source>Exit</source>
@@ -1017,25 +1007,17 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
         <source>%1 added %2</source>
         <translation>%1 lisäsi henkilön %2</translation>
     </message>
+    <message>
+        <source>��%1�� updated group photo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The group was upgraded to a supergroup</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TelegramHelper</name>
-    <message>
-        <source>Recently</source>
-        <translation>Äsken</translation>
-    </message>
-    <message>
-        <source>Last Month</source>
-        <translation>Viime kuussa</translation>
-    </message>
-    <message>
-        <source>Last Week</source>
-        <translation>Viime viikolla</translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <translation>Paikalla</translation>
-    </message>
     <message>
         <source>Unknown</source>
         <translation>Tuntematon</translation>
@@ -1053,24 +1035,12 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
         <translation>Video</translation>
     </message>
     <message>
-        <source>Unsupported</source>
-        <translation>Tiedostomuoto ei ole tuettu</translation>
-    </message>
-    <message>
         <source>Audio</source>
         <translation>Äänitiedosto</translation>
     </message>
     <message>
         <source>Photo</source>
         <translation>Kuva</translation>
-    </message>
-    <message>
-        <source>Last Seen %1</source>
-        <translation>Viimeksi paikalla: %1</translation>
-    </message>
-    <message>
-        <source>Typing...</source>
-        <translation>Kirjoittaa...</translation>
     </message>
     <message>
         <source>%1 is typing...</source>
@@ -1094,6 +1064,14 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
             <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
+    </message>
+    <message>
+        <source>Unsupported media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown media</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

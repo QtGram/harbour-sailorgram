@@ -4,12 +4,11 @@ import "../../models"
 
 Dialog
 {
-    property alias authError: tfcode.errorHighlight
     property Context context
 
     id: dlgsignup
     allowedOrientations: defaultAllowedOrientations
-    canAccept: (tffirstname.text.length > 0) && (tfcode.text.length > 0)
+    canAccept: tffirstname.text.length > 0
 
     acceptDestination: Component {
         ConnectionPage {
@@ -17,7 +16,7 @@ Dialog
         }
     }
 
-    onAccepted: context.telegram.authSignUp(tfcode.text, tffirstname.text, tfflastname.text)
+    onAccepted: context.authenticate.signUp(tffirstname.text, tfflastname.text)
 
     SilicaFlickable
     {
@@ -55,7 +54,7 @@ Dialog
             Label
             {
                 id: lblinfo
-                text: authError ? qsTr("You have entered a wrong Authorization Code") : qsTr("Wait for the SMS containing the activation code and press 'Sign Up'")
+                text: qsTr("Wait for the SMS containing the activation code and press 'Sign Up'")
                 font.pixelSize: Theme.fontSizeSmall
                 anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
                 horizontalAlignment: Text.AlignHCenter
@@ -74,19 +73,6 @@ Dialog
                 id: tfflastname
                 anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
                 placeholderText: qsTr("Last Name (Optional)")
-            }
-
-            TextField
-            {
-                id: tfcode
-                anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
-                placeholderText: qsTr("Authorization Code")
-                inputMethodHints: Qt.ImhNoAutoUppercase | Qt.ImhNoPredictiveText | Qt.ImhDigitsOnly
-
-                onTextChanged: {
-                    if(authError)
-                        authError = false; /* Reset Error State */
-                }
             }
         }
     }

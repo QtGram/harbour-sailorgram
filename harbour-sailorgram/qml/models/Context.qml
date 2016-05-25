@@ -3,9 +3,10 @@ import Sailfish.Silica 1.0
 import harbour.sailorgram.DBus 1.0
 import harbour.sailorgram.SailorGram 1.0
 import harbour.sailorgram.Model 1.0
-import harbour.sailorgram.TelegramQml 1.0
+import harbour.sailorgram.TelegramQml 2.0
 import "../js/Settings.js" as Settings
 import "../js/TelegramHelper.js" as TelegramHelper
+import "../js/TelegramAction.js" as TelegramAction
 import "../js/TextElaborator.js" as TextElaborator
 
 QtObject
@@ -62,47 +63,43 @@ QtObject
     property ErrorsModel errors: ErrorsModel { }
     property StickersModel stickers: StickersModel { }
     property SailorgramContactsModel contacts: SailorgramContactsModel { }
-    property DialogsModel dialogs: DialogsModel { }
 
-    property SailorGram sailorgram: SailorGram {
-        telegram: context.telegram
+    property DialogListModel dialogs: DialogListModel {
+        engine: context.engine
 
-        onConnectedChanged: {
-            if(!context.sailorgram.connected)
-                return;
+        visibility: DialogListModel.VisibilityUsers |
+                    DialogListModel.VisibilityChats |
+                    DialogListModel.VisibilityChannels |
+                    DialogListModel.VisibilitySecretChats |
+                    DialogListModel.VisibilityBots
+    }
 
-            // Update dialogs
-            context.dialogs.recheck();
+    property NotificationHandler notifications: NotificationHandler {
+        engine: context.engine
+
+        onNewMessage: {
+            context.sailorgram.notify(title, message, peerKey);
         }
     }
 
-    property Telegram telegram: Telegram {
-        defaultHostAddress: "149.154.167.50"
-        defaultHostDcId: 2
-        defaultHostPort: 443
-        appId: 27782
-        appHash: "5ce096f34c8afab871edce728e6d64c9"
-        configPath: sailorgram.configPath
-        publicKeyFile: sailorgram.publicKey
-        globalMute: false
-        autoCleanUpMessages: true
-        autoAcceptEncrypted: true
+    property SailorGram sailorgram: SailorGram {
+        engine: context.engine
+    }
 
-        onErrorSignal: errors.addError(errorCode, functionName, errorText)
+    property Engine engine: Engine {
+        configDirectory: sailorgram.configPath
+        logLevel: Engine.LogLevelClean
 
-        onDocumentStickerRecieved: {
-            if(document !== context.currentSticker)
-                return
-
-            context.telegram.installStickerSet(set.shortName);
-            context.currentSticker = null;
+        app: App {
+            appId: 27782
+            appHash: "5ce096f34c8afab871edce728e6d64c9"
         }
 
-        onIncomingMessage: {
-            var elaboratedtext = TextElaborator.elaborateNotify(TelegramHelper.messageContent(context, msg), sailorgram.emojiPath, Theme.fontSizeSmall);
-            var user = context.telegram.user(msg.fromId);
-
-            sailorgram.notify(msg, TelegramHelper.completeName(user), elaboratedtext);
+        host: Host {
+            hostAddress: "149.154.167.50"
+            hostPort: 443
+            hostDcId: 2
+            publicKey: sailorgram.publicKey
         }
 
         onPhoneNumberChanged: {
@@ -111,46 +108,28 @@ QtObject
             if(phonenumber !== false)
                 return;
 
-            Settings.set("phonenumber", context.telegram.phoneNumber); // Save Phone Number for fast login
+            Settings.set("phonenumber", context.engine.phoneNumber); // Save Phone Number for fast login
         }
+    }
 
-        onAuthSignInErrorChanged: {
-            if(!context.telegram.authSignInError)
-                return;
+    property Authenticate authenticate: Authenticate {
+        engine: context.engine
 
-            pageStack.completeAnimation();
-            pageStack.replace(Qt.resolvedUrl("../pages/login/AuthorizationPage.qml"), { "context": context, "authError": context.telegram.authSignInError });
-        }
-
-        onAuthSignUpErrorChanged: {
-            if(!context.telegram.authSignUpError)
-                return;
-
-            pageStack.completeAnimation();
-            pageStack.replace(Qt.resolvedUrl("../pages/login/SignUpPage.qml"), { "context": context, "authError": context.telegram.authSignUpError });
-
-        }
-
-        onAuthLoggedInChanged: {
-            if(!context.telegram.authLoggedIn)
-                return;
-
-            context.telegram.online = true;
-
-            pageStack.completeAnimation();
-            pageStack.replace(Qt.resolvedUrl("../pages/dialogs/DialogsPage.qml"), { "context": context });
-        }
-
-        onAuthCodeRequested: {
-            if(pageStack.currentPage.authorizationPage === true)
-                return;
-
+        onStateChanged: {
             pageStack.completeAnimation();
 
-            if(context.telegram.authPhoneRegistered)
-                pageStack.replace(Qt.resolvedUrl("../pages/login/AuthorizationPage.qml"), { "context": context, "authError": context.telegram.authSignInError });
-            else
-                pageStack.replace(Qt.resolvedUrl("../pages/login/SignUpPage.qml"), { "context": context, "authError": context.telegram.authSignUpError });
+            if(state === Authenticate.AuthCodeRquested)
+                pageStack.replace(Qt.resolvedUrl("../pages/login/AuthorizationPage.qml"), { "context": context /* FIXME: , "authError": context.telegram.authSignInError */ });
+            else if(state === Authenticate.AuthSignUpNeeded)
+                pageStack.replace(Qt.resolvedUrl("../pages/login/SignUpPage.qml"), { "context": context /* FIXME: , "authError": context.telegram.authSignUpError */ });
+            else if(state === Authenticate.AuthLoggedIn)
+                pageStack.replace(Qt.resolvedUrl("../pages/dialogs/DialogsPage.qml"), { "context": context });
+            else if(state === Authenticate.AuthSignUpNeeded)
+                pageStack.replace(Qt.resolvedUrl("../pages/login/SignUpPage.qml"), { "context": context /* FIXME: , "authError": context.telegram.authSignUpError */ });
+            else if(state === Authenticate.AuthCheckingPhoneError)
+                console.log("NOT IMPLEMENTED: Authenticate.AuthCheckingPhoneError")
+            else if(state === Authenticate.AuthCodeRequestingError)
+                pageStack.replace(Qt.resolvedUrl("../pages/login/AuthorizationPage.qml"), { "context": context, "authError": "ERROR" /* FIXME: Better Error Message */ });
         }
     }
 }

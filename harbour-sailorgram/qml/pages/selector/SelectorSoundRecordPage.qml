@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import harbour.sailorgram.SailorGram 1.0
 import harbour.sailorgram.Selector 1.0
+import harbour.sailorgram.TelegramQml 2.0 as Telegram
 import "../../models"
 
 Dialog
@@ -10,13 +11,24 @@ Dialog
     property bool started  : false
     property bool finished : false
 
-    signal actionCompleted(string action, var data)
+    signal actionCompleted(int actiontype, var data)
+    signal actionRequested(int actiontype)
+    signal actionRejected()
 
     id: selectorsoundrecordpage
     allowedOrientations: defaultAllowedOrientations
     acceptDestinationAction: PageStackAction.Pop
     canAccept: finished
-    onAccepted: actionCompleted("soundrecord", context.sailorgram.voiceRecordPath)
+
+    onStatusChanged: {
+        if(status !== PageStatus.Active)
+            return;
+
+        actionRequested(Telegram.SendMessageAction.TypeSendMessageUploadAudioAction);
+    }
+
+    onAccepted: actionCompleted(SendMessageAction.TypeSendMessageRecordAudioAction, context.sailorgram.voiceRecordPath)
+    onRejected: actionRejected();
 
     AudioRecorder { id: recorder }
     DialogHeader { id: header }

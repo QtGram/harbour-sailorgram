@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import QtLocation 5.0
 import QtPositioning 5.0
+import harbour.sailorgram.TelegramQml 2.0 as Telegram
 import "../../models"
 
 Dialog
@@ -11,13 +12,24 @@ Dialog
     property real latitude  : 0.0
     property real longitude : 0.0
 
-    signal actionCompleted(string action, var data)
+    signal actionCompleted(int actiontype, var data)
+    signal actionRequested(int actiontype)
+    signal actionRejected()
 
     id: selectorlocationpage
     allowedOrientations: defaultAllowedOrientations
     acceptDestinationAction: PageStackAction.Pop
     canAccept: !searching
-    onAccepted: actionCompleted("location", { "latitude":  selectorlocationpage.latitude, "longitude": selectorlocationpage.longitude });
+
+    onStatusChanged: {
+        if(status !== PageStatus.Active)
+            return;
+
+        actionRequested(Telegram.SendMessageAction.TypeSendMessageGeoLocationAction);
+    }
+
+    onAccepted: actionCompleted(SendMessageAction.TypeSendMessageGeoLocationAction, { "latitude":  selectorlocationpage.latitude, "longitude": selectorlocationpage.longitude });
+    onRejected: actionRejected();
 
     DialogHeader { id: header }
 

@@ -48,7 +48,8 @@ public:
         m_authKeyId(0),
         m_expires(0),
         m_serverSalt(0),
-        mTimeDifference(0) {}
+        mTimeDifference(0),
+        m_mediaOnly(false) {}
 
     inline qint32 id() { return m_id; }
     inline void setState(DcState dcState) { m_state = dcState; }
@@ -62,6 +63,8 @@ public:
     inline void setTimeDifference(qint32 timeDifference) { mTimeDifference = timeDifference; }
     inline qint32 expires() { return m_expires; }
     inline void setExpires(qint32 expires) { m_expires = expires; }
+    inline bool mediaOnly() const { return m_mediaOnly; }
+    inline void setMediaOnly(bool mediaOnly) { m_mediaOnly = mediaOnly; }
 
 private:
 
@@ -76,6 +79,11 @@ private:
     qint64 m_serverSalt;
     qint32 mTimeDifference; // difference between client and server time
 
+    bool m_mediaOnly;
 };
 
 #endif // NETWORKMGR_H
+
+
+
+

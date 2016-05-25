@@ -37,16 +37,11 @@ public:
 
 Q_SIGNALS:
     void fatalError();
-    void updatesTooLong();
-    void updateShortMessage(qint32 id, qint32 userId, const QString &message, qint32 pts, qint32 pts_count, qint32 date, qint32 fwd_from_id, qint32 fwd_date, qint32 reply_to_msg_id, bool unread, bool out);
-    void updateShortChatMessage(qint32 id, qint32 fromId, qint32 chatId, const QString &message, qint32 pts, qint32 pts_count, qint32 date, qint32 fwd_from_id, qint32 fwd_date, qint32 reply_to_msg_id, bool unread, bool out);
-    void updateShort(const Update &update, qint32 date);
-    void updatesCombined(const QList<Update> &updates, const QList<User> &users, const QList<Chat> &chats, qint32 date, qint32 seqStart, qint32 seq);
-    void updates(const QList<Update> &udts, const QList<User> &users, const QList<Chat> &chats, qint32 date, qint32 seq);
+    void updates(const UpdatesType &update);
 
 protected:
     // default error method. Overwritten in inherited classes
-    virtual void onError(Query *q, qint32 errorCode, const QString &errorText) = 0;
+    virtual void onError(Query *q, qint32 errorCode, const QString &errorText, const QVariant &attachedData, bool &accepted) = 0;
 
 private:
     void connectUpdatesSignals(Session *session);

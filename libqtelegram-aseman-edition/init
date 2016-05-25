@@ -1,0 +1,28 @@
+#! /bin/sh
+# Set the home if not already set.
+if [ "${ASEMAN_SRC_PATH}" = "" ]; then
+    ASEMAN_SRC_PATH="`echo $0 | grep ^/`"
+    if [ "$ASEMAN_SRC_PATH" = "" ]; then
+	ASEMAN_SRC_PATH="$PWD"/"$0"
+    fi
+    cd `dirname $ASEMAN_SRC_PATH`
+    ASEMAN_SRC_PATH=$PWD
+    cd -
+fi
+
+cd $ASEMAN_SRC_PATH
+
+git submodule update --init libqtelegram-code-generator
+
+BUILD_DIR="build.init"
+
+mkdir "$BUILD_DIR"
+cd "$BUILD_DIR"
+
+qmake -r ../libqtelegram-code-generator
+make
+
+./libqtelegram-generator 53 $ASEMAN_SRC_PATH/scheme/scheme-53.tl $ASEMAN_SRC_PATH
+
+cd ..
+#rm -rf "$BUILD_DIR"

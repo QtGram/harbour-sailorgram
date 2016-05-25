@@ -292,13 +292,10 @@ Minimum sind 5 Zeichen.</translation>
         <source>Recent chats:</source>
         <translation>Letzte Chats:</translation>
     </message>
-    <message numerus="yes">
+    <message>
         <source>Unread
 message(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -443,7 +440,11 @@ message(s)</source>
     <name>DialogItem</name>
     <message>
         <source>You:</source>
-        <translation>Du:</translation>
+        <translation type="unfinished">Du:</translation>
+    </message>
+    <message>
+        <source>Typing...</source>
+        <translation type="unfinished">Schreibt...</translation>
     </message>
 </context>
 <context>
@@ -690,19 +691,16 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
 </context>
 <context>
     <name>PeerItem</name>
-    <message numerus="yes">
-        <source>%n member(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
+    <message>
+        <source>Typing...</source>
+        <translation type="unfinished">Schreibt...</translation>
     </message>
 </context>
 <context>
     <name>PeerProfile</name>
     <message>
         <source>Group</source>
-        <translation>Gruppe</translation>
+        <translation type="unfinished">Gruppe</translation>
     </message>
 </context>
 <context>
@@ -963,10 +961,6 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
         <translation>Registrieren</translation>
     </message>
     <message>
-        <source>You have entered a wrong Authorization Code</source>
-        <translation>Du hast einen falschen Autorisierungscode eingegeben</translation>
-    </message>
-    <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
         <translation>Warte auf die SMS mit dem Aktivierungscode und gehe auf &quot;Einloggen&quot;</translation>
     </message>
@@ -977,10 +971,6 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
     <message>
         <source>Last Name (Optional)</source>
         <translation>Nachname (Optional)</translation>
-    </message>
-    <message>
-        <source>Authorization Code</source>
-        <translation>Autorisierungscode</translation>
     </message>
     <message>
         <source>Exit</source>
@@ -1017,25 +1007,17 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
         <source>%1 added %2</source>
         <translation>%1 hat %2 hinzugefügt</translation>
     </message>
+    <message>
+        <source>��%1�� updated group photo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The group was upgraded to a supergroup</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TelegramHelper</name>
-    <message>
-        <source>Recently</source>
-        <translation>Kürzlich gesehen</translation>
-    </message>
-    <message>
-        <source>Last Month</source>
-        <translation>Letzten Monat gesehen</translation>
-    </message>
-    <message>
-        <source>Last Week</source>
-        <translation>Letzte Woche gesehen</translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <translation>Online</translation>
-    </message>
     <message>
         <source>Unknown</source>
         <translation>Unbekannt</translation>
@@ -1053,24 +1035,12 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
         <translation>Video</translation>
     </message>
     <message>
-        <source>Unsupported</source>
-        <translation>Nicht unterstützt</translation>
-    </message>
-    <message>
         <source>Audio</source>
         <translation>Audio</translation>
     </message>
     <message>
         <source>Photo</source>
         <translation>Foto</translation>
-    </message>
-    <message>
-        <source>Last Seen %1</source>
-        <translation>Zuletzt %1 gesehen</translation>
-    </message>
-    <message>
-        <source>Typing...</source>
-        <translation>Schreibt...</translation>
     </message>
     <message>
         <source>%1 is typing...</source>
@@ -1094,6 +1064,14 @@ Wische nach rechts, um einen Kontakt auszuwählen</translation>
             <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
+    </message>
+    <message>
+        <source>Unsupported media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown media</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

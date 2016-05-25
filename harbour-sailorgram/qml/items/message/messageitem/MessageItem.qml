@@ -1,6 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 1.0
+import harbour.sailorgram.TelegramQml 2.0
 import "../../../components"
 import "../../../components/message"
 import "../../../models"
@@ -15,8 +15,8 @@ ListItem
     property bool selected: false
     property Context context
     property MessageTypesPool messageTypesPool
-    property Dialog dialog
-    property Message message
+    property var dialogModelItem
+    property var messageModelItem
 
     signal replyRequested()
     signal forwardRequested()
@@ -111,7 +111,7 @@ ListItem
     menu: MessageMenu {
         id: messagemenu
         context: messageitem.context
-        message: messageitem.message
+        modelItem: messageitem.messageModelItem
         messageMediaItem: mediacontainer.item
 
         onCancelRequested: mediacontainer.item.cancelTransfer()
@@ -124,7 +124,7 @@ ListItem
     {
         id: messagebubble
         context: messageitem.context
-        message: messageitem.message
+        modelItem: messageitem.messageModelItem
         anchors { topMargin: Theme.paddingSmall; bottomMargin: Theme.paddingSmall }
         anchors.fill: content
     }
@@ -137,14 +137,14 @@ ListItem
         id: content
 
         anchors {
-            left: message.out ? parent.left : undefined
-            right: message.out ? undefined : parent.right
+            left: messageModelItem.out ? parent.left : undefined
+            right: messageModelItem.out ? undefined : parent.right
             leftMargin: Theme.paddingMedium
             rightMargin: Theme.paddingMedium
         }
 
         width: {
-            if(TelegramHelper.isServiceMessage(message))
+            if(messageModelItem.messageType === Enums.TypeActionMessage)
                 return messageitem.width - Theme.paddingMedium;
 
             var w = messagetext.calculatedWidth;
@@ -180,7 +180,8 @@ ListItem
                 rightMargin: Theme.paddingMedium
             }
 
-            color: ColorScheme.colorizeText(message, context)
+
+            color: ColorScheme.colorizeTextItem(messageModelItem, context)
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: Theme.fontSizeSmall
             font.bold: true
@@ -189,27 +190,34 @@ ListItem
             textFormat: Text.StyledText
 
             visible: {
-                if(TelegramHelper.isForwardedMessage(message))
+                if(messageModelItem.forwardFromPeer)
                     return true;
 
-                return !TelegramHelper.isServiceMessage(message) && !message.out;
+                return (messageModelItem.messageType !== Enums.TypeActionMessage) && !messageModelItem.out;
             }
 
             horizontalAlignment: {
-                if(message.out)
+                if(messageModelItem.out)
                     return Text.AlignLeft;
 
                 return Text.AlignRight;
             }
 
             text: {
-                if(TelegramHelper.isServiceMessage(message))
+                if(!messageModelItem || (messageModelItem.messageType === Enums.TypeActionMessage))
                     return "";
 
-                var completename = message.out ? "" : TelegramHelper.completeName(context.telegram.user(message.fromId));
+                var completename = "";
 
-                if(TelegramHelper.isForwardedMessage(message))
-                    completename += " <i>(" + qsTr("Forwarded from %1").arg(TelegramHelper.completeName(context.telegram.user(message.fwdFromId))) + ")</i>";
+                if(dialogModelItem.chat && dialogModelItem.chat.broadcast)
+                    completename = dialogModelItem.title;
+                else
+                    completename = TelegramHelper.completeName(messageModelItem.fromUserItem);
+
+                var fwdpeer = messageModelItem.forwardFromPeer;
+
+                if(fwdpeer)
+                    completename += " <i>(" + qsTr("Forwarded from %1").arg(TelegramHelper.completeName(fwdpeer)) + ")</i>";
 
                 return completename;
             }
@@ -222,11 +230,15 @@ ListItem
             anchors { left: parent.left; leftMargin: Theme.paddingMedium }
 
             Component.onCompleted: {
-                if(message.replyToMsgId) {
+                var replymsg = messageModelItem.replyMessage;
+
+                if(replymsg !== null) {
                     var params = { "context": messageitem.context,
-                                   "message": context.telegram.message(message.replyToMsgId),
-                                   "textColor": ColorScheme.colorizeText(message, context),
-                                   "linkColor": ColorScheme.colorizeLink(message, context),
+                                   "message": replymsg,
+                                   "messageType": messageModelItem.replyType,
+                                   "peer": messageModelItem.replyPeer,
+                                   "textColor": ColorScheme.colorizeTextItem(messageModelItem, context),
+                                   "linkColor": ColorScheme.colorizeLink(messageModelItem, context),
                                    "maxWidth": content.maxw - 2 * Theme.paddingMedium };
 
                     messageTypesPool.messagePreview.createObject(quotedcontainer, params);
@@ -241,31 +253,26 @@ ListItem
             visible: mediacontainer.item !== null
 
             Component.onCompleted: {
-                var media = message.media;
-                if(!media)
+                if(messageModelItem.messageType === Enums.TypeTextMessage)
                     return;
 
-                var params = { "context": messageitem.context, "message": messageitem.message, "maxWidth": content.maxw - 2 * Theme.paddingMedium };
+                var params = { "context": messageitem.context, "messageModelItem": messageitem.messageModelItem, "maxWidth": content.maxw - 2 * Theme.paddingMedium };
 
-                var classtype = media.classType;
-
-                if(classtype === TelegramConstants.typeMessageMediaDocument) {
-                    if(context.telegram.documentIsSticker(media.document))
-                        messageTypesPool.stickerComponent.createObject(mediacontainer, params);
-                    else
-                        messageTypesPool.documentComponent.createObject(mediacontainer, params);
-                }
-                else if(classtype === TelegramConstants.typeMessageMediaPhoto)
+                if(messageModelItem.messageType === Enums.TypeDocumentMessage)
+                    messageTypesPool.documentComponent.createObject(mediacontainer, params);
+                else if(messageModelItem.messageType === Enums.TypeStickerMessage)
+                    messageTypesPool.stickerComponent.createObject(mediacontainer, params);
+                else if(messageModelItem.messageType === Enums.TypePhotoMessage)
                     messageTypesPool.photoComponent.createObject(mediacontainer, params);
-                else if(classtype === TelegramConstants.typeMessageMediaAudio)
+                else if(messageModelItem.messageType === Enums.TypeAudioMessage)
                     messageTypesPool.audioComponent.createObject(mediacontainer, params);
-                else if(classtype === TelegramConstants.typeMessageMediaVideo)
+                else if(messageModelItem.messageType === Enums.TypeVideoMessage)
                     messageTypesPool.videoComponent.createObject(mediacontainer, params);
-                else if((classtype === TelegramConstants.typeMessageMediaWebPage) && (media.webpage.url.length > 0))
+                else if((messageModelItem.messageType === Enums.TypeWebPageMessage)) //FIXME: && (media.webpage.url.length > 0))
                     messageTypesPool.webpageComponent.createObject(mediacontainer, params);
-                else if((classtype === TelegramConstants.typeMessageMediaGeo) || (classtype === TelegramConstants.typeMessageMediaVenue))
+                else if((messageModelItem.messageType === Enums.TypeGeoMessage) || (messageModelItem.messageType === Enums.TypeVenueMessage))
                     messageTypesPool.locationComponent.createObject(mediacontainer, params);
-                else if(classtype === TelegramConstants.typeMessageMediaContact)
+                else if(messageModelItem.messageType === Enums.TypeContactMessage)
                     messageTypesPool.contactComponent.createObject(mediacontainer, params);
             }
         }
@@ -283,8 +290,7 @@ ListItem
 
             maxWidth: content.maxw - 2 * Theme.paddingMedium
             context: messageitem.context
-            dialog: messageitem.dialog
-            message: messageitem.message
+            messageModelItem: messageitem.messageModelItem
         }
     }
 }

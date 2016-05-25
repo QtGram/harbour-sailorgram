@@ -22,7 +22,13 @@
 #include "query.h"
 
 Query::Query(QObject *parent) :
-    QObject(parent), m_dataLength(0), m_data(0), m_methods(0), m_resends(MAX_QUERY_RESENDS) {
+    QObject(parent),
+    m_msgId(0),
+    m_mainMsgId(0),
+    m_dataLength(0),
+    m_data(0),
+    m_methods(0),
+    m_resends(MAX_QUERY_RESENDS) {
 }
 
 Query::~Query() {
@@ -53,3 +59,7 @@ void Query::timerEvent(QTimerEvent *event) {
         killTimer(event->timerId());
     }
 }
+
+
+
+

@@ -1,6 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 1.0
+import harbour.sailorgram.TelegramQml 2.0
 import "../../../models"
 import "../../../js/ColorScheme.js" as ColorScheme
 import "../../../js/TelegramHelper.js" as TelegramHelper
@@ -10,11 +10,12 @@ import "../../../js/TelegramConstants.js" as TelegramConstants
 Item
 {
     property Context context
-    property Dialog dialog
-    property Message message
+    property var messageModelItem
 
-    property real calculatedWidth: TelegramHelper.isServiceMessage(message) ? mtctextcontent.calculatedWidth :
-                                                                              Math.max(mtctextcontent.calculatedWidth, msgstatus.calculatedWidth);
+    readonly property bool isActionMessage: messageModelItem.messageType === Enums.TypeActionMessage
+
+    property real calculatedWidth: isActionMessage ? mtctextcontent.calculatedWidth :
+                                                     Math.max(mtctextcontent.calculatedWidth, msgstatus.calculatedWidth);
     property real maxWidth
 
     id: messagetext
@@ -33,18 +34,19 @@ Item
             width: parent.width
             height: visible ? undefined : 0
             verticalAlignment: Text.AlignTop
-            font.pixelSize: TelegramHelper.isServiceMessage(message) ? Theme.fontSizeExtraSmall : Theme.fontSizeSmall
-            font.italic: TelegramHelper.isServiceMessage(message)
+            font.pixelSize: isActionMessage ? Theme.fontSizeExtraSmall : Theme.fontSizeSmall
+            font.italic: isActionMessage
             emojiPath: context.sailorgram.emojiPath
             wrapMode: Text.Wrap
             visible: rawText.length > 0
-            color: ColorScheme.colorizeText(message, context)
-            linkColor: ColorScheme.colorizeLink(message, context)
+            color: ColorScheme.colorizeTextItem(messageModelItem, context)
+            linkColor: ColorScheme.colorizeLink(messageModelItem, context)
 
             rawText: {
-                if(TelegramHelper.isServiceMessage(message))
-                    return TelegramAction.actionType(context.telegram, dialog, message);
+                if(isActionMessage)
+                    return TelegramAction.actionType(messageModelItem.serviceItem, messageModelItem.fromUserItem, messageModelItem.toUserItem);
 
+                /*
                 if(TelegramHelper.isMediaMessage(message)) {
                     if((message.media.classType === TelegramConstants.typeMessageMediaWebPage) &&
                        (message.media.webpage.url === message.message))
@@ -53,15 +55,16 @@ Item
                     if(message.media.caption.length > 0)
                         return message.media.caption;
                 }
+                */
 
-                return message.message;
+                return messageModelItem.message;
             }
 
             horizontalAlignment: {
-                if(TelegramHelper.isServiceMessage(message))
+                if(isActionMessage)
                     return Text.AlignHCenter;
 
-                if(!message.out)
+                if(!messageModelItem.out)
                     return Text.AlignRight;
 
                 return Text.AlignLeft;
@@ -73,7 +76,10 @@ Item
             id: msgstatus
             width: parent.width
             context: messagetext.context
-            message: messagetext.message
+            messageDate: messageModelItem.dateTime
+            messageUnread: messageModelItem.unread
+            messageType: messageModelItem.messageType
+            messageOut: messageModelItem.out
         }
     }
 }

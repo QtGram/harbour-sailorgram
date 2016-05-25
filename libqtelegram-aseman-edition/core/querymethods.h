@@ -24,7 +24,7 @@
 
 #include "inboundpkt.h"
 
-class Api;
+class TelegramApi;
 class Query;
 
 class QueryMethods{
@@ -37,9 +37,9 @@ public:
         onTimeout(0) {
     }
 
-    void (Api::*onAnswer)(Query *q, InboundPkt &inboundPkt);
-    void (Api::*onError)(Query *q, qint32 errorCode, const QString &errorText);
-    void (Api::*onTimeout)(Query *q);
+    void (TelegramApi::*onAnswer)(Query *q, InboundPkt &inboundPkt);
+    void (TelegramApi::*onError)(Query *q, qint32 errorCode, const QString &errorText);
+    void (TelegramApi::*onTimeout)(Query *q);
 };
 
 #endif // QUERYMETHODS_H

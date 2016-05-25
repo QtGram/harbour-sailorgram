@@ -38,6 +38,7 @@ public:
         mSession(session),
         mLength(length),
         mPartLength(BLOCK),
+        mTimeOut(0),
         mEncrypted(false) {
 
         // generate random file id
@@ -64,17 +65,20 @@ public:
     qint64 id() const { return mId; }
     qint64 length() const { return mLength; }
     qint64 partLength() const { return mPartLength; }
+    qint32 timeOut() const { return mTimeOut; }
 
     void setPartLength(qint64 l) { mPartLength = l; }
     void setEncrypted(bool encrypted) { mEncrypted = encrypted; }
     void setKey(const QByteArray &key) { memcpy(mKey, key.data(), 32); }
     void setIv(const QByteArray &iv) { memcpy(mIv, iv.data(), 32); }
+    void setTimeOut(const qint32 &timeOut) { mTimeOut = timeOut; }
 
 protected:
     Session *mSession;
     qint64 mId;
     qint64 mLength;
     qint64 mPartLength;
+    qint32 mTimeOut;
 
     bool mEncrypted; // if true, this file upload belongs to a secret chat
     //key and initialization vector for encrypted files

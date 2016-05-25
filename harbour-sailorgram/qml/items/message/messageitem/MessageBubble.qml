@@ -1,5 +1,5 @@
 import QtQuick 2.1
-import harbour.sailorgram.TelegramQml 1.0
+import harbour.sailorgram.TelegramQml 2.0
 import "../../../models"
 import "../../../js/TelegramConstants.js" as TelegramConstants
 import "../../../js/TelegramHelper.js" as TelegramHelper
@@ -8,7 +8,7 @@ import "../../../js/ColorScheme.js" as ColorScheme
 Item
 {
     property Context context
-    property Message message
+    property var modelItem
 
     id: messagebubble
     layer.enabled: (context.bubbleshidden || !context.angledbubbles) ? false : true
@@ -17,6 +17,7 @@ Item
     visible: {
         var bubblevisible = !context.bubbleshidden;
 
+        /* FIXME:
         if(bubblevisible)
         {
             if(!TelegramHelper.isMediaMessage(message))
@@ -25,6 +26,7 @@ Item
             if(message.media.classType !== TelegramConstants.typeMessageMediaDocument)
                 return bubblevisible;
         }
+        */
 
         return bubblevisible;
     }
@@ -32,7 +34,7 @@ Item
     Rectangle
     {
         id: mainbubble
-        color: ColorScheme.colorizeBubble(message, context)
+        color: ColorScheme.colorizeBubble(modelItem, context)
         anchors.fill: parent
         radius: context.bubbleradius
         smooth: true
@@ -47,10 +49,10 @@ Item
         visible: context.angledbubbles
 
         anchors {
-            top: message.out ? undefined : parent.top
-            right: message.out ? undefined : parent.right
-            bottom: !message.out ? undefined: parent.bottom
-            left: !message.out ? undefined : parent.left
+            top: modelItem.out ? undefined : parent.top
+            right: modelItem.out ? undefined : parent.right
+            bottom: !modelItem.out ? undefined: parent.bottom
+            left: !modelItem.out ? undefined : parent.left
         }
     }
 }

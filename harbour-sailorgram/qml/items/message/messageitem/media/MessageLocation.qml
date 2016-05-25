@@ -1,5 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
+import harbour.sailorgram.TelegramQml 2.0
 import "../"
 import "../../../../js/ColorScheme.js" as ColorScheme
 import "../../../../js/TelegramConstants.js" as TelegramConstants
@@ -18,18 +19,19 @@ MessageMediaItem
         font.pixelSize: Theme.fontSizeSmall
         emojiPath: context.sailorgram.emojiPath
         wrapMode: Text.Wrap
-        visible: message.media.classType === TelegramConstants.typeMessageMediaVenue
+        visible: messageModelItem ? (messageModelItem.messageType === Enums.TypeVenueMessage) : false
         height: visible ? undefined : 0
-        color: ColorScheme.colorizeText(message, context)
-        linkColor: ColorScheme.colorizeLink(message, context)
+        color: ColorScheme.colorizeTextItem(messageModelItem, context)
+        linkColor: ColorScheme.colorizeLink(messageModelItem, context)
 
         rawText: {
-            return message.media.venueTitle + "\n" +
-                   message.media.venueAddress;
+            return "";
+            //FIXME: return message.media.venueTitle + "\n" +
+            //message.media.venueAddress;
         }
 
         horizontalAlignment: {
-            if(!message.out)
+            if(messageModelItem && !messageModelItem.out)
                 return Text.AlignRight;
 
             return Text.AlignLeft;
@@ -41,6 +43,6 @@ MessageMediaItem
         id: mapthumbnail
         cache: true
         anchors { left: parent.left; right: parent.right; top: mtctextcontent.bottom; bottom: parent.bottom }
-        source: context.locationThumbnail(message.media.geo.lat, message.media.geo.longitude, width, height, 14);
+        source: messageModelItem ? context.locationThumbnail(messageModelItem.mediaItem.geo.lat, messageModelItem.mediaItem.geo.longValue, width, height, 14) : ""
     }
 }

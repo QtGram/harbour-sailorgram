@@ -8,7 +8,7 @@
 	dh $@ 
 
 override_dh_auto_configure:
-	dh_auto_configure -- PREFIX=/usr BUILD_MODE=lib
+	dh_auto_configure --
 
 override_dh_install:
 	dh_install

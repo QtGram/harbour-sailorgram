@@ -3,25 +3,25 @@
 
 #include <QObject>
 #include <QtDBus>
-#include <telegramqml.h>
+#include <telegramengine.h>
 
 class ConnectivityChecker : public QObject
 {
     Q_OBJECT
 
     public:
-        explicit ConnectivityChecker(TelegramQml* telegram, QObject *parent = 0);
+        explicit ConnectivityChecker(TelegramEngine* engine, QObject *parent = 0);
         bool connected() const;
 
     private slots:
-        void onTelegramConnectedChanged();
+        void onEngineStateChanged();
         void onConnmanPropertyChanged(QString key, QDBusVariant value);
 
     signals:
         void connectedChanged();
 
     private:
-        TelegramQml* _telegram;
+        TelegramEngine* _engine;
         bool _connected;
 };
 

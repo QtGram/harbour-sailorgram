@@ -292,13 +292,10 @@ De minimale lengte is 5 tekens.</translation>
         <source>Recent chats:</source>
         <translation>Recente gesprekken:</translation>
     </message>
-    <message numerus="yes">
+    <message>
         <source>Unread
 message(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -443,7 +440,11 @@ message(s)</source>
     <name>DialogItem</name>
     <message>
         <source>You:</source>
-        <translation>U:</translation>
+        <translation type="unfinished">U:</translation>
+    </message>
+    <message>
+        <source>Typing...</source>
+        <translation type="unfinished">Bezig met typen...</translation>
     </message>
 </context>
 <context>
@@ -690,19 +691,16 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
 </context>
 <context>
     <name>PeerItem</name>
-    <message numerus="yes">
-        <source>%n member(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
+    <message>
+        <source>Typing...</source>
+        <translation type="unfinished">Bezig met typen...</translation>
     </message>
 </context>
 <context>
     <name>PeerProfile</name>
     <message>
         <source>Group</source>
-        <translation>Groep</translation>
+        <translation type="unfinished">Groep</translation>
     </message>
 </context>
 <context>
@@ -963,10 +961,6 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
         <translation>Registreren</translation>
     </message>
     <message>
-        <source>You have entered a wrong Authorization Code</source>
-        <translation>U heeft een verkeerde autorisatiecode ingevuld</translation>
-    </message>
-    <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
         <translation>Wacht op de SMS die de activatiecode bevat en klik daarna op &apos;Inloggen&apos;</translation>
     </message>
@@ -977,10 +971,6 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     <message>
         <source>Last Name (Optional)</source>
         <translation>Achternaam (optioneel)</translation>
-    </message>
-    <message>
-        <source>Authorization Code</source>
-        <translation>Autorisatiecode</translation>
     </message>
     <message>
         <source>Exit</source>
@@ -1017,25 +1007,17 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
         <source>%1 added %2</source>
         <translation>%1 heeft %2 toegevoegd</translation>
     </message>
+    <message>
+        <source>��%1�� updated group photo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The group was upgraded to a supergroup</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TelegramHelper</name>
-    <message>
-        <source>Recently</source>
-        <translation>Onlangs</translation>
-    </message>
-    <message>
-        <source>Last Month</source>
-        <translation>Afgelopen maand</translation>
-    </message>
-    <message>
-        <source>Last Week</source>
-        <translation>Afgelopen week</translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <translation>Online</translation>
-    </message>
     <message>
         <source>Unknown</source>
         <translation>Onbekend</translation>
@@ -1053,24 +1035,12 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
         <translation>Video</translation>
     </message>
     <message>
-        <source>Unsupported</source>
-        <translation>Niet-ondersteund</translation>
-    </message>
-    <message>
         <source>Audio</source>
         <translation>Audio</translation>
     </message>
     <message>
         <source>Photo</source>
         <translation>Foto</translation>
-    </message>
-    <message>
-        <source>Last Seen %1</source>
-        <translation>Laatst gezien %1</translation>
-    </message>
-    <message>
-        <source>Typing...</source>
-        <translation>Bezig met typen...</translation>
     </message>
     <message>
         <source>%1 is typing...</source>
@@ -1094,6 +1064,14 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
             <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
+    </message>
+    <message>
+        <source>Unsupported media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown media</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -1,6 +1,5 @@
 QT += qml quick sql xml multimedia
-
-contains(DEFINES, UBUNTU_PHONE): CONFIG += c++11
+CONFIG += c++11
 
 win32 {
     isEmpty(OPENSSL_LIB_DIR): OPENSSL_LIB_DIR = $${DESTDIR}
@@ -27,77 +26,89 @@ win32 {
     INCLUDEPATH += $${LIBQTELEGRAM_INCLUDE_PATH} $${OPENSSL_INCLUDE_PATH}
 }
 
-# Input
 SOURCES += \
-    $$PWD/telegramqml_plugin.cpp \
-    $$PWD/backgroundmanager.cpp \
-    $$PWD/chatparticipantlist.cpp \
-    $$PWD/database.cpp \
-    $$PWD/databasecore.cpp \
-    $$PWD/dialogfilesmodel.cpp \
-    $$PWD/mp3converterengine.cpp \
-    $$PWD/photosizelist.cpp \
-    $$PWD/profilesmodel.cpp \
-    $$PWD/telegramsearchmodel.cpp \
-    $$PWD/telegramuploadsmodel.cpp \
-    $$PWD/telegramwallpapersmodel.cpp \
-    $$PWD/usernamefiltermodel.cpp \
-    $$PWD/telegramqml.cpp \
-    $$PWD/tagfiltermodel.cpp \
-    $$PWD/telegramchatparticipantsmodel.cpp \
-    $$PWD/telegramcontactsmodel.cpp \
-    $$PWD/telegramdetailedcontactsmodel.cpp \
-    $$PWD/telegramcontactsfiltermodel.cpp \
-    $$PWD/telegramdialogsmodel.cpp \
-    $$PWD/telegramfilehandler.cpp \
-    $$PWD/telegrammessagesmodel.cpp \
-    $$PWD/telegramthumbnailer.cpp \
-    $$PWD/telegramthumbnailercore.cpp \
-    $$PWD/newsletterdialog.cpp \
-    $$PWD/userdata.cpp \
-    $$PWD/telegramqmlinitializer.cpp \
+    $$PWD/telegramengine.cpp \
+    $$PWD/telegramapp.cpp \
+    $$PWD/telegramhost.cpp \
+    $$PWD/telegramauthenticate.cpp \
     $$PWD/tqobject.cpp \
-    $$PWD/stickersmodel.cpp \
-    $$PWD/documentattributelist.cpp \
-    $$PWD/tgabstractlistmodel.cpp \
-    $$PWD/databaseabstractencryptor.cpp
+    $$PWD/telegramtools.cpp \
+    $$PWD/telegramqml_plugin.cpp \
+    $$PWD/telegramqmlinitializer.cpp \
+    $$PWD/telegramshareddatamanager.cpp \
+    $$PWD/telegramsharedpointer.cpp \
+    $$PWD/telegrammessagelistmodel.cpp \
+    $$PWD/telegramdialoglistmodel.cpp \
+    $$PWD/telegramenums.cpp \
+    $$PWD/telegramprofilemanagermodel.cpp \
+    $$PWD/telegramabstractenginelistmodel.cpp \
+    $$PWD/telegramabstractlistmodel.cpp \
+    $$PWD/telegramimageelement.cpp \
+    $$PWD/telegrampeerdetails.cpp \
+    $$PWD/telegramnotificationhandler.cpp \
+    $$PWD/telegrammessagefetcher.cpp \
+    $$PWD/private/telegramthumbnailercore.cpp \
+    $$PWD/private/telegramthumbnailer.cpp \
+    $$PWD/private/telegramfilelocation.cpp \
+    $$PWD/private/telegramuploadhandler.cpp \
+    $$PWD/private/telegramdownloadhandler.cpp \
+    $$PWD/telegramstickerscategoriesmodel.cpp \
+    $$PWD/telegramstickersmodel.cpp \
+    $$PWD/tqmldocumentexporter.cpp \
+    $$PWD/tqbaseobject.cpp \
+    $$PWD/telegrammessagesearchmodel.cpp \
+    $$PWD/telegramstatus.cpp \
+    $$PWD/telegramstatustyping.cpp \
+    $$PWD/telegramtesttools.cpp \
+    $$PWD/telegramtopmessagesmodel.cpp \
+    $$PWD/telegramcache.cpp \
+    $$PWD/telegrammemberslistmodel.cpp \
+    $$PWD/telegrammedialistmodel.cpp \
+    $$PWD/telegramauthstore.cpp \
+    $$PWD/telegramqmlsharedpointer.cpp
 
 HEADERS += \
-    $$PWD/telegramqml_plugin.h \
-    $$PWD/backgroundmanager.h \
-    $$PWD/chatparticipantlist.h \
-    $$PWD/database.h \
-    $$PWD/databasecore.h \
-    $$PWD/dialogfilesmodel.h \
-    $$PWD/mp3converterengine.h \
-    $$PWD/photosizelist.h \
-    $$PWD/profilesmodel.h \
-    $$PWD/telegramsearchmodel.h \
-    $$PWD/telegramuploadsmodel.h \
-    $$PWD/telegramwallpapersmodel.h \
-    $$PWD/userdata.h \
-    $$PWD/usernamefiltermodel.h \
-    $$PWD/telegramqml.h \
-    $$PWD/tagfiltermodel.h \
-    $$PWD/telegramchatparticipantsmodel.h \
-    $$PWD/telegramcontactsmodel.h \
-    $$PWD/telegramdetailedcontactsmodel.h \
-    $$PWD/telegramcontactsfiltermodel.h \
-    $$PWD/telegramdialogsmodel.h \
-    $$PWD/telegramfilehandler.h \
-    $$PWD/telegrammessagesmodel.h \
-    $$PWD/telegramthumbnailer.h \
-    $$PWD/telegramthumbnailercore.h \
-    $$PWD/objects/types.h \
     $$PWD/telegramqml_macros.h \
     $$PWD/telegramqml_global.h \
-    $$PWD/newsletterdialog.h \
-    $$PWD/telegramqmlinitializer.h \
+    $$PWD/telegramengine.h \
+    $$PWD/telegramapp.h \
+    $$PWD/telegramhost.h \
+    $$PWD/telegramauthenticate.h \
     $$PWD/tqobject.h \
-    $$PWD/stickersmodel.h \
-    $$PWD/documentattributelist.h \
-    $$PWD/tgabstractlistmodel.h \
-    $$PWD/databaseabstractencryptor.h
+    $$PWD/telegramtools.h \
+    $$PWD/telegramqml_plugin.h \
+    $$PWD/telegramqmlinitializer.h \
+    $$PWD/telegramshareddatamanager.h \
+    $$PWD/telegramsharedpointer.h \
+    $$PWD/telegrammessagelistmodel.h \
+    $$PWD/telegramdialoglistmodel.h \
+    $$PWD/telegramenums.h \
+    $$PWD/telegramprofilemanagermodel.h \
+    $$PWD/telegramabstractenginelistmodel.h \
+    $$PWD/telegramabstractlistmodel.h \
+    $$PWD/telegramimageelement.h \
+    $$PWD/telegrampeerdetails.h \
+    $$PWD/telegramnotificationhandler.h \
+    $$PWD/telegrammessagefetcher.h \
+    $$PWD/private/telegramthumbnailercore.h \
+    $$PWD/private/telegramthumbnailer.h \
+    $$PWD/private/telegramfilelocation.h \
+    $$PWD/private/telegramuploadhandler.h \
+    $$PWD/private/telegramdownloadhandler.h \
+    $$PWD/telegramstickerscategoriesmodel.h \
+    $$PWD/telegramstickersmodel.h \
+    $$PWD/tqmldocumentexporter.h \
+    $$PWD/tqbaseobject.h \
+    $$PWD/telegrammessagesearchmodel.h \
+    $$PWD/telegramstatus.h \
+    $$PWD/telegramstatustyping.h \
+    $$PWD/telegramtesttools.h \
+    $$PWD/telegramtopmessagesmodel.h \
+    $$PWD/telegramcache.h \
+    $$PWD/telegrammemberslistmodel.h \
+    $$PWD/telegrammedialistmodel.h \
+    $$PWD/telegramauthstore.h \
+    $$PWD/telegramqmlsharedpointer.h
 
 RESOURCES += \
     $$PWD/tqmlresource.qrc

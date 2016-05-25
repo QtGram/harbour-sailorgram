@@ -4,7 +4,7 @@ import Sailfish.Silica 1.0
 MessageMediaItem
 {
     property real aspectRatio: {
-        var imagesize = fileHandler.imageSize;
+        var imagesize = downloadHandler.imageSize;
         var w = imagesize.width;
         var h = imagesize.height;
 
@@ -15,17 +15,20 @@ MessageMediaItem
     }
 
     id: messagephoto
-    contentWidth: fileHandler.imageSize.width
+    contentWidth: downloadHandler.imageSize.width
     contentHeight: thumb.height
 
-    Component.onCompleted: if(context.autoloadimages && !fileHandler.downloaded) fileHandler.download()
+    Component.onCompleted: {
+        if(context.autoloadimages && !downloadHandler.downloaded)
+            downloadHandler.download();
+    }
 
     Image
     {
         id: imgdownload
         anchors.centerIn: parent
         source: "image://theme/icon-m-cloud-download"
-        visible: !messagephoto.fileHandler.downloaded && !messagephoto.transferInProgress
+        visible: !downloadHandler.downloaded && !downloadHandler.downloading
         z: 2
     }
 
@@ -34,8 +37,8 @@ MessageMediaItem
         anchors.centerIn: parent
         width: Math.min(parent.width, parent.height) * 0.5
         height: width
-        visible: messagephoto.transferInProgress
-        value: messagephoto.fileHandler.progressPercent / 100.0
+        visible: downloadHandler.downloading
+        value: downloadHandler.progressPercent / 100.0
         z: 2
     }
 
@@ -44,13 +47,14 @@ MessageMediaItem
         id: thumb
         width: parent.width
         height: aspectRatio ? (width / aspectRatio) : 0
-        cache: !messagephoto.fileHandler.downloaded
-        blurRadius: messagephoto.fileHandler.downloaded && !messagephoto.transferInProgress ? 0.0 : 32.0
-        source: {
-            if(!messagephoto.fileHandler.downloaded || messagephoto.transferInProgress)
-                return messagephoto.fileHandler.thumbPath;
+        cache: !downloadHandler.downloaded
+        blurRadius: downloadHandler.downloaded && !downloadHandler.downloading ? 0.0 : 32.0
 
-            return messagephoto.fileHandler.filePath;
+        source: {
+            if(!downloadHandler.downloaded || downloadHandler.downloading)
+                return downloadHandler.thumbnail;
+
+            return downloadHandler.destination;
         }
     }
 }

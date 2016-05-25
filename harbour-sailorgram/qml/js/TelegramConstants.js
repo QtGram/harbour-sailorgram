@@ -1,5 +1,10 @@
 .pragma library
 
+var secretChatStateInit = 0;
+var secretChatStateRequested = 1;
+var secretChatStateAccepted = 2;
+var secretChatStateCancelled = 3;
+
 /* FileHandler Constants */
 var typeProgressEmpty = 0;
 var typeProgressUpload = 1;

@@ -14,11 +14,11 @@ Dialog
     allowedOrientations: defaultAllowedOrientations
     canAccept: tfcode.text.length > 0
     acceptDestinationAction: PageStackAction.Replace
-    onAccepted: context.telegram.authSignIn(tfcode.text)
+    onAccepted: context.authenticate.signIn(tfcode.text)
 
     onResendCodeChanged: {
-        if(dlgauthorization.resendCode)
-            context.telegram.authSendCode();
+        //if(dlgauthorization.resendCode)
+            //FIXME: context.authSendCode();
     }
 
     acceptDestination: Component {
@@ -52,7 +52,7 @@ Dialog
 
                 onClicked: {
                     remorsepopup.execute(qsTr("Sending Activation Code"), function() {
-                        context.telegram.authSendCode();
+                        //FIXME: context.telegram.authSendCode();
                     });
                 }
             }

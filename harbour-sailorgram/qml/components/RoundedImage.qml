@@ -1,19 +1,17 @@
-import QtQuick 2.0
+import QtQuick 2.1
 import QtGraphicalEffects 1.0
+import harbour.sailorgram.TelegramQml 2.0 as Telegram
 
 Item
 {
-    property alias cache: image.cache
-    property alias radius: mask.radius
-    property alias asynchronous: image.asynchronous
-    property alias source: image.source
-    property alias fillMode: image.fillMode
+    property alias imageHandler: tlimage
 
     id: roundedimage
 
-    Image
+    Telegram.Image
     {
-        id: image
+        id: tlimage
+        qtQuickVersion: "2.1"
         anchors.fill: parent
         visible: false
     }
@@ -30,7 +28,7 @@ Item
     OpacityMask
     {
         anchors.fill: mask
-        source: image
+        source: imageHandler
         maskSource: mask
     }
 }

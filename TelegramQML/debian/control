@@ -28,15 +28,6 @@ Standards-Version: 3.9.5
 Homepage: http://aseman.co/telegramqml
 Vcs-Git: https://github.com/Aseman-Land/TelegramQML
 
-Package: telegramqml-dev
-Section: libdevel
-Architecture: any
-Depends: telegramqml (= ${binary:Version})
-Description: Telegram API tools for QtQML and Qml, 
- based on Cutegram-Core and libqtelegram. 
- It's free and released under the GPLv3 license.
- It's telegramqml development headers.
-
 Package: telegramqml
 Section: libs
 Architecture: any
@@ -52,11 +43,7 @@ Depends: ${shlibs:Depends}, ${misc:Depends},
   libqt5multimedia5-plugins (>= 5.2.0), 
   libqt5multimediaquick-p5 (>= 5.2.0), 
   libqt5sql5-sqlite (>= 5.2.0), 
-  qt5-image-formats-plugins,
-  dconf-tools, 
-  libav-tools, 
-  gstreamer0.10-plugins-bad, 
-  gstreamer0.10-plugins-ugly
+  qt5-image-formats-plugins
 Description: Telegram API tools for QtQML and Qml, 
  based on Cutegram-Core and libqtelegram. 
  It's free and released under the GPLv3 license.

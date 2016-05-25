@@ -4,6 +4,7 @@ QT += multimedia
 
 TARGET = qtelegram-ae
 TEMPLATE = lib
+VERSION = 1.0.0
 DEFINES += LIBQTELEGRAM_LIBRARY
 
 macx {
@@ -13,7 +14,7 @@ macx {
     CONFIG += staticlib
 }
 
-include(../config.pri)
+include($$PWD/../config.pri)
 include(libqtelegram-ae.pri)
 
 linux {

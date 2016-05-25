@@ -292,13 +292,10 @@ Minimumslængde er fem tegn.</translation>
         <source>Recent chats:</source>
         <translation>Seneste samtaler:</translation>
     </message>
-    <message numerus="yes">
+    <message>
         <source>Unread
 message(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -443,7 +440,11 @@ message(s)</source>
     <name>DialogItem</name>
     <message>
         <source>You:</source>
-        <translation>Dig:</translation>
+        <translation type="unfinished">Dig:</translation>
+    </message>
+    <message>
+        <source>Typing...</source>
+        <translation type="unfinished">Skriver...</translation>
     </message>
 </context>
 <context>
@@ -690,19 +691,16 @@ Stryg til venstre for at vælge en kontakt</translation>
 </context>
 <context>
     <name>PeerItem</name>
-    <message numerus="yes">
-        <source>%n member(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
+    <message>
+        <source>Typing...</source>
+        <translation type="unfinished">Skriver...</translation>
     </message>
 </context>
 <context>
     <name>PeerProfile</name>
     <message>
         <source>Group</source>
-        <translation>Gruppe</translation>
+        <translation type="unfinished">Gruppe</translation>
     </message>
 </context>
 <context>
@@ -963,10 +961,6 @@ Stryg til venstre for at vælge en kontakt</translation>
         <translation>Tilmeld</translation>
     </message>
     <message>
-        <source>You have entered a wrong Authorization Code</source>
-        <translation>Du har indtastet en forkert autorisationskode</translation>
-    </message>
-    <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
         <translation>Vent på SMS med aktiveringskode og tryk på &apos;Tilmeld&apos;</translation>
     </message>
@@ -977,10 +971,6 @@ Stryg til venstre for at vælge en kontakt</translation>
     <message>
         <source>Last Name (Optional)</source>
         <translation>Efternavn (Valgfrit)</translation>
-    </message>
-    <message>
-        <source>Authorization Code</source>
-        <translation>Autorisationskode</translation>
     </message>
     <message>
         <source>Exit</source>
@@ -1017,25 +1007,17 @@ Stryg til venstre for at vælge en kontakt</translation>
         <source>%1 added %2</source>
         <translation>%1 tilføjede %2</translation>
     </message>
+    <message>
+        <source>��%1�� updated group photo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The group was upgraded to a supergroup</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TelegramHelper</name>
-    <message>
-        <source>Recently</source>
-        <translation>Seneste</translation>
-    </message>
-    <message>
-        <source>Last Month</source>
-        <translation>Sidste Måned</translation>
-    </message>
-    <message>
-        <source>Last Week</source>
-        <translation>Sidste Uge</translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <translation>Til Stede</translation>
-    </message>
     <message>
         <source>Unknown</source>
         <translation>Ukendt</translation>
@@ -1053,24 +1035,12 @@ Stryg til venstre for at vælge en kontakt</translation>
         <translation>Video</translation>
     </message>
     <message>
-        <source>Unsupported</source>
-        <translation>Ikke understøttet</translation>
-    </message>
-    <message>
         <source>Audio</source>
         <translation>Lyd</translation>
     </message>
     <message>
         <source>Photo</source>
         <translation>Foto</translation>
-    </message>
-    <message>
-        <source>Last Seen %1</source>
-        <translation>Sidst Set %1</translation>
-    </message>
-    <message>
-        <source>Typing...</source>
-        <translation>Skriver...</translation>
     </message>
     <message>
         <source>%1 is typing...</source>
@@ -1094,6 +1064,14 @@ Stryg til venstre for at vælge en kontakt</translation>
             <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
+    </message>
+    <message>
+        <source>Unsupported media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown media</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

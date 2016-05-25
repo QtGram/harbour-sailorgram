@@ -1,26 +1,29 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 1.0
+import harbour.sailorgram.TelegramQml 2.0
 import "../../models"
 import "../peer"
 import "../../js/TelegramHelper.js" as TelegramHelper
 
 Item
 {
+
+    property alias statusText: lblstaticstatus.text
     property Context context
     property User user
     property bool showUsername: false
 
-    id: contactitem
+    id: useritem
 
     PeerImage
     {
         id: useravatar
         anchors { left: parent.left; top: parent.top }
-        width: contactitem.height
-        height: contactitem.height
-        context: contactitem.context
-        user: contactitem.user
+        width: useritem.height
+        height: useritem.height
+        context: useritem.context
+        peer: useritem.user
+        fallbackTitle: TelegramHelper.completeName(user)
     }
 
     Column
@@ -48,18 +51,17 @@ Item
 
         Row
         {
-            height: contactitem.height - lblfullname.contentHeight
+            height: useritem.height - lblfullname.contentHeight
 
             Label {
                 id: lblstaticstatus
-                text: TelegramHelper.userStatus(user)
                 font.pixelSize: Theme.fontSizeExtraSmall
                 color: Theme.highlightColor
             }
 
             Label {
                 id: lblstatus
-                width: contactitem.width - lblstaticstatus.contentWidth
+                width: useritem.width - lblstaticstatus.contentWidth
                 font.pixelSize: Theme.fontSizeExtraSmall
                 elide: Text.ElideRight
             }

@@ -292,13 +292,10 @@ Minimilängd är 5 tecken.</translation>
         <source>Recent chats:</source>
         <translation>Tidigare chattar:</translation>
     </message>
-    <message numerus="yes">
+    <message>
         <source>Unread
 message(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -443,7 +440,11 @@ message(s)</source>
     <name>DialogItem</name>
     <message>
         <source>You:</source>
-        <translation>Du:</translation>
+        <translation type="unfinished">Du:</translation>
+    </message>
+    <message>
+        <source>Typing...</source>
+        <translation type="unfinished">Skriver...</translation>
     </message>
 </context>
 <context>
@@ -690,19 +691,16 @@ Svep åt vänster för att välja en kontakt</translation>
 </context>
 <context>
     <name>PeerItem</name>
-    <message numerus="yes">
-        <source>%n member(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
+    <message>
+        <source>Typing...</source>
+        <translation type="unfinished">Skriver...</translation>
     </message>
 </context>
 <context>
     <name>PeerProfile</name>
     <message>
         <source>Group</source>
-        <translation>Grupp</translation>
+        <translation type="unfinished">Grupp</translation>
     </message>
 </context>
 <context>
@@ -963,10 +961,6 @@ Svep åt vänster för att välja en kontakt</translation>
         <translation>Registrera</translation>
     </message>
     <message>
-        <source>You have entered a wrong Authorization Code</source>
-        <translation>Du har angett fel auktoriseringskod</translation>
-    </message>
-    <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
         <translation>Vänta på det SMS som innehåller aktiveringskoden och tryck &apos;Registrera&apos;</translation>
     </message>
@@ -977,10 +971,6 @@ Svep åt vänster för att välja en kontakt</translation>
     <message>
         <source>Last Name (Optional)</source>
         <translation>Efternamn (Tillval)</translation>
-    </message>
-    <message>
-        <source>Authorization Code</source>
-        <translation>Auktoriseringskod</translation>
     </message>
     <message>
         <source>Exit</source>
@@ -1017,25 +1007,17 @@ Svep åt vänster för att välja en kontakt</translation>
         <source>%1 added %2</source>
         <translation>%1 lade till %2</translation>
     </message>
+    <message>
+        <source>��%1�� updated group photo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The group was upgraded to a supergroup</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TelegramHelper</name>
-    <message>
-        <source>Recently</source>
-        <translation>Nyligen</translation>
-    </message>
-    <message>
-        <source>Last Month</source>
-        <translation>Senaste månaden</translation>
-    </message>
-    <message>
-        <source>Last Week</source>
-        <translation>Senaste veckan</translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <translation>Ansluten</translation>
-    </message>
     <message>
         <source>Unknown</source>
         <translation>Okänd</translation>
@@ -1053,24 +1035,12 @@ Svep åt vänster för att välja en kontakt</translation>
         <translation>Video</translation>
     </message>
     <message>
-        <source>Unsupported</source>
-        <translation>Saknar stöd</translation>
-    </message>
-    <message>
         <source>Audio</source>
         <translation>Ljud</translation>
     </message>
     <message>
         <source>Photo</source>
         <translation>Foto</translation>
-    </message>
-    <message>
-        <source>Last Seen %1</source>
-        <translation>Sågs senast %1</translation>
-    </message>
-    <message>
-        <source>Typing...</source>
-        <translation>Skriver...</translation>
     </message>
     <message>
         <source>%1 is typing...</source>
@@ -1094,6 +1064,14 @@ Svep åt vänster för att välja en kontakt</translation>
             <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
+    </message>
+    <message>
+        <source>Unsupported media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown media</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

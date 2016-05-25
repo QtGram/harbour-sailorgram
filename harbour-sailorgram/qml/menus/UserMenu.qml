@@ -1,21 +1,22 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 1.0
 import "../models"
-import "../items/user"
-import "../js/TelegramHelper.js" as TelegramHelper
 
 ContextMenu
 {
     property Context context
-    property User user
+    property var dialogModelItem
 
     id: usermenu
 
     MenuItem
     {
         text: qsTr("Send Message")
-        onClicked: pageStack.push(Qt.resolvedUrl("../pages/dialogs/DialogPage.qml"), { "context": usermenu.context, "dialog": usermenu.context.telegram.fakeDialogObject(usermenu.user.id, false) } )
+
+        onClicked: {
+            pageStack.navigateBack(PageStackAction.Immediate);
+            pageStack.push(Qt.resolvedUrl("../pages/dialogs/DialogPage.qml"), { "context": usermenu.context, "dialogModelItem": dialogItemModel })
+        }
     }
 
     MenuItem

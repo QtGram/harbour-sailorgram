@@ -1,6 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 1.0
+import harbour.sailorgram.TelegramQml 2.0
 import "../../models"
 import "../../components"
 import "../../components/mediaplayer"
@@ -22,8 +22,8 @@ MediaPage
     {
         id: mediaplayer
         anchors.fill: parent
-        videoThumbnail: fileHandler.thumbPath
-        videoSource: fileHandler.filePath
+        videoThumbnail: imageHandler.thumbPath
+        videoSource: imageHandler.filePath
     }
 
     ProgressCircle
@@ -31,7 +31,7 @@ MediaPage
         anchors.centerIn: parent
         width: Theme.iconSizeLarge
         height: Theme.iconSizeLarge
-        visible: (fileHandler.progressPercent > 0) && (fileHandler.progressPercent < 100)
-        progressValue: fileHandler.progressPercent / 100
+        visible: (imageHandler.progressPercent > 0) && (imageHandler.progressPercent < 100)
+        progressValue: imageHandler.progressPercent / 100
     }
 }

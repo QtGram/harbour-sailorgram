@@ -1,6 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 1.0
+import harbour.sailorgram.TelegramQml 2.0
 import "../../../../components"
 import "../../../../components/message"
 import "../../../../components/mediaplayer/mediacomponents"
@@ -50,7 +50,7 @@ MessageMediaItem
                 verticalAlignment: Text.AlignTop
                 horizontalAlignment: Text.AlignLeft
                 font.pixelSize: Theme.fontSizeExtraSmall
-                color: ColorScheme.colorizeText(message, context)
+                color: ColorScheme.colorizeTextItem(messageModelItem, context)
                 text: qsTr("Audio recording")
                 wrapMode: Text.NoWrap
                 elide: Text.ElideRight
@@ -60,9 +60,9 @@ MessageMediaItem
             {
                 id: lblsize
                 width: parent.width
-                color: ColorScheme.colorizeText(message, context)
+                color: ColorScheme.colorizeTextItem(messageModelItem, context)
                 font.pixelSize: Theme.fontSizeExtraSmall
-                text: qsTr("Size: %1").arg(TelegramHelper.formatBytes(mediaSize, 2))
+                text: messageModelItem ? qsTr("Size: %1").arg(TelegramHelper.formatBytes(messageModelItem.fileSize, 2)) : ""
                 wrapMode: Text.NoWrap
                 elide: Text.ElideRight
             }
@@ -71,9 +71,9 @@ MessageMediaItem
             {
                 id: lblduration
                 width: parent.width
-                color: ColorScheme.colorizeText(message, context)
+                color: ColorScheme.colorizeTextItem(messageModelItem, context)
                 font.pixelSize: Theme.fontSizeExtraSmall
-                text: qsTr("Duration: %1").arg(mediaplayertimings.displayDuration(message.media.audio.duration))
+                text: messageModelItem ? qsTr("Duration: %1").arg(mediaplayertimings.displayDuration(messageModelItem.fileDuration)) : ""
                 wrapMode: Text.NoWrap
                 elide: Text.ElideRight
             }
@@ -83,10 +83,10 @@ MessageMediaItem
                 id: progressbar
                 width: parent.width - Theme.paddingSmall
                 barHeight: Theme.paddingSmall
-                barColor: ColorScheme.colorizeText(message, context)
-                border { color: ColorScheme.colorizeLink(message, context); width: 1 }
-                visible: messageaudio.transferInProgress
-                value: messageaudio.fileHandler.progressPercent
+                color: ColorScheme.colorizeTextItem(messageModelItem, context)
+                border { color: ColorScheme.colorizeLink(messageModelItem, context); width: 1 }
+                visible: downloadHandler.downloading
+                value: messageaudio.progressPercent
             }
         }
     }

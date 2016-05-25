@@ -1,6 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 1.0
+import harbour.sailorgram.TelegramQml 2.0 as Telegram
 import "../../models"
 import "../../components"
 import "../../items/peer"
@@ -13,42 +13,21 @@ import "../../js/TelegramConstants.js" as TelegramConstants
 Page
 {
     property Context context
-    property Dialog dialog
-    property Chat chat
-    property EncryptedChat encryptedChat
-    property User user
-    property Message forwardedMessage
+    property var dialogModelItem
+    property var forwardedMessage: null
 
     id: dialogpage
     allowedOrientations: defaultAllowedOrientations
-
-    Component.onCompleted: {
-        var peerid = TelegramHelper.peerId(dialog);
-
-        if(dialog.encrypted) {
-            encryptedChat = context.telegram.encryptedChat(peerid);
-            user = context.telegram.user(TelegramHelper.encryptedUserId(context, encryptedChat));
-            return;
-        }
-
-        if(TelegramHelper.isChat(dialog))
-            chat = context.telegram.chat(peerid);
-        else
-            user = context.telegram.user(peerid);
-    }
 
     onStatusChanged: {
         if(status !== PageStatus.Active)
             return;
 
         if(!canNavigateForward)
-            pageStack.pushAttached(Qt.resolvedUrl("DialogInfoPage.qml"), { "context": dialogpage.context, "dialog": dialogpage.dialog, "chat": dialogpage.chat, "user": dialogpage.user });
+            pageStack.pushAttached(Qt.resolvedUrl("DialogInfoPage.qml"), { "context": dialogpage.context, "dialogModelItem": dialogModelItem });
 
-        messageview.dialog = dialogpage.dialog
-        messageview.setReaded();
-
-        context.sailorgram.foregroundDialog = dialogpage.dialog;
-        context.sailorgram.closeNotification(dialog);
+        context.sailorgram.currentPeerKey = dialogModelItem.peerHex;
+        context.sailorgram.closeNotification(dialogModelItem.peerHex);
     }
 
     PopupMessage
@@ -57,10 +36,7 @@ Page
         anchors { left: parent.left; top: parent.top; right: parent.right }
     }
 
-    RemorsePopup
-    {
-        id: remorce
-    }
+    RemorsePopup { id: remorsepopup }
 
     SilicaFlickable
     {
@@ -93,7 +69,7 @@ Page
             MenuItem
             {
                 text: qsTr("Load more messages")
-                onClicked: messageview.loadMore();
+                onClicked: messageview.loadBack();
             }
         }
 
@@ -103,9 +79,7 @@ Page
             visible: !context.chatheaderhidden
             height: context.chatheaderhidden ? 0 : (dialogpage.isPortrait ? Theme.itemSizeSmall : Theme.itemSizeExtraSmall)
             context: dialogpage.context
-            dialog: dialogpage.dialog
-            chat: dialogpage.chat
-            user: dialogpage.user
+            dialogModelItem: dialogpage.dialogModelItem
 
             anchors {
                 left: parent.left
@@ -121,33 +95,39 @@ Page
             id: messageview
             anchors { left: parent.left; top: header.bottom; right: parent.right; bottom: selectionactions.top }
             context: dialogpage.context
+            dialogModelItem: dialogpage.dialogModelItem
             forwardedMessage: dialogpage.forwardedMessage
 
             discadedDialog: {
-                if(!dialogpage.encryptedChat || dialogpage.dialog.encrypted)
+                if(!dialogModelItem.isSecretChat)
                     return false;
 
-                return dialogpage.encryptedChat.classType === TelegramConstants.typeEncryptedChatDiscarded;
+                return dialogModelItem.secretChatState === TelegramConstants.secretChatStateCancelled;
             }
 
             waitingDialog: {
-                if(!dialogpage.encryptedChat || dialogpage.dialog.encrypted)
+                if(!dialogModelItem.isSecretChat)
                     return false;
 
-                return dialogpage.encryptedChat.classType === TelegramConstants.typeEncryptedChatWaiting;
+                return dialogModelItem.secretChatState === TelegramConstants.secretChatStateRequested;
             }
 
             waitingUserName: {
-                if(!dialogpage.encryptedChat || !dialogpage.user || dialogpage.dialog.encrypted)
+                if(!dialogModelItem)
+                    return;
+
+                if(!dialogModelItem.isSecretChat || !dialogModelItem.user)
+                    return false;
+
+                if(dialogModelItem.secretChatState !== TelegramConstants.secretChatStateRequested)
                     return "";
 
-                if(dialogpage.encryptedChat !== TelegramConstants.typeEncryptedChatWaiting)
-                    return "";
-
-                return TelegramHelper.completeName(dialogpage.user);
+                return TelegramHelper.completeName(dialogModelItem.user);
             }
 
-            onSelectedItemsChanged: selectionactions.open = selectedItems.length > 0
+            onSelectedItemsChanged: {
+                selectionactions.open = selectedItems.length > 0;
+            }
         }
 
         DockedPanel
@@ -172,7 +152,8 @@ Page
                 id: deleteselected
                 anchors.centerIn: parent
                 icon.source: "image://theme/icon-m-delete?" + (pressed ? Theme.highlightColor : Theme.primaryColor)
-                onClicked: remorce.execute(qsTr("Deleting Messages"), function() {
+
+                onClicked: remorsepopup.execute(qsTr("Deleting Messages"), function() {
                     messageview.deleteSelected();
                     messageview.selectionMode = false;
                 })

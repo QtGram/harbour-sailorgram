@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import harbour.sailorgram.FilesModel 1.0
 import harbour.sailorgram.SailorGram 1.0
+import harbour.sailorgram.TelegramQml 2.0 as Telegram
 import "../../models"
 
 Dialog
@@ -10,13 +11,29 @@ Dialog
     property var selectedFiles: []
     readonly property string rootPathLimit : "/"
 
-    signal actionCompleted(string action, var data)
+    signal actionCompleted(int actiontype, var data)
+    signal actionRequested(int actiontype)
+    signal actionRejected()
 
     id: selectorfilespage
     allowedOrientations: defaultAllowedOrientations
     acceptDestinationAction: PageStackAction.Pop
     canAccept: selectedFiles.length > 0
-    onAccepted: selectedFiles.forEach(function (element) { actionCompleted("file", element); })
+
+    onStatusChanged: {
+        if(status !== PageStatus.Active)
+            return;
+
+        actionRequested(Telegram.SendMessageAction.TypeSendMessageUploadDocumentAction);
+    }
+
+    onAccepted: {
+        selectedFiles.forEach(function (element) {
+            actionCompleted(Telegram.SendMessageAction.TypeSendMessageUploadDocumentAction, element);
+        })
+    }
+
+    onRejected: actionRejected()
 
     FilesModel
     {

@@ -1,16 +1,18 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 1.0
+import harbour.sailorgram.TelegramQml 2.0
 import "../../models"
 import "../../js/TelegramHelper.js" as TelegramHelper
 
 Item
 {
-    property alias showType: useravatar.showType
+    property alias title: lbltitle.text
+    property alias peer: useravatar.peer
+    property alias fallbackAvatar: useravatar.fallbackTitle
+    property alias isChat: useravatar.isChat
+    property alias isSecretChat: useravatar.isSecretChat
     property Context context
-    property Dialog dialog
-    property Chat chat
-    property User user
+    property string statusText
 
     id: peerprofile
     height: content.height
@@ -28,44 +30,17 @@ Item
             width: Screen.width * 0.3
             height: width
             context: peerprofile.context
-            dialog: peerprofile.dialog
-            chat: peerprofile.chat
-            user: peerprofile.user
-
-            FileHandler
-            {
-                id: bigimagehandler
-                telegram: context.telegram
-                target: {
-                    if(user)
-                        return user.photo.photoBig;
-                    if(chat)
-                        return chat.photo.photoBig;
-                    return null;
-                }
-                onTargetTypeChanged: {
-                    if(downloaded)
-                        return;
-                    download();
-                }
-            }
+            showType: false
 
             MouseArea
             {
                 anchors.fill: parent
+
                 onClicked: {
-                    var photoId = 0;
-                    if(user)
-                        photoId = user.photo.photoId;
-                    else if(chat)
-                        photoId = chat.photo.photoId;
-                    if(photoId !== 0)
-                    pageStack.push(
-                        Qt.resolvedUrl("../../pages/media/MediaPhotoPage.qml"),
-                        {
-                            "context":     peerprofile.context,
-                            "fileHandler": bigimagehandler
-                        });
+                    if(!useravatar.peer)
+                        return;
+
+                    pageStack.push(Qt.resolvedUrl("../../pages/media/MediaPhotoPage.qml"), { "context": peerprofile.context, "imageHandler": useravatar.imageHandler });
                 }
             }
         }
@@ -78,18 +53,6 @@ Item
             font.family: Theme.fontFamilyHeading
             font.bold: true
             elide: Text.ElideRight
-
-            text: {
-                if(chat)
-                    return chat.title;
-
-                var name = TelegramHelper.completeName(user);
-
-                if(user.username.length > 0)
-                    name += " (@" + user.username + ")";
-
-                return name;
-            }
         }
 
         Label
@@ -100,12 +63,13 @@ Item
             font.pixelSize: Theme.fontSizeExtraSmall
             color: Theme.highlightColor
             elide: Text.ElideRight
+            visible: statusText.length > 0
 
             text: {
-                if(peerprofile.chat)
+                if(isChat)
                     return qsTr("Group");
 
-                return peerprofile.user ? TelegramHelper.userStatus(user) : 0;
+                return statusText;
             }
         }
     }

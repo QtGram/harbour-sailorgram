@@ -2,6 +2,8 @@
 Telegram API tools for QtQML and Qml, based on Cutegram-Core and libqtelegram.
 It's free and released under the GPLv3 license.
 
+### [Developer Documents](documents/start.md)
+
 ### How to Compile
 #### Install dependencies
 
@@ -41,7 +43,7 @@ And:
 
     cd libqtelegram-aseman-edition
     mkdir build && cd build
-    qmake -r PREFIX=/usr  ..
+    qmake -r PREFIX=/usr CONFIG+=typeobjects  ..
     
 And then start building:
 

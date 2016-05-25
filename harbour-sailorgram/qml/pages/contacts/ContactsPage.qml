@@ -1,6 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 1.0
+import harbour.sailorgram.TelegramQml 2.0
 import "../../models"
 import "../../items/user"
 import "../../menus"
@@ -16,7 +16,7 @@ Page
         if(status !== PageStatus.Active)
             return;
 
-        context.contacts.telegram = context.telegram;
+        context.contacts.engine = context.engine
     }
 
     SilicaListView
@@ -50,12 +50,14 @@ Page
         header: PageHeader { title: qsTr("Contacts") }
         model: context.contacts
 
-        section.property: "firstLetter"
-        section.criteria: ViewSection.FirstCharacter
+        section {
+            property: "firstLetter"
+            criteria: ViewSection.FirstCharacter
 
-        section.delegate: SectionHeader {
-            text: section
-            font.pixelSize: Theme.fontSizeMedium
+            delegate: SectionHeader {
+                text: section
+                font.pixelSize: Theme.fontSizeMedium
+            }
         }
 
         delegate: ListItem {
@@ -65,16 +67,20 @@ Page
             menu: UserMenu {
                 id: usermenu
                 context: contactspage.context
-                user: model.user
+                dialogModelItem: model
             }
 
-            onClicked: pageStack.push(Qt.resolvedUrl("../dialogs/DialogPage.qml"), { "context": contactspage.context, "dialog": context.telegram.fakeDialogObject(model.contact.userId, false) } )
+            onClicked: {
+                pageStack.navigateBack(PageStackAction.Immediate);
+                pageStack.push(Qt.resolvedUrl("../dialogs/DialogPage.qml"), { "context": contactspage.context, "dialogModelItem": model })
+            }
 
             UserItem {
                 id: useritem
                 anchors.fill: parent
                 context: contactspage.context
                 user: model.user
+                statusText: model.statusText
             }
         }
     }

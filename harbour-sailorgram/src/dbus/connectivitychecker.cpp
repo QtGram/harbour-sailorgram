@@ -1,11 +1,11 @@
 #include "connectivitychecker.h"
 
-ConnectivityChecker::ConnectivityChecker(TelegramQml *telegram, QObject *parent) : QObject(parent), _telegram(telegram), _connected(telegram->connected())
+ConnectivityChecker::ConnectivityChecker(TelegramEngine *engine, QObject *parent) : QObject(parent), _engine(engine), _connected(false)
 {
     QDBusConnection connection = QDBusConnection::systemBus();
     connection.connect("net.connman", "/", "net.connman.Manager", "PropertyChanged", this, SLOT(onConnmanPropertyChanged(QString,QDBusVariant)));
 
-    connect(this->_telegram, SIGNAL(connectedChanged()), this, SLOT(onTelegramConnectedChanged()));
+    connect(engine, &TelegramEngine::stateChanged, this, &ConnectivityChecker::onEngineStateChanged);
 }
 
 bool ConnectivityChecker::connected() const
@@ -13,15 +13,16 @@ bool ConnectivityChecker::connected() const
     return this->_connected;
 }
 
-void ConnectivityChecker::onTelegramConnectedChanged()
+void ConnectivityChecker::onEngineStateChanged()
 {
-    this->_connected = this->_telegram->connected();
+    this->_connected = (this->_engine->state() == TelegramEngine::AuthLoggedIn);
     emit connectedChanged();
 }
 
 void ConnectivityChecker::onConnmanPropertyChanged(QString key, QDBusVariant value)
 {
-    if(!this->_telegram || (key != "State"))
+    /*
+    if(!this->_engine || (key != "State"))
         return;
 
     QString val = value.variant().toString();
@@ -34,5 +35,6 @@ void ConnectivityChecker::onConnmanPropertyChanged(QString key, QDBusVariant val
     }
     else if(val == "online")
         this->_telegram->reconnect();
+        */
 }
 

@@ -469,6 +469,6 @@ SendMessageAction Decrypter::fetchSendMessageAction() {
            x == (qint32)SendMessageAction::typeSendMessageUploadDocumentAction ||
            x == (qint32)SendMessageAction::typeSendMessageGeoLocationAction ||
            x == (qint32)SendMessageAction::typeSendMessageChooseContactAction);
-    SendMessageAction sendMessageAction((SendMessageAction::SendMessageActionType)x);
+    SendMessageAction sendMessageAction((SendMessageAction::SendMessageActionClassType)x);
     return sendMessageAction;
 }

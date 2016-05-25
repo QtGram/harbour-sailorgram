@@ -1,6 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 1.0
+import harbour.sailorgram.TelegramQml 2.0
 import "../../components"
 import "../../models"
 import "../../items/peer"
@@ -9,7 +9,8 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 Page
 {
     property Context context
-    property User user: context.telegram.user(context.telegram.me)
+    property UserFull userFull: context.engine.our
+    property User user: context.engine.our.user
 
     id: profilepage
     allowedOrientations: defaultAllowedOrientations
@@ -30,7 +31,17 @@ Page
             {
                 width: parent.width
                 context: profilepage.context
-                user: profilepage.user
+                peer: profilepage.user
+                fallbackAvatar: TelegramHelper.completeName(profilepage.user)
+
+                title: {
+                    var name = TelegramHelper.completeName(profilepage.user);
+
+                    if(profilepage.user.username.length > 0)
+                        name += " (@" + profilepage.user.username + ")";
+
+                    return name;
+                }
             }
 
             SectionHeader { text: qsTr("Phone number") }
@@ -65,7 +76,7 @@ Page
                 onActionRequested: {
                     var imgselector = pageStack.push(Qt.resolvedUrl("../selector/SelectorImagesPage.qml"), { "context": profilepage.context });
 
-                    imgselector.actionCompleted.connect(function(action, data) {
+                    imgselector.actionCompleted.connect(function(actiontype, data) {
                         context.telegram.setProfilePhoto(data);
                     });
                 }

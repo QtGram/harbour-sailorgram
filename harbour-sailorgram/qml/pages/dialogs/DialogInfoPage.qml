@@ -1,6 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 1.0
+import harbour.sailorgram.TelegramQml 2.0
 import "../../models"
 import "../../components"
 import "../../items/peer"
@@ -11,45 +11,28 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 
 Page
 {
-    property bool muted: context.telegram.userData.isMuted(TelegramHelper.peerId(dialoginfopage.dialog))
     property bool actionVisible: true
     property Context context
-    property Dialog dialog
-    property Chat chat
-    property User user
-
-    Connections
-    {
-        target: context.telegram.userData
-
-        onMuteChanged: {
-            var peerid = TelegramHelper.peerId(dialog);
-
-            if(id !== peerid)
-                return;
-
-            dialoginfopage.muted = context.telegram.userData.isMuted(id);
-        }
-    }
+    property var dialogModelItem
 
     id: dialoginfopage
     allowedOrientations: defaultAllowedOrientations
 
     function conversationTypeMessage() {
-        if(dialog.encrypted)
+        if(dialogModelItem.isSecretChat)
             return qsTr("Delete secret chat");
 
-        if(TelegramHelper.isChat(dialog))
+        if(dialogModelItem.chat)
             return qsTr("Delete group");
 
         return qsTr("Delete conversation");
     }
 
     function conversationTypeRemorseMessage() {
-        if(dialog.encrypted)
+        if(dialogModelItem.isSecretChat)
             return qsTr("Deleting secret chat");
 
-        if(TelegramHelper.isChat(dialog))
+        if(dialogModelItem.chat)
             return qsTr("Deleting group");
 
         return qsTr("Deleting conversation");
@@ -62,7 +45,7 @@ Page
             actionVisible: true
             allowSendMessage: false
             context: dialoginfopage.context
-            user: dialoginfopage.user
+            user: dialogModelItem.user
         }
     }
 
@@ -71,8 +54,8 @@ Page
 
         ChatInfo {
             context: dialoginfopage.context
-            dialog: dialoginfopage.dialog
-            chat: dialoginfopage.chat
+            chat: dialogModelItem.chat
+            peer: dialogModelItem.peer
         }
     }
 
@@ -93,46 +76,53 @@ Page
                 id: peerprofile
                 width: parent.width
                 context: dialoginfopage.context
-                dialog: dialoginfopage.dialog
-                chat: dialoginfopage.chat
-                user: dialoginfopage.user
-                showType: false
+                peer: dialogModelItem.peer
+                isChat: dialogModelItem.chat !== null
+                isSecretChat: dialogModelItem.isSecretChat
+                statusText: dialogModelItem.statusText
+                fallbackAvatar: dialogModelItem.title
+
+                title: {
+                    if(dialogModelItem.chat)
+                        return dialogModelItem.title;
+
+                    var name = TelegramHelper.completeName(dialogModelItem.user);
+
+                    if(dialogModelItem.user.username.length > 0)
+                        name += " (@" + dialogModelItem.user.username + ")";
+
+                    return name;
+                }
             }
 
             SectionHeader { text: qsTr("Actions") }
 
             ClickableLabel
             {
-                labelText: dialoginfopage.muted ? qsTr("Enable notifications") : qsTr("Disable notifications")
+                labelText: dialogModelItem.mute ? qsTr("Enable notifications") : qsTr("Disable notifications")
                 labelFont.pixelSize: Theme.fontSizeSmall
                 width: parent.width
                 height: Theme.itemSizeSmall
 
+                /* FIXME:
                 onActionRequested: {
                     if(dialoginfopage.dialog.encrypted) { // Secret chats are P2P
-                        if(context.telegram.userData.isMuted(dialoginfopage.dialog.peer.userId)) {
+                        if(context.telegram.userData.isMuted(dialoginfopage.dialog.peer.userId))
                             context.telegram.userData.removeMute(dialoginfopage.dialog.peer.userId);
-                            dialoginfopage.muted = false;
-                        }
-                        else {
+                        else
                             context.telegram.userData.addMute(dialoginfopage.dialog.peer.userId);
-                            dialoginfopage.muted = true;
-                        }
 
                         return;
                     }
 
                     var peerid = TelegramHelper.peerId(dialoginfopage.dialog);
 
-                    if(context.telegram.userData.isMuted(peerid)) {
+                    if(context.telegram.userData.isMuted(peerid))
                         context.telegram.unmute(peerid);
-                        dialoginfopage.muted = false;
-                    }
-                    else {
+                    else
                         context.telegram.mute(peerid);
-                        dialoginfopage.muted = true;
-                    }
                 }
+                */
             }
 
             ClickableLabel
@@ -144,6 +134,14 @@ Page
                 width: parent.width
                 height: Theme.itemSizeSmall
 
+                visible: {
+                    if(dialogModelItem.chat && !dialogModelItem.chat.admin)
+                        return false;
+
+                    return true;
+                }
+
+                /* FIXME:
                 onActionRequested: {
                     dialog.unreadCount = 0;
 
@@ -154,16 +152,17 @@ Page
 
                     pageStack.pop();
                 }
+                */
             }
 
             ClickableLabel
             {
                 labelText: qsTr("Add to contacts")
                 labelFont.pixelSize: Theme.fontSizeSmall
-                visible: !TelegramHelper.isChat(dialog) && !TelegramHelper.isTelegramUser(user) && (user.classType === TelegramConstants.typeUserRequest)
+                visible: !dialogModelItem.chat && !dialogModelItem.user.contact && (dialogModelItem.user.phone.length > 0)
                 width: parent.width
                 height: Theme.itemSizeSmall
-                onActionRequested: context.telegram.addContact(user.firstName, user.lastName, user.phone)
+                //FIXME: onActionRequested: context.telegram.addContact(user.firstName, user.lastName, user.phone)
             }
 
             Loader
@@ -171,7 +170,7 @@ Page
                 id: loader
 
                 sourceComponent: {
-                    if(TelegramHelper.isChat(dialog))
+                    if(dialogModelItem.chat)
                         return chatinfocomponent;
 
                     return userinfocomponent;

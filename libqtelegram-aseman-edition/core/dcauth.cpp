@@ -339,7 +339,8 @@ void DCAuth::processRpcAnswer(QByteArray response) {
     case DC::userSignedIn:
         break;
     default:
-        qCWarning(TG_CORE_DCAUTH) << "fatal: cannot receive answer in state" << m_dc->state();
+        qCWarning(TG_CORE_DCAUTH) << "fatal: cannot receive answer in state" << m_dc->state() << ", dcId:" << m_dc->id()
+                                  << ", mediaOnly:" << m_dc->mediaOnly();
         Q_EMIT fatalError();
     }
 }

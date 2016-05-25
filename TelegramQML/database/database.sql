@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS Messages (
     actionTitle TEXT,
     actionUsers TEXT,
     actionType BIGINT NOT NULL,
-    
+
     mediaAudio BIGINT,
     mediaLastName TEXT,
     mediaFirstName TEXT,
@@ -31,6 +31,7 @@ CREATE TABLE IF NOT EXISTS Messages (
 CREATE INDEX "Messages.toId_idx" ON "Messages"("toId");
 CREATE INDEX "Messages.fromId_idx" ON "Messages"("fromId");
 CREATE INDEX "Messages.out_idx" ON "Messages"("out");
+CREATE INDEX "Messages.toPeerType_idx" ON "Messages"("toPeerType");
 CREATE INDEX "Messages.message_idx" ON "Messages"("message");
 
 CREATE TABLE IF NOT EXISTS PhotoSizes (
@@ -44,7 +45,7 @@ CREATE TABLE IF NOT EXISTS PhotoSizes (
     locationSecret BIGINT NOT NULL,
     locationDcId BIGINT NOT NULL,
     locationVolumeId BIGINT NOT NULL,
-    
+
     PRIMARY KEY (pid, locationLocalId, locationVolumeId)
 );
 
@@ -122,13 +123,13 @@ CREATE TABLE IF NOT EXISTS Chats (
     checkedIn BOOLEAN,
     left BOOLEAN,
     type BIGINT,
-    
+
     photoId BIGINT,
     photoBigLocalId BIGINT NOT NULL,
     photoBigSecret BIGINT NOT NULL,
     photoBigDcId BIGINT NOT NULL,
     photoBigVolumeId BIGINT NOT NULL,
-    
+
     photoSmallLocalId BIGINT NOT NULL,
     photoSmallSecret BIGINT NOT NULL,
     photoSmallDcId BIGINT NOT NULL,
@@ -149,18 +150,18 @@ CREATE TABLE IF NOT EXISTS Users (
     lastName TEXT,
     username TEXT,
     type BIGINT,
-    
+
     photoId BIGINT,
     photoBigLocalId BIGINT NOT NULL,
     photoBigSecret BIGINT NOT NULL,
     photoBigDcId BIGINT NOT NULL,
     photoBigVolumeId BIGINT NOT NULL,
-    
+
     photoSmallLocalId BIGINT NOT NULL,
     photoSmallSecret BIGINT NOT NULL,
     photoSmallDcId BIGINT NOT NULL,
     photoSmallVolumeId BIGINT NOT NULL,
-    
+
     statusWasOnline BIGINT,
     statusExpires BIGINT,
     statusType BIGINT
@@ -169,4 +170,3 @@ CREATE INDEX "Users.firstName_idx" ON "Users"("firstName");
 CREATE INDEX "Users.lastName_idx" ON "Users"("lastName");
 CREATE INDEX "Users.username_idx" ON "Users"("username");
 CREATE INDEX "Users.phone_idx" ON "Users"("phone");
-

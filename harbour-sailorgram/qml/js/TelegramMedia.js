@@ -6,7 +6,7 @@
 
 function defaultThumbnail(message, context)
 {
-    var color = context ? ColorScheme.colorizeText(message, context) : Silica.Theme.primaryColor;
+    var color = context ? ColorScheme.colorizeText(message.messageType, message.out, context) : Silica.Theme.primaryColor;
 
     if(!message || !message.media)
         return "image://theme/icon-m-other?" + color;

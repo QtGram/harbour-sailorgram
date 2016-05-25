@@ -10,5 +10,6 @@
         <file>res/sailorgram-cover.png</file>
         <file>res/close.png</file>
         <file>translations/translations.json</file>
+        <file>res/broadcast.png</file>
     </qresource>
 </RCC>

@@ -1,17 +1,29 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 1.0
+import harbour.sailorgram.TelegramQml 2.0
 import "../../models"
 import "../../components"
 import "../../js/TelegramHelper.js" as TelegramHelper
 
 InverseMouseArea
 {
-    property MessagesModel messagesModel
+    property MessageListModel messageListModel
     property Context context
+    property InputPeer peer
     property Message replyMessage
-    property var dialog
     property bool isForward
+
+    property Status inputStatus: Status {
+        engine: context.engine
+
+        typing {
+            peer: dialogtextinput.peer
+
+            action {
+                classType: SendMessageAction.TypeSendMessageCancelAction
+            }
+        }
+    }
 
     signal messageSent()
     signal forwardRequested()
@@ -21,11 +33,9 @@ InverseMouseArea
     }
 
     function sendMessage() {
-
-        if(!isForward)
-        {
+        if(!isForward) {
             var sendtext = context.sendwithreturn ? (textarea.text.trim().replace(/\r\n|\n|\r/gm, "")) : textarea.text.trim();
-            messagesModel.sendMessage(sendtext, (replyMessage ? replyMessage.id : 0));
+            messageListModel.sendMessage(sendtext, replyMessage);
         }
         else
             forwardRequested();
@@ -59,11 +69,15 @@ InverseMouseArea
         id: typingtimer
         interval: 3000
 
+        onTriggered: {
+            if(inputStatus.typing.action.classType === SendMessageAction.TypeSendMessageTypingAction)
+                inputStatus.typing.action.classType = SendMessageAction.TypeSendMessageCancelAction;
+        }
+
         function startTyping() {
-            if(!running)
-            {
+            if(!running) {
                 start();
-                context.telegram.messagesSetTyping(TelegramHelper.peerId(dialog), running);
+                inputStatus.typing.action.classType = SendMessageAction.TypeSendMessageTypingAction;
             }
         }
     }
@@ -127,19 +141,27 @@ InverseMouseArea
                 var selector = pageStack.push(Qt.resolvedUrl("../../pages/selector/SelectorMainPage.qml"), { "context": dialogtextinput.context,
                                                                                                              "dialogPage": pageStack.currentPage });
 
-                selector.actionCompleted.connect(function(action, data) {
-                    var peerid = TelegramHelper.peerId(dialogtextinput.dialog);
+                selector.actionRequested.connect(function(actiontype) {
+                    inputStatus.typing.action.classType = actiontype;
+                });
 
-                    if(action === selector.locationAction)
-                        context.telegram.sendGeo(peerid, data.latitude, data.longitude);
-                    else if(action === selector.soundRecordAction) {
-                        console.log(action + " " + data);
-                        context.telegram.sendFile(peerid, data, false, true);
-                    }
-                    else if(action === selector.stickerAction)
-                        context.telegram.forwardDocument(peerid, data);
+                selector.actionRejected.connect(function() {
+                    inputStatus.typing.action.classType = SendMessageAction.TypeSendMessageCancelAction;
+                });
+
+                selector.actionCompleted.connect(function(actiontype, data) {
+                    var peerid = 0;
+
+                    if(actiontype === SendMessageAction.TypeSendMessageGeoLocationAction)
+                        context.telegram.sendGeo(peerid, data.latitude, data.longitude); //FIXME: sendGeo() API Missing
+                    else if(actiontype === SendMessageAction.TypeSendMessageRecordAudioAction)
+                        messageListModel.sendFile(Enums.SendFileTypeAudio, data, replyMessage);
+                    else if(actiontype === SendMessageAction.TypeSendMessageUploadDocumentAction)
+                        messageListModel.sendFile(Enums.SendFileTypeDocument, data, replyMessage);
+                    else if(actiontype === selector.stickerAction) // Special
+                        messageListModel.sendSticker(data, replyMessage);
                     else
-                        context.telegram.sendFile(peerid, data);
+                        console.log("Unhandled actiontype: " + actiontype);
 
                     pageStack.pop(returnpage);
                 });

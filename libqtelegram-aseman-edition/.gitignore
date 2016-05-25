@@ -31,3 +31,6 @@ Makefile*
 *.qmlproject.user
 *.qmlproject.user.*
 *.DS_Store
+
+# Generator
+telegram

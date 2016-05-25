@@ -292,14 +292,10 @@ Minimum length is 5 characters.</source>
         <source>Recent chats:</source>
         <translation>Нещодавні чати:</translation>
     </message>
-    <message numerus="yes">
+    <message>
         <source>Unread
 message(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -444,7 +440,11 @@ message(s)</source>
     <name>DialogItem</name>
     <message>
         <source>You:</source>
-        <translation>Ви:</translation>
+        <translation type="unfinished">Ви:</translation>
+    </message>
+    <message>
+        <source>Typing...</source>
+        <translation type="unfinished">Набирає...</translation>
     </message>
 </context>
 <context>
@@ -691,13 +691,9 @@ Do a swype to the right to select a contact</source>
 </context>
 <context>
     <name>PeerItem</name>
-    <message numerus="yes">
-        <source>%n member(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
+    <message>
+        <source>Typing...</source>
+        <translation type="unfinished">Набирає...</translation>
     </message>
 </context>
 <context>
@@ -967,10 +963,6 @@ Do a swype to the right to select a contact</source>
         <translation>Приєднатися</translation>
     </message>
     <message>
-        <source>You have entered a wrong Authorization Code</source>
-        <translation>Ви ввели неправильний код авторизації</translation>
-    </message>
-    <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
         <translation>Зачекайте на СМС з кодом активації і натисніть &quot;Приєднатися&quot;</translation>
     </message>
@@ -981,10 +973,6 @@ Do a swype to the right to select a contact</source>
     <message>
         <source>Last Name (Optional)</source>
         <translation>Прізвище (за бажанням)</translation>
-    </message>
-    <message>
-        <source>Authorization Code</source>
-        <translation>Код авторизації</translation>
     </message>
     <message>
         <source>Exit</source>
@@ -1021,25 +1009,17 @@ Do a swype to the right to select a contact</source>
         <source>%1 added %2</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>��%1�� updated group photo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The group was upgraded to a supergroup</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TelegramHelper</name>
-    <message>
-        <source>Recently</source>
-        <translation>Нещодавно</translation>
-    </message>
-    <message>
-        <source>Last Month</source>
-        <translation>Минулий місяць</translation>
-    </message>
-    <message>
-        <source>Last Week</source>
-        <translation>Минулий тиждень</translation>
-    </message>
-    <message>
-        <source>Online</source>
-        <translation>В мережі</translation>
-    </message>
     <message>
         <source>Unknown</source>
         <translation>Невідомий</translation>
@@ -1057,24 +1037,12 @@ Do a swype to the right to select a contact</source>
         <translation>Відео</translation>
     </message>
     <message>
-        <source>Unsupported</source>
-        <translation>Не підтримується</translation>
-    </message>
-    <message>
         <source>Audio</source>
         <translation>Аудіо</translation>
     </message>
     <message>
         <source>Photo</source>
         <translation>Фото</translation>
-    </message>
-    <message>
-        <source>Last Seen %1</source>
-        <translation>Останній раз був (-ла) %1</translation>
-    </message>
-    <message>
-        <source>Typing...</source>
-        <translation>Набирає...</translation>
     </message>
     <message>
         <source>%1 is typing...</source>
@@ -1099,6 +1067,14 @@ Do a swype to the right to select a contact</source>
             <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
+    </message>
+    <message>
+        <source>Unsupported media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown media</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

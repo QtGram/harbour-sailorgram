@@ -87,7 +87,7 @@ Rectangle
         id: btndownloaad
         width: Theme.itemSizeSmall
         height: Theme.itemSizeSmall
-        enabled: fileHandler.filePath.toString().length > 0
+        enabled: imageHandler.filePath.toString().length > 0
         anchors { right: parent.right; rightMargin: Theme.paddingMedium; verticalCenter: parent.verticalCenter }
         icon.source: "qrc:///res/download.png"
         z: 10
@@ -96,7 +96,7 @@ Rectangle
             restoreOpacity();
 
             remorsepopup.execute(qsTr("Downloading media"), function() {
-                context.sailorgram.moveMediaToGallery(fileHandler.filePath.toString(),
+                context.sailorgram.moveMediaToGallery(imageHandler.filePath.toString(),
                                                       videoplayer.hasVideo ? TelegramConstants.typeMessageMediaVideo : TelegramConstants.typeMessageMediaAudio);
 
                 popupmessage.show(qsTr("Media saved in Gallery"));
