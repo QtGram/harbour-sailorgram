@@ -5,8 +5,15 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 
 Item
 {
+    property alias isSecretChat: peerimage.isSecretChat
+
     property Context context
-    property var dialogModelItem
+    property string title
+    property string statusText
+    property var peer
+    property var chat
+    property var user
+    property var typing
     property bool showUsername: false
 
     id: peeritem
@@ -18,10 +25,9 @@ Item
         width: peeritem.height - Theme.paddingSmall
         height: peeritem.height - Theme.paddingSmall
         context: peeritem.context
-        peer: dialogModelItem.peer
-        fallbackTitle: dialogModelItem.title
-        isChat: dialogModelItem.chat !== null
-        isSecretChat: dialogModelItem.isSecretChat
+        peer: peeritem.peer
+        chat: peeritem.chat
+        fallbackTitle: peeritem.title
     }
 
     Column
@@ -33,7 +39,7 @@ Item
             id: lbltitle
             width: parent.width
             elide: Text.ElideRight
-            text: dialogModelItem.title
+            text: peeritem.title
             horizontalAlignment: Qt.AlignRight
         }
 
@@ -42,8 +48,8 @@ Item
             id: lblusername
             width: parent.width
             elide: Text.ElideRight
-            visible: !dialogModelItem.chat && showUsername
-            text: dialogModelItem.user ? "@" + dialogModelItem.user.username : ""
+            visible: !peeritem.chat && showUsername
+            text: peeritem.user ? "@" + peeritem.user.username : ""
             font.pixelSize: Theme.fontSizeExtraSmall
             color: Theme.secondaryHighlightColor
             horizontalAlignment: Qt.AlignRight
@@ -58,14 +64,14 @@ Item
             horizontalAlignment: Qt.AlignRight
 
             text: {
-                if(dialogModelItem.typing.length > 0) {
-                    if(!dialogModelItem.chat)
+                if(peeritem.typing.length > 0) {
+                    if(!peeritem.chat)
                         return qsTr("Typing...");
 
-                    return TelegramHelper.typingUsers(context, dialogModelItem.typing);
+                    return TelegramHelper.typingUsers(context, peeritem.typing);
                 }
 
-                return dialogModelItem.statusText;
+                return peeritem.statusText;
             }
         }
     }

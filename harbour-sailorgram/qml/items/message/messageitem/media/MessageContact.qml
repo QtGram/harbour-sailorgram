@@ -10,14 +10,6 @@ import "../../../../js/TelegramHelper.js" as TelegramHelper
 
 MessageMediaItem
 {
-    readonly property User user: {
-        var userid = message.media.userId;
-        if(userid > 0)
-            return context.telegram.user(userid);
-        else
-            return null;
-    }
-
     id: contactdocument
     contentWidth: image.width + Math.max(name.calculatedWidth, phone.calculatedWidth) + Theme.paddingMedium
     contentHeight: row.height
@@ -47,7 +39,7 @@ MessageMediaItem
                 anchors.fill: parent
                 color: Theme.highlightDimmerColor
                 radius: image.width * 0.5
-                visible: !downloadHandler.downloaded && user
+                visible: !downloadHandler.downloaded
 
                 Label
                 {
@@ -79,14 +71,16 @@ MessageMediaItem
                 horizontalAlignment: Text.AlignLeft
                 font.pixelSize: Theme.fontSizeSmall
 
+                /* FIXME:
                 text: {
                     var media = message.media;
                     if(media.firstName && media.lastName)
                         return media.firstName + " " + media.lastName;
                     return media.firstName + media.lastName;
                 }
+                */
 
-                color: ColorScheme.colorizeTextItem(messageModelItem, context)
+                color: ColorScheme.colorizeText(messageType, messageOut, context)
                 wrapMode: Text.NoWrap
                 elide: Text.ElideRight
             }
@@ -95,9 +89,9 @@ MessageMediaItem
             {
                 id: phone
                 width: parent.width - Theme.paddingSmall
-                color: ColorScheme.colorizeLink(message, context)
+                color: ColorScheme.colorizeLink(messageType, messageOut, context)
                 font.pixelSize: Theme.fontSizeExtraSmall
-                text: message.media.phoneNumber
+                //FIXME: text: message.media.phoneNumber
                 wrapMode: Text.NoWrap
                 elide: Text.ElideRight
             }

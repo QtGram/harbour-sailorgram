@@ -19,8 +19,8 @@ BUILD_DIR="build.init"
 mkdir "$BUILD_DIR"
 cd "$BUILD_DIR"
 
-qmake -r ../libqtelegram-code-generator
-make
+qmake-qt5 -r ../libqtelegram-code-generator
+make -j8
 
 ./libqtelegram-generator 53 $ASEMAN_SRC_PATH/scheme/scheme-53.tl $ASEMAN_SRC_PATH
 

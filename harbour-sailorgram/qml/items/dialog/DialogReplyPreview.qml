@@ -9,7 +9,6 @@ import "../../js/ColorScheme.js" as ColorScheme
 Item
 {
     property Context context
-    property Dialog dialog
     property Message message
     property bool isForward
 
@@ -23,7 +22,6 @@ Item
     {
         id: messagepreview
         context: dialogreplypreview.context
-        dialog: dialogreplypreview.dialog
         message: dialogreplypreview.message
         showQuoteRect: false
         titlePrefix: isForward ? qsTr("Message to forward") : qsTr("Reply to")

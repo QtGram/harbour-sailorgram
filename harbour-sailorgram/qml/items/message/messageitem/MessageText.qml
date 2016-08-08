@@ -10,13 +10,20 @@ import "../../../js/TelegramConstants.js" as TelegramConstants
 Item
 {
     property Context context
-    property var messageModelItem
+    property User fromUser
+    property User toUser
+    property var messageDateTime
+    property var messageType
+    property var serviceItem
+    property string messageText
+    property bool messageOut
+    property bool messageUnread
+    property real maxWidth
 
-    readonly property bool isActionMessage: messageModelItem.messageType === Enums.TypeActionMessage
+    readonly property bool isActionMessage: messageType === Enums.TypeActionMessage
 
     property real calculatedWidth: isActionMessage ? mtctextcontent.calculatedWidth :
                                                      Math.max(mtctextcontent.calculatedWidth, msgstatus.calculatedWidth);
-    property real maxWidth
 
     id: messagetext
     height: content.height + Theme.paddingSmall
@@ -39,12 +46,12 @@ Item
             emojiPath: context.sailorgram.emojiPath
             wrapMode: Text.Wrap
             visible: rawText.length > 0
-            color: ColorScheme.colorizeTextItem(messageModelItem, context)
-            linkColor: ColorScheme.colorizeLink(messageModelItem, context)
+            color: ColorScheme.colorizeText(messageType, messageOut, context)
+            linkColor: ColorScheme.colorizeLink(messageType, messageOut, context)
 
             rawText: {
                 if(isActionMessage)
-                    return TelegramAction.actionType(messageModelItem.serviceItem, messageModelItem.fromUserItem, messageModelItem.toUserItem);
+                    return TelegramAction.actionType(messagetext.serviceItem, messagetext.fromUser, messagetext.toUser);
 
                 /*
                 if(TelegramHelper.isMediaMessage(message)) {
@@ -57,14 +64,14 @@ Item
                 }
                 */
 
-                return messageModelItem.message;
+                return messageText;
             }
 
             horizontalAlignment: {
                 if(isActionMessage)
                     return Text.AlignHCenter;
 
-                if(!messageModelItem.out)
+                if(!messageOut)
                     return Text.AlignRight;
 
                 return Text.AlignLeft;
@@ -76,10 +83,10 @@ Item
             id: msgstatus
             width: parent.width
             context: messagetext.context
-            messageDate: messageModelItem.dateTime
-            messageUnread: messageModelItem.unread
-            messageType: messageModelItem.messageType
-            messageOut: messageModelItem.out
+            messageDateTime: messagetext.messageDateTime
+            messageUnread: messagetext.messageUnread
+            messageType: messagetext.messageType
+            messageOut: messagetext.messageOut
         }
     }
 }

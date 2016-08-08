@@ -13,26 +13,32 @@ Page
 {
     property bool actionVisible: true
     property Context context
-    property var dialogModelItem
+    property var peer
+    property Chat chat
+    property User user
+    property string statusText
+    property string title
+    property bool isSecretChat
+    property bool mute
 
     id: dialoginfopage
     allowedOrientations: defaultAllowedOrientations
 
     function conversationTypeMessage() {
-        if(dialogModelItem.isSecretChat)
+        if(isSecretChat)
             return qsTr("Delete secret chat");
 
-        if(dialogModelItem.chat)
+        if(chat)
             return qsTr("Delete group");
 
         return qsTr("Delete conversation");
     }
 
     function conversationTypeRemorseMessage() {
-        if(dialogModelItem.isSecretChat)
+        if(isSecretChat)
             return qsTr("Deleting secret chat");
 
-        if(dialogModelItem.chat)
+        if(chat)
             return qsTr("Deleting group");
 
         return qsTr("Deleting conversation");
@@ -45,7 +51,7 @@ Page
             actionVisible: true
             allowSendMessage: false
             context: dialoginfopage.context
-            user: dialogModelItem.user
+            user: dialoginfopage.user
         }
     }
 
@@ -54,8 +60,8 @@ Page
 
         ChatInfo {
             context: dialoginfopage.context
-            chat: dialogModelItem.chat
-            peer: dialogModelItem.peer
+            chat: dialoginfopage.chat
+            peer: dialoginfopage.peer
         }
     }
 
@@ -76,20 +82,20 @@ Page
                 id: peerprofile
                 width: parent.width
                 context: dialoginfopage.context
-                peer: dialogModelItem.peer
-                isChat: dialogModelItem.chat !== null
-                isSecretChat: dialogModelItem.isSecretChat
-                statusText: dialogModelItem.statusText
-                fallbackAvatar: dialogModelItem.title
+                peer: dialoginfopage.peer
+                chat: dialoginfopage.chat
+                isSecretChat: dialoginfopage.isSecretChat
+                statusText: dialoginfopage.statusText
+                fallbackAvatar: dialoginfopage.title
 
                 title: {
-                    if(dialogModelItem.chat)
-                        return dialogModelItem.title;
+                    if(dialoginfopage.chat)
+                        return dialoginfopage.title;
 
-                    var name = TelegramHelper.completeName(dialogModelItem.user);
+                    var name = TelegramHelper.completeName(dialoginfopage.user);
 
-                    if(dialogModelItem.user.username.length > 0)
-                        name += " (@" + dialogModelItem.user.username + ")";
+                    if(dialoginfopage.user.username.length > 0)
+                        name += " (@" + dialoginfopage.user.username + ")";
 
                     return name;
                 }
@@ -99,7 +105,7 @@ Page
 
             ClickableLabel
             {
-                labelText: dialogModelItem.mute ? qsTr("Enable notifications") : qsTr("Disable notifications")
+                labelText: dialoginfopage.mute ? qsTr("Enable notifications") : qsTr("Disable notifications")
                 labelFont.pixelSize: Theme.fontSizeSmall
                 width: parent.width
                 height: Theme.itemSizeSmall
@@ -135,7 +141,7 @@ Page
                 height: Theme.itemSizeSmall
 
                 visible: {
-                    if(dialogModelItem.chat && !dialogModelItem.chat.admin)
+                    if(dialoginfopage.chat && !dialoginfopage.chat.admin)
                         return false;
 
                     return true;
@@ -159,7 +165,7 @@ Page
             {
                 labelText: qsTr("Add to contacts")
                 labelFont.pixelSize: Theme.fontSizeSmall
-                visible: !dialogModelItem.chat && !dialogModelItem.user.contact && (dialogModelItem.user.phone.length > 0)
+                visible: !dialoginfopage.chat && !dialoginfopage.user.contact && (dialoginfopage.user.phone.length > 0)
                 width: parent.width
                 height: Theme.itemSizeSmall
                 //FIXME: onActionRequested: context.telegram.addContact(user.firstName, user.lastName, user.phone)
@@ -170,7 +176,7 @@ Page
                 id: loader
 
                 sourceComponent: {
-                    if(dialogModelItem.chat)
+                    if(dialoginfopage.chat)
                         return chatinfocomponent;
 
                     return userinfocomponent;

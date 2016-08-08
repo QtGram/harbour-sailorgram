@@ -136,9 +136,31 @@ Page
                 contentWidth: parent.width
                 contentHeight: Theme.itemSizeSmall
                 context: dialogspage.context
-                dialogModelItem: model
+                title: model.title
+                unreadCount: model.unreadCount
+                mute: model.mute
+                isSecretChat: model.isSecretChat
+                messageOut: model.messageOut
+                messageType: model.messageType
+                messageDate: model.messageDate
+                messageUnread: model.messageUnread
+                messageUser: model.messageUser
+                peer: model.peer
+                chat: model.chat
+                topMessage: model.topMessage
+                typing: model.typing
 
-                onClicked: pageStack.push(Qt.resolvedUrl("DialogPage.qml"), { "context": dialogspage.context, "dialogModelItem": model })
+                onClicked: pageStack.push(Qt.resolvedUrl("DialogPage.qml"), { "context": dialogspage.context,
+                                                                              "title": model.title,
+                                                                              "statusText": model.statusText,
+                                                                              "peerHex": model.peerHex,
+                                                                              "peer": model.peer,
+                                                                              "chat": model.chat,
+                                                                              "user": model.user,
+                                                                              "typing": model.typing,
+                                                                              "secretChatState": model.secretChatState,
+                                                                              "isSecretChat": model.isSecretChat,
+                                                                              "mute": model.mute })
 
                 menu: DialogItemMenu {
                     dialog: model.dialog

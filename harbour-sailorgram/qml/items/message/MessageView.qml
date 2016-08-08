@@ -15,10 +15,12 @@ SilicaListView
     property bool discadedDialog: false
     property bool waitingDialog: false
     property bool selectionMode: false
-    property Context context
-    property var dialogModelItem
-    property Message forwardedMessage
     property MessageTypesPool messageTypesPool: MessageTypesPool { }
+    property Context context
+    property Message forwardedMessage
+    property string title
+    property var peer
+    property var chat
     property var selectedItems: []
 
     id: messageview
@@ -66,7 +68,7 @@ SilicaListView
     model: MessageListModel {
         id: messagesmodel
         engine: context.engine
-        currentPeer: dialogModelItem.peer
+        currentPeer: messageview.peer
 
         onCountChanged: {
             if((count <= 0) || (Qt.application.state !== Qt.ApplicationActive))
@@ -77,10 +79,28 @@ SilicaListView
     }
 
     delegate: MessageItem {
-        context: messageview.context
         messageTypesPool: messageview.messageTypesPool
-        dialogModelItem: messageview.dialogModelItem
-        messageModelItem: model
+        context: messageview.context
+        mediaItem: model.mediaItem
+        chat: messageview.chat
+        fromUser: model.fromUserItem
+        toUser: model.toUserItem
+        dialogTitle: messageview.title
+        messageText: model.message
+        fileName: model.fileName
+        fileMimeType: model.fileMimeType
+        fileSize: model.fileSize
+        fileDuration: model.fileDuration
+        messageOut: model.out
+        messageUnread: model.unread
+        messageDateTime: model.dateTime
+        messageType: model.messageType
+        forwardFromPeer: model.forwardFromPeer
+        forwardFromType: model.forwardFromType
+        replyMessage: model.replyMessage
+        replyPeer: model.replyPeer
+        replyType: model.replyType
+        serviceItem: model.serviceItem
         selected: selectedItems.indexOf(model.index) > -1
         highlighted: messageview.selectionMode ? selected : pressed
         showMenuOnPressAndHold: !messageview.selectionMode
@@ -107,12 +127,12 @@ SilicaListView
         }
 
         onClicked: {
-            if(messageview.selectionMode)
-            {
+            if(messageview.selectionMode) {
                 if(selected)
                     messageview.selectedItems.splice(messageview.selectedItems.indexOf(model.index), 1);
                 else
                     messageview.selectedItems.push(model.index);
+
                 selectedItemsChanged();
             }
         }
@@ -134,7 +154,6 @@ SilicaListView
             id: dialogreplypreview
             width: parent.width
             context: messageview.context
-            //FIXME: dialog: messageview.dialog
             isForward: forwardedMessage !== null
             message: forwardedMessage
 
@@ -156,11 +175,11 @@ SilicaListView
             width: parent.width
             messageListModel: messagesmodel
             context: messageview.context
-            peer: dialogModelItem.peer
+            peer: messageview.peer
             isForward: forwardedMessage !== null
             replyMessage: dialogreplypreview.message
             visible: !discadedDialog && !waitingDialog
-            onForwardRequested: context.telegram.forwardMessages([dialogreplypreview.message.id], TelegramHelper.peerId(messageview.dialog)); // Forward in this chat
+            //FIXME: onForwardRequested: context.telegram.forwardMessages([dialogreplypreview.message.id], TelegramHelper.peerId(messageview.dialog)); // Forward in this chat
 
             onMessageSent: {
                 forwardedMessage = null;
@@ -182,6 +201,7 @@ SilicaListView
         }
     }
 
+    /*
     Timer
     {
         id: refreshtimer
@@ -190,6 +210,7 @@ SilicaListView
         running: !context.sailorgram.daemonized
         onTriggered: messagesmodel.refresh()
     }
+    */
 
     BusyIndicator
     {
@@ -207,10 +228,10 @@ SilicaListView
             if(Qt.application.state !== Qt.ApplicationActive)
                 return;
 
-            messagesmodel.setReaded();
+            messagesmodel.markAsRead();
         }
     }
 
-    VerticalScrollDecorator { flickable:  messageview }
+    VerticalScrollDecorator { flickable: messageview }
     TelegramBackground { visible: !context.backgrounddisabled; z: -1 }
 }

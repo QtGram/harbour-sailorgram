@@ -14,13 +14,16 @@ ContextMenu
     signal cancelRequested()
 
     property Context context
-    property var modelItem
+    property var messageType
+    property string messageText
     property MessageMediaItem messageMediaItem
+
+    id: messagemenu
 
     MenuItem
     {
         text: qsTr("Add to Telegram")
-        visible: modelItem.messageType === Enums.TypeContactMessage
+        visible: messageType === Enums.TypeContactMessage
 
         /* FIXME:
         onClicked: {
@@ -38,24 +41,24 @@ ContextMenu
     MenuItem
     {
         text: qsTr("Reply")
-        visible: modelItem.messageType !== Enums.TypeActionMessage
+        visible: messageType !== Enums.TypeActionMessage
         onClicked: replyRequested();
     }
 
     MenuItem
     {
         text: qsTr("Forward")
-        visible: modelItem.messageType !== Enums.TypeActionMessage
+        visible: messageType !== Enums.TypeActionMessage
         onClicked: forwardRequested();
     }
 
     MenuItem
     {
         text: qsTr("Copy")
-        visible: modelItem.messageType === Enums.TypeTextMessage;
+        visible: messageType === Enums.TypeTextMessage;
 
         onClicked: {
-            Clipboard.text = modelItem.message;
+            Clipboard.text = messagemenu.messageText;
             popupmessage.show(qsTr("Message copied to clipboard"));
         }
     }

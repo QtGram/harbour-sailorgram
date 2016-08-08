@@ -7,10 +7,7 @@ import "../../../../js/TelegramConstants.js" as TelegramConstants
 MessageMediaItem
 {
     readonly property bool hasPureImage: {
-        if(!messageModelItem)
-            return false;
-
-        var webpage = messageModelItem.mediaItem.webpage;
+        var webpage = mediaItem.webpage;
         return (webpage.title.length <= 0) && (webpage.description.length <= 0);
     }
 
@@ -55,10 +52,10 @@ MessageMediaItem
         font.pixelSize: Theme.fontSizeSmall
         wrapMode: Text.NoWrap
         elide: Text.ElideRight
-        color: ColorScheme.colorizeTextItem(messageModelItem, context)
-        linkColor: ColorScheme.colorizeLink(messageModelItem, context)
+        color: ColorScheme.colorizeText(messageType, messageOut, context)
+        linkColor: ColorScheme.colorizeLink(messageType, messageOut, context)
         emojiPath: context.sailorgram.emojiPath
-        rawText: messageModelItem ? messageModelItem.mediaItem.webpage.url : ""
+        rawText: mediaItem.webpage.url
     }
 
     Item
@@ -91,10 +88,10 @@ MessageMediaItem
                 wrapMode: Text.Wrap
                 maximumLineCount: 2
                 elide: Text.ElideRight
-                color: ColorScheme.colorizeTextItem(messageModelItem, context)
-                linkColor: ColorScheme.colorizeLink(messageModelItem, context)
+                color: ColorScheme.colorizeText(messageType, messageOut, context)
+                linkColor: ColorScheme.colorizeLink(messageType, messageOut, context)
                 emojiPath: context.sailorgram.emojiPath
-                rawText: messageModelItem ? messageModelItem.mediaItem.webpage.title : ""
+                rawText: mediaItem.webpage.title
             }
 
             MessageTextContent
@@ -107,10 +104,10 @@ MessageMediaItem
                 wrapMode: Text.Wrap
                 maximumLineCount: 2
                 elide: Text.ElideRight
-                color: ColorScheme.colorizeTextItem(messageModelItem, context)
-                linkColor: ColorScheme.colorizeLink(messageModelItem, context)
+                color: ColorScheme.colorizeText(messageType, messageOut, context)
+                linkColor: ColorScheme.colorizeLink(messageType, messageOut, context)
                 emojiPath: context.sailorgram.emojiPath
-                rawText: messageModelItem ? messageModelItem.mediaItem.webpage.description : ""
+                rawText: mediaItem.webpage.description
             }
         }
 

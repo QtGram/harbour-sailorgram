@@ -7,11 +7,10 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 RoundedImage
 {
     property Context context
-    property var peer
     property string fallbackTitle
+    property var peer
+    property var chat: null
     property bool showType: true
-    property bool isChat: false
-    property bool isBroadcast: false
     property bool isSecretChat: false
 
     id: imgpeer
@@ -47,16 +46,16 @@ RoundedImage
         fillMode: Image.PreserveAspectFit
         width: Theme.iconSizeSmall
         height: Theme.iconSizeSmall
-        visible: showType && (isChat || isBroadcast || isSecretChat)
+        visible: showType && chat && (chat.broadcast || isSecretChat)
 
         source: {
             if(isSecretChat)
                 return "image://theme/icon-s-secure"
 
-            if(isBroadcast)
+            if(chat && chat.broadcast)
                 return "qrc:///res/broadcast.png";
 
-            if(isChat)
+            if(chat)
                 return "image://theme/icon-s-chat";
 
             return "";

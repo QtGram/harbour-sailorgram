@@ -8,7 +8,8 @@ import "../../../js/ColorScheme.js" as ColorScheme
 Item
 {
     property Context context
-    property var modelItem
+    property var messageType
+    property bool messageOut
 
     id: messagebubble
     layer.enabled: (context.bubbleshidden || !context.angledbubbles) ? false : true
@@ -34,7 +35,7 @@ Item
     Rectangle
     {
         id: mainbubble
-        color: ColorScheme.colorizeBubble(modelItem, context)
+        color: ColorScheme.colorizeBubble(messagebubble.messageType, messagebubble.messageOut, context)
         anchors.fill: parent
         radius: context.bubbleradius
         smooth: true
@@ -49,10 +50,10 @@ Item
         visible: context.angledbubbles
 
         anchors {
-            top: modelItem.out ? undefined : parent.top
-            right: modelItem.out ? undefined : parent.right
-            bottom: !modelItem.out ? undefined: parent.bottom
-            left: !modelItem.out ? undefined : parent.left
+            top: messageOut ? undefined : parent.top
+            right: messageOut ? undefined : parent.right
+            bottom: !messageOut ? undefined: parent.bottom
+            left: !messageOut ? undefined : parent.left
         }
     }
 }

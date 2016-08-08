@@ -9,7 +9,7 @@ InverseMouseArea
 {
     property MessageListModel messageListModel
     property Context context
-    property InputPeer peer
+    property var peer
     property Message replyMessage
     property bool isForward
 

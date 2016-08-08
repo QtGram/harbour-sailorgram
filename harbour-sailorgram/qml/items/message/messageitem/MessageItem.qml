@@ -13,10 +13,28 @@ import "../../../js/TelegramHelper.js" as TelegramHelper
 ListItem
 {
     property bool selected: false
-    property Context context
     property MessageTypesPool messageTypesPool
-    property var dialogModelItem
-    property var messageModelItem
+    property Context context
+    property MessageMedia mediaItem
+    property Chat chat
+    property User fromUser
+    property User toUser
+    property string dialogTitle
+    property string messageText
+    property string fileName
+    property string fileMimeType
+    property int fileSize
+    property int fileDuration
+    property bool messageOut
+    property bool messageUnread
+    property var messageDateTime
+    property var messageType
+    property var forwardFromPeer
+    property var forwardFromType
+    property var replyMessage
+    property var replyPeer
+    property var replyType
+    property var serviceItem
 
     signal replyRequested()
     signal forwardRequested()
@@ -111,7 +129,8 @@ ListItem
     menu: MessageMenu {
         id: messagemenu
         context: messageitem.context
-        modelItem: messageitem.messageModelItem
+        messageType: messageitem.messageType
+        messageText: messageitem.messageText
         messageMediaItem: mediacontainer.item
 
         onCancelRequested: mediacontainer.item.cancelTransfer()
@@ -124,7 +143,8 @@ ListItem
     {
         id: messagebubble
         context: messageitem.context
-        modelItem: messageitem.messageModelItem
+        messageType: messageitem.messageType
+        messageOut: messageitem.messageOut
         anchors { topMargin: Theme.paddingSmall; bottomMargin: Theme.paddingSmall }
         anchors.fill: content
     }
@@ -137,14 +157,14 @@ ListItem
         id: content
 
         anchors {
-            left: messageModelItem.out ? parent.left : undefined
-            right: messageModelItem.out ? undefined : parent.right
+            left: messageOut ? parent.left : undefined
+            right: messageOut ? undefined : parent.right
             leftMargin: Theme.paddingMedium
             rightMargin: Theme.paddingMedium
         }
 
         width: {
-            if(messageModelItem.messageType === Enums.TypeActionMessage)
+            if(messageType === Enums.TypeActionMessage)
                 return messageitem.width - Theme.paddingMedium;
 
             var w = messagetext.calculatedWidth;
@@ -181,7 +201,7 @@ ListItem
             }
 
 
-            color: ColorScheme.colorizeTextItem(messageModelItem, context)
+            color: ColorScheme.colorizeText(messageType, messageOut, context)
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: Theme.fontSizeSmall
             font.bold: true
@@ -190,34 +210,32 @@ ListItem
             textFormat: Text.StyledText
 
             visible: {
-                if(messageModelItem.forwardFromPeer)
+                if(forwardFromPeer)
                     return true;
 
-                return (messageModelItem.messageType !== Enums.TypeActionMessage) && !messageModelItem.out;
+                return (messageType !== Enums.TypeActionMessage) && !messageOut;
             }
 
             horizontalAlignment: {
-                if(messageModelItem.out)
+                if(messageOut)
                     return Text.AlignLeft;
 
                 return Text.AlignRight;
             }
 
             text: {
-                if(!messageModelItem || (messageModelItem.messageType === Enums.TypeActionMessage))
+                if(messageType === Enums.TypeActionMessage)
                     return "";
 
                 var completename = "";
 
-                if(dialogModelItem.chat && dialogModelItem.chat.broadcast)
-                    completename = dialogModelItem.title;
+                if(chat && chat.broadcast)
+                    completename = dialogTitle;
                 else
-                    completename = TelegramHelper.completeName(messageModelItem.fromUserItem);
+                    completename = TelegramHelper.completeName(fromUser);
 
-                var fwdpeer = messageModelItem.forwardFromPeer;
-
-                if(fwdpeer)
-                    completename += " <i>(" + qsTr("Forwarded from %1").arg(TelegramHelper.completeName(fwdpeer)) + ")</i>";
+                if(forwardFromPeer)
+                    completename += " <i>(" + qsTr("Forwarded from %1").arg(TelegramHelper.completeName(forwardFromPeer)) + ")</i>";
 
                 return completename;
             }
@@ -230,15 +248,13 @@ ListItem
             anchors { left: parent.left; leftMargin: Theme.paddingMedium }
 
             Component.onCompleted: {
-                var replymsg = messageModelItem.replyMessage;
-
-                if(replymsg !== null) {
+                if(messageitem.replyMessage !== null) {
                     var params = { "context": messageitem.context,
-                                   "message": replymsg,
-                                   "messageType": messageModelItem.replyType,
-                                   "peer": messageModelItem.replyPeer,
-                                   "textColor": ColorScheme.colorizeTextItem(messageModelItem, context),
-                                   "linkColor": ColorScheme.colorizeLink(messageModelItem, context),
+                                   "message": messageitem.replyMessage,
+                                   "messageType": messageitem.replyType,
+                                   "peer": messageitem.replyPeer,
+                                   "textColor": ColorScheme.colorizeText(messageType, messageOut, context),
+                                   "linkColor": ColorScheme.colorizeLink(messageType, messageOut, context),
                                    "maxWidth": content.maxw - 2 * Theme.paddingMedium };
 
                     messageTypesPool.messagePreview.createObject(quotedcontainer, params);
@@ -253,26 +269,34 @@ ListItem
             visible: mediacontainer.item !== null
 
             Component.onCompleted: {
-                if(messageModelItem.messageType === Enums.TypeTextMessage)
+                if(messageType === Enums.TypeTextMessage)
                     return;
 
-                var params = { "context": messageitem.context, "messageModelItem": messageitem.messageModelItem, "maxWidth": content.maxw - 2 * Theme.paddingMedium };
+                var params = { "context": messageitem.context,
+                               "mediaItem": messageitem.mediaItem,
+                               "messageType": messageitem.messageType,
+                               "fileSize": messageitem.fileSize,
+                               "fileDuration": messageitem.fileDuration,
+                               "messageOut": messageitem.messageOut,
+                               "fileName": messageitem.fileName,
+                               "fileMimeType": messageitem.fileMimeType,
+                               "maxWidth": content.maxw - 2 * Theme.paddingMedium };
 
-                if(messageModelItem.messageType === Enums.TypeDocumentMessage)
+                if(messageType === Enums.TypeDocumentMessage)
                     messageTypesPool.documentComponent.createObject(mediacontainer, params);
-                else if(messageModelItem.messageType === Enums.TypeStickerMessage)
+                else if(messageType === Enums.TypeStickerMessage)
                     messageTypesPool.stickerComponent.createObject(mediacontainer, params);
-                else if(messageModelItem.messageType === Enums.TypePhotoMessage)
+                else if(messageType === Enums.TypePhotoMessage)
                     messageTypesPool.photoComponent.createObject(mediacontainer, params);
-                else if(messageModelItem.messageType === Enums.TypeAudioMessage)
+                else if(messageType === Enums.TypeAudioMessage)
                     messageTypesPool.audioComponent.createObject(mediacontainer, params);
-                else if(messageModelItem.messageType === Enums.TypeVideoMessage)
+                else if(messageType === Enums.TypeVideoMessage)
                     messageTypesPool.videoComponent.createObject(mediacontainer, params);
-                else if((messageModelItem.messageType === Enums.TypeWebPageMessage)) //FIXME: && (media.webpage.url.length > 0))
+                else if(messageType === Enums.TypeWebPageMessage) //FIXME: && (media.webpage.url.length > 0))
                     messageTypesPool.webpageComponent.createObject(mediacontainer, params);
-                else if((messageModelItem.messageType === Enums.TypeGeoMessage) || (messageModelItem.messageType === Enums.TypeVenueMessage))
+                else if((messageType === Enums.TypeGeoMessage) || (messageType === Enums.TypeVenueMessage))
                     messageTypesPool.locationComponent.createObject(mediacontainer, params);
-                else if(messageModelItem.messageType === Enums.TypeContactMessage)
+                else if(messageType === Enums.TypeContactMessage)
                     messageTypesPool.contactComponent.createObject(mediacontainer, params);
             }
         }
@@ -290,7 +314,14 @@ ListItem
 
             maxWidth: content.maxw - 2 * Theme.paddingMedium
             context: messageitem.context
-            messageModelItem: messageitem.messageModelItem
+            fromUser: messageitem.fromUser
+            toUser: messageitem.toUser
+            messageDateTime: messageitem.messageDateTime
+            messageType: messageitem.messageType
+            serviceItem: messageitem.serviceItem
+            messageText: messageitem.messageText
+            messageOut: messageitem.messageOut
+            messageUnread: messageitem.messageUnread
         }
     }
 }

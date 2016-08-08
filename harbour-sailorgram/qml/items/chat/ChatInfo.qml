@@ -11,7 +11,7 @@ Item
 {
     property Context context
     property Chat chat
-    property InputPeer peer
+    property var peer
 
     id: chatinfo
     width: content.width

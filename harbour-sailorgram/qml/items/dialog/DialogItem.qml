@@ -11,7 +11,19 @@ import "../../js/TelegramAction.js" as TelegramAction
 ListItem
 {
     property Context context
-    property var dialogModelItem
+    property string title
+    property int unreadCount
+    property bool mute
+    property bool isSecretChat
+    property bool messageOut
+    property var messageType
+    property var messageDate
+    property var messageUnread
+    property var messageUser
+    property var peer
+    property var chat
+    property var topMessage
+    property var typing
 
     id: dialogitem
 
@@ -26,11 +38,10 @@ ListItem
             width: dialogitem.contentHeight
             height: dialogitem.contentHeight
             context: dialogitem.context
-            peer: dialogModelItem.peer
-            fallbackTitle: dialogModelItem.title
-            isChat: dialogModelItem.chat !== null
-            isBroadcast: dialogModelItem.chat && dialogModelItem.chat.broadcast
-            isSecretChat: dialogModelItem.isSecretChat
+            peer: dialogitem.peer
+            fallbackTitle: dialogitem.title
+            chat: dialogitem.chat
+            isSecretChat: dialogitem.isSecretChat
         }
 
         Column
@@ -52,7 +63,7 @@ ListItem
                     color: Theme.highlightColor
                     elide: Text.ElideRight
                     horizontalAlignment: Text.AlignLeft
-                    text: dialogModelItem.title
+                    text: dialogitem.title
 
                     width: {
                         var w = parent.width - msgstatus.contentWidth;
@@ -71,7 +82,7 @@ ListItem
                     source: "image://theme/icon-m-speaker-mute"
                     anchors.verticalCenter: parent.verticalCenter
                     fillMode: Image.PreserveAspectFit
-                    visible: dialogModelItem.mute
+                    visible: dialogitem.mute
                 }
 
                 MessageStatus
@@ -82,19 +93,13 @@ ListItem
                     context: dialogitem.context
                     color: Theme.primaryColor
                     ticksColor: Theme.highlightColor
-                    messageType: dialogModelItem.messageType
-                    messageOut: dialogModelItem.messageOut
-                    messageDate: dialogModelItem.messageDate
-                    messageUnread: dialogModelItem.messageUnread
+                    messageType: dialogitem.messageType
+                    messageOut: dialogitem.messageOut
+                    messageDateTime: dialogitem.messageDate
+                    messageUnread: dialogitem.messageUnread
                     dateFirst: false
                     visible: true
-
-                    dateOnly: {
-                        if(!dialogModelItem.topMessage)
-                            return false;
-
-                        return (dialogModelItem.messageType === Telegram.Enums.TypeActionMessage) || !dialogModelItem.messageOut;
-                    }
+                    dateOnly: (dialogitem.messageType === Telegram.Enums.TypeActionMessage) || !dialogitem.messageOut;
                 }
             }
 
@@ -113,21 +118,21 @@ ListItem
                     font.pixelSize: Theme.fontSizeExtraSmall
 
                     visible: {
-                        if((dialogModelItem.messageType === Telegram.Enums.TypeActionMessage) || (dialogModelItem.typing.length > 0))
+                        if((dialogitem.messageType === Telegram.Enums.TypeActionMessage) || (dialogitem.typing.length > 0))
                             return false;
 
-                        if(dialogModelItem.chat && !dialogModelItem.chat.broadcast)
+                        if(dialogitem.chat && !dialogitem.chat.broadcast)
                             return true;
 
-                        return dialogModelItem.topMessage && dialogModelItem.messageOut;
+                        return dialogitem.messageOut;
                     }
 
                     text: {
-                        if(dialogModelItem.topMessage && (dialogModelItem.messageType !== Telegram.Enums.TypeActionMessage) && (dialogModelItem.typing.length <= 0)) {
-                            if(dialogModelItem.chat && !dialogModelItem.chat.broadcast && dialogModelItem.messageUser)
-                                return TelegramHelper.userDisplayName(dialogModelItem.messageUser) + ": ";
+                        if((dialogitem.messageType !== Telegram.Enums.TypeActionMessage) && (dialogitem.typing.length <= 0)) {
+                            if(dialogitem.chat && !dialogitem.chat.broadcast && dialogitem.messageUser)
+                                return TelegramHelper.userDisplayName(dialogitem.messageUser) + ": ";
 
-                            if(dialogModelItem.messageOut)
+                            if(dialogitem.messageOut)
                                 return qsTr("You:") + " ";
                         }
 
@@ -150,44 +155,46 @@ ListItem
                     openUrls: false
 
                     color: {
-                        if((dialogModelItem.typing.length > 0) || (dialogModelItem.messageType !== Telegram.Enums.TypeTextMessage))
+                        if((dialogitem.typing.length > 0) || (dialogitem.messageType !== Telegram.Enums.TypeTextMessage))
                             return Theme.highlightColor;
 
                         return Theme.primaryColor;
                     }
 
                     font.italic: {
-                        if(dialogModelItem.typing.length > 0)
+                        if(dialogitem.typing.length > 0)
                             return true;
 
-                        if(dialogModelItem.messageType !== Telegram.Enums.TypeTextMessage)
+                        if(dialogitem.messageType !== Telegram.Enums.TypeTextMessage)
                             return true;
 
                         return false;
                     }
 
                     rawText: {
-                        if(dialogModelItem.typing.length > 0) {
-                            if(dialogModelItem.chat)
-                                return TelegramHelper.typingUsers(context, dialogModelItem.typing);
+                        if(dialogitem.typing.length > 0) {
+                            if(dialogitem.chat)
+                                return TelegramHelper.typingUsers(context, dialogitem.typing);
 
                             return qsTr("Typing...");
                         }
 
-                        if(dialogModelItem.messageType === Telegram.Enums.TypeActionMessage)
-                            return TelegramAction.actionType(dialogModelItem.topMessage.action, dialogModelItem.user, null, dialogModelItem.isSecretChat);
+                        if(dialogitem.messageType === Telegram.Enums.TypeActionMessage)
+                            return TelegramAction.actionType(dialogitem.topMessage.action, dialogitem.user, null, dialogitem.isSecretChat);
+                        else if((dialogitem.messageType !== Telegram.Enums.TypeTextMessage) && (dialogitem.messageType !== Telegram.Enums.TypeWebPageMessage))
+                            return TelegramHelper.mediaType(dialogitem.messageType);
 
-                        return TelegramHelper.firstMessageLine(context, dialogModelItem.topMessage.message);
+                        return TelegramHelper.firstMessageLine(context, dialogitem.topMessage.message);
                     }
                 }
 
                 Rectangle
                 {
                     id: rectunread
-                    width: dialogModelItem.unreadCount > 0 ? parent.height : 0
+                    width: dialogitem.unreadCount > 0 ? parent.height : 0
                     height: parent.height
                     color: Theme.secondaryHighlightColor
-                    visible: dialogModelItem.unreadCount > 0
+                    visible: dialogitem.unreadCount > 0
                     radius: width * 0.5
 
                     Label
@@ -197,7 +204,7 @@ ListItem
                         verticalAlignment: Text.AlignVCenter
                         horizontalAlignment: Text.AlignHCenter
                         font.bold: true
-                        text: dialogModelItem.unreadCount
+                        text: dialogitem.unreadCount
                     }
                 }
             }

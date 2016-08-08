@@ -20,7 +20,6 @@ Row
     }
 
     property Context context
-    property Dialog dialog
     property Message message
     property var messageType
     property var peer

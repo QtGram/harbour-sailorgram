@@ -72,7 +72,18 @@ Page
 
             onClicked: {
                 pageStack.navigateBack(PageStackAction.Immediate);
-                pageStack.push(Qt.resolvedUrl("../dialogs/DialogPage.qml"), { "context": contactspage.context, "dialogModelItem": model })
+
+                pageStack.push(Qt.resolvedUrl("../dialogs/DialogPage.qml"), { "context": dialogspage.context,
+                                                                              "title": model.title,
+                                                                              "statusText": model.statusText,
+                                                                              "peerHex": model.peerHex,
+                                                                              "peer": model.peer,
+                                                                              "chat": model.chat,
+                                                                              "user": model.user,
+                                                                              "typing": model.typing,
+                                                                              "secretChatState": model.secretChatState,
+                                                                              "isSecretChat": model.isSecretChat,
+                                                                              "mute": model.mute })
             }
 
             UserItem {

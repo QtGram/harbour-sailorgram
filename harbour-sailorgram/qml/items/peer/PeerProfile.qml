@@ -7,11 +7,11 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 Item
 {
     property alias title: lbltitle.text
-    property alias peer: useravatar.peer
     property alias fallbackAvatar: useravatar.fallbackTitle
-    property alias isChat: useravatar.isChat
     property alias isSecretChat: useravatar.isSecretChat
     property Context context
+    property var peer
+    property Chat chat
     property string statusText
 
     id: peerprofile
@@ -30,6 +30,8 @@ Item
             width: Screen.width * 0.3
             height: width
             context: peerprofile.context
+            peer: peerprofile.peer
+            chat: peerprofile.chat
             showType: false
 
             MouseArea
@@ -66,7 +68,7 @@ Item
             visible: statusText.length > 0
 
             text: {
-                if(isChat)
+                if(chat)
                     return qsTr("Group");
 
                 return statusText;

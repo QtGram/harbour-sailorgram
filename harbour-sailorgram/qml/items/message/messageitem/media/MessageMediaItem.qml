@@ -10,8 +10,13 @@ Item
     property alias downloadHandler: downloadhandler
 
     property Context context
-    property var messageModelItem
-    property Message message
+    property MessageMedia mediaItem
+    property var messageType
+    property int fileSize
+    property int fileDuration
+    property bool messageOut
+    property string fileName
+    property string fileMimeType
     property real maxWidth
     property real contentWidth
     property real contentHeight
@@ -32,7 +37,7 @@ Item
     }
 
     id: messagemediaitem
-    visible: messageModelItem ? messageModelItem.mediaItem : false
+    visible: mediaItem !== null
     width: Math.min(contentWidth, maxWidth)
     height: contentHeight
 
@@ -40,6 +45,6 @@ Item
     {
         id: downloadhandler
         engine: context.engine
-        source: messageModelItem ? messageModelItem.mediaItem : null
+        source: mediaItem
     }
 }

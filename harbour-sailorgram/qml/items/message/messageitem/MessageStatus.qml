@@ -12,7 +12,7 @@ ResizableLabel
     property bool dateFirst: true
     property bool dateOnly: false
     property Context context
-    property string messageDate
+    property string messageDateTime
     property bool messageUnread
     property bool messageType
     property bool messageOut
@@ -27,12 +27,12 @@ ResizableLabel
 
     text: {
         if(dateOnly)
-            return messageDate;
+            return messageDateTime;
 
         var status = "";
 
         if(dateFirst)
-            status += messageDate + " ";
+            status += messageDateTime + " ";
 
         if(messageOut) {
             status += "<font color=\"" + ticksColor + "\">";
@@ -46,7 +46,7 @@ ResizableLabel
         }
 
         if(!dateFirst)
-            status += " " + messageDate;
+            status += " " + messageDateTime;
 
         return status;
     }

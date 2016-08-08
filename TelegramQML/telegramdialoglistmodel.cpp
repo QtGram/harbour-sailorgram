@@ -540,6 +540,41 @@ void TelegramDialogListModel::clearHistory(InputPeerObject *peer, bool justClear
     });
 }
 
+void TelegramDialogListModel::createChat(const QVariantList &users, const QString &topic)
+{
+    if(!mEngine || !mEngine->telegram() || users.isEmpty())
+        return;
+    if(mEngine->state() != TelegramEngine::AuthLoggedIn)
+        return;
+
+    QList<InputUser> input;
+
+    Q_FOREACH(QVariant v, users)
+    {
+        UserObject* u = v.value<UserObject*>();
+
+        if(!u)
+            return;
+
+        InputUser iu(InputUser::typeInputUser);
+        iu.setUserId(u->id());
+        input << iu;
+    }
+
+    Telegram *tg = mEngine->telegram();
+    DEFINE_DIS;
+    tg->messagesCreateChat(input, topic, [this, dis](TG_MESSAGES_CREATE_CHAT_CALLBACK){
+        Q_UNUSED(msgId)
+        if(!dis || !mEngine) return;
+        if(!error.null) {
+            setError(error.errorText, error.errorCode);
+            return;
+        }
+
+        onUpdates(result);
+    });
+}
+
 void TelegramDialogListModel::refresh()
 {
     if(!mEngine || !mEngine->telegram())
@@ -1085,14 +1120,14 @@ void TelegramDialogListModel::insertUpdate(const Update &update)
                 item.dialog->setUnreadCount(item.dialog->unreadCount()+1);
 
             connectMessageSignals(id, item.topMessage);
+            resort();
+
             PROCESS_ROW_CHANGE(id, <<RoleTopMessageItem
                                <<RoleMessageType
                                <<RoleMessageDate
                                <<RoleMessageUnread
                                <<RoleMessage
                                <<RoleMessageOut);
-
-            resort();
         }
     }
         break;

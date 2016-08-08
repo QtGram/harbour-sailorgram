@@ -30,7 +30,7 @@ MessageMediaItem
 
             Rectangle {
                 border.width: 1
-                border.color: ColorScheme.colorizeLink(messageModelItem, context)
+                border.color: ColorScheme.colorizeLink(messageType, messageOut, context)
                 anchors { fill: parent; margins: -Theme.paddingSmall }
                 color: "transparent"
             }
@@ -48,8 +48,8 @@ MessageMediaItem
                 width: parent.width - Theme.paddingSmall
                 horizontalAlignment: Text.AlignLeft
                 font.pixelSize: Theme.fontSizeExtraSmall
-                text: messageModelItem ? messageModelItem.fileName : ""
-                color: ColorScheme.colorizeTextItem(messageModelItem, context)
+                text: fileName
+                color: ColorScheme.colorizeText(messageType, messageOut, context)
                 wrapMode: Text.NoWrap
                 elide: Text.ElideRight
             }
@@ -58,9 +58,9 @@ MessageMediaItem
             {
                 id: lblmimesize
                 width: parent.width - Theme.paddingSmall
-                color: ColorScheme.colorizeTextItem(messageModelItem, context)
+                color: ColorScheme.colorizeText(messageType, messageOut, context)
                 font.pixelSize: Theme.fontSizeExtraSmall
-                text: messageModelItem ? TelegramHelper.formatBytes(messageModelItem.fileSize, 2) + " " + messageModelItem.fileMimeType : ""
+                text: TelegramHelper.formatBytes(fileSize, 2) + " " + fileMimeType
                 wrapMode: Text.NoWrap
                 elide: Text.ElideRight
             }
@@ -70,8 +70,8 @@ MessageMediaItem
                 id: progressbar
                 width: parent.width - Theme.paddingSmall
                 barHeight: Theme.paddingSmall
-                barColor: ColorScheme.colorizeTextItem(messageModelItem, context)
-                border { color: ColorScheme.colorizeLink(messageModelItem, context); width: 1 }
+                barColor: ColorScheme.colorizeText(messageType, messageOut, context)
+                border { color: ColorScheme.colorizeLink(messageType, messageOut, context); width: 1 }
                 visible: downloadHandler.downloading
                 value: messagedocument.progressPercent
             }

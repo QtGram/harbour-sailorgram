@@ -19,10 +19,10 @@ MessageMediaItem
         font.pixelSize: Theme.fontSizeSmall
         emojiPath: context.sailorgram.emojiPath
         wrapMode: Text.Wrap
-        visible: messageModelItem ? (messageModelItem.messageType === Enums.TypeVenueMessage) : false
+        visible: messageType === Enums.TypeVenueMessage
         height: visible ? undefined : 0
-        color: ColorScheme.colorizeTextItem(messageModelItem, context)
-        linkColor: ColorScheme.colorizeLink(messageModelItem, context)
+        color: ColorScheme.colorizeText(messageType, messageOut, context)
+        linkColor: ColorScheme.colorizeLink(messageType, messageOut, context)
 
         rawText: {
             return "";
@@ -31,7 +31,7 @@ MessageMediaItem
         }
 
         horizontalAlignment: {
-            if(messageModelItem && !messageModelItem.out)
+            if(!messageOut)
                 return Text.AlignRight;
 
             return Text.AlignLeft;
@@ -43,6 +43,6 @@ MessageMediaItem
         id: mapthumbnail
         cache: true
         anchors { left: parent.left; right: parent.right; top: mtctextcontent.bottom; bottom: parent.bottom }
-        source: messageModelItem ? context.locationThumbnail(messageModelItem.mediaItem.geo.lat, messageModelItem.mediaItem.geo.longValue, width, height, 14) : ""
+        source: context.locationThumbnail(mediaItem.geo.lat, mediaItem.geo.longValue, width, height, 14)
     }
 }

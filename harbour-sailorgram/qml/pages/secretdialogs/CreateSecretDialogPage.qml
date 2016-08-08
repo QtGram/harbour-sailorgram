@@ -1,6 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 2.0
+import harbour.sailorgram.TelegramQml 2.0 as Telegram
 import "../../models"
 import "../../items/user"
 import "../../js/TelegramHelper.js" as TelegramHelper
@@ -29,8 +29,11 @@ Page
             spacing: Theme.paddingMedium
             clip: true
 
-            model: ContactsModel {
-                telegram: context.telegram
+            model: Telegram.DialogListModel {
+                id: contactsmodels
+                engine: context.engine
+                visibility: Telegram.DialogListModel.VisibilityContacts | Telegram.DialogListModel.VisibilityEmptyDialogs
+                sortFlag: [ Telegram.DialogListModel.SortByName, Telegram.DialogListModel.SortByOnline ]
             }
 
             delegate: ListItem {
@@ -46,7 +49,7 @@ Page
                     id: useritem
                     anchors { fill: parent; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
                     context: createsecretdialogpage.context
-                    user: context.telegram.user(item.userId)
+                    user: model.user
                 }
             }
         }

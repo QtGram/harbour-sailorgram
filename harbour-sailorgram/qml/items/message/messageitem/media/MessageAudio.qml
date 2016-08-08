@@ -32,7 +32,7 @@ MessageMediaItem
 
             Rectangle {
                 border.width: 1
-                border.color: ColorScheme.colorizeLink(message, context)
+                border.color: ColorScheme.colorizeLink(messageType, messageOut, context)
                 anchors { fill: parent; margins: -Theme.paddingSmall }
                 color: "transparent"
             }
@@ -50,7 +50,7 @@ MessageMediaItem
                 verticalAlignment: Text.AlignTop
                 horizontalAlignment: Text.AlignLeft
                 font.pixelSize: Theme.fontSizeExtraSmall
-                color: ColorScheme.colorizeTextItem(messageModelItem, context)
+                color: ColorScheme.colorizeText(messageType, messageOut, context)
                 text: qsTr("Audio recording")
                 wrapMode: Text.NoWrap
                 elide: Text.ElideRight
@@ -60,9 +60,9 @@ MessageMediaItem
             {
                 id: lblsize
                 width: parent.width
-                color: ColorScheme.colorizeTextItem(messageModelItem, context)
+                color: ColorScheme.colorizeText(messageType, messageOut, context)
                 font.pixelSize: Theme.fontSizeExtraSmall
-                text: messageModelItem ? qsTr("Size: %1").arg(TelegramHelper.formatBytes(messageModelItem.fileSize, 2)) : ""
+                text: qsTr("Size: %1").arg(TelegramHelper.formatBytes(fileSize, 2))
                 wrapMode: Text.NoWrap
                 elide: Text.ElideRight
             }
@@ -71,9 +71,9 @@ MessageMediaItem
             {
                 id: lblduration
                 width: parent.width
-                color: ColorScheme.colorizeTextItem(messageModelItem, context)
+                color: ColorScheme.colorizeText(messageType, messageOut, context)
                 font.pixelSize: Theme.fontSizeExtraSmall
-                text: messageModelItem ? qsTr("Duration: %1").arg(mediaplayertimings.displayDuration(messageModelItem.fileDuration)) : ""
+                text: qsTr("Duration: %1").arg(mediaplayertimings.displayDuration(fileDuration))
                 wrapMode: Text.NoWrap
                 elide: Text.ElideRight
             }
@@ -83,8 +83,8 @@ MessageMediaItem
                 id: progressbar
                 width: parent.width - Theme.paddingSmall
                 barHeight: Theme.paddingSmall
-                color: ColorScheme.colorizeTextItem(messageModelItem, context)
-                border { color: ColorScheme.colorizeLink(messageModelItem, context); width: 1 }
+                color: ColorScheme.colorizeText(messageType, messageOut, context)
+                border { color: ColorScheme.colorizeLink(messageType, messageOut, context); width: 1 }
                 visible: downloadHandler.downloading
                 value: messageaudio.progressPercent
             }

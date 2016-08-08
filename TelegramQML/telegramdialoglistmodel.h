@@ -136,6 +136,7 @@ Q_SIGNALS:
 public Q_SLOTS:
     int indexOf(InputPeerObject *peer);
     void clearHistory(InputPeerObject *peer, bool justClear = false, const QJSValue &callback = QJSValue());
+    void createChat(const QVariantList &users, const QString& topic);
 
 protected:
     void refresh();

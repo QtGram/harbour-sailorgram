@@ -13,7 +13,16 @@ import "../../js/TelegramConstants.js" as TelegramConstants
 Page
 {
     property Context context
-    property var dialogModelItem
+    property string title
+    property string statusText
+    property var peerHex
+    property var peer
+    property var chat
+    property var user
+    property var typing
+    property var secretChatState
+    property bool isSecretChat
+    property bool mute
     property var forwardedMessage: null
 
     id: dialogpage
@@ -24,10 +33,17 @@ Page
             return;
 
         if(!canNavigateForward)
-            pageStack.pushAttached(Qt.resolvedUrl("DialogInfoPage.qml"), { "context": dialogpage.context, "dialogModelItem": dialogModelItem });
+            pageStack.pushAttached(Qt.resolvedUrl("DialogInfoPage.qml"), { "context": dialogpage.context,
+                                                                           "peer": dialogpage.peer,
+                                                                           "chat": dialogpage.chat,
+                                                                           "user": dialogpage.user,
+                                                                           "statusText": dialogpage.statusText,
+                                                                           "title": dialogpage.title,
+                                                                           "isSecretChat": dialogpage.isSecretChat,
+                                                                           "mute": dialogpage.mute });
 
-        context.sailorgram.currentPeerKey = dialogModelItem.peerHex;
-        context.sailorgram.closeNotification(dialogModelItem.peerHex);
+        context.sailorgram.currentPeerKey = peerHex;
+        context.sailorgram.closeNotification(peerHex);
     }
 
     PopupMessage
@@ -79,7 +95,12 @@ Page
             visible: !context.chatheaderhidden
             height: context.chatheaderhidden ? 0 : (dialogpage.isPortrait ? Theme.itemSizeSmall : Theme.itemSizeExtraSmall)
             context: dialogpage.context
-            dialogModelItem: dialogpage.dialogModelItem
+            title: dialogpage.title
+            statusText: dialogpage.statusText
+            peer: dialogpage.peer
+            chat: dialogpage.chat
+            user: dialogpage.user
+            typing: dialogpage.typing
 
             anchors {
                 left: parent.left
@@ -95,34 +116,33 @@ Page
             id: messageview
             anchors { left: parent.left; top: header.bottom; right: parent.right; bottom: selectionactions.top }
             context: dialogpage.context
-            dialogModelItem: dialogpage.dialogModelItem
             forwardedMessage: dialogpage.forwardedMessage
+            title: dialogpage.title
+            peer: dialogpage.peer
+            chat: dialogpage.chat
 
             discadedDialog: {
-                if(!dialogModelItem.isSecretChat)
+                if(!dialogpage.isSecretChat)
                     return false;
 
-                return dialogModelItem.secretChatState === TelegramConstants.secretChatStateCancelled;
+                return dialogpage.secretChatState === TelegramConstants.secretChatStateCancelled;
             }
 
             waitingDialog: {
-                if(!dialogModelItem.isSecretChat)
+                if(!dialogpage.isSecretChat)
                     return false;
 
-                return dialogModelItem.secretChatState === TelegramConstants.secretChatStateRequested;
+                return dialogpage.secretChatState === TelegramConstants.secretChatStateRequested;
             }
 
             waitingUserName: {
-                if(!dialogModelItem)
-                    return;
-
-                if(!dialogModelItem.isSecretChat || !dialogModelItem.user)
+                if(!dialogpage.isSecretChat || !dialogpage.user)
                     return false;
 
-                if(dialogModelItem.secretChatState !== TelegramConstants.secretChatStateRequested)
+                if(dialogpage.secretChatState !== TelegramConstants.secretChatStateRequested)
                     return "";
 
-                return TelegramHelper.completeName(dialogModelItem.user);
+                return TelegramHelper.completeName(dialogpage.user);
             }
 
             onSelectedItemsChanged: {
