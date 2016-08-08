@@ -11,7 +11,7 @@ Item
 {
     property Context context
     property User fromUser
-    property User toUser
+    property User serviceUser
     property var messageDateTime
     property var messageType
     property var serviceItem
@@ -50,8 +50,10 @@ Item
             linkColor: ColorScheme.colorizeLink(messageType, messageOut, context)
 
             rawText: {
-                if(isActionMessage)
-                    return TelegramAction.actionType(messagetext.serviceItem, messagetext.fromUser, messagetext.toUser);
+                if(isActionMessage) {
+                    console.log(messagetext.serviceUser);
+                    return TelegramAction.actionType(messagetext.serviceItem, messagetext.fromUser, messagetext.serviceUser);
+                }
 
                 /*
                 if(TelegramHelper.isMediaMessage(message)) {

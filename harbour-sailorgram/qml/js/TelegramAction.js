@@ -3,7 +3,7 @@
 .import harbour.sailorgram.TelegramQml 2.0 as Telegram
 .import "TelegramHelper.js" as TelegramHelper
 
-function actionType(serviceitem, fromuser, touser, issecretchat) {
+function actionType(serviceitem, fromuser, serviceuser, issecretchat) { //FIXME: ServiceUser not available in QML API
     if(serviceitem.classType === Telegram.MessageAction.TypeMessageActionChatCreate) {
         if(issecretchat === true)
             return qsTr("Secret chat created by «%1»").arg(TelegramHelper.completeName(fromuser));
@@ -11,9 +11,9 @@ function actionType(serviceitem, fromuser, touser, issecretchat) {
         return qsTr("Group created by «%1»").arg(TelegramHelper.completeName(fromuser));
     }
 
-    if(serviceitem.classType === Telegram.MessageAction.typeMessageActionChatAddUser) {
-        if(touser)
-            return qsTr("%1 added %2").arg(TelegramHelper.completeName(fromuser)).arg(TelegramHelper.completeName(touser));
+    if(serviceitem.classType === Telegram.MessageAction.TypeMessageActionChatAddUser) {
+        if(serviceuser)
+            return qsTr("%1 added %2").arg(TelegramHelper.completeName(fromuser)).arg(TelegramHelper.completeName(serviceuser));
 
         return qsTr("%1 has joined the group").arg(TelegramHelper.completeName(fromuser));
     }

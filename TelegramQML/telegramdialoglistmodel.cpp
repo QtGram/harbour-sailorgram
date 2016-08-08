@@ -1120,7 +1120,6 @@ void TelegramDialogListModel::insertUpdate(const Update &update)
                 item.dialog->setUnreadCount(item.dialog->unreadCount()+1);
 
             connectMessageSignals(id, item.topMessage);
-            resort();
 
             PROCESS_ROW_CHANGE(id, <<RoleTopMessageItem
                                <<RoleMessageType
@@ -1128,6 +1127,7 @@ void TelegramDialogListModel::insertUpdate(const Update &update)
                                <<RoleMessageUnread
                                <<RoleMessage
                                <<RoleMessageOut);
+            resort();
         }
     }
         break;

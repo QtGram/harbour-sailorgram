@@ -26,6 +26,7 @@ class TELEGRAMQMLSHARED_EXPORT TelegramMessageListModel : public TelegramAbstrac
     Q_PROPERTY(QJSValue dateConvertorMethod READ dateConvertorMethod WRITE setDateConvertorMethod NOTIFY dateConvertorMethodChanged)
     Q_PROPERTY(QByteArray key READ key NOTIFY keyChanged)
     Q_PROPERTY(QVariantList typingUsers READ typingUsers NOTIFY typingUsersChanged)
+    Q_PROPERTY(QString statusText READ statusText NOTIFY statusTextChanged)
     Q_PROPERTY(int limit READ limit WRITE setLimit NOTIFY limitChanged)
     Q_PROPERTY(bool megagroup READ megagroup NOTIFY megagroupChanged)
     Q_PROPERTY(bool editable READ editable NOTIFY editableChanged)
@@ -41,6 +42,7 @@ public:
         RoleServiceItem,
         RoleMarkupItem,
         RoleEntityList,
+        RoleServiceUserItem,
         RoleFromUserItem,
         RoleToUserItem,
         RoleToChatItem,
@@ -108,6 +110,7 @@ public:
     void setLimit(int limit);
 
     QByteArray key() const;
+    QString statusText() const;
     QVariantList typingUsers() const;
     static QStringList requiredProperties();
 
@@ -119,6 +122,7 @@ Q_SIGNALS:
     void dateConvertorMethodChanged();
     void limitChanged();
     void typingUsersChanged();
+    void statusTextChanged();
     void megagroupChanged();
     void editableChanged();
     void useCacheChanged();

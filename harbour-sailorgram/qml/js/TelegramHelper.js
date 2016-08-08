@@ -152,6 +152,8 @@ function mediaType(messagetype) {
         return qsTr("Unsupported media");
     else if(messagetype === Telegram.Enums.TypeVideoMessage)
         return qsTr("Video");
+    else if(messagetype === Telegram.Enums.TypeAnimatedMessage)
+        return qsTr("GIF");
 
     return qsTr("Unknown media")
 }

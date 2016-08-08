@@ -11,6 +11,8 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 
 SilicaListView
 {
+    property alias typing: messagemodel.typingUsers
+    property alias statusText: messagemodel.statusText
     property bool waitingUserName: false
     property bool discadedDialog: false
     property bool waitingDialog: false
@@ -60,22 +62,25 @@ SilicaListView
         messagesmodel.deleteMessages(ids);
     }
 
-    onSelectionModeChanged: {
-        if(!selectionMode)
-            clearSelection();
-    }
-
-    model: MessageListModel {
-        id: messagesmodel
+    MessageListModel {
+        id: messagemodel
         engine: context.engine
         currentPeer: messageview.peer
+        limit: 50
 
         onCountChanged: {
             if((count <= 0) || (Qt.application.state !== Qt.ApplicationActive))
                 return;
 
-            messagesmodel.markAsRead(); // We are in this chat, always mark these messages as read
+            messagemodel.markAsRead(); // We are in this chat, always mark these messages as read
         }
+    }
+
+    model: messagemodel
+
+    onSelectionModeChanged: {
+        if(!selectionMode)
+            clearSelection();
     }
 
     delegate: MessageItem {
@@ -84,7 +89,7 @@ SilicaListView
         mediaItem: model.mediaItem
         chat: messageview.chat
         fromUser: model.fromUserItem
-        toUser: model.toUserItem
+        serviceUser: null //FIXME: !!!
         dialogTitle: messageview.title
         messageText: model.message
         fileName: model.fileName
@@ -149,7 +154,6 @@ SilicaListView
 
         Behavior on height { NumberAnimation { duration: 250 } }
 
-
         DialogReplyPreview {
             id: dialogreplypreview
             width: parent.width
@@ -173,7 +177,7 @@ SilicaListView
         DialogTextInput {
             id: dialogtextinput
             width: parent.width
-            messageListModel: messagesmodel
+            messageListModel: messagemodel
             context: messageview.context
             peer: messageview.peer
             isForward: forwardedMessage !== null
@@ -199,25 +203,6 @@ SilicaListView
             visible: waitingDialog
             waitingUser: waitingUserName
         }
-    }
-
-    /*
-    Timer
-    {
-        id: refreshtimer
-        repeat: true
-        interval: 10000
-        running: !context.sailorgram.daemonized
-        onTriggered: messagesmodel.refresh()
-    }
-    */
-
-    BusyIndicator
-    {
-        anchors.centerIn: parent
-        size: BusyIndicatorSize.Large
-        running: context.sailorgram.connected && messagesmodel.refreshing && (messagesmodel.count <= 0)
-        z: running ? 2 : 0
     }
 
     Connections

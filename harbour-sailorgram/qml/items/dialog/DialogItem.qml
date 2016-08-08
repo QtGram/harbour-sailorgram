@@ -165,9 +165,6 @@ ListItem
                         if(dialogitem.typing.length > 0)
                             return true;
 
-                        if(dialogitem.messageType !== Telegram.Enums.TypeTextMessage)
-                            return true;
-
                         return false;
                     }
 
@@ -180,11 +177,14 @@ ListItem
                         }
 
                         if(dialogitem.messageType === Telegram.Enums.TypeActionMessage)
-                            return TelegramAction.actionType(dialogitem.topMessage.action, dialogitem.user, null, dialogitem.isSecretChat);
+                            return TelegramAction.actionType(dialogitem.topMessage.action, dialogitem.messageUser, null, dialogitem.isSecretChat);
                         else if((dialogitem.messageType !== Telegram.Enums.TypeTextMessage) && (dialogitem.messageType !== Telegram.Enums.TypeWebPageMessage))
                             return TelegramHelper.mediaType(dialogitem.messageType);
 
-                        return TelegramHelper.firstMessageLine(context, dialogitem.topMessage.message);
+                        if(dialogitem.topMessage)
+                            return TelegramHelper.firstMessageLine(context, dialogitem.topMessage.message);
+
+                        return "";
                     }
                 }
 

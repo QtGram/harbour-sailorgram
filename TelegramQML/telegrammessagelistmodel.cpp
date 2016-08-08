@@ -67,7 +67,7 @@ public:
     bool useCache;
     int limit;
 
-    QHash<ChatObject*, QHash<UserObject*, int> > typingChats;
+    QHash<qint32, QHash<UserObject*, int> > typingChats;
 
     int repliesTimer;
     int loadSuspenderTimer;
@@ -530,16 +530,63 @@ QByteArray TelegramMessageListModel::key() const
         return QByteArray();
 }
 
+QString TelegramMessageListModel::statusText() const
+{
+    if(!mEngine || !mEngine->sharedData())
+        return QString();
+
+    TelegramSharedDataManager *tsdm = mEngine->sharedData();
+
+    if(p->currentDialog->peer()->classType() == PeerObject::TypePeerUser)
+    {
+        TelegramSharedPointer<UserObject> user = tsdm->getUser(key());
+
+        if(user.isNull())
+            return QString();
+
+        switch(user->status()->classType())
+        {
+        case UserStatusObject::TypeUserStatusEmpty:
+            return QString();
+            break;
+        case UserStatusObject::TypeUserStatusLastMonth:
+            return tr("Last month");
+            break;
+        case UserStatusObject::TypeUserStatusLastWeek:
+            return tr("Last week");
+            break;
+        case UserStatusObject::TypeUserStatusOffline:
+            return tr("Last seen %1").arg(convertDate(QDateTime::fromTime_t(user->status()->wasOnline())));
+            break;
+        case UserStatusObject::TypeUserStatusOnline:
+            return tr("Online");
+            break;
+        case UserStatusObject::TypeUserStatusRecently:
+            return tr("Last seen recently");
+            break;
+        }
+    }
+    else
+    {
+        TelegramSharedPointer<ChatObject> chat = tsdm->getChat(key());
+
+        if(chat.isNull())
+            return QString();
+
+        return tr("%1 members").arg(chat->participantsCount());
+    }
+
+    return QString();
+}
+
 QVariantList TelegramMessageListModel::typingUsers() const
 {
     QVariantList result;
     if(!mEngine || !mEngine->sharedData())
         return result;
 
-    QPointer<TelegramSharedDataManager> tsdm = mEngine->sharedData();
-    TelegramSharedPointer<ChatObject> chat = tsdm->getChat(key());
+    QList<UserObject*> users = p->typingChats.value(p->currentPeer->chatId()).keys();
 
-    QList<UserObject*> users = p->typingChats.value(chat).keys();
     Q_FOREACH(UserObject *user, users)
         result << QVariant::fromValue<QObject*>(user);
     return result;
@@ -1727,36 +1774,26 @@ void TelegramMessageListModel::insertUpdate(const Update &update)
         const qint32 chatId = update.chatId();
 
         UserObject *user = 0;
-        ChatObject *chat = 0;
-        QByteArray id;
         Q_FOREACH(TelegramMessageListItem item, p->items)
         {
             if(item.fromUser && item.fromUser->id() == userId)
             {
                 user = item.fromUser;
-                if(type == Update::typeUpdateUserTyping)
-                    id = item.id;
-            }
-            else
-            if(item.fromChat && item.fromChat->id() == chatId)
-            {
-                chat = item.fromChat;
-                if(type == Update::typeUpdateChatUserTyping)
-                    id = item.id;
+                break;
             }
         }
 
         if(user)
         {
-            p->typingChats[chat][user]++;
+            p->typingChats[chatId][user]++;
             Q_EMIT typingUsersChanged();
-            startTimer(5000, [this, chat, user, id](){
-                int &count = p->typingChats[chat][user];
+            startTimer(5000, [this, chatId, user](){
+                int &count = p->typingChats[chatId][user];
                 count--;
                 if(count == 0) {
-                    p->typingChats[chat].remove(user);
-                    if(p->typingChats.value(chat).isEmpty())
-                        p->typingChats.remove(chat);
+                    p->typingChats[chatId].remove(user);
+                    if(p->typingChats.value(chatId).isEmpty())
+                        p->typingChats.remove(chatId);
                 }
                 Q_EMIT typingUsersChanged();
             });
@@ -1767,14 +1804,20 @@ void TelegramMessageListModel::insertUpdate(const Update &update)
     {
         Q_FOREACH(TelegramMessageListItem item, p->items)
             if(item.fromChat && item.fromChat->id() == update.participants().chatId())
+            {
                 item.fromChat->setParticipantsCount(update.participants().participants().count());
+                Q_EMIT statusTextChanged();
+            }
     }
         break;
     case Update::typeUpdateUserStatus:
     {
         Q_FOREACH(TelegramMessageListItem item, p->items)
             if(item.fromUser && item.fromUser->id() == update.userId())
+            {
                 item.fromUser->status()->operator =(update.status());
+                Q_EMIT statusTextChanged();
+            }
     }
         break;
     case Update::typeUpdateUserName:

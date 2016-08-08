@@ -18,7 +18,7 @@ ListItem
     property MessageMedia mediaItem
     property Chat chat
     property User fromUser
-    property User toUser
+    property User serviceUser
     property string dialogTitle
     property string messageText
     property string fileName
@@ -315,7 +315,7 @@ ListItem
             maxWidth: content.maxw - 2 * Theme.paddingMedium
             context: messageitem.context
             fromUser: messageitem.fromUser
-            toUser: messageitem.toUser
+            serviceUser: messageitem.serviceUser
             messageDateTime: messageitem.messageDateTime
             messageType: messageitem.messageType
             serviceItem: messageitem.serviceItem

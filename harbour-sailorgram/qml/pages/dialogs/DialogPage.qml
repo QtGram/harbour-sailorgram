@@ -14,12 +14,10 @@ Page
 {
     property Context context
     property string title
-    property string statusText
     property var peerHex
     property var peer
     property var chat
     property var user
-    property var typing
     property var secretChatState
     property bool isSecretChat
     property bool mute
@@ -37,7 +35,7 @@ Page
                                                                            "peer": dialogpage.peer,
                                                                            "chat": dialogpage.chat,
                                                                            "user": dialogpage.user,
-                                                                           "statusText": dialogpage.statusText,
+                                                                           "statusText": messageview.statusText,
                                                                            "title": dialogpage.title,
                                                                            "isSecretChat": dialogpage.isSecretChat,
                                                                            "mute": dialogpage.mute });
@@ -96,11 +94,11 @@ Page
             height: context.chatheaderhidden ? 0 : (dialogpage.isPortrait ? Theme.itemSizeSmall : Theme.itemSizeExtraSmall)
             context: dialogpage.context
             title: dialogpage.title
-            statusText: dialogpage.statusText
             peer: dialogpage.peer
             chat: dialogpage.chat
             user: dialogpage.user
-            typing: dialogpage.typing
+            typing: messageview.typing
+            statusText: messageview.statusText
 
             anchors {
                 left: parent.left
