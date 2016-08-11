@@ -11,15 +11,21 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 
 SilicaListView
 {
+    readonly property var forwardMessageType: 0; //messageview.headerItem.dialogReplyPreview.messageType
+    readonly property bool forwardMessageOut: false //messageview.headerItem.dialogReplyPreview.messageOut
+    readonly property string forwardMessageText: "" //messageview.headerItem.dialogReplyPreview.messageText
+    readonly property var forwardMediaItem: null //messageview.headerItem.dialogReplyPreview.mediaItem
+    readonly property var forwardPeer: null //messageview.headerItem.dialogReplyPreview.peer
+
     property alias typing: messagemodel.typingUsers
     property alias statusText: messagemodel.statusText
+
     property bool waitingUserName: false
     property bool discadedDialog: false
     property bool waitingDialog: false
     property bool selectionMode: false
     property MessageTypesPool messageTypesPool: MessageTypesPool { }
     property Context context
-    property Message forwardedMessage
     property string title
     property var peer
     property var chat
@@ -59,7 +65,7 @@ SilicaListView
 
         selectedItems.forEach(function(i) { ids.push(messagesmodel.get(i)["item"].id) }); //FIXME: !!!
         clearSelection();
-        messagesmodel.deleteMessages(ids);
+        messagemodel.deleteMessages(ids);
     }
 
     MessageListModel {
@@ -118,16 +124,38 @@ SilicaListView
         onForwardRequested: {
             var fwdpage = pageStack.push(Qt.resolvedUrl("../../pages/dialogs/forward/ForwardDialogPage.qml"), { "context": messageview.context });
 
-            fwdpage.forwardRequested.connect(function(peerid, iscontact) {
-                if(TelegramHelper.peerId(messageview.dialog) === peerid) {
+            fwdpage.forwardRequested.connect(function(dialogmodelitem) {
+                if(dialogmodelitem.peer === messageview.peer) { // Check if it is forwared is this chat
                     messageview.headerItem.dialogReplyPreview.isForward = true;
-                    messageview.headerItem.dialogReplyPreview.message = item;
+                    messageview.headerItem.dialogReplyPreview.messageType = model.messageType
+                    messageview.headerItem.dialogReplyPreview.messageOut = model.messageOut
+                    messageview.headerItem.dialogReplyPreview.messageText = model.messageText
+                    messageview.headerItem.dialogReplyPreview.mediaItem = model.mediaItem
+                    messageview.headerItem.dialogReplyPreview.peer = model.toPeerItem
                     pageStack.pop();
                     return;
                 }
 
-                var dialog = iscontact ? context.telegram.fakeDialogObject(peerid, false) : context.telegram.dialog(peerid);
-                pageStack.replaceAbove(context.mainPage, Qt.resolvedUrl("../../pages/dialogs/DialogPage.qml"), { "context": context, "dialog": dialog, "forwardedMessage": item });
+                pageStack.replaceAbove(context.mainPage, Qt.resolvedUrl("../../pages/dialogs/DialogPage.qml"), { "context": messageview.context,
+                                                                                                                 "title": dialogmodelitem.title,
+                                                                                                                 "peerHex": dialogmodelitem.peerHex,
+                                                                                                                 "peer": dialogmodelitem.peer,
+                                                                                                                 "chat": dialogmodelitem.chat,
+                                                                                                                 "user": dialogmodelitem.user,
+                                                                                                                 "secretChatState": dialogmodelitem.secretChatState,
+                                                                                                                 "isSecretChat": dialogmodelitem.isSecretChat,
+                                                                                                                 "forwardMessageType": model.messageType,
+                                                                                                                 "forwardMessageOut": model.messageOut,
+                                                                                                                 "forwardMessageText": model.message,
+                                                                                                                 "forwardMediaItem": model.mediaItem,
+                                                                                                                 "forwardPeer": model.toPeerItem,
+                                                                                                                 "forwardedMessage": dialogmodelitem.item });
+            });
+        }
+
+        onDeleteRequested: {
+            remorseAction(qsTr("Deleting message..."), function() {
+                messagemodel.deleteMessages([model.item.id]);
             });
         }
 
@@ -158,15 +186,14 @@ SilicaListView
             id: dialogreplypreview
             width: parent.width
             context: messageview.context
-            isForward: forwardedMessage !== null
-            message: forwardedMessage
+            isForward: forwardMessageText.length > 0
 
             onCloseRequested: {
                 dialogtextinput.isForward = false;
             }
 
-            onMessageChanged: {
-                if(!message)
+            onMessageTextChanged: {
+                if(!messageText.length <= 0)
                     return;
 
                 dialogtextinput.focusTextArea();
@@ -183,7 +210,7 @@ SilicaListView
             isForward: forwardedMessage !== null
             replyMessage: dialogreplypreview.message
             visible: !discadedDialog && !waitingDialog
-            //FIXME: onForwardRequested: context.telegram.forwardMessages([dialogreplypreview.message.id], TelegramHelper.peerId(messageview.dialog)); // Forward in this chat
+            onForwardRequested: messagemodel.forwardMessages(messageview.forwardPeer, [messageview.forwardedMessage.id]); // Forward in this chat
 
             onMessageSent: {
                 forwardedMessage = null;

@@ -442,10 +442,6 @@ message(s)</source>
         <source>You:</source>
         <translation type="unfinished">Dig:</translation>
     </message>
-    <message>
-        <source>Typing...</source>
-        <translation type="unfinished">Skriver...</translation>
-    </message>
 </context>
 <context>
     <name>DialogItemMenu</name>
@@ -639,10 +635,6 @@ Stryg til venstre for at vælge en kontakt</translation>
         <translation>Slet</translation>
     </message>
     <message>
-        <source>Deleting Message</source>
-        <translation>Sletter Besked</translation>
-    </message>
-    <message>
         <source>Cancel</source>
         <translation>Annuller</translation>
     </message>
@@ -687,6 +679,13 @@ Stryg til venstre for at vælge en kontakt</translation>
     <message>
         <source>You:</source>
         <translation>Dig:</translation>
+    </message>
+</context>
+<context>
+    <name>MessageView</name>
+    <message>
+        <source>Deleting message...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -747,6 +746,21 @@ Stryg til venstre for at vælge en kontakt</translation>
     <message>
         <source>Actions</source>
         <translation>Handlinger</translation>
+    </message>
+</context>
+<context>
+    <name>SailorgramDialogItem</name>
+    <message>
+        <source>%1 is typing...</source>
+        <translation type="unfinished">%1 skriver...</translation>
+    </message>
+    <message>
+        <source>%1 and %2 are typing...</source>
+        <translation type="unfinished">%1 og %2 skriver...</translation>
+    </message>
+    <message>
+        <source>%1 member(s) are typing...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1035,10 +1049,6 @@ Stryg til venstre for at vælge en kontakt</translation>
         <translation>Video</translation>
     </message>
     <message>
-        <source>Audio</source>
-        <translation>Lyd</translation>
-    </message>
-    <message>
         <source>Photo</source>
         <translation>Foto</translation>
     </message>
@@ -1070,7 +1080,15 @@ Stryg til venstre for at vælge en kontakt</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unknown media</source>
+        <source>GIF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audio recording</source>
+        <translation type="unfinished">Lydoptagelse</translation>
+    </message>
+    <message>
+        <source>Unknown media: %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -12,14 +12,14 @@ ResizableLabel
     property bool dateFirst: true
     property bool dateOnly: false
     property Context context
-    property string messageDateTime
+    property bool isActionMessage
+    property string messageDate
     property bool messageUnread
-    property bool messageType
     property bool messageOut
 
     id: messagestatus
-    visible: messageType !== Enums.TypeActionMessage
-    color: ColorScheme.colorizeText(messageType, messageOut, context)
+    visible: !isActionMessage
+    color: ColorScheme.colorizeText(isActionMessage, messageOut, context)
     horizontalAlignment: messageOut ? Text.AlignLeft : Text.AlignRight
     verticalAlignment: Text.AlignVCenter
     font.pixelSize: Theme.fontSizeTiny
@@ -27,12 +27,12 @@ ResizableLabel
 
     text: {
         if(dateOnly)
-            return messageDateTime;
+            return messageDate;
 
         var status = "";
 
         if(dateFirst)
-            status += messageDateTime + " ";
+            status += messageDate + " ";
 
         if(messageOut) {
             status += "<font color=\"" + ticksColor + "\">";
@@ -46,7 +46,7 @@ ResizableLabel
         }
 
         if(!dateFirst)
-            status += " " + messageDateTime;
+            status += " " + messageDate;
 
         return status;
     }

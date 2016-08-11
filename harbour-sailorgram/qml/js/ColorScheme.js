@@ -10,12 +10,12 @@ function reverseColor(color, light) {
     return Qt.lighter(Qt.rgba(1.0 - color.r, 1.0 - color.g, 1.0 - color.b, 1.0), light);
 }
 
-function colorizeText(messagetype, messageout, context) {
-    if(messagetype === Telegram.Enums.TypeActionMessage)
+function colorizeText(isactionmessage, messageout, context) {
+    if(isactionmessage)
         return Silica.Theme.primaryColor;
 
     if(context.bubbleshidden) {
-        if(messagetype === Telegram.Enums.TypeActionMessage)
+        if(isactionmessage)
             return Silica.Theme.primaryColor;
 
         if(messageout)

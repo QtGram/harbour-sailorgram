@@ -442,10 +442,6 @@ message(s)</source>
         <source>You:</source>
         <translation type="unfinished">Εσύ:</translation>
     </message>
-    <message>
-        <source>Typing...</source>
-        <translation type="unfinished">Πληκτρολογεί...</translation>
-    </message>
 </context>
 <context>
     <name>DialogItemMenu</name>
@@ -640,10 +636,6 @@ Do a swype to the right to select a contact</source>
         <translation>Διαγραφή</translation>
     </message>
     <message>
-        <source>Deleting Message</source>
-        <translation>Το μήνυμα διαγράφεται</translation>
-    </message>
-    <message>
         <source>Cancel</source>
         <translation>Ακύρωση</translation>
     </message>
@@ -688,6 +680,13 @@ Do a swype to the right to select a contact</source>
     <message>
         <source>You:</source>
         <translation>Εσύ:</translation>
+    </message>
+</context>
+<context>
+    <name>MessageView</name>
+    <message>
+        <source>Deleting message...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -748,6 +747,21 @@ Do a swype to the right to select a contact</source>
     <message>
         <source>Actions</source>
         <translation>Ενέργειες</translation>
+    </message>
+</context>
+<context>
+    <name>SailorgramDialogItem</name>
+    <message>
+        <source>%1 is typing...</source>
+        <translation type="unfinished">%1 πληκτρολογεί...</translation>
+    </message>
+    <message>
+        <source>%1 and %2 are typing...</source>
+        <translation type="unfinished">%1 και %2 πληκτρολογούν...</translation>
+    </message>
+    <message>
+        <source>%1 member(s) are typing...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1036,10 +1050,6 @@ Do a swype to the right to select a contact</source>
         <translation>Βίντεο</translation>
     </message>
     <message>
-        <source>Audio</source>
-        <translation>Ηχητικό</translation>
-    </message>
-    <message>
         <source>Photo</source>
         <translation>Φώτο</translation>
     </message>
@@ -1071,7 +1081,15 @@ Do a swype to the right to select a contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unknown media</source>
+        <source>GIF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audio recording</source>
+        <translation type="unfinished">Εγγραφή ήχου</translation>
+    </message>
+    <message>
+        <source>Unknown media: %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

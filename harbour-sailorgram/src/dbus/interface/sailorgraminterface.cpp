@@ -36,7 +36,7 @@ void SailorgramInterface::wakeUp()
     emit wakeUpRequested();
 }
 
-void SailorgramInterface::openDialog(qint32 peerid)
+void SailorgramInterface::openDialog(QString peerkey)
 {
-    emit openDialogRequested(peerid);
+    emit openDialogRequested(peerkey);
 }

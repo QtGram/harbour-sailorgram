@@ -442,10 +442,6 @@ message(s)</source>
         <source>You:</source>
         <translation type="unfinished">Ty:</translation>
     </message>
-    <message>
-        <source>Typing...</source>
-        <translation type="unfinished">Píše...</translation>
-    </message>
 </context>
 <context>
     <name>DialogItemMenu</name>
@@ -639,10 +635,6 @@ Utři do prava aby jsi vybral kontakt</translation>
         <translation>Vymazat</translation>
     </message>
     <message>
-        <source>Deleting Message</source>
-        <translation>Vymazání zprávy</translation>
-    </message>
-    <message>
         <source>Cancel</source>
         <translation>Anulovat</translation>
     </message>
@@ -687,6 +679,13 @@ Utři do prava aby jsi vybral kontakt</translation>
     <message>
         <source>You:</source>
         <translation>Ty:</translation>
+    </message>
+</context>
+<context>
+    <name>MessageView</name>
+    <message>
+        <source>Deleting message...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -747,6 +746,21 @@ Utři do prava aby jsi vybral kontakt</translation>
     <message>
         <source>Actions</source>
         <translation>Akce</translation>
+    </message>
+</context>
+<context>
+    <name>SailorgramDialogItem</name>
+    <message>
+        <source>%1 is typing...</source>
+        <translation type="unfinished">%1 píše...</translation>
+    </message>
+    <message>
+        <source>%1 and %2 are typing...</source>
+        <translation type="unfinished">%1 and %2 psají</translation>
+    </message>
+    <message>
+        <source>%1 member(s) are typing...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1037,10 +1051,6 @@ Utři do prava aby jsi vybral kontakt</translation>
         <translation>Video</translation>
     </message>
     <message>
-        <source>Audio</source>
-        <translation>Audio</translation>
-    </message>
-    <message>
         <source>Photo</source>
         <translation>Fotka</translation>
     </message>
@@ -1073,7 +1083,15 @@ Utři do prava aby jsi vybral kontakt</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unknown media</source>
+        <source>GIF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audio recording</source>
+        <translation type="unfinished">Audio záznam</translation>
+    </message>
+    <message>
+        <source>Unknown media: %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

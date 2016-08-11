@@ -1,6 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 2.0 as Telegram
+import harbour.sailorgram.Telegram 1.0
 import "../../models"
 import "../../items/peer"
 import "../../items/user"
@@ -11,19 +11,8 @@ import "../../js/TelegramAction.js" as TelegramAction
 ListItem
 {
     property Context context
-    property string title
-    property int unreadCount
-    property bool mute
-    property bool isSecretChat
-    property bool messageOut
-    property var messageType
-    property var messageDate
-    property var messageUnread
-    property var messageUser
-    property var peer
-    property var chat
+    property SailorgramDialogItem sgDialogItem
     property var topMessage
-    property var typing
 
     id: dialogitem
 
@@ -38,10 +27,11 @@ ListItem
             width: dialogitem.contentHeight
             height: dialogitem.contentHeight
             context: dialogitem.context
-            peer: dialogitem.peer
-            fallbackTitle: dialogitem.title
-            chat: dialogitem.chat
-            isSecretChat: dialogitem.isSecretChat
+            peer: sgDialogItem.peer
+            fallbackTitle: sgDialogItem.title
+            isChat: sgDialogItem.isChat
+            isBroadcast: sgDialogItem.isBroadcast
+            isSecretChat: sgDialogItem.isSecretChat
         }
 
         Column
@@ -63,7 +53,7 @@ ListItem
                     color: Theme.highlightColor
                     elide: Text.ElideRight
                     horizontalAlignment: Text.AlignLeft
-                    text: dialogitem.title
+                    text: sgDialogItem.title
 
                     width: {
                         var w = parent.width - msgstatus.contentWidth;
@@ -82,7 +72,7 @@ ListItem
                     source: "image://theme/icon-m-speaker-mute"
                     anchors.verticalCenter: parent.verticalCenter
                     fillMode: Image.PreserveAspectFit
-                    visible: dialogitem.mute
+                    visible: sgDialogItem.isMute
                 }
 
                 MessageStatus
@@ -93,13 +83,13 @@ ListItem
                     context: dialogitem.context
                     color: Theme.primaryColor
                     ticksColor: Theme.highlightColor
-                    messageType: dialogitem.messageType
-                    messageOut: dialogitem.messageOut
-                    messageDateTime: dialogitem.messageDate
-                    messageUnread: dialogitem.messageUnread
+                    isActionMessage: sgDialogItem.isActionMessage
+                    messageOut: sgDialogItem.isMessageOut
+                    messageDate: sgDialogItem.messageDate
+                    messageUnread: sgDialogItem.isMessageUnread
                     dateFirst: false
                     visible: true
-                    dateOnly: (dialogitem.messageType === Telegram.Enums.TypeActionMessage) || !dialogitem.messageOut;
+                    dateOnly: sgDialogItem.isActionMessage || !sgDialogItem.isMessageOut
                 }
             }
 
@@ -118,21 +108,21 @@ ListItem
                     font.pixelSize: Theme.fontSizeExtraSmall
 
                     visible: {
-                        if((dialogitem.messageType === Telegram.Enums.TypeActionMessage) || (dialogitem.typing.length > 0))
+                        if(sgDialogItem.isActionMessage || (sgDialogItem.typingUsers.length > 0))
                             return false;
 
-                        if(dialogitem.chat && !dialogitem.chat.broadcast)
+                        if(!sgDialogItem.isBroadcast)
                             return true;
 
-                        return dialogitem.messageOut;
+                        return sgDialogItem.isMessageOut;
                     }
 
                     text: {
-                        if((dialogitem.messageType !== Telegram.Enums.TypeActionMessage) && (dialogitem.typing.length <= 0)) {
-                            if(dialogitem.chat && !dialogitem.chat.broadcast && dialogitem.messageUser)
-                                return TelegramHelper.userDisplayName(dialogitem.messageUser) + ": ";
+                        if(!sgDialogItem.isActionMessage && (sgDialogItem.typingUsers.length <= 0)) {
+                            if(sgDialogItem.isChat && !sgDialogItem.isBroadcast)
+                                return TelegramHelper.userDisplayName(sgDialogItem.messageUser) + ": ";
 
-                            if(dialogitem.messageOut)
+                            if(sgDialogItem.isMessageOut)
                                 return qsTr("You:") + " ";
                         }
 
@@ -155,46 +145,38 @@ ListItem
                     openUrls: false
 
                     color: {
-                        if((dialogitem.typing.length > 0) || (dialogitem.messageType !== Telegram.Enums.TypeTextMessage))
+                        if((sgDialogItem.typingUsers.length > 0) || !sgDialogItem.isTextMessage)
                             return Theme.highlightColor;
 
                         return Theme.primaryColor;
                     }
 
                     font.italic: {
-                        if(dialogitem.typing.length > 0)
+                        if(sgDialogItem.typingUsers.length > 0)
                             return true;
 
                         return false;
                     }
 
                     rawText: {
-                        if(dialogitem.typing.length > 0) {
-                            if(dialogitem.chat)
-                                return TelegramHelper.typingUsers(context, dialogitem.typing);
+                        if(sgDialogItem.typingUsers.length > 0)
+                            return sgDialogItem.typingUsers;
+                        else if(sgDialogItem.isActionMessage)
+                            return TelegramAction.actionType(sgDialogItem.messageAction, sgDialogItem.isSecretChat);
+                        else if(!sgDialogItem.isTextMessage && (sgDialogItem.messageType !== SailorgramEnums.MessageTypeWebPage))
+                            return TelegramHelper.mediaType(sgDialogItem.messageType);
 
-                            return qsTr("Typing...");
-                        }
-
-                        if(dialogitem.messageType === Telegram.Enums.TypeActionMessage)
-                            return TelegramAction.actionType(dialogitem.topMessage.action, dialogitem.messageUser, null, dialogitem.isSecretChat);
-                        else if((dialogitem.messageType !== Telegram.Enums.TypeTextMessage) && (dialogitem.messageType !== Telegram.Enums.TypeWebPageMessage))
-                            return TelegramHelper.mediaType(dialogitem.messageType);
-
-                        if(dialogitem.topMessage)
-                            return TelegramHelper.firstMessageLine(context, dialogitem.topMessage.message);
-
-                        return "";
+                        return TelegramHelper.firstMessageLine(context, sgDialogItem.messageText);
                     }
                 }
 
                 Rectangle
                 {
                     id: rectunread
-                    width: dialogitem.unreadCount > 0 ? parent.height : 0
+                    width: sgDialogItem.unreadCount > 0 ? parent.height : 0
                     height: parent.height
                     color: Theme.secondaryHighlightColor
-                    visible: dialogitem.unreadCount > 0
+                    visible: sgDialogItem.unreadCount > 0
                     radius: width * 0.5
 
                     Label
@@ -204,7 +186,7 @@ ListItem
                         verticalAlignment: Text.AlignVCenter
                         horizontalAlignment: Text.AlignHCenter
                         font.bold: true
-                        text: dialogitem.unreadCount
+                        text: sgDialogItem.unreadCount
                     }
                 }
             }

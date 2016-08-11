@@ -440,10 +440,6 @@ message</translation>
         <source>You:</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Typing...</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>DialogItemMenu</name>
@@ -635,10 +631,6 @@ Do a swype to the right to select a contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Deleting Message</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -682,6 +674,13 @@ Do a swype to the right to select a contact</source>
     <name>MessageSearchItem</name>
     <message>
         <source>You:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MessageView</name>
+    <message>
+        <source>Deleting message...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -742,6 +741,21 @@ Do a swype to the right to select a contact</source>
     </message>
     <message>
         <source>Actions</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SailorgramDialogItem</name>
+    <message>
+        <source>%1 is typing...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 and %2 are typing...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 member(s) are typing...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1031,10 +1045,6 @@ Do a swype to the right to select a contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Audio</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Photo</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1066,7 +1076,15 @@ Do a swype to the right to select a contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unknown media</source>
+        <source>GIF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audio recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown media: %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

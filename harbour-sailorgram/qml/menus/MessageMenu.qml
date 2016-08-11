@@ -10,6 +10,7 @@ ContextMenu
 {
     signal replyRequested()
     signal forwardRequested()
+    signal deleteRequested()
     signal downloadRequested()
     signal cancelRequested()
 
@@ -42,14 +43,14 @@ ContextMenu
     {
         text: qsTr("Reply")
         visible: messageType !== Enums.TypeActionMessage
-        onClicked: replyRequested();
+        onClicked: replyRequested()
     }
 
     MenuItem
     {
         text: qsTr("Forward")
         visible: messageType !== Enums.TypeActionMessage
-        onClicked: forwardRequested();
+        onClicked: forwardRequested()
     }
 
     MenuItem
@@ -66,12 +67,7 @@ ContextMenu
     MenuItem
     {
         text: qsTr("Delete")
-
-        onClicked: {
-            messageitem.remorseAction(qsTr("Deleting Message"), function() {
-                context.telegram.deleteMessages([message.id]);
-            });
-        }
+        onClicked: deleteRequested()
     }
 
     MenuItem

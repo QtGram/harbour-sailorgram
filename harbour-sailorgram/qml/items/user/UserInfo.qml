@@ -61,7 +61,7 @@ Item
         SectionHeader
         {
             text: qsTr("Phone Number")
-            visible: user.phone.length > 0
+            visible: user ? user.phone.length > 0 : false
         }
 
         BackgroundItem
@@ -77,8 +77,8 @@ Item
                 anchors { left: parent.left; leftMargin: Theme.paddingMedium; top: parent.top; right: parent.right; rightMargin: Theme.paddingMedium }
                 height: Theme.itemSizeSmall
                 verticalAlignment: Text.AlignVCenter
-                text: TelegramHelper.phoneNumber(user)
-                visible: user.phone.length > 0
+                text: user ? TelegramHelper.phoneNumber(user) : ""
+                visible: user ? user.phone.length > 0 : false
             }
 
             ContextMenu

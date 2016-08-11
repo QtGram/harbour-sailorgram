@@ -9,17 +9,9 @@ Page
 {
     property Context context
 
-    signal forwardRequested(int peerid, bool iscontact)
+    signal forwardRequested(var dialogmodelitem)
 
     id: fwddialogpage
-
-    Component.onCompleted: {
-        context.dialogs.stopUpdating = true;
-    }
-
-    Component.onDestruction: {
-        context.dialogs.stopUpdating = false;
-    }
 
     onStatusChanged: {
         if(status !== PageStatus.Active)
@@ -29,8 +21,6 @@ Page
             var fwdcontactpage = pageStack.pushAttached(Qt.resolvedUrl("ForwardContactPage.qml"), { "context": fwddialogpage.context });
             fwdcontactpage.forwardRequested.connect(forwardRequested);
         }
-
-        gvdialogs.model = context.dialogs;
     }
 
     SilicaFlickable
@@ -49,14 +39,16 @@ Page
             anchors { left: parent.left; top: pageheader.bottom; right: parent.right; bottom: parent.bottom; leftMargin: Theme.paddingMedium }
             cellWidth: Theme.iconSizeExtraLarge
             cellHeight: Theme.iconSizeExtraLarge
+            model: context.dialogs
             clip: true
 
-            delegate: ForwardDialogItem {
+            delegate: ForwardDialogItem { // NOTE: FDI Deprecated
                 width: gvdialogs.cellWidth - Theme.paddingSmall
                 height: gvdialogs.cellHeight - Theme.paddingSmall
                 context: fwddialogpage.context
-                dialog: item
-                onClicked: forwardRequested(TelegramHelper.peerId(item), false)
+                peer: model.peer
+                title: model.title
+                onClicked: forwardRequested(model)
             }
         }
     }

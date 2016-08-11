@@ -38,6 +38,16 @@ Page
             if(pageStack.depth > 1)
                 pageStack.pop(dialogspage, PageStackAction.Immediate);
 
+            peerkey;
+            pageStack.push(Qt.resolvedUrl("DialogPage.qml"), { "context": dialogspage.context,
+                                                               "title": model.title,
+                                                               "peerHex": model.peerHex,
+                                                               "peer": model.peer,
+                                                               "chat": model.chat,
+                                                               "user": model.user,
+                                                               "secretChatState": model.secretChatState,
+                                                               "isSecretChat": model.isSecretChat })
+
             var dialog = context.telegram.dialog(peerid);
 
             if(dialog === context.telegram.nullDialog) {
@@ -136,19 +146,7 @@ Page
                 contentWidth: parent.width
                 contentHeight: Theme.itemSizeSmall
                 context: dialogspage.context
-                title: model.title
-                unreadCount: model.unreadCount
-                mute: model.mute
-                isSecretChat: model.isSecretChat
-                messageOut: model.messageOut
-                messageType: model.messageType
-                messageDate: model.messageDate
-                messageUnread: model.messageUnread
-                messageUser: model.messageUser
-                peer: model.peer
-                chat: model.chat
-                topMessage: model.topMessage
-                typing: model.typing
+                sgDialogItem: model.item
 
                 onClicked: pageStack.push(Qt.resolvedUrl("DialogPage.qml"), { "context": dialogspage.context,
                                                                               "title": model.title,
@@ -166,7 +164,6 @@ Page
 
                     onDeleteRequested: {
                         dialogitem.remorseAction(remorsemsg, function() {
-                            /*
                             var peerid = TelegramHelper.peerId(item);
                             item.unreadCount = 0;
 
@@ -174,7 +171,6 @@ Page
                                 context.telegram.messagesDiscardEncryptedChat(peerid, true);
                             else
                                 context.telegram.messagesDeleteHistory(peerid, true);
-                                */
                         });
                     }
                 }

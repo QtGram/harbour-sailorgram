@@ -442,10 +442,6 @@ message(s)</source>
         <source>You:</source>
         <translation type="unfinished">Sinä:</translation>
     </message>
-    <message>
-        <source>Typing...</source>
-        <translation type="unfinished">Kirjoittaa...</translation>
-    </message>
 </context>
 <context>
     <name>DialogItemMenu</name>
@@ -639,10 +635,6 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
         <translation>Poista</translation>
     </message>
     <message>
-        <source>Deleting Message</source>
-        <translation>Viesti poistetaan</translation>
-    </message>
-    <message>
         <source>Cancel</source>
         <translation>Peruuta</translation>
     </message>
@@ -687,6 +679,13 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     <message>
         <source>You:</source>
         <translation>Sinä:</translation>
+    </message>
+</context>
+<context>
+    <name>MessageView</name>
+    <message>
+        <source>Deleting message...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -747,6 +746,21 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     <message>
         <source>Actions</source>
         <translation>Toiminnot</translation>
+    </message>
+</context>
+<context>
+    <name>SailorgramDialogItem</name>
+    <message>
+        <source>%1 is typing...</source>
+        <translation type="unfinished">%1 kirjoittaa...</translation>
+    </message>
+    <message>
+        <source>%1 and %2 are typing...</source>
+        <translation type="unfinished">%1 ja %2 kirjoittavat...</translation>
+    </message>
+    <message>
+        <source>%1 member(s) are typing...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1035,10 +1049,6 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
         <translation>Video</translation>
     </message>
     <message>
-        <source>Audio</source>
-        <translation>Äänitiedosto</translation>
-    </message>
-    <message>
         <source>Photo</source>
         <translation>Kuva</translation>
     </message>
@@ -1070,7 +1080,15 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unknown media</source>
+        <source>GIF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audio recording</source>
+        <translation type="unfinished">Äänitallenne</translation>
+    </message>
+    <message>
+        <source>Unknown media: %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

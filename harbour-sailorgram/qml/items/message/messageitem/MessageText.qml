@@ -85,9 +85,9 @@ Item
             id: msgstatus
             width: parent.width
             context: messagetext.context
-            messageDateTime: messagetext.messageDateTime
+            messageDate: messagetext.messageDateTime
             messageUnread: messagetext.messageUnread
-            messageType: messagetext.messageType
+            isActionMessage: messagetext.messageType
             messageOut: messagetext.messageOut
         }
     }

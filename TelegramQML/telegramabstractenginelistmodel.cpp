@@ -14,6 +14,7 @@ void TelegramAbstractEngineListModel::setEngine(TelegramEngine *engine) {
         return;
     if(mEngine)
     {
+        disconnect(mEngine.data(), &TelegramEngine::telegramChanged, this, &TelegramAbstractEngineListModel::connectTelegram);
         disconnect(mEngine.data(), &TelegramEngine::telegramChanged, this, &TelegramAbstractEngineListModel::refresh);
         disconnect(mEngine.data(), &TelegramEngine::stateChanged, this, &TelegramAbstractEngineListModel::refresh);
     }
@@ -21,6 +22,7 @@ void TelegramAbstractEngineListModel::setEngine(TelegramEngine *engine) {
     mEngine = engine;
     if(mEngine)
     {
+        connect(mEngine.data(), &TelegramEngine::telegramChanged, this, &TelegramAbstractEngineListModel::connectTelegram);
         connect(mEngine.data(), &TelegramEngine::telegramChanged, this, &TelegramAbstractEngineListModel::refresh);
         connect(mEngine.data(), &TelegramEngine::stateChanged, this, &TelegramAbstractEngineListModel::refresh);
     }

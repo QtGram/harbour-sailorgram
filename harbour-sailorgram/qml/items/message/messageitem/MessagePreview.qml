@@ -20,8 +20,10 @@ Row
     }
 
     property Context context
-    property Message message
     property var messageType
+    property var messageOut
+    property string messageText
+    property MessageMedia mediaItem
     property var peer
     property real maxWidth
     property string titlePrefix: ""
@@ -38,7 +40,7 @@ Row
     {
         id: downloadhandler
         engine: context.engine
-        source: messagepreview.message
+        source: messagepreview.mediaItem
     }
 
     Rectangle
@@ -57,14 +59,16 @@ Row
         source: downloadhandler.downloaded ? downloadhandler.destination : downloadhandler.thumbnail
 
         visible: {
-            if(TelegramHelper.isWebPage(message) && !TelegramHelper.webPageHasThumb(message))
+            //FIXME: if(TelegramHelper.isWebPage(message) && !TelegramHelper.webPageHasThumb(message))
+            if(messageType === Enums.TypeWebPageMessage)
                 return false;
 
             return messagepreview.messageType !== Enums.TypeTextMessage;
         }
 
         fillMode: {
-            if(TelegramHelper.isWebPage(message) && TelegramHelper.webPageHasThumb(message))
+            //FIXME: if(TelegramHelper.isWebPage(message) && TelegramHelper.webPageHasThumb(message))
+            if(messageType === Enums.TypeWebPageMessage)
                 return Image.PreserveAspectCrop;
 
             return Image.PreserveAspectFit;
@@ -89,7 +93,7 @@ Row
             verticalAlignment: Text.AlignVCenter
 
             text: {
-                if(!message || (messagepreview.messageType === Enums.TypeActionMessage))
+                if(messageType === Enums.TypeActionMessage)
                     return "";
 
                 if(!showUser)
@@ -98,7 +102,7 @@ Row
                 if(titlePrefix.length > 0)
                     titlePrefix += " ";
 
-                if(message.out)
+                if(messageOut)
                     return titlePrefix + qsTr("You");
 
                 return titlePrefix + TelegramHelper.completeName(peer);
@@ -123,20 +127,17 @@ Row
             openUrls: false
 
             rawText: {
-                if(!message)
-                    return "";
-
-                if(messagepreview.messageType === Enums.TypeActionMessage)
+                if(messageType === Enums.TypeActionMessage)
                     return "!!!"; //FIXME: TelegramAction.actionType(context.telegram, dialog, message);
 
-                if(messagepreview.messageType === Enums.TypeStickerMessage)
+                if(messageType === Enums.TypeStickerMessage)
                     return "Sticker";
 
                 /*
-                if(messagepreview.messageType === Enums.TypeDocumentMessage)
-                    return downloa
+                if(messageType === Enums.TypeDocumentMessage)
+                    return "";
 
-                if(messagepreview.messageType !== Enums.TypeTextMessage)
+                if(messageType !== Enums.TypeTextMessage)
                 {
                     switch(media.classType)
                     {
@@ -148,7 +149,7 @@ Row
                 }
                 */
 
-                return message.message;
+                return messageText;
             }
         }
     }

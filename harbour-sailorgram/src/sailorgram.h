@@ -93,7 +93,7 @@ class SailorGram : public QObject
         void engineChanged();
         void wakeUpRequested();
         void currentPeerKeyChanged();
-        void openDialogRequested(qint32 peerid);
+        void openDialogRequested(QString peerkey);
 
     private:
         QHash<int, MessageObject*> _deletednotifications;

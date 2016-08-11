@@ -14,23 +14,7 @@ Item
     id: messagebubble
     layer.enabled: (context.bubbleshidden || !context.angledbubbles) ? false : true
     opacity: context.bubblesopacity / 100.0
-
-    visible: {
-        var bubblevisible = !context.bubbleshidden;
-
-        /* FIXME:
-        if(bubblevisible)
-        {
-            if(!TelegramHelper.isMediaMessage(message))
-                return bubblevisible;
-
-            if(message.media.classType !== TelegramConstants.typeMessageMediaDocument)
-                return bubblevisible;
-        }
-        */
-
-        return bubblevisible;
-    }
+    visible: !context.bubbleshidden
 
     Rectangle
     {

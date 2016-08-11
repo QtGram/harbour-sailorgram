@@ -442,10 +442,6 @@ message(s)</source>
         <source>You:</source>
         <translation type="unfinished">U:</translation>
     </message>
-    <message>
-        <source>Typing...</source>
-        <translation type="unfinished">Bezig met typen...</translation>
-    </message>
 </context>
 <context>
     <name>DialogItemMenu</name>
@@ -639,10 +635,6 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
         <translation>Verwijderen</translation>
     </message>
     <message>
-        <source>Deleting Message</source>
-        <translation>Bezig met verwijderen van het bericht</translation>
-    </message>
-    <message>
         <source>Cancel</source>
         <translation>Annuleren</translation>
     </message>
@@ -687,6 +679,13 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     <message>
         <source>You:</source>
         <translation>U:</translation>
+    </message>
+</context>
+<context>
+    <name>MessageView</name>
+    <message>
+        <source>Deleting message...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -747,6 +746,21 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     <message>
         <source>Actions</source>
         <translation>Acties</translation>
+    </message>
+</context>
+<context>
+    <name>SailorgramDialogItem</name>
+    <message>
+        <source>%1 is typing...</source>
+        <translation type="unfinished">%1 is bezig met typen...</translation>
+    </message>
+    <message>
+        <source>%1 and %2 are typing...</source>
+        <translation type="unfinished">%1 en %2 zijn bezig met typen...</translation>
+    </message>
+    <message>
+        <source>%1 member(s) are typing...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1035,10 +1049,6 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
         <translation>Video</translation>
     </message>
     <message>
-        <source>Audio</source>
-        <translation>Audio</translation>
-    </message>
-    <message>
         <source>Photo</source>
         <translation>Foto</translation>
     </message>
@@ -1070,7 +1080,15 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unknown media</source>
+        <source>GIF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audio recording</source>
+        <translation type="unfinished">Audio-opname</translation>
+    </message>
+    <message>
+        <source>Unknown media: %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

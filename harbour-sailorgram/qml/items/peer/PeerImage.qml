@@ -9,8 +9,9 @@ RoundedImage
     property Context context
     property string fallbackTitle
     property var peer
-    property var chat: null
     property bool showType: true
+    property bool isChat: false
+    property bool isBroadcast: false
     property bool isSecretChat: false
 
     id: imgpeer
@@ -46,16 +47,16 @@ RoundedImage
         fillMode: Image.PreserveAspectFit
         width: Theme.iconSizeSmall
         height: Theme.iconSizeSmall
-        visible: showType && chat && (chat.broadcast || isSecretChat)
+        visible: showType && (isBroadcast || isSecretChat)
 
         source: {
             if(isSecretChat)
                 return "image://theme/icon-s-secure"
 
-            if(chat && chat.broadcast)
+            if(isBroadcast)
                 return "qrc:///res/broadcast.png";
 
-            if(chat)
+            if(isChat)
                 return "image://theme/icon-s-chat";
 
             return "";

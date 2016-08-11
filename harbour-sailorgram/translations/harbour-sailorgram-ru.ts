@@ -442,10 +442,6 @@ message(s)</source>
         <source>You:</source>
         <translation type="unfinished">Вы:</translation>
     </message>
-    <message>
-        <source>Typing...</source>
-        <translation type="unfinished">Пишет...</translation>
-    </message>
 </context>
 <context>
     <name>DialogItemMenu</name>
@@ -639,10 +635,6 @@ Do a swype to the right to select a contact</source>
         <translation>Удалить</translation>
     </message>
     <message>
-        <source>Deleting Message</source>
-        <translation>Удаление сообщения</translation>
-    </message>
-    <message>
         <source>Cancel</source>
         <translation>Отменить</translation>
     </message>
@@ -687,6 +679,13 @@ Do a swype to the right to select a contact</source>
     <message>
         <source>You:</source>
         <translation>Вы:</translation>
+    </message>
+</context>
+<context>
+    <name>MessageView</name>
+    <message>
+        <source>Deleting message...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -747,6 +746,21 @@ Do a swype to the right to select a contact</source>
     <message>
         <source>Actions</source>
         <translation>Действия</translation>
+    </message>
+</context>
+<context>
+    <name>SailorgramDialogItem</name>
+    <message>
+        <source>%1 is typing...</source>
+        <translation type="unfinished">%1 пишет...</translation>
+    </message>
+    <message>
+        <source>%1 and %2 are typing...</source>
+        <translation type="unfinished">%1 и %2 пишут...</translation>
+    </message>
+    <message>
+        <source>%1 member(s) are typing...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1037,10 +1051,6 @@ Do a swype to the right to select a contact</source>
         <translation>Видео</translation>
     </message>
     <message>
-        <source>Audio</source>
-        <translation>Аудио</translation>
-    </message>
-    <message>
         <source>Photo</source>
         <translation>Фото</translation>
     </message>
@@ -1073,7 +1083,15 @@ Do a swype to the right to select a contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unknown media</source>
+        <source>GIF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audio recording</source>
+        <translation type="unfinished">Аудиозапись</translation>
+    </message>
+    <message>
+        <source>Unknown media: %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

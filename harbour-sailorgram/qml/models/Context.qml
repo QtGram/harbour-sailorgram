@@ -3,6 +3,7 @@ import Sailfish.Silica 1.0
 import harbour.sailorgram.DBus 1.0
 import harbour.sailorgram.SailorGram 1.0
 import harbour.sailorgram.Model 1.0
+import harbour.sailorgram.Telegram 1.0
 import harbour.sailorgram.TelegramQml 2.0
 import "../js/Settings.js" as Settings
 import "../js/TelegramHelper.js" as TelegramHelper
@@ -64,14 +65,8 @@ QtObject
     property StickersModel stickers: StickersModel { }
     property SailorgramContactsModel contacts: SailorgramContactsModel { }
 
-    property DialogListModel dialogs: DialogListModel {
+    property SailorgramDialogsModel dialogs: SailorgramDialogsModel {
         engine: context.engine
-
-        visibility: DialogListModel.VisibilityUsers |
-                    DialogListModel.VisibilityChats |
-                    DialogListModel.VisibilityChannels |
-                    DialogListModel.VisibilitySecretChats |
-                    DialogListModel.VisibilityBots
     }
 
     property NotificationHandler notifications: NotificationHandler {

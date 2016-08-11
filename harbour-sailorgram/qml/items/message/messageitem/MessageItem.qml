@@ -38,6 +38,7 @@ ListItem
 
     signal replyRequested()
     signal forwardRequested()
+    signal deleteRequested()
 
     function remorseNeeded(mediatype, type) {
         if(context.immediateopen || !mediacontainer.item || mediacontainer.item.fileHandler.downloaded)
@@ -137,6 +138,7 @@ ListItem
         onDownloadRequested: mediacontainer.item.download()
         onReplyRequested: messageitem.replyRequested()
         onForwardRequested: messageitem.forwardRequested()
+        onDeleteRequested: messageitem.deleteRequested()
     }
 
     MessageBubble
@@ -250,8 +252,10 @@ ListItem
             Component.onCompleted: {
                 if(messageitem.replyMessage !== null) {
                     var params = { "context": messageitem.context,
-                                   "message": messageitem.replyMessage,
                                    "messageType": messageitem.replyType,
+                                   "messageOut": messageitem.replyMessage.out,
+                                   "messageText": messageitem.replyMessage.message,
+                                   "mediaItem": messageitem.replyMessage.media,
                                    "peer": messageitem.replyPeer,
                                    "textColor": ColorScheme.colorizeText(messageType, messageOut, context),
                                    "linkColor": ColorScheme.colorizeLink(messageType, messageOut, context),

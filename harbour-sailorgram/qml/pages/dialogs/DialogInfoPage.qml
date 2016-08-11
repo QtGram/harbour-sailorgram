@@ -15,11 +15,12 @@ Page
     property Context context
     property var peer
     property Chat chat
-    property User user
-    property string statusText
-    property string title
     property bool isSecretChat
-    property bool mute
+
+    property PeerDetails detail: PeerDetails {
+        engine: context.engine
+        peer: dialoginfopage.peer
+    }
 
     id: dialoginfopage
     allowedOrientations: defaultAllowedOrientations
@@ -28,7 +29,7 @@ Page
         if(isSecretChat)
             return qsTr("Delete secret chat");
 
-        if(chat)
+        if(detail.isChat)
             return qsTr("Delete group");
 
         return qsTr("Delete conversation");
@@ -38,7 +39,7 @@ Page
         if(isSecretChat)
             return qsTr("Deleting secret chat");
 
-        if(chat)
+        if(detail.isChat)
             return qsTr("Deleting group");
 
         return qsTr("Deleting conversation");
@@ -51,7 +52,7 @@ Page
             actionVisible: true
             allowSendMessage: false
             context: dialoginfopage.context
-            user: dialoginfopage.user
+            user: detail.userFull ? detail.userFull.user: null
         }
     }
 
@@ -85,17 +86,14 @@ Page
                 peer: dialoginfopage.peer
                 chat: dialoginfopage.chat
                 isSecretChat: dialoginfopage.isSecretChat
-                statusText: dialoginfopage.statusText
-                fallbackAvatar: dialoginfopage.title
+                statusText: detail.statusText
+                fallbackAvatar: detail.displayName
 
                 title: {
-                    if(dialoginfopage.chat)
-                        return dialoginfopage.title;
+                    var name = detail.displayName;
 
-                    var name = TelegramHelper.completeName(dialoginfopage.user);
-
-                    if(dialoginfopage.user.username.length > 0)
-                        name += " (@" + dialoginfopage.user.username + ")";
+                    if(detail.isUser && (detail.username.length > 0))
+                        name += " (@" + detail.username + ")";
 
                     return name;
                 }
@@ -105,30 +103,14 @@ Page
 
             ClickableLabel
             {
-                labelText: dialoginfopage.mute ? qsTr("Enable notifications") : qsTr("Disable notifications")
+                labelText: detail.mute ? qsTr("Enable notifications") : qsTr("Disable notifications")
                 labelFont.pixelSize: Theme.fontSizeSmall
                 width: parent.width
                 height: Theme.itemSizeSmall
 
-                /* FIXME:
                 onActionRequested: {
-                    if(dialoginfopage.dialog.encrypted) { // Secret chats are P2P
-                        if(context.telegram.userData.isMuted(dialoginfopage.dialog.peer.userId))
-                            context.telegram.userData.removeMute(dialoginfopage.dialog.peer.userId);
-                        else
-                            context.telegram.userData.addMute(dialoginfopage.dialog.peer.userId);
-
-                        return;
-                    }
-
-                    var peerid = TelegramHelper.peerId(dialoginfopage.dialog);
-
-                    if(context.telegram.userData.isMuted(peerid))
-                        context.telegram.unmute(peerid);
-                    else
-                        context.telegram.mute(peerid);
+                    detail.mute = !detail.mute;
                 }
-                */
             }
 
             ClickableLabel
@@ -141,7 +123,7 @@ Page
                 height: Theme.itemSizeSmall
 
                 visible: {
-                    if(dialoginfopage.chat && !dialoginfopage.chat.admin)
+                    if(detail.isChat && !dialoginfopage.chat.editable)
                         return false;
 
                     return true;
@@ -165,10 +147,16 @@ Page
             {
                 labelText: qsTr("Add to contacts")
                 labelFont.pixelSize: Theme.fontSizeSmall
-                visible: !dialoginfopage.chat && !dialoginfopage.user.contact && (dialoginfopage.user.phone.length > 0)
                 width: parent.width
                 height: Theme.itemSizeSmall
                 //FIXME: onActionRequested: context.telegram.addContact(user.firstName, user.lastName, user.phone)
+
+                visible: {
+                    if(detail.isChat || !detail.userFull || detail.userFull.user.contact || (detail.phoneNumber.length <= 0))
+                        return false;
+
+                    return true;
+                }
             }
 
             Loader
@@ -176,7 +164,7 @@ Page
                 id: loader
 
                 sourceComponent: {
-                    if(dialoginfopage.chat)
+                    if(detail.isChat)
                         return chatinfocomponent;
 
                     return userinfocomponent;

@@ -82,12 +82,20 @@ HEADERS += \
     src/selector/audiorecorder.h \
     src/selector/thumbnailprovider.h \
     src/selector/exif/exif.h \
-    src/model/dialogscovermodel.h \
     src/selector/filesmodel.h \
     src/selector/filesmodelworker.h \
     src/dbus/connectivitychecker.h \
     src/model/sailorgramcontactsmodel.h \
-    src/item/translationinfoitem.h
+    src/item/translationinfoitem.h \
+    src/dbus/notification/sailorgramnotificationdata.h \
+    src/telegram/model/sailorgramdialogsmodel.h \
+    src/telegram/model/abstract/sailorgramidentityproxymodel.h \
+    src/telegram/item/sailorgramdialogitem.h \
+    src/telegram/sailorgramtools.h \
+    src/telegram/sailorgramenums.h \
+    src/telegram/object/sailorgrammessageaction.h \
+    src/telegram/sailorgraminitializer.h \
+    src/telegram/model/sailorgramdialogscovermodel.h
 
 # Sources
 SOURCES += \
@@ -101,12 +109,20 @@ SOURCES += \
     src/selector/audiorecorder.cpp \
     src/selector/thumbnailprovider.cpp \
     src/selector/exif/exif.cpp \
-    src/model/dialogscovermodel.cpp \
     src/selector/filesmodel.cpp \
     src/selector/filesmodelworker.cpp \
     src/dbus/connectivitychecker.cpp \
     src/model/sailorgramcontactsmodel.cpp \
-    src/item/translationinfoitem.cpp
+    src/item/translationinfoitem.cpp \
+    src/dbus/notification/sailorgramnotificationdata.cpp \
+    src/telegram/model/sailorgramdialogsmodel.cpp \
+    src/telegram/model/abstract/sailorgramidentityproxymodel.cpp \
+    src/telegram/item/sailorgramdialogitem.cpp \
+    src/telegram/sailorgramtools.cpp \
+    src/telegram/sailorgramenums.cpp \
+    src/telegram/object/sailorgrammessageaction.cpp \
+    src/telegram/sailorgraminitializer.cpp \
+    src/telegram/model/sailorgramdialogscovermodel.cpp
 
 # QML
 OTHER_FILES += \

@@ -7,28 +7,11 @@ import "../../../js/TelegramHelper.js" as TelegramHelper
 
 BackgroundItem
 {
-    property Context context
-    property var dialog
-    property User user
-    property Chat chat
-    property EncryptedChat encryptedChat
+    property alias context: peerimage.context
+    property alias peer: peerimage.peer
+    property alias title: lbltitle.text
 
     id: forwarddialogitem
-
-    onDialogChanged: {
-        var peerid = TelegramHelper.peerId(forwarddialogitem.dialog);
-
-        if(dialog.encrypted) {
-            encryptedChat = context.telegram.encryptedChat(peerid);
-            user = context.telegram.user(TelegramHelper.encryptedUserId(context, encryptedChat));
-            return;
-        }
-
-        if(TelegramHelper.isChat(dialog))
-            chat = context.telegram.chat(peerid);
-        else
-            user = context.telegram.user(peerid);
-    }
 
     PeerImage
     {
@@ -36,10 +19,8 @@ BackgroundItem
         anchors.horizontalCenter: parent.horizontalCenter
         width: parent.height - lbltitle.contentHeight
         height: width
-        context: forwarddialogitem.context
-        dialog: forwarddialogitem.dialog
-        chat: forwarddialogitem.chat
-        user: forwarddialogitem.user
+        fallbackTitle: forwarddialogitem.title
+        showType: false
     }
 
     Label
@@ -49,12 +30,5 @@ BackgroundItem
         font.pixelSize: Theme.fontSizeTiny
         horizontalAlignment: Text.AlignHCenter
         elide: Text.ElideRight
-
-        text: {
-            if(TelegramHelper.isChat(dialog))
-                return chat.title;
-            else
-                return TelegramHelper.completeName(user);
-        }
     }
 }

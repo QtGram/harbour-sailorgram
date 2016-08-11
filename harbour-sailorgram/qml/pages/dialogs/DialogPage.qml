@@ -12,6 +12,12 @@ import "../../js/TelegramConstants.js" as TelegramConstants
 
 Page
 {
+    property alias forwardMessageType: messageview.forwardMessageType
+    property alias forwardMessageOut: messageview.forwardMessageOut
+    property alias forwardMessageText: messageview.forwardMessageText
+    property alias forwardMediaItem: messageview.forwardMediaItem
+    property alias forwardPeer: messageview.forwardPeer
+
     property Context context
     property string title
     property var peerHex
@@ -20,8 +26,6 @@ Page
     property var user
     property var secretChatState
     property bool isSecretChat
-    property bool mute
-    property var forwardedMessage: null
 
     id: dialogpage
     allowedOrientations: defaultAllowedOrientations
@@ -34,11 +38,7 @@ Page
             pageStack.pushAttached(Qt.resolvedUrl("DialogInfoPage.qml"), { "context": dialogpage.context,
                                                                            "peer": dialogpage.peer,
                                                                            "chat": dialogpage.chat,
-                                                                           "user": dialogpage.user,
-                                                                           "statusText": messageview.statusText,
-                                                                           "title": dialogpage.title,
-                                                                           "isSecretChat": dialogpage.isSecretChat,
-                                                                           "mute": dialogpage.mute });
+                                                                           "isSecretChat": dialogpage.isSecretChat });
 
         context.sailorgram.currentPeerKey = peerHex;
         context.sailorgram.closeNotification(peerHex);
@@ -114,7 +114,6 @@ Page
             id: messageview
             anchors { left: parent.left; top: header.bottom; right: parent.right; bottom: selectionactions.top }
             context: dialogpage.context
-            forwardedMessage: dialogpage.forwardedMessage
             title: dialogpage.title
             peer: dialogpage.peer
             chat: dialogpage.chat

@@ -1,10 +1,12 @@
 .pragma library
 
-.import harbour.sailorgram.TelegramCalendar 1.0 as TelegramCalendar
-.import harbour.sailorgram.TelegramQml 2.0 as Telegram
+.import harbour.sailorgram.Telegram 1.0 as Telegram
 .import "TelegramConstants.js" as TelegramConstants
 
 function completeName(user) {
+    if(user === null)
+        console.log(":O");
+
     var name = user.firstName;
 
     if(user.lastName.length > 0)
@@ -44,26 +46,6 @@ function isChat(dialog) {
         return false;
 
     return dialog.peer.classType === TelegramConstants.typePeerChat;
-}
-
-function printableDate(timestamp, full) {
-    var date = new Date(timestamp * 1000);
-    var now = new Date(Date.now());
-
-    if(full === true) // We want the entire date
-        return Qt.formatDateTime(date, "dd MMM yy");
-
-    if(now === date)
-        return Qt.formatDateTime(date, "HH:mm");
-
-    var daydiff = (now - date) / 86400000; // ms per day = 1000 * 60 * 60 * 24
-
-    if(daydiff < 7)
-        return Qt.formatDateTime(date, "ddd HH:mm");
-    else if(date.getYear() === now.getYear())
-        return Qt.formatDateTime(date, "dd MMM");
-
-    return Qt.formatDateTime(date, "dd MMM yy");
 }
 
 function typingUsers(context, typing) {
@@ -117,13 +99,6 @@ function isSticker(context, message) {
     return false;
 }
 
-function encryptedUserId(context, encryptedchat) {
-    if(encryptedchat.adminId === context.telegram.me)
-        return encryptedchat.participantId;
-
-    return encryptedchat.adminId;
-}
-
 function peerId(dialog) {
     if(!dialog.encrypted && (dialog.peer.classType === TelegramConstants.typePeerChat))
         return dialog.peer.chatId;
@@ -131,31 +106,27 @@ function peerId(dialog) {
     return dialog.peer.userId;
 }
 
-function isTextMessage(messagetype) {
-    return (messagetype === Telegram.Enums.TypeTextMessage) || (messagetype === Telegram.Enums.TypeWebPageMessage);
-}
-
 function mediaType(messagetype) {
-    if(messagetype === Telegram.Enums.TypeAudioMessage)
-        return qsTr("Audio");
-    else if(messagetype === Telegram.Enums.TypeContactMessage)
+    if(messagetype === Telegram.SailorgramEnums.MessageTypeAudio)
+        return qsTr("Audio recording");
+    else if(messagetype === Telegram.SailorgramEnums.MessageTypeContact)
         return qsTr("Contact");
-    else if(messagetype === Telegram.Enums.TypeDocumentMessage)
+    else if(messagetype === Telegram.SailorgramEnums.MessageTypeDocument)
         return qsTr("Document");
-    else if((messagetype === Telegram.Enums.TypeGeoMessage) || (messagetype === Telegram.Enums.TypeVenueMessage))
+    else if((messagetype === Telegram.SailorgramEnums.MessageTypeGeo) || (messagetype === Telegram.SailorgramEnums.MessageTypeVenue))
         return qsTr("Position");
-    else if(messagetype === Telegram.Enums.TypePhotoMessage)
+    else if(messagetype === Telegram.SailorgramEnums.MessageTypePhoto)
         return qsTr("Photo");
-    else if(messagetype === Telegram.Enums.TypeStickerMessage)
+    else if(messagetype === Telegram.SailorgramEnums.MessageTypeSticker)
         return qsTr("Sticker");
-    else if(messagetype === Telegram.Enums.TypeUnsupportedMessage)
+    else if(messagetype === Telegram.SailorgramEnums.MessageTypeUnsupported)
         return qsTr("Unsupported media");
-    else if(messagetype === Telegram.Enums.TypeVideoMessage)
+    else if(messagetype === Telegram.SailorgramEnums.MessageTypeVideo)
         return qsTr("Video");
-    else if(messagetype === Telegram.Enums.TypeAnimatedMessage)
+    else if(messagetype === Telegram.SailorgramEnums.MessageTypeAnimated)
         return qsTr("GIF");
 
-    return qsTr("Unknown media")
+    return qsTr("Unknown media: %1").arg(messagetype);
 }
 
 function firstMessageLine(context, message) {

@@ -7,8 +7,9 @@ import "../../../js/TelegramHelper.js" as TelegramHelper
 
 BackgroundItem
 {
-    property Context context
-    property User user
+    property alias context: peerimage.context
+    property alias peer: peerimage.peer
+    property alias title: lbltitle.text
 
     id: forwardcontactitem
 
@@ -16,19 +17,18 @@ BackgroundItem
     {
         id: peerimage
         anchors.horizontalCenter: parent.horizontalCenter
-        width: parent.height - lblusername.contentHeight
+        width: parent.height - lbltitle.contentHeight
         height: width
-        context: forwardcontactitem.context
-        user: forwardcontactitem.user
+        fallbackTitle: forwardcontactitem.title
+        showType: false
     }
 
     Label
     {
-        id: lblusername
+        id: lbltitle
         anchors { left: parent.left; right: parent.right; bottom: parent.bottom }
         font.pixelSize: Theme.fontSizeTiny
         horizontalAlignment: Text.AlignHCenter
         elide: Text.ElideRight
-        text: TelegramHelper.completeName(user);
     }
 }

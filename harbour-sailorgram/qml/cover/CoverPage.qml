@@ -1,6 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.Model 1.0
+import harbour.sailorgram.Telegram 1.0
 import "../components/cover"
 import "../models"
 import "../js/TelegramHelper.js" as TelegramHelper
@@ -103,7 +103,7 @@ CoverBackground
         }
 
         Repeater {
-            model: DialogsCoverModel {
+            model: SailorgramDialogsCoverModel {
                 dialogsModel: context.dialogs
                 maxDialogs: 3
             }
@@ -113,8 +113,8 @@ CoverBackground
                 elide: Text.ElideRight
                 truncationMode: TruncationMode.Fade
                 font.pixelSize: Theme.fontSizeSmall
-                color: (model.unreadCount > 0) ? Theme.highlightColor : Theme.primaryColor
-                text: (model.unreadCount > 0) ? (model.unreadCount + " " + model.title) : model.title;
+                color: (model.item.unreadCount > 0) ? Theme.highlightColor : Theme.primaryColor
+                text: (model.item.unreadCount > 0) ? (model.item.unreadCount + " " + model.item.title) : model.item.title;
             }
         }
     }

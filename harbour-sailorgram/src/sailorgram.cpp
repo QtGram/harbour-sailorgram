@@ -20,7 +20,7 @@ SailorGram::SailorGram(QObject *parent): QObject(parent), _engine(NULL), _connec
     connect(qApp, SIGNAL(applicationStateChanged(Qt::ApplicationState)), this, SLOT(onApplicationStateChanged(Qt::ApplicationState)));
     connect(this, SIGNAL(daemonizedChanged()), this, SLOT(updateOnlineState()));
     connect(this->_interface, SIGNAL(wakeUpRequested()), this, SLOT(onWakeUpRequested()));
-    connect(this->_interface, SIGNAL(openDialogRequested(qint32)), this, SIGNAL(openDialogRequested(qint32)));
+    connect(this->_interface, SIGNAL(openDialogRequested(QString)), this, SIGNAL(openDialogRequested(QString)));
 }
 
 bool SailorGram::autostart()
@@ -246,6 +246,7 @@ void SailorGram::sendNotify(const QString& title, const QString& body, const QSt
         remoteaction["icon"] = "icon-m-notifications";
 
         notification->setRemoteAction(remoteaction);
+        //FIXME: notification->setUserData(peerkey);
         this->_notifications[peerkey] = notification;
 
         connect(notification, SIGNAL(closed(uint)), this, SLOT(onNotificationClosed(uint)));
