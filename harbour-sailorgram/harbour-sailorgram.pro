@@ -170,8 +170,6 @@ OTHER_FILES += \
     qml/items/dialog/DialogItem.qml \
     qml/items/dialog/DialogReplyPreview.qml \
     qml/items/dialog/DialogTextInput.qml \
-    qml/items/message/forward/ForwardContactItem.qml \
-    qml/items/message/forward/ForwardDialogItem.qml \
     qml/items/message/messageitem/media/MessageAudio.qml \
     qml/items/message/messageitem/media/MessageContact.qml \
     qml/items/message/messageitem/media/MessageDocument.qml \
@@ -284,3 +282,6 @@ OTHER_FILES += \
     rpm/harbour-sailorgram.yaml \
     harbour-sailorgram.desktop \
     qml/cover/*.png
+
+DISTFILES += \
+    qml/items/message/ForwardItem.qml

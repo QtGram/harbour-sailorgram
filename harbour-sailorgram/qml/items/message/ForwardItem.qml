@@ -1,17 +1,14 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 2.0
-import "../../../models"
-import "../../../items/peer"
-import "../../../js/TelegramHelper.js" as TelegramHelper
+import harbour.sailorgram.Telegram 1.0
+import "../../items/peer"
 
 BackgroundItem
 {
     property alias context: peerimage.context
-    property alias peer: peerimage.peer
-    property alias title: lbltitle.text
+    property SailorgramDialogItem sgDialogItem
 
-    id: forwardcontactitem
+    id: forwarditem
 
     PeerImage
     {
@@ -19,13 +16,18 @@ BackgroundItem
         anchors.horizontalCenter: parent.horizontalCenter
         width: parent.height - lbltitle.contentHeight
         height: width
-        fallbackTitle: forwardcontactitem.title
         showType: false
+        peer: sgDialogItem.peer
+        isChat: sgDialogItem.isChat
+        isBroadcast: sgDialogItem.isBroadcast
+        isSecretChat: sgDialogItem.isSecretChat
+        fallbackTitle: sgDialogItem.title
     }
 
     Label
     {
         id: lbltitle
+        text: sgDialogItem.title
         anchors { left: parent.left; right: parent.right; bottom: parent.bottom }
         font.pixelSize: Theme.fontSizeTiny
         horizontalAlignment: Text.AlignHCenter
