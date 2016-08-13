@@ -7,14 +7,25 @@ ContextMenu
     property SailorgramDialogItem sgDialogItem
 
     signal deleteRequested(string remorsemsg)
-    signal markAsReadRequested()
 
     id: dialogitemmenu
 
     MenuItem
     {
         text: qsTr("Mark as read")
-        onClicked: markAsReadRequested();
+
+        onClicked: {
+            sgDialogItem.unreadCount = 0;
+        }
+    }
+
+    MenuItem
+    {
+        text: sgDialogItem.isMute ? qsTr("Enable notifications") : qsTr("Disable notifications")
+
+        onClicked: {
+            sgDialogItem.isMute = !sgDialogItem.isMute;
+        }
     }
 
     MenuItem

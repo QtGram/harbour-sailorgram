@@ -152,7 +152,6 @@ Page
 
                 menu: DialogItemMenu {
                     sgDialogItem: model.item
-                    //onMarkAsReadRequested: context.telegram.messagesReadHistory(TelegramHelper.peerId(item));
 
                     /*
                     onDeleteRequested: {

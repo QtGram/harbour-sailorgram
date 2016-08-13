@@ -161,6 +161,16 @@ void SailorgramDialogItem::setUser(UserObject *user)
     emit isUserChanged();
 }
 
+void SailorgramDialogItem::setUnreadCount(int c)
+{
+    emit unreadCountRequest(c);
+}
+
+void SailorgramDialogItem::setIsMute(bool b)
+{
+    emit muteRequest(b);
+}
+
 void SailorgramDialogItem::setMessageText(const QString& messagetext)
 {
     if(this->_messagetext == messagetext)
@@ -181,26 +191,26 @@ void SailorgramDialogItem::setMessageDate(const QString &messagedate)
 
 void SailorgramDialogItem::setTypingUsers(const QVariantList &typingusers)
 {
-        if(typingusers.length() == 1)
+    if(typingusers.length() == 1)
+    {
+        if(this->_chat)
         {
-            if(this->_chat)
-            {
-                UserObject* user = typingusers.first().value<UserObject*>();
-                this->_typingusers = tr("%1 is typing...").arg(SailorgramTools::completeName(user));
-            }
-            else
-                this->_typingusers = tr("Typing...");
+            UserObject* user = typingusers.first().value<UserObject*>();
+            this->_typingusers = tr("%1 is typing...").arg(SailorgramTools::completeName(user));
         }
-        else if(typingusers.length() == 2)
-        {
-            UserObject* user1 = typingusers[0].value<UserObject*>();
-            UserObject* user2 = typingusers[1].value<UserObject*>();
-            this->_typingusers = tr("%1 and %2 are typing...").arg(SailorgramTools::completeName(user1), SailorgramTools::completeName(user2));
-        }
-        else if(typingusers.length() >= 2)
-            this->_typingusers = tr("%1 member(s) are typing...").arg(typingusers.length());
         else
-            this->_typingusers.clear();
+            this->_typingusers = tr("Typing...");
+    }
+    else if(typingusers.length() == 2)
+    {
+        UserObject* user1 = typingusers[0].value<UserObject*>();
+        UserObject* user2 = typingusers[1].value<UserObject*>();
+        this->_typingusers = tr("%1 and %2 are typing...").arg(SailorgramTools::completeName(user1), SailorgramTools::completeName(user2));
+    }
+    else if(typingusers.length() >= 2)
+        this->_typingusers = tr("%1 member(s) are typing...").arg(typingusers.length());
+    else
+        this->_typingusers.clear();
 
     emit typingUsersChanged();
 }
@@ -263,7 +273,7 @@ void SailorgramDialogItem::setSecretChatState(int secretchatstate)
     emit secretChatStateChanged();
 }
 
-void SailorgramDialogItem::setUnreadCount(int c)
+void SailorgramDialogItem::updateUnreadCount(int c)
 {
     if(this->_unreadcount == c)
         return;
@@ -281,7 +291,7 @@ void SailorgramDialogItem::setIsSecretChat(bool b)
     emit isSecretChatChanged();
 }
 
-void SailorgramDialogItem::setIsMute(bool b)
+void SailorgramDialogItem::updateIsMute(bool b)
 {
     if(this->_ismute == b)
         return;

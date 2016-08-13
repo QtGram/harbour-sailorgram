@@ -101,13 +101,13 @@ Page
 
             ClickableLabel
             {
-                labelText: sgDialogItem.mute ? qsTr("Enable notifications") : qsTr("Disable notifications")
+                labelText: sgDialogItem.isMute ? qsTr("Enable notifications") : qsTr("Disable notifications")
                 labelFont.pixelSize: Theme.fontSizeSmall
                 width: parent.width
                 height: Theme.itemSizeSmall
 
                 onActionRequested: {
-                    sgDialogItem.mute = !sgDialogItem.mute;
+                    sgDialogItem.isMute = !sgDialogItem.isMute;
                 }
             }
 
@@ -150,7 +150,7 @@ Page
                 //FIXME: onActionRequested: context.telegram.addContact(user.firstName, user.lastName, user.phone)
 
                 visible: {
-                    if(sgDialogItem.isChat || !sgDialogItem.isUser || sgDialogItem.user.contact || (sgDialogItem.user.phone.length <=0))
+                    if(sgDialogItem.isChat || !sgDialogItem.isUser || sgDialogItem.user.contact || (sgDialogItem.user.phone.length <= 0))
                         return false;
 
                     return true;

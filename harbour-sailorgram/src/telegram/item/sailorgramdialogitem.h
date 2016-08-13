@@ -27,10 +27,10 @@ class SailorgramDialogItem : public QObject
     Q_PROPERTY(QString typingUsers READ typingUsers NOTIFY typingUsersChanged)
     Q_PROPERTY(QString title READ title NOTIFY titleChanged)
     Q_PROPERTY(QString statusText READ statusText NOTIFY statusTextChanged)
-    Q_PROPERTY(int unreadCount READ unreadCount NOTIFY unreadCountChanged)
+    Q_PROPERTY(int unreadCount READ unreadCount WRITE setUnreadCount NOTIFY unreadCountChanged)
     Q_PROPERTY(int messageType READ messageType NOTIFY messageTypeChanged)
     Q_PROPERTY(int secretChatState READ secretChatState NOTIFY secretChatStateChanged)
-    Q_PROPERTY(bool isMute READ isMute NOTIFY isMuteChanged)
+    Q_PROPERTY(bool isMute READ isMute WRITE setIsMute NOTIFY isMuteChanged)
     Q_PROPERTY(bool isBroadcast READ isBroadcast NOTIFY isBroadcastChanged)
     Q_PROPERTY(bool isChat READ isChat NOTIFY isChatChanged)
     Q_PROPERTY(bool isUser READ isUser NOTIFY isUserChanged)
@@ -69,6 +69,8 @@ class SailorgramDialogItem : public QObject
         bool isMessageUnread() const;
         void setChat(ChatObject* chat);
         void setUser(UserObject* user);
+        void setUnreadCount(int c);
+        void setIsMute(bool b);
 
     public: // C++ Only Setters
         void setTitle(const QString& title);
@@ -79,13 +81,13 @@ class SailorgramDialogItem : public QObject
         void setPeer(InputPeerObject* peer);
         void setTopMessage(MessageObject* topmessage);
         void setMessageUser(UserObject* user);
-        void setUnreadCount(int c);
         void setMessageType(int messagetype);
         void setSecretChatState(int secretchatstate);
         void setIsSecretChat(bool b);
-        void setIsMute(bool b);
         void setIsMessageOut(bool b);
         void setIsMessageUnread(bool b);
+        void updateUnreadCount(int c);
+        void updateIsMute(bool b);
 
     signals:
         void peerChanged();
@@ -111,6 +113,8 @@ class SailorgramDialogItem : public QObject
         void isMuteChanged();
         void isMessageOutChanged();
         void isMessageUnreadChanged();
+        void unreadCountRequest(int c);
+        void muteRequest(bool b);
 
     private:
         TelegramEngine* _engine;
