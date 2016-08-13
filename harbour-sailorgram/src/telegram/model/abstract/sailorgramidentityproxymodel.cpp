@@ -10,6 +10,11 @@ TelegramEngine *SailorgramIdentityProxyModel::engine() const
     return this->_engine;
 }
 
+int SailorgramIdentityProxyModel::count() const
+{
+    return this->rowCount();
+}
+
 void SailorgramIdentityProxyModel::setEngine(TelegramEngine *engine)
 {
     if(this->_engine == engine)
@@ -41,11 +46,13 @@ void SailorgramIdentityProxyModel::bindTo(QAbstractListModel *sourcemodel)
         disconnect(oldsourcemodel, &QAbstractItemModel::rowsInserted, this, &SailorgramIdentityProxyModel::onRowsInserted);
         disconnect(oldsourcemodel, &QAbstractItemModel::rowsRemoved, this, &SailorgramIdentityProxyModel::onRowsRemoved);
         disconnect(oldsourcemodel, &QAbstractItemModel::dataChanged, this, &SailorgramIdentityProxyModel::onDataChanged);
+        disconnect(oldsourcemodel, &QAbstractItemModel::modelReset, this, &SailorgramIdentityProxyModel::onModelReset);
     }
 
     connect(sourcemodel, &QAbstractItemModel::rowsInserted, this, &SailorgramIdentityProxyModel::onRowsInserted);
     connect(sourcemodel, &QAbstractItemModel::rowsRemoved, this, &SailorgramIdentityProxyModel::onRowsRemoved);
     connect(sourcemodel, &QAbstractItemModel::dataChanged, this, &SailorgramIdentityProxyModel::onDataChanged);
+    connect(sourcemodel, &QAbstractItemModel::modelReset, this, &SailorgramIdentityProxyModel::onModelReset);
 
     this->setSourceModel(sourcemodel);
 }
@@ -80,7 +87,25 @@ void SailorgramIdentityProxyModel::onDataChanged(const QModelIndex &topleft, con
         return;
 
     for(int i = topleft.row(); i <= bottomright.row(); i++)
-        this->changed(sourcemodel->index(i, 0), roles);
+    {
+        QModelIndex sourceindex = sourcemodel->index(i, 0);
 
-    emit dataChanged(this->mapFromSource(topleft), this->mapFromSource(bottomright), this->roleNames().keys().toVector());
+        if(this->contains(sourceindex))
+            this->changed(sourceindex, roles);
+        else
+            this->inserted(sourceindex);
+    }
+}
+
+void SailorgramIdentityProxyModel::onModelReset()
+{
+    this->clear();
+
+    QAbstractItemModel* sourcemodel = this->sourceModel();
+
+    if(!sourcemodel)
+        return;
+
+    for(int i = 0; i < sourcemodel->rowCount(); i++)
+        this->inserted(sourcemodel->index(i, 0));
 }

@@ -1,6 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 2.0
+import harbour.sailorgram.Telegram 1.0
 import "../models"
 import "../items/message/messageitem/media"
 import "../js/TelegramHelper.js" as TelegramHelper
@@ -11,20 +11,16 @@ ContextMenu
     signal replyRequested()
     signal forwardRequested()
     signal deleteRequested()
-    signal downloadRequested()
-    signal cancelRequested()
 
     property Context context
-    property var messageType
-    property string messageText
-    property MessageMediaItem messageMediaItem
+    property SailorgramMessageItem sgMessageItem
 
     id: messagemenu
 
     MenuItem
     {
         text: qsTr("Add to Telegram")
-        visible: messageType === Enums.TypeContactMessage
+        visible: sgMessageItem.messageType === SailorgramEnums.MessageTypeContact
 
         /* FIXME:
         onClicked: {
@@ -42,24 +38,24 @@ ContextMenu
     MenuItem
     {
         text: qsTr("Reply")
-        visible: messageType !== Enums.TypeActionMessage
+        visible: !sgMessageItem.isActionMessage
         onClicked: replyRequested()
     }
 
     MenuItem
     {
         text: qsTr("Forward")
-        visible: messageType !== Enums.TypeActionMessage
+        visible: !sgMessageItem.isActionMessage
         onClicked: forwardRequested()
     }
 
     MenuItem
     {
         text: qsTr("Copy")
-        visible: messageType === Enums.TypeTextMessage;
+        visible: sgMessageItem.isTextMessage
 
         onClicked: {
-            Clipboard.text = messagemenu.messageText;
+            Clipboard.text = sgMessageItem.messageText
             popupmessage.show(qsTr("Message copied to clipboard"));
         }
     }
@@ -73,7 +69,7 @@ ContextMenu
     MenuItem
     {
         text: qsTr("Install Sticker set")
-        visible: TelegramHelper.isSticker(context, message)
+        visible: sgMessageItem.messageType === SailorgramEnums.MessageTypeSticker
 
         onClicked: {
             context.currentSticker = message.media.document;
@@ -84,8 +80,8 @@ ContextMenu
     MenuItem
     {
         text: {
-            if(messageMediaItem && !messageMediaItem.downloadHandler.downloading)
-                return messageMediaItem.downloadHandler.downloaded ? qsTr("Open") : qsTr("Download");
+            if(!sgMessageItem.messageMedia.isTransfering)
+                return sgMessageItem.messageMedia.isTransfered ? qsTr("Open") : qsTr("Download");
 
             return "";
         }
@@ -94,7 +90,7 @@ ContextMenu
 
         onClicked: {
             messageitem.remorseAction(qsTr("Downloading media"), function() {
-                downloadRequested();
+                sgMessageItem.messageMedia.download();
             });
         }
     }
@@ -102,7 +98,7 @@ ContextMenu
     MenuItem
     {
         text: qsTr("Cancel")
-        visible: messageMediaItem && messageMediaItem.downloadHandler.downloading
-        onClicked: cancelRequested()
+        visible: sgMessageItem.messageMedia.isTransfering
+        onClicked: sgMessageItem.messageMedia.stop()
     }
 }

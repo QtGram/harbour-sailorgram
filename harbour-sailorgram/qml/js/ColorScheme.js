@@ -1,7 +1,7 @@
 .pragma library
 
 .import Sailfish.Silica 1.0 as Silica
-.import harbour.sailorgram.TelegramQml 2.0 as Telegram
+.import harbour.sailorgram.Telegram 1.0 as Telegram
 
 function reverseColor(color, light) {
     if(light === undefined)
@@ -43,8 +43,8 @@ function colorizeTick(message, context) {
     return Silica.Theme.highlightDimmerColor;
 }
 
-function colorizeBubble(messagetype, messageout, context) {
-    if(context.bubbleshidden || (messagetype === Telegram.Enums.TypeActionMessage))
+function colorizeBubble(isactionmessage, messageout, context) {
+    if(context.bubbleshidden || isactionmessage)
         return "transparent"
 
     if(messageout)
@@ -53,12 +53,12 @@ function colorizeBubble(messagetype, messageout, context) {
     return Silica.Theme.rgba(Silica.Theme.secondaryColor, 1.0);
 }
 
-function colorizeLink(messagetype, messageout, context, ignorebubble) {
+function colorizeLink(isactionmessage, messageout, context, ignorebubble) {
     if(ignorebubble || context.bubbleshidden) {
         var linkcolor = Silica.Theme.rgba(Silica.Theme.highlightColor, 1.0);
         return reverseColor(linkcolor, 2.5);
     }
 
-    var bubblecolor = Silica.Theme.rgba(colorizeBubble(messagetype, messageout, context), 1.0);
+    var bubblecolor = Silica.Theme.rgba(colorizeBubble(isactionmessage, messageout, context), 1.0);
     return reverseColor(bubblecolor, 1.5);
 }

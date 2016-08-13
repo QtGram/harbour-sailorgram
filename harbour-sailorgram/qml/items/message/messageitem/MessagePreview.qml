@@ -1,5 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
+import harbour.sailorgram.Telegram 1.0
 import harbour.sailorgram.TelegramQml 2.0
 import "../../../models"
 import "../../../components"
@@ -7,7 +8,6 @@ import "../../../items/message/messageitem/media"
 import "../../../js/ColorScheme.js" as ColorScheme
 import "../../../js/TelegramHelper.js" as TelegramHelper
 import "../../../js/TelegramAction.js" as TelegramAction
-import "../../../js/TelegramMedia.js" as TelegramMedia
 import "../../../js/TelegramConstants.js" as TelegramConstants
 
 Row
@@ -20,11 +20,8 @@ Row
     }
 
     property Context context
-    property var messageType
-    property var messageOut
-    property string messageText
-    property MessageMedia mediaItem
-    property var peer
+    property SailorgramMessageItem sgMessageItem
+    property SailorgramPeer sgPeer
     property real maxWidth
     property string titlePrefix: ""
     property bool showUser: true
@@ -35,13 +32,6 @@ Row
     spacing: Theme.paddingSmall
     width: Math.min(contentWidth, maxWidth)
     height: column.height
-
-    DownloadHandler
-    {
-        id: downloadhandler
-        engine: context.engine
-        source: messagepreview.mediaItem
-    }
 
     Rectangle
     {
@@ -56,19 +46,19 @@ Row
         id: imgmedia
         width: parent.height
         height: parent.height
-        source: downloadhandler.downloaded ? downloadhandler.destination : downloadhandler.thumbnail
+        useTelegramImage: true
+        context: messagepreview.context
+        source: sgMessageItem.messageMedia.rawMedia
 
         visible: {
-            //FIXME: if(TelegramHelper.isWebPage(message) && !TelegramHelper.webPageHasThumb(message))
-            if(messageType === Enums.TypeWebPageMessage)
+            if((sgMessageItem.messageType === SailorgramEnums.MessageTypeWebPage) && sgMessageItem.messageMedia.webPage.hasThumbnail)
                 return false;
 
-            return messagepreview.messageType !== Enums.TypeTextMessage;
+            return !sgMessageItem.isTextMessage;
         }
 
         fillMode: {
-            //FIXME: if(TelegramHelper.isWebPage(message) && TelegramHelper.webPageHasThumb(message))
-            if(messageType === Enums.TypeWebPageMessage)
+            if((sgMessageItem.messageType === SailorgramEnums.MessageTypeWebPage) && sgMessageItem.messageMedia.webPage.hasThumbnail)
                 return Image.PreserveAspectCrop;
 
             return Image.PreserveAspectFit;
@@ -84,7 +74,7 @@ Row
         {
             id: lbluser
             width: parent.width - Theme.paddingSmall
-            visible: messageType !== Enums.TypeActionMessage
+            visible: !sgMessageItem.isActionMessage
             color: messagepreview.textColor
             font.bold: true
             font.pixelSize: Theme.fontSizeTiny
@@ -93,7 +83,7 @@ Row
             verticalAlignment: Text.AlignVCenter
 
             text: {
-                if(messageType === Enums.TypeActionMessage)
+                if(sgMessageItem.isActionMessage)
                     return "";
 
                 if(!showUser)
@@ -102,10 +92,13 @@ Row
                 if(titlePrefix.length > 0)
                     titlePrefix += " ";
 
-                if(messageOut)
+                if(sgMessageItem.isMessageOut)
                     return titlePrefix + qsTr("You");
 
-                return titlePrefix + TelegramHelper.completeName(peer);
+                if(sgPeer.isChat)
+                    return titlePrefix + sgPeer.chat.title;
+                else
+                    return titlePrefix + TelegramHelper.completeName(sgPeer.user);
             }
         }
 
@@ -127,10 +120,10 @@ Row
             openUrls: false
 
             rawText: {
-                if(messageType === Enums.TypeActionMessage)
-                    return "!!!"; //FIXME: TelegramAction.actionType(context.telegram, dialog, message);
+                if(sgMessageItem.isActionMessage)
+                    return TelegramAction.actionType(sgMessageItem.messageAction,sgMessageItem, false); //NOTE: isSecretChat
 
-                if(messageType === Enums.TypeStickerMessage)
+                if(sgMessageItem.messageType === SailorgramEnums.MessageTypeSticker)
                     return "Sticker";
 
                 /*
@@ -149,7 +142,7 @@ Row
                 }
                 */
 
-                return messageText;
+                return sgMessageItem.messageText;
             }
         }
     }

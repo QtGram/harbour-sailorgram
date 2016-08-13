@@ -14,11 +14,6 @@ MessageMediaItem
     contentWidth: image.width + Math.max(name.calculatedWidth, phone.calculatedWidth) + Theme.paddingMedium
     contentHeight: row.height
 
-    Component.onCompleted: {
-        if(user)
-            downloadHandler.download()
-    }
-
     Row
     {
         id: row
@@ -39,7 +34,7 @@ MessageMediaItem
                 anchors.fill: parent
                 color: Theme.highlightDimmerColor
                 radius: image.width * 0.5
-                visible: !downloadHandler.downloaded
+                visible: !sgMessageItem.messageMedia.isTransfered
 
                 Label
                 {
@@ -80,7 +75,7 @@ MessageMediaItem
                 }
                 */
 
-                color: ColorScheme.colorizeText(messageType, messageOut, context)
+                color: ColorScheme.colorizeText(sgMessageItem.isActionMessage, sgMessageItem.isMessageOut, context)
                 wrapMode: Text.NoWrap
                 elide: Text.ElideRight
             }
@@ -89,7 +84,7 @@ MessageMediaItem
             {
                 id: phone
                 width: parent.width - Theme.paddingSmall
-                color: ColorScheme.colorizeLink(messageType, messageOut, context)
+                color: ColorScheme.colorizeLink(sgMessageItem.isActionMessage, sgMessageItem.isMessageOut, context)
                 font.pixelSize: Theme.fontSizeExtraSmall
                 //FIXME: text: message.media.phoneNumber
                 wrapMode: Text.NoWrap

@@ -1,11 +1,12 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
+import harbour.sailorgram.Telegram 1.0
 import "../models"
 
 ContextMenu
 {
     property Context context
-    property var dialogModelItem
+    property SailorgramDialogItem sgDialogItem
 
     id: usermenu
 
@@ -15,13 +16,13 @@ ContextMenu
 
         onClicked: {
             pageStack.navigateBack(PageStackAction.Immediate);
-            pageStack.push(Qt.resolvedUrl("../pages/dialogs/DialogPage.qml"), { "context": usermenu.context, "dialogModelItem": dialogItemModel })
+            pageStack.push(Qt.resolvedUrl("../pages/dialogs/DialogPage.qml"), { "context": usermenu.context, "sgDialogItem": sgDialogItem })
         }
     }
 
     MenuItem
     {
         text: qsTr("Profile")
-        onClicked: pageStack.push(Qt.resolvedUrl("../pages/contacts/ContactPage.qml"), {"context": usermenu.context, "user": usermenu.user })
+        onClicked: pageStack.push(Qt.resolvedUrl("../pages/contacts/ContactPage.qml"), { "context": usermenu.context, "user": sgDialogItem.user })
     }
 }

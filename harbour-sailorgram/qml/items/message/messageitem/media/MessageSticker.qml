@@ -7,15 +7,13 @@ MessageMediaItem
     contentWidth: maxWidth
     contentHeight: maxWidth
 
-    downloadHandler {
-        onSourceChanged: downloadHandler.download(); // Autodownload stickers
-    }
-
     MessageThumbnail
     {
         id: thumb
         anchors.fill: parent
-        cache: !downloadHandler.downloaded
-        source: downloadHandler.downloaded ? downloadHandler.destination : downloadHandler.thumbnail
+        useTelegramImage: true
+        autoDownload: true
+        context: messagesticker.context
+        source: sgMessageItem.messageMedia.rawMedia
     }
 }

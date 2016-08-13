@@ -6,13 +6,8 @@ import "../../../../js/TelegramConstants.js" as TelegramConstants
 
 MessageMediaItem
 {
-    readonly property bool hasPureImage: {
-        var webpage = mediaItem.webpage;
-        return (webpage.title.length <= 0) && (webpage.description.length <= 0);
-    }
-
     readonly property real aspectRatio: {
-        var imagesize = downloadHandler.imageSize;
+        var imagesize = webpagethumb.imageSize;
         var w = imagesize.width;
         var h = imagesize.height;
 
@@ -25,22 +20,22 @@ MessageMediaItem
     id: messagewebpage
 
     contentWidth: {
-        if(hasPureImage)
-            return Math.max(mtctextcontent.calculatedWidth, downloadHandler.imageSize.width);
+        if(sgMessageItem.messageMedia.webPage.hasPureImage)
+            return Math.max(mtctextcontent.calculatedWidth, webpagethumb.imageSize.width);
 
         return Math.max(mtctextcontent.calculatedWidth, mtctitle.calculatedWidth, mtcdescription.calculatedWidth);
     }
 
     contentHeight: {
-        if(hasPureImage)
+        if(sgMessageItem.messageMedia.webPage.hasPureImage)
             return Math.min(mtctextcontent.calculatedHeight + (aspectRatio ? maxWidth / aspectRatio : 0), maxWidth);
 
         return mtctextcontent.calculatedHeight + mtctitle.calculatedHeight + mtcdescription.calculatedHeight;
     }
 
     Component.onCompleted: {
-        if(context.autoloadimages && !downloadHandler.downloaded)
-            downloadHandler.download();
+        if(context.autoloadimages && !sgMessageItem.messageMedia.isTransfered)
+            sgMessageItem.messageMedia.download();
     }
 
     MessageTextContent
@@ -52,10 +47,10 @@ MessageMediaItem
         font.pixelSize: Theme.fontSizeSmall
         wrapMode: Text.NoWrap
         elide: Text.ElideRight
-        color: ColorScheme.colorizeText(messageType, messageOut, context)
-        linkColor: ColorScheme.colorizeLink(messageType, messageOut, context)
+        color: ColorScheme.colorizeText(sgMessageItem.isActionMessage, sgMessageItem.isMessageOut, context)
+        linkColor: ColorScheme.colorizeLink(sgMessageItem.isActionMessage, sgMessageItem.isMessageOut, context)
         emojiPath: context.sailorgram.emojiPath
-        rawText: mediaItem.webpage.url
+        rawText: sgMessageItem.messageMedia.webPage.url
     }
 
     Item
@@ -75,8 +70,8 @@ MessageMediaItem
         Item
         {
             anchors { left: rect.right; top: parent.top; bottom: parent.bottom; leftMargin: Theme.paddingSmall }
-            visible: !hasPureImage
-            width: !hasPureImage ? (parent.width - rect.width - webpagethumb.width - Theme.paddingSmall) : 0
+            visible: !sgMessageItem.messageMedia.webPage.hasPureImage
+            width: !sgMessageItem.messageMedia.webPage.hasPureImage ? (parent.width - rect.width - webpagethumb.width - Theme.paddingSmall) : 0
 
             MessageTextContent
             {
@@ -88,10 +83,10 @@ MessageMediaItem
                 wrapMode: Text.Wrap
                 maximumLineCount: 2
                 elide: Text.ElideRight
-                color: ColorScheme.colorizeText(messageType, messageOut, context)
-                linkColor: ColorScheme.colorizeLink(messageType, messageOut, context)
+                color: ColorScheme.colorizeText(sgMessageItem.isActionMessage, sgMessageItem.isMessageOut, context)
+                linkColor: ColorScheme.colorizeLink(sgMessageItem.isActionMessage, sgMessageItem.isMessageOut, context)
                 emojiPath: context.sailorgram.emojiPath
-                rawText: mediaItem.webpage.title
+                rawText: sgMessageItem.messageMedia.webPage.title
             }
 
             MessageTextContent
@@ -104,10 +99,10 @@ MessageMediaItem
                 wrapMode: Text.Wrap
                 maximumLineCount: 2
                 elide: Text.ElideRight
-                color: ColorScheme.colorizeText(messageType, messageOut, context)
-                linkColor: ColorScheme.colorizeLink(messageType, messageOut, context)
+                color: ColorScheme.colorizeText(sgMessageItem.isActionMessage, sgMessageItem.isMessageOut, context)
+                linkColor: ColorScheme.colorizeLink(sgMessageItem.isActionMessage, sgMessageItem.isMessageOut, context)
                 emojiPath: context.sailorgram.emojiPath
-                rawText: mediaItem.webpage.description
+                rawText: sgMessageItem.messageMedia.webPage.description
             }
         }
 
@@ -118,23 +113,18 @@ MessageMediaItem
             anchors { right: parent.right; top: parent.top; bottom: parent.bottom; rightMargin: Theme.paddingSmall }
             visible: webpagethumb.status === Image.Ready
             fillMode: Image.PreserveAspectCrop
-            blurRadius: messagewebpage.downloadHandler.downloaded && !messagewebpage.downloadHandler.downloading ? 0.0 : 32.0
+            useTelegramImage: true
+            context: messagewebpage.context
+            source: sgMessageItem.messageMedia.rawMedia
 
             width: {
                 if(!visible)
                     return 0;
 
-                if(hasPureImage)
+                if(sgMessageItem.messageMedia.webPage.hasPureImage)
                     return  parent.width - (rect.width + 2 * Theme.paddingSmall);
 
                 return parent.height;
-            }
-
-            source: {
-                if(!messagewebpage.downloadHandler.downloaded || messagewebpage.downloadHandler.downloading)
-                    return messagewebpage.downloadHandler.thumbnail;
-
-                return messagewebpage.downloadHandler.destination;
             }
         }
     }

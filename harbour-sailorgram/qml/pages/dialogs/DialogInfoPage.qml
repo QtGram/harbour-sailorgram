@@ -1,45 +1,43 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
+import harbour.sailorgram.Telegram 1.0
 import harbour.sailorgram.TelegramQml 2.0
 import "../../models"
 import "../../components"
 import "../../items/peer"
 import "../../items/user"
 import "../../items/chat"
-import "../../js/TelegramConstants.js" as TelegramConstants
-import "../../js/TelegramHelper.js" as TelegramHelper
 
 Page
 {
     property bool actionVisible: true
     property Context context
-    property var peer
-    property Chat chat
-    property bool isSecretChat
-
-    property PeerDetails detail: PeerDetails {
-        engine: context.engine
-        peer: dialoginfopage.peer
-    }
+    property SailorgramDialogItem sgDialogItem
 
     id: dialoginfopage
     allowedOrientations: defaultAllowedOrientations
 
     function conversationTypeMessage() {
-        if(isSecretChat)
+        if(sgDialogItem.isSecretChat)
             return qsTr("Delete secret chat");
 
-        if(detail.isChat)
+        if(sgDialogItem.isBroadcast)
+            return qsTr("Delete channel");
+
+        if(sgDialogItem.isChat)
             return qsTr("Delete group");
 
         return qsTr("Delete conversation");
     }
 
     function conversationTypeRemorseMessage() {
-        if(isSecretChat)
+        if(sgDialogItem.isSecretChat)
             return qsTr("Deleting secret chat");
 
-        if(detail.isChat)
+        if(sgDialogItem.isBroadcast)
+            return qsTr("Deleting channel");
+
+        if(sgDialogItem.isChat)
             return qsTr("Deleting group");
 
         return qsTr("Deleting conversation");
@@ -52,7 +50,7 @@ Page
             actionVisible: true
             allowSendMessage: false
             context: dialoginfopage.context
-            user: detail.userFull ? detail.userFull.user: null
+            user: sgDialogItem.user
         }
     }
 
@@ -61,8 +59,8 @@ Page
 
         ChatInfo {
             context: dialoginfopage.context
-            chat: dialoginfopage.chat
-            peer: dialoginfopage.peer
+            chat: sgDialogItem.chat
+            peer: sgDialogItem.peer
         }
     }
 
@@ -83,17 +81,17 @@ Page
                 id: peerprofile
                 width: parent.width
                 context: dialoginfopage.context
-                peer: dialoginfopage.peer
-                chat: dialoginfopage.chat
-                isSecretChat: dialoginfopage.isSecretChat
-                statusText: detail.statusText
-                fallbackAvatar: detail.displayName
+                peer: sgDialogItem.peer
+                isChat: sgDialogItem.isChat
+                isSecretChat: sgDialogItem.isSecretChat
+                statusText: sgDialogItem.statusText
+                fallbackAvatar: sgDialogItem.title
 
                 title: {
-                    var name = detail.displayName;
+                    var name = sgDialogItem.title;
 
-                    if(detail.isUser && (detail.username.length > 0))
-                        name += " (@" + detail.username + ")";
+                    if(sgDialogItem.isUser && (sgDialogItem.user.username.length > 0))
+                        name += " (@" + sgDialogItem.user.username + ")";
 
                     return name;
                 }
@@ -103,13 +101,13 @@ Page
 
             ClickableLabel
             {
-                labelText: detail.mute ? qsTr("Enable notifications") : qsTr("Disable notifications")
+                labelText: sgDialogItem.mute ? qsTr("Enable notifications") : qsTr("Disable notifications")
                 labelFont.pixelSize: Theme.fontSizeSmall
                 width: parent.width
                 height: Theme.itemSizeSmall
 
                 onActionRequested: {
-                    detail.mute = !detail.mute;
+                    //FIXME: detail.mute = !detail.mute;
                 }
             }
 
@@ -123,7 +121,7 @@ Page
                 height: Theme.itemSizeSmall
 
                 visible: {
-                    if(detail.isChat && !dialoginfopage.chat.editable)
+                    if(sgDialogItem.isChat && !sgDialogItem.chat.editable)
                         return false;
 
                     return true;
@@ -152,7 +150,7 @@ Page
                 //FIXME: onActionRequested: context.telegram.addContact(user.firstName, user.lastName, user.phone)
 
                 visible: {
-                    if(detail.isChat || !detail.userFull || detail.userFull.user.contact || (detail.phoneNumber.length <= 0))
+                    if(sgDialogItem.isChat || !sgDialogItem.isUser || sgDialogItem.user.contact || (sgDialogItem.user.phone.length <=0))
                         return false;
 
                     return true;
@@ -164,7 +162,7 @@ Page
                 id: loader
 
                 sourceComponent: {
-                    if(detail.isChat)
+                    if(sgDialogItem.isChat)
                         return chatinfocomponent;
 
                     return userinfocomponent;

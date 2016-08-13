@@ -9,6 +9,7 @@ class SailorgramEnums : public QObject
 
     Q_ENUMS(MessageTypes)
     Q_ENUMS(ActionTypes)
+    Q_ENUMS(SecretChatStates)
 
     public:
         enum MessageTypes { MessageTypeText,
@@ -37,6 +38,11 @@ class SailorgramEnums : public QObject
                            ActionTypeChannelMigrateFrom,
                            ActionTypePinMessage,
                            ActionTypeHistoryClear };
+
+        enum SecretChatStates { SecretChatStateInit,
+                                SecretChatStateRequested,
+                                SecretChatStateAccepted,
+                                SecretChatStateCancelled };
 
     public:
         explicit SailorgramEnums(QObject *parent = 0);

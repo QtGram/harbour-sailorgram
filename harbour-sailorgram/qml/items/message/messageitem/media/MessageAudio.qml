@@ -32,7 +32,7 @@ MessageMediaItem
 
             Rectangle {
                 border.width: 1
-                border.color: ColorScheme.colorizeLink(messageType, messageOut, context)
+                border.color: ColorScheme.colorizeLink(sgMessageItem.isActionMessage, sgMessageItem.isMessageOut, context)
                 anchors { fill: parent; margins: -Theme.paddingSmall }
                 color: "transparent"
             }
@@ -50,7 +50,7 @@ MessageMediaItem
                 verticalAlignment: Text.AlignTop
                 horizontalAlignment: Text.AlignLeft
                 font.pixelSize: Theme.fontSizeExtraSmall
-                color: ColorScheme.colorizeText(messageType, messageOut, context)
+                color: ColorScheme.colorizeText(sgMessageItem.isActionMessage, sgMessageItem.isMessageOut, context)
                 text: qsTr("Audio recording")
                 wrapMode: Text.NoWrap
                 elide: Text.ElideRight
@@ -60,9 +60,9 @@ MessageMediaItem
             {
                 id: lblsize
                 width: parent.width
-                color: ColorScheme.colorizeText(messageType, messageOut, context)
+                color: ColorScheme.colorizeText(sgMessageItem.isActionMessage, sgMessageItem.isMessageOut, context)
                 font.pixelSize: Theme.fontSizeExtraSmall
-                text: qsTr("Size: %1").arg(TelegramHelper.formatBytes(fileSize, 2))
+                text: qsTr("Size: %1").arg(TelegramHelper.formatBytes(sgMessageItem.messageMedia.fileSize, 2))
                 wrapMode: Text.NoWrap
                 elide: Text.ElideRight
             }
@@ -71,9 +71,9 @@ MessageMediaItem
             {
                 id: lblduration
                 width: parent.width
-                color: ColorScheme.colorizeText(messageType, messageOut, context)
+                color: ColorScheme.colorizeText(sgMessageItem.isActionMessage, sgMessageItem.isMessageOut, context)
                 font.pixelSize: Theme.fontSizeExtraSmall
-                text: qsTr("Duration: %1").arg(mediaplayertimings.displayDuration(fileDuration))
+                text: qsTr("Duration: %1").arg(mediaplayertimings.displayDuration(sgMessageItem.messageMedia.fileDuration))
                 wrapMode: Text.NoWrap
                 elide: Text.ElideRight
             }
@@ -83,10 +83,10 @@ MessageMediaItem
                 id: progressbar
                 width: parent.width - Theme.paddingSmall
                 barHeight: Theme.paddingSmall
-                color: ColorScheme.colorizeText(messageType, messageOut, context)
-                border { color: ColorScheme.colorizeLink(messageType, messageOut, context); width: 1 }
-                visible: downloadHandler.downloading
-                value: messageaudio.progressPercent
+                color: ColorScheme.colorizeText(sgMessageItem.isActionMessage, sgMessageItem.isMessageOut, context)
+                border { color: ColorScheme.colorizeLink(sgMessageItem.isActionMessage, sgMessageItem.isMessageOut, context); width: 1 }
+                visible: sgMessageItem.messageMedia.isTransfering
+                value: sgMessageItem.messageMedia.transferProgress * 100
             }
         }
     }

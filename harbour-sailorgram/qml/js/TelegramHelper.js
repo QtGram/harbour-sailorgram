@@ -4,9 +4,6 @@
 .import "TelegramConstants.js" as TelegramConstants
 
 function completeName(user) {
-    if(user === null)
-        console.log(":O");
-
     var name = user.firstName;
 
     if(user.lastName.length > 0)

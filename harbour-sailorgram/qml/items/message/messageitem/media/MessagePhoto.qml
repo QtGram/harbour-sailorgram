@@ -4,7 +4,7 @@ import Sailfish.Silica 1.0
 MessageMediaItem
 {
     property real aspectRatio: {
-        var imagesize = downloadHandler.imageSize;
+        var imagesize = messagephotothumb.imageSize;
         var w = imagesize.width;
         var h = imagesize.height;
 
@@ -15,12 +15,12 @@ MessageMediaItem
     }
 
     id: messagephoto
-    contentWidth: downloadHandler.imageSize.width
-    contentHeight: thumb.height
+    contentWidth: messagephotothumb.imageSize.width
+    contentHeight: messagephotothumb.height
 
     Component.onCompleted: {
-        if(context.autoloadimages && !downloadHandler.downloaded)
-            downloadHandler.download();
+        if(context.autoloadimages && !sgMessageItem.messageMedia.isTransfered)
+            sgMessageItem.messageMedia.download();
     }
 
     Image
@@ -28,7 +28,7 @@ MessageMediaItem
         id: imgdownload
         anchors.centerIn: parent
         source: "image://theme/icon-m-cloud-download"
-        visible: !downloadHandler.downloaded && !downloadHandler.downloading
+        visible: !sgMessageItem.messageMedia.isTransfered && !sgMessageItem.messageMedia.isTransfering
         z: 2
     }
 
@@ -37,24 +37,18 @@ MessageMediaItem
         anchors.centerIn: parent
         width: Math.min(parent.width, parent.height) * 0.5
         height: width
-        visible: downloadHandler.downloading
-        value: downloadHandler.progressPercent / 100.0
+        visible: sgMessageItem.messageMedia.isTransfering
+        value: sgMessageItem.messageMedia.transferProgress
         z: 2
     }
 
     MessageThumbnail
     {
-        id: thumb
+        id: messagephotothumb
         width: parent.width
         height: aspectRatio ? (width / aspectRatio) : 0
-        cache: !downloadHandler.downloaded
-        blurRadius: downloadHandler.downloaded && !downloadHandler.downloading ? 0.0 : 32.0
-
-        source: {
-            if(!downloadHandler.downloaded || downloadHandler.downloading)
-                return downloadHandler.thumbnail;
-
-            return downloadHandler.destination;
-        }
+        useTelegramImage: true
+        context: messagephoto.context
+        source: sgMessageItem.messageMedia.rawMedia
     }
 }

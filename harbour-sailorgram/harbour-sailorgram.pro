@@ -85,7 +85,6 @@ HEADERS += \
     src/selector/filesmodel.h \
     src/selector/filesmodelworker.h \
     src/dbus/connectivitychecker.h \
-    src/model/sailorgramcontactsmodel.h \
     src/item/translationinfoitem.h \
     src/dbus/notification/sailorgramnotificationdata.h \
     src/telegram/model/sailorgramdialogsmodel.h \
@@ -95,7 +94,14 @@ HEADERS += \
     src/telegram/sailorgramenums.h \
     src/telegram/object/sailorgrammessageaction.h \
     src/telegram/sailorgraminitializer.h \
-    src/telegram/model/sailorgramdialogscovermodel.h
+    src/telegram/model/sailorgramdialogscovermodel.h \
+    src/telegram/model/sailorgramcontactsmodel.h \
+    src/telegram/model/sailorgrammessagemodel.h \
+    src/telegram/item/sailorgrammessageitem.h \
+    src/telegram/object/sailorgrammessagemedia.h \
+    src/telegram/object/sailorgrampeer.h \
+    src/telegram/object/media/sailorgramwebpagemedia.h \
+    src/telegram/object/media/sailorgramgeopointmedia.h
 
 # Sources
 SOURCES += \
@@ -112,7 +118,6 @@ SOURCES += \
     src/selector/filesmodel.cpp \
     src/selector/filesmodelworker.cpp \
     src/dbus/connectivitychecker.cpp \
-    src/model/sailorgramcontactsmodel.cpp \
     src/item/translationinfoitem.cpp \
     src/dbus/notification/sailorgramnotificationdata.cpp \
     src/telegram/model/sailorgramdialogsmodel.cpp \
@@ -122,7 +127,14 @@ SOURCES += \
     src/telegram/sailorgramenums.cpp \
     src/telegram/object/sailorgrammessageaction.cpp \
     src/telegram/sailorgraminitializer.cpp \
-    src/telegram/model/sailorgramdialogscovermodel.cpp
+    src/telegram/model/sailorgramdialogscovermodel.cpp \
+    src/telegram/model/sailorgramcontactsmodel.cpp \
+    src/telegram/model/sailorgrammessagemodel.cpp \
+    src/telegram/item/sailorgrammessageitem.cpp \
+    src/telegram/object/sailorgrammessagemedia.cpp \
+    src/telegram/object/sailorgrampeer.cpp \
+    src/telegram/object/media/sailorgramwebpagemedia.cpp \
+    src/telegram/object/media/sailorgramgeopointmedia.cpp
 
 # QML
 OTHER_FILES += \

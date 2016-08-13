@@ -1,6 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 2.0
+import harbour.sailorgram.Telegram 1.0
 import "../../../models"
 import "../../../js/ColorScheme.js" as ColorScheme
 import "../../../js/TelegramHelper.js" as TelegramHelper
@@ -10,20 +10,12 @@ import "../../../js/TelegramConstants.js" as TelegramConstants
 Item
 {
     property Context context
-    property User fromUser
-    property User serviceUser
-    property var messageDateTime
-    property var messageType
-    property var serviceItem
-    property string messageText
-    property bool messageOut
-    property bool messageUnread
+    property SailorgramDialogItem sgDialogItem
+    property SailorgramMessageItem sgMessageItem
     property real maxWidth
 
-    readonly property bool isActionMessage: messageType === Enums.TypeActionMessage
-
-    property real calculatedWidth: isActionMessage ? mtctextcontent.calculatedWidth :
-                                                     Math.max(mtctextcontent.calculatedWidth, msgstatus.calculatedWidth);
+    property real calculatedWidth: sgMessageItem.isActionMessage ? mtctextcontent.calculatedWidth :
+                                                                   Math.max(mtctextcontent.calculatedWidth, msgstatus.calculatedWidth);
 
     id: messagetext
     height: content.height + Theme.paddingSmall
@@ -41,39 +33,26 @@ Item
             width: parent.width
             height: visible ? undefined : 0
             verticalAlignment: Text.AlignTop
-            font.pixelSize: isActionMessage ? Theme.fontSizeExtraSmall : Theme.fontSizeSmall
-            font.italic: isActionMessage
+            font.pixelSize: sgMessageItem.isActionMessage ? Theme.fontSizeExtraSmall : Theme.fontSizeSmall
+            font.italic: sgMessageItem.isActionMessage
             emojiPath: context.sailorgram.emojiPath
             wrapMode: Text.Wrap
             visible: rawText.length > 0
-            color: ColorScheme.colorizeText(messageType, messageOut, context)
-            linkColor: ColorScheme.colorizeLink(messageType, messageOut, context)
+            color: ColorScheme.colorizeText(sgMessageItem.isActionMessage, sgMessageItem.isMessageOut, context)
+            linkColor: ColorScheme.colorizeLink(sgMessageItem.isActionMessage, sgMessageItem.isMessageOut, context)
 
             rawText: {
-                if(isActionMessage) {
-                    console.log(messagetext.serviceUser);
-                    return TelegramAction.actionType(messagetext.serviceItem, messagetext.fromUser, messagetext.serviceUser);
-                }
+                if(sgMessageItem.isActionMessage)
+                    return TelegramAction.actionType(sgMessageItem.messageAction, sgDialogItem.isSecretChat);
 
-                /*
-                if(TelegramHelper.isMediaMessage(message)) {
-                    if((message.media.classType === TelegramConstants.typeMessageMediaWebPage) &&
-                       (message.media.webpage.url === message.message))
-                        return ""; // Message contains only a link
-
-                    if(message.media.caption.length > 0)
-                        return message.media.caption;
-                }
-                */
-
-                return messageText;
+                return sgMessageItem.messageText;
             }
 
             horizontalAlignment: {
-                if(isActionMessage)
+                if(sgMessageItem.isActionMessage)
                     return Text.AlignHCenter;
 
-                if(!messageOut)
+                if(!sgMessageItem.isMessageOut)
                     return Text.AlignRight;
 
                 return Text.AlignLeft;
@@ -85,10 +64,10 @@ Item
             id: msgstatus
             width: parent.width
             context: messagetext.context
-            messageDate: messagetext.messageDateTime
-            messageUnread: messagetext.messageUnread
-            isActionMessage: messagetext.messageType
-            messageOut: messagetext.messageOut
+            messageDate: sgMessageItem.messageDate
+            isMessageUnread: sgMessageItem.isMessageUnread
+            isActionMessage: sgMessageItem.isActionMessage
+            isMessageOut: sgMessageItem.isMessageOut
         }
     }
 }

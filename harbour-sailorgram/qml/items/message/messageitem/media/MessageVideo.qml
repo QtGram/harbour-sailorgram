@@ -6,8 +6,8 @@ import "../../../../components/mediaplayer/mediacomponents"
 MessageMediaItem
 {
     property real aspectRatio: {
-        var w = downloadHandler.imageSize.width;
-        var h = downloadHandler.imageSize.height;
+        var w = videothumb.imageSize.width;
+        var h = videothumb.imageSize.height;
 
         if(!w || !h)
             return 0;
@@ -18,12 +18,11 @@ MessageMediaItem
     MediaPlayerTimings { id: mediaplayertimings }
 
     id: messagevideo
-    contentWidth: downloadHandler.imageSize.width
-    contentHeight: thumb.height
+    contentWidth: videothumb.imageSize.width
+    contentHeight: videothumb.height
 
     Image
     {
-        id: videothumb
         anchors.centerIn: parent
         source: "image://theme/icon-m-play"
         z: 2
@@ -34,17 +33,18 @@ MessageMediaItem
         anchors.centerIn: parent
         width: Math.min(parent.width, parent.height) * 0.5
         height: width
-        visible: downloadHandler.downloading
-        //FIXME: value: messagevideo.downloadHandler.progressPercent / 100.0
+        visible: sgMessageItem.messageMedia.isTransfering
+        value: sgMessageItem.messageMedia.transferProgress
         z: 2
     }
 
     MessageThumbnail
     {
-        id: thumb
+        id: videothumb
         width: parent.width
         height: aspectRatio ? (width / aspectRatio) : 0
-        cache: false
-        source: downloadHandler.thumbnail
+        useTelegramImage: true
+        context: messagevideo.context
+        source: sgMessageItem.messageMedia.rawMedia
     }
 }

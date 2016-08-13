@@ -1,6 +1,9 @@
 #include "sailorgramtools.h"
+#include <QObject>
+#include <QDateTime>
 #include <telegramenums.h>
 #include <telegram/objects/messageactionobject.h>
+#include <telegramdialoglistmodel.h>
 #include "sailorgramenums.h"
 
 SailorgramTools::SailorgramTools()
@@ -27,6 +30,27 @@ QString SailorgramTools::completeName(UserObject *user)
         return user->firstName() + " " + user->lastName();
 
     return user->firstName();
+}
+
+QString SailorgramTools::messageText(MessageObject *message)
+{
+    if(!message->media()->caption().isEmpty())
+        return message->media()->caption();
+
+    return message->message();
+}
+
+QString SailorgramTools::messageDate(MessageObject *message)
+{
+    QDateTime messagedate = QDateTime::fromTime_t(message->date());
+    const QDateTime& currentdate = QDateTime::currentDateTime();
+    const qint64 seconds = messagedate.secsTo(currentdate);
+    const int days = messagedate.secsTo(currentdate);
+
+    if(seconds < (24 * 60 * 60))
+        return days ? QObject::tr("Yesterday %1").arg(messagedate.toString("HH:mm")) : messagedate.toString("HH:mm");
+
+    return messagedate.toString("MMM dd, HH:mm");
 }
 
 int SailorgramTools::messageType(int mt)
@@ -106,5 +130,19 @@ int SailorgramTools::actionType(int at)
         return SailorgramEnums::ActionTypeHistoryClear;
 
     return SailorgramEnums::ActionTypeEmpty;
+}
+
+int SailorgramTools::secretChatState(int scs)
+{
+    if(scs == TelegramDialogListModel::SecretChatStateRequested)
+        return SailorgramEnums::SecretChatStateRequested;
+
+    if(scs == TelegramDialogListModel::SecretChatStateAccepted)
+        return SailorgramEnums::SecretChatStateAccepted;
+
+    if(scs == TelegramDialogListModel::SecretChatStateCancelled)
+        return SailorgramEnums::SecretChatStateCancelled;
+
+    return SailorgramEnums::SecretChatStateInit;
 }
 

@@ -67,28 +67,22 @@ Page
             menu: UserMenu {
                 id: usermenu
                 context: contactspage.context
-                dialogModelItem: model
+                sgDialogItem: model.item
             }
 
             onClicked: {
                 pageStack.navigateBack(PageStackAction.Immediate);
 
                 pageStack.push(Qt.resolvedUrl("../dialogs/DialogPage.qml"), { "context": dialogspage.context,
-                                                                              "title": model.title,
-                                                                              "peerHex": model.peerHex,
-                                                                              "peer": model.peer,
-                                                                              "chat": model.chat,
-                                                                              "user": model.user,
-                                                                              "secretChatState": model.secretChatState,
-                                                                              "isSecretChat": model.isSecretChat })
+                                                                              "sgDialogItem": model.item })
             }
 
             UserItem {
                 id: useritem
                 anchors.fill: parent
                 context: contactspage.context
-                user: model.user
-                statusText: model.statusText
+                user: model.item.user
+                statusText: model.item.statusText
             }
         }
     }

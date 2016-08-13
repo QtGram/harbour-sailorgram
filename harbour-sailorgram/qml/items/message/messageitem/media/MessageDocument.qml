@@ -26,11 +26,13 @@ MessageMediaItem
             height: Theme.iconSizeMedium
             width: Theme.iconSizeMedium
             anchors.verticalCenter: info.verticalCenter
-            source: downloadHandler.thumbnail
+            useTelegramImage: true
+            context: messagedocument.context
+            source: sgMessageItem.messageMedia.rawMedia
 
             Rectangle {
                 border.width: 1
-                border.color: ColorScheme.colorizeLink(messageType, messageOut, context)
+                border.color: ColorScheme.colorizeLink(sgMessageItem.isActionMessage, sgMessageItem.isMessageOut, context)
                 anchors { fill: parent; margins: -Theme.paddingSmall }
                 color: "transparent"
             }
@@ -48,8 +50,8 @@ MessageMediaItem
                 width: parent.width - Theme.paddingSmall
                 horizontalAlignment: Text.AlignLeft
                 font.pixelSize: Theme.fontSizeExtraSmall
-                text: fileName
-                color: ColorScheme.colorizeText(messageType, messageOut, context)
+                text: sgMessageItem.messageMedia.fileName
+                color: ColorScheme.colorizeText(sgMessageItem.isActionMessage, sgMessageItem.isMessageOut, context)
                 wrapMode: Text.NoWrap
                 elide: Text.ElideRight
             }
@@ -58,9 +60,9 @@ MessageMediaItem
             {
                 id: lblmimesize
                 width: parent.width - Theme.paddingSmall
-                color: ColorScheme.colorizeText(messageType, messageOut, context)
+                color: ColorScheme.colorizeText(sgMessageItem.isActionMessage, sgMessageItem.isMessageOut, context)
                 font.pixelSize: Theme.fontSizeExtraSmall
-                text: TelegramHelper.formatBytes(fileSize, 2) + " " + fileMimeType
+                text: TelegramHelper.formatBytes(sgMessageItem.messageMedia.fileSize, 2) + " " + sgMessageItem.messageMedia.fileMimeType
                 wrapMode: Text.NoWrap
                 elide: Text.ElideRight
             }
@@ -70,10 +72,10 @@ MessageMediaItem
                 id: progressbar
                 width: parent.width - Theme.paddingSmall
                 barHeight: Theme.paddingSmall
-                barColor: ColorScheme.colorizeText(messageType, messageOut, context)
-                border { color: ColorScheme.colorizeLink(messageType, messageOut, context); width: 1 }
-                visible: downloadHandler.downloading
-                value: messagedocument.progressPercent
+                barColor: ColorScheme.colorizeText(sgMessageItem.isActionMessage, sgMessageItem.isMessageOut, context)
+                border { color: ColorScheme.colorizeLink(sgMessageItem.isActionMessage, sgMessageItem.isMessageOut, context); width: 1 }
+                visible: sgMessageItem.messageMedia.isTransfering
+                value: sgMessageItem.messageMedia.transferProgress * 100
             }
         }
     }

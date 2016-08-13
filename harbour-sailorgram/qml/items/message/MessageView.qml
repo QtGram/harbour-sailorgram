@@ -1,6 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 2.0
+import harbour.sailorgram.Telegram 1.0
 import "../../models"
 import "../../components/telegram"
 import "../../components/message"
@@ -11,24 +11,13 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 
 SilicaListView
 {
-    readonly property var forwardMessageType: 0; //messageview.headerItem.dialogReplyPreview.messageType
-    readonly property bool forwardMessageOut: false //messageview.headerItem.dialogReplyPreview.messageOut
-    readonly property string forwardMessageText: "" //messageview.headerItem.dialogReplyPreview.messageText
-    readonly property var forwardMediaItem: null //messageview.headerItem.dialogReplyPreview.mediaItem
-    readonly property var forwardPeer: null //messageview.headerItem.dialogReplyPreview.peer
-
-    property alias typing: messagemodel.typingUsers
-    property alias statusText: messagemodel.statusText
-
     property bool waitingUserName: false
     property bool discadedDialog: false
     property bool waitingDialog: false
     property bool selectionMode: false
     property MessageTypesPool messageTypesPool: MessageTypesPool { }
     property Context context
-    property string title
-    property var peer
-    property var chat
+    property SailorgramDialogItem sgDialogItem
     property var selectedItems: []
 
     id: messageview
@@ -48,8 +37,10 @@ SilicaListView
     function selectAll() {
         if(!selectionMode)
             return;
-        for(var i = 0; i < messagesmodel.count; ++i)
+
+        for(var i = 0; i < messagesmodel.count; i++)
             selectedItems.push(i);
+
         selectedItemsChanged();
     }
 
@@ -68,10 +59,10 @@ SilicaListView
         messagemodel.deleteMessages(ids);
     }
 
-    MessageListModel {
+    model: SailorgramMessageModel {
         id: messagemodel
         engine: context.engine
-        currentPeer: messageview.peer
+        currentPeer: sgDialogItem.peer
         limit: 50
 
         onCountChanged: {
@@ -82,8 +73,6 @@ SilicaListView
         }
     }
 
-    model: messagemodel
-
     onSelectionModeChanged: {
         if(!selectionMode)
             clearSelection();
@@ -92,26 +81,8 @@ SilicaListView
     delegate: MessageItem {
         messageTypesPool: messageview.messageTypesPool
         context: messageview.context
-        mediaItem: model.mediaItem
-        chat: messageview.chat
-        fromUser: model.fromUserItem
-        serviceUser: null //FIXME: !!!
-        dialogTitle: messageview.title
-        messageText: model.message
-        fileName: model.fileName
-        fileMimeType: model.fileMimeType
-        fileSize: model.fileSize
-        fileDuration: model.fileDuration
-        messageOut: model.out
-        messageUnread: model.unread
-        messageDateTime: model.dateTime
-        messageType: model.messageType
-        forwardFromPeer: model.forwardFromPeer
-        forwardFromType: model.forwardFromType
-        replyMessage: model.replyMessage
-        replyPeer: model.replyPeer
-        replyType: model.replyType
-        serviceItem: model.serviceItem
+        sgDialogItem: messageview.sgDialogItem
+        sgMessageItem: model.item
         selected: selectedItems.indexOf(model.index) > -1
         highlighted: messageview.selectionMode ? selected : pressed
         showMenuOnPressAndHold: !messageview.selectionMode
@@ -124,32 +95,17 @@ SilicaListView
         onForwardRequested: {
             var fwdpage = pageStack.push(Qt.resolvedUrl("../../pages/dialogs/forward/ForwardDialogPage.qml"), { "context": messageview.context });
 
-            fwdpage.forwardRequested.connect(function(dialogmodelitem) {
-                if(dialogmodelitem.peer === messageview.peer) { // Check if it is forwared is this chat
+            fwdpage.forwardRequested.connect(function(sgdialogitem) {
+                if(sgdialogitem.peer === sgDialogItem.peer) { // Check if it is forwared is this chat
                     messageview.headerItem.dialogReplyPreview.isForward = true;
-                    messageview.headerItem.dialogReplyPreview.messageType = model.messageType
-                    messageview.headerItem.dialogReplyPreview.messageOut = model.messageOut
-                    messageview.headerItem.dialogReplyPreview.messageText = model.messageText
-                    messageview.headerItem.dialogReplyPreview.mediaItem = model.mediaItem
-                    messageview.headerItem.dialogReplyPreview.peer = model.toPeerItem
+                    messageview.headerItem.dialogReplyPreview.sgMessageItem = model.item
                     pageStack.pop();
                     return;
                 }
 
+                // FIXME: Forward Destination property is missing
                 pageStack.replaceAbove(context.mainPage, Qt.resolvedUrl("../../pages/dialogs/DialogPage.qml"), { "context": messageview.context,
-                                                                                                                 "title": dialogmodelitem.title,
-                                                                                                                 "peerHex": dialogmodelitem.peerHex,
-                                                                                                                 "peer": dialogmodelitem.peer,
-                                                                                                                 "chat": dialogmodelitem.chat,
-                                                                                                                 "user": dialogmodelitem.user,
-                                                                                                                 "secretChatState": dialogmodelitem.secretChatState,
-                                                                                                                 "isSecretChat": dialogmodelitem.isSecretChat,
-                                                                                                                 "forwardMessageType": model.messageType,
-                                                                                                                 "forwardMessageOut": model.messageOut,
-                                                                                                                 "forwardMessageText": model.message,
-                                                                                                                 "forwardMediaItem": model.mediaItem,
-                                                                                                                 "forwardPeer": model.toPeerItem,
-                                                                                                                 "forwardedMessage": dialogmodelitem.item });
+                                                                                                                 "sgDialogItem": sgdialogitem });
             });
         }
 
@@ -186,12 +142,13 @@ SilicaListView
             id: dialogreplypreview
             width: parent.width
             context: messageview.context
-            isForward: forwardMessageText.length > 0
+            //FIXME: isForward: forwardMessageText.length > 0
 
             onCloseRequested: {
                 dialogtextinput.isForward = false;
             }
 
+            /*
             onMessageTextChanged: {
                 if(!messageText.length <= 0)
                     return;
@@ -199,16 +156,17 @@ SilicaListView
                 dialogtextinput.focusTextArea();
                 messageview.scrollToBottom();
             }
+            */
         }
 
         DialogTextInput {
             id: dialogtextinput
             width: parent.width
-            messageListModel: messagemodel
+            //messageListModel: messagemodel
             context: messageview.context
-            peer: messageview.peer
-            isForward: forwardedMessage !== null
-            replyMessage: dialogreplypreview.message
+            peer: sgDialogItem.peer
+            //isForward: forwardedMessage !== null
+            //replyMessage: dialogreplypreview.message
             visible: !discadedDialog && !waitingDialog
             onForwardRequested: messagemodel.forwardMessages(messageview.forwardPeer, [messageview.forwardedMessage.id]); // Forward in this chat
 
@@ -222,6 +180,7 @@ SilicaListView
             id: secretdialogdiscarded
             width: parent.width
             visible: discadedDialog
+            sgDialogItem: messageview.sgDialogItem
         }
 
         SecretDialogWaiting {

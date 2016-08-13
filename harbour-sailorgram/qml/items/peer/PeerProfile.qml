@@ -7,12 +7,12 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 Item
 {
     property alias title: lbltitle.text
-    property alias fallbackAvatar: useravatar.fallbackTitle
-    property alias isSecretChat: useravatar.isSecretChat
+    property alias fallbackAvatar: peerimage.fallbackTitle
+    property alias isSecretChat: peerimage.isSecretChat
+    property alias peer: peerimage.peer
     property Context context
-    property var peer
-    property Chat chat
     property string statusText
+    property bool isChat: false
 
     id: peerprofile
     height: content.height
@@ -25,13 +25,12 @@ Item
 
         PeerImage
         {
-            id: useravatar
+            id: peerimage
             anchors.horizontalCenter: parent.horizontalCenter
             width: Screen.width * 0.3
             height: width
             context: peerprofile.context
-            peer: peerprofile.peer
-            chat: peerprofile.chat
+            isChat: peerprofile.isChat
             showType: false
 
             MouseArea
@@ -39,10 +38,10 @@ Item
                 anchors.fill: parent
 
                 onClicked: {
-                    if(!useravatar.peer)
+                    if(!peerimage.peer)
                         return;
 
-                    pageStack.push(Qt.resolvedUrl("../../pages/media/MediaPhotoPage.qml"), { "context": peerprofile.context, "imageHandler": useravatar.imageHandler });
+                    pageStack.push(Qt.resolvedUrl("../../pages/media/MediaPhotoPage.qml"), { "context": peerprofile.context, "imageHandler": peerimage.imageHandler });
                 }
             }
         }
@@ -68,7 +67,7 @@ Item
             visible: statusText.length > 0
 
             text: {
-                if(chat)
+                if(isChat)
                     return qsTr("Group");
 
                 return statusText;

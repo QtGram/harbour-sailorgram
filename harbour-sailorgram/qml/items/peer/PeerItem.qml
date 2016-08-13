@@ -5,16 +5,16 @@ import "../../js/TelegramHelper.js" as TelegramHelper
 
 Item
 {
+    property alias context: peerimage.context
     property alias isSecretChat: peerimage.isSecretChat
+    property alias peer: peerimage.peer
 
-    property Context context
     property string title
     property string statusText
-    property var peer
-    property var chat
-    property var user
-    property var typing
+    property bool isChat
     property bool showUsername: false
+    property var typingUsers
+    property var user
 
     id: peeritem
 
@@ -24,9 +24,8 @@ Item
         anchors { right: parent.right; top: parent.top; rightMargin: Theme.horizontalPageMargin }
         width: peeritem.height - Theme.paddingSmall
         height: peeritem.height - Theme.paddingSmall
-        context: peeritem.context
         peer: peeritem.peer
-        chat: peeritem.chat
+        isChat: peeritem.isChat
         fallbackTitle: peeritem.title
     }
 
@@ -48,7 +47,7 @@ Item
             id: lblusername
             width: parent.width
             elide: Text.ElideRight
-            visible: !peeritem.chat && showUsername
+            visible: !peeritem.isChat && showUsername
             text: peeritem.user ? "@" + peeritem.user.username : ""
             font.pixelSize: Theme.fontSizeExtraSmall
             color: Theme.secondaryHighlightColor
@@ -64,12 +63,8 @@ Item
             horizontalAlignment: Qt.AlignRight
 
             text: {
-                if(peeritem.typing.length > 0) {
-                    if(!peeritem.chat)
-                        return qsTr("Typing...");
-
-                    return TelegramHelper.typingUsers(context, peeritem.typing);
-                }
+                if(peeritem.typingUsers.length > 0)
+                    return peeritem.typingUsers;
 
                 return peeritem.statusText;
             }

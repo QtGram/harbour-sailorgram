@@ -48,6 +48,7 @@ void SailorgramDialogsModel::inserted(QModelIndex sourceindex)
                                                       TelegramDialogListModel::RoleIsSecretChat <<
                                                       TelegramDialogListModel::RoleMessageOut <<
                                                       TelegramDialogListModel::RoleMessageUnread <<
+                                                      TelegramDialogListModel::RoleStatusText <<
                                                       TelegramDialogListModel::RoleMute <<
                                                       TelegramDialogListModel::RoleChatItem <<
                                                       TelegramDialogListModel::RoleUserItem));
@@ -79,6 +80,19 @@ void SailorgramDialogsModel::changed(QModelIndex sourceindex, const QVector<int>
     this->updateData(this->_dialogs[peerid], sourceindex, roles);
 }
 
+void SailorgramDialogsModel::clear()
+{
+    qDeleteAll(this->_dialogs);
+    this->_dialogs.clear();
+}
+
+bool SailorgramDialogsModel::contains(QModelIndex sourceindex) const
+{
+    DialogObject* dialog = SOURCE_ROLE_DATA(DialogObject*, sourceindex, TelegramDialogListModel::RoleDialogItem);
+    qint32 peerid = SailorgramTools::peerId(dialog);
+    return this->_dialogs.contains(peerid);
+}
+
 void SailorgramDialogsModel::updateData(SailorgramDialogItem *sgdialog, const QModelIndex &sourceindex, const QVector<int> &roles)
 {
     foreach(int role, roles)
@@ -105,6 +119,8 @@ void SailorgramDialogsModel::updateData(SailorgramDialogItem *sgdialog, const QM
             sgdialog->setIsMessageOut(SOURCE_ROLE_DATA(bool, sourceindex, role));
         else if(role == TelegramDialogListModel::RoleMessageUnread)
             sgdialog->setIsMessageUnread(SOURCE_ROLE_DATA(bool, sourceindex, role));
+        else if(role == TelegramDialogListModel::RoleStatusText)
+            sgdialog->setStatusText(SOURCE_ROLE_DATA(QString, sourceindex, role));
         else if(role == TelegramDialogListModel::RoleMute)
             sgdialog->setIsMute(SOURCE_ROLE_DATA(bool, sourceindex, role));
         else if(role == TelegramDialogListModel::RoleChatItem)

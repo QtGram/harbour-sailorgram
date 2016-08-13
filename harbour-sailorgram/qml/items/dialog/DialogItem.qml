@@ -84,12 +84,12 @@ ListItem
                     color: Theme.primaryColor
                     ticksColor: Theme.highlightColor
                     isActionMessage: sgDialogItem.isActionMessage
-                    messageOut: sgDialogItem.isMessageOut
+                    isMessageOut: sgDialogItem.isMessageOut
                     messageDate: sgDialogItem.messageDate
-                    messageUnread: sgDialogItem.isMessageUnread
+                    isMessageUnread: sgDialogItem.isMessageUnread
+                    dateOnly: sgDialogItem.isActionMessage || !sgDialogItem.isMessageOut
                     dateFirst: false
                     visible: true
-                    dateOnly: sgDialogItem.isActionMessage || !sgDialogItem.isMessageOut
                 }
             }
 

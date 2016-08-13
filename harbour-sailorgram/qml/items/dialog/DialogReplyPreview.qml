@@ -8,27 +8,24 @@ import "../../js/ColorScheme.js" as ColorScheme
 
 Item
 {
-    property alias context: messagepreview.context
-    property alias messageType: messagepreview.messageType
-    property alias messageOut: messagepreview.messageOut
-    property alias messageText: messagepreview.messageText
-    property alias mediaItem: messagepreview.mediaItem
-    property alias peer: messagepreview.peer
+    property var context //: messagepreview.context
+    property var sgMessageItem//: messagepreview.sgMessageItem
+    property var sgPeer: null//: messagepreview.sgPeer
     property bool isForward: false
 
     signal closeRequested()
 
     id: dialogreplypreview
     height: messagepreview.height
-    visible: messageText.length > 0
+    visible: sgPeer !== null
 
-    MessagePreview
+    Item // FIXME: !!!
     {
         id: messagepreview
-        titlePrefix: isForward ? qsTr("Message to forward") : qsTr("Reply to")
-        width: parent.width - btnclose.width - Theme.paddingSmall
-        showQuoteRect: false
-        showUser: !isForward
+        //titlePrefix: isForward ? qsTr("Message to forward") : qsTr("Reply to")
+        //width: parent.width - btnclose.width - Theme.paddingSmall
+        //showQuoteRect: false
+        //showUser: !isForward
 
         anchors {
             left: parent.left
@@ -47,7 +44,7 @@ Item
         icon.sourceSize: Qt.size(width * 0.5, height * 0.5)
 
         onClicked: {
-            dialogreplypreview.messageText = "";
+            dialogreplypreview.sgPeer = null;
             closeRequested();
         }
     }

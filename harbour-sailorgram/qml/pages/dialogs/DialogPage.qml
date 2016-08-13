@@ -1,5 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
+import harbour.sailorgram.Telegram 1.0
 import harbour.sailorgram.TelegramQml 2.0 as Telegram
 import "../../models"
 import "../../components"
@@ -8,24 +9,11 @@ import "../../items/dialog"
 import "../../items/message"
 import "../../items/message/messageitem"
 import "../../js/TelegramHelper.js" as TelegramHelper
-import "../../js/TelegramConstants.js" as TelegramConstants
 
 Page
 {
-    property alias forwardMessageType: messageview.forwardMessageType
-    property alias forwardMessageOut: messageview.forwardMessageOut
-    property alias forwardMessageText: messageview.forwardMessageText
-    property alias forwardMediaItem: messageview.forwardMediaItem
-    property alias forwardPeer: messageview.forwardPeer
-
     property Context context
-    property string title
-    property var peerHex
-    property var peer
-    property var chat
-    property var user
-    property var secretChatState
-    property bool isSecretChat
+    property SailorgramDialogItem sgDialogItem
 
     id: dialogpage
     allowedOrientations: defaultAllowedOrientations
@@ -36,12 +24,10 @@ Page
 
         if(!canNavigateForward)
             pageStack.pushAttached(Qt.resolvedUrl("DialogInfoPage.qml"), { "context": dialogpage.context,
-                                                                           "peer": dialogpage.peer,
-                                                                           "chat": dialogpage.chat,
-                                                                           "isSecretChat": dialogpage.isSecretChat });
+                                                                           "sgDialogItem": dialogpage.sgDialogItem });
 
-        context.sailorgram.currentPeerKey = peerHex;
-        context.sailorgram.closeNotification(peerHex);
+        //context.sailorgram.currentPeerKey = peerHex;
+        //context.sailorgram.closeNotification(peerHex);
     }
 
     PopupMessage
@@ -93,12 +79,12 @@ Page
             visible: !context.chatheaderhidden
             height: context.chatheaderhidden ? 0 : (dialogpage.isPortrait ? Theme.itemSizeSmall : Theme.itemSizeExtraSmall)
             context: dialogpage.context
-            title: dialogpage.title
-            peer: dialogpage.peer
-            chat: dialogpage.chat
-            user: dialogpage.user
-            typing: messageview.typing
-            statusText: messageview.statusText
+            isSecretChat: sgDialogItem.isSecretChat
+            peer: sgDialogItem.peer
+            title: sgDialogItem.title
+            isChat: sgDialogItem.isChat
+            typingUsers: sgDialogItem.typingUsers
+            statusText: sgDialogItem.statusText
 
             anchors {
                 left: parent.left
@@ -114,32 +100,30 @@ Page
             id: messageview
             anchors { left: parent.left; top: header.bottom; right: parent.right; bottom: selectionactions.top }
             context: dialogpage.context
-            title: dialogpage.title
-            peer: dialogpage.peer
-            chat: dialogpage.chat
+            sgDialogItem: dialogpage.sgDialogItem
 
             discadedDialog: {
-                if(!dialogpage.isSecretChat)
+                if(!dialogpage.sgDialogItem.isSecretChat)
                     return false;
 
-                return dialogpage.secretChatState === TelegramConstants.secretChatStateCancelled;
+                return dialogpage.sgDialogItem.secretChatState === SailorgramEnums.SecretChatStateCancelled;
             }
 
             waitingDialog: {
-                if(!dialogpage.isSecretChat)
+                if(!dialogpage.sgDialogItem.isSecretChat)
                     return false;
 
-                return dialogpage.secretChatState === TelegramConstants.secretChatStateRequested;
+                return dialogpage.sgDialogItem.secretChatState === SailorgramEnums.SecretChatStateRequested;
             }
 
             waitingUserName: {
-                if(!dialogpage.isSecretChat || !dialogpage.user)
+                if(!dialogpage.sgDialogItem.isSecretChat)
                     return false;
 
-                if(dialogpage.secretChatState !== TelegramConstants.secretChatStateRequested)
+                if(dialogpage.sgDialogItem.secretChatState !== SailorgramEnums.SecretChatStateRequested)
                     return "";
 
-                return TelegramHelper.completeName(dialogpage.user);
+                return ""; //FIXME: TelegramHelper.completeName(dialogpage.sgDialogItem.title);
             }
 
             onSelectedItemsChanged: {
@@ -155,7 +139,10 @@ Page
             open: false
             visible: visibleSize > 0.0
 
-            onOpenChanged: if(!open && messageview.selectedItems.length > 0) messageview.selectionMode = false
+            onOpenChanged: {
+                if(!open && messageview.selectedItems.length > 0)
+                    messageview.selectionMode = false;
+            }
 
             Image
             {

@@ -149,14 +149,7 @@ Page
                 sgDialogItem: model.item
 
                 onClicked: pageStack.push(Qt.resolvedUrl("DialogPage.qml"), { "context": dialogspage.context,
-                                                                              "title": model.title,
-                                                                              "peerHex": model.peerHex,
-                                                                              "peer": model.peer,
-                                                                              "chat": model.chat,
-                                                                              "user": model.user,
-                                                                              "secretChatState": model.secretChatState,
-                                                                              "isSecretChat": model.isSecretChat,
-                                                                              "mute": model.mute })
+                                                                              "sgDialogItem": model.item })
 
                 menu: DialogItemMenu {
                     dialog: model.dialog

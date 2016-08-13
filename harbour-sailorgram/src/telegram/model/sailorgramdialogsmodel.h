@@ -22,11 +22,13 @@ class SailorgramDialogsModel : public SailorgramIdentityProxyModel
         virtual void inserted(QModelIndex sourceindex);
         virtual void removed(QModelIndex sourceindex);
         virtual void changed(QModelIndex sourceindex, const QVector<int> &roles);
+        virtual void clear();
+        virtual bool contains(QModelIndex sourceindex) const;
 
     private:
         void updateData(SailorgramDialogItem* sgdialog, const QModelIndex& sourceindex, const QVector<int>& roles);
 
-    private:
+    protected:
         TelegramDialogListModel* _dialoglistmodel;
         QHash<uint, SailorgramDialogItem*> _dialogs;
 };

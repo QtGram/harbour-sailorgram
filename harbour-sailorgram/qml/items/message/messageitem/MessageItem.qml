@@ -1,5 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
+import harbour.sailorgram.Telegram 1.0
 import harbour.sailorgram.TelegramQml 2.0
 import "../../../components"
 import "../../../components/message"
@@ -12,113 +13,83 @@ import "../../../js/TelegramHelper.js" as TelegramHelper
 
 ListItem
 {
-    property bool selected: false
     property MessageTypesPool messageTypesPool
     property Context context
-    property MessageMedia mediaItem
-    property Chat chat
-    property User fromUser
-    property User serviceUser
-    property string dialogTitle
-    property string messageText
-    property string fileName
-    property string fileMimeType
-    property int fileSize
-    property int fileDuration
-    property bool messageOut
-    property bool messageUnread
-    property var messageDateTime
-    property var messageType
-    property var forwardFromPeer
-    property var forwardFromType
-    property var replyMessage
-    property var replyPeer
-    property var replyType
-    property var serviceItem
+    property SailorgramDialogItem sgDialogItem
+    property SailorgramMessageItem sgMessageItem
+    property bool selected: false
 
     signal replyRequested()
     signal forwardRequested()
     signal deleteRequested()
 
-    function remorseNeeded(mediatype, type) {
-        if(context.immediateopen || !mediacontainer.item || mediacontainer.item.fileHandler.downloaded)
+    function remorseNeeded() {
+        if(context.immediateopen || sgMessageItem.messageMedia.isTransfered)
             return false;
 
-        if((mediatype === TelegramConstants.typeMessageMediaVideo) || (mediatype === TelegramConstants.typeMessageMediaAudio))
+        if((sgMessageItem.messageType === SailorgramEnums.MessageTypeVideo) || (sgMessageItem.messageType === SailorgramEnums.MessageTypeAudio))
             return true;
 
-        if((type === "audio") || (type === "video"))
+        var mimetype = sgMessageItem.messageMedia.fileMimeType;
+
+        if((mimetype.indexOf("audio") !== -1) || (mimetype.indexOf("video") !== -1))
             return true;
 
-        if((mediatype === TelegramConstants.typeMessageMediaDocument) && (type !== "image"))
+        if((sgMessageItem.messageType === SailorgramEnums.MessageTypeDocument) && (mimetype.indexOf("image") !== -1))
             return true;
 
         return false;
     }
 
-    function openOrDownloadMedia(canbeviewed, type) {
-        if(!mediacontainer.item)
-            return;
+    function openOrDownloadMedia() {
+        if(!sgMessageItem.messageMedia.isTransfered)
+            sgMessageItem.messageMedia.download();
 
-        if(!mediacontainer.item.fileHandler.downloaded)
-            mediacontainer.item.fileHandler.download();
+        var mimetype = sgMessageItem.messageMedia.fileMimeType;
+        var isvideo = (sgMessageItem.messageType === SailorgramEnums.MessageTypeVideo) || (mimetype.indexOf("video") !== -1);
+        var isaudio = (sgMessageItem.messageType === SailorgramEnums.MessageTypeAudio) || (mimetype.indexOf("audio") !== -1);
 
-        if((message.media.classType === TelegramConstants.typeMessageMediaVideo) || (message.media.classType === TelegramConstants.typeMessageMediaAudio) || (type === "audio") || (type === "video")) {
+        if(isvideo || isaudio) {
             pageStack.push(Qt.resolvedUrl("../../../pages/media/MediaPlayerPage.qml"), { "context": messageitem.context, "message": messageitem.message, "fileHandler": mediacontainer.item.fileHandler });
             return;
         }
 
-        if(!mediacontainer.item.fileHandler.downloaded)
+        if(!sgMessageItem.messageMedia.isTransfered)
             return;
 
-        if((message.media.classType === TelegramConstants.typeMessageMediaPhoto) || (type === "image")) {
+        if((sgMessageItem.messageType === SailorgramEnums.MessageTypePhoto) || (mimetype.indexOf("image") !== -1)) {
             pageStack.push(Qt.resolvedUrl("../../../pages/media/MediaPhotoPage.qml"), { "context": messageitem.context, "message": messageitem.message, "fileHandler": mediacontainer.item.fileHandler });
             return;
         }
 
         popupmessage.show(qsTr("Opening media"));
-        Qt.openUrlExternally(mediacontainer.item.fileHandler.filePath);
+        Qt.openUrlExternally(sgMessageItem.messageMedia.filePath);
     }
 
     function displayMedia() {
-        var media = message.media;
-        if(!media)
+        if(!sgMessageItem.isMediaMessage || (sgMessageItem.messageType === SailorgramEnums.MessageTypeSticker))
             return;
 
-        var classtype = media.classType;
+        var isgeoorvenue = (sgMessageItem.messageType === SailorgramEnums.MessageTypeGeo) || (sgMessageItem.messageType === SailorgramEnums.MessageTypeVenue);
 
-        if((classtype === TelegramConstants.typeMessageMediaGeo) || (classtype === TelegramConstants.typeMessageMediaVenue)) {
-            Qt.openUrlExternally("geo:" + media.geo.lat + "," + media.geo.longitude)
-            return;
-        }
-
-        if(classtype === TelegramConstants.typeMessageMediaContact) {
-            Qt.openUrlExternally("tel:" + media.phoneNumber)
+        if(isgeoorvenue) {
+            //FIXME: Qt.openUrlExternally("geo:" + media.geo.lat + "," + media.geo.longitude)
             return;
         }
 
-        var type = "";
-        var canbeviewed = (classtype === TelegramConstants.typeMessageMediaPhoto) ||
-                          (classtype === TelegramConstants.typeMessageMediaVideo) ||
-                          (classtype === TelegramConstants.typeMessageMediaAudio);
-
-        if(classtype === TelegramConstants.typeMessageMediaDocument) {
-            if(context.telegram.documentIsSticker(message.media.document))
-                return;
-
-            var mime = media.document.mimeType;
-            type = mime.split("/")[0];
-            canbeviewed = ((type === "video") || (type === "audio") || (type === "image")) ? true : false;
-        }
-
-        if(!remorseNeeded(classtype, type)) {
-            openOrDownloadMedia(canbeviewed, type);
+        if(sgMessageItem.messageType === SailorgramEnums.MessageTypeContact) {
+            //FIXME: Qt.openUrlExternally("tel:" + media.phoneNumber)
             return;
         }
 
-        messageitem.remorseAction((canbeviewed ? qsTr("Opening Media") : qsTr("Downloading Media")), function() {
-            openOrDownloadMedia(canbeviewed, type);
-        });
+        if(!remorseNeeded()) {
+            openOrDownloadMedia();
+            return;
+        }
+
+        //FIXME: messageitem.remorseAction((canbeviewed ? qsTr("Opening Media") : qsTr("Downloading Media")), function() {
+            //openOrDownloadMedia(canbeviewed, type);
+        //});
     }
 
     id: messageitem
@@ -130,12 +101,8 @@ ListItem
     menu: MessageMenu {
         id: messagemenu
         context: messageitem.context
-        messageType: messageitem.messageType
-        messageText: messageitem.messageText
-        messageMediaItem: mediacontainer.item
+        sgMessageItem: messageitem.sgMessageItem
 
-        onCancelRequested: mediacontainer.item.cancelTransfer()
-        onDownloadRequested: mediacontainer.item.download()
         onReplyRequested: messageitem.replyRequested()
         onForwardRequested: messageitem.forwardRequested()
         onDeleteRequested: messageitem.deleteRequested()
@@ -145,8 +112,7 @@ ListItem
     {
         id: messagebubble
         context: messageitem.context
-        messageType: messageitem.messageType
-        messageOut: messageitem.messageOut
+        sgMessageItem: messageitem.sgMessageItem
         anchors { topMargin: Theme.paddingSmall; bottomMargin: Theme.paddingSmall }
         anchors.fill: content
     }
@@ -159,14 +125,14 @@ ListItem
         id: content
 
         anchors {
-            left: messageOut ? parent.left : undefined
-            right: messageOut ? undefined : parent.right
+            left: sgMessageItem.isMessageOut ? parent.left : undefined
+            right: sgMessageItem.isMessageOut ? undefined : parent.right
             leftMargin: Theme.paddingMedium
             rightMargin: Theme.paddingMedium
         }
 
         width: {
-            if(messageType === Enums.TypeActionMessage)
+            if(sgMessageItem.isActionMessage)
                 return messageitem.width - Theme.paddingMedium;
 
             var w = messagetext.calculatedWidth;
@@ -203,7 +169,7 @@ ListItem
             }
 
 
-            color: ColorScheme.colorizeText(messageType, messageOut, context)
+            color: ColorScheme.colorizeText(sgMessageItem.isActionMessage, sgMessageItem.isMessageOut, context)
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: Theme.fontSizeSmall
             font.bold: true
@@ -212,32 +178,36 @@ ListItem
             textFormat: Text.StyledText
 
             visible: {
-                if(forwardFromPeer)
+                if(sgMessageItem.isForward)
                     return true;
 
-                return (messageType !== Enums.TypeActionMessage) && !messageOut;
+                return !sgMessageItem.isActionMessage && !sgMessageItem.isMessageOut
             }
 
             horizontalAlignment: {
-                if(messageOut)
+                if(sgMessageItem.isMessageOut)
                     return Text.AlignLeft;
 
                 return Text.AlignRight;
             }
 
             text: {
-                if(messageType === Enums.TypeActionMessage)
+                if(sgMessageItem.isActionMessage)
                     return "";
 
                 var completename = "";
 
-                if(chat && chat.broadcast)
-                    completename = dialogTitle;
+                if(sgDialogItem.isBroadcast)
+                    completename = sgDialogItem.title;
                 else
-                    completename = TelegramHelper.completeName(fromUser);
+                    completename = TelegramHelper.completeName(sgMessageItem.fromUser);
 
-                if(forwardFromPeer)
-                    completename += " <i>(" + qsTr("Forwarded from %1").arg(TelegramHelper.completeName(forwardFromPeer)) + ")</i>";
+                if(sgMessageItem.isForward) {
+                    if(sgMessageItem.forwardPeer.isChat)
+                        completename += " <i>(" + qsTr("Forwarded from %1").arg(sgMessageItem.forwardPeer.chat.title) + ")</i>";
+                    else
+                        completename += " <i>(" + qsTr("Forwarded from %1").arg(TelegramHelper.completeName(sgMessageItem.forwardPeer.user)) + ")</i>";
+                }
 
                 return completename;
             }
@@ -250,15 +220,12 @@ ListItem
             anchors { left: parent.left; leftMargin: Theme.paddingMedium }
 
             Component.onCompleted: {
-                if(messageitem.replyMessage !== null) {
+                if(sgMessageItem.hasReply) {
                     var params = { "context": messageitem.context,
-                                   "messageType": messageitem.replyType,
-                                   "messageOut": messageitem.replyMessage.out,
-                                   "messageText": messageitem.replyMessage.message,
-                                   "mediaItem": messageitem.replyMessage.media,
-                                   "peer": messageitem.replyPeer,
-                                   "textColor": ColorScheme.colorizeText(messageType, messageOut, context),
-                                   "linkColor": ColorScheme.colorizeLink(messageType, messageOut, context),
+                                   "sgMessageItem": sgMessageItem.messageReply,
+                                   "sgPeer": sgMessageItem.replyPeer,
+                                   "textColor": ColorScheme.colorizeText(sgMessageItem.isActionMessage, sgMessageItem.isMessageOut, context),
+                                   "linkColor": ColorScheme.colorizeLink(sgMessageItem.isActionMessage, sgMessageItem.isMessageOut, context),
                                    "maxWidth": content.maxw - 2 * Theme.paddingMedium };
 
                     messageTypesPool.messagePreview.createObject(quotedcontainer, params);
@@ -273,34 +240,28 @@ ListItem
             visible: mediacontainer.item !== null
 
             Component.onCompleted: {
-                if(messageType === Enums.TypeTextMessage)
+                if(!sgMessageItem.isMediaMessage)
                     return;
 
                 var params = { "context": messageitem.context,
-                               "mediaItem": messageitem.mediaItem,
-                               "messageType": messageitem.messageType,
-                               "fileSize": messageitem.fileSize,
-                               "fileDuration": messageitem.fileDuration,
-                               "messageOut": messageitem.messageOut,
-                               "fileName": messageitem.fileName,
-                               "fileMimeType": messageitem.fileMimeType,
+                               "sgMessageItem": messageitem.sgMessageItem,
                                "maxWidth": content.maxw - 2 * Theme.paddingMedium };
 
-                if(messageType === Enums.TypeDocumentMessage)
+                if(sgMessageItem.messageType === SailorgramEnums.MessageTypeDocument)
                     messageTypesPool.documentComponent.createObject(mediacontainer, params);
-                else if(messageType === Enums.TypeStickerMessage)
+                else if(sgMessageItem.messageType === SailorgramEnums.MessageTypeSticker)
                     messageTypesPool.stickerComponent.createObject(mediacontainer, params);
-                else if(messageType === Enums.TypePhotoMessage)
+                else if(sgMessageItem.messageType === SailorgramEnums.MessageTypePhoto)
                     messageTypesPool.photoComponent.createObject(mediacontainer, params);
-                else if(messageType === Enums.TypeAudioMessage)
+                else if(sgMessageItem.messageType === SailorgramEnums.MessageTypeAudio)
                     messageTypesPool.audioComponent.createObject(mediacontainer, params);
-                else if(messageType === Enums.TypeVideoMessage)
+                else if(sgMessageItem.messageType === SailorgramEnums.MessageTypeVideo)
                     messageTypesPool.videoComponent.createObject(mediacontainer, params);
-                else if(messageType === Enums.TypeWebPageMessage) //FIXME: && (media.webpage.url.length > 0))
+                else if(sgMessageItem.messageType === SailorgramEnums.MessageTypeWebPage)
                     messageTypesPool.webpageComponent.createObject(mediacontainer, params);
-                else if((messageType === Enums.TypeGeoMessage) || (messageType === Enums.TypeVenueMessage))
+                else if((sgMessageItem.messageType === SailorgramEnums.MessageTypeGeo) || (sgMessageItem.messageType === SailorgramEnums.MessageTypeVenue))
                     messageTypesPool.locationComponent.createObject(mediacontainer, params);
-                else if(messageType === Enums.TypeContactMessage)
+                else if(sgMessageItem.messageType === SailorgramEnums.MessageTypeContact)
                     messageTypesPool.contactComponent.createObject(mediacontainer, params);
             }
         }
@@ -318,14 +279,8 @@ ListItem
 
             maxWidth: content.maxw - 2 * Theme.paddingMedium
             context: messageitem.context
-            fromUser: messageitem.fromUser
-            serviceUser: messageitem.serviceUser
-            messageDateTime: messageitem.messageDateTime
-            messageType: messageitem.messageType
-            serviceItem: messageitem.serviceItem
-            messageText: messageitem.messageText
-            messageOut: messageitem.messageOut
-            messageUnread: messageitem.messageUnread
+            sgDialogItem: messageitem.sgDialogItem
+            sgMessageItem: messageitem.sgMessageItem
         }
     }
 }

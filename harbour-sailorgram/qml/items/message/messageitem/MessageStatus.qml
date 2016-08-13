@@ -1,10 +1,8 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 2.0
 import "../../../models"
 import "../../../components"
 import "../../../js/ColorScheme.js" as ColorScheme
-import "../../../js/TelegramHelper.js" as TelegramHelper
 
 ResizableLabel
 {
@@ -14,13 +12,13 @@ ResizableLabel
     property Context context
     property bool isActionMessage
     property string messageDate
-    property bool messageUnread
-    property bool messageOut
+    property bool isMessageUnread
+    property bool isMessageOut
 
     id: messagestatus
     visible: !isActionMessage
-    color: ColorScheme.colorizeText(isActionMessage, messageOut, context)
-    horizontalAlignment: messageOut ? Text.AlignLeft : Text.AlignRight
+    color: ColorScheme.colorizeText(isActionMessage, isMessageOut, context)
+    horizontalAlignment: isMessageOut ? Text.AlignLeft : Text.AlignRight
     verticalAlignment: Text.AlignVCenter
     font.pixelSize: Theme.fontSizeTiny
     textFormat: Text.StyledText
@@ -34,10 +32,10 @@ ResizableLabel
         if(dateFirst)
             status += messageDate + " ";
 
-        if(messageOut) {
+        if(isMessageOut) {
             status += "<font color=\"" + ticksColor + "\">";
 
-            if(!messageUnread)
+            if(!isMessageUnread)
                 status += " <b>✓✓</b> ";
             else
                 status += " <b>✓</b> ";
