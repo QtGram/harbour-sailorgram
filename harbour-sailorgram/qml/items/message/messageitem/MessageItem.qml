@@ -8,7 +8,6 @@ import "../../../models"
 import "../../../menus"
 import "media"
 import "../../../js/ColorScheme.js" as ColorScheme
-import "../../../js/TelegramConstants.js" as TelegramConstants
 import "../../../js/TelegramHelper.js" as TelegramHelper
 
 ListItem

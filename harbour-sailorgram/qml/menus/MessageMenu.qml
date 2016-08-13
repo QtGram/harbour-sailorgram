@@ -4,7 +4,6 @@ import harbour.sailorgram.Telegram 1.0
 import "../models"
 import "../items/message/messageitem/media"
 import "../js/TelegramHelper.js" as TelegramHelper
-import "../js/TelegramConstants.js" as TelegramConstants
 
 ContextMenu
 {

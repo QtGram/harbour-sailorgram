@@ -8,7 +8,6 @@ import "../../../items/message/messageitem/media"
 import "../../../js/ColorScheme.js" as ColorScheme
 import "../../../js/TelegramHelper.js" as TelegramHelper
 import "../../../js/TelegramAction.js" as TelegramAction
-import "../../../js/TelegramConstants.js" as TelegramConstants
 
 Row
 {
@@ -126,21 +125,11 @@ Row
                 if(sgMessageItem.messageType === SailorgramEnums.MessageTypeSticker)
                     return "Sticker";
 
-                /*
-                if(messageType === Enums.TypeDocumentMessage)
-                    return "";
+                if(sgMessageItem.messageType === SailorgramEnums.MessageTypeDocument)
+                    return sgMessageItem.messageMedia.fileName;
 
-                if(messageType !== Enums.TypeTextMessage)
-                {
-                    switch(media.classType)
-                    {
-                        case TelegramConstants.typeMessageMediaDocument:
-                            return downloadhandler.fileName;
-                        case TelegramConstants.typeMessageMediaContact:
-                            return media.firstName + " " + media.lastName + "\n" + media.phoneNumber;
-                    }
-                }
-                */
+                if(sgMessageItem.messageType === SailorgramEnums.MessageTypeContact)
+                    return "Contacts"; //FIXME: media.firstName + " " + media.lastName + "\n" + media.phoneNumber;
 
                 return sgMessageItem.messageText;
             }

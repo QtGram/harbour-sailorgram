@@ -3,7 +3,6 @@ import Sailfish.Silica 1.0
 import harbour.sailorgram.Telegram 1.0
 import "../"
 import "../../../../js/ColorScheme.js" as ColorScheme
-import "../../../../js/TelegramConstants.js" as TelegramConstants
 
 MessageMediaItem
 {

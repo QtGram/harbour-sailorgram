@@ -5,7 +5,6 @@ import "../../../models"
 import "../../../js/ColorScheme.js" as ColorScheme
 import "../../../js/TelegramHelper.js" as TelegramHelper
 import "../../../js/TelegramAction.js" as TelegramAction
-import "../../../js/TelegramConstants.js" as TelegramConstants
 
 Item
 {
