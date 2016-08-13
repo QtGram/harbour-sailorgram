@@ -1,10 +1,8 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.Model 1.0
-import harbour.sailorgram.TelegramQml 2.0 as Telegram
+import harbour.sailorgram.Telegram 1.0
 import "../../models"
 import "../../items/user"
-import "../../js/TelegramHelper.js" as TelegramHelper
 
 Dialog
 {
@@ -54,11 +52,9 @@ Dialog
             spacing: Theme.paddingMedium
             clip: true
 
-            model: Telegram.DialogListModel {
+            model: SailorgramContactsModel {
                 id: contactsmodels
                 engine: context.engine
-                visibility: Telegram.DialogListModel.VisibilityContacts | Telegram.DialogListModel.VisibilityEmptyDialogs
-                sortFlag: [ Telegram.DialogListModel.SortByName, Telegram.DialogListModel.SortByOnline ]
             }
 
             delegate: ListItem {
@@ -73,7 +69,7 @@ Dialog
                     id: useritem
                     anchors { left: parent.left; top: parent.top; right: swselectcontact.right; bottom: parent.bottom; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
                     context: dlgcreatechat.context
-                    user: model.user
+                    user: model.item.user
                 }
 
                 Switch {
@@ -85,7 +81,7 @@ Dialog
                         checked ? count++ : count--
 
                         if(checked)
-                            users[index] = model.user;
+                            users[index] = model.item.user;
                         else
                             delete users[index];
                     }

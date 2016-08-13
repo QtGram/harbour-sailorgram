@@ -1,9 +1,8 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 2.0 as Telegram
+import harbour.sailorgram.Telegram 1.0
 import "../../models"
 import "../../items/user"
-import "../../js/TelegramHelper.js" as TelegramHelper
 
 Page
 {
@@ -29,11 +28,9 @@ Page
             spacing: Theme.paddingMedium
             clip: true
 
-            model: Telegram.DialogListModel {
+            model: SailorgramContactsModel {
                 id: contactsmodels
                 engine: context.engine
-                visibility: Telegram.DialogListModel.VisibilityContacts | Telegram.DialogListModel.VisibilityEmptyDialogs
-                sortFlag: [ Telegram.DialogListModel.SortByName, Telegram.DialogListModel.SortByOnline ]
             }
 
             delegate: ListItem {
@@ -41,7 +38,7 @@ Page
                 contentHeight: Theme.itemSizeSmall
 
                 onClicked: {
-                    context.telegram.messagesCreateEncryptedChat(item.userId);
+                    //FIXME: context.telegram.messagesCreateEncryptedChat(item.userId);
                     pageStack.pop();
                 }
 
@@ -49,7 +46,7 @@ Page
                     id: useritem
                     anchors { fill: parent; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
                     context: createsecretdialogpage.context
-                    user: model.user
+                    user: model.item.user
                 }
             }
         }
