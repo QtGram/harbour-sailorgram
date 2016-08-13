@@ -123,7 +123,7 @@ Page
                 if(dialogpage.sgDialogItem.secretChatState !== SailorgramEnums.SecretChatStateRequested)
                     return "";
 
-                return ""; //FIXME: TelegramHelper.completeName(dialogpage.sgDialogItem.title);
+                return TelegramHelper.completeName(dialogpage.sgDialogItem.title);
             }
 
             onSelectedItemsChanged: {

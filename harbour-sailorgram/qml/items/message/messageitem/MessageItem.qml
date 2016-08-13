@@ -72,7 +72,7 @@ ListItem
         var isgeoorvenue = (sgMessageItem.messageType === SailorgramEnums.MessageTypeGeo) || (sgMessageItem.messageType === SailorgramEnums.MessageTypeVenue);
 
         if(isgeoorvenue) {
-            //FIXME: Qt.openUrlExternally("geo:" + media.geo.lat + "," + media.geo.longitude)
+            Qt.openUrlExternally("geo:" + sgMessageItem.messageMedia.geoPoint.latitude + "," + sgMessageItem.messageMedia.geoPoint.longitude);
             return;
         }
 

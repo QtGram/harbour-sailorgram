@@ -38,7 +38,7 @@ Page
             if(pageStack.depth > 1)
                 pageStack.pop(dialogspage, PageStackAction.Immediate);
 
-            peerkey;
+            /* FIXME:
             pageStack.push(Qt.resolvedUrl("DialogPage.qml"), { "context": dialogspage.context,
                                                                "title": model.title,
                                                                "peerHex": model.peerHex,
@@ -56,6 +56,7 @@ Page
             }
 
             pageStack.push(Qt.resolvedUrl("../dialogs/DialogPage.qml"), { "context": context, "dialog": dialog }, PageStackAction.Immediate);
+            */
 
             if(Qt.application.state !== Qt.ApplicationActive)
                 mainwindow.activate();
@@ -147,14 +148,13 @@ Page
                 contentHeight: Theme.itemSizeSmall
                 context: dialogspage.context
                 sgDialogItem: model.item
-
-                onClicked: pageStack.push(Qt.resolvedUrl("DialogPage.qml"), { "context": dialogspage.context,
-                                                                              "sgDialogItem": model.item })
+                onClicked: pageStack.push(Qt.resolvedUrl("DialogPage.qml"), { "context": dialogspage.context, "sgDialogItem": model.item })
 
                 menu: DialogItemMenu {
-                    dialog: model.dialog
-                    onMarkAsReadRequested: context.telegram.messagesReadHistory(TelegramHelper.peerId(item));
+                    sgDialogItem: model.item
+                    //onMarkAsReadRequested: context.telegram.messagesReadHistory(TelegramHelper.peerId(item));
 
+                    /*
                     onDeleteRequested: {
                         dialogitem.remorseAction(remorsemsg, function() {
                             var peerid = TelegramHelper.peerId(item);
@@ -166,6 +166,7 @@ Page
                                 context.telegram.messagesDeleteHistory(peerid, true);
                         });
                     }
+                    */
                 }
             }
         }

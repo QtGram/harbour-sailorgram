@@ -80,24 +80,21 @@ Item
             id: liparticipant
             contentWidth: parent.width
             contentHeight: Theme.itemSizeSmall
-            showMenuOnPressAndHold: chatinfo.chat.admin
+            onClicked: pageStack.push(Qt.resolvedUrl("../../pages/contacts/ContactPage.qml"), { "context": chatinfo.context, "user": model.user } )
 
-            //FIXME: onClicked: pageStack.push(Qt.resolvedUrl("../../pages/contacts/ContactPage.qml"), { "context": chatinfo.context, "user": liparticipant.user } )
-
-            /* FIXME:
             menu: ChatInfoMenu {
                 context: chatinfo.context
-                dialog: chatinfo.dialog
-                user: liparticipant.user
+                admin: chatinfo.chat.admin
+                user: model.user
+                peer: model.peer
             }
-            */
 
             UserItem {
                 id: useritem
                 anchors { fill: parent; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
                 context: chatinfo.context
-                user: model.user
                 statusText: model.status
+                user: model.user
             }
         }
     }

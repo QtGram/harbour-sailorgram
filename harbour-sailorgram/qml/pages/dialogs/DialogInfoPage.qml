@@ -107,7 +107,7 @@ Page
                 height: Theme.itemSizeSmall
 
                 onActionRequested: {
-                    //FIXME: detail.mute = !detail.mute;
+                    sgDialogItem.mute = !sgDialogItem.mute;
                 }
             }
 

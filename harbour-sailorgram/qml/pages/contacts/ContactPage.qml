@@ -12,6 +12,8 @@ Page
     property Context context
     property User user
 
+    readonly property string completeName: TelegramHelper.completeName(user)
+
     id: contactpage
     allowedOrientations: defaultAllowedOrientations
 
@@ -27,24 +29,34 @@ Page
             width: parent.width
             spacing: Theme.paddingMedium
 
-            PageHeader { title: TelegramHelper.completeName(user) }
+            PageHeader { title: contactpage.completeName }
 
             PeerProfile
             {
                 id: peerprofile
                 width: parent.width
                 context: contactpage.context
-                user: contactpage.user
-                showType: false
+                peer: contactpage.user
+                fallbackAvatar: contactpage.completeName
+                //FIXME: StatusText
+
+                title: {
+                    var name = contactpage.completeName;
+
+                    if(contactpage.user.username.length > 0)
+                        name += " (@" + contactpage.user.username + ")";
+
+                    return name;
+                }
             }
 
             UserInfo
             {
                 x: Theme.paddingMedium
                 width: parent.width - (x * 2)
-                actionVisible: true
                 context: contactpage.context
                 user: contactpage.user
+                actionVisible: true
                 showHeader: true
             }
         }

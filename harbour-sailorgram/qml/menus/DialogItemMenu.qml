@@ -1,10 +1,10 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import "../js/TelegramHelper.js" as TelegramHelper
+import harbour.sailorgram.Telegram 1.0
 
 ContextMenu
 {
-    property var dialog
+    property SailorgramDialogItem sgDialogItem
 
     signal deleteRequested(string remorsemsg)
     signal markAsReadRequested()
@@ -24,9 +24,11 @@ ContextMenu
         onClicked: {
             var msg = qsTr("Deleting Conversation");
 
-            if(dialog.encrypted)
+            if(sgDialogItem.isSecretChat)
                 msg = qsTr("Deleting Secret Chat");
-            else if(TelegramHelper.isChat(dialog))
+            else if(sgDialogItem.isBroadcast)
+                msg = qsTr("Deleting Channel");
+            else if(sgDialogItem.isChat)
                 msg = qsTr("Deleting Group");
 
             deleteRequested(msg);

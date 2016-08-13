@@ -16,7 +16,7 @@ Page
         if(status !== PageStatus.Active)
             return;
 
-        context.contacts.engine = context.engine
+        context.contacts.engine = context.engine;
     }
 
     SilicaListView
@@ -72,9 +72,7 @@ Page
 
             onClicked: {
                 pageStack.navigateBack(PageStackAction.Immediate);
-
-                pageStack.push(Qt.resolvedUrl("../dialogs/DialogPage.qml"), { "context": dialogspage.context,
-                                                                              "sgDialogItem": model.item })
+                pageStack.push(Qt.resolvedUrl("../dialogs/DialogPage.qml"), { "context": dialogspage.context, "sgDialogItem": model.item })
             }
 
             UserItem {

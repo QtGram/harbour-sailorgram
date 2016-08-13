@@ -45,34 +45,6 @@ function isChat(dialog) {
     return dialog.peer.classType === TelegramConstants.typePeerChat;
 }
 
-function typingUsers(context, typing) {
-    if(typing.length === 1)
-        return qsTr("%1 is typing...").arg(userDisplayName(typing[0]));
-    else if(typing.length === 2)
-        return qsTr("%1 and %2 are typing...").arg(userDisplayName(typing[0])).arg(userDisplayName(typing[1]));
-    else if(typing.length > 2)
-        return qsTr("%n member(s) are typing...", "", typing.length);
-
-    return "";
-}
-
-function webPageHasThumb(message) {
-    if(!message)
-        return false;
-
-    if(message.media.classType !== TelegramConstants.typeMessageMediaWebPage)
-        return false;
-
-    return message.media.webpage.photo.classType !== TelegramConstants.typePhotoEmpty;
-}
-
-function isWebPage(message) {
-    if(!message)
-        return false;
-
-    return message.media.classType === TelegramConstants.typeMessageMediaWebPage;
-}
-
 function isMediaMessage(message) {
     if(!message || !message.media)
         return false;
@@ -81,19 +53,6 @@ function isMediaMessage(message) {
         return false;
 
     return true;
-}
-
-function isSticker(context, message) {
-    if(!isMediaMessage(message))
-        return false;
-
-    if(message.media.classType !== TelegramConstants.typeMessageMediaDocument)
-        return false;
-
-    if(context.telegram.documentIsSticker(message.media.document))
-        return true;
-
-    return false;
 }
 
 function peerId(dialog) {
