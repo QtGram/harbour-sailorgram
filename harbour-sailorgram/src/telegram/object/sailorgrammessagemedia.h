@@ -30,6 +30,7 @@ class SailorgramMessageMedia : public QObject
     Q_PROPERTY(SailorgramGeoPointMedia* geoPoint READ geoPoint NOTIFY geoPointChanged)
 
     // File Transfer
+    Q_PROPERTY(bool isDownloadable READ isDownloadable NOTIFY isDownloadableChanged)
     Q_PROPERTY(bool isTransfered READ isTransfered NOTIFY isTransferedChanged)
     Q_PROPERTY(bool isTransfering READ isTransfering NOTIFY isTransferingChanged)
     Q_PROPERTY(float transferProgress READ transferProgress NOTIFY transferProgressChanged)
@@ -59,6 +60,7 @@ class SailorgramMessageMedia : public QObject
         SailorgramGeoPointMedia* geoPoint() const;
 
     public: // File Transfer
+        bool isDownloadable() const;
         bool isTransfered() const;
         bool isTransfering() const;
         float transferProgress() const;
@@ -76,6 +78,7 @@ class SailorgramMessageMedia : public QObject
         void setFilePerformer(const QString& fileperformer);
         void setFileDuration(qint32 fileduration);
         void setIsVoiceFile(bool b);
+        void setIsDownloadable(bool b);
         void setIsTransfered(bool b);
         void setIsTransfering(bool b);
         void setTransferedSize(qint32 transferedsize);
@@ -95,6 +98,7 @@ class SailorgramMessageMedia : public QObject
         void filePerformerChanged();
         void fileDurationChanged();
         void isVoiceFileChanged();
+        void isDownloadableChanged();
         void isTransferedChanged();
         void isTransferingChanged();
         void transferProgressChanged();
@@ -118,6 +122,7 @@ class SailorgramMessageMedia : public QObject
         qint32 _fileduration;
         qint32 _transferedsize;
         bool _isvoicefile;
+        bool _isdownloadable;
         bool _istransfered;
         bool _istransfering;
 };

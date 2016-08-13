@@ -79,25 +79,30 @@ ContextMenu
     MenuItem
     {
         text: {
-            if(!sgMessageItem.messageMedia.isTransfering)
-                return sgMessageItem.messageMedia.isTransfered ? qsTr("Open") : qsTr("Download");
+            if(!sgMessageItem.messageMedia.isDownloadable || (sgMessageItem.messageType === SailorgramEnums.MessageTypeSticker))
+                return "";
 
-            return "";
+            if(sgMessageItem.messageMedia.isTransfering)
+                return qsTr("Cancel")
+
+            if(!sgMessageItem.messageMedia.isTransfered)
+                return qsTr("Download")
+
+            return qsTr("Open");
         }
 
-        visible: text.length > 0
+        visible: sgMessageItem.messageMedia.isDownloadable && (sgMessageItem.messageType !== SailorgramEnums.MessageTypeSticker)
 
-        onClicked: {
-            messageitem.remorseAction(qsTr("Downloading media"), function() {
-                sgMessageItem.messageMedia.download();
-            });
+        onClicked: { //TODO: Open
+            if(sgMessageItem.messageMedia.isTransfering) {
+                sgMessageItem.messageMedia.stop();
+                return;
+            }
+
+            if(!sgMessageItem.messageMedia.isTransfered) {
+                messageitem.remorseAction(qsTr("Downloading media"), function() { sgMessageItem.messageMedia.download(); });
+                return;
+            }
         }
-    }
-
-    MenuItem
-    {
-        text: qsTr("Cancel")
-        visible: sgMessageItem.messageMedia.isTransfering
-        onClicked: sgMessageItem.messageMedia.stop()
     }
 }

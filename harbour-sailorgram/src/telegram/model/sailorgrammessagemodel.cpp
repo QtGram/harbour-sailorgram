@@ -86,7 +86,7 @@ void SailorgramMessageModel::inserted(QModelIndex sourceindex)
         thethis->_messagelistmodel->setData(sourceindex, QVariant::fromValue<bool>(start), TelegramMessageListModel::RoleDownloading);
     });
 
-    this->updateData(sgmessage, sourceindex, ROLE_LIST(TelegramMessageListModel::RoleMessageItem <<  // Message Management v
+    this->updateData(sgmessage, sourceindex, ROLE_LIST(TelegramMessageListModel::RoleMessageItem <<   // Message Management v
                                                        TelegramMessageListModel::RoleFromUserItem <<
                                                        TelegramMessageListModel::RoleToUserItem <<
                                                        TelegramMessageListModel::RoleMessage <<
@@ -96,9 +96,10 @@ void SailorgramMessageModel::inserted(QModelIndex sourceindex)
                                                        TelegramMessageListModel::RoleOut <<
                                                        TelegramMessageListModel::RoleForwardFromPeer <<
                                                        TelegramMessageListModel::RoleReplyPeer <<
-                                                       TelegramMessageListModel::RoleReplyMessage << // Reply Management v
+                                                       TelegramMessageListModel::RoleReplyMessage <<  // Reply Management v
                                                        TelegramMessageListModel::RoleReplyType <<
-                                                       TelegramMessageListModel::RoleFileName <<    // Media management v
+                                                       TelegramMessageListModel::RoleMediaItem <<     // Media management v
+                                                       TelegramMessageListModel::RoleFileName <<
                                                        TelegramMessageListModel::RoleFilePath <<
                                                        TelegramMessageListModel::RoleFileMimeType <<
                                                        TelegramMessageListModel::RoleFileSize <<
@@ -107,10 +108,10 @@ void SailorgramMessageModel::inserted(QModelIndex sourceindex)
                                                        TelegramMessageListModel::RoleFilePerformer <<
                                                        TelegramMessageListModel::RoleFileDuration <<
                                                        TelegramMessageListModel::RoleFileIsVoice <<
+                                                       TelegramMessageListModel::RoleDownloadable <<  // Transfer management v
                                                        TelegramMessageListModel::RoleTransfared <<
                                                        TelegramMessageListModel::RoleTransfaring <<
-                                                       TelegramMessageListModel::RoleTransfaredSize <<
-                                                       TelegramMessageListModel::RoleMediaItem));
+                                                       TelegramMessageListModel::RoleTransfaredSize));
 
     this->_messages[message->id()] = sgmessage;
     SailorgramIdentityProxyModel::inserted(sourceindex);
@@ -161,7 +162,7 @@ void SailorgramMessageModel::updateData(SailorgramMessageItem *sgmessage, const 
 {
     foreach(int role, roles)
     {
-        if(role == TelegramMessageListModel::RoleMessageItem)      // Message management v
+        if(role == TelegramMessageListModel::RoleMessageItem)     // Message management v
             sgmessage->setMessage(SOURCE_ROLE_DATA(MessageObject*, sourceindex, role));
         else if(role == TelegramMessageListModel::RoleFromUserItem)
             sgmessage->setFromUser(SOURCE_ROLE_DATA(UserObject*, sourceindex, role));
@@ -185,7 +186,9 @@ void SailorgramMessageModel::updateData(SailorgramMessageItem *sgmessage, const 
             sgmessage->messageReply()->setMessage(SOURCE_ROLE_DATA(MessageObject*, sourceindex, role));
         else if(role == TelegramMessageListModel::RoleReplyType)
             sgmessage->messageReply()->setMessageType(SOURCE_ROLE_DATA(int, sourceindex, role));
-        else if(role == TelegramMessageListModel::RoleFileName)    // Media management v
+        else if(role == TelegramMessageListModel::RoleMediaItem)    // Media management v
+            sgmessage->messageMedia()->setMediaObject(SOURCE_ROLE_DATA(MessageMediaObject*, sourceindex, role));
+        else if(role == TelegramMessageListModel::RoleFileName)
             sgmessage->messageMedia()->setFileName(SOURCE_ROLE_DATA(QString, sourceindex, role));
         else if(role == TelegramMessageListModel::RoleFilePath)
             sgmessage->messageMedia()->setFilePath(SOURCE_ROLE_DATA(QString, sourceindex, role));
@@ -203,13 +206,13 @@ void SailorgramMessageModel::updateData(SailorgramMessageItem *sgmessage, const 
             sgmessage->messageMedia()->setFileDuration(SOURCE_ROLE_DATA(qint32, sourceindex, role));
         else if(role == TelegramMessageListModel::RoleFileIsVoice)
             sgmessage->messageMedia()->setIsVoiceFile(SOURCE_ROLE_DATA(bool, sourceindex, role));
+        else if(role == TelegramMessageListModel::RoleDownloadable) // Transfer management v
+            sgmessage->messageMedia()->setIsDownloadable(SOURCE_ROLE_DATA(bool, sourceindex, role));
         else if(role == TelegramMessageListModel::RoleTransfared)
             sgmessage->messageMedia()->setIsTransfered(SOURCE_ROLE_DATA(bool, sourceindex, role));
         else if(role == TelegramMessageListModel::RoleTransfaring)
             sgmessage->messageMedia()->setIsTransfering(SOURCE_ROLE_DATA(bool, sourceindex, role));
         else if(role == TelegramMessageListModel::RoleTransfaredSize)
             sgmessage->messageMedia()->setTransferedSize(SOURCE_ROLE_DATA(qint32, sourceindex, role));
-        else if(role == TelegramMessageListModel::RoleMediaItem)
-            sgmessage->messageMedia()->setMediaObject(SOURCE_ROLE_DATA(MessageMediaObject*, sourceindex, role));
     }
 }

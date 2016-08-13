@@ -6,6 +6,7 @@ SailorgramMessageMedia::SailorgramMessageMedia(QObject *parent) : QObject(parent
     this->_fileduration = 0;
     this->_transferedsize = 0;
     this->_isvoicefile = false;
+    this->_isdownloadable = false;
     this->_istransfered = false;
     this->_istransfering = false;
 }
@@ -16,6 +17,7 @@ SailorgramMessageMedia::SailorgramMessageMedia(TelegramEngine *engine, QObject *
     this->_fileduration = 0;
     this->_transferedsize = 0;
     this->_isvoicefile = false;
+    this->_isdownloadable = false;
     this->_istransfered = false;
     this->_istransfering = false;
 }
@@ -73,6 +75,11 @@ SailorgramWebPageMedia *SailorgramMessageMedia::webPage() const
 SailorgramGeoPointMedia *SailorgramMessageMedia::geoPoint() const
 {
     return this->_geopoint;
+}
+
+bool SailorgramMessageMedia::isDownloadable() const
+{
+    return this->_isdownloadable;
 }
 
 bool SailorgramMessageMedia::isTransfered() const
@@ -178,6 +185,15 @@ void SailorgramMessageMedia::setIsVoiceFile(bool b)
 
     this->_isvoicefile = b;
     emit isVoiceFileChanged();
+}
+
+void SailorgramMessageMedia::setIsDownloadable(bool b)
+{
+    if(this->_isdownloadable == b)
+        return;
+
+    this->_isdownloadable = b;
+    emit isDownloadableChanged();
 }
 
 void SailorgramMessageMedia::setIsTransfered(bool b)
