@@ -171,11 +171,8 @@ void SailorgramDialogItem::setIsMute(bool b)
     emit muteRequest(b);
 }
 
-void SailorgramDialogItem::setMessageText(const QString& messagetext)
+void SailorgramDialogItem::setMessageText(const QString& messagetext) // Always update this property
 {
-    if(this->_messagetext == messagetext)
-        return;
-
     this->_messagetext = messagetext;
     emit messageTextChanged();
 }
@@ -230,7 +227,6 @@ void SailorgramDialogItem::setTopMessage(MessageObject *topmessage)
     {
         this->_messageaction->deleteLater();
         this->_messageaction = NULL;
-
     }
 
     if(!topmessage)

@@ -46,6 +46,10 @@ void SailorgramDialogsModel::inserted(QModelIndex sourceindex)
         thethis->sourceModel()->setData(sourceindex, QVariant::fromValue<bool>(mute), TelegramDialogListModel::RoleMute);
     });
 
+    connect(sgdialog, &SailorgramDialogItem::messageTextChanged, [thethis, sgdialog, sourceindex]() {
+        thethis->updateData(sgdialog, sourceindex, ROLE_LIST(TelegramDialogListModel::RoleUserItem));
+    });
+
     this->updateData(sgdialog, sourceindex, ROLE_LIST(TelegramDialogListModel::RoleName <<
                                                       TelegramDialogListModel::RolePeerItem <<
                                                       TelegramDialogListModel::RoleTopMessageItem <<

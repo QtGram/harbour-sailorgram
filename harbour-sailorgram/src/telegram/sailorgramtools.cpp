@@ -157,7 +157,7 @@ int SailorgramTools::sendFileType(int sft)
     return SailorgramEnums::SendFileTypeAutoDetect;
 }
 
-int SailorgramTools::sendMessageActionType(int smat)
+int SailorgramTools::typingStatus(int smat)
 {
     if(smat == SendMessageActionObject::TypeSendMessageCancelAction)
         return SailorgramEnums::TypingStatusCancel;
@@ -226,7 +226,7 @@ quint32 SailorgramTools::reverseSendFileType(int sft)
     return TelegramEnums::SendFileTypeAutoDetect;
 }
 
-quint32 SailorgramTools::reverseSendMessageActionType(int smat)
+quint32 SailorgramTools::reverseTypingStatus(int smat)
 {
     if(smat == SailorgramEnums::TypingStatusCancel)
         return SendMessageActionObject::TypeSendMessageCancelAction;

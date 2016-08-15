@@ -14,6 +14,8 @@ SailorgramMessageModel::SailorgramMessageModel(QObject *parent) : SailorgramIden
 
     this->_status = new TelegramStatus(this);
 
+    SailorgramMessageModel* thethis = this;
+    connect(this, &SailorgramMessageModel::engineChanged, [thethis]() { thethis->_status->setEngine(thethis->_engine); });
     connect(this->_typingtimer, &QTimer::timeout, this, &SailorgramMessageModel::onTypingTimerTimeout);
 }
 
@@ -32,7 +34,7 @@ int SailorgramMessageModel::limit() const
 
 int SailorgramMessageModel::typingStatus() const
 {
-    return SailorgramTools::sendMessageActionType(this->_status->typing()->action()->classType());
+    return SailorgramTools::typingStatus(this->_status->typing()->action()->classType());
 }
 
 void SailorgramMessageModel::setCurrentPeer(InputPeerObject *currentpeer)
@@ -42,10 +44,9 @@ void SailorgramMessageModel::setCurrentPeer(InputPeerObject *currentpeer)
 
     this->_currentpeer = currentpeer;
     this->_status->typing()->setPeer(currentpeer);
+    this->_status->typing()->action()->setClassType(SailorgramTools::reverseTypingStatus(SailorgramEnums::TypingStatusCancel));
 
-    this->setTypingStatus(SailorgramEnums::TypingStatusCancel);
     this->init(this->_engine);
-
     emit currentPeerChanged();
 }
 
@@ -59,12 +60,16 @@ void SailorgramMessageModel::setLimit(int limit)
 
 void SailorgramMessageModel::setTypingStatus(int typingstatus)
 {
-    quint32 ts = SailorgramTools::reverseSendMessageActionType(typingstatus);
+    quint32 ts = SailorgramTools::reverseTypingStatus(typingstatus);
 
-    if(ts == this->_status->typing()->action()->classType())
+    if((ts == this->_status->typing()->action()->classType()))
         return;
 
-    this->_typingtimer->start();
+    if(typingstatus == SailorgramEnums::TypingStatusTyping)
+        this->_typingtimer->start();
+    else
+        this->_typingtimer->stop();
+
     this->_status->typing()->action()->setClassType(ts);
     emit typingStatusChanged();
 }
@@ -185,7 +190,8 @@ bool SailorgramMessageModel::contains(QModelIndex sourceindex) const
 
 void SailorgramMessageModel::onTypingTimerTimeout()
 {
-    this->setTypingStatus(SailorgramEnums::TypingStatusCancel);
+    this->_status->typing()->action()->setClassType(SailorgramTools::reverseTypingStatus(SailorgramEnums::TypingStatusCancel));
+    emit typingStatusChanged();
 }
 
 void SailorgramMessageModel::markAsRead()
