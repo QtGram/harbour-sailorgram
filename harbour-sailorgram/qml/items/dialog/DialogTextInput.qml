@@ -127,7 +127,7 @@ InverseMouseArea
                     else if(typingstatus === selector.stickerAction) // Special
                         sgMessageModel.sendSticker(data, sgReplyMessage);
                     else
-                        console.log("Unhandled actiontype: " + actiontype);
+                        console.log("Unhandled typingstatus: " + typingstatus);
 
                     pageStack.pop(returnpage);
                 });
