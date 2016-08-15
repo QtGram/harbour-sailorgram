@@ -178,7 +178,14 @@ void SailorgramMessageModel::changed(QModelIndex sourceindex, const QVector<int>
 
 void SailorgramMessageModel::clear()
 {
-    qDeleteAll(this->_messages);
+    foreach(SailorgramMessageItem* message, this->_messages)
+    {
+        if(message->parent() != this)
+            continue; // Someone has taked the ownership
+
+        message->deleteLater();
+    }
+
     this->_messages.clear();
 }
 
@@ -231,9 +238,28 @@ void SailorgramMessageModel::deleteMessages(const QList<SailorgramMessageItem *>
     this->_messagelistmodel->deleteMessages(msgids);
 }
 
-void SailorgramMessageModel::forwardMessages()
+void SailorgramMessageModel::forwardMessage(SailorgramForwardMessage* forwardmessage)
 {
+    if(!this->_messagelistmodel)
+        return;
 
+    SailorgramMessageItem *messagetoforward = forwardmessage->message();
+
+    this->_messagelistmodel->forwardMessages(messagetoforward->fromPeer()->inputPeer(), (QList<int>() << messagetoforward->rawMessage()->id()));
+    forwardmessage->deleteLater();
+}
+
+SailorgramForwardMessage *SailorgramMessageModel::prepareForward(SailorgramMessageItem *message)
+{
+    return new SailorgramForwardMessage(message); // No parent, destroyed manually
+}
+
+void SailorgramMessageModel::dismissForward(SailorgramForwardMessage *forwardmessage)
+{
+    if(!forwardmessage)
+        return;
+
+    forwardmessage->deleteLater();
 }
 
 void SailorgramMessageModel::updateData(SailorgramMessageItem *sgmessage, const QModelIndex &sourceindex, const QVector<int> &roles)

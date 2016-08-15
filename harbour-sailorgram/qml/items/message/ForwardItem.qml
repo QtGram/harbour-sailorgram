@@ -5,6 +5,7 @@ import "../../items/peer"
 
 BackgroundItem
 {
+    property alias showType: peerimage.showType
     property alias context: peerimage.context
     property SailorgramDialogItem sgDialogItem
 
@@ -16,7 +17,6 @@ BackgroundItem
         anchors.horizontalCenter: parent.horizontalCenter
         width: parent.height - lbltitle.contentHeight
         height: width
-        showType: false
         peer: sgDialogItem.peer
         isChat: sgDialogItem.isChat
         isBroadcast: sgDialogItem.isBroadcast

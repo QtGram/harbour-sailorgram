@@ -47,7 +47,7 @@ Row
         height: parent.height
         useTelegramImage: true
         context: messagepreview.context
-        source: sgMessageItem ? sgMessageItem.messageMedia.rawMedia : null
+        source: sgMessageItem && sgMessageItem.isMediaMessage ? sgMessageItem.messageMedia.rawMedia : null
 
         visible: {
             if(!sgMessageItem)

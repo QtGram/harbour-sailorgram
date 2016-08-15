@@ -8,6 +8,7 @@
 #include "../telegram/object/sailorgrampeer.h"
 #include "../telegram/object/sailorgrammessageaction.h"
 #include "../telegram/object/sailorgrammessagemedia.h"
+#include "../telegram/object/sailorgramforwardmessage.h"
 #include "../telegram/object/media/sailorgramwebpagemedia.h"
 #include "../telegram/object/media/sailorgramgeopointmedia.h"
 #include "../telegram/sailorgramenums.h"
@@ -27,6 +28,7 @@ void SailorgramInitializer::init(const char *uri, int major, int minor)
     qmlRegisterUncreatableType<SailorgramMessageAction>(uri, major, minor, "SailorgramMessageAction", QString());
 
     qmlRegisterType<SailorgramPeer>(uri, major, minor, "SailorgramPeer");
+    qmlRegisterType<SailorgramForwardMessage>(uri, major, minor, "SailorgramForwardMessage");
     qmlRegisterType<SailorgramDialogItem>(uri, major, minor, "SailorgramDialogItem");
     qmlRegisterType<SailorgramMessageItem>(uri, major, minor, "SailorgramMessageItem");
 

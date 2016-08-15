@@ -20,7 +20,7 @@ Item
     }
 
     property Context context
-    property var source
+    property var source: null
     property bool useTelegramImage: false
     property bool autoDownload: false
     property int fillMode: Image.PreserveAspectFit

@@ -197,7 +197,11 @@ void SailorgramMessageItem::setFromPeer(InputPeerObject *inputpeer)
     if(this->_frompeer)
         this->_frompeer->deleteLater();
 
-    this->_frompeer = new SailorgramPeer(this->_engine, inputpeer, this);
+    if(inputpeer)
+        this->_frompeer = new SailorgramPeer(this->_engine, inputpeer, this);
+    else
+        this->_frompeer = NULL;
+
     emit fromPeerChanged();
 }
 

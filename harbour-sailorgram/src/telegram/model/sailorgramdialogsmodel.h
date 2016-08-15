@@ -9,11 +9,15 @@ class SailorgramDialogsModel : public SailorgramIdentityProxyModel
 {
     Q_OBJECT
 
+    Q_PROPERTY(bool writableOnly READ writableOnly WRITE setWritableOnly NOTIFY writableOnlyChanged)
+
     private:
         enum DataRoles { RoleItem = Qt::UserRole };
 
     public:
         explicit SailorgramDialogsModel(QObject *parent = 0);
+        bool writableOnly() const;
+        void setWritableOnly(bool b);
         virtual QVariant data(const QModelIndex &proxyindex, int role) const;
         virtual QHash<int, QByteArray> roleNames() const;
 
@@ -27,10 +31,17 @@ class SailorgramDialogsModel : public SailorgramIdentityProxyModel
 
     private:
         void updateData(SailorgramDialogItem* sgdialog, const QModelIndex& sourceindex, const QVector<int>& roles);
+        void updateVisibility();
+
+    signals:
+        void writableOnlyChanged();
 
     protected:
         TelegramDialogListModel* _dialoglistmodel;
         QHash<uint, SailorgramDialogItem*> _dialogs;
+
+    private:
+        bool _writableonly;
 };
 
 #endif // SAILORGRAMDIALOGSMODEL_H

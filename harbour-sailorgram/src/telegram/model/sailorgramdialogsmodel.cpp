@@ -2,9 +2,24 @@
 #include "../sailorgramtools.h"
 #include <telegram/objects/messageobject.h>
 
-SailorgramDialogsModel::SailorgramDialogsModel(QObject *parent) : SailorgramIdentityProxyModel(parent), _dialoglistmodel(NULL)
+SailorgramDialogsModel::SailorgramDialogsModel(QObject *parent) : SailorgramIdentityProxyModel(parent), _dialoglistmodel(NULL), _writableonly(false)
 {
 
+}
+
+bool SailorgramDialogsModel::writableOnly() const
+{
+    return this->_writableonly;
+}
+
+void SailorgramDialogsModel::setWritableOnly(bool b)
+{
+    if(this->_writableonly == b)
+        return;
+
+    this->_writableonly = b;
+    this->updateVisibility();
+    emit writableOnlyChanged();
 }
 
 QVariant SailorgramDialogsModel::data(const QModelIndex &proxyindex, int role) const
@@ -145,18 +160,29 @@ void SailorgramDialogsModel::updateData(SailorgramDialogItem *sgdialog, const QM
     }
 }
 
+void SailorgramDialogsModel::updateVisibility()
+{
+    if(!this->_dialoglistmodel)
+        return;
+
+    int flags = TelegramDialogListModel::VisibilityUsers |
+                TelegramDialogListModel::VisibilityChats |
+                TelegramDialogListModel::VisibilitySecretChats |
+                TelegramDialogListModel::VisibilityBots;
+
+    if(!this->_writableonly)
+        flags |= TelegramDialogListModel::VisibilityChannels;
+
+    this->_dialoglistmodel->setVisibility(flags);
+}
+
 void SailorgramDialogsModel::init(TelegramEngine *engine)
 {
     if(this->_dialoglistmodel)
         this->_dialoglistmodel->deleteLater();
 
     this->_dialoglistmodel = new TelegramDialogListModel(this);
-
-    this->_dialoglistmodel->setVisibility(TelegramDialogListModel::VisibilityUsers |
-                                          TelegramDialogListModel::VisibilityChats |
-                                          TelegramDialogListModel::VisibilityChannels |
-                                          TelegramDialogListModel::VisibilitySecretChats |
-                                          TelegramDialogListModel::VisibilityBots);
+    this->updateVisibility();
 
     this->_dialoglistmodel->setEngine(engine);
     this->bindTo(this->_dialoglistmodel);

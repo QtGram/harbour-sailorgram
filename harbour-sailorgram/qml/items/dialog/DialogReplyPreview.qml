@@ -21,11 +21,10 @@ Item
     MessagePreview
     {
         id: messagepreview
-        titlePrefix: isForward ? qsTr("Message to forward") : qsTr("Reply to")
         width: parent.width - btnclose.width - Theme.paddingSmall
-        sgPeer: messagepreview.sgMessageItem ? messagepreview.sgMessageItem.fromPeer : null
+        sgPeer: dialogreplypreview.sgMessageItem ? dialogreplypreview.sgMessageItem.fromPeer : null
         showQuoteRect: false
-        showUser: !isForward
+        titlePrefix: isForward ? qsTr("Forward message from") : qsTr("Reply to")
 
         anchors {
             left: parent.left

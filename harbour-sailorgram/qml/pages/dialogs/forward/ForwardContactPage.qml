@@ -44,6 +44,7 @@ Page
                 height: gvcontacts.cellHeight - Theme.paddingSmall
                 context: fwdcontactpage.context
                 sgDialogItem: model.item
+                showType: false
                 onClicked: forwardRequested(model.item)
             }
         }

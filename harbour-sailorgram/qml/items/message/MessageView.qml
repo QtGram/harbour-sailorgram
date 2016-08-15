@@ -18,6 +18,7 @@ SilicaListView
     property MessageTypesPool messageTypesPool: MessageTypesPool { }
     property Context context
     property SailorgramDialogItem sgDialogItem
+    property SailorgramForwardMessage sgForwardMessage: null
     property var selectedItems: []
 
     id: messageview
@@ -97,15 +98,15 @@ SilicaListView
 
             fwdpage.forwardRequested.connect(function(sgdialogitem) {
                 if(sgdialogitem.peer === sgDialogItem.peer) { // Check if it is forwared is this chat
-                    messageview.headerItem.dialogReplyPreview.isForward = true;
-                    messageview.headerItem.dialogReplyPreview.sgMessageItem = model.item; // TODO: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! PEEEEEEEEEEEEEER
+                    messageview.sgForwardMessage = messagemodel.prepareForward(model.item);
                     pageStack.pop();
                     return;
                 }
 
                 // FIXME: Forward Destination property is missing
                 pageStack.replaceAbove(context.mainPage, Qt.resolvedUrl("../../pages/dialogs/DialogPage.qml"), { "context": messageview.context,
-                                                                                                                 "sgDialogItem": sgdialogitem });
+                                                                                                                 "sgDialogItem": sgdialogitem,
+                                                                                                                 "sgForwardMessage": messagemodel.prepareForward(model.item) });
             });
         }
 
@@ -142,10 +143,13 @@ SilicaListView
             id: dialogreplypreview
             width: parent.width
             context: messageview.context
-            //FIXME: isForward: forwardMessageText.length > 0
+            sgMessageItem: sgForwardMessage ? sgForwardMessage.message : null
+            isForward: sgForwardMessage !== null
 
             onCloseRequested: {
+                dialogreplypreview.sgMessageItem = null;
                 dialogtextinput.isForward = false;
+                messagemodel.dismissForward(sgForwardMessage);
             }
 
             onSgMessageItemChanged: {
@@ -163,13 +167,12 @@ SilicaListView
             sgMessageModel: messagemodel
             context: messageview.context
             sgReplyMessage: dialogreplypreview.sgMessageItem
-            //isForward: forwardedMessage !== null
+            isForward: sgForwardMessage !== null
             visible: !discadedDialog && !waitingDialog
-            onForwardRequested: messagemodel.forwardMessages(messageview.forwardPeer, [messageview.forwardedMessage.id]); // Forward in this chat
+            onForwardRequested: messagemodel.forwardMessage(sgForwardMessage); // Forward in this chat
 
             onMessageSent: {
-                forwardedMessage = null;
-                dialogreplypreview.message = null;
+                messageview.sgForwardMessage = null;
             }
         }
 

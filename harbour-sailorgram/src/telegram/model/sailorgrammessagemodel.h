@@ -6,6 +6,7 @@
 #include <telegramstatus.h>
 #include "abstract/sailorgramidentityproxymodel.h"
 #include "../item/sailorgrammessageitem.h"
+#include "../object/sailorgramforwardmessage.h"
 
 class SailorgramMessageModel : public SailorgramIdentityProxyModel
 {
@@ -45,7 +46,9 @@ class SailorgramMessageModel : public SailorgramIdentityProxyModel
         void sendMessage(const QString &message, SailorgramMessageItem *replyto = 0);
         void sendFile(int type, const QString& file, SailorgramMessageItem* replyto = 0);
         void deleteMessages(const QList<SailorgramMessageItem*> messages);
-        void forwardMessages();
+        void forwardMessage(SailorgramForwardMessage* forwardmessage);
+        SailorgramForwardMessage* prepareForward(SailorgramMessageItem* message);
+        void dismissForward(SailorgramForwardMessage* forwardmessage);
 
     private:
         void updateData(SailorgramMessageItem* sgmessage, const QModelIndex& sourceindex, const QVector<int>& roles);

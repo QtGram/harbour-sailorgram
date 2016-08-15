@@ -14,6 +14,7 @@ Page
 {
     property Context context
     property SailorgramDialogItem sgDialogItem
+    property alias sgForwardMessage: messageview.sgForwardMessage
 
     id: dialogpage
     allowedOrientations: defaultAllowedOrientations

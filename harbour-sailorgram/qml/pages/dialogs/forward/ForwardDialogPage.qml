@@ -1,5 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
+import harbour.sailorgram.Telegram 1.0
 import "../../../models"
 import "../../../items/message/"
 import "../../../components/search"
@@ -39,14 +40,19 @@ Page
             anchors { left: parent.left; top: pageheader.bottom; right: parent.right; bottom: parent.bottom; leftMargin: Theme.paddingMedium }
             cellWidth: Theme.iconSizeExtraLarge
             cellHeight: Theme.iconSizeExtraLarge
-            model: context.dialogs
             clip: true
+
+            model: SailorgramDialogsModel {
+                engine: context.engine
+                writableOnly: true
+            }
 
             delegate: ForwardItem {
                 width: gvdialogs.cellWidth - Theme.paddingSmall
                 height: gvdialogs.cellHeight - Theme.paddingSmall
                 context: fwddialogpage.context
                 sgDialogItem: model.item
+                showType: true
                 onClicked: forwardRequested(model.item)
             }
         }

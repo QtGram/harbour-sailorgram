@@ -101,7 +101,8 @@ HEADERS += \
     src/telegram/object/sailorgrammessagemedia.h \
     src/telegram/object/sailorgrampeer.h \
     src/telegram/object/media/sailorgramwebpagemedia.h \
-    src/telegram/object/media/sailorgramgeopointmedia.h
+    src/telegram/object/media/sailorgramgeopointmedia.h \
+    src/telegram/object/sailorgramforwardmessage.h
 
 # Sources
 SOURCES += \
@@ -134,7 +135,8 @@ SOURCES += \
     src/telegram/object/sailorgrammessagemedia.cpp \
     src/telegram/object/sailorgrampeer.cpp \
     src/telegram/object/media/sailorgramwebpagemedia.cpp \
-    src/telegram/object/media/sailorgramgeopointmedia.cpp
+    src/telegram/object/media/sailorgramgeopointmedia.cpp \
+    src/telegram/object/sailorgramforwardmessage.cpp
 
 # QML
 OTHER_FILES += \
