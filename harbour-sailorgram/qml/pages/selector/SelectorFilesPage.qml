@@ -11,8 +11,8 @@ Dialog
     property var selectedFiles: []
     readonly property string rootPathLimit : "/"
 
-    signal actionCompleted(int actiontype, var data)
-    signal actionRequested(int actiontype)
+    signal actionCompleted(int typingstatus, var data)
+    signal actionRequested(int typingstatus)
     signal actionRejected()
 
     id: selectorfilespage
@@ -24,12 +24,12 @@ Dialog
         if(status !== PageStatus.Active)
             return;
 
-        actionRequested(Telegram.SendMessageAction.TypeSendMessageUploadDocumentAction);
+        actionRequested(SailorgramEnums.TypingStatusUploadDocument);
     }
 
     onAccepted: {
         selectedFiles.forEach(function (element) {
-            actionCompleted(Telegram.SendMessageAction.TypeSendMessageUploadDocumentAction, element);
+            actionCompleted(SailorgramEnums.TypingStatusUploadDocument, element);
         })
     }
 

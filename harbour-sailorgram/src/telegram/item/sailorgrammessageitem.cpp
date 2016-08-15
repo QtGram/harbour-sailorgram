@@ -1,7 +1,7 @@
 #include "sailorgrammessageitem.h"
 #include "../sailorgramtools.h"
 
-SailorgramMessageItem::SailorgramMessageItem(QObject *parent): QObject(parent), _engine(NULL), _messageaction(NULL), _messagemedia(NULL), _messagereply(NULL), _fromuser(NULL), _touser(NULL), _replypeer(NULL), _forwardpeer(NULL)
+SailorgramMessageItem::SailorgramMessageItem(QObject *parent): QObject(parent), _engine(NULL), _message(NULL), _messageaction(NULL), _messagemedia(NULL), _messagereply(NULL), _fromuser(NULL), _touser(NULL), _frompeer(NULL), _replypeer(NULL), _forwardpeer(NULL)
 {
     this->_messagetype = TelegramEnums::TypeTextMessage;
 }
@@ -11,7 +11,7 @@ SailorgramMessageItem::SailorgramMessageItem(TelegramEngine *engine, QObject *pa
 
 }
 
-SailorgramMessageItem::SailorgramMessageItem(TelegramEngine *engine, MessageCategories messagecategory, QObject *parent) : QObject(parent), _engine(engine), _messagecategory(messagecategory), _messageaction(NULL), _messagereply(NULL), _fromuser(NULL), _touser(NULL), _replypeer(NULL), _forwardpeer(NULL)
+SailorgramMessageItem::SailorgramMessageItem(TelegramEngine *engine, MessageCategories messagecategory, QObject *parent) : QObject(parent), _engine(engine), _message(NULL), _messagecategory(messagecategory), _messageaction(NULL), _messagereply(NULL), _fromuser(NULL), _touser(NULL), _frompeer(NULL), _replypeer(NULL), _forwardpeer(NULL)
 {
     this->_messagetype = TelegramEnums::TypeTextMessage;
     this->_messagemedia = new SailorgramMessageMedia(engine, this);
@@ -25,6 +25,11 @@ UserObject *SailorgramMessageItem::fromUser() const
 UserObject *SailorgramMessageItem::toUser() const
 {
     return this->_touser;
+}
+
+SailorgramPeer *SailorgramMessageItem::fromPeer() const
+{
+    return this->_frompeer;
 }
 
 SailorgramPeer *SailorgramMessageItem::replyPeer() const
@@ -103,6 +108,11 @@ bool SailorgramMessageItem::hasReply() const
     return this->_replypeer != NULL;
 }
 
+MessageObject *SailorgramMessageItem::rawMessage() const
+{
+    return this->_message;
+}
+
 bool SailorgramMessageItem::isForward() const
 {
     return this->_forwardpeer != NULL;
@@ -110,6 +120,12 @@ bool SailorgramMessageItem::isForward() const
 
 void SailorgramMessageItem::setMessage(MessageObject *message)
 {
+    if(this->_message == message)
+        return;
+
+    this->_message = message;
+    emit rawMessageChanged();
+
     if(this->_messageaction)
     {
         this->_messageaction->deleteLater();
@@ -174,6 +190,15 @@ void SailorgramMessageItem::setForwardPeer(SailorgramPeer *forwardpeer)
         forwardpeer->deleteLater();
 
     emit forwardPeerChanged();
+}
+
+void SailorgramMessageItem::setFromPeer(InputPeerObject *inputpeer)
+{
+    if(this->_frompeer)
+        this->_frompeer->deleteLater();
+
+    this->_frompeer = new SailorgramPeer(this->_engine, inputpeer, this);
+    emit fromPeerChanged();
 }
 
 void SailorgramMessageItem::setFromUser(UserObject *user)
@@ -241,4 +266,3 @@ void SailorgramMessageItem::setIsMessageOut(bool b)
     this->_ismessageout = b;
     emit isOutChanged();
 }
-

@@ -1,29 +1,16 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 2.0
+import harbour.sailorgram.Telegram 1.0
 import "../../models"
 import "../../components"
 import "../../js/TelegramHelper.js" as TelegramHelper
 
 InverseMouseArea
 {
-    property MessageListModel messageListModel
     property Context context
-    property var peer
-    property Message replyMessage
-    property bool isForward
-
-    property Status inputStatus: Status {
-        engine: context.engine
-
-        typing {
-            peer: dialogtextinput.peer
-
-            action {
-                classType: SendMessageAction.TypeSendMessageCancelAction
-            }
-        }
-    }
+    property SailorgramMessageModel sgMessageModel
+    property SailorgramMessageItem sgReplyMessage
+    property bool isForward: false
 
     signal messageSent()
     signal forwardRequested()
@@ -35,7 +22,7 @@ InverseMouseArea
     function sendMessage() {
         if(!isForward) {
             var sendtext = context.sendwithreturn ? (textarea.text.trim().replace(/\r\n|\n|\r/gm, "")) : textarea.text.trim();
-            messageListModel.sendMessage(sendtext, replyMessage);
+            sgMessageModel.sendMessage(sendtext, sgReplyMessage);
         }
         else
             forwardRequested();
@@ -64,24 +51,6 @@ InverseMouseArea
         context: dialogtextinput.context
     }
 
-    Timer
-    {
-        id: typingtimer
-        interval: 3000
-
-        onTriggered: {
-            if(inputStatus.typing.action.classType === SendMessageAction.TypeSendMessageTypingAction)
-                inputStatus.typing.action.classType = SendMessageAction.TypeSendMessageCancelAction;
-        }
-
-        function startTyping() {
-            if(!running) {
-                start();
-                inputStatus.typing.action.classType = SendMessageAction.TypeSendMessageTypingAction;
-            }
-        }
-    }
-
     TextArea
     {
         id: textarea
@@ -90,7 +59,10 @@ InverseMouseArea
         font.pixelSize: Theme.fontSizeSmall
         placeholderText: qsTr("Message...")
         textRightMargin: 0
-        onTextChanged: typingtimer.startTyping()
+
+        onTextChanged: {
+            sgMessageModel.typingStatus = SailorgramEnums.TypingStatusTyping;
+        }
 
         anchors {
             left: parent.left
@@ -141,25 +113,19 @@ InverseMouseArea
                 var selector = pageStack.push(Qt.resolvedUrl("../../pages/selector/SelectorMainPage.qml"), { "context": dialogtextinput.context,
                                                                                                              "dialogPage": pageStack.currentPage });
 
-                selector.actionRequested.connect(function(actiontype) {
-                    inputStatus.typing.action.classType = actiontype;
-                });
+                selector.actionRequested.connect(function(typingstatus) { sgMessageModel.typingStatus = typingstatus; });
+                selector.actionRejected.connect(function() { sgMessageModel.typingStatus = SailorgramEnums.TypingStatusCancel; });
 
-                selector.actionRejected.connect(function() {
-                    inputStatus.typing.action.classType = SendMessageAction.TypeSendMessageCancelAction;
-                });
-
-                selector.actionCompleted.connect(function(actiontype, data) {
-                    var peerid = 0;
-
-                    if(actiontype === SendMessageAction.TypeSendMessageGeoLocationAction)
-                        context.telegram.sendGeo(peerid, data.latitude, data.longitude); //FIXME: sendGeo() API Missing
-                    else if(actiontype === SendMessageAction.TypeSendMessageRecordAudioAction)
-                        messageListModel.sendFile(Enums.SendFileTypeAudio, data, replyMessage);
-                    else if(actiontype === SendMessageAction.TypeSendMessageUploadDocumentAction)
-                        messageListModel.sendFile(Enums.SendFileTypeDocument, data, replyMessage);
-                    else if(actiontype === selector.stickerAction) // Special
-                        messageListModel.sendSticker(data, replyMessage);
+                selector.actionCompleted.connect(function(typingstatus, data) {
+                    if(typingstatus === SailorgramEnums.TypingStatusGeoLocation)
+                        console.log("Placehoder");
+                        //context.telegram.sendGeo(peerid, data.latitude, data.longitude); //FIXME: sendGeo() API Missing
+                    else if(typingstatus === SailorgramEnums.TypingStatusRecordAudio)
+                        sgMessageModel.sendFile(SailorgramEnums.SendFileTypeAudio, data, sgReplyMessage);
+                    else if(typingstatus === SailorgramEnums.TypingStatusUploadDocument)
+                        sgMessageModel.sendFile(SailorgramEnums.SendFileTypeDocument, data, sgReplyMessage);
+                    else if(typingstatus === selector.stickerAction) // Special
+                        sgMessageModel.sendSticker(data, sgReplyMessage);
                     else
                         console.log("Unhandled actiontype: " + actiontype);
 

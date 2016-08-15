@@ -1,9 +1,20 @@
 #include "sailorgrammessagemodel.h"
+#include <telegram/objects/sendmessageactionobject.h>
 #include <telegram/objects/messageobject.h>
+#include <telegramstatustyping.h>
+#include "../sailorgramtools.h"
+#include "../sailorgramenums.h"
+
+#define TYPING_TIMER_INTERVAL 3000
 
 SailorgramMessageModel::SailorgramMessageModel(QObject *parent) : SailorgramIdentityProxyModel(parent), _messagelistmodel(NULL), _currentpeer(NULL)
 {
+    this->_typingtimer = new QTimer();
+    this->_typingtimer->setInterval(TYPING_TIMER_INTERVAL);
 
+    this->_status = new TelegramStatus(this);
+
+    connect(this->_typingtimer, &QTimer::timeout, this, &SailorgramMessageModel::onTypingTimerTimeout);
 }
 
 InputPeerObject *SailorgramMessageModel::currentPeer() const
@@ -19,13 +30,22 @@ int SailorgramMessageModel::limit() const
     return this->_messagelistmodel->limit();
 }
 
+int SailorgramMessageModel::typingStatus() const
+{
+    return SailorgramTools::sendMessageActionType(this->_status->typing()->action()->classType());
+}
+
 void SailorgramMessageModel::setCurrentPeer(InputPeerObject *currentpeer)
 {
     if(this->_currentpeer == currentpeer)
         return;
 
     this->_currentpeer = currentpeer;
+    this->_status->typing()->setPeer(currentpeer);
+
+    this->setTypingStatus(SailorgramEnums::TypingStatusCancel);
     this->init(this->_engine);
+
     emit currentPeerChanged();
 }
 
@@ -35,6 +55,18 @@ void SailorgramMessageModel::setLimit(int limit)
         return;
 
     this->_messagelistmodel->setLimit(limit);
+}
+
+void SailorgramMessageModel::setTypingStatus(int typingstatus)
+{
+    quint32 ts = SailorgramTools::reverseSendMessageActionType(typingstatus);
+
+    if(ts == this->_status->typing()->action()->classType())
+        return;
+
+    this->_typingtimer->start();
+    this->_status->typing()->action()->setClassType(ts);
+    emit typingStatusChanged();
 }
 
 QVariant SailorgramMessageModel::data(const QModelIndex &proxyindex, int role) const
@@ -87,6 +119,7 @@ void SailorgramMessageModel::inserted(QModelIndex sourceindex)
     });
 
     this->updateData(sgmessage, sourceindex, ROLE_LIST(TelegramMessageListModel::RoleMessageItem <<   // Message Management v
+                                                       TelegramMessageListModel::RoleToPeerItem <<
                                                        TelegramMessageListModel::RoleFromUserItem <<
                                                        TelegramMessageListModel::RoleToUserItem <<
                                                        TelegramMessageListModel::RoleMessage <<
@@ -150,6 +183,11 @@ bool SailorgramMessageModel::contains(QModelIndex sourceindex) const
     return this->_messages.contains(message->id());
 }
 
+void SailorgramMessageModel::onTypingTimerTimeout()
+{
+    this->setTypingStatus(SailorgramEnums::TypingStatusCancel);
+}
+
 void SailorgramMessageModel::markAsRead()
 {
     if(!this->_messagelistmodel)
@@ -158,12 +196,48 @@ void SailorgramMessageModel::markAsRead()
     this->_messagelistmodel->markAsRead();
 }
 
+void SailorgramMessageModel::sendMessage(const QString& message, SailorgramMessageItem *replyto)
+{
+    if(!this->_messagelistmodel)
+        return;
+
+    this->_messagelistmodel->sendMessage(message, replyto->rawMessage());
+}
+
+void SailorgramMessageModel::sendFile(int type, const QString &file, SailorgramMessageItem *replyto)
+{
+    if(!this->_messagelistmodel)
+        return;
+
+    this->_messagelistmodel->sendFile(SailorgramTools::reverseSendFileType(type), file, replyto->rawMessage());
+}
+
+void SailorgramMessageModel::deleteMessages(const QList<SailorgramMessageItem *> messages)
+{
+    if(!this->_messagelistmodel || messages.isEmpty())
+        return;
+
+    QList<qint32> msgids;
+
+    foreach(SailorgramMessageItem* item, messages)
+        msgids << item->rawMessage()->id();
+
+    this->_messagelistmodel->deleteMessages(msgids);
+}
+
+void SailorgramMessageModel::forwardMessages()
+{
+
+}
+
 void SailorgramMessageModel::updateData(SailorgramMessageItem *sgmessage, const QModelIndex &sourceindex, const QVector<int> &roles)
 {
     foreach(int role, roles)
     {
         if(role == TelegramMessageListModel::RoleMessageItem)     // Message management v
             sgmessage->setMessage(SOURCE_ROLE_DATA(MessageObject*, sourceindex, role));
+        else if(role == TelegramMessageListModel::RoleToPeerItem)
+            sgmessage->setFromPeer(SOURCE_ROLE_DATA(InputPeerObject*, sourceindex, role));
         else if(role == TelegramMessageListModel::RoleFromUserItem)
             sgmessage->setFromUser(SOURCE_ROLE_DATA(UserObject*, sourceindex, role));
         else if(role == TelegramMessageListModel::RoleToUserItem)

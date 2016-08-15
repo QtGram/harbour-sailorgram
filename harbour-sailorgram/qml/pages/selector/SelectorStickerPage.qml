@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.1
 import Sailfish.Silica 1.0
 import QtLocation 5.0
 import QtPositioning 5.0
@@ -12,8 +12,8 @@ Dialog
     property Context context
     property var selectedSticker: null
 
-    signal actionCompleted(int actiontype, var data)
-    signal actionRequested(int actiontype)
+    signal actionCompleted(int typingstatus, var data)
+    signal actionRequested(int typingstatus)
     signal actionRejected()
 
     id: dlgselectorsticker

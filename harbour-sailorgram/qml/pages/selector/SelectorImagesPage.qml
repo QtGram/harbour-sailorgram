@@ -1,7 +1,7 @@
-import QtQuick 2.0
+import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.FilesModel 1.0
-import harbour.sailorgram.TelegramQml 2.0 as Telegram
+import harbour.sailorgram.Telegram 1.0
 import "../../models"
 
 Dialog
@@ -36,8 +36,8 @@ Dialog
     readonly property real cellSize: isPortrait ? width / numCellColumnsPortrait : width / numCellColumnsLandscape
     readonly property real maxCellSize: Math.max(Screen.height / numCellColumnsLandscape, Screen.width / numCellColumnsPortrait)
 
-    signal actionCompleted(int actiontype, var data)
-    signal actionRequested(int actiontype)
+    signal actionCompleted(int typingstatus, var data)
+    signal actionRequested(int typingstatus)
     signal actionRejected()
 
     id: selectorimagespage
@@ -49,12 +49,12 @@ Dialog
         if(status !== PageStatus.Active)
             return;
 
-        actionRequested(Telegram.SendMessageAction.TypeSendMessageUploadPhotoAction);
+        actionRequested(SailorgramEnums.TypingStatusUploadPhoto);
     }
 
     onAccepted: {
         selectedFiles.forEach(function (element) {
-            actionCompleted(Telegram.SendMessageAction.TypeSendMessageUploadPhotoAction, element); });
+            actionCompleted(SailorgramEnums.TypingStatusUploadPhoto, element); });
     }
 
     onRejected: {

@@ -3,7 +3,9 @@
 #include <QDateTime>
 #include <telegramenums.h>
 #include <telegram/objects/messageactionobject.h>
+#include <telegram/objects/sendmessageactionobject.h>
 #include <telegramdialoglistmodel.h>
+#include <telegramenums.h>
 #include "sailorgramenums.h"
 
 SailorgramTools::SailorgramTools()
@@ -132,6 +134,61 @@ int SailorgramTools::actionType(int at)
     return SailorgramEnums::ActionTypeEmpty;
 }
 
+int SailorgramTools::sendFileType(int sft)
+{
+    if(sft == TelegramEnums::SendFileTypeDocument)
+        return SailorgramEnums::SendFileTypeDocument;
+
+    if(sft == TelegramEnums::SendFileTypeSticker)
+        return SailorgramEnums::SendFileTypeSticker;
+
+    if(sft == TelegramEnums::SendFileTypeAnimated)
+        return SailorgramEnums::SendFileTypeAnimated;
+
+    if(sft == TelegramEnums::SendFileTypeVideo)
+        return SailorgramEnums::SendFileTypeVideo;
+
+    if(sft == TelegramEnums::SendFileTypePhoto)
+        return SailorgramEnums::SendFileTypePhoto;
+
+    if(sft == TelegramEnums::SendFileTypeAudio)
+        return SailorgramEnums::SendFileTypeAudio;
+
+    return SailorgramEnums::SendFileTypeAutoDetect;
+}
+
+int SailorgramTools::sendMessageActionType(int smat)
+{
+    if(smat == SendMessageActionObject::TypeSendMessageCancelAction)
+        return SailorgramEnums::TypingStatusCancel;
+
+    if(smat == SendMessageActionObject::TypeSendMessageRecordVideoAction)
+        return SailorgramEnums::TypingStatusRecordVideo;
+
+    if(smat == SendMessageActionObject::TypeSendMessageUploadVideoAction)
+        return SailorgramEnums::TypingStatusUploadVideo;
+
+    if(smat == SendMessageActionObject::TypeSendMessageRecordAudioAction)
+        return SailorgramEnums::TypingStatusRecordAudio;
+
+    if(smat == SendMessageActionObject::TypeSendMessageUploadAudioAction)
+        return SailorgramEnums::TypingStatusUploadAudio;
+
+    if(smat == SendMessageActionObject::TypeSendMessageUploadPhotoAction)
+        return SailorgramEnums::TypingStatusUploadPhoto;
+
+    if(smat == SendMessageActionObject::TypeSendMessageUploadDocumentAction)
+        return SailorgramEnums::TypingStatusUploadDocument;
+
+    if(smat == SendMessageActionObject::TypeSendMessageGeoLocationAction)
+        return SailorgramEnums::TypingStatusGeoLocation;
+
+    if(smat == SendMessageActionObject::TypeSendMessageChooseContactAction)
+        return SailorgramEnums::TypingStatusChooseContact;
+
+    return SailorgramEnums::TypingStatusTyping;
+}
+
 int SailorgramTools::secretChatState(int scs)
 {
     if(scs == TelegramDialogListModel::SecretChatStateRequested)
@@ -146,3 +203,57 @@ int SailorgramTools::secretChatState(int scs)
     return SailorgramEnums::SecretChatStateInit;
 }
 
+quint32 SailorgramTools::reverseSendFileType(int sft)
+{
+    if(sft == SailorgramEnums::SendFileTypeDocument)
+        return TelegramEnums::SendFileTypeDocument;
+
+    if(sft == SailorgramEnums::SendFileTypeSticker)
+        return TelegramEnums::SendFileTypeSticker;
+
+    if(sft == SailorgramEnums::SendFileTypeAnimated)
+        return TelegramEnums::SendFileTypeAnimated;
+
+    if(sft == SailorgramEnums::SendFileTypeVideo)
+        return TelegramEnums::SendFileTypeVideo;
+
+    if(sft == SailorgramEnums::SendFileTypePhoto)
+        return TelegramEnums::SendFileTypePhoto;
+
+    if(sft == SailorgramEnums::SendFileTypeAudio)
+        return TelegramEnums::SendFileTypeAudio;
+
+    return TelegramEnums::SendFileTypeAutoDetect;
+}
+
+quint32 SailorgramTools::reverseSendMessageActionType(int smat)
+{
+    if(smat == SailorgramEnums::TypingStatusCancel)
+        return SendMessageActionObject::TypeSendMessageCancelAction;
+
+    if(smat == SailorgramEnums::TypingStatusRecordVideo)
+        return SendMessageActionObject::TypeSendMessageRecordVideoAction;
+
+    if(smat == SailorgramEnums::TypingStatusUploadVideo)
+        return SendMessageActionObject::TypeSendMessageUploadVideoAction;
+
+    if(smat == SailorgramEnums::TypingStatusRecordAudio)
+        return SendMessageActionObject::TypeSendMessageRecordAudioAction;
+
+    if(smat == SailorgramEnums::TypingStatusUploadAudio)
+        return SendMessageActionObject::TypeSendMessageUploadAudioAction;
+
+    if(smat == SailorgramEnums::TypingStatusUploadPhoto)
+        return SendMessageActionObject::TypeSendMessageUploadPhotoAction;
+
+    if(smat == SailorgramEnums::TypingStatusUploadDocument)
+        return SendMessageActionObject::TypeSendMessageUploadDocumentAction;
+
+    if(smat == SailorgramEnums::TypingStatusGeoLocation)
+        return SendMessageActionObject::TypeSendMessageGeoLocationAction;
+
+    if(smat == SailorgramEnums::TypingStatusChooseContact)
+        return SendMessageActionObject::TypeSendMessageChooseContactAction;
+
+    return SendMessageActionObject::TypeSendMessageTypingAction;
+}

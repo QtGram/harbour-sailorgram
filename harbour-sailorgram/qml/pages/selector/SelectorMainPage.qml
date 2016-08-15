@@ -7,10 +7,10 @@ Page
     property Context context
     property Page dialogPage
 
-    readonly property int stickerAction: -1
+    readonly property int stickerTyping: -1
 
-    signal actionCompleted(int actiontype, var data)
-    signal actionRequested(int actiontype)
+    signal actionCompleted(int typingstatus, var data)
+    signal actionRequested(int typingstatus)
     signal actionRejected()
 
     id: selectormainpage
@@ -62,17 +62,9 @@ Page
                         var page = pageStack.push(modelData ["page"], { "context": selectormainpage.context,
                                                                         "acceptDestination": dialogPage });
 
-                        page.actionCompleted.connect(function(actiontype, data) {
-                            selectormainpage.actionCompleted(actiontype, data);
-                        });
-
-                        page.actionRequested.connect(function(actiontype) {
-                            selectormainpage.actionRequested(actiontype);
-                        });
-
-                        page.actionRejected.connect(function() {
-                            selectormainpage.actionRejected();
-                        });
+                        page.actionCompleted.connect(function(typingstatus, data) { selectormainpage.actionCompleted(typingstatus, data); });
+                        page.actionRequested.connect(function(typingstatus) { selectormainpage.actionRequested(typingstatus); });
+                        page.actionRejected.connect(function() { selectormainpage.actionRejected(); });
                     }
 
                     Rectangle {

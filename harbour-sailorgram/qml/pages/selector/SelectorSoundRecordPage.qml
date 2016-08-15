@@ -1,8 +1,8 @@
-import QtQuick 2.0
+import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.SailorGram 1.0
 import harbour.sailorgram.Selector 1.0
-import harbour.sailorgram.TelegramQml 2.0 as Telegram
+import harbour.sailorgram.Telegram 1.0
 import "../../models"
 
 Dialog
@@ -11,8 +11,8 @@ Dialog
     property bool started  : false
     property bool finished : false
 
-    signal actionCompleted(int actiontype, var data)
-    signal actionRequested(int actiontype)
+    signal actionCompleted(int typingstatus, var data)
+    signal actionRequested(int typingstatus)
     signal actionRejected()
 
     id: selectorsoundrecordpage
@@ -24,10 +24,10 @@ Dialog
         if(status !== PageStatus.Active)
             return;
 
-        actionRequested(Telegram.SendMessageAction.TypeSendMessageUploadAudioAction);
+        actionRequested(SailorgramEnums.TypingStatusUploadAudio);
     }
 
-    onAccepted: actionCompleted(SendMessageAction.TypeSendMessageRecordAudioAction, context.sailorgram.voiceRecordPath)
+    onAccepted: actionCompleted(SailorgramEnums.TypingStatusUploadAudio, context.sailorgram.voiceRecordPath)
     onRejected: actionRejected();
 
     AudioRecorder { id: recorder }

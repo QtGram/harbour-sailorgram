@@ -7,11 +7,32 @@ class SailorgramEnums : public QObject
 {
     Q_OBJECT
 
+    Q_ENUMS(SendFileTypes)
+    Q_ENUMS(TypingStatus)
     Q_ENUMS(MessageTypes)
     Q_ENUMS(ActionTypes)
     Q_ENUMS(SecretChatStates)
 
     public:
+        enum SendFileTypes { SendFileTypeAutoDetect,
+                             SendFileTypeDocument,
+                             SendFileTypeSticker,
+                             SendFileTypeAnimated,
+                             SendFileTypeVideo,
+                             SendFileTypePhoto,
+                             SendFileTypeAudio };
+
+        enum TypingStatus { TypingStatusTyping,
+                            TypingStatusCancel,
+                            TypingStatusRecordVideo,
+                            TypingStatusUploadVideo,
+                            TypingStatusRecordAudio,
+                            TypingStatusUploadAudio,
+                            TypingStatusUploadPhoto,
+                            TypingStatusUploadDocument,
+                            TypingStatusGeoLocation,
+                            TypingStatusChooseContact };
+
         enum MessageTypes { MessageTypeText,
                             MessageTypeDocument,
                             MessageTypeVideo,

@@ -47,9 +47,12 @@ Row
         height: parent.height
         useTelegramImage: true
         context: messagepreview.context
-        source: sgMessageItem.messageMedia.rawMedia
+        source: sgMessageItem ? sgMessageItem.messageMedia.rawMedia : null
 
         visible: {
+            if(!sgMessageItem)
+                return false;
+
             if((sgMessageItem.messageType === SailorgramEnums.MessageTypeWebPage) && sgMessageItem.messageMedia.webPage.hasThumbnail)
                 return false;
 
@@ -57,7 +60,7 @@ Row
         }
 
         fillMode: {
-            if((sgMessageItem.messageType === SailorgramEnums.MessageTypeWebPage) && sgMessageItem.messageMedia.webPage.hasThumbnail)
+            if(sgMessageItem && (sgMessageItem.messageType === SailorgramEnums.MessageTypeWebPage) && sgMessageItem.messageMedia.webPage.hasThumbnail)
                 return Image.PreserveAspectCrop;
 
             return Image.PreserveAspectFit;
@@ -73,7 +76,7 @@ Row
         {
             id: lbluser
             width: parent.width - Theme.paddingSmall
-            visible: !sgMessageItem.isActionMessage
+            visible: sgMessageItem && !sgMessageItem.isActionMessage
             color: messagepreview.textColor
             font.bold: true
             font.pixelSize: Theme.fontSizeTiny
@@ -82,7 +85,7 @@ Row
             verticalAlignment: Text.AlignVCenter
 
             text: {
-                if(sgMessageItem.isActionMessage)
+                if(!sgMessageItem || sgMessageItem.isActionMessage)
                     return "";
 
                 if(!showUser)
@@ -113,12 +116,15 @@ Row
             wrapMode: Text.Wrap
             elide: Text.ElideRight
             maximumLineCount: 3
-            visible: text.length > 0
+            visible: sgMessageItem && text.length > 0
             color: messagepreview.textColor
             linkColor: messagepreview.linkColor
             openUrls: false
 
             rawText: {
+                if(!sgMessageItem)
+                    return "";
+
                 if(sgMessageItem.isActionMessage)
                     return TelegramAction.actionType(sgMessageItem.messageAction,sgMessageItem, false); //NOTE: isSecretChat
 

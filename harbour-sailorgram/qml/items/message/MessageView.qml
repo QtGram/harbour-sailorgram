@@ -89,7 +89,7 @@ SilicaListView
 
         onReplyRequested: {
             messageview.headerItem.dialogReplyPreview.isForward = false;
-            messageview.headerItem.dialogReplyPreview.message = item;
+            messageview.headerItem.dialogReplyPreview.sgMessageItem = model.item;
         }
 
         onForwardRequested: {
@@ -98,7 +98,7 @@ SilicaListView
             fwdpage.forwardRequested.connect(function(sgdialogitem) {
                 if(sgdialogitem.peer === sgDialogItem.peer) { // Check if it is forwared is this chat
                     messageview.headerItem.dialogReplyPreview.isForward = true;
-                    messageview.headerItem.dialogReplyPreview.sgMessageItem = model.item
+                    messageview.headerItem.dialogReplyPreview.sgMessageItem = model.item; // TODO: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! PEEEEEEEEEEEEEER
                     pageStack.pop();
                     return;
                 }
@@ -148,25 +148,22 @@ SilicaListView
                 dialogtextinput.isForward = false;
             }
 
-            /*
-            onMessageTextChanged: {
-                if(!messageText.length <= 0)
+            onSgMessageItemChanged: {
+                if(!sgMessageItem)
                     return;
 
                 dialogtextinput.focusTextArea();
                 messageview.scrollToBottom();
             }
-            */
         }
 
         DialogTextInput {
             id: dialogtextinput
             width: parent.width
-            //messageListModel: messagemodel
+            sgMessageModel: messagemodel
             context: messageview.context
-            peer: sgDialogItem.peer
+            sgReplyMessage: dialogreplypreview.sgMessageItem
             //isForward: forwardedMessage !== null
-            //replyMessage: dialogreplypreview.message
             visible: !discadedDialog && !waitingDialog
             onForwardRequested: messagemodel.forwardMessages(messageview.forwardPeer, [messageview.forwardedMessage.id]); // Forward in this chat
 

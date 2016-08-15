@@ -1,4 +1,7 @@
 #include "sailorgrampeer.h"
+#include <telegram/types/peer.h>
+#include <telegramshareddatamanager.h>
+#include <telegramtools.h>
 
 SailorgramPeer::SailorgramPeer(QObject *parent): QObject(parent), _user(NULL), _chat(NULL)
 {
@@ -21,6 +24,22 @@ SailorgramPeer::SailorgramPeer(QVariant peer, QObject *parent) : QObject(parent)
     {
         this->_user = NULL;
         this->_chat = NULL;
+    }
+}
+
+SailorgramPeer::SailorgramPeer(TelegramEngine* engine, InputPeerObject* inputpeer, QObject *parent): QObject(parent)
+{
+    TelegramSharedDataManager* tsdm = engine->sharedData();
+
+    if(inputpeer->userId())
+    {
+        this->_user = tsdm->getUser(TelegramTools::identifier(Peer::typePeerUser, inputpeer->userId())).data();
+        this->_chat = NULL;
+    }
+    else if(inputpeer->chatId())
+    {
+        this->_chat = tsdm->getChat(TelegramTools::identifier(Peer::typePeerChat, inputpeer->chatId())).data();
+        this->_user = NULL;
     }
 }
 
@@ -47,5 +66,23 @@ bool SailorgramPeer::isChat() const
 bool SailorgramPeer::isValid() const
 {
     return this->_user || this->_chat;
+}
+
+void SailorgramPeer::setUser(UserObject *user)
+{
+    if(this->_user == user)
+        return;
+
+    this->_user = user;
+    emit userChanged();
+}
+
+void SailorgramPeer::setChat(ChatObject *chat)
+{
+    if(this->_chat == chat)
+        return;
+
+    this->_chat = chat;
+    emit chatChanged();
 }
 

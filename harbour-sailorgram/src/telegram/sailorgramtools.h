@@ -15,9 +15,17 @@ class SailorgramTools
         static QString completeName(UserObject* user);
         static QString messageText(MessageObject* message);
         static QString messageDate(MessageObject* message);
+
+    public:
         static int messageType(int mt);
         static int actionType(int at);
+        static int sendFileType(int sft);
+        static int sendMessageActionType(int smat);
         static int secretChatState(int scs);
+
+    public:
+        static quint32 reverseSendFileType(int sft);
+        static quint32 reverseSendMessageActionType(int smat);
 };
 
 #endif // SAILORGRAMTOOLS_H
