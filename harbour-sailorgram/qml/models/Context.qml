@@ -113,7 +113,7 @@ QtObject
         onStateChanged: {
             pageStack.completeAnimation();
 
-            if(state === Authenticate.AuthCodeRquested)
+            if(state === Authenticate.AuthCodeRequested)
                 pageStack.replace(Qt.resolvedUrl("../pages/login/AuthorizationPage.qml"), { "context": context /* FIXME: , "authError": context.telegram.authSignInError */ });
             else if(state === Authenticate.AuthSignUpNeeded)
                 pageStack.replace(Qt.resolvedUrl("../pages/login/SignUpPage.qml"), { "context": context /* FIXME: , "authError": context.telegram.authSignUpError */ });
@@ -125,6 +125,8 @@ QtObject
                 console.log("NOT IMPLEMENTED: Authenticate.AuthCheckingPhoneError")
             else if(state === Authenticate.AuthCodeRequestingError)
                 pageStack.replace(Qt.resolvedUrl("../pages/login/AuthorizationPage.qml"), { "context": context, "authError": "ERROR" /* FIXME: Better Error Message */ });
+            else
+                console.log("Unhandled State: " + state);
         }
     }
 }
