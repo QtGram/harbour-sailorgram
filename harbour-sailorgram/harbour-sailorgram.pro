@@ -196,7 +196,6 @@ OTHER_FILES += \
     qml/items/secretdialog/SecretDialogDiscarded.qml \
     qml/items/secretdialog/SecretDialogWaiting.qml \
     qml/items/sticker/StickerItem.qml \
-    qml/items/sticker/StickerSetImage.qml \
     qml/items/user/UserInfo.qml \
     qml/items/user/UserItem.qml \
     qml/menus/chat/ChatInfoMenu.qml \
@@ -286,4 +285,5 @@ OTHER_FILES += \
     qml/cover/*.png
 
 DISTFILES += \
-    qml/items/message/ForwardItem.qml
+    qml/items/message/ForwardItem.qml \
+    qml/items/sticker/StickerCategory.qml

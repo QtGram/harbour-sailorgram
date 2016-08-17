@@ -124,7 +124,7 @@ InverseMouseArea
                         sgMessageModel.sendFile(SailorgramEnums.SendFileTypeAudio, data, sgReplyMessage);
                     else if(typingstatus === SailorgramEnums.TypingStatusUploadDocument)
                         sgMessageModel.sendFile(SailorgramEnums.SendFileTypeDocument, data, sgReplyMessage);
-                    else if(typingstatus === selector.stickerAction) // Special
+                    else if(typingstatus === selector.stickerTyping) // Special
                         sgMessageModel.sendSticker(data, sgReplyMessage);
                     else
                         console.log("Unhandled typingstatus: " + typingstatus);

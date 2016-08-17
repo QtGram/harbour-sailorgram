@@ -225,6 +225,14 @@ void SailorgramMessageModel::sendFile(int type, const QString &file, SailorgramM
     this->_messagelistmodel->sendFile(SailorgramTools::reverseSendFileType(type), file, replyto->rawMessage());
 }
 
+void SailorgramMessageModel::sendSticker(DocumentObject* sticker, MessageObject* replyto)
+{
+    if(!this->_messagelistmodel)
+        return;
+
+    this->_messagelistmodel->sendSticker(sticker, replyto);
+}
+
 void SailorgramMessageModel::deleteMessages(const QList<SailorgramMessageItem *> messages)
 {
     if(!this->_messagelistmodel || messages.isEmpty())

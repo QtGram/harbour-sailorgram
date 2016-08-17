@@ -1,15 +1,14 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import QtLocation 5.0
-import QtPositioning 5.0
-import harbour.sailorgram.TelegramQml 2.0 as Telegram
 import harbour.sailorgram.SailorGram 1.0
+import harbour.sailorgram.TelegramQml 2.0 as Telegram
 import "../../models"
 import "../../items/sticker"
 
 Dialog
 {
     property Context context
+    property string stickerTitle
     property var selectedSticker: null
 
     signal actionCompleted(int typingstatus, var data)
@@ -25,30 +24,21 @@ Dialog
     onStatusChanged: {
         if(status !== PageStatus.Active)
             return;
-
-        context.stickers.telegram = context.telegram;
     }
 
     DialogHeader
     {
         id: header
         acceptText: qsTr("Send")
-
-        title: {
-            var stickerset = context.stickers.stickerSetItem(context.stickers.currentStickerSet);
-
-            if(stickerset)
-                return stickerset.title;
-
-            return "";
-        }
+        title: stickerTitle
     }
 
     SilicaGridView
     {
-        readonly property int columns: (dlgselectorsticker.isPortrait ? 5 : 9)
+        readonly property int columns: (dlgselectorsticker.isPortrait ? 4 : 6)
         readonly property int spacing: Theme.paddingSmall
         readonly property real itemSize : (((width + spacing) / columns) - spacing)
+        property alias documentItems: stickersmodel.documents
 
         VerticalScrollDecorator { flickable: stickergrid }
         HorizontalScrollDecorator { flickable: stickergrid }
@@ -57,49 +47,66 @@ Dialog
         anchors { top: header.bottom; left: parent.left; right: parent.right; bottom: lvstickersets.top }
         cellWidth: itemSize
         cellHeight: itemSize
-        model: context.stickers
         clip: true
+
+        model: Telegram.StickersModel {
+            id: stickersmodel
+            engine: context.engine
+        }
 
         delegate: StickerItem {
             id: stickeritem
             width: stickergrid.itemSize - stickergrid.spacing
             height: stickergrid.itemSize - stickergrid.spacing
             context: dlgselectorsticker.context
-            stickerDocument: document
-            highlighted: (selectedSticker === stickeritem.stickerDocument)
+            sticker: model.document
+            highlighted: (selectedSticker === model.document)
 
             onClicked: {
-                selectedSticker = stickeritem.stickerDocument;
+                selectedSticker = stickeritem.sticker;
             }
         }
 
+
         ViewPlaceholder
         {
-            enabled: context.stickers.count <= 0
+            enabled: (stickergrid.count <= 0)
             text: qsTr("Select a Sticker Set from below")
         }
     }
 
     SilicaListView
     {
+        property int currentHash: 0
+
         id: lvstickersets
         anchors { left: parent.left; right: parent.right; bottom: parent.bottom; bottomMargin: Theme.paddingSmall }
         orientation: ListView.Horizontal
         height: Theme.itemSizeLarge
-        model: context.stickers.stickerSets
         spacing: Theme.paddingSmall
+        model: context.stickers
         clip: true
 
-        delegate: StickerSetImage {
+        delegate: StickerCategory {
             width: Theme.itemSizeMedium
             contentHeight: parent.height
             context: dlgselectorsticker.context
-            stickersModel: context.stickers
-            stickerSetId: modelData
-            highlighted: (context.stickers.currentStickerSet === modelData)
+            document: model.count > 0 ? model.documentItems[0] : null
+            highlighted: (lvstickersets.currentHash === model.hash)
+
+            Component.onCompleted: {
+                if((model.index !== 0) || (stickerTitle.length > 0))
+                    return;
+
+                stickerTitle = model.title;
+                lvstickersets.currentHash = model.hash;
+                stickergrid.documentItems = model.documentItems;
+            }
 
             onClicked: {
-                context.stickers.currentStickerSet = modelData;
+                stickerTitle = model.title;
+                lvstickersets.currentHash = model.hash;
+                stickergrid.documentItems = model.documentItems;
             }
         }
     }

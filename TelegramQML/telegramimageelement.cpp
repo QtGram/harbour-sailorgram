@@ -306,8 +306,11 @@ void TelegramImageElement::initImage()
     component.setData(QString("import QtQuick %1\n"
                               "Image { anchors.fill: parent; }").arg(p->qtQuickVersion).toUtf8(), QUrl());
     QQuickItem *item = qobject_cast<QQuickItem *>(component.create(context));
-    if(!item)
+
+    if(!item) {
+        qDebug() << component.errorString();
         return;
+    }
 
     item->setParent(this);
     item->setParentItem(this);

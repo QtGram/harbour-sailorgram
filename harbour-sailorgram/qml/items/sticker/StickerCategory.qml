@@ -1,43 +1,33 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import harbour.sailorgram.TelegramQml 2.0
+import harbour.sailorgram.TelegramQml 2.0 as Telegram
 import "../../models"
 
 ListItem
 {
     property Context context
-    property StickersModel stickersModel
-    property string stickerSetId
-    property StickerSet stickerSet: stickersModel.stickerSetItem(stickerSetId)
-    property Document document: stickersModel.stickerSetThumbnailDocument(stickerSetId)
+    property var document
 
-    id: stickersetimage
+    id: stickercategory
 
-    FileHandler
+    Telegram.DownloadHandler
     {
-        id: filehandler
-        telegram: context.telegram
-        target: stickersetimage.document
-
-        onTargetTypeChanged: {
-            if(downloaded)
-                return;
-
-            download();
-        }
+        id: downloadhandler
+        engine: context.engine
+        source: stickercategory.document
     }
 
     BusyIndicator
     {
         anchors.centerIn: parent
         size: BusyIndicatorSize.Small
-        running: !filehandler.downloaded && ((filehandler.progressPercent > 0) && (filehandler.progressPercent < 100))
+        running: !downloadhandler.downloaded && downloadhandler.downloading
     }
 
     Image
     {
         asynchronous: true
-        source: filehandler.thumbPath
+        source: downloadhandler.thumbnail
         fillMode: Image.PreserveAspectFit
         anchors { left: parent.left; top: parent.top; right: parent.right; bottom: selectionrect.top; bottomMargin: Theme.paddingSmall; topMargin: Theme.paddingSmall }
     }

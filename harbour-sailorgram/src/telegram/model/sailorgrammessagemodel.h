@@ -45,6 +45,7 @@ class SailorgramMessageModel : public SailorgramIdentityProxyModel
         void markAsRead();
         void sendMessage(const QString &message, SailorgramMessageItem *replyto = 0);
         void sendFile(int type, const QString& file, SailorgramMessageItem* replyto = 0);
+        void sendSticker(DocumentObject *sticker, MessageObject *replyto = 0);
         void deleteMessages(const QList<SailorgramMessageItem*> messages);
         void forwardMessage(SailorgramForwardMessage* forwardmessage);
         SailorgramForwardMessage* prepareForward(SailorgramMessageItem* message);

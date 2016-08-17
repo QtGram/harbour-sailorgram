@@ -62,10 +62,13 @@ QtObject
     property Document currentSticker: null
     property ScreenBlank screenblank: ScreenBlank { }
     property ErrorsModel errors: ErrorsModel { }
-    property StickersModel stickers: StickersModel { }
     property SailorgramContactsModel contacts: SailorgramContactsModel { }
 
     property SailorgramDialogsModel dialogs: SailorgramDialogsModel {
+        engine: context.engine
+    }
+
+    property StickersCategoriesModel stickers: StickersCategoriesModel {
         engine: context.engine
     }
 
