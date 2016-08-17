@@ -181,6 +181,10 @@ Minimum length is 5 characters.</source>
         <source>Removing from group</source>
         <translation>Исключение</translation>
     </message>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished">Профиль</translation>
+    </message>
 </context>
 <context>
     <name>ChatSettingsPage</name>
@@ -435,6 +439,14 @@ message(s)</source>
         <source>Chat information</source>
         <translation>Информация о чате</translation>
     </message>
+    <message>
+        <source>Delete channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting channel</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogItem</name>
@@ -464,6 +476,18 @@ message(s)</source>
     <message>
         <source>Mark as read</source>
         <translation>Отметить как прочитанное</translation>
+    </message>
+    <message>
+        <source>Enable notifications</source>
+        <translation type="unfinished">Включить уведомления</translation>
+    </message>
+    <message>
+        <source>Disable notifications</source>
+        <translation type="unfinished">Отключить уведомления</translation>
+    </message>
+    <message>
+        <source>Deleting Channel</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -496,12 +520,12 @@ message(s)</source>
 <context>
     <name>DialogReplyPreview</name>
     <message>
-        <source>Message to forward</source>
-        <translation>Переслать сообщение</translation>
-    </message>
-    <message>
         <source>Reply to</source>
         <translation>Ответить</translation>
+    </message>
+    <message>
+        <source>Forward message from</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -604,14 +628,6 @@ Do a swype to the right to select a contact</source>
 <context>
     <name>MessageItem</name>
     <message>
-        <source>Downloading Media</source>
-        <translation>Загрузка медиа</translation>
-    </message>
-    <message>
-        <source>Opening Media</source>
-        <translation>Открытие медиа</translation>
-    </message>
-    <message>
         <source>Opening media</source>
         <translation>Открытие медиа</translation>
     </message>
@@ -689,13 +705,6 @@ Do a swype to the right to select a contact</source>
     </message>
 </context>
 <context>
-    <name>PeerItem</name>
-    <message>
-        <source>Typing...</source>
-        <translation type="unfinished">Пишет...</translation>
-    </message>
-</context>
-<context>
     <name>PeerProfile</name>
     <message>
         <source>Group</source>
@@ -749,6 +758,13 @@ Do a swype to the right to select a contact</source>
     </message>
 </context>
 <context>
+    <name>QObject</name>
+    <message>
+        <source>Yesterday %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SailorgramDialogItem</name>
     <message>
         <source>%1 is typing...</source>
@@ -761,6 +777,10 @@ Do a swype to the right to select a contact</source>
     <message>
         <source>%1 member(s) are typing...</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Typing...</source>
+        <translation type="unfinished">Пишет...</translation>
     </message>
 </context>
 <context>
@@ -1055,28 +1075,12 @@ Do a swype to the right to select a contact</source>
         <translation>Фото</translation>
     </message>
     <message>
-        <source>%1 is typing...</source>
-        <translation>%1 пишет...</translation>
-    </message>
-    <message>
-        <source>%1 and %2 are typing...</source>
-        <translation>%1 и %2 пишут...</translation>
-    </message>
-    <message>
         <source>Sticker</source>
         <translation>Стикер</translation>
     </message>
     <message>
         <source>Position</source>
         <translation>Позиция</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n member(s) are typing...</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
     </message>
     <message>
         <source>Unsupported media</source>

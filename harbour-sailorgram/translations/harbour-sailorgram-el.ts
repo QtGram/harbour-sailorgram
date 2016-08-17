@@ -181,6 +181,10 @@ Minimum length is 5 characters.</source>
         <source>Removing from group</source>
         <translation>Διαγράφοντας από ομάδα</translation>
     </message>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished">Προφίλ</translation>
+    </message>
 </context>
 <context>
     <name>ChatSettingsPage</name>
@@ -435,6 +439,14 @@ message(s)</source>
         <source>Chat information</source>
         <translation>Πληροφορίες συνομιλίας</translation>
     </message>
+    <message>
+        <source>Delete channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting channel</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogItem</name>
@@ -464,6 +476,18 @@ message(s)</source>
     <message>
         <source>Mark as read</source>
         <translation>Σημείωσε σαν διαβασμένο</translation>
+    </message>
+    <message>
+        <source>Enable notifications</source>
+        <translation type="unfinished">Ενεργοποίηση Ειδοποιήσεων</translation>
+    </message>
+    <message>
+        <source>Disable notifications</source>
+        <translation type="unfinished">Απενεργοποίηση Ειδοποιήσεων</translation>
+    </message>
+    <message>
+        <source>Deleting Channel</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -497,12 +521,12 @@ message(s)</source>
 <context>
     <name>DialogReplyPreview</name>
     <message>
-        <source>Message to forward</source>
-        <translation>Μήνυμα προς διαβίβαση</translation>
-    </message>
-    <message>
         <source>Reply to</source>
         <translation>Απάντηση προς</translation>
+    </message>
+    <message>
+        <source>Forward message from</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -605,14 +629,6 @@ Do a swype to the right to select a contact</source>
 <context>
     <name>MessageItem</name>
     <message>
-        <source>Downloading Media</source>
-        <translation>Λήψη Μέσων</translation>
-    </message>
-    <message>
-        <source>Opening Media</source>
-        <translation>Ανοιγμα Πολυμέσου</translation>
-    </message>
-    <message>
         <source>Opening media</source>
         <translation>Ανοιγμα πολυμέσου</translation>
     </message>
@@ -690,13 +706,6 @@ Do a swype to the right to select a contact</source>
     </message>
 </context>
 <context>
-    <name>PeerItem</name>
-    <message>
-        <source>Typing...</source>
-        <translation type="unfinished">Πληκτρολογεί...</translation>
-    </message>
-</context>
-<context>
     <name>PeerProfile</name>
     <message>
         <source>Group</source>
@@ -750,6 +759,13 @@ Do a swype to the right to select a contact</source>
     </message>
 </context>
 <context>
+    <name>QObject</name>
+    <message>
+        <source>Yesterday %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SailorgramDialogItem</name>
     <message>
         <source>%1 is typing...</source>
@@ -762,6 +778,10 @@ Do a swype to the right to select a contact</source>
     <message>
         <source>%1 member(s) are typing...</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Typing...</source>
+        <translation type="unfinished">Πληκτρολογεί...</translation>
     </message>
 </context>
 <context>
@@ -1054,27 +1074,12 @@ Do a swype to the right to select a contact</source>
         <translation>Φώτο</translation>
     </message>
     <message>
-        <source>%1 is typing...</source>
-        <translation>%1 πληκτρολογεί...</translation>
-    </message>
-    <message>
-        <source>%1 and %2 are typing...</source>
-        <translation>%1 και %2 πληκτρολογούν...</translation>
-    </message>
-    <message>
         <source>Sticker</source>
         <translation>Ετικέτα </translation>
     </message>
     <message>
         <source>Position</source>
         <translation>θέση</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n member(s) are typing...</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
     </message>
     <message>
         <source>Unsupported media</source>

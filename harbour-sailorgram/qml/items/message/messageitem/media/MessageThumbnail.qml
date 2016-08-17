@@ -1,5 +1,6 @@
 import QtQuick 2.1
 import QtGraphicalEffects 1.0
+import harbour.sailorgram.Telegram 1.0
 import harbour.sailorgram.TelegramQml 2.0 as Telegram
 import "../../../../models"
 
@@ -7,43 +8,47 @@ Item
 {
     readonly property size imageSize: {
         if(useTelegramImage)
-            return tgthumbnailimage.imageSize;
+            return downloadhandler.imageSize;
 
         return thumbnailimage.sourceSize;
     }
 
-    function download() {
-        if(!useTelegramImage || tgthumbnailimage.downloaded || tgthumbnailimage.downloading || !tgthumbnailimage.source)
+    function checkDownload() {
+        if(!useTelegramImage || !downloadhandler.check())
             return;
 
-        tgthumbnailimage.download();
+        downloadhandler.download();
+    }
+
+    function checkAutoDownload() {
+        if(!autoDownload) {
+            if(useTelegramImage)
+                downloadhandler.check();
+
+            return;
+        }
+
+        messagethumbnail.checkDownload();
     }
 
     property Context context
-    property var source: null
+    property var source
     property bool useTelegramImage: false
     property bool autoDownload: false
     property int fillMode: Image.PreserveAspectFit
 
     id: messagethumbnail
-    onSourceChanged: messagethumbnail.download()
+    onSourceChanged: checkAutoDownload()
+    onAutoDownloadChanged: checkAutoDownload()
 
-    onAutoDownloadChanged: {
-        if(!autoDownload)
-            return;
-
-        messagethumbnail.download();
-    }
-
-    Telegram.Image
+    Telegram.DownloadHandler
     {
-        id: tgthumbnailimage
-        qtQuickVersion: "2.1"
-        anchors.fill: parent
-        visible: useTelegramImage
+        id: downloadhandler
         engine: useTelegramImage ? context.engine : null
-        source: useTelegramImage ? messagethumbnail.source : null
-        fillMode: messagethumbnail.fillMode
+        source: messagethumbnail.source
+
+        onEngineChanged: checkAutoDownload()
+        onSourceChanged: checkAutoDownload()
     }
 
     Image
@@ -51,22 +56,35 @@ Item
         id: thumbnailimage
         anchors.fill: parent
         asynchronous: true
+        cache: false
         fillMode: Image.PreserveAspectFit
-        visible: !useTelegramImage
-        source: (!useTelegramImage && messagethumbnail.source)? messagethumbnail.source : ""
+
+        source: {
+            if(!useTelegramImage && messagethumbnail.source)
+                return messagethumbnail.source;
+
+            if(useTelegramImage) {
+                if(downloadhandler.destination.length > 0)
+                    return downloadhandler.destination;
+
+                return downloadhandler.thumbnail;
+            }
+
+            return "";
+        }
     }
 
     FastBlur
     {
         id: thumbnailblur
-        anchors.fill: useTelegramImage ? tgthumbnailimage: thumbnailimage
-        source: useTelegramImage ? tgthumbnailimage: thumbnailimage
+        anchors.fill: thumbnailimage
+        source: thumbnailimage
 
         radius: {
             if(!useTelegramImage)
                 return 0;
 
-            return tgthumbnailimage.downloaded && !tgthumbnailimage.downloading ? 0.0 : 32.0;
+            return downloadhandler.downloaded && !downloadhandler.downloading ? 0.0 : 32.0;
         }
 
         Behavior on radius { NumberAnimation { duration: 250 } }

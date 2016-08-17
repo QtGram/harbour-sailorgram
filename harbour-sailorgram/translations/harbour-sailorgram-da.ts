@@ -181,6 +181,10 @@ Minimumslængde er fem tegn.</translation>
         <source>Removing from group</source>
         <translation>Fjerner fra gruppe</translation>
     </message>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished">Profil</translation>
+    </message>
 </context>
 <context>
     <name>ChatSettingsPage</name>
@@ -435,6 +439,14 @@ message(s)</source>
         <source>Chat information</source>
         <translation>Chatinformation</translation>
     </message>
+    <message>
+        <source>Delete channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting channel</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogItem</name>
@@ -464,6 +476,18 @@ message(s)</source>
     <message>
         <source>Mark as read</source>
         <translation>Markér som læst</translation>
+    </message>
+    <message>
+        <source>Enable notifications</source>
+        <translation type="unfinished">Aktivér påmindelser</translation>
+    </message>
+    <message>
+        <source>Disable notifications</source>
+        <translation type="unfinished">Deaktivér påmindelser</translation>
+    </message>
+    <message>
+        <source>Deleting Channel</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -496,12 +520,12 @@ message(s)</source>
 <context>
     <name>DialogReplyPreview</name>
     <message>
-        <source>Message to forward</source>
-        <translation>Meddelelse der videresendes</translation>
-    </message>
-    <message>
         <source>Reply to</source>
         <translation>Svar til</translation>
+    </message>
+    <message>
+        <source>Forward message from</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -604,14 +628,6 @@ Stryg til venstre for at vælge en kontakt</translation>
 <context>
     <name>MessageItem</name>
     <message>
-        <source>Downloading Media</source>
-        <translation>Hent Media</translation>
-    </message>
-    <message>
-        <source>Opening Media</source>
-        <translation>Åbner Medie</translation>
-    </message>
-    <message>
         <source>Opening media</source>
         <translation>Åbner medie</translation>
     </message>
@@ -689,13 +705,6 @@ Stryg til venstre for at vælge en kontakt</translation>
     </message>
 </context>
 <context>
-    <name>PeerItem</name>
-    <message>
-        <source>Typing...</source>
-        <translation type="unfinished">Skriver...</translation>
-    </message>
-</context>
-<context>
     <name>PeerProfile</name>
     <message>
         <source>Group</source>
@@ -749,6 +758,13 @@ Stryg til venstre for at vælge en kontakt</translation>
     </message>
 </context>
 <context>
+    <name>QObject</name>
+    <message>
+        <source>Yesterday %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SailorgramDialogItem</name>
     <message>
         <source>%1 is typing...</source>
@@ -761,6 +777,10 @@ Stryg til venstre for at vælge en kontakt</translation>
     <message>
         <source>%1 member(s) are typing...</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Typing...</source>
+        <translation type="unfinished">Skriver...</translation>
     </message>
 </context>
 <context>
@@ -1053,27 +1073,12 @@ Stryg til venstre for at vælge en kontakt</translation>
         <translation>Foto</translation>
     </message>
     <message>
-        <source>%1 is typing...</source>
-        <translation>%1 skriver...</translation>
-    </message>
-    <message>
-        <source>%1 and %2 are typing...</source>
-        <translation>%1 og %2 skriver...</translation>
-    </message>
-    <message>
         <source>Sticker</source>
         <translation>Mærke</translation>
     </message>
     <message>
         <source>Position</source>
         <translation>Position</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n member(s) are typing...</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
     </message>
     <message>
         <source>Unsupported media</source>

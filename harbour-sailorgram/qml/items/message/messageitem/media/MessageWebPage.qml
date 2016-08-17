@@ -113,8 +113,9 @@ MessageMediaItem
             visible: webpagethumb.status === Image.Ready
             fillMode: Image.PreserveAspectCrop
             useTelegramImage: true
+            autoDownload: true
             context: messagewebpage.context
-            source: sgMessageItem.messageMedia.rawMedia
+            source: sgMessageItem.rawMessage
 
             width: {
                 if(!visible)

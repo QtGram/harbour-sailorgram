@@ -181,6 +181,10 @@ Vähimmäispituus on 5 merkkiä.</translation>
         <source>Removing from group</source>
         <translation>Poistetaan ryhmästä</translation>
     </message>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished">Profiili</translation>
+    </message>
 </context>
 <context>
     <name>ChatSettingsPage</name>
@@ -435,6 +439,14 @@ message(s)</source>
         <source>Chat information</source>
         <translation>Keskustelun tiedot</translation>
     </message>
+    <message>
+        <source>Delete channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting channel</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogItem</name>
@@ -464,6 +476,18 @@ message(s)</source>
     <message>
         <source>Mark as read</source>
         <translation>Merkitse luetuksi</translation>
+    </message>
+    <message>
+        <source>Enable notifications</source>
+        <translation type="unfinished">Ota ilmoitukset käyttöön</translation>
+    </message>
+    <message>
+        <source>Disable notifications</source>
+        <translation type="unfinished">Poista ilmoitukset käytöstä</translation>
+    </message>
+    <message>
+        <source>Deleting Channel</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -496,12 +520,12 @@ message(s)</source>
 <context>
     <name>DialogReplyPreview</name>
     <message>
-        <source>Message to forward</source>
-        <translation>Edelleenlähetettävä viesti</translation>
-    </message>
-    <message>
         <source>Reply to</source>
         <translation>Vastaanottaja: </translation>
+    </message>
+    <message>
+        <source>Forward message from</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -604,14 +628,6 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
 <context>
     <name>MessageItem</name>
     <message>
-        <source>Downloading Media</source>
-        <translation>Ladataan mediatiedostoa</translation>
-    </message>
-    <message>
-        <source>Opening Media</source>
-        <translation>Avataan mediatiedostoa</translation>
-    </message>
-    <message>
         <source>Opening media</source>
         <translation>Avataan mediatiedostoa</translation>
     </message>
@@ -689,13 +705,6 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     </message>
 </context>
 <context>
-    <name>PeerItem</name>
-    <message>
-        <source>Typing...</source>
-        <translation type="unfinished">Kirjoittaa...</translation>
-    </message>
-</context>
-<context>
     <name>PeerProfile</name>
     <message>
         <source>Group</source>
@@ -749,6 +758,13 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     </message>
 </context>
 <context>
+    <name>QObject</name>
+    <message>
+        <source>Yesterday %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SailorgramDialogItem</name>
     <message>
         <source>%1 is typing...</source>
@@ -761,6 +777,10 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
     <message>
         <source>%1 member(s) are typing...</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Typing...</source>
+        <translation type="unfinished">Kirjoittaa...</translation>
     </message>
 </context>
 <context>
@@ -1053,27 +1073,12 @@ Pyyhkäise vasemmalta yhteyshenkilön valitsemiseksi</translation>
         <translation>Kuva</translation>
     </message>
     <message>
-        <source>%1 is typing...</source>
-        <translation>%1 kirjoittaa...</translation>
-    </message>
-    <message>
-        <source>%1 and %2 are typing...</source>
-        <translation>%1 ja %2 kirjoittavat...</translation>
-    </message>
-    <message>
         <source>Sticker</source>
         <translation>Tarra</translation>
     </message>
     <message>
         <source>Position</source>
         <translation>Sijainti</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n member(s) are typing...</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
     </message>
     <message>
         <source>Unsupported media</source>

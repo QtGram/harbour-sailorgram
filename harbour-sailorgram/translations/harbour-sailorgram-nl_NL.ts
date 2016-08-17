@@ -181,6 +181,10 @@ De minimale lengte is 5 tekens.</translation>
         <source>Removing from group</source>
         <translation>Bezig met verwijderen uit de groep</translation>
     </message>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished">Profiel</translation>
+    </message>
 </context>
 <context>
     <name>ChatSettingsPage</name>
@@ -435,6 +439,14 @@ message(s)</source>
         <source>Chat information</source>
         <translation>Gespreksinformatie</translation>
     </message>
+    <message>
+        <source>Delete channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting channel</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogItem</name>
@@ -464,6 +476,18 @@ message(s)</source>
     <message>
         <source>Mark as read</source>
         <translation>Markeren als gelezen</translation>
+    </message>
+    <message>
+        <source>Enable notifications</source>
+        <translation type="unfinished">Meldingen inschakelen</translation>
+    </message>
+    <message>
+        <source>Disable notifications</source>
+        <translation type="unfinished">Meldingen uitschakelen</translation>
+    </message>
+    <message>
+        <source>Deleting Channel</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -496,12 +520,12 @@ message(s)</source>
 <context>
     <name>DialogReplyPreview</name>
     <message>
-        <source>Message to forward</source>
-        <translation>Door te sturen bericht</translation>
-    </message>
-    <message>
         <source>Reply to</source>
         <translation>Beantwoord</translation>
+    </message>
+    <message>
+        <source>Forward message from</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -604,14 +628,6 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
 <context>
     <name>MessageItem</name>
     <message>
-        <source>Downloading Media</source>
-        <translation>Bezig met het downloaden van de media</translation>
-    </message>
-    <message>
-        <source>Opening Media</source>
-        <translation>Bezig met het openen van de media</translation>
-    </message>
-    <message>
         <source>Opening media</source>
         <translation>Bezig met het openen van de media</translation>
     </message>
@@ -689,13 +705,6 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     </message>
 </context>
 <context>
-    <name>PeerItem</name>
-    <message>
-        <source>Typing...</source>
-        <translation type="unfinished">Bezig met typen...</translation>
-    </message>
-</context>
-<context>
     <name>PeerProfile</name>
     <message>
         <source>Group</source>
@@ -749,6 +758,13 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     </message>
 </context>
 <context>
+    <name>QObject</name>
+    <message>
+        <source>Yesterday %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SailorgramDialogItem</name>
     <message>
         <source>%1 is typing...</source>
@@ -761,6 +777,10 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
     <message>
         <source>%1 member(s) are typing...</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Typing...</source>
+        <translation type="unfinished">Bezig met typen...</translation>
     </message>
 </context>
 <context>
@@ -1053,27 +1073,12 @@ Veeg naar rechts om een contactpersoon te selecteren</translation>
         <translation>Foto</translation>
     </message>
     <message>
-        <source>%1 is typing...</source>
-        <translation>%1 is bezig met typen...</translation>
-    </message>
-    <message>
-        <source>%1 and %2 are typing...</source>
-        <translation>%1 en %2 zijn bezig met typen...</translation>
-    </message>
-    <message>
         <source>Sticker</source>
         <translation>Sticker</translation>
     </message>
     <message>
         <source>Position</source>
         <translation>Positie</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n member(s) are typing...</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
     </message>
     <message>
         <source>Unsupported media</source>

@@ -14,6 +14,9 @@ Item
         qtQuickVersion: "2.1"
         anchors.fill: parent
         visible: false
+
+        onEngineChanged: check()
+        onSourceChanged: check()
     }
 
     Rectangle

@@ -181,6 +181,10 @@ La lunghezza minima è di 5 caratteri.</translation>
         <source>Removing from group</source>
         <translation>Rimozione dal gruppo</translation>
     </message>
+    <message>
+        <source>Profile</source>
+        <translation type="unfinished">Profilo</translation>
+    </message>
 </context>
 <context>
     <name>ChatSettingsPage</name>
@@ -435,6 +439,14 @@ message(s)</source>
         <source>Chat information</source>
         <translation>Informazioni sulla chat</translation>
     </message>
+    <message>
+        <source>Delete channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting channel</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogItem</name>
@@ -464,6 +476,18 @@ message(s)</source>
     <message>
         <source>Mark as read</source>
         <translation>Segna come letto</translation>
+    </message>
+    <message>
+        <source>Enable notifications</source>
+        <translation type="unfinished">Abilita notifiche</translation>
+    </message>
+    <message>
+        <source>Disable notifications</source>
+        <translation type="unfinished">Disabilita notifiche</translation>
+    </message>
+    <message>
+        <source>Deleting Channel</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -496,12 +520,12 @@ message(s)</source>
 <context>
     <name>DialogReplyPreview</name>
     <message>
-        <source>Message to forward</source>
-        <translation>Messaggio da inoltrare</translation>
-    </message>
-    <message>
         <source>Reply to</source>
         <translation>Risposta a</translation>
+    </message>
+    <message>
+        <source>Forward message from</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -604,14 +628,6 @@ Scorri a destra per selezionare un contatto</translation>
 <context>
     <name>MessageItem</name>
     <message>
-        <source>Downloading Media</source>
-        <translation>Scaricamento file multimediale</translation>
-    </message>
-    <message>
-        <source>Opening Media</source>
-        <translation>Apertura file multimediale</translation>
-    </message>
-    <message>
         <source>Opening media</source>
         <translation>Apertura file multimediale</translation>
     </message>
@@ -689,13 +705,6 @@ Scorri a destra per selezionare un contatto</translation>
     </message>
 </context>
 <context>
-    <name>PeerItem</name>
-    <message>
-        <source>Typing...</source>
-        <translation type="unfinished">Sta scrivendo...</translation>
-    </message>
-</context>
-<context>
     <name>PeerProfile</name>
     <message>
         <source>Group</source>
@@ -749,6 +758,13 @@ Scorri a destra per selezionare un contatto</translation>
     </message>
 </context>
 <context>
+    <name>QObject</name>
+    <message>
+        <source>Yesterday %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SailorgramDialogItem</name>
     <message>
         <source>%1 is typing...</source>
@@ -761,6 +777,10 @@ Scorri a destra per selezionare un contatto</translation>
     <message>
         <source>%1 member(s) are typing...</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Typing...</source>
+        <translation type="unfinished">Sta scrivendo...</translation>
     </message>
 </context>
 <context>
@@ -1053,27 +1073,12 @@ Scorri a destra per selezionare un contatto</translation>
         <translation>Foto</translation>
     </message>
     <message>
-        <source>%1 is typing...</source>
-        <translation>%1 sta scrivendo...</translation>
-    </message>
-    <message>
-        <source>%1 and %2 are typing...</source>
-        <translation>%1 e %2 stanno scrivendo...</translation>
-    </message>
-    <message>
         <source>Sticker</source>
         <translation>Sticker</translation>
     </message>
     <message>
         <source>Position</source>
         <translation>Posizione</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n member(s) are typing...</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
     </message>
     <message>
         <source>Unsupported media</source>

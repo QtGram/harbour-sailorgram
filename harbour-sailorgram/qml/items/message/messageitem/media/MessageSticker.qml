@@ -14,6 +14,6 @@ MessageMediaItem
         useTelegramImage: true
         autoDownload: true
         context: messagesticker.context
-        source: sgMessageItem.messageMedia.rawMedia
+        source: sgMessageItem.rawMessage
     }
 }
