@@ -129,7 +129,7 @@ void TelegramNotificationHandler::refreshUnreads()
         p->unreadCount = unreadCount;
         Q_EMIT unreadCountChanged();
     }
-    if(p->globalUnreadCount == globalUnreadCount)
+    if(p->globalUnreadCount != globalUnreadCount)
     {
         p->globalUnreadCount = globalUnreadCount;
         Q_EMIT globalUnreadCountChanged();
