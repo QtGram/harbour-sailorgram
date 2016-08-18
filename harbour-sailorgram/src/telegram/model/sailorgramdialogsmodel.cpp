@@ -1,6 +1,9 @@
 #include "sailorgramdialogsmodel.h"
 #include "../sailorgramtools.h"
 #include <telegram/objects/messageobject.h>
+#include <telegram/objects/chatobject.h>
+#include <telegram/objects/userobject.h>
+#include <telegramshareddatamanager.h>
 
 SailorgramDialogsModel::SailorgramDialogsModel(QObject *parent) : SailorgramIdentityProxyModel(parent), _dialoglistmodel(NULL), _writableonly(false)
 {
@@ -29,9 +32,9 @@ QVariant SailorgramDialogsModel::data(const QModelIndex &proxyindex, int role) c
 
     QModelIndex sourceindex = this->mapToSource(proxyindex);
     DialogObject* dialog = SOURCE_ROLE_DATA(DialogObject*, sourceindex, TelegramDialogListModel::RoleDialogItem);
-    qint32 peerid = SailorgramTools::peerId(dialog);
+    QByteArray peerkey = TelegramTools::identifier(dialog->core());
 
-    return QVariant::fromValue<SailorgramDialogItem*>(this->_dialogs[peerid]);
+    return QVariant::fromValue<SailorgramDialogItem*>(this->_dialogs[peerkey]);
 }
 
 QHash<int, QByteArray> SailorgramDialogsModel::roleNames() const
@@ -42,13 +45,51 @@ QHash<int, QByteArray> SailorgramDialogsModel::roleNames() const
     return roles;
 }
 
+SailorgramDialogItem *SailorgramDialogsModel::dialog(const QByteArray &peerkey)
+{
+    if(!this->_engine)
+        return NULL;
+
+    if(!this->_dialogs.contains(peerkey))
+    {
+        TelegramSharedDataManager* tsdm = this->_engine->sharedData();
+        TelegramSharedPointer<DialogObject> dialog = tsdm->getDialog(peerkey);
+
+        if(!dialog)
+            return NULL;
+
+        qint64 accesshash = 0;
+
+        if((dialog->peer()->classType() == PeerObject::TypePeerChannel) || (dialog->peer()->classType() == PeerObject::TypePeerChannel))
+        {
+            TelegramSharedPointer<ChatObject> chat = tsdm->getChat(peerkey);
+            accesshash = chat->accessHash();
+        }
+        else
+        {
+            TelegramSharedPointer<UserObject> user = tsdm->getUser(peerkey);
+            accesshash = user->accessHash();
+        }
+
+        InputPeerObject inputpeer(TelegramTools::peerInputPeer(dialog->peer()->core(), accesshash));
+        int idx = this->_dialoglistmodel->indexOf(&inputpeer);
+
+        if(idx == -1)
+            return NULL;
+
+        this->inserted(this->_dialoglistmodel->index(idx));
+    }
+
+    return this->_dialogs[peerkey];
+}
+
 void SailorgramDialogsModel::inserted(QModelIndex sourceindex)
 {
     DialogObject* dialog = SOURCE_ROLE_DATA(DialogObject*, sourceindex, TelegramDialogListModel::RoleDialogItem);
-    qint32 peerid = SailorgramTools::peerId(dialog);
+    QByteArray peerkey = TelegramTools::identifier(dialog->core());
 
-    if(this->_dialogs.contains(peerid))
-        this->_dialogs[peerid]->deleteLater();
+    if(this->_dialogs.contains(peerkey))
+        this->_dialogs[peerkey]->deleteLater();
 
     SailorgramDialogsModel* thethis = this;
     SailorgramDialogItem* sgdialog = new SailorgramDialogItem(this->_engine, dialog, this);
@@ -80,20 +121,20 @@ void SailorgramDialogsModel::inserted(QModelIndex sourceindex)
                                                       TelegramDialogListModel::RoleMute <<
                                                       TelegramDialogListModel::RoleChatItem <<
                                                       TelegramDialogListModel::RoleUserItem));
-    this->_dialogs[peerid] = sgdialog;
+    this->_dialogs[peerkey] = sgdialog;
     SailorgramIdentityProxyModel::inserted(sourceindex);
 }
 
 void SailorgramDialogsModel::removed(QModelIndex sourceindex)
 {
     DialogObject* dialog = SOURCE_ROLE_DATA(DialogObject*, sourceindex, TelegramDialogListModel::RoleDialogItem);
-    qint32 peerid = SailorgramTools::peerId(dialog);
+    QByteArray peerkey = TelegramTools::identifier(dialog->core());
 
-    if(this->_dialogs.contains(peerid))
+    if(this->_dialogs.contains(peerkey))
     {
-        SailorgramDialogItem* item = this->_dialogs[peerid];
+        SailorgramDialogItem* item = this->_dialogs[peerkey];
 
-        this->_dialogs.remove(peerid);
+        this->_dialogs.remove(peerkey);
         item->deleteLater();
     }
 
@@ -103,9 +144,9 @@ void SailorgramDialogsModel::removed(QModelIndex sourceindex)
 void SailorgramDialogsModel::changed(QModelIndex sourceindex, const QVector<int> &roles)
 {
     DialogObject* dialog = SOURCE_ROLE_DATA(DialogObject*, sourceindex, TelegramDialogListModel::RoleDialogItem);
-    qint32 peerid = SailorgramTools::peerId(dialog);
+    QByteArray peerkey = TelegramTools::identifier(dialog->core());
 
-    this->updateData(this->_dialogs[peerid], sourceindex, roles);
+    this->updateData(this->_dialogs[peerkey], sourceindex, roles);
 }
 
 void SailorgramDialogsModel::clear()
@@ -117,8 +158,8 @@ void SailorgramDialogsModel::clear()
 bool SailorgramDialogsModel::contains(QModelIndex sourceindex) const
 {
     DialogObject* dialog = SOURCE_ROLE_DATA(DialogObject*, sourceindex, TelegramDialogListModel::RoleDialogItem);
-    qint32 peerid = SailorgramTools::peerId(dialog);
-    return this->_dialogs.contains(peerid);
+    QByteArray peerkey = TelegramTools::identifier(dialog->core());
+    return this->_dialogs.contains(peerkey);
 }
 
 void SailorgramDialogsModel::updateData(SailorgramDialogItem *sgdialog, const QModelIndex &sourceindex, const QVector<int> &roles)

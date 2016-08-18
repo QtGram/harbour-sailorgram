@@ -8,7 +8,7 @@
 
 const QString SailorgramNotifications::APPLICATION_PRETTY_NAME = "SailorGram";
 
-SailorgramNotifications::SailorgramNotifications(QObject *parent) : QObject(parent), _engine(NULL), _dialogs(NULL), _globalmute(false)
+SailorgramNotifications::SailorgramNotifications(QObject *parent) : QObject(parent), _engine(NULL), _dialogs(NULL), _currentdialog(NULL), _globalmute(false)
 {
     this->_notificationhandler = new TelegramNotificationHandler(this);
 
@@ -26,9 +26,9 @@ SailorgramDialogsModel *SailorgramNotifications::dialogs() const
     return this->_dialogs;
 }
 
-QString SailorgramNotifications::currentPeer() const
+SailorgramDialogItem *SailorgramNotifications::currentDialog() const
 {
-    return QString::fromUtf8(this->_currentpeer);
+    return this->_currentdialog;
 }
 
 int SailorgramNotifications::unreadCount() const
@@ -79,13 +79,17 @@ void SailorgramNotifications::setDialogs(SailorgramDialogsModel *dialogs)
     emit dialogsChanged();
 }
 
-void SailorgramNotifications::setCurrentPeer(const QString &s)
+void SailorgramNotifications::setCurrentDialog(SailorgramDialogItem *dialog)
 {
-    if(this->_currentpeer == s)
+    if(this->_currentdialog == dialog)
         return;
 
-    this->_currentpeer = s.toUtf8();
-    emit currentPeerChanged();
+    this->_currentdialog = dialog;
+
+    if(dialog)
+        this->closeNotification(dialog->peerKey());
+
+    emit currentDialogChanged();
 }
 
 void SailorgramNotifications::setGlobalMute(bool b)
@@ -197,7 +201,7 @@ void SailorgramNotifications::notify(const Message& message, const QByteArray& p
 {
     bool active = qApp->applicationState() == Qt::ApplicationActive;
 
-    if((this->_currentpeer != peerkey) || !active || message.mentioned())
+    if((!this->_currentdialog || (this->_currentdialog->peerKey() != peerkey)) || !active || message.mentioned())
     {
         this->updatePendingState(message, peerkey);
         this->sendNotify(message, peerkey, ischannel);
@@ -300,9 +304,9 @@ QString SailorgramNotifications::notificationBody(const Message &message) const
     return SailorgramTools::messageText(message);
 }
 
-void SailorgramNotifications::resetCurrentPeer()
+void SailorgramNotifications::resetCurrentDialog()
 {
-    this->setCurrentPeer(QString());
+    this->setCurrentDialog(NULL);
 }
 
 void SailorgramNotifications::connectSignals()

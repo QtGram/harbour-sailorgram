@@ -27,6 +27,7 @@ class SailorgramDialogItem : public QObject
     Q_PROPERTY(QString typingUsers READ typingUsers NOTIFY typingUsersChanged)
     Q_PROPERTY(QString title READ title NOTIFY titleChanged)
     Q_PROPERTY(QString statusText READ statusText NOTIFY statusTextChanged)
+    Q_PROPERTY(QByteArray peerKey READ peerKey CONSTANT FINAL)
     Q_PROPERTY(int unreadCount READ unreadCount WRITE setUnreadCount NOTIFY unreadCountChanged)
     Q_PROPERTY(int messageType READ messageType NOTIFY messageTypeChanged)
     Q_PROPERTY(int secretChatState READ secretChatState NOTIFY secretChatStateChanged)
@@ -54,6 +55,7 @@ class SailorgramDialogItem : public QObject
         QString messageText() const;
         QString messageDate() const;
         QString typingUsers() const;
+        QByteArray peerKey() const;
         int unreadCount() const;
         int messageType() const;
         int secretChatState() const;

@@ -27,8 +27,7 @@ Page
             pageStack.pushAttached(Qt.resolvedUrl("DialogInfoPage.qml"), { "context": dialogpage.context,
                                                                            "sgDialogItem": dialogpage.sgDialogItem });
 
-        //context.sailorgram.currentPeerKey = peerHex;
-        //context.sailorgram.closeNotification(peerHex);
+        context.notifications.currentDialog = dialogpage.sgDialogItem;
     }
 
     PopupMessage

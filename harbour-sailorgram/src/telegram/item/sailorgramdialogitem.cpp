@@ -83,6 +83,14 @@ QString SailorgramDialogItem::typingUsers() const
     return this->_typingusers;
 }
 
+QByteArray SailorgramDialogItem::peerKey() const
+{
+    if(!this->_dialog)
+        return QByteArray();
+
+    return TelegramTools::identifier(this->_dialog->core());
+}
+
 int SailorgramDialogItem::unreadCount() const
 {
     return this->_unreadcount;

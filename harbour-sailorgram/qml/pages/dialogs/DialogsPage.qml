@@ -27,7 +27,7 @@ Page
         if(!canNavigateForward)
             pageStack.pushAttached(Qt.resolvedUrl("../contacts/ContactsPage.qml"), { "context": dialogspage.context });
 
-        context.sailorgram.currentPeerKey = "";
+        context.notifications.resetCurrentDialog();
     }
 
     Connections
@@ -38,25 +38,14 @@ Page
             if(pageStack.depth > 1)
                 pageStack.pop(dialogspage, PageStackAction.Immediate);
 
-            /* FIXME:
-            pageStack.push(Qt.resolvedUrl("DialogPage.qml"), { "context": dialogspage.context,
-                                                               "title": model.title,
-                                                               "peerHex": model.peerHex,
-                                                               "peer": model.peer,
-                                                               "chat": model.chat,
-                                                               "user": model.user,
-                                                               "secretChatState": model.secretChatState,
-                                                               "isSecretChat": model.isSecretChat })
+            var sgdialogitem  = context.dialogs.dialog(peerkey);
 
-            var dialog = context.telegram.dialog(peerid);
-
-            if(dialog === context.telegram.nullDialog) {
-                console.warn("Invalid dialog for peerId = " + peerid);
+            if(!sgdialogitem) {
+                console.warn("Invalid DialogItem");
                 return;
             }
 
-            pageStack.push(Qt.resolvedUrl("../dialogs/DialogPage.qml"), { "context": context, "dialog": dialog }, PageStackAction.Immediate);
-            */
+            pageStack.push(Qt.resolvedUrl("DialogPage.qml"), { "context": dialogspage.context, "sgDialogItem": sgdialogitem });
 
             if(Qt.application.state !== Qt.ApplicationActive)
                 mainwindow.activate();

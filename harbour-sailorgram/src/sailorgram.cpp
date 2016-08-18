@@ -4,9 +4,8 @@ const QString SailorGram::DAEMON_FILE = "daemon";
 const QString SailorGram::CONFIG_FOLDER = "telegram";
 const QString SailorGram::PUBLIC_KEY_FILE = "server.pub";
 const QString SailorGram::EMOJI_FOLDER = "emoji";
-const QString SailorGram::APPLICATION_PRETTY_NAME = "SailorGram";
 
-SailorGram::SailorGram(QObject *parent): QObject(parent), _engine(NULL), _connectivitychecker(NULL), _connected(-1), _daemonized(false), _globalmute(false)
+SailorGram::SailorGram(QObject *parent): QObject(parent), _engine(NULL), _connectivitychecker(NULL), _connected(-1), _daemonized(false)
 {
     QDir cfgdir(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation));
     cfgdir.mkpath(qApp->applicationName() + QDir::separator() + qApp->applicationName() + QDir::separator() + SailorGram::CONFIG_FOLDER);
@@ -17,20 +16,15 @@ SailorGram::SailorGram(QObject *parent): QObject(parent), _engine(NULL), _connec
     this->_interface = new SailorgramInterface(this);
     this->_autostart = !SailorGram::hasDaemonFile();
 
-    connect(qApp, SIGNAL(applicationStateChanged(Qt::ApplicationState)), this, SLOT(onApplicationStateChanged(Qt::ApplicationState)));
-    connect(this, SIGNAL(daemonizedChanged()), this, SLOT(updateOnlineState()));
-    connect(this->_interface, SIGNAL(wakeUpRequested()), this, SLOT(onWakeUpRequested()));
-    connect(this->_interface, SIGNAL(openDialogRequested(QString)), this, SIGNAL(openDialogRequested(QString)));
+    connect(qApp, &QGuiApplication::applicationStateChanged, this, &SailorGram::onApplicationStateChanged);
+    connect(this, &SailorGram::daemonizedChanged, this, &SailorGram::updateOnlineState);
+    connect(this->_interface, &SailorgramInterface::wakeUpRequested, this, &SailorGram::onWakeUpRequested);
+    connect(this->_interface, &SailorgramInterface::openDialogRequested, this, &SailorGram::openDialogRequested);
 }
 
 bool SailorGram::autostart()
 {
     return this->_autostart;
-}
-
-bool SailorGram::globalMute() const
-{
-    return this->_globalmute;
 }
 
 bool SailorGram::keepRunning() const
@@ -119,11 +113,6 @@ TelegramEngine *SailorGram::engine() const
     return this->_engine;
 }
 
-const QString &SailorGram::currentPeerKey() const
-{
-    return this->_currentpeerkey;
-}
-
 QList<QObject *> SailorGram::translations()
 {
     QList<QObject *> trlist;
@@ -157,15 +146,6 @@ void SailorGram::setEngine(TelegramEngine *engine)
     emit connectedChanged();
 }
 
-void SailorGram::setCurrentPeerKey(const QString& peerkey)
-{
-    if(this->_currentpeerkey == peerkey)
-        return;
-
-    this->_currentpeerkey = peerkey;
-    emit currentPeerKey();
-}
-
 void SailorGram::setKeepRunning(bool keep)
 {
     if(keep == this->keepRunning())
@@ -173,15 +153,6 @@ void SailorGram::setKeepRunning(bool keep)
 
     qApp->setQuitOnLastWindowClosed(!keep);
     emit keepRunningChanged();
-}
-
-void SailorGram::setGlobalMute(bool globalmute)
-{
-    if(this->_globalmute == globalmute)
-        return;
-
-    this->_globalmute = globalmute;
-    emit globalMuteChanged();
 }
 
 void SailorGram::setAutostart(bool autostart)
@@ -228,62 +199,6 @@ void SailorGram::moveMediaTo(const QString& mediafile, const QString &destinatio
     QFile::copy(mediafileinfo.absoluteFilePath(), destpath);
 }
 
-void SailorGram::sendNotify(const QString& title, const QString& body, const QString &peerkey)
-{
-    Notification* notification = NULL;
-
-    if(!this->_notifications.contains(peerkey))
-    {
-        notification = new Notification(this);
-
-        QVariantMap remoteaction;
-        remoteaction["name"] = "default";
-        remoteaction["service"] = "org.harbour.sailorgram";
-        remoteaction["path"] = "/";
-        remoteaction["iface"] = "org.harbour.sailorgram";
-        remoteaction["method"] = "openDialog";
-        remoteaction["arguments"] = (QVariantList() << peerkey);
-        remoteaction["icon"] = "icon-m-notifications";
-
-        notification->setRemoteAction(remoteaction);
-        //FIXME: notification->setUserData(peerkey);
-        this->_notifications[peerkey] = notification;
-
-        connect(notification, SIGNAL(closed(uint)), this, SLOT(onNotificationClosed(uint)));
-    }
-    else
-        notification = this->_notifications[peerkey];
-
-    notification->setCategory("harbour.sailorgram.notification");
-    notification->setAppName(SailorGram::APPLICATION_PRETTY_NAME);
-    notification->setTimestamp(QDateTime::currentDateTime());
-
-    if(!title.isEmpty())
-    {
-        notification->setPreviewSummary(title);
-        notification->setSummary(title);
-    }
-
-    if(!body.isEmpty())
-    {
-        notification->setPreviewBody(body);
-        notification->setBody(body);
-    }
-
-    notification->publish();
-}
-
-void SailorGram::closeNotification(const QString& peerkey)
-{
-    if(!this->_notifications.contains(peerkey))
-        return;
-
-    Notification* notification = this->_notifications[peerkey];
-    notification->close();
-    notification->deleteLater();
-    this->_notifications.remove(peerkey);
-}
-
 void SailorGram::updateOnlineState()
 {
     /*
@@ -291,40 +206,6 @@ void SailorGram::updateOnlineState()
         return;
 
     this->_telegram->setOnline(!this->_daemonized);
-    */
-}
-
-void SailorGram::beep()
-{
-    Notification notification;
-    notification.setCategory("harbour.sailorgram.notificationfg");
-    notification.setAppName(SailorGram::APPLICATION_PRETTY_NAME);
-    notification.setTimestamp(QDateTime::currentDateTime());
-    notification.publish();
-}
-
-void SailorGram::delayedCloseNotification()
-{
-    /*
-    QTimer* timer = qobject_cast<QTimer*>(this->sender());
-
-    if(!this->_deletednotifications.contains(timer->timerId()))
-    {
-        timer->deleteLater();
-        return;
-    }
-
-    MessageObject* message = this->_deletednotifications[timer->timerId()];
-    DialogObject* dialog = this->_telegram->messageDialog(message->id());
-
-    if(dialog == this->_telegram->nullDialog())
-        return;
-
-    this->closeNotification(dialog);
-    disconnect(message, SIGNAL(unreadChanged()), this, 0);
-
-    this->_deletednotifications.remove(timer->timerId());
-    timer->deleteLater();
     */
 }
 
@@ -337,38 +218,6 @@ void SailorGram::onApplicationStateChanged(Qt::ApplicationState state)
 
     this->_daemonized = !active;
     emit daemonizedChanged();
-}
-
-void SailorGram::onNotificationClosed(uint)
-{
-    Notification* notification = qobject_cast<Notification*>(this->sender());
-    QString peerkey = notification->remoteActions().first().toMap()["arguments"].toList().first().toString();
-
-    this->_notifications.remove(peerkey);
-
-    if(this->_topmessages.contains(peerkey))
-        this->_topmessages.remove(peerkey);
-
-    notification->deleteLater();
-}
-
-void SailorGram::onMessageUnreadedChanged()
-{
-    /*
-    MessageObject* message = qobject_cast<MessageObject*>(this->sender());
-
-    if(message->unread())
-        return;
-
-    QTimer* timer = new QTimer(this);
-    timer->setTimerType(Qt::VeryCoarseTimer);
-    timer->setSingleShot(true);
-
-    connect(timer, SIGNAL(timeout()), this, SLOT(delayedCloseNotification()));
-
-    //FIXME: this->_deletednotifications[timer->timerId()] = message;
-    timer->start(2000); // 2 seconds
-    */
 }
 
 void SailorGram::onWakeUpRequested()
@@ -398,16 +247,6 @@ QString SailorGram::mediaLocation(quint32 mediatype)
     return QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
 }
 
-void SailorGram::updatePendingState(const QString& peerkey)
-{
-    if(this->_topmessages.contains(peerkey)) // Top Message has been changed
-        this->_topmessages.remove(peerkey);
-
-    this->_topmessages[peerkey] = NULL; //message;
-
-    //connect(message, SIGNAL(unreadChanged()), this, SLOT(onMessageUnreadedChanged()));
-}
-
 void SailorGram::moveMediaToDownloads(const QString& mediafile)
 {
     //this->moveMediaTo(mediafile, this->mediaLocation(MessageMedia::typeMessageMediaDocument));
@@ -416,20 +255,4 @@ void SailorGram::moveMediaToDownloads(const QString& mediafile)
 void SailorGram::moveMediaToGallery(const QString& mediafile, quint32 mediatype)
 {
     this->moveMediaTo(mediafile, this->mediaLocation(mediatype));
-}
-
-void SailorGram::notify(const QString& title, const QString& body, const QString& peerkey)
-{
-    if(!this->_engine || this->_globalmute)
-        return;
-
-    bool active = qApp->applicationState() == Qt::ApplicationActive;
-
-    if((this->_currentpeerkey != peerkey) || !active)
-    {
-        //this->updatePendingState(peerid);
-        this->sendNotify(title, body, peerkey);
-    }
-    else
-        this->beep();
 }

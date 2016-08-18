@@ -761,6 +761,50 @@ Do a swype to the right to select a contact</source>
         <source>Yesterday %1</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>GIF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sticker</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Video</source>
+        <translation type="unfinished">Відэа</translation>
+    </message>
+    <message>
+        <source>Document</source>
+        <translation type="unfinished">Дакумент</translation>
+    </message>
+    <message>
+        <source>Contact</source>
+        <translation type="unfinished">Кантакт</translation>
+    </message>
+    <message>
+        <source>Photo</source>
+        <translation type="unfinished">Фота</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Web Page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unsupported</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation type="unfinished">Невядомы</translation>
+    </message>
 </context>
 <context>
     <name>SailorgramDialogItem</name>

@@ -16,11 +16,11 @@ class SailorgramInterface : public QObject
 
     public slots:
         void wakeUp();
-        void openDialog(QString peerkey);
+        void openDialog(QByteArray peerkey);
 
     signals:
         void wakeUpRequested();
-        void openDialogRequested(QString peerkey);
+        void openDialogRequested(QByteArray peerkey);
 
     public:
         static const QString INTERFACE_NAME;

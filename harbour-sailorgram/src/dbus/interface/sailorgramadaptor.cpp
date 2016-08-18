@@ -10,7 +10,7 @@ void SailorgramAdaptor::wakeUp()
     QMetaObject::invokeMethod(parent(), "wakeUp");
 }
 
-void SailorgramAdaptor::openDialog(QString peerkey)
+void SailorgramAdaptor::openDialog(QByteArray peerkey)
 {
-    QMetaObject::invokeMethod(parent(), "openDialog", Q_ARG(QString, peerkey));
+    QMetaObject::invokeMethod(parent(), "openDialog", Q_ARG(QByteArray, peerkey));
 }

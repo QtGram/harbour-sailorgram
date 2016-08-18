@@ -21,6 +21,9 @@ class SailorgramDialogsModel : public SailorgramIdentityProxyModel
         virtual QVariant data(const QModelIndex &proxyindex, int role) const;
         virtual QHash<int, QByteArray> roleNames() const;
 
+    public slots:
+        SailorgramDialogItem* dialog(const QByteArray &peerkey);
+
     protected:
         virtual void init(TelegramEngine *engine);
         virtual void inserted(QModelIndex sourceindex);
@@ -38,7 +41,7 @@ class SailorgramDialogsModel : public SailorgramIdentityProxyModel
 
     protected:
         TelegramDialogListModel* _dialoglistmodel;
-        QHash<uint, SailorgramDialogItem*> _dialogs;
+        QHash<QByteArray, SailorgramDialogItem*> _dialogs;
 
     private:
         bool _writableonly;

@@ -86,7 +86,6 @@ HEADERS += \
     src/selector/filesmodelworker.h \
     src/dbus/connectivitychecker.h \
     src/item/translationinfoitem.h \
-    src/dbus/notification/sailorgramnotificationdata.h \
     src/telegram/model/sailorgramdialogsmodel.h \
     src/telegram/model/abstract/sailorgramidentityproxymodel.h \
     src/telegram/item/sailorgramdialogitem.h \
@@ -121,7 +120,6 @@ SOURCES += \
     src/selector/filesmodelworker.cpp \
     src/dbus/connectivitychecker.cpp \
     src/item/translationinfoitem.cpp \
-    src/dbus/notification/sailorgramnotificationdata.cpp \
     src/telegram/model/sailorgramdialogsmodel.cpp \
     src/telegram/model/abstract/sailorgramidentityproxymodel.cpp \
     src/telegram/item/sailorgramdialogitem.cpp \

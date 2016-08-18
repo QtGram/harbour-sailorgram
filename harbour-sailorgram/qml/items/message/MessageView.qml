@@ -199,7 +199,7 @@ SilicaListView
             if(Qt.application.state !== Qt.ApplicationActive)
                 return;
 
-            messagesmodel.markAsRead();
+            messagemodel.markAsRead();
         }
     }
 
