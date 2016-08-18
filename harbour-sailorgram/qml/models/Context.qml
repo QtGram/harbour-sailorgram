@@ -68,16 +68,13 @@ QtObject
         engine: context.engine
     }
 
-    property StickersCategoriesModel stickers: StickersCategoriesModel {
+    property SailorgramNotifications notifications: SailorgramNotifications {
         engine: context.engine
+        dialogs: context.dialogs
     }
 
-    property NotificationHandler notifications: NotificationHandler {
+    property StickersCategoriesModel stickers: StickersCategoriesModel {
         engine: context.engine
-
-        onNewMessage: {
-            context.sailorgram.notify(title, message, peerKey);
-        }
     }
 
     property SailorGram sailorgram: SailorGram {

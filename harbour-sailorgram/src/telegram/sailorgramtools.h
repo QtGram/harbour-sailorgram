@@ -15,6 +15,8 @@ class SailorgramTools
         static QString completeName(UserObject* user);
         static QString messageText(MessageObject* message);
         static QString messageDate(MessageObject* message);
+        static QString messageText(const Message& message);
+        static QString mediaType(const Message& message);
 
     public:
         static int messageType(int mt);

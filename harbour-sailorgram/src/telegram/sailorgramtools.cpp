@@ -36,10 +36,7 @@ QString SailorgramTools::completeName(UserObject *user)
 
 QString SailorgramTools::messageText(MessageObject *message)
 {
-    if(!message->media()->caption().isEmpty())
-        return message->media()->caption();
-
-    return message->message();
+    return SailorgramTools::messageText(message->core());
 }
 
 QString SailorgramTools::messageDate(MessageObject *message)
@@ -53,6 +50,59 @@ QString SailorgramTools::messageDate(MessageObject *message)
         return days ? QObject::tr("Yesterday %1").arg(messagedate.toString("HH:mm")) : messagedate.toString("HH:mm");
 
     return messagedate.toString("MMM dd, HH:mm");
+}
+
+QString SailorgramTools::messageText(const Message &message)
+{
+    if(!message.media().caption().isEmpty())
+        return message.media().caption();
+
+    if(message.media().classType() != MessageMedia::typeMessageMediaEmpty)
+        return SailorgramTools::mediaType(message);
+
+    return message.message();
+}
+
+QString SailorgramTools::mediaType(const Message &message)
+{
+    const MessageMedia& messagemedia = message.media();
+
+    if(messagemedia.classType() == MessageMedia::typeMessageMediaDocument)
+    {
+        foreach(const DocumentAttribute& attribute, messagemedia.document().attributes())
+        {
+            if(attribute.classType() == DocumentAttribute::typeDocumentAttributeAnimated)
+                return QObject::tr("GIF");
+
+            if(attribute.classType() == DocumentAttribute::typeDocumentAttributeSticker)
+                return QObject::tr("Sticker");
+
+            if(attribute.classType() == DocumentAttribute::typeDocumentAttributeAudio)
+                return QObject::tr("Audio");
+
+            if(attribute.classType() == DocumentAttribute::typeDocumentAttributeVideo)
+                return QObject::tr("Video");
+        }
+
+        return QObject::tr("Document");
+    }
+
+    if(messagemedia.classType() == MessageMedia::typeMessageMediaContact)
+        return QObject::tr("Contact");
+
+    if(messagemedia.classType() == MessageMedia::typeMessageMediaPhoto)
+        return QObject::tr("Photo");
+
+    if((messagemedia.classType() == MessageMedia::typeMessageMediaGeo) || (messagemedia.classType() == MessageMedia::typeMessageMediaVenue))
+        return QObject::tr("Location");
+
+    if(messagemedia.classType() == MessageMedia::typeMessageMediaWebPage)
+        return QObject::tr("Web Page");
+
+    if(messagemedia.classType() == MessageMedia::typeMessageMediaUnsupported)
+        return QObject::tr("Unsupported");
+
+    return QObject::tr("Unknown");
 }
 
 int SailorgramTools::messageType(int mt)

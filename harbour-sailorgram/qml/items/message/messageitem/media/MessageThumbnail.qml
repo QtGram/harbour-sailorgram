@@ -45,7 +45,7 @@ Item
     {
         id: downloadhandler
         engine: useTelegramImage ? context.engine : null
-        source: messagethumbnail.source
+        source: useTelegramImage ? messagethumbnail.source: null
 
         onEngineChanged: checkAutoDownload()
         onSourceChanged: checkAutoDownload()
