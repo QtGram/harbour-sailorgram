@@ -130,7 +130,6 @@ SilicaListView
 
     header: Column {
         property alias dialogReplyPreview: dialogreplypreview
-        property alias dialogTextInput: dialogtextinput
 
         id: bottomarea
         width: messageview.width

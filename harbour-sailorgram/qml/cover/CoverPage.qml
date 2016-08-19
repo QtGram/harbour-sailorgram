@@ -137,10 +137,10 @@ CoverBackground
 
         CoverAction
         {
-            iconSource: context.sailorgram.globalMute ? "noalarmcover.png" : "alarmcover.png"
+            iconSource: context.notifications.globalMute ? "noalarmcover.png" : "alarmcover.png"
 
             onTriggered: {
-                context.sailorgram.globalMute = !context.sailorgram.globalMute;
+                context.notifications.globalMute = !context.notifications.globalMute;
             }
         }
     }
