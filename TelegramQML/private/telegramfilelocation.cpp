@@ -292,21 +292,6 @@ bool TelegramFileLocation::download()
     DEFINE_DIS;
     Telegram *tg = p->engine->telegram();
 
-
-    if(p->file->fileName().contains("e7e89a166"))
-    {
-        qDebug() << p->file->fileName();
-
-        InputFileLocation core = p->location->core();
-
-        qDebug() << hex << core.accessHash()
-                 << hex << core.id()
-                 << hex << core.localId()
-                 << hex << core.secret()
-                 << hex << core.volumeId()
-                 << hex << core.classType();
-    }
-
     p->downloadFileId = tg->uploadGetFile(p->location->core(), p->size, p->dcId, [this, dis](TG_UPLOAD_GET_FILE_CUSTOM_CALLBACK){
         Q_UNUSED(msgId)
         if(!dis || !p->file)
