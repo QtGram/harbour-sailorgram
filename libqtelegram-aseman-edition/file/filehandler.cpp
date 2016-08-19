@@ -335,8 +335,6 @@ qint64 FileHandler::uploadGetFile(const InputFileLocation &location, qint32 file
     }
     mActiveDownloadsMap.insert(f->id(), true);
 
-    connect(session, &Session::updateMessageId, this, &FileHandler::onUpdateMessageId);
-
     switch (session->state()) {
     case QAbstractSocket::ConnectingState: {
         mInitialDownloadsMap[session->sessionId()] << f;
@@ -378,6 +376,7 @@ void FileHandler::onUploadGetFileAnswer(qint64 msgId, const UploadFile &result, 
     QByteArray bytes = result.bytes();
 
     DownloadFile::Ptr f = mDownloadsMap.take(msgId);
+
     if(f.isNull())
         return;
 
@@ -530,11 +529,4 @@ void FileHandler::onMessagesSentEncryptedFile(qint64 msgId, const MessagesSentEn
     qint64 fileId = mFileIdsMap.take(msgId);
     Q_ASSERT(fileId);
     Q_EMIT messagesSendEncryptedFileAnswer(fileId, date, encryptedFile);
-}
-
-void FileHandler::onUpdateMessageId(qint64 oldMsgId, qint64 newMsgId) {
-    DownloadFile::Ptr file = mDownloadsMap.take(oldMsgId);
-    if (!file.isNull()) {
-        mDownloadsMap.insert(newMsgId, file);
-    }
 }

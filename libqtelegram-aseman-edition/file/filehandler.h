@@ -76,8 +76,6 @@ private Q_SLOTS:
 
     void onMessagesSentMedia(qint64 msgId, const UpdatesType &result, const QVariant &attachedData);
     void onMessagesSentEncryptedFile(qint64 msgId, const MessagesSentEncryptedMessage &result, const QVariant &attachedData = QVariant());
-
-    void onUpdateMessageId(qint64 oldMsgId, qint64 newMsgId);
 };
 
 #endif // FILEHANDLER_H
