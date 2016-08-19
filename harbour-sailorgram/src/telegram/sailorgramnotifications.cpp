@@ -121,7 +121,7 @@ void SailorgramNotifications::insertUpdate(const Update &update)
         {
             const Message& message = update.message();
 
-            if(message.out())
+            if(message.out() || (message.classType() == Message::typeMessageService))
                 return;
 
             Peer msgpeer = TelegramTools::messagePeer(message);
