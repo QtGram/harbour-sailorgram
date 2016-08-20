@@ -142,19 +142,11 @@ Page
                 menu: DialogItemMenu {
                     sgDialogItem: model.item
 
-                    /*
                     onDeleteRequested: {
                         dialogitem.remorseAction(remorsemsg, function() {
-                            var peerid = TelegramHelper.peerId(item);
-                            item.unreadCount = 0;
-
-                            if(item.encrypted)
-                                context.telegram.messagesDiscardEncryptedChat(peerid, true);
-                            else
-                                context.telegram.messagesDeleteHistory(peerid, true);
+                            context.dialogs.deleteDialog(model.item);
                         });
                     }
-                    */
                 }
             }
         }

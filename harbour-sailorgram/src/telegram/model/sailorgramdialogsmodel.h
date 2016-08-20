@@ -23,6 +23,7 @@ class SailorgramDialogsModel : public SailorgramIdentityProxyModel
 
     public slots:
         SailorgramDialogItem* dialog(const QByteArray &peerkey);
+        void deleteDialog(SailorgramDialogItem* sgdialog);
 
     protected:
         virtual void init(TelegramEngine *engine);
