@@ -19,13 +19,20 @@ Dialog
         dlgcreatechat.users = new Object;
     }
 
+    onStatusChanged: {
+        if(status !== PageStatus.Active)
+            return;
+
+        context.contacts.engine = context.engine;
+    }
+
     onAccepted: {
         var userlist = new Array;
 
         for(var prop in dlgcreatechat.users)
             userlist.push(dlgcreatechat.users[prop]);
 
-        contactsmodels.createChat(userlist, tfgroupname.text);
+        context.contacts.createChat(userlist, tfgroupname.text);
     }
 
     SilicaFlickable
@@ -50,12 +57,8 @@ Dialog
             id: lvcontacts
             anchors { left: parent.left; top: tfgroupname.bottom; right: parent.right; bottom: parent.bottom }
             spacing: Theme.paddingMedium
+            model: context.contacts
             clip: true
-
-            model: SailorgramContactsModel {
-                id: contactsmodels
-                engine: context.engine
-            }
 
             delegate: ListItem {
                 contentWidth: parent.width

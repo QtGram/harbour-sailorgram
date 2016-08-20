@@ -62,7 +62,10 @@ QtObject
     property Document currentSticker: null
     property ScreenBlank screenblank: ScreenBlank { }
     property ErrorsModel errors: ErrorsModel { }
-    property SailorgramContactsModel contacts: SailorgramContactsModel { }
+
+    property SailorgramContactsModel contacts: SailorgramContactsModel {
+        onChatCreated: pageStack.replaceAbove(context.mainPage, Qt.resolvedUrl("../pages/dialogs/DialogPage.qml"), { "context": context, "sgDialogItem": sgdialogitem })
+    }
 
     property SailorgramDialogsModel dialogs: SailorgramDialogsModel {
         engine: context.engine
