@@ -127,18 +127,10 @@ Page
                     return true;
                 }
 
-                /* FIXME:
                 onActionRequested: {
-                    dialog.unreadCount = 0;
-
-                    if(dialog.encrypted)
-                        context.telegram.messagesDiscardEncryptedChat(dialog.peer.userId);
-                    else
-                        context.telegram.messagesDeleteHistory(TelegramHelper.peerId(dialog));
-
+                    context.dialogs.deleteDialog(dialoginfopage.sgDialogItem);
                     pageStack.pop();
                 }
-                */
             }
 
             ClickableLabel
