@@ -8,7 +8,7 @@ const QString SailorGram::EMOJI_FOLDER = "emoji";
 SailorGram::SailorGram(QObject *parent): QObject(parent), _daemonized(false)
 {
     this->_interface = new SailorgramInterface(this);
-    this->_autostart = !SailorGram::hasDaemonFile();
+    //this->_autostart = !SailorGram::hasDaemonFile();
 
     connect(qApp, &QGuiApplication::applicationStateChanged, this, &SailorGram::onApplicationStateChanged);
     connect(this->_interface, &SailorgramInterface::wakeUpRequested, this, &SailorGram::onWakeUpRequested);

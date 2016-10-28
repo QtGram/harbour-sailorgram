@@ -1,11 +1,11 @@
 Name: harbour-sailorgram
 Summary: SailorGram
-Version: 0.80
-Release: 2
+Version: 0.89
+Release: 1
 # The contents of the Group field should be one of the groups listed here:
 # http://gitorious.org/meego-developer-tools/spectacle/blobs/master/data/GROUPS
 Group: Qt/Qt
-URL: https://github.com/Dax89/harbour-sailorgram/
+URL: https://github.com/QtGram/harbour-sailorgram/
 License: GPL3
 # This must be generated before uploading a package to a remote build service.
 # Usually this line does not need to be modified.
@@ -56,6 +56,7 @@ Files:
   - '%{_libdir}/systemd/user/post-user-session.target.wants/harbour-sailorgram-notifications.service'
   - '%{_sysconfdir}/mce/10sailorgram-led.ini'
   - '%exclude %{_libdir}/cmake/*'
+  - '%exclude %{_libdir}/debug/*'
 
 # For more information about yaml and what's supported in Sailfish OS
 # build system, please see https://wiki.merproject.org/wiki/Spectacle

@@ -20,16 +20,21 @@ QT     += sql dbus multimedia
 LIBS += -L$$LIBQTELEGRAM_LIB_DIR -lQTelegram
 INCLUDEPATH += $$LIBQTELEGRAM_INCLUDE_PATH
 
+# LibQTelegram
+libqtelegram.files = $$OUT_PWD/../LibQTelegram/*.so*
+libqtelegram.path  = /usr/share/$$TARGET/lib
+INSTALLS += libqtelegram
+
 # WebP Plugin
 webp.files = $$OUT_PWD/../webp-plugin/plugins/imageformats/*.so
 webp.path  = /usr/share/$$TARGET/lib/imageformats
 INSTALLS += webp
 
 # Telegram Public Key
-server_pub.files = $$PWD/server.pub
-server_pub.path  = /usr/share/$$TARGET
-INSTALLS    += server_pub
-OTHER_FILES += $$server_pub.files
+public_key.files = $$PWD/public.key
+public_key.path  = /usr/share/$$TARGET
+INSTALLS    += public_key
+OTHER_FILES += $$public_key.files
 
 # Emoji Set
 emoji.files = $$PWD/res/emoji/*.png
@@ -147,4 +152,17 @@ OTHER_FILES += \
 
 DISTFILES += \
     qml/items/message/ForwardItem.qml \
-    qml/items/sticker/StickerCategory.qml
+    qml/items/sticker/StickerCategory.qml \
+    qml/model/Context.qml \
+    qml/js/CountryList.js \
+    qml/js/Emoji.js \
+    qml/js/Settings.js \
+    qml/js/TextElaborator.js \
+    qml/pages/MainPage.qml \
+    qml/components/login/PhoneNumber.qml \
+    qml/components/login/SignIn.qml \
+    qml/components/login/SignUp.qml \
+    qml/components/dialog/DialogsList.qml \
+    qml/items/DialogModelItem.qml \
+    qml/components/message/MessageStatus.qml \
+    qml/components/message/MessageText.qml

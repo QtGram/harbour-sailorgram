@@ -7,7 +7,7 @@ Name:       harbour-sailorgram
 
 # >> macros
 %define __provides_exclude_from ^%{_datadir}/.*$
-%define __requires_exclude ^libqtelegram-ae|libtelegramqml|.*$
+%define __requires_exclude ^libqtelegram|.*$
 # << macros
 
 %{!?qtc_qmake:%define qtc_qmake %qmake}
@@ -15,11 +15,11 @@ Name:       harbour-sailorgram
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    SailorGram
-Version:    0.80
-Release:    2
+Version:    0.89
+Release:    1
 Group:      Qt/Qt
 License:    GPL3
-URL:        https://github.com/Dax89/harbour-sailorgram/
+URL:        https://github.com/QtGram/harbour-sailorgram/
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-sailorgram.yaml
 Source101:  harbour-sailorgram-rpmlintrc
@@ -112,5 +112,6 @@ systemctl-user restart harbour-sailorgram-notifications.service
 %{_libdir}/systemd/user/post-user-session.target.wants/harbour-sailorgram-notifications.service
 %{_sysconfdir}/mce/10sailorgram-led.ini
 %exclude %{_libdir}/cmake/*
+%exclude %{_libdir}/debug/*
 # >> files
 # << files
