@@ -17,8 +17,8 @@ include($$PWD/../config.pri)
 CONFIG += sailfishapp
 QT     += sql dbus multimedia
 
-LIBS += -L$$LIBQTELEGRAM_LIB_DIR -L$$TELEGRAMQML_LIB_DIR -lqtelegram-ae -ltelegramqml
-INCLUDEPATH += $$LIBQTELEGRAM_INCLUDE_PATH $$TELEGRAMQML_INCLUDE_PATH
+LIBS += -L$$LIBQTELEGRAM_LIB_DIR -lQTelegram
+INCLUDEPATH += $$LIBQTELEGRAM_INCLUDE_PATH
 
 # WebP Plugin
 webp.files = $$OUT_PWD/../webp-plugin/plugins/imageformats/*.so
@@ -35,11 +35,6 @@ OTHER_FILES += $$server_pub.files
 emoji.files = $$PWD/res/emoji/*.png
 emoji.path  = /usr/share/$$TARGET/emoji
 INSTALLS += emoji
-
-# Sticker Set
-#stickers.files = $$PWD/res/stickers/telegram/*.webp
-#stickers.path = /usr/share/$$TARGET/stickers/telegram
-#INSTALLS += stickers
 
 # Lipstick Config
 lipstick_config.files = $$PWD/lipstick/*.conf
@@ -84,25 +79,7 @@ HEADERS += \
     src/selector/exif/exif.h \
     src/selector/filesmodel.h \
     src/selector/filesmodelworker.h \
-    src/dbus/connectivitychecker.h \
     src/item/translationinfoitem.h \
-    src/telegram/model/sailorgramdialogsmodel.h \
-    src/telegram/model/abstract/sailorgramidentityproxymodel.h \
-    src/telegram/item/sailorgramdialogitem.h \
-    src/telegram/sailorgramtools.h \
-    src/telegram/sailorgramenums.h \
-    src/telegram/object/sailorgrammessageaction.h \
-    src/telegram/sailorgraminitializer.h \
-    src/telegram/model/sailorgramdialogscovermodel.h \
-    src/telegram/model/sailorgramcontactsmodel.h \
-    src/telegram/model/sailorgrammessagemodel.h \
-    src/telegram/item/sailorgrammessageitem.h \
-    src/telegram/object/sailorgrammessagemedia.h \
-    src/telegram/object/sailorgrampeer.h \
-    src/telegram/object/media/sailorgramwebpagemedia.h \
-    src/telegram/object/media/sailorgramgeopointmedia.h \
-    src/telegram/object/sailorgramforwardmessage.h \
-    src/telegram/sailorgramnotifications.h
 
 # Sources
 SOURCES += \
@@ -118,128 +95,12 @@ SOURCES += \
     src/selector/exif/exif.cpp \
     src/selector/filesmodel.cpp \
     src/selector/filesmodelworker.cpp \
-    src/dbus/connectivitychecker.cpp \
     src/item/translationinfoitem.cpp \
-    src/telegram/model/sailorgramdialogsmodel.cpp \
-    src/telegram/model/abstract/sailorgramidentityproxymodel.cpp \
-    src/telegram/item/sailorgramdialogitem.cpp \
-    src/telegram/sailorgramtools.cpp \
-    src/telegram/sailorgramenums.cpp \
-    src/telegram/object/sailorgrammessageaction.cpp \
-    src/telegram/sailorgraminitializer.cpp \
-    src/telegram/model/sailorgramdialogscovermodel.cpp \
-    src/telegram/model/sailorgramcontactsmodel.cpp \
-    src/telegram/model/sailorgrammessagemodel.cpp \
-    src/telegram/item/sailorgrammessageitem.cpp \
-    src/telegram/object/sailorgrammessagemedia.cpp \
-    src/telegram/object/sailorgrampeer.cpp \
-    src/telegram/object/media/sailorgramwebpagemedia.cpp \
-    src/telegram/object/media/sailorgramgeopointmedia.cpp \
-    src/telegram/object/sailorgramforwardmessage.cpp \
-    src/telegram/sailorgramnotifications.cpp
 
 # QML
 OTHER_FILES += \
     qml/js/*.js \
     qml/harbour-sailorgram.qml \
-    qml/cover/CoverPage.qml \
-    qml/components/ClickableLabel.qml \
-    qml/components/CollaboratorsLabel.qml \
-    qml/components/ConnectingLabel.qml \
-    qml/components/ConnectionStatus.qml \
-    qml/components/cover/CoverLabel.qml \
-    qml/components/DebugLabel.qml \
-    qml/components/mediaplayer/mediacomponents/MediaPlayerCursor.qml \
-    qml/components/mediaplayer/mediacomponents/MediaPlayerLoadingBar.qml \
-    qml/components/mediaplayer/mediacomponents/MediaPlayerProgressBar.qml \
-    qml/components/mediaplayer/mediacomponents/MediaPlayerTimings.qml \
-    qml/components/mediaplayer/mediacomponents/MediaPlayerTitle.qml \
-    qml/components/mediaplayer/mediacomponents/MediaPlayerToolBar.qml \
-    qml/components/mediaplayer/MediaPlayer.qml \
-    qml/components/message/MessageContainer.qml \
-    qml/components/message/MessageMediaProgressBar.qml \
-    qml/components/message/MessageTypesPool.qml \
-    qml/components/PopupMessage.qml \
-    qml/components/ResizableLabel.qml \
-    qml/components/RoundedImage.qml \
-    qml/components/search/MessageSearchList.qml \
-    qml/components/SettingLabel.qml \
-    qml/components/telegram/TelegramBackground.qml \
-    qml/components/telegram/TelegramMenuItem.qml \
-    qml/components/telegram/TelegramPullDownMenu.qml \
-    qml/components/ThirdPartyLabel.qml \
-    qml/items/chat/ChatInfo.qml \
-    qml/items/dialog/DialogItem.qml \
-    qml/items/dialog/DialogReplyPreview.qml \
-    qml/items/dialog/DialogTextInput.qml \
-    qml/items/message/messageitem/media/MessageAudio.qml \
-    qml/items/message/messageitem/media/MessageContact.qml \
-    qml/items/message/messageitem/media/MessageDocument.qml \
-    qml/items/message/messageitem/media/MessageLocation.qml \
-    qml/items/message/messageitem/media/MessageMediaItem.qml \
-    qml/items/message/messageitem/media/MessagePhoto.qml \
-    qml/items/message/messageitem/media/MessageSticker.qml \
-    qml/items/message/messageitem/media/MessageThumbnail.qml \
-    qml/items/message/messageitem/media/MessageVideo.qml \
-    qml/items/message/messageitem/media/MessageWebPage.qml \
-    qml/items/message/messageitem/MessageBubble.qml \
-    qml/items/message/messageitem/MessageItem.qml \
-    qml/items/message/messageitem/MessagePreview.qml \
-    qml/items/message/messageitem/MessageStatus.qml \
-    qml/items/message/messageitem/MessageTextContent.qml \
-    qml/items/message/messageitem/MessageText.qml \
-    qml/items/message/MessageView.qml \
-    qml/items/peer/PeerImage.qml \
-    qml/items/peer/PeerItem.qml \
-    qml/items/peer/PeerProfile.qml \
-    qml/items/search/MessageSearchItem.qml \
-    qml/items/secretdialog/SecretDialogDiscarded.qml \
-    qml/items/secretdialog/SecretDialogWaiting.qml \
-    qml/items/sticker/StickerItem.qml \
-    qml/items/user/UserInfo.qml \
-    qml/items/user/UserItem.qml \
-    qml/menus/chat/ChatInfoMenu.qml \
-    qml/menus/DialogItemMenu.qml \
-    qml/menus/MessageMenu.qml \
-    qml/menus/UserMenu.qml \
-    qml/models/Context.qml \
-    qml/models/ErrorsModel.qml \
-    qml/pages/about/AboutPage.qml \
-    qml/pages/about/DevelopersPage.qml \
-    qml/pages/about/ThirdPartyPage.qml \
-    qml/pages/about/TranslationsPage.qml \
-    qml/pages/chat/AddContactsPage.qml \
-    qml/pages/chat/ChangeChatTitle.qml \
-    qml/pages/chat/CreateChatPage.qml \
-    qml/pages/contacts/AddContactPage.qml \
-    qml/pages/contacts/ContactPage.qml \
-    qml/pages/contacts/ContactsPage.qml \
-    qml/pages/dialogs/DialogInfoPage.qml \
-    qml/pages/dialogs/DialogPage.qml \
-    qml/pages/dialogs/DialogsPage.qml \
-    qml/pages/dialogs/forward/ForwardContactPage.qml \
-    qml/pages/dialogs/forward/ForwardDialogPage.qml \
-    qml/pages/login/AuthorizationPage.qml \
-    qml/pages/login/ConnectionPage.qml \
-    qml/pages/login/PhoneNumberPage.qml \
-    qml/pages/login/SignUpPage.qml \
-    qml/pages/media/MediaPage.qml \
-    qml/pages/media/MediaPhotoPage.qml \
-    qml/pages/media/MediaPlayerPage.qml \
-    qml/pages/profile/ChangeUsernamePage.qml \
-    qml/pages/profile/ProfilePage.qml \
-    qml/pages/secretdialogs/CreateSecretDialogPage.qml \
-    qml/pages/selector/SelectorFilesPage.qml \
-    qml/pages/selector/SelectorImagesPage.qml \
-    qml/pages/selector/SelectorLocationPage.qml \
-    qml/pages/selector/SelectorMainPage.qml \
-    qml/pages/selector/SelectorPhotoCapturePage.qml \
-    qml/pages/selector/SelectorSoundRecordPage.qml \
-    qml/pages/selector/SelectorStickerPage.qml \
-    qml/pages/settings/ChatSettingsPage.qml \
-    qml/pages/settings/DaemonSettingsPage.qml \
-    qml/pages/settings/DebugSettingsPage.qml \
-    qml/pages/settings/SettingsPage.qml
 
 # Translations
 CONFIG += sailfishapp_i18n

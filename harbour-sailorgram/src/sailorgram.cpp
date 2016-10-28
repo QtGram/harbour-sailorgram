@@ -1,23 +1,16 @@
 #include "sailorgram.h"
+#include <config/telegramconfig.h>
 
 const QString SailorGram::DAEMON_FILE = "daemon";
-const QString SailorGram::CONFIG_FOLDER = "telegram";
-const QString SailorGram::PUBLIC_KEY_FILE = "server.pub";
+const QString SailorGram::PUBLIC_KEY_FILE = "public.key";
 const QString SailorGram::EMOJI_FOLDER = "emoji";
 
-SailorGram::SailorGram(QObject *parent): QObject(parent), _engine(NULL), _connectivitychecker(NULL), _connected(-1), _daemonized(false)
+SailorGram::SailorGram(QObject *parent): QObject(parent), _daemonized(false)
 {
-    QDir cfgdir(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation));
-    cfgdir.mkpath(qApp->applicationName() + QDir::separator() + qApp->applicationName() + QDir::separator() + SailorGram::CONFIG_FOLDER);
-
-    QDir cachedir(QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation));
-    cachedir.mkpath(qApp->applicationName() + QDir::separator() + qApp->applicationName());
-
     this->_interface = new SailorgramInterface(this);
     this->_autostart = !SailorGram::hasDaemonFile();
 
     connect(qApp, &QGuiApplication::applicationStateChanged, this, &SailorGram::onApplicationStateChanged);
-    connect(this, &SailorGram::daemonizedChanged, this, &SailorGram::updateOnlineState);
     connect(this->_interface, &SailorgramInterface::wakeUpRequested, this, &SailorGram::onWakeUpRequested);
     connect(this->_interface, &SailorgramInterface::openDialogRequested, this, &SailorGram::openDialogRequested);
 }
@@ -37,22 +30,9 @@ bool SailorGram::daemonized() const
     return qApp->applicationState() == Qt::ApplicationActive;
 }
 
-bool SailorGram::connected() const
-{
-    if(!this->_connectivitychecker)
-        return false;
-
-    return this->_connectivitychecker->connected();
-}
-
 QString SailorGram::emojiPath() const
 {
     return qApp->applicationDirPath() + QDir::separator() + "../share/" + qApp->applicationName() + QDir::separator() + SailorGram::EMOJI_FOLDER + QDir::separator();
-}
-
-QString SailorGram::configPath() const
-{
-    return QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QDir::separator() + SailorGram::CONFIG_FOLDER;
 }
 
 QString SailorGram::publicKey() const
@@ -108,11 +88,6 @@ QString SailorGram::voiceRecordPath() const
     return cachefolder.absoluteFilePath("voice-rec.ogg");
 }
 
-TelegramEngine *SailorGram::engine() const
-{
-    return this->_engine;
-}
-
 QList<QObject *> SailorGram::translations()
 {
     QList<QObject *> trlist;
@@ -127,23 +102,6 @@ QList<QObject *> SailorGram::translations()
             trlist.append(new TranslationInfoItem(jsonarrayvalue.toObject()));
     }
     return trlist;
-}
-
-void SailorGram::setEngine(TelegramEngine *engine)
-{
-    if(this->_engine == engine)
-        return;
-
-    this->_engine = engine;
-
-    if(this->_connectivitychecker)
-        this->_connectivitychecker->deleteLater();
-
-    this->_connectivitychecker = new ConnectivityChecker(engine, this);
-    connect(this->_connectivitychecker, SIGNAL(connectedChanged()), this, SIGNAL(connectedChanged()));
-
-    emit engineChanged();
-    emit connectedChanged();
 }
 
 void SailorGram::setKeepRunning(bool keep)
@@ -162,7 +120,7 @@ void SailorGram::setAutostart(bool autostart)
 
     this->_autostart = autostart;
 
-    QDir dir(this->configPath());
+    QDir dir(TelegramConfig_storagePath);
 
     if(autostart)
     {
@@ -178,35 +136,8 @@ void SailorGram::setAutostart(bool autostart)
 
 bool SailorGram::hasDaemonFile()
 {
-    QDir dir(QStandardPaths::writableLocation(QStandardPaths::DataLocation) + QDir::separator() + SailorGram::CONFIG_FOLDER);
+    QDir dir(TelegramConfig_storagePath);
     return QFile::exists(dir.absoluteFilePath(SailorGram::DAEMON_FILE));
-}
-
-void SailorGram::moveMediaTo(const QString& mediafile, const QString &destination)
-{
-    QFileInfo mediafileinfo(QUrl(mediafile).path());
-    QString destpath = QDir(destination).absoluteFilePath(mediafileinfo.fileName());
-
-    if (QFile(destpath).exists())
-    {
-        QString basename = mediafileinfo.baseName();
-        QString suffix   = mediafileinfo.completeSuffix();
-        quint32 copy = 0;
-        while (QFile(destpath).exists())
-            destpath = QDir(destination).absoluteFilePath(basename + QString(" (%1).").arg(++copy) + suffix);
-    }
-
-    QFile::copy(mediafileinfo.absoluteFilePath(), destpath);
-}
-
-void SailorGram::updateOnlineState()
-{
-    /*
-    if(!this->_telegram)
-        return;
-
-    this->_telegram->setOnline(!this->_daemonized);
-    */
 }
 
 void SailorGram::onApplicationStateChanged(Qt::ApplicationState state)
@@ -229,30 +160,4 @@ void SailorGram::onWakeUpRequested()
     }
 
     emit wakeUpRequested();
-}
-
-QString SailorGram::mediaLocation(quint32 mediatype)
-{
-    /* FIXME:
-    if(mediatype == MessageMedia::typeMessageMediaAudio)
-        return QStandardPaths::writableLocation(QStandardPaths::MusicLocation);
-
-    if(mediatype == MessageMedia::typeMessageMediaPhoto)
-        return QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
-
-    if(mediatype == MessageMedia::typeMessageMediaVideo)
-        return QStandardPaths::writableLocation(QStandardPaths::MoviesLocation);
-    */
-
-    return QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
-}
-
-void SailorGram::moveMediaToDownloads(const QString& mediafile)
-{
-    //this->moveMediaTo(mediafile, this->mediaLocation(MessageMedia::typeMessageMediaDocument));
-}
-
-void SailorGram::moveMediaToGallery(const QString& mediafile, quint32 mediatype)
-{
-    this->moveMediaTo(mediafile, this->mediaLocation(mediatype));
 }

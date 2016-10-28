@@ -1,0 +1,3 @@
+[submodule "LibQTelegram"]
+	path = LibQTelegram
+	url = https://github.com/QtGram/LibQTelegram

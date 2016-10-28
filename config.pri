@@ -1,17 +1,10 @@
-LIBQTELEGRAM_LIB_DIR = $$OUT_PWD/../libqtelegram-aseman-edition
-LIBQTELEGRAM_INCLUDE_PATH = $$PWD/libqtelegram-aseman-edition
-TELEGRAMQML_LIB_DIR = $$OUT_PWD/../TelegramQML
-TELEGRAMQML_INCLUDE_PATH = $$PWD/TelegramQML
-BUILD_MODE += lib
+LIBQTELEGRAM_LIB_DIR = $$OUT_PWD/../LibQTelegram
+LIBQTELEGRAM_INCLUDE_PATH = $$PWD/LibQTelegram
 
-CONFIG += no_install c++11
+CONFIG += c++11
 
 !isEqual(TARGET, "harbour-sailorgram") {
     target = $$TARGET
     target.path = /usr/share/harbour-sailorgram/lib
     INSTALLS += target
-}
-
-isEqual(TARGET, "qtelegram-ae") {
-    CONFIG += typeobjects
 }

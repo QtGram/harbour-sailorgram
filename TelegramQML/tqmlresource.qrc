@@ -1,8 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>database/profiles.sqlite</file>
-        <file>database/userdata.sqlite</file>
-        <file>database/database.sqlite</file>
-        <file>files/tg-server.pub</file>
-    </qresource>
-</RCC>
