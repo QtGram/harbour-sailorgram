@@ -13,6 +13,21 @@ Item
     readonly property bool beta: false
     readonly property int betanum: 1
 
+    readonly property int bubbleradius: {
+        if(context.angledbubbles)
+            return 20;
+
+        if(!context.bubbleshidden)
+            return 4;
+
+        return 0;
+    }
+
+    property bool bubbleshidden: false
+    property bool angledbubbles: true
+    property bool sendwithreturn: false
+    property real bubblesopacity: 100.0
+
     property SailorGram sailorgram: SailorGram { }
 
     property Telegram telegram: Telegram {

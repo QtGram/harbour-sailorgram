@@ -136,7 +136,7 @@ ListItem
                 text: model.unreadCount
                 color: Theme.primaryColor
                 anchors.centerIn: parent
-                font { pointSize: Theme.fontSizeSmall; bold: true }
+                font { pixelSize: Theme.fontSizeSmall; bold: true }
             }
         }
     }

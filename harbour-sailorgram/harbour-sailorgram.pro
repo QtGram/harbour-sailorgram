@@ -176,4 +176,16 @@ DISTFILES += \
     qml/components/about/CollaboratorsLabel.qml \
     qml/components/about/ThirdPartyLabel.qml \
     qml/pages/about/ThirdPartyPage.qml \
-    qml/pages/about/TranslationsPage.qml
+    qml/pages/about/TranslationsPage.qml \
+    qml/pages/dialog/DialogPage.qml \
+    qml/components/dialog/DialogTopHeader.qml \
+    qml/components/custom/BackgroundRectangle.qml \
+    qml/components/message/MessagesList.qml \
+    qml/items/MessageModelItem.qml \
+    qml/components/message/MessageBubble.qml \
+    qml/components/message/media/ImageMessage.qml \
+    qml/components/message/media/AnimatedMessage.qml \
+    qml/components/message/media/LocationMessage.qml \
+    qml/components/message/media/FileMessage.qml \
+    qml/components/message/media/WebPageMessage.qml \
+    qml/components/message/MessageTextInput.qml

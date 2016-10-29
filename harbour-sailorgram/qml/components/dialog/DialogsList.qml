@@ -10,6 +10,7 @@ SilicaListView
 
     id: dialogslist
     spacing: Theme.paddingSmall
+    clip: true
 
     model: DialogsModel {
         telegram: context.telegram
@@ -17,5 +18,10 @@ SilicaListView
 
     delegate: DialogModelItem {
         width: parent.width
+
+        onClicked: {
+            pageStack.push(Qt.resolvedUrl("../../pages/dialog/DialogPage.qml"), { context: dialogslist.context,
+                                                                                  dialog: model.item });
+        }
     }
 }
