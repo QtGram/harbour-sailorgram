@@ -84,7 +84,7 @@ HEADERS += \
     src/selector/exif/exif.h \
     src/selector/filesmodel.h \
     src/selector/filesmodelworker.h \
-    src/item/translationinfoitem.h \
+    src/item/translationinfoitem.h
 
 # Sources
 SOURCES += \
@@ -100,12 +100,32 @@ SOURCES += \
     src/selector/exif/exif.cpp \
     src/selector/filesmodel.cpp \
     src/selector/filesmodelworker.cpp \
-    src/item/translationinfoitem.cpp \
+    src/item/translationinfoitem.cpp
 
 # QML
 OTHER_FILES += \
     qml/js/*.js \
     qml/harbour-sailorgram.qml \
+    qml/items/message/ForwardItem.qml \
+    qml/items/sticker/StickerCategory.qml \
+    qml/model/Context.qml \
+    qml/js/CountryList.js \
+    qml/js/Emoji.js \
+    qml/js/Settings.js \
+    qml/js/TextElaborator.js \
+    qml/pages/MainPage.qml \
+    qml/components/login/PhoneNumber.qml \
+    qml/components/login/SignIn.qml \
+    qml/components/login/SignUp.qml \
+    qml/components/dialog/DialogsList.qml \
+    qml/items/DialogModelItem.qml \
+    qml/components/message/MessageStatus.qml \
+    qml/components/message/MessageText.qml \
+    qml/pages/contact/ContactsPage.qml \
+    qml/items/ContactModelItem.qml \
+    qml/components/contact/ContactsList.qml \
+    qml/cover/CoverPage.qml \
+    qml/js/ColorScheme.js
 
 # Translations
 CONFIG += sailfishapp_i18n
@@ -149,23 +169,3 @@ OTHER_FILES += \
     rpm/harbour-sailorgram.yaml \
     harbour-sailorgram.desktop \
     qml/cover/*.png
-
-DISTFILES += \
-    qml/items/message/ForwardItem.qml \
-    qml/items/sticker/StickerCategory.qml \
-    qml/model/Context.qml \
-    qml/js/CountryList.js \
-    qml/js/Emoji.js \
-    qml/js/Settings.js \
-    qml/js/TextElaborator.js \
-    qml/pages/MainPage.qml \
-    qml/components/login/PhoneNumber.qml \
-    qml/components/login/SignIn.qml \
-    qml/components/login/SignUp.qml \
-    qml/components/dialog/DialogsList.qml \
-    qml/items/DialogModelItem.qml \
-    qml/components/message/MessageStatus.qml \
-    qml/components/message/MessageText.qml \
-    qml/pages/contact/ContactsPage.qml \
-    qml/items/ContactModelItem.qml \
-    qml/components/contact/ContactsList.qml
