@@ -165,4 +165,7 @@ DISTFILES += \
     qml/components/dialog/DialogsList.qml \
     qml/items/DialogModelItem.qml \
     qml/components/message/MessageStatus.qml \
-    qml/components/message/MessageText.qml
+    qml/components/message/MessageText.qml \
+    qml/pages/contact/ContactsPage.qml \
+    qml/items/ContactModelItem.qml \
+    qml/components/contact/ContactsList.qml

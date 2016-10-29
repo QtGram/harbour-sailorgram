@@ -6,7 +6,7 @@ import "../components/message"
 ListItem
 {
     id: dialogmodelitem
-    height: Theme.itemSizeSmall
+    contentHeight: Theme.itemSizeSmall
 
     PeerImage
     {

@@ -13,6 +13,9 @@ Page
             onLoginCompleted: {
                 loader.setSource(Qt.resolvedUrl("../components/dialog/DialogsList.qml"), { context: mainpage.context });
                 header.title = qsTr("Chats");
+
+                if(!mainpage.canNavigateForward)
+                    pageStack.pushAttached(Qt.resolvedUrl("contact/ContactsPage.qml"), { context: mainpage.context });
             }
         }
 
