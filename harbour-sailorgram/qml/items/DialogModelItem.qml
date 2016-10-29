@@ -13,7 +13,7 @@ ListItem
         id: peerimage
         anchors { left: parent.left; top: parent.top }
         size: dialogmodelitem.height
-        backgroundColor: Theme.highlightDimmerColor
+        backgroundColor: Theme.secondaryHighlightColor
         foregroundColor: Theme.primaryColor
         fontPixelSize: Theme.fontSizeLarge
         peer: model.item
