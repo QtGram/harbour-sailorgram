@@ -31,6 +31,15 @@ Item
         }
     }
 
+    function versionString() {
+        var ver = context.version;
+
+        if(beta)
+            ver += " BETA " + betanum;
+
+        return ver;
+    }
+
     function locationThumbnail(latitude, longitude, width, height, z) {
         return "https://maps.nlp.nokia.com/mia/1.6/mapview?" + "app_id=" + hereAppId + "&"
                                                              + "app_code=" + hereAppCode + "&"

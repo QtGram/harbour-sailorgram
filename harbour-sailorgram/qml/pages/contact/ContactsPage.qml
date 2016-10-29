@@ -12,6 +12,15 @@ Page
 
     ContactsList
     {
+        PullDownMenu
+        {
+            MenuItem
+            {
+                text: qsTr("About")
+                onClicked: pageStack.push(Qt.resolvedUrl("../about/AboutPage.qml"), { context: contactspage.context })
+            }
+        }
+
         anchors.fill: parent
         context: contactspage.context
         clip: true

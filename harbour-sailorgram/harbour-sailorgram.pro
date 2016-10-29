@@ -169,3 +169,11 @@ OTHER_FILES += \
     rpm/harbour-sailorgram.yaml \
     harbour-sailorgram.desktop \
     qml/cover/*.png
+
+DISTFILES += \
+    qml/pages/about/AboutPage.qml \
+    qml/pages/about/DevelopersPage.qml \
+    qml/components/about/CollaboratorsLabel.qml \
+    qml/components/about/ThirdPartyLabel.qml \
+    qml/pages/about/ThirdPartyPage.qml \
+    qml/pages/about/TranslationsPage.qml
