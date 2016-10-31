@@ -28,11 +28,21 @@ ListItem
         Label
         {
             id: lbltitle
-            text: model.title
+            textFormat: Text.StyledText
             font { family: Theme.fontFamilyHeading; pixelSize: Theme.fontSizeSmall }
             elide: Text.ElideRight
             color: Theme.highlightColor
             width: parent.width - lblstatus.contentWidth - Theme.paddingSmall
+
+            text: {
+                if(model.isBroadcast)
+                    return "<img align='bottom' width='" + font.pixelSize + "' height='" + font.pixelSize + "' src='qrc:///res/channel.png'> " + model.title;
+
+                if(model.isChat || model.isMegaGroup)
+                    return "<img align='bottom' width='" + font.pixelSize + "' height='" + font.pixelSize + "' src='qrc:///res/chat.png'> " + model.title;
+
+                return model.title;
+            }
         }
 
         MessageStatus
