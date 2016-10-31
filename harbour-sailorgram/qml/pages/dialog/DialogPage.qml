@@ -11,6 +11,7 @@ Page
     property var dialog
 
     id: dialogpage
+    allowedOrientations: Orientation.All
 
     MessagesModel
     {

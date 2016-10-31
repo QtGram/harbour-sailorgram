@@ -9,6 +9,7 @@ Page
     property Context context
 
     id: contactspage
+    allowedOrientations: Orientation.All
 
     ContactsList
     {

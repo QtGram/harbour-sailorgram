@@ -43,6 +43,7 @@ Page
     }
 
     id: mainpage
+    allowedOrientations: Orientation.All
     onStatusChanged: attachContacts()
 
     SilicaFlickable
