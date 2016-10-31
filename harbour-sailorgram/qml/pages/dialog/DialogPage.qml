@@ -20,24 +20,38 @@ Page
         dialog: dialogpage.dialog
     }
 
-    Column
+    SilicaFlickable
     {
         anchors.fill: parent
 
-        DialogTopHeader
+        Column
         {
-            id: dialogtopheader
-            title: messagesmodel.title
-            statusText: messagesmodel.statusText
-            peer: dialogpage.dialog
-        }
+            anchors.fill: parent
 
-        MessagesList
-        {
-            id: messageslist
-            width: parent.width
-            height: parent.height - dialogtopheader.height
-            model: messagesmodel
+            DialogTopHeader
+            {
+                id: dialogtopheader
+                title: messagesmodel.title
+                statusText: messagesmodel.statusText
+                peer: dialogpage.dialog
+                visible: !context.chatheaderhidden
+            }
+
+            MessagesList
+            {
+                id: messageslist
+                width: parent.width
+                model: messagesmodel
+
+                height: {
+                    var h = parent.height
+
+                    if(dialogtopheader.visible)
+                        h -= dialogtopheader.height;
+
+                    return h;
+                }
+            }
         }
     }
 }

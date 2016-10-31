@@ -28,9 +28,9 @@ Item
 
         anchors {
             top: model.isMessageOut ? undefined : parent.top
-            right: !model.isMessageOut ? undefined : parent.right
+            right: model.isMessageOut ? undefined : parent.right
             bottom: !model.isMessageOut ? undefined: parent.bottom
-            left: model.isMessageOut ? undefined : parent.left
+            left: !model.isMessageOut ? undefined : parent.left
         }
     }
 }

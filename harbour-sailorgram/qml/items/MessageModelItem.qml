@@ -16,11 +16,11 @@ MouseArea
             return maxWidth;
 
         var w = Math.max(lblhiddenfrom.contentWidth, lblhiddenmessage.contentWidth, mediamessageitem.contentWidth, messagestatus.contentWidth);
-        return Math.min(w, maxWidth);
+        return Math.min(w, maxWidth) + Theme.paddingSmall;
     }
 
     height: {
-        var h = Theme.paddingSmall;
+        var h = Theme.paddingMedium;
 
         if(lblfrom.visible)
             h += lblfrom.contentHeight + content.spacing;
@@ -38,8 +38,8 @@ MouseArea
     }
 
     anchors {
-        right: !model.isMessageOut ? undefined : parent.right
-        left: model.isMessageOut ? undefined : parent.left
+        right: model.isMessageOut ? undefined : parent.right
+        left: !model.isMessageOut ? undefined : parent.left
         rightMargin: Theme.paddingMedium
         leftMargin: Theme.paddingMedium
     }
@@ -49,7 +49,7 @@ MouseArea
         anchors.fill: parent
 
         visible: {
-            if(context.bubbleshidden || mediamessageitem.isSticker || mediamessageitem.isAnimated)
+            if(context.bubbleshidden)
                 return false;
 
             return !model.isMessageService;
@@ -59,7 +59,6 @@ MouseArea
     Column
     {
         id: content
-        spacing: Theme.paddingSmall
 
         anchors {
             left: parent.left
@@ -79,7 +78,7 @@ MouseArea
             width: parent.width
             font { bold: true; pixelSize: Theme.fontSizeSmall }
             color: ColorScheme.colorizeText(model.isMessageService, model.isMessageOut, context)
-            visible: messagesModel.isChat && !model.isMessageOut && !model.isMessageService
+            visible: !model.isMessageOut && !model.isMessageService
             text: lblhiddenfrom.text
 
             horizontalAlignment: {
@@ -161,7 +160,7 @@ MouseArea
             id: messagestatus
             width: parent.width
             visible: !model.isMessageService
-            horizontalAlignment: Text.AlignRight
+            horizontalAlignment: model.isMessageOut ? Text.AlignLeft : Text.AlignRight
             isMessageOut: model.isMessageOut
             isMessageUnread: model.isMessageUnread
             isMessageEdited: model.isMessageEdited
