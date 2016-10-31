@@ -21,7 +21,7 @@ LIBS += -L$$LIBQTELEGRAM_LIB_DIR -lQTelegram
 INCLUDEPATH += $$LIBQTELEGRAM_INCLUDE_PATH
 
 # LibQTelegram
-libqtelegram.files = $$OUT_PWD/../LibQTelegram/*.so*
+libqtelegram.files = $$OUT_PWD/../LibQTelegram/libQTelegram.so
 libqtelegram.path  = /usr/share/$$TARGET/lib
 INSTALLS += libqtelegram
 

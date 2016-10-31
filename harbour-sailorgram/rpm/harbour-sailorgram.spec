@@ -67,6 +67,10 @@ rm -rf %{buildroot}
 # >> install post
 mkdir -p %{buildroot}/usr/lib/systemd/user/post-user-session.target.wants
 ln -s ../harbour-sailorgram-notifications.service %{buildroot}/usr/lib/systemd/user/post-user-session.target.wants/harbour-sailorgram-notifications.service
+
+ln -s /usr/share/%{name}/lib/libQTelegram.so %{buildroot}/usr/share/%{name}/lib/libQTelegram.so.1
+ln -s /usr/share/%{name}/lib/libQTelegram.so %{buildroot}/usr/share/%{name}/lib/libQTelegram.so.1.0
+ln -s /usr/share/%{name}/lib/libQTelegram.so %{buildroot}/usr/share/%{name}/lib/libQTelegram.so.1.0.0
 # << install post
 
 desktop-file-install --delete-original       \
