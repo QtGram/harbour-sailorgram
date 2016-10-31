@@ -5,10 +5,23 @@ import "../../model"
 Column
 {
     property Context context
-    property bool authError: false
 
     id: signup
     spacing: Theme.paddingMedium
+
+    Connections
+    {
+        target: context.telegram
+
+        onPhoneCodeError: {
+            txterrormsg.text = qsTr("ERROR: %1").arg(errormessage);
+
+            btnsignup.enabled = true;
+            btnsignup.text = qsTr("Sign Up");
+
+            timdisablebutton.restart();
+        }
+    }
 
     Timer
     {
@@ -27,11 +40,22 @@ Column
     Label
     {
         id: lblinfo
-        text: authError ? qsTr("You have entered a wrong Authorization Code") : qsTr("Wait for the SMS containing the activation code and press 'Sign Up'")
+        text: qsTr("Wait for the SMS containing the activation code and press 'Sign Up'")
         font.pixelSize: Theme.fontSizeSmall
         anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
         horizontalAlignment: Text.AlignHCenter
         wrapMode: Text.WordWrap
+    }
+
+    Label
+    {
+        id: txterrormsg
+        font { bold: true; underline: true; pixelSize: Theme.fontSizeSmall }
+        color: Theme.secondaryHighlightColor
+        visible: txterrormsg.visible
+        anchors.horizontalCenter: parent.horizontalCenter
+        horizontalAlignment: Text.AlignHCenter
+        wrapMode: Text.Wrap
     }
 
     TextField
@@ -54,11 +78,6 @@ Column
         anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
         placeholderText: qsTr("Code")
         inputMethodHints: Qt.ImhNoAutoUppercase | Qt.ImhNoPredictiveText | Qt.ImhDigitsOnly
-
-        onTextChanged: {
-            if(authError)
-                authError = false; /* Reset Error State */
-        }
     }
 
     Button
