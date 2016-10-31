@@ -1,8 +1,8 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.Model 1.0
-import "../../components/about"
-import "../../model"
+import "../../../components/about"
+import "../../../model"
 
 Page
 {

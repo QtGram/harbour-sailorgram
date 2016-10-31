@@ -24,8 +24,12 @@ Item
     }
 
     property bool bubbleshidden: false
-    property bool angledbubbles: true
+    property bool angledbubbles: false
     property bool sendwithreturn: false
+    property bool chatheaderhidden: false
+    property bool immediateopen: false
+    property bool autoloadimages:false
+    property bool showsearchfield: false
     property real bubblesopacity: 100.0
 
     property SailorGram sailorgram: SailorGram { }
@@ -52,7 +56,7 @@ Item
         if(beta)
             ver += " BETA " + betanum;
 
-        return ver;
+        return ver + " (LAYER " + context.telegram.apiLayer + ")";
     }
 
     function locationThumbnail(latitude, longitude, width, height, z) {
@@ -64,4 +68,20 @@ Item
     }
 
     id: context
+
+    Component.onCompleted: {
+        Settings.load(function(tx) {
+            context.sendwithreturn = parseInt(Settings.transactionGet(tx, "sendwithreturn"));
+            context.chatheaderhidden = parseInt(Settings.transactionGet(tx, "chatheaderhidden"));
+            context.immediateopen = parseInt(Settings.transactionGet(tx, "immediateopen"));
+            context.autoloadimages = parseInt(Settings.transactionGet(tx, "autoloadimages"));
+            context.bubbleshidden = parseInt(Settings.transactionGet(tx, "hidebubbles"));
+            context.angledbubbles = parseInt(Settings.transactionGet(tx, "angledbubbles"));
+            context.showsearchfield = parseInt(Settings.transactionGet(tx, "showsearchfield"));
+            context.sailorgram.keepRunning = parseInt(Settings.transactionGet(tx, "keeprunning"));
+
+            var opacity = Settings.transactionGet(tx, "bubblesopacity");
+            context.bubblesopacity = (opacity === false) ? 100 : parseInt(opacity);
+        });
+    }
 }

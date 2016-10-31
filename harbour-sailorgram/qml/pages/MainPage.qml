@@ -45,6 +45,12 @@ Page
 
             MenuItem
             {
+                text: qsTr("Settings")
+                onClicked: pageStack.push(Qt.resolvedUrl("settings/SettingsPage.qml"), { context: mainpage.context });
+            }
+
+            MenuItem
+            {
                 text: qsTr("Contacts")
                 onClicked: pageStack.push(Qt.resolvedUrl("contact/ContactsPage.qml"), { context: mainpage.context });
             }

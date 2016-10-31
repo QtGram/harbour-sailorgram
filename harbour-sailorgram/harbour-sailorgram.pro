@@ -171,12 +171,8 @@ OTHER_FILES += \
     qml/cover/*.png
 
 DISTFILES += \
-    qml/pages/about/AboutPage.qml \
-    qml/pages/about/DevelopersPage.qml \
     qml/components/about/CollaboratorsLabel.qml \
     qml/components/about/ThirdPartyLabel.qml \
-    qml/pages/about/ThirdPartyPage.qml \
-    qml/pages/about/TranslationsPage.qml \
     qml/pages/dialog/DialogPage.qml \
     qml/components/dialog/DialogTopHeader.qml \
     qml/components/custom/BackgroundRectangle.qml \
@@ -188,4 +184,12 @@ DISTFILES += \
     qml/components/message/media/LocationMessage.qml \
     qml/components/message/media/FileMessage.qml \
     qml/components/message/media/WebPageMessage.qml \
-    qml/components/message/MessageTextInput.qml
+    qml/components/message/MessageTextInput.qml \
+    qml/pages/settings/SettingsPage.qml \
+    qml/pages/settings/about/AboutPage.qml \
+    qml/pages/settings/about/DevelopersPage.qml \
+    qml/pages/settings/about/ThirdPartyPage.qml \
+    qml/pages/settings/about/TranslationsPage.qml \
+    qml/components/custom/SettingLabel.qml \
+    qml/pages/settings/ChatSettingsPage.qml \
+    qml/pages/settings/DaemonSettingsPage.qml
