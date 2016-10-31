@@ -7,6 +7,16 @@ import "../../items"
 SilicaListView
 {
     property Context context
+    property var lastDialog: null
+
+    function openDialog(dialog) {
+        if(dialog !== dialogslist.lastDialog) {
+            dialogslist.lastDialog = dialog;
+            pageStack.pushAttached(Qt.resolvedUrl("../../pages/dialog/DialogPage.qml"), { context: dialogslist.context, dialog: dialog });
+        }
+
+        pageStack.navigateForward();
+    }
 
     id: dialogslist
     spacing: Theme.paddingSmall
@@ -18,10 +28,6 @@ SilicaListView
 
     delegate: DialogModelItem {
         width: parent.width
-
-        onClicked: {
-            pageStack.push(Qt.resolvedUrl("../../pages/dialog/DialogPage.qml"), { context: dialogslist.context,
-                                                                                  dialog: model.item });
-        }
+        onClicked: openDialog(model.item)
     }
 }
