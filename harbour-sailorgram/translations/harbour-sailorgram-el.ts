@@ -60,6 +60,49 @@
     </message>
 </context>
 <context>
+    <name>ChatSettingsPage</name>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chat header visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open media without waiting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Load images automatically</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bubbles visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bubbles with angle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bubble opacity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keyboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send Messages by pressing Return Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ContactsPage</name>
     <message>
         <source>About</source>
@@ -79,6 +122,29 @@ message(s)</source>
     </message>
     <message>
         <source>Connected</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DaemonSettingsPage</name>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keep running</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SailorGram keeps running in background even when closed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Autostart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SailorGram starts automatically</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -116,6 +182,14 @@ message(s)</source>
     <name>MainPage</name>
     <message>
         <source>Chats</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contacts</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -157,15 +231,22 @@ message(s)</source>
     </message>
 </context>
 <context>
+    <name>SettingsPage</name>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chats</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Daemon</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SignIn</name>
-    <message>
-        <source>You have entered a wrong Authorization Code</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Code</source>
         <translation type="unfinished"></translation>
@@ -178,13 +259,17 @@ message(s)</source>
         <source>Sending request...</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>ERROR: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wait for the SMS containing the activation code and press &apos;Sign In&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SignUp</name>
-    <message>
-        <source>You have entered a wrong Authorization Code</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Wait for the SMS containing the activation code and press &apos;Sign Up&apos;</source>
         <translation type="unfinished"></translation>
@@ -207,6 +292,10 @@ message(s)</source>
     </message>
     <message>
         <source>Sending request...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ERROR: %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
