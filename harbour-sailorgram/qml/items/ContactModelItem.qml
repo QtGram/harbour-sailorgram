@@ -10,7 +10,7 @@ ListItem
     PeerImage
     {
         id: peerimage
-        anchors { left: parent.left; top: parent.top }
+        anchors { left: parent.left; top: parent.top; leftMargin: Theme.paddingSmall }
         size: contactmodelitem.height
         backgroundColor: Theme.secondaryHighlightColor
         foregroundColor: Theme.primaryColor

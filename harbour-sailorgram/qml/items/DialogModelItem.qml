@@ -11,7 +11,7 @@ ListItem
     PeerImage
     {
         id: peerimage
-        anchors { left: parent.left; top: parent.top }
+        anchors { left: parent.left; top: parent.top; leftMargin: Theme.paddingSmall }
         size: dialogmodelitem.height
         backgroundColor: Theme.secondaryHighlightColor
         foregroundColor: Theme.primaryColor
@@ -22,7 +22,7 @@ ListItem
     Row
     {
         id: headerrow
-        anchors { left: peerimage.right; top: parent.top; right: parent.right; leftMargin: Theme.paddingSmall }
+        anchors { left: peerimage.right; top: parent.top; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
         height: lbltitle.contentHeight
 
         Label
