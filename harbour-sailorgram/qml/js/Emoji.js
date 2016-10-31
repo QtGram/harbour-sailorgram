@@ -41,6 +41,6 @@ function emojify(s, height, emojipath, notification)
                          if(notification === true)
                              return "<img alt=\"" + match + "\" src=\"" + emoji + "\">";
 
-                         return "<img alt=\"" + match + "\" align=\"middle\" width=\"" + height + "\" height=\"" + height + "\" src=\"" + emoji + "\"></img>";
+                         return "<img alt=\"" + match + "\" align=\"middle\" width=\"" + height + "\" height=\"" + height + "\" src=\"" + emoji + "\">";
                      });
 }

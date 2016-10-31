@@ -63,12 +63,3 @@ function elaborate(s, emojipath, height, highlightcolor, openurls)
     res = mentionify(res, highlightcolor);
     return res;
 }
-
-function elaborateNotify(s, emojipath, height)
-{
-    return s; // NOTE: Lipstick doesn't support markup!
-    //var res = Emoji.emojify(s, height, emojipath, true);
-    //res = linkify(res);
-    //res = mentionifyBold(res);
-    //return res;
-}
