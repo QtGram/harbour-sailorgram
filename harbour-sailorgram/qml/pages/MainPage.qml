@@ -14,8 +14,8 @@ Page
                 loader.setSource(Qt.resolvedUrl("../components/dialog/DialogsList.qml"), { context: mainpage.context });
                 header.title = qsTr("Chats");
 
-                if(!mainpage.canNavigateForward)
-                    pageStack.pushAttached(Qt.resolvedUrl("contact/ContactsPage.qml"), { context: mainpage.context });
+                mainpage.needsContactPage = true;
+                mainpage.attachContacts();
             }
         }
 
@@ -33,7 +33,17 @@ Page
         }
     }
 
+    property bool needsContactPage: false
+
+    function attachContacts() {
+        if(!needsContactPage || (status !== PageStatus.Active) || mainpage.canNavigateForward)
+            return;
+
+        pageStack.pushAttached(Qt.resolvedUrl("contact/ContactsPage.qml"), { context: mainpage.context });
+    }
+
     id: mainpage
+    onStatusChanged: attachContacts()
 
     SilicaFlickable
     {
