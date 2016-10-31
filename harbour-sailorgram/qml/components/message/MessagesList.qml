@@ -18,8 +18,7 @@ SilicaListView
     header: Column {
         width: messageslist.width
         spacing: Theme.paddingMedium
-
-        Behavior on height { NumberAnimation { duration: 250 } }
+        Component.onCompleted: messageslist.scrollToBottom()
 
         MessageTextInput {
             id: messagetextinput
