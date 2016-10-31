@@ -4,8 +4,22 @@ import "../custom"
 
 InverseMouseArea
 {
+    signal sendMessage(string message)
+
+    function prepareMessage() {
+        var msg = context.sendwithreturn ? (tamessage.text.trim().replace(/\r\n|\n|\r/gm, "")) : tamessage.text.trim();
+        sendMessage(msg);
+
+        Qt.inputMethod.commit();
+        tamessage.text = "";
+    }
+
     id: messagetextinput
     height: lbltimestamp.y + lbltimestamp.height + Theme.paddingSmall
+
+    onClickedOutside: {
+        tamessage.focus = false;
+    }
 
     BackgroundRectangle { anchors.fill: parent }
 
@@ -20,6 +34,14 @@ InverseMouseArea
 
         EnterKey.enabled: text.trim().length > 0
         EnterKey.iconSource: context.sendwithreturn ? "image://theme/icon-m-enter-accept" : "image://theme/icon-m-enter"
+
+        EnterKey.onClicked: {
+            if(!context.sendwithreturn)
+                return;
+
+            prepareMessage();
+        }
+
     }
 
     IconButton
@@ -27,10 +49,7 @@ InverseMouseArea
         id: btnsend
         anchors.right: parent.right
         icon.source: (tamessage.text.length <= 0) ? "image://theme/icon-m-attach" : "image://theme/icon-m-message"
-
-        onClicked: {
-
-        }
+        onClicked: prepareMessage()
     }
 
     Label

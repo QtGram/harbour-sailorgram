@@ -24,6 +24,7 @@ SilicaListView
         MessageTextInput {
             id: messagetextinput
             width: parent.width
+            onSendMessage: model.sendMessage(message)
         }
     }
 
