@@ -18,9 +18,9 @@ SilicaListView
 
     header: Column {
         width: messageslist.width
+        height: messagetextinput.height
         spacing: Theme.paddingMedium
-        Component.onCompleted: messageslist.scrollToBottom()
-
+        visible: height > 0 && model.isWritable
 
         MessageTextInput {
             id: messagetextinput
