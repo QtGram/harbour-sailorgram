@@ -192,4 +192,8 @@ DISTFILES += \
     qml/pages/settings/about/TranslationsPage.qml \
     qml/components/custom/SettingLabel.qml \
     qml/pages/settings/ChatSettingsPage.qml \
-    qml/pages/settings/DaemonSettingsPage.qml
+    qml/pages/settings/DaemonSettingsPage.qml \
+    qml/components/message/NewMessage.qml \
+    qml/components/message/MessageQuote.qml \
+    qml/components/message/reply/MessageReplyItem.qml \
+    qml/components/message/reply/MessageReplyImage.qml

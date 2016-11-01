@@ -10,15 +10,17 @@ SilicaListView
 
     id: messageslist
     spacing: Theme.paddingMedium
-    cacheBuffer: model.loadCount
+    cacheBuffer: Screen.height * 2
     verticalLayoutDirection: ListView.BottomToTop
     currentIndex: -1
     clip: true
+    Component.onCompleted: messageslist.positionViewAtIndex(model.newMessageIndex, ListView.Center);
 
     header: Column {
         width: messageslist.width
         spacing: Theme.paddingMedium
         Component.onCompleted: messageslist.scrollToBottom()
+
 
         MessageTextInput {
             id: messagetextinput
@@ -28,6 +30,7 @@ SilicaListView
     }
 
     delegate: MessageModelItem {
+        width: parent.width
         maxWidth: parent.width * 0.8
     }
 

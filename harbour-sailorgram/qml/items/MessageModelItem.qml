@@ -3,50 +3,23 @@ import Sailfish.Silica 1.0
 import harbour.sailorgram.LibQTelegram 1.0
 import "../components/message"
 import "../components/message/media"
+import "../components/message/reply"
 import "../js/ColorScheme.js" as ColorScheme
 
-MouseArea
+Item
 {
     property real maxWidth
 
     id: messagemodelitem
 
-    width: {
-        if(model.isMessageService)
-            return maxWidth;
-
-        var w = Math.max(lblhiddenfrom.contentWidth, lblhiddenmessage.contentWidth, mediamessageitem.contentWidth, messagestatus.contentWidth);
-        return Math.min(w, maxWidth) + Theme.paddingSmall;
-    }
-
     height: {
-        var h = Theme.paddingMedium;
-
-        if(lblfrom.visible)
-            h += lblfrom.contentHeight + content.spacing;
-
-        if(mediamessageitem.visible)
-            h += mediamessageitem.height + content.spacing;
-
-        if(lblmessage.visible)
-            h += lblmessage.contentHeight + content.spacing;
-
-        if(messagestatus.visible)
-            h += messagestatus.contentHeight + content.spacing;
-
+        var h = content.height
         return h;
-    }
-
-    anchors {
-        right: model.isMessageOut ? undefined : parent.right
-        left: !model.isMessageOut ? undefined : parent.left
-        rightMargin: Theme.paddingMedium
-        leftMargin: Theme.paddingMedium
     }
 
     MessageBubble
     {
-        anchors.fill: parent
+        anchors { fill: content; leftMargin: -Theme.paddingSmall; rightMargin: -Theme.paddingSmall}
 
         visible: {
             if(context.bubbleshidden)
@@ -56,30 +29,39 @@ MouseArea
         }
     }
 
+    NewMessage { id: newmessage; visible: model.isMessageNew }
+
     Column
     {
         id: content
 
-        anchors {
-            left: parent.left
-            top: parent.top
-            right: parent.right
-            leftMargin: Theme.paddingSmall
-            topMargin: Theme.paddingSmall
-            rightMargin: Theme.paddingSmall
+        width: {
+            if(model.isMessageService)
+                return maxWidth;
+
+            var w = Math.max(lblfrom.calculatedWidth, lblmessage.calculatedWidth, mediamessageitem.contentWidth, messagestatus.contentWidth);
+            return Math.min(w, maxWidth) + Theme.paddingSmall;
         }
 
-        MessageText { id: lblhiddenfrom; visible: false; emojiPath: context.sailorgram.emojiPath; rawText: model.messageFrom; font { bold: true; pixelSize: Theme.fontSizeSmall } }
-        MessageText { id: lblhiddenmessage; visible: false; emojiPath: context.sailorgram.emojiPath; rawText: model.messageText; font.pixelSize: Theme.fontSizeSmall }
 
-        Label
+        anchors {
+            top: newmessage.bottom
+            right: model.isMessageOut ? undefined : parent.right
+            left: !model.isMessageOut ? undefined : parent.left
+            leftMargin: Theme.paddingMedium
+            topMargin: newmessage.visible ? Theme.paddingSmall : 0
+            rightMargin: Theme.paddingMedium
+        }
+
+        MessageText
         {
             id: lblfrom
             width: parent.width
+            emojiPath: context.sailorgram.emojiPath
             font { bold: true; pixelSize: Theme.fontSizeSmall }
             color: ColorScheme.colorizeText(model.isMessageService, model.isMessageOut, context)
             visible: !model.isMessageOut && !model.isMessageService
-            text: lblhiddenfrom.text
+            rawText: model.messageFrom
 
             horizontalAlignment: {
                 if(model.isMessageOut)
@@ -87,6 +69,15 @@ MouseArea
 
                 return Text.AlignRight;
             }
+        }
+
+        MessageReplyItem
+        {
+            id: messagereply
+            width: parent.width
+            quoteColor: ColorScheme.colorizeLink(model.isMessageService, model.isMessageOut, context)
+            color: ColorScheme.colorizeText(model.isMessageService, model.isMessageOut, context)
+            visible: model.messageHasReply
         }
 
         MediaMessageItem
@@ -119,7 +110,7 @@ MouseArea
             }
 
             webPageDelegate: WebPageMessage {
-                width: parent.width
+                width: Math.min(calculatedWidth, maxWidth)
                 color: ColorScheme.colorizeText(model.isMessageService, model.isMessageOut, context)
                 quoteColor: ColorScheme.colorizeLink(model.isMessageService, model.isMessageOut, context)
                 title: mediamessageitem.webPageTitle
@@ -135,11 +126,12 @@ MouseArea
             }
         }
 
-        Label
+        MessageText
         {
             id: lblmessage
             width: parent.width
-            text: lblhiddenmessage.text
+            emojiPath: context.sailorgram.emojiPath
+            rawText: model.messageText
             wrapMode: Text.Wrap
             font { italic: model.isMessageService; pixelSize: Theme.fontSizeSmall }
             color: ColorScheme.colorizeText(model.isMessageService, model.isMessageOut, context)

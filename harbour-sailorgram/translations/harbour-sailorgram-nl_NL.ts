@@ -208,6 +208,13 @@ message(s)</source>
     </message>
 </context>
 <context>
+    <name>NewMessage</name>
+    <message>
+        <source>%1   New messages   %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PhoneNumber</name>
     <message>
         <source>Insert your phone number and press &apos;Next&apos;</source>

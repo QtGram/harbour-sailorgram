@@ -4,11 +4,16 @@ import "../../message"
 
 Column
 {
+    readonly property real calculatedWidth: Math.max(wpurl.calculatedWidth,
+                                                     wptitle.calculatedWidth,
+                                                     wpdescription.calculatedWidth,
+                                                     imgthumbnail.sourceSize.width)
+
     property alias url: wpurl.rawText
-    property alias title: wptitle.text
-    property alias description: wpdescription.text
+    property alias title: wptitle.rawText
+    property alias description: wpdescription.rawText
     property alias source: imgthumbnail.source
-    property alias quoteColor: quoterect.color
+    property alias quoteColor: messagequote.color
     property color color: Theme.primaryColor
 
     id: webpageelement
@@ -18,6 +23,8 @@ Column
     {
         id: wpurl
         emojiPath: context.sailorgram.emojiPath
+        font.pixelSize: Theme.fontSizeSmall
+        color: webpageelement.color
         width: parent.width
         wrapMode: Text.NoWrap
         elide: Text.ElideRight
@@ -30,12 +37,7 @@ Column
         height: previewcontent.height
         spacing: Theme.paddingSmall
 
-        Rectangle
-        {
-            id: quoterect
-            width: Theme.paddingSmall
-            height: parent.height
-        }
+        MessageQuote { id: messagequote; height: parent.height }
 
         Column
         {
@@ -43,18 +45,20 @@ Column
             width: parent.width - (Theme.paddingSmall * 2)
             spacing: Theme.paddingMedium
 
-            Label
+            MessageText
             {
                 id: wptitle
+                emojiPath: context.sailorgram.emojiPath
                 color: webpageelement.color
                 width: parent.width
                 wrapMode: Text.Wrap
                 font { bold: true; pixelSize: Theme.fontSizeSmall }
             }
 
-            Label
+            MessageText
             {
                 id: wpdescription
+                emojiPath: context.sailorgram.emojiPath
                 color: webpageelement.color
                 width: parent.width
                 wrapMode: Text.Wrap
