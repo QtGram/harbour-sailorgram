@@ -198,4 +198,5 @@ DISTFILES += \
     qml/components/message/NewMessage.qml \
     qml/components/message/MessageQuote.qml \
     qml/components/message/reply/MessageReplyItem.qml \
-    qml/components/message/reply/MessageReplyImage.qml
+    qml/components/message/reply/MessageReplyImage.qml \
+    qml/pages/dialog/NewChatPage.qml

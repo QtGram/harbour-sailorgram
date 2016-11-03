@@ -196,6 +196,10 @@ message(s)</source>
         <source>Contacts</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>New Group/Channel</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageStatus</name>
@@ -208,6 +212,17 @@ message(s)</source>
     <name>MessageTextInput</name>
     <message>
         <source>Message...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>NewChatPage</name>
+    <message>
+        <source>Create</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

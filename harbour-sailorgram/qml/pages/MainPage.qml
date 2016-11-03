@@ -54,6 +54,12 @@ Page
 
             MenuItem
             {
+                text: qsTr("New Group/Channel")
+                onClicked: pageStack.push(Qt.resolvedUrl("dialog/NewChatPage.qml"), { context: mainpage.context });
+            }
+
+            MenuItem
+            {
                 text: qsTr("Contacts")
                 onClicked: pageStack.push(Qt.resolvedUrl("contact/ContactsPage.qml"), { context: mainpage.context });
             }
