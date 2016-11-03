@@ -146,7 +146,9 @@ ListItem
                 text: model.unreadCount
                 color: Theme.primaryColor
                 anchors.centerIn: parent
-                font { pixelSize: Theme.fontSizeSmall; bold: true }
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                font { pixelSize: Theme.fontSizeExtraSmall; bold: true }
             }
         }
     }
