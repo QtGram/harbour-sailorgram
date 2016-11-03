@@ -50,6 +50,10 @@ Item
         }
     }
 
+    property DialogsModel dialogs: DialogsModel {
+        telegram: context.telegram
+    }
+
     function versionString() {
         var ver = context.version;
 

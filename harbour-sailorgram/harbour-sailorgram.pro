@@ -84,7 +84,8 @@ HEADERS += \
     src/selector/exif/exif.h \
     src/selector/filesmodel.h \
     src/selector/filesmodelworker.h \
-    src/item/translationinfoitem.h
+    src/item/translationinfoitem.h \
+    src/model/dialogscovermodel.h
 
 # Sources
 SOURCES += \
@@ -100,7 +101,8 @@ SOURCES += \
     src/selector/exif/exif.cpp \
     src/selector/filesmodel.cpp \
     src/selector/filesmodelworker.cpp \
-    src/item/translationinfoitem.cpp
+    src/item/translationinfoitem.cpp \
+    src/model/dialogscovermodel.cpp
 
 # QML
 OTHER_FILES += \

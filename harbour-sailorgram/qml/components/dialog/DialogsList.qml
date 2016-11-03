@@ -20,11 +20,8 @@ SilicaListView
 
     id: dialogslist
     spacing: Theme.paddingSmall
+    model: context.dialogs
     clip: true
-
-    model: DialogsModel {
-        telegram: context.telegram
-    }
 
     delegate: DialogModelItem {
         width: parent.width

@@ -5,37 +5,38 @@ import "../js/Settings.js" as Settings
 
 Page
 {
-    property Context context: Context {
-        telegram {
-            onSignInRequested: loader.setSource(Qt.resolvedUrl("../components/login/SignIn.qml"), { context: mainpage.context });
-            onSignUpRequested: loader.setSource(Qt.resolvedUrl("../components/login/SignUp.qml"), { context: mainpage.context });
+    property Context context
+    property bool loggedIn: false
 
-            onLoginCompleted: {
-                loader.setSource(Qt.resolvedUrl("../components/dialog/DialogsList.qml"), { context: mainpage.context });
-                header.title = qsTr("Chats");
+    Connections
+    {
+        target: context.telegram
+        onSignInRequested: loader.setSource(Qt.resolvedUrl("../components/login/SignIn.qml"), { context: mainpage.context });
+        onSignUpRequested: loader.setSource(Qt.resolvedUrl("../components/login/SignUp.qml"), { context: mainpage.context });
 
-                mainpage.loggedIn = true;
-            }
-        }
+        onLoginCompleted: {
+            loader.setSource(Qt.resolvedUrl("../components/dialog/DialogsList.qml"), { context: mainpage.context });
+            header.title = qsTr("Chats");
 
-        Component.onCompleted: {
-            Settings.load(function(tx) {
-                var phonenumber = Settings.transactionGet(tx, "phonenumber");
-
-                if(phonenumber !== false) {
-                    context.telegram.initializer.phoneNumber = phonenumber;
-                    return;
-                }
-
-                loader.setSource(Qt.resolvedUrl("../components/login/PhoneNumber.qml"), { context: mainpage.context });
-            });
+            mainpage.loggedIn = true;
         }
     }
 
-    property bool loggedIn: false
-
     id: mainpage
     allowedOrientations: Orientation.All
+
+    Component.onCompleted: {
+        Settings.load(function(tx) {
+            var phonenumber = Settings.transactionGet(tx, "phonenumber");
+
+            if(phonenumber !== false) {
+                context.telegram.initializer.phoneNumber = phonenumber;
+                return;
+            }
+
+            loader.setSource(Qt.resolvedUrl("../components/login/PhoneNumber.qml"), { context: mainpage.context });
+        });
+    }
 
     SilicaFlickable
     {
