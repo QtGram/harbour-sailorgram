@@ -1,21 +1,30 @@
 #include "sailorgram.h"
 #include <config/telegramconfig.h>
+#include <types/telegramhelper.h>
 
 const QString SailorGram::DAEMON_FILE = "daemon";
 const QString SailorGram::PUBLIC_KEY_FILE = "public.key";
 const QString SailorGram::EMOJI_FOLDER = "emoji";
+const QString SailorGram::APPLICATION_PRETTY_NAME = "SailorGram";
 
-SailorGram::SailorGram(QObject *parent): QObject(parent), _daemonized(false)
+SailorGram::SailorGram(QObject *parent): QObject(parent), _telegram(NULL), _daemonized(false)
 {
     this->_interface = new SailorgramInterface(this);
+    this->_notifications = new TelegramNotifications(this);
     //this->_autostart = !SailorGram::hasDaemonFile();
 
     connect(qApp, &QGuiApplication::applicationStateChanged, this, &SailorGram::onApplicationStateChanged);
+    connect(this->_notifications, &TelegramNotifications::newMessage, this, &SailorGram::notify);
     connect(this->_interface, &SailorgramInterface::wakeUpRequested, this, &SailorGram::onWakeUpRequested);
     connect(this->_interface, &SailorgramInterface::openDialogRequested, this, &SailorGram::openDialogRequested);
 }
 
-bool SailorGram::autostart()
+Telegram *SailorGram::telegram() const
+{
+    return this->_telegram;
+}
+
+bool SailorGram::autostart() const
 {
     return this->_autostart;
 }
@@ -88,7 +97,12 @@ QString SailorGram::voiceRecordPath() const
     return cachefolder.absoluteFilePath("voice-rec.ogg");
 }
 
-QList<QObject *> SailorGram::translations()
+TelegramNotifications *SailorGram::notifications() const
+{
+    return this->_notifications;
+}
+
+QList<QObject *> SailorGram::translations() const
 {
     QList<QObject *> trlist;
     QFile jsonfile(":/translations/translations.json");
@@ -102,6 +116,16 @@ QList<QObject *> SailorGram::translations()
             trlist.append(new TranslationInfoItem(jsonarrayvalue.toObject()));
     }
     return trlist;
+}
+
+void SailorGram::setTelegram(Telegram *telegram)
+{
+    if(this->_telegram == telegram)
+        return;
+
+    this->_telegram = telegram;
+    this->_notifications->setTelegram(telegram);
+    emit telegramChanged();
 }
 
 void SailorGram::setKeepRunning(bool keep)
@@ -140,6 +164,71 @@ bool SailorGram::hasDaemonFile()
     return QFile::exists(dir.absoluteFilePath(SailorGram::DAEMON_FILE));
 }
 
+void SailorGram::beep() const
+{
+    Notification notification;
+    notification.setCategory("harbour.sailorgram.notificationfg");
+    notification.setAppName(SailorGram::APPLICATION_PRETTY_NAME);
+    notification.setTimestamp(QDateTime::currentDateTime());
+    notification.publish();
+}
+
+void SailorGram::notify(const NotificationObject *notificationobj)
+{
+    if(notificationobj->isCurrentDialog() && (qApp->applicationState() == Qt::ApplicationActive))
+    {
+        this->beep();
+        return;
+    }
+
+    Notification* notification = NULL;
+
+    if(!this->_notificationsmap.contains(notificationobj->dialogId()))
+    {
+        notification = new Notification(this);
+
+        QVariantMap remoteaction;
+        remoteaction["name"] = "default";
+        remoteaction["service"] = "org.harbour.sailorgram";
+        remoteaction["path"] = "/";
+        remoteaction["iface"] = "org.harbour.sailorgram";
+        remoteaction["method"] = "openDialog";
+        remoteaction["arguments"] = (QVariantList() << notificationobj->dialogId());
+        remoteaction["icon"] = "icon-m-notifications";
+
+        notification->setRemoteAction(remoteaction);
+        this->_notificationsmap[notificationobj->dialogId()] = notification;
+
+        connect(notification, &Notification::closed, this, &SailorGram::onNotificationClosed);
+    }
+    else
+        notification = this->_notificationsmap[notificationobj->dialogId()];
+
+    notification->setCategory("harbour.sailorgram.notification");
+    notification->setAppName(SailorGram::APPLICATION_PRETTY_NAME);
+    notification->setTimestamp(QDateTime::currentDateTime());
+
+    notification->setPreviewSummary(notificationobj->title());
+    notification->setSummary(notificationobj->title());
+
+    notification->setPreviewBody(notificationobj->message());
+    notification->setBody(notificationobj->message());
+
+    notification->publish();
+}
+
+void SailorGram::closeNotification(Dialog *dialog)
+{
+    TLInt dialogid = TelegramHelper::identifier(dialog);
+
+    if(!this->_notificationsmap.contains(dialogid))
+        return;
+
+    Notification* notification = this->_notificationsmap.take(dialogid);
+    notification->close();
+    notification->deleteLater();
+}
+
 void SailorGram::onApplicationStateChanged(Qt::ApplicationState state)
 {
     bool active = state == Qt::ApplicationActive;
@@ -149,6 +238,15 @@ void SailorGram::onApplicationStateChanged(Qt::ApplicationState state)
 
     this->_daemonized = !active;
     emit daemonizedChanged();
+}
+
+void SailorGram::onNotificationClosed(uint)
+{
+    Notification* notification = qobject_cast<Notification*>(this->sender());
+    TLInt dialogid = notification->remoteActions().first().toMap()["arguments"].toList().first().toInt();
+
+    this->_notificationsmap.remove(dialogid);
+    notification->deleteLater();
 }
 
 void SailorGram::onWakeUpRequested()

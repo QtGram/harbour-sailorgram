@@ -9,13 +9,33 @@ SilicaListView
     property Context context
     property var lastDialog: null
 
-    function openDialog(dialog) {
+    function openDialog(dialog, focus) {
         if(dialog !== dialogslist.lastDialog) {
             dialogslist.lastDialog = dialog;
             pageStack.pushAttached(Qt.resolvedUrl("../../pages/dialog/DialogPage.qml"), { context: dialogslist.context, dialog: dialog });
         }
 
-        pageStack.navigateForward();
+        pageStack.navigateForward((focus === true) ? PageStackAction.Immediate : PageStackAction.Animated);
+
+         if((focus === true) && (Qt.application.state !== Qt.ApplicationActive))
+             mainwindow.activate();
+    }
+
+    Connections
+    {
+        target: context.sailorgram
+
+         onOpenDialogRequested: {
+            if(pageStack.depth > 1)
+                pageStack.pop(context.mainPage, PageStackAction.Immediate);
+
+            var dialog = context.dialogs.getDialog(dialogid);
+
+            if(!dialog)
+                return;
+
+            openDialog(dialog, true);
+         }
     }
 
     id: dialogslist

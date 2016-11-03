@@ -1,4 +1,5 @@
 import QtQuick 2.1
+import Sailfish.Silica 1.0
 import harbour.sailorgram.LibQTelegram 1.0
 import harbour.sailorgram.SailorGram 1.0
 import "../js/Settings.js" as Settings
@@ -32,7 +33,7 @@ Item
     property bool showsearchfield: false
     property real bubblesopacity: 100.0
 
-    property SailorGram sailorgram: SailorGram { }
+    property Page mainPage: null
 
     property Telegram telegram: Telegram {
         initializer: TelegramInitializer {
@@ -45,9 +46,11 @@ Item
             publicKey: sailorgram.publicKey
         }
 
-        onLoginCompleted: {
-            Settings.set("phonenumber", initializer.phoneNumber);
-        }
+        onLoginCompleted: Settings.set("phonenumber", initializer.phoneNumber);
+    }
+
+    property SailorGram sailorgram: SailorGram {
+        telegram: context.telegram
     }
 
     property DialogsModel dialogs: DialogsModel {

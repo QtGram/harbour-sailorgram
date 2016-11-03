@@ -124,6 +124,10 @@ message(s)</source>
         <source>Connected</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Recent chats:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DaemonSettingsPage</name>

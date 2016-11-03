@@ -104,8 +104,6 @@ CoverBackground
                 font.pixelSize: Theme.fontSizeSmall
                 color: model.unreadCount > 0 ? Theme.highlightColor : Theme.primaryColor
                 text: model.title
-
-                onTextChanged: console.log(model.title)
             }
         }
     }
@@ -126,10 +124,10 @@ CoverBackground
 
         CoverAction
         {
-            iconSource: "alarmcover.png" //context.notifications.globalMute ? "noalarmcover.png" : "alarmcover.png"
+            iconSource: context.sailorgram.notifications.mute ? "noalarmcover.png" : "alarmcover.png"
 
             onTriggered: {
-                //context.notifications.globalMute = !context.notifications.globalMute;
+                context.sailorgram.notifications.mute = !context.sailorgram.notifications.mute;
             }
         }
     }

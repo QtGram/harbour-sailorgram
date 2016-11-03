@@ -13,6 +13,10 @@ Page
     id: dialogpage
     allowedOrientations: Orientation.All
 
+    onStatusChanged: {
+        context.sailorgram.notifications.currentDialog = (status === PageStatus.Active) ? context.dialog : null;
+    }
+
     MessagesModel
     {
         id: messagesmodel

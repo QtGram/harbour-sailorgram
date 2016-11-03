@@ -14,7 +14,7 @@ class SailorgramAdaptor : public QDBusAbstractAdaptor
 
     public slots:
         void wakeUp();
-        void openDialog(QByteArray peerkey);
+        void openDialog(qint32 dialogid);
 };
 
 #endif // SAILORGRAMADAPTOR_H

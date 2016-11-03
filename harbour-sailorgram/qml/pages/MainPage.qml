@@ -26,6 +26,8 @@ Page
     allowedOrientations: Orientation.All
 
     Component.onCompleted: {
+        context.mainPage = mainpage;
+
         Settings.load(function(tx) {
             var phonenumber = Settings.transactionGet(tx, "phonenumber");
 
