@@ -14,7 +14,7 @@ Page
     allowedOrientations: Orientation.All
 
     onStatusChanged: {
-        context.sailorgram.notifications.currentDialog = (status === PageStatus.Active) ? context.dialog : null;
+        context.sailorgram.notifications.currentDialog = (status === PageStatus.Active) ? dialogpage.dialog : null;
     }
 
     MessagesModel
