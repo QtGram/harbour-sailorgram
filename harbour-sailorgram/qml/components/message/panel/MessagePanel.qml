@@ -6,8 +6,12 @@ DockedPanel
     signal replyRequested()
     signal editRequested()
 
-    function checkActions(ismessageout) {
-        piedit.visible = ismessageout;
+    function checkActions(iswritable, ismessageout) {
+        pireply.visible = iswritable;
+        piedit.visible = iswritable && ismessageout;
+
+        if(!pireply.visible && !piedit.visible)
+            hide(true);
     }
 
     id: messagepanel

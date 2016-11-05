@@ -200,6 +200,6 @@ DISTFILES += \
     qml/components/message/reply/MessageReplyImage.qml \
     qml/pages/dialog/NewChatPage.qml \
     qml/components/message/input/MessageTextInput.qml \
-    qml/components/message/input/MessageListHeader.qml \
     qml/components/message/panel/MessagePanel.qml \
-    qml/components/message/panel/MessagePanelItem.qml
+    qml/components/message/panel/MessagePanelItem.qml \
+    qml/components/message/input/MessageReplyInput.qml

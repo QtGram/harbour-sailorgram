@@ -42,7 +42,6 @@ MouseArea
             return Math.min(w, maxWidth) + Theme.paddingSmall;
         }
 
-
         anchors {
             top: parent.top
             right: !model.isMessageOut ? undefined : parent.right

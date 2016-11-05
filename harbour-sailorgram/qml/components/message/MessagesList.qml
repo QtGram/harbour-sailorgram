@@ -8,21 +8,33 @@ import "../../model"
 SilicaListView
 {
     property Message selectedMessage: null
+    property string selectedMessageFrom
     property string selectedMessageText
+    property bool replyMode: false
+    property bool editMode: false
 
-    property alias messagesModel: messageslist.model
+    function prepareActions(model) {
+        messageslist.selectedMessage = model.item;
+        messageslist.selectedMessageFrom = model.messageFrom;
+        messageslist.selectedMessageText = model.messageText;
+    }
 
     Connections
     {
         target: messagepanel
 
         onReplyRequested: {
+            editMode = false;
+            replyMode = true;
 
+            headerItem.activateInput();
         }
 
         onEditRequested: {
-            messageslist.headerItem.editMessage = selectedMessage;
-            messageslist.headerItem.editMessageText = selectedMessageText;
+            editMode = true;
+            replyMode = false;
+
+            headerItem.activateInput(selectedMessageText);
         }
     }
 
@@ -31,12 +43,54 @@ SilicaListView
     cacheBuffer: Screen.height * 2
     verticalLayoutDirection: ListView.BottomToTop
     currentIndex: -1
-    clip: true
+
     Component.onCompleted: messageslist.positionViewAtIndex(model.newMessageIndex, ListView.Center);
 
-    header: MessageListHeader {
-        width: parent.width
-        topMargin: messageslist.spacing
+    header: Column {
+        function activateInput(text) {
+            if(text)
+                messagetextinput.text = text;
+
+            messagetextinput.focusTextArea();
+        }
+
+        function cancelActions() {
+            replyMode = editMode = false;
+            selectedMessageFrom = selectedMessageText = "";
+            selectedMessage = null;
+        }
+
+        id: messagelistheader
+        width: messageslist.width
+        height: messagereplyinput.height + messagetextinput.height
+        visible: messagesmodel.isWritable
+
+        Item { width: parent.width; height: Theme.paddingSmall }
+
+        MessageReplyInput {
+            id: messagereplyinput
+            replyMessage: replyMode ? selectedMessage : null
+            replyFrom: replyMode ? selectedMessageFrom : ""
+            replyText: replyMode ? selectedMessageText : ""
+            width: parent.width
+            onReplyCancelled: messagelistheader.cancelActions()
+        }
+
+        MessageTextInput {
+            id: messagetextinput
+            width: parent.width
+
+            onSendMessage: {
+                if(replyMode)
+                    messagesmodel.replyMessage(message, selectedMessage)
+                else if(editMode)
+                    messagesmodel.editMessage(message, selectedMessage);
+                else
+                    messagesmodel.sendMessage(message);
+
+                messagelistheader.cancelActions();
+            }
+        }
     }
 
     delegate: Column {
@@ -55,14 +109,13 @@ SilicaListView
                 height: peerimage.height
 
                 width: {
-                    if(messagesModel.isChat && !model.isMessageOut && !model.isMessageService)
+                    if(messagesmodel.isChat && !model.isMessageOut && !model.isMessageService)
                         return peerimage.size;
 
                     return 0;
                 }
 
-                PeerImage
-                {
+                PeerImage {
                     id: peerimage
                     size: Theme.iconSizeSmallPlus
                     peer: model.needsPeerImage ? model.item : null
@@ -83,10 +136,9 @@ SilicaListView
                         return;
                     }
 
-                    messageslist.selectedMessage = model.item;
-                    messageslist.selectedMessageText = model.messageText;
+                    prepareActions(model);
 
-                    messagepanel.checkActions(model.isMessageOut)
+                    messagepanel.checkActions(messagesmodel.isWritable, model.isMessageOut)
                     messagepanel.show();
                 }
             }

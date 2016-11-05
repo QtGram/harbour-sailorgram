@@ -55,6 +55,7 @@ Page
             MenuItem
             {
                 text: qsTr("New Group/Channel")
+                enabled: false
                 onClicked: pageStack.push(Qt.resolvedUrl("dialog/NewChatPage.qml"), { context: mainpage.context });
             }
 

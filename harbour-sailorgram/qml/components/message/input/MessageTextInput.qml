@@ -21,7 +21,7 @@ InverseMouseArea
     }
 
     id: messagetextinput
-    height: lbltimestamp.y + lbltimestamp.height + Theme.paddingSmall
+    height: visible ? (lbltimestamp.y + lbltimestamp.height + Theme.paddingSmall) : 0
 
     onClickedOutside: {
         tamessage.focus = false;

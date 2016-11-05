@@ -30,15 +30,10 @@ Page
         clip: messagepanel.expanded
 
         anchors  {
-            fill: parent
-            bottomMargin: messagepanel.moving || messagepanel.expanded ? messagepanel.height : 0
-        }
-
-        Behavior on anchors.bottomMargin {
-            NumberAnimation {
-                duration: messagepanel.animationDuration
-                easing.type: Easing.OutQuad
-            }
+            left: parent.left
+            top: parent.top
+            right: parent.right
+            bottom: messagepanel.top
         }
 
         Column
@@ -58,11 +53,12 @@ Page
             MessagesList
             {
                 id: messageslist
-                width: parent.width
                 model: messagesmodel
+                width: parent.width
+                clip: true
 
                 height: {
-                    var h = parent.height
+                    var h = parent.height;
 
                     if(dialogtopheader.visible)
                         h -= dialogtopheader.height;
