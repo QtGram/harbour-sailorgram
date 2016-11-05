@@ -22,9 +22,38 @@ SilicaListView
         topMargin: messageslist.spacing
     }
 
-    delegate: MessageModelItem {
+    delegate: Row {
         width: parent.width
-        maxWidth: parent.width * 0.8
+
+        Item {
+            id: picontainer
+            anchors.bottom: parent.bottom
+            x: Theme.paddingSmall
+            height: peerimage.height
+
+            width: {
+                if(messagesModel.isChat && !model.isMessageOut && !model.isMessageService)
+                    return peerimage.size;
+
+                return 0;
+            }
+
+            PeerImage
+            {
+                id: peerimage
+                size: Theme.iconSizeSmallPlus
+                peer: model.needsPeerImage ? model.item : null
+                visible: model.needsPeerImage
+                backgroundColor: Theme.secondaryHighlightColor
+                foregroundColor: Theme.primaryColor
+                fontPixelSize: Theme.fontSizeExtraSmall
+            }
+        }
+
+        MessageModelItem {
+            width: parent.width - picontainer.width - Theme.paddingSmall
+            maxWidth: width * 0.8
+        }
     }
 
     VerticalScrollDecorator { flickable: messageslist }

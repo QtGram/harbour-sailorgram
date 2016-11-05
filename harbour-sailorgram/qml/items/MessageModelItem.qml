@@ -55,8 +55,8 @@ Item
 
         anchors {
             top: newmessage.bottom
-            right: model.isMessageOut ? undefined : parent.right
-            left: !model.isMessageOut ? undefined : parent.left
+            right: !model.isMessageOut ? undefined : parent.right
+            left: model.isMessageOut ? undefined : parent.left
             leftMargin: Theme.paddingMedium
             topMargin: newmessage.visible ? Theme.paddingSmall : 0
             rightMargin: Theme.paddingMedium
@@ -74,9 +74,9 @@ Item
 
             horizontalAlignment: {
                 if(model.isMessageOut)
-                    return Text.AlignLeft;
+                    return Text.AlignRight;
 
-                return Text.AlignRight;
+                return Text.AlignLeft;
             }
         }
 
@@ -150,9 +150,9 @@ Item
                     return Text.AlignHCenter;
 
                 if(model.isMessageOut)
-                    return Text.AlignLeft;
+                    return Text.AlignRight;
 
-                return Text.AlignRight;
+                return Text.AlignLeft;
             }
         }
 
@@ -162,7 +162,7 @@ Item
             font.pixelSize: Theme.fontSizeTiny
             width: parent.width
             visible: !model.isMessageService
-            horizontalAlignment: model.isMessageOut ? Text.AlignLeft : Text.AlignRight
+            horizontalAlignment: model.isMessageOut ? Text.AlignRight : Text.AlignLeft
             isMessageOut: model.isMessageOut
             isMessageUnread: model.isMessageUnread
             isMessageEdited: model.isMessageEdited
