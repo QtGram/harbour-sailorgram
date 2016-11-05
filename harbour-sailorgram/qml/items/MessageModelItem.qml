@@ -11,15 +11,7 @@ Item
     property real maxWidth
 
     id: messagemodelitem
-
-    height: {
-        var h = content.height;
-
-        if(newmessage.visible)
-            h += newmessage.height;
-
-        return h;
-    }
+    height: content.height
 
     MessageBubble
     {
@@ -32,8 +24,6 @@ Item
             return !model.isMessageService;
         }
     }
-
-    NewMessage { id: newmessage; visible: model.isMessageNew }
 
     Column
     {
@@ -54,11 +44,10 @@ Item
 
 
         anchors {
-            top: newmessage.bottom
+            top: parent.top
             right: !model.isMessageOut ? undefined : parent.right
             left: model.isMessageOut ? undefined : parent.left
             leftMargin: Theme.paddingMedium
-            topMargin: newmessage.visible ? Theme.paddingSmall : 0
             rightMargin: Theme.paddingMedium
         }
 
@@ -167,7 +156,7 @@ Item
             isMessageUnread: model.isMessageUnread
             isMessageEdited: model.isMessageEdited
             messageDate: model.messageDate
-            color: ColorScheme.colorizeText(model.isMessageService, model.isMessageOut, context)
+            color: Qt.darker(ColorScheme.colorizeText(model.isMessageService, model.isMessageOut, context), 1.5)
             ticksColor: messagestatus.color
         }
     }

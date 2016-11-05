@@ -12,7 +12,7 @@ BackgroundRectangle
     {
         id: label
         anchors.fill: parent
-        text: qsTr("%1   New messages   %1").arg("v")
+        text: qsTr("%1   New messages   %1").arg("↓")
         font.pixelSize: Theme.fontSizeSmall
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter

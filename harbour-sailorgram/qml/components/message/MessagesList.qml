@@ -10,7 +10,7 @@ SilicaListView
     property alias messagesModel: messageslist.model
 
     id: messageslist
-    spacing: Theme.paddingMedium
+    spacing: Theme.paddingLarge
     cacheBuffer: Screen.height * 2
     verticalLayoutDirection: ListView.BottomToTop
     currentIndex: -1
@@ -22,39 +22,46 @@ SilicaListView
         topMargin: messageslist.spacing
     }
 
-    delegate: Row {
+    delegate: Column {
         width: parent.width
+        spacing: Theme.paddingSmall
 
-        Item {
-            id: picontainer
-            anchors.bottom: parent.bottom
-            x: Theme.paddingSmall
-            height: peerimage.height
+        NewMessage { id: newmessage; visible: model.isMessageNew }
 
-            width: {
-                if(messagesModel.isChat && !model.isMessageOut && !model.isMessageService)
-                    return peerimage.size;
+        Row {
+            width: parent.width
 
-                return 0;
+            Item {
+                id: picontainer
+                anchors.top: parent.top
+                x: Theme.paddingSmall
+                height: peerimage.height
+
+                width: {
+                    if(messagesModel.isChat && !model.isMessageOut && !model.isMessageService)
+                        return peerimage.size;
+
+                    return 0;
+                }
+
+                PeerImage
+                {
+                    id: peerimage
+                    size: Theme.iconSizeSmallPlus
+                    peer: model.needsPeerImage ? model.item : null
+                    visible: model.needsPeerImage
+                    backgroundColor: Theme.secondaryHighlightColor
+                    foregroundColor: Theme.primaryColor
+                    fontPixelSize: Theme.fontSizeExtraSmall
+                }
             }
 
-            PeerImage
-            {
-                id: peerimage
-                size: Theme.iconSizeSmallPlus
-                peer: model.needsPeerImage ? model.item : null
-                visible: model.needsPeerImage
-                backgroundColor: Theme.secondaryHighlightColor
-                foregroundColor: Theme.primaryColor
-                fontPixelSize: Theme.fontSizeExtraSmall
+            MessageModelItem {
+                width: parent.width - picontainer.width - Theme.paddingSmall
+                maxWidth: width * 0.8
             }
-        }
-
-        MessageModelItem {
-            width: parent.width - picontainer.width - Theme.paddingSmall
-            maxWidth: width * 0.8
         }
     }
 
-    VerticalScrollDecorator { flickable: messageslist }
+        VerticalScrollDecorator { flickable: messageslist }
 }
