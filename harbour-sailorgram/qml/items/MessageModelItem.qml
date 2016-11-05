@@ -39,7 +39,12 @@ Item
             if(model.isMessageService)
                 return maxWidth;
 
-            var w = Math.max(lblfrom.calculatedWidth, lblmessage.calculatedWidth, mediamessageitem.contentWidth, messagestatus.contentWidth);
+            var w = Math.max(lblfrom.calculatedWidth,
+                             lblmessage.calculatedWidth,
+                             messagereplyitem.calculatedWidth,
+                             mediamessageitem.contentWidth,
+                             messagestatus.contentWidth);
+
             return Math.min(w, maxWidth) + Theme.paddingSmall;
         }
 
@@ -73,7 +78,7 @@ Item
 
         MessageReplyItem
         {
-            id: messagereply
+            id: messagereplyitem
             width: parent.width
             quoteColor: ColorScheme.colorizeLink(model.isMessageService, model.isMessageOut, context)
             color: ColorScheme.colorizeText(model.isMessageService, model.isMessageOut, context)

@@ -1,6 +1,7 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.LibQTelegram 1.0
+import "../../components/message/input"
 import "../../items"
 import "../../model"
 
@@ -16,17 +17,9 @@ SilicaListView
     clip: true
     Component.onCompleted: messageslist.positionViewAtIndex(model.newMessageIndex, ListView.Center);
 
-    header: Column {
-        width: messageslist.width
-        height: messagetextinput.height
-        spacing: Theme.paddingMedium
-        visible: height > 0 && model.isWritable
-
-        MessageTextInput {
-            id: messagetextinput
-            width: parent.width
-            onSendMessage: model.sendMessage(message)
-        }
+    header: MessageListHeader {
+        width: parent.width
+        topMargin: messageslist.spacing
     }
 
     delegate: MessageModelItem {

@@ -44,7 +44,7 @@ Item
             MessageText
             {
                 id: lblfrom
-                font.bold: true
+                font { bold: true; pixelSize: Theme.fontSizeExtraSmall }
                 emojiPath: context.sailorgram.emojiPath
                 width: parent.width - Theme.paddingSmall
                 horizontalAlignment: Text.AlignLeft
@@ -57,7 +57,7 @@ Item
             {
                 id: lblmessage
                 width: parent.width - Theme.paddingSmall
-                font { italic: true; pointSize: Theme.fontSizeMedium }
+                font { italic: true; pixelSize: Theme.fontSizeExtraSmall }
                 emojiPath: context.sailorgram.emojiPath
                 rawText: model.replyText
                 wrapMode: Text.NoWrap

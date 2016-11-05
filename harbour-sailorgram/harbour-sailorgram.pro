@@ -186,7 +186,6 @@ DISTFILES += \
     qml/components/message/media/LocationMessage.qml \
     qml/components/message/media/FileMessage.qml \
     qml/components/message/media/WebPageMessage.qml \
-    qml/components/message/MessageTextInput.qml \
     qml/pages/settings/SettingsPage.qml \
     qml/pages/settings/about/AboutPage.qml \
     qml/pages/settings/about/DevelopersPage.qml \
@@ -199,4 +198,6 @@ DISTFILES += \
     qml/components/message/MessageQuote.qml \
     qml/components/message/reply/MessageReplyItem.qml \
     qml/components/message/reply/MessageReplyImage.qml \
-    qml/pages/dialog/NewChatPage.qml
+    qml/pages/dialog/NewChatPage.qml \
+    qml/components/message/input/MessageTextInput.qml \
+    qml/components/message/input/MessageListHeader.qml
