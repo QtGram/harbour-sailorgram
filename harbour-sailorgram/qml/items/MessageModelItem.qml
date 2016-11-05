@@ -6,7 +6,7 @@ import "../components/message/media"
 import "../components/message/reply"
 import "../js/ColorScheme.js" as ColorScheme
 
-Item
+MouseArea
 {
     property real maxWidth
 

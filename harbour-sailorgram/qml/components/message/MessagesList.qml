@@ -7,7 +7,24 @@ import "../../model"
 
 SilicaListView
 {
+    property Message selectedMessage: null
+    property string selectedMessageText
+
     property alias messagesModel: messageslist.model
+
+    Connections
+    {
+        target: messagepanel
+
+        onReplyRequested: {
+
+        }
+
+        onEditRequested: {
+            messageslist.headerItem.editMessage = selectedMessage;
+            messageslist.headerItem.editMessageText = selectedMessageText;
+        }
+    }
 
     id: messageslist
     spacing: Theme.paddingLarge
@@ -59,9 +76,22 @@ SilicaListView
             MessageModelItem {
                 width: parent.width - picontainer.width - Theme.paddingSmall
                 maxWidth: width * 0.8
+
+                onClicked: {
+                    if(messagepanel.expanded) {
+                        messagepanel.hide();
+                        return;
+                    }
+
+                    messageslist.selectedMessage = model.item;
+                    messageslist.selectedMessageText = model.messageText;
+
+                    messagepanel.checkActions(model.isMessageOut)
+                    messagepanel.show();
+                }
             }
         }
     }
 
-        VerticalScrollDecorator { flickable: messageslist }
+    VerticalScrollDecorator { flickable: messageslist }
 }

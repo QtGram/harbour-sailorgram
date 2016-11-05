@@ -3,6 +3,7 @@ import Sailfish.Silica 1.0
 import harbour.sailorgram.LibQTelegram 1.0
 import "../../components/dialog"
 import "../../components/message"
+import "../../components/message/panel"
 import "../../model"
 
 Page
@@ -26,10 +27,23 @@ Page
 
     SilicaFlickable
     {
-        anchors.fill: parent
+        clip: messagepanel.expanded
+
+        anchors  {
+            fill: parent
+            bottomMargin: messagepanel.moving || messagepanel.expanded ? messagepanel.height : 0
+        }
+
+        Behavior on anchors.bottomMargin {
+            NumberAnimation {
+                duration: messagepanel.animationDuration
+                easing.type: Easing.OutQuad
+            }
+        }
 
         Column
         {
+            id: content
             anchors.fill: parent
 
             DialogTopHeader
@@ -57,5 +71,11 @@ Page
                 }
             }
         }
+    }
+
+    MessagePanel
+    {
+        id: messagepanel
+        width: parent.width
     }
 }

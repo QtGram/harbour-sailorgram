@@ -4,7 +4,13 @@ import "../../custom"
 
 InverseMouseArea
 {
+    property alias text: tamessage.text
+
     signal sendMessage(string message)
+
+    function focusTextArea() {
+        tamessage.forceActiveFocus();
+    }
 
     function prepareMessage() {
         var msg = context.sendwithreturn ? (tamessage.text.trim().replace(/\r\n|\n|\r/gm, "")) : tamessage.text.trim();
