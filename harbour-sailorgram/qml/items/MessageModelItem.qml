@@ -13,7 +13,11 @@ Item
     id: messagemodelitem
 
     height: {
-        var h = content.height
+        var h = content.height;
+
+        if(newmessage.visible)
+            h += newmessage.height;
+
         return h;
     }
 
@@ -155,6 +159,7 @@ Item
         MessageStatus
         {
             id: messagestatus
+            font.pixelSize: Theme.fontSizeTiny
             width: parent.width
             visible: !model.isMessageService
             horizontalAlignment: model.isMessageOut ? Text.AlignLeft : Text.AlignRight

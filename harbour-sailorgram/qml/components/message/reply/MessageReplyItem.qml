@@ -22,7 +22,7 @@ Item
         height: parent.height
         spacing: Theme.paddingSmall
 
-        MessageQuote { id: messagequote; height: parent.height }
+        MessageQuote { id: messagequote; height: previewcontent.height }
 
         MediaMessageItem
         {
@@ -46,7 +46,7 @@ Item
                 id: lblfrom
                 font { bold: true; pixelSize: Theme.fontSizeExtraSmall }
                 emojiPath: context.sailorgram.emojiPath
-                width: parent.width - Theme.paddingSmall
+                width: parent.width - (Theme.paddingSmall * 2)
                 horizontalAlignment: Text.AlignLeft
                 visible: messagesmodel.isChat && !model.isMessageOut && !model.isMessageService
                 rawText: model.replyFrom
@@ -56,7 +56,7 @@ Item
             MessageText
             {
                 id: lblmessage
-                width: parent.width - Theme.paddingSmall
+                width: parent.width - (Theme.paddingSmall* 2)
                 font { italic: true; pixelSize: Theme.fontSizeExtraSmall }
                 emojiPath: context.sailorgram.emojiPath
                 rawText: model.replyText
