@@ -202,6 +202,21 @@ message(s)</source>
     </message>
 </context>
 <context>
+    <name>MessagePanel</name>
+    <message>
+        <source>Reply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MessageStatus</name>
     <message>
         <source>edited</source>
