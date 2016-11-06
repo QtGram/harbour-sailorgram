@@ -41,13 +41,19 @@ InverseMouseArea
         EnterKey.enabled: text.trim().length > 0
         EnterKey.iconSource: context.sendwithreturn ? "image://theme/icon-m-enter-accept" : "image://theme/icon-m-enter"
 
+        onTextChanged: {
+            if(text.length < 2)
+                return;
+
+            messagesmodel.sendAction(MessagesModel.TypingAction);
+        }
+
         EnterKey.onClicked: {
             if(!context.sendwithreturn)
                 return;
 
             prepareMessage();
         }
-
     }
 
     IconButton
