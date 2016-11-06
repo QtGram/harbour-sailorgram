@@ -9,6 +9,7 @@ import "../js/ColorScheme.js" as ColorScheme
 MouseArea
 {
     property real maxWidth
+    property real maxMediaWidth
 
     id: messagemodelitem
     height: content.height
@@ -38,6 +39,9 @@ MouseArea
                              messagereplyitem.calculatedWidth,
                              mediamessageitem.contentWidth,
                              messagestatus.contentWidth);
+
+            if(model.isMessageMedia)
+                return Math.min(w, maxMediaWidth, maxWidth) + Theme.paddingSmall;
 
             return Math.min(w, maxWidth) + Theme.paddingSmall;
         }
