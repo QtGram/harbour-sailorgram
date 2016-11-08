@@ -13,6 +13,7 @@ Page
         target: context.telegram
         onSignInRequested: loader.setSource(Qt.resolvedUrl("../components/login/SignIn.qml"), { context: mainpage.context });
         onSignUpRequested: loader.setSource(Qt.resolvedUrl("../components/login/SignUp.qml"), { context: mainpage.context });
+        onSessionPasswordNeeded: loader.setSource(Qt.resolvedUrl("../components/login/TwoFactor.qml"), { context: mainpage.context, hint: hint })
 
         onLoginCompleted: {
             loader.setSource(Qt.resolvedUrl("../components/dialog/DialogsList.qml"), { context: mainpage.context });
