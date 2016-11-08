@@ -16,8 +16,7 @@ ListItem
     signal editRequested()
 
     id: messagemodelitem
-    height: content.height
-    highlighted: false
+    contentHeight: content.height
     menu: MessageModelItemMenu { }
 
     MessageBubble
