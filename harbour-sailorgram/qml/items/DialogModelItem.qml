@@ -2,17 +2,19 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.LibQTelegram 1.0
 import "../components/message"
+import "../menu"
 
 ListItem
 {
     id: dialogmodelitem
     contentHeight: Theme.itemSizeSmall
+    menu: DialogModelItemMenu { }
 
     PeerImage
     {
         id: peerimage
         anchors { left: parent.left; top: parent.top; leftMargin: Theme.paddingSmall }
-        size: dialogmodelitem.height
+        size: dialogmodelitem.contentHeight
         backgroundColor: Theme.secondaryHighlightColor
         foregroundColor: Theme.primaryColor
         fontPixelSize: Theme.fontSizeLarge
@@ -54,6 +56,7 @@ ListItem
             messageDate: model.topMessageDate
             isMessageOut: model.isTopMessageOut
             isMessageUnread: model.isTopMessageUnread
+            isMute: model.isMuted
             dateFirst: false
         }
     }

@@ -183,6 +183,17 @@ message(s)</source>
     </message>
 </context>
 <context>
+    <name>DialogModelItemMenu</name>
+    <message>
+        <source>Enable notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MainPage</name>
     <message>
         <source>Chats</source>
@@ -386,6 +397,33 @@ message(s)</source>
     </message>
     <message>
         <source>Reviewers</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TwoFactor</name>
+    <message>
+        <source>Submit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please enter your cloud password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your cloud password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hint: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sending request...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

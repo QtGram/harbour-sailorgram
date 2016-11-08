@@ -202,4 +202,6 @@ DISTFILES += \
     qml/components/message/input/MessageTextInput.qml \
     qml/components/message/panel/MessagePanel.qml \
     qml/components/message/panel/MessagePanelItem.qml \
-    qml/components/message/input/MessageReplyInput.qml
+    qml/components/message/input/MessageReplyInput.qml \
+    qml/components/login/TwoFactor.qml \
+    qml/menu/DialogModelItemMenu.qml
