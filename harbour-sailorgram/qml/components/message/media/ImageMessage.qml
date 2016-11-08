@@ -11,16 +11,9 @@ Item
     layer.enabled: true
 
     layer.effect: OpacityMask {
-        maskSource: Item {
-            width: imagemessage.width
-            height: imagemessage.height
-
-            Rectangle
-            {
-                width: imagemessage.width
-                height: imagemessage.height
-                radius: context.bubbleradius
-            }
+        maskSource: Rectangle {
+            anchors.fill: imagemessage
+            radius: context.bubbleradius
         }
     }
 
