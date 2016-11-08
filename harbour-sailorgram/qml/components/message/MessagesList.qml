@@ -19,23 +19,8 @@ SilicaListView
         messageslist.selectedMessageText = model.messageText;
     }
 
-    Connections
-    {
-        target: messagepanel
-
-        onReplyRequested: {
-            editMode = false;
-            replyMode = true;
-
-            headerItem.activateInput();
-        }
-
-        onEditRequested: {
-            editMode = true;
-            replyMode = false;
-
-            headerItem.activateInput(selectedMessageText);
-        }
+    function activateInput() {
+        headerItem.activateInput();
     }
 
     id: messageslist
@@ -119,7 +104,7 @@ SilicaListView
                     id: peerimage
                     size: Theme.iconSizeSmallPlus
                     peer: model.needsPeerImage ? model.item : null
-                    visible: model.needsPeerImage
+                    visible: model.needsPeerImage && !model.isMessageOut && messagesmodel.isChat
                     backgroundColor: Theme.secondaryHighlightColor
                     foregroundColor: Theme.primaryColor
                     fontPixelSize: Theme.fontSizeExtraSmall
@@ -131,16 +116,22 @@ SilicaListView
                 maxWidth: width * 0.8
                 maxMediaWidth: Screen.width * 0.5
 
-                onClicked: {
-                    if(messagepanel.expanded) {
-                        messagepanel.hide();
-                        return;
-                    }
-
+                onReplyRequested: {
                     prepareActions(model);
 
-                    messagepanel.checkActions(messagesmodel.isWritable, model.isMessageOut)
-                    messagepanel.show();
+                    editMode = false;
+                    replyMode = true;
+
+                    headerItem.activateInput();
+                }
+
+                onEditRequested: {
+                    prepareActions(model);
+
+                    editMode = true;
+                    replyMode = false;
+
+                    headerItem.activateInput(selectedMessageText);
                 }
             }
         }

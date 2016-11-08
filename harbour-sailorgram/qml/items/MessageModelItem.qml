@@ -1,18 +1,24 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.LibQTelegram 1.0
-import "../components/message"
-import "../components/message/media"
 import "../components/message/reply"
+import "../components/message/media"
+import "../components/message"
+import "../menu"
 import "../js/ColorScheme.js" as ColorScheme
 
-MouseArea
+ListItem
 {
     property real maxWidth
     property real maxMediaWidth
 
+    signal replyRequested()
+    signal editRequested()
+
     id: messagemodelitem
     height: content.height
+    highlighted: false
+    menu: MessageModelItemMenu { }
 
     MessageBubble
     {

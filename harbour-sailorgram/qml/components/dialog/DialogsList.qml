@@ -12,7 +12,7 @@ SilicaListView
     function openDialog(dialog, focus) {
         if(dialog !== dialogslist.lastDialog) {
             dialogslist.lastDialog = dialog;
-            pageStack.pushAttached(Qt.resolvedUrl("../../pages/dialog/DialogPage.qml"), { context: dialogslist.context, dialog: dialog });
+            pageStack.pushAttached(Qt.resolvedUrl("../../pages/dialog/DialogPage.qml"), { context: dialogslist.context, dialog: dialog, firstLoad: true });
         }
 
         pageStack.navigateForward((focus === true) ? PageStackAction.Immediate : PageStackAction.Animated);

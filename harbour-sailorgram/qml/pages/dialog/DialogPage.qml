@@ -8,6 +8,7 @@ import "../../model"
 
 Page
 {
+    property bool firstLoad: false
     property Context context
     property var dialog
 
@@ -16,24 +17,27 @@ Page
 
     onStatusChanged: {
         context.sailorgram.notifications.currentDialog = (status === PageStatus.Active) ? dialogpage.dialog : null;
+
+        if((status !== PageStatus.Active) || !firstLoad)
+            return;
+
+        messagesmodel.dialog = dialog;
+        firstLoad = false;
     }
 
     MessagesModel
     {
         id: messagesmodel
         telegram: context.telegram
-        dialog: dialogpage.dialog
     }
 
     SilicaFlickable
     {
-        clip: messagepanel.expanded
-
         anchors  {
             left: parent.left
             top: parent.top
             right: parent.right
-            bottom: messagepanel.top
+            bottom: parent.bottom
         }
 
         Column
@@ -67,11 +71,5 @@ Page
                 }
             }
         }
-    }
-
-    MessagePanel
-    {
-        id: messagepanel
-        width: parent.width
     }
 }
