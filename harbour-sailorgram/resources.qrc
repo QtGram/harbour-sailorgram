@@ -13,5 +13,6 @@
         <file>res/channel.png</file>
         <file>res/mute.png</file>
         <file>res/twofactor.png</file>
+        <file>res/cloud.png</file>
     </qresource>
 </RCC>

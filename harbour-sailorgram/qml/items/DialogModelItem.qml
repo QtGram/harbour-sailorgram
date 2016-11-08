@@ -46,6 +46,9 @@ ListItem
             }
 
             text: {
+                if(model.isCloud)
+                    return "<img align='middle' width='" + font.pixelSize + "' height='" + font.pixelSize + "' src='qrc:///res/cloud.png'> " + model.title;
+
                 if(model.isBroadcast)
                     return "<img align='middle' width='" + font.pixelSize + "' height='" + font.pixelSize + "' src='qrc:///res/channel.png'> " + model.title;
 
