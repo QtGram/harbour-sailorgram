@@ -31,17 +31,26 @@ ListItem
         {
             id: lbltitle
             textFormat: Text.StyledText
-            font { family: Theme.fontFamilyHeading; pixelSize: Theme.fontSizeSmall }
+            font { family: Theme.fontFamilyHeading; pixelSize: Theme.fontSizeExtraSmall }
             elide: Text.ElideRight
             color: Theme.highlightColor
-            width: parent.width - lblstatus.contentWidth - Theme.paddingSmall
+            verticalAlignment: Text.AlignTop
+
+            width: {
+                var w = parent.width - Theme.paddingSmall;
+
+                if(lblstatus.visible)
+                    w -= lblstatus.contentWidth - Theme.paddingSmall;
+
+                return w;
+            }
 
             text: {
                 if(model.isBroadcast)
-                    return "<img align='bottom' width='" + font.pixelSize + "' height='" + font.pixelSize + "' src='qrc:///res/channel.png'> " + model.title;
+                    return "<img align='middle' width='" + font.pixelSize + "' height='" + font.pixelSize + "' src='qrc:///res/channel.png'> " + model.title;
 
                 if(model.isChat || model.isMegaGroup)
-                    return "<img align='bottom' width='" + font.pixelSize + "' height='" + font.pixelSize + "' src='qrc:///res/chat.png'> " + model.title;
+                    return "<img align='middle' width='" + font.pixelSize + "' height='" + font.pixelSize + "' src='qrc:///res/chat.png'> " + model.title;
 
                 return model.title;
             }
@@ -51,7 +60,6 @@ ListItem
         {
             id: lblstatus
             horizontalAlignment: Text.AlignRight
-            visible: !model.isTopMessageService
             ticksColor: Theme.highlightColor
             messageDate: model.topMessageDate
             isMessageOut: model.isTopMessageOut
@@ -79,6 +87,7 @@ ListItem
             id: lblfrom
             color: Theme.highlightColor
             font.pixelSize: Theme.fontSizeExtraSmall
+            verticalAlignment: Text.AlignVCenter
 
             text: {
                 if(model.topMessage)
@@ -107,7 +116,7 @@ ListItem
             wrapMode: Text.NoWrap
             elide: Text.ElideRight
             verticalAlignment: Text.AlignVCenter
-            color: model.isTopMessageService ? Theme.secondaryHighlightColor : Theme.primaryColor
+            color: model.isTopMessageService ? Theme.rgba(Theme.secondaryHighlightColor, 1.0) : Theme.primaryColor
             font { pixelSize: Theme.fontSizeExtraSmall; italic: model.isTopMessageService }
             emojiPath: context.sailorgram.emojiPath
             openUrls: false

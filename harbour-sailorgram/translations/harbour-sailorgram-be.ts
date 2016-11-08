@@ -105,10 +105,6 @@
 <context>
     <name>ContactsPage</name>
     <message>
-        <source>About</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Contacts</source>
         <translation type="unfinished"></translation>
     </message>
