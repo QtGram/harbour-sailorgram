@@ -8,6 +8,22 @@ Item
 
     id: imagemessage
 
+    layer.enabled: true
+
+    layer.effect: OpacityMask {
+        maskSource: Item {
+            width: imagemessage.width
+            height: imagemessage.height
+
+            Rectangle
+            {
+                width: imagemessage.width
+                height: imagemessage.height
+                radius: context.bubbleradius
+            }
+        }
+    }
+
     Image
     {
         id: image
