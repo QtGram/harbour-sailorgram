@@ -10,18 +10,17 @@ import "../js/ColorScheme.js" as ColorScheme
 ListItem
 {
     property real maxWidth
-    property real maxMediaWidth
 
     signal replyRequested()
     signal editRequested()
 
     id: messagemodelitem
-    contentHeight: content.height
+    contentHeight: content.height + Theme.paddingSmall
     menu: MessageModelItemMenu { }
 
     MessageBubble
     {
-        anchors { fill: content; leftMargin: -Theme.paddingSmall; rightMargin: -Theme.paddingSmall}
+        anchors { fill: content; margins: -Theme.paddingSmall }
 
         visible: {
             if(context.bubbleshidden)
@@ -37,7 +36,7 @@ ListItem
 
         width: {
             if(model.isMessageService)
-                return maxWidth;
+                return parent.width;
 
             var w = Math.max(lblfrom.calculatedWidth,
                              lblmessage.calculatedWidth,
@@ -45,18 +44,27 @@ ListItem
                              mediamessageitem.contentWidth,
                              messagestatus.contentWidth);
 
-            if(model.isMessageMedia)
-                return Math.min(w, maxMediaWidth, maxWidth) + Theme.paddingSmall;
-
             return Math.min(w, maxWidth) + Theme.paddingSmall;
         }
 
         anchors {
             top: parent.top
-            right: !model.isMessageOut ? undefined : parent.right
-            left: model.isMessageOut ? undefined : parent.left
             leftMargin: Theme.paddingMedium
             rightMargin: Theme.paddingMedium
+
+            left: {
+                if(model.isMessageService)
+                    return parent.left;
+
+                return model.isMessageOut ? undefined : parent.left;
+            }
+
+            right: {
+                if(model.isMessageService)
+                    return parent.right;
+
+                return !model.isMessageOut ? undefined : parent.right;
+            }
         }
 
         MessageText
@@ -116,7 +124,7 @@ ListItem
             }
 
             webPageDelegate: WebPageMessage {
-                width: Math.min(calculatedWidth, maxWidth)
+                width: Math.min(contentWidth, maxWidth)
                 color: ColorScheme.colorizeText(model.isMessageService, model.isMessageOut, context)
                 quoteColor: ColorScheme.colorizeLink(model.isMessageService, model.isMessageOut, context)
                 title: mediamessageitem.webPageTitle
@@ -139,7 +147,7 @@ ListItem
             emojiPath: context.sailorgram.emojiPath
             rawText: model.messageText
             wrapMode: Text.Wrap
-            font { italic: model.isMessageService; pixelSize: Theme.fontSizeSmall }
+            font { italic: model.isMessageService; pixelSize: model.isMessageService ? Theme.fontSizeExtraSmall : Theme.fontSizeSmall }
             color: ColorScheme.colorizeText(model.isMessageService, model.isMessageOut, context)
 
             horizontalAlignment: {

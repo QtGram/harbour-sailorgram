@@ -114,7 +114,6 @@ SilicaListView
             MessageModelItem {
                 width: parent.width - picontainer.width - Theme.paddingSmall
                 maxWidth: width * 0.8
-                maxMediaWidth: Screen.width * 0.5
 
                 onReplyRequested: {
                     prepareActions(model);
