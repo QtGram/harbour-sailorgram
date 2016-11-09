@@ -124,6 +124,14 @@ message(s)</source>
         <source>Recent chats:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Syncing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disconnected</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DaemonSettingsPage</name>
@@ -205,6 +213,10 @@ message(s)</source>
     </message>
     <message>
         <source>New Group/Channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Syncing...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
