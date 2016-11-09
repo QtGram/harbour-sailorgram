@@ -17,8 +17,6 @@ Page
 
         onLoginCompleted: {
             loader.setSource(Qt.resolvedUrl("../components/dialog/DialogsList.qml"), { context: mainpage.context });
-            header.title = qsTr("Chats");
-
             mainpage.loggedIn = true;
         }
     }
@@ -46,6 +44,7 @@ Page
         PullDownMenu
         {
             visible: mainpage.loggedIn
+            busy: context.telegram.syncing
 
             MenuItem
             {
@@ -69,7 +68,23 @@ Page
 
         anchors.fill: parent
 
-        PageHeader { id: header }
+        PageHeader
+        {
+            id: header
+
+            title: {
+                if(!mainpage.loggedIn)
+                    return "";
+
+                if(!context.telegram.connected)
+                    return qstr("Connecting...");
+
+                if(context.telegram.syncing)
+                    return qsTr("Syncing...");
+
+                return qsTr("Chats");
+            }
+        }
 
         Loader
         {

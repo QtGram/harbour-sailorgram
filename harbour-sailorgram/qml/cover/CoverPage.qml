@@ -63,9 +63,16 @@ CoverBackground
         {
             id: statusLabel
             width: parent.width
-            text: qsTr("Connected") //!context.sailorgram.connected ? qsTr("Disconnected") : qsTr("Connected")
             truncationMode: TruncationMode.Fade
-            color: Theme.highlightColor //!context.sailorgram.connected ? ColorScheme.reverseColor(Theme.highlightColor) : Theme.highlightColor
+
+            text: {
+                if(context.telegram.syncing)
+                    return qsTr("Syncing");
+
+                return !context.telegram.connected ? qsTr("Disconnected") : qsTr("Connected")
+            }
+
+            color: !context.telegram.connected ? ColorScheme.reverseColor(Theme.highlightColor) : Theme.highlightColor
         }
     }
 
