@@ -77,7 +77,7 @@ Page
                     return "";
 
                 if(!context.telegram.connected)
-                    return qstr("Connecting...");
+                    return qsTr("Connecting...");
 
                 if(context.telegram.syncing)
                     return qsTr("Syncing...");
