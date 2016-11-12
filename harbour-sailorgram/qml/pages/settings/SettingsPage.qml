@@ -31,7 +31,7 @@ Page
                 title: qsTr("Settings")
             }
 
-            SettingLabel
+            ClickableLabel
             {
                 width: parent.width
                 height: Theme.itemSizeSmall
@@ -40,7 +40,7 @@ Page
                 onActionRequested: pageStack.push(Qt.resolvedUrl("ChatSettingsPage.qml"), { "context": settingspage.context })
             }
 
-            SettingLabel
+            ClickableLabel
             {
                 width: parent.width
                 height: Theme.itemSizeSmall
@@ -50,7 +50,7 @@ Page
             }
 
             /*
-            SettingLabel
+            ClickableLabel
             {
                 width: parent.width
                 height: Theme.itemSizeSmall

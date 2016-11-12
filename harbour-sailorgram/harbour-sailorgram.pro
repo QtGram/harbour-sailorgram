@@ -191,14 +191,12 @@ DISTFILES += \
     qml/pages/settings/about/DevelopersPage.qml \
     qml/pages/settings/about/ThirdPartyPage.qml \
     qml/pages/settings/about/TranslationsPage.qml \
-    qml/components/custom/SettingLabel.qml \
     qml/pages/settings/ChatSettingsPage.qml \
     qml/pages/settings/DaemonSettingsPage.qml \
     qml/components/message/NewMessage.qml \
     qml/components/message/MessageQuote.qml \
     qml/components/message/reply/MessageReplyItem.qml \
     qml/components/message/reply/MessageReplyImage.qml \
-    qml/pages/dialog/NewChatPage.qml \
     qml/components/message/input/MessageTextInput.qml \
     qml/components/message/panel/MessagePanel.qml \
     qml/components/message/panel/MessagePanelItem.qml \
@@ -206,4 +204,8 @@ DISTFILES += \
     qml/components/login/TwoFactor.qml \
     qml/menu/DialogModelItemMenu.qml \
     qml/menu/MessageModelItemMenu.qml \
-    qml/components/message/media/AudioMessage.qml
+    qml/components/message/media/AudioMessage.qml \
+    qml/components/custom/ClickableLabel.qml \
+    qml/pages/dialog/chat/NewChannelPage.qml \
+    qml/pages/dialog/chat/NewChatPage.qml \
+    qml/pages/dialog/chat/NewGroupPage.qml

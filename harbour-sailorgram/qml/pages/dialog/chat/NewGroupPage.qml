@@ -1,15 +1,14 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
-import "../../components/contact"
-import "../../model"
+import "../../../components/contact"
+import "../../../model"
 
-Dialog
+Page
 {
     property Context context
     property var users: null
 
-    id: newchatpage
-    canAccept: tftitle.text.length > 0
+    id: newgrouppage
 
     Component.onCompleted: {
         users = { };
@@ -19,14 +18,27 @@ Dialog
     {
         anchors.fill: parent
 
+        PullDownMenu
+        {
+            MenuItem
+            {
+                text: qsTr("Create group")
+                enabled: (tfname.text.length > 0) && (users.count > 0)
+
+                onClicked: {
+
+                }
+            }
+        }
+
         Column
         {
             id: content
             anchors.fill: parent
 
-            DialogHeader {
+            PageHeader {
                 id: dlgheader
-                acceptText: qsTr("Create")
+                title: qsTr("Create")
             }
 
             TextField
@@ -42,7 +54,7 @@ Dialog
                 clip: true
                 width: parent.width
                 height: parent.height - tftitle.height - dlgheader.height
-                context: newchatpage.context
+                context: newgrouppage.context
             }
         }
     }

@@ -244,15 +244,15 @@ message(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>New Group/Channel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Syncing...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Connecting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New Chat</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -298,6 +298,25 @@ message(s)</source>
 </context>
 <context>
     <name>NewChatPage</name>
+    <message>
+        <source>New Chat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create a Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create a Channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cloud Chat</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>NewGroupPage</name>
     <message>
         <source>Create</source>
         <translation type="unfinished"></translation>

@@ -54,9 +54,16 @@ Page
 
             MenuItem
             {
-                text: qsTr("New Group/Channel")
-                enabled: false
-                onClicked: pageStack.push(Qt.resolvedUrl("dialog/NewChatPage.qml"), { context: mainpage.context });
+                text: qsTr("New Chat")
+
+                onClicked: {
+                    var newchatpage = pageStack.push(Qt.resolvedUrl("dialog/chat/NewChatPage.qml"), { context: mainpage.context });
+
+                    newchatpage.cloudChatRequested.connect(function() {
+                        pageStack.pop(mainpage, PageStackAction.Immediate);
+                        loader.item.openDialog(context.dialogs.cloudDialog, true);
+                    });
+                }
             }
 
             MenuItem
