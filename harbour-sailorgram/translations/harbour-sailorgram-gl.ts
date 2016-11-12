@@ -337,15 +337,15 @@ message(s)</source>
 <context>
     <name>NewGroupPage</name>
     <message>
-        <source>Create</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Title</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Create group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New Group</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -23,7 +23,7 @@ Page
             MenuItem
             {
                 text: qsTr("Create group")
-                enabled: (tfname.text.length > 0) && (users.count > 0)
+                enabled: (tftitle.text.length > 0) && (users.count > 0)
 
                 onClicked: {
 
