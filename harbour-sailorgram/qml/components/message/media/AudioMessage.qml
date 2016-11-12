@@ -1,0 +1,43 @@
+import QtQuick 2.1
+import Sailfish.Silica 1.0
+import harbour.sailorgram.LibQTelegram 1.0
+
+Item
+{
+    readonly property real contentWidth: waveform.contentWidth
+    property alias color: lblduration.color
+    property color barColor: waveform.barColor
+    property alias source: waveform.message
+    property string duration
+
+    id: audiomessage
+    height: waveform.height + lblduration.contentHeight
+
+    Image
+    {
+        id: imgplay
+        width: Theme.iconSizeMedium
+        height: Theme.iconSizeMedium
+        anchors { verticalCenter: parent.verticalCenter; verticalCenterOffset: Theme.paddingMedium }
+        fillMode: Image.PreserveAspectFit
+        source: "image://theme/icon-m-play?" + waveform.barColor
+
+        BusyIndicator { z: 2; anchors.centerIn: parent; running: mediamessageitem.downloading }
+        MouseArea { anchors.fill: parent; onClicked: mediamessageitem.download() }
+    }
+
+    Waveform
+    {
+        id: waveform
+        anchors { left: imgplay.right; top: parent.top; topMargin: Theme.paddingSmall; right: parent.right; leftMargin: Theme.paddingSmall }
+        height: Theme.iconSizeSmall
+    }
+
+    Label
+    {
+        id: lblduration
+        anchors { left: imgplay.right; top: waveform.bottom; right: parent.right; leftMargin: Theme.paddingSmall; topMargin: Theme.paddingMedium }
+        font.pointSize: Theme.fontSizeSmall
+        text: audiomessage.duration + " <font color='" + waveform.barColor + "'>⚫</font>";
+    }
+}

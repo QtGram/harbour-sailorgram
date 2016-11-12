@@ -205,4 +205,5 @@ DISTFILES += \
     qml/components/message/input/MessageReplyInput.qml \
     qml/components/login/TwoFactor.qml \
     qml/menu/DialogModelItemMenu.qml \
-    qml/menu/MessageModelItemMenu.qml
+    qml/menu/MessageModelItemMenu.qml \
+    qml/components/message/media/AudioMessage.qml

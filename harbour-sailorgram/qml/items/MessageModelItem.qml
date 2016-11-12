@@ -15,7 +15,7 @@ ListItem
     signal editRequested()
 
     id: messagemodelitem
-    contentHeight: content.height + Theme.paddingSmall
+    contentHeight: content.height + Theme.paddingLarge
     menu: MessageModelItemMenu { }
 
     MessageBubble
@@ -131,6 +131,14 @@ ListItem
                 description: mediamessageitem.webPageDescription
                 url: mediamessageitem.webPageUrl
                 source: mediamessageitem.source
+            }
+
+            audioDelegate: AudioMessage {
+                width: Math.min(contentWidth, maxWidth)
+                duration: mediamessageitem.duration
+                color: ColorScheme.colorizeText(model.isMessageService, model.isMessageOut, context)
+                barColor: ColorScheme.colorizeLink(model.isMessageService, model.isMessageOut, context)
+                source: model.item
             }
 
             fileDelegate: FileMessage {

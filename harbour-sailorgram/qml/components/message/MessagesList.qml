@@ -24,7 +24,6 @@ SilicaListView
     }
 
     id: messageslist
-    spacing: Theme.paddingLarge
     cacheBuffer: Screen.height * 2
     verticalLayoutDirection: ListView.BottomToTop
     currentIndex: -1
