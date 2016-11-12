@@ -38,7 +38,7 @@ Page
 
             PageHeader {
                 id: dlgheader
-                title: qsTr("Create")
+                title: qsTr("New Group")
             }
 
             TextField

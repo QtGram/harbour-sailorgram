@@ -297,6 +297,25 @@ message(s)</source>
     </message>
 </context>
 <context>
+    <name>NewChannelPage</name>
+    <message>
+        <source>Create channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New Channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>NewChatPage</name>
     <message>
         <source>New Chat</source>
@@ -323,6 +342,10 @@ message(s)</source>
     </message>
     <message>
         <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create group</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
