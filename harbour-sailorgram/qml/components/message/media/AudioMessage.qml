@@ -1,17 +1,21 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
+import QtMultimedia 5.0
 import harbour.sailorgram.LibQTelegram 1.0
 
 Item
 {
     readonly property real contentWidth: waveform.contentWidth
     property alias color: lblduration.color
-    property color barColor: waveform.barColor
-    property alias source: waveform.message
+    property alias barColor: waveform.barColor
+    property alias message: waveform.message
+    property alias source: mediaplayer.source
     property string duration
 
     id: audiomessage
     height: waveform.height + lblduration.contentHeight
+
+    MediaPlayer { id: mediaplayer; autoPlay: false; autoLoad: false }
 
     Image
     {
@@ -20,10 +24,33 @@ Item
         height: Theme.iconSizeMedium
         anchors { verticalCenter: parent.verticalCenter; verticalCenterOffset: Theme.paddingMedium }
         fillMode: Image.PreserveAspectFit
-        source: "image://theme/icon-m-play?" + waveform.barColor
+
+        source: {
+            if(mediaplayer.playbackState !== MediaPlayer.PlayingState)
+                return "image://theme/icon-m-play?" + waveform.barColor;
+
+            return "image://theme/icon-m-pause?" + waveform.barColor;
+        }
 
         BusyIndicator { z: 2; anchors.centerIn: parent; running: mediamessageitem.downloading }
-        MouseArea { anchors.fill: parent; onClicked: mediamessageitem.download() }
+
+        MouseArea
+        {
+            anchors.fill: parent
+
+            onClicked: {
+                if(mediamessageitem.downloaded) {
+                    if(mediaplayer.playbackState !== MediaPlayer.PlayingState)
+                        mediaplayer.play();
+                    else
+                        mediaplayer.pause();
+
+                    return;
+                }
+
+                mediamessageitem.download();
+            }
+        }
     }
 
     Waveform

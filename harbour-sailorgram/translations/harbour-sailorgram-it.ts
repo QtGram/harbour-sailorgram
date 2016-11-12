@@ -196,6 +196,38 @@ message(s)</source>
         <source>Disable notifications</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Clear history</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clearing history</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Leave channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Leave group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete conversation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Leaving channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Leaving group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting conversation</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainPage</name>

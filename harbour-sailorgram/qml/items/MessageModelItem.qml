@@ -138,7 +138,8 @@ ListItem
                 duration: mediamessageitem.duration
                 color: ColorScheme.colorizeText(model.isMessageService, model.isMessageOut, context)
                 barColor: ColorScheme.colorizeLink(model.isMessageService, model.isMessageOut, context)
-                source: model.item
+                source: mediamessageitem.source
+                message: model.item
             }
 
             fileDelegate: FileMessage {
