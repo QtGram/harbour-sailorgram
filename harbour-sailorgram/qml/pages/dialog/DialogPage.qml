@@ -29,6 +29,7 @@ Page
     {
         id: messagesmodel
         telegram: context.telegram
+        isActive: (Qt.application.state === Qt.ApplicationActive) && (dialogpage.status === PageStatus.Active)
     }
 
     SilicaFlickable
