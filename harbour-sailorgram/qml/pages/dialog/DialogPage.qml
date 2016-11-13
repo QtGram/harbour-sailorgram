@@ -52,7 +52,7 @@ Page
                 title: messagesmodel.title
                 statusText: messagesmodel.statusText
                 peer: dialogpage.dialog
-                visible: !context.chatheaderhidden
+                visible: !context.chatheaderhidden && dialogpage.isPortrait
             }
 
             MessagesList
