@@ -60,7 +60,8 @@ Item
                 font { italic: true; pixelSize: Theme.fontSizeExtraSmall }
                 emojiPath: context.sailorgram.emojiPath
                 rawText: model.replyText
-                wrapMode: Text.NoWrap
+                maximumLineCount: 3
+                wrapMode: Text.Wrap
                 elide: Text.ElideRight
                 color: messagereplyitem.color
                 horizontalAlignment: Text.AlignLeft
