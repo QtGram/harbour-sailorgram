@@ -8,6 +8,8 @@ Page
 {
     property Context context
 
+    signal dialogCreated(var dialog)
+
     id: contactspage
     allowedOrientations: Orientation.All
 
@@ -16,6 +18,10 @@ Page
         anchors.fill: parent
         context: contactspage.context
         clip: true
+
+        contactsModel {
+            onDialogCreated: contactspage.dialogCreated(dialog)
+        }
 
         header: PageHeader {
             title: qsTr("Contacts")

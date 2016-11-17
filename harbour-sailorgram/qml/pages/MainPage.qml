@@ -69,7 +69,15 @@ Page
             MenuItem
             {
                 text: qsTr("Contacts")
-                onClicked: pageStack.push(Qt.resolvedUrl("contact/ContactsPage.qml"), { context: mainpage.context });
+
+                onClicked: {
+                    var contactspage = pageStack.push(Qt.resolvedUrl("contact/ContactsPage.qml"), { context: mainpage.context });
+
+                    contactspage.dialogCreated.connect(function(dialog) {
+                        pageStack.pop(mainpage, PageStackAction.Immediate);
+                        loader.item.openDialog(dialog, true);
+                    });
+                }
             }
         }
 
