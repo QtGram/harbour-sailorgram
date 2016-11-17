@@ -13,7 +13,7 @@ Item
     property color color: Theme.primaryColor
 
     id: messagereplyitem
-    height: Math.max(previewcontent.height, mediamessageitem.height)
+    height: Math.max(content.height, mediamessageitem.height)
 
     Row
     {
@@ -22,13 +22,13 @@ Item
         height: parent.height
         spacing: Theme.paddingSmall
 
-        MessageQuote { id: messagequote; height: previewcontent.height }
+        MessageQuote { id: messagequote; height: parent.height }
 
         MediaMessageItem
         {
             id: mediamessageitem
             message: model.messageHasReply ? model.replyItem : null
-            size: parent.width
+            size: Theme.itemSizeSmall
 
             imageDelegate: MessageReplyImage {
                 anchors.fill: parent
@@ -38,7 +38,7 @@ Item
 
         Column
         {
-            id: previewcontent
+            id: content
             width: parent.width
 
             MessageText
@@ -48,7 +48,6 @@ Item
                 emojiPath: context.sailorgram.emojiPath
                 width: parent.width - (Theme.paddingSmall * 2)
                 horizontalAlignment: Text.AlignLeft
-                visible: messagesmodel.isChat && !model.isMessageOut && !model.isMessageService
                 rawText: model.replyFrom
                 color: messagereplyitem.color
                 linkColor: messagereplyitem.quoteColor
@@ -58,7 +57,7 @@ Item
             MessageText
             {
                 id: lblmessage
-                width: parent.width - (Theme.paddingSmall* 2)
+                width: parent.width - (Theme.paddingSmall * 2)
                 font { italic: true; pixelSize: Theme.fontSizeExtraSmall }
                 emojiPath: context.sailorgram.emojiPath
                 rawText: model.replyText
