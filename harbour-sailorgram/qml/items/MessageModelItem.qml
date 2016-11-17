@@ -129,8 +129,9 @@ ListItem
                 quoteColor: ColorScheme.colorizeLink(model.isMessageService, model.isMessageOut, context)
                 title: mediamessageitem.webPageTitle
                 description: mediamessageitem.webPageDescription
-                url: mediamessageitem.webPageUrl
+                destinationUrl: mediamessageitem.webPageUrl
                 source: mediamessageitem.source
+                messageText: model.messageText
             }
 
             audioDelegate: AudioMessage {
@@ -154,10 +155,17 @@ ListItem
             id: lblmessage
             width: parent.width
             emojiPath: context.sailorgram.emojiPath
-            rawText: model.messageText
             wrapMode: Text.Wrap
             font { italic: model.isMessageService; pixelSize: model.isMessageService ? Theme.fontSizeExtraSmall : Theme.fontSizeSmall }
             color: ColorScheme.colorizeText(model.isMessageService, model.isMessageOut, context)
+            visible: rawText.length > 0
+
+            rawText: {
+                if(model.isMessageMedia)
+                    return model.messageCaption;
+
+                return model.messageText;
+            }
 
             horizontalAlignment: {
                 if(model.isMessageService)

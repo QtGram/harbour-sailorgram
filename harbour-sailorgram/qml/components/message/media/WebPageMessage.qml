@@ -2,75 +2,90 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import "../../message"
 
-Column
+MouseArea
 {
-    readonly property real calculatedWidth: Math.max(wpurl.calculatedWidth,
+    readonly property real calculatedWidth: Math.max(wpmessage.calculatedWidth,
                                                      wptitle.calculatedWidth,
                                                      wpdescription.calculatedWidth,
                                                      imgthumbnail.sourceSize.width)
 
-    property alias url: wpurl.rawText
+    property alias messageText: wpmessage.rawText
     property alias title: wptitle.rawText
     property alias description: wpdescription.rawText
     property alias source: imgthumbnail.source
     property alias quoteColor: messagequote.color
     property color color: Theme.primaryColor
+    property string destinationUrl
 
-    id: webpageelement
-    spacing: Theme.paddingSmall
+    id: webpagemessage
+    height: content.height
 
-    MessageText
-    {
-        id: wpurl
-        emojiPath: context.sailorgram.emojiPath
-        font.pixelSize: Theme.fontSizeSmall
-        color: webpageelement.color
-        width: parent.width
-        wrapMode: Text.NoWrap
-        elide: Text.ElideRight
+    onClicked: {
+        console.log(destinationUrl);
+        Qt.resolvedUrl(destinationUrl);
     }
 
-    Row
+    Column
     {
-        id: preview
-        width: parent.width
-        height: previewcontent.height
+        id: content
         spacing: Theme.paddingSmall
+        width: parent.width
 
-        MessageQuote { id: messagequote; height: parent.height }
-
-        Column
+        MessageText
         {
-            id: previewcontent
-            width: parent.width - (Theme.paddingSmall * 2)
-            spacing: Theme.paddingMedium
+            id: wpmessage
+            emojiPath: context.sailorgram.emojiPath
+            font.pixelSize: Theme.fontSizeSmall
+            color: webpagemessage.color
+            width: parent.width
+            wrapMode: Text.Wrap
+            elide: Text.ElideRight
+        }
 
-            MessageText
-            {
-                id: wptitle
-                emojiPath: context.sailorgram.emojiPath
-                color: webpageelement.color
-                width: parent.width
-                wrapMode: Text.Wrap
-                font { bold: true; pixelSize: Theme.fontSizeSmall }
-            }
+        Row
+        {
+            id: preview
+            width: parent.width
+            height: previewcontent.height
+            spacing: Theme.paddingSmall
 
-            MessageText
-            {
-                id: wpdescription
-                emojiPath: context.sailorgram.emojiPath
-                color: webpageelement.color
-                width: parent.width
-                wrapMode: Text.Wrap
-                font { pixelSize: Theme.fontSizeExtraSmall; italic: true }
-            }
+            MessageQuote { id: messagequote; height: parent.height }
 
-            Image
+            Column
             {
-                id: imgthumbnail
-                width: parent.width
-                asynchronous: true
-                fillMode: Image.PreserveAspectFit
+                id: previewcontent
+                width: parent.width - (Theme.paddingSmall * 2)
+                spacing: Theme.paddingMedium
+
+                MessageText
+                {
+                    id: wptitle
+                    emojiPath: context.sailorgram.emojiPath
+                    visible: rawText.length > 0
+                    color: webpagemessage.color
+                    width: parent.width
+                    wrapMode: Text.Wrap
+                    font { bold: true; pixelSize: Theme.fontSizeSmall }
+                }
+
+                MessageText
+                {
+                    id: wpdescription
+                    emojiPath: context.sailorgram.emojiPath
+                    visible: rawText.length > 0
+                    color: webpagemessage.color
+                    width: parent.width
+                    wrapMode: Text.Wrap
+                    font { pixelSize: Theme.fontSizeExtraSmall; italic: true }
+                }
+
+                Image
+                {
+                    id: imgthumbnail
+                    width: parent.width
+                    asynchronous: true
+                    fillMode: Image.PreserveAspectFit
+                }
             }
         }
     }
