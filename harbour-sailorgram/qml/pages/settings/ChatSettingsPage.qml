@@ -13,6 +13,7 @@ Dialog
     onAccepted: {
         context.sendwithreturn = tssendwithreturn.checked;
         context.chatheaderhidden = !tsshowchatheader.checked;
+        context.defaultemojiset = tsdefaultemojiset.checked;
         context.immediateopen = tsimmediateopen.checked;
         context.autoloadimages = tsautoloadimages.checked;
         context.bubbleshidden = !tsbubblesvisible.checked;
@@ -21,6 +22,7 @@ Dialog
 
         Settings.set("sendwithreturn", tssendwithreturn.checked);
         Settings.set("chatheaderhidden", !tsshowchatheader.checked);
+        Settings.set("defaultemojiset", tsdefaultemojiset.checked);
         Settings.set("immediateopen", tsimmediateopen.checked);
         Settings.set("autoloadimages", tsautoloadimages.checked);
         Settings.set("hidebubbles", !tsbubblesvisible.checked);
@@ -38,11 +40,7 @@ Dialog
             id: content
             width: parent.width
 
-            DialogHeader
-            {
-                acceptText: qsTr("Save")
-            }
-
+            DialogHeader { acceptText: qsTr("Save") }
             SectionHeader { text: qsTr("Appearance") }
 
             TextSwitch
@@ -51,6 +49,14 @@ Dialog
                 anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
                 text: qsTr("Chat header visible")
                 checked: !context.chatheaderhidden
+            }
+
+            TextSwitch
+            {
+                id: tsdefaultemojiset
+                anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
+                text: qsTr("Use default emoji set")
+                checked: context.defaultemojiset
             }
 
             TextSwitch

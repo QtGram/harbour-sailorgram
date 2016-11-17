@@ -31,6 +31,7 @@ Item
     property bool immediateopen: false
     property bool autoloadimages:false
     property bool showsearchfield: false
+    property bool defaultemojiset: false
     property real bubblesopacity: 100.0
 
     property Page mainPage: null
@@ -85,6 +86,7 @@ Item
             context.bubbleshidden = parseInt(Settings.transactionGet(tx, "hidebubbles"));
             context.angledbubbles = parseInt(Settings.transactionGet(tx, "angledbubbles"));
             context.showsearchfield = parseInt(Settings.transactionGet(tx, "showsearchfield"));
+            context.defaultemojiset = parseInt(Settings.transactionGet(tx, "defaultemojiset"));
             context.sailorgram.keepRunning = parseInt(Settings.transactionGet(tx, "keeprunning"));
 
             var opacity = Settings.transactionGet(tx, "bubblesopacity");

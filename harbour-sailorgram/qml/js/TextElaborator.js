@@ -53,13 +53,13 @@ function replaceNewlines(s)
     return s.replace(/(?:\r\n|\r|\n)/g, "<br/>");
 }
 
-function elaborate(s, emojipath, height, highlightcolor, openurls, customemoji)
+function elaborate(s, emojipath, height, highlightcolor, openurls, defaultemojiset)
 {
     var res = replaceAmpersand(s);
     res = replaceLtGt(res);
     res = replaceNewlines(res);
 
-    if(customemoji === true)
+    if(defaultemojiset !== true)
         res = Emoji.emojify(res, height, emojipath, false);
 
     res = linkify(res, openurls);

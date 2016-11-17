@@ -68,7 +68,7 @@ InverseMouseArea
             if(context.sendwithreturn && (tamessage.text.length > 0))
                 return false;
 
-            return true
+            return true;
         }
     }
 

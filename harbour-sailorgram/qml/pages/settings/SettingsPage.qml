@@ -26,10 +26,7 @@ Page
             id: content
             width: parent.width
 
-            PageHeader
-            {
-                title: qsTr("Settings")
-            }
+            PageHeader { title: qsTr("Settings") }
 
             ClickableLabel
             {
