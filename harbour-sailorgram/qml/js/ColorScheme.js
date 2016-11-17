@@ -16,7 +16,7 @@ function colorizeBubble(ismessageservice, ismessageout, context) {
     if(ismessageout)
         return Silica.Theme.rgba(Qt.tint(Silica.Theme.secondaryHighlightColor, Silica.Theme.rgba(Silica.Theme.highlightDimmerColor, 0.3)), 1.0);
 
-    return Silica.Theme.rgba(Silica.Theme.highlightColor, 1.0);
+    return Silica.Theme.rgba(Silica.Theme.secondaryColor, 1.0);
 }
 
 function colorizeText(ismessageservice, ismessageout, context) {

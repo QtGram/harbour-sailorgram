@@ -208,4 +208,5 @@ DISTFILES += \
     qml/components/custom/ClickableLabel.qml \
     qml/pages/dialog/chat/NewChannelPage.qml \
     qml/pages/dialog/chat/NewChatPage.qml \
-    qml/pages/dialog/chat/NewGroupPage.qml
+    qml/pages/dialog/chat/NewGroupPage.qml \
+    qml/components/dialog/DialogNotificationSwitch.qml

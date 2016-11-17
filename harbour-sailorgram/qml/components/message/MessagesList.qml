@@ -2,6 +2,7 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.LibQTelegram 1.0
 import "../../components/message/input"
+import "../../components/dialog"
 import "../../items"
 import "../../model"
 
@@ -46,10 +47,22 @@ SilicaListView
 
         id: messagelistheader
         width: messageslist.width
-        height: messagereplyinput.height + messagetextinput.height
-        visible: messagesmodel.isWritable
+
+        height: {
+            if(dialognotificationswitch.visible)
+                return dialognotificationswitch.height;
+
+            return messagereplyinput.height + messagetextinput.height
+        }
 
         Item { width: parent.width; height: Theme.paddingSmall }
+
+        DialogNotificationSwitch
+        {
+            id: dialognotificationswitch
+            width: parent.width
+            visible: messagesmodel.isBroadcast && !messagesmodel.isWritable
+        }
 
         MessageReplyInput {
             id: messagereplyinput
