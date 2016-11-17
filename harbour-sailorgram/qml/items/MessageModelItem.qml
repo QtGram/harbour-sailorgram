@@ -72,18 +72,13 @@ ListItem
             id: lblfrom
             width: parent.width
             emojiPath: context.sailorgram.emojiPath
+            elide: Text.ElideRight
+            horizontalAlignment: Text.AlignLeft
             font { bold: true; pixelSize: Theme.fontSizeSmall }
             color: ColorScheme.colorizeText(model.isMessageService, model.isMessageOut, context)
             linkColor: ColorScheme.colorizeLink(model.isMessageService, model.isMessageOut, context)
-            visible: !model.isMessageOut && !model.isMessageService
-            rawText: model.messageFrom
-
-            horizontalAlignment: {
-                if(model.isMessageOut)
-                    return Text.AlignRight;
-
-                return Text.AlignLeft;
-            }
+            rawText: model.isMessageForwarded ? qsTr("Forwarded from %1").arg(model.forwardedFromName) : model.messageFrom
+            visible: !model.isMessageService
         }
 
         MessageReplyItem
@@ -172,9 +167,6 @@ ListItem
             horizontalAlignment: {
                 if(model.isMessageService)
                     return Text.AlignHCenter;
-
-                if(model.isMessageOut)
-                    return Text.AlignRight;
 
                 return Text.AlignLeft;
             }
