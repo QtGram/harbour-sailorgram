@@ -63,6 +63,13 @@ InverseMouseArea
         anchors.right: parent.right
         icon.source: (tamessage.text.length <= 0) ? "image://theme/icon-m-attach" : "image://theme/icon-m-message"
         onClicked: prepareMessage()
+
+        visible: {
+            if(context.sendwithreturn && (tamessage.text.length > 0))
+                return false;
+
+            return true
+        }
     }
 
     Label
