@@ -41,8 +41,13 @@ Dialog
     allowedOrientations: defaultAllowedOrientations
     acceptDestinationAction: PageStackAction.Pop
     canAccept: selectedFiles.length > 0
+
     onAccepted: selectedFiles.forEach(function (element) { imageSelected(element); })
-    onRejected: if (!!rootPage) { rootPage.selectedFiles = selectedFiles; }
+
+    onRejected: {
+        if(!!rootPage)
+            rootPage.selectedFiles = selectedFiles;
+    }
 
     FilesModel {
         id: filesmodel
@@ -169,7 +174,7 @@ Dialog
 
                 onClicked: {
                     if (model.isDir) {
-                        var nextPage = pageStack.push(Qt.resolvedUrl("SelectorImagesPage.qml"),
+                        var nextPage = pageStack.push(Qt.resolvedUrl("SelectorImagePage.qml"),
                                                       { "folder": model.path,
                                                         "context": context,
                                                         "sortRole": sortRole,
@@ -177,7 +182,7 @@ Dialog
                                                         "selectedFiles": selectedFiles,
                                                         "acceptDestination": acceptDestination,
                                                         "rootPage": !!rootPage ? rootPage : selectorimagespage } );
-                        nextPage.actionCompleted.connect(actionCompleted);
+                        nextPage.imageSelected.connect(imageSelected);
                     }
                     else {
                         //selectedFiles needs to be reassigned every time it is manipulated because it doesn't emit signals otherwise

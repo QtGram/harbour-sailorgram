@@ -15,6 +15,7 @@ SilicaListView
     property string selectedMessageText
     property bool replyMode: false
     property bool editMode: false
+    property bool positionPending: false
 
     function prepareActions(model) {
         messageslist.selectedMessage = model.item;
@@ -24,6 +25,21 @@ SilicaListView
 
     function activateInput() {
         headerItem.activateInput();
+    }
+
+    Connections
+    {
+        target: dialogpage.context.positionSource
+
+        onPositionChanged: {
+            if(!positionPending)
+                return;
+
+            messagesmodel.sendLocation(dialogpage.context.positionSource.position.coordinate.latitude,
+                                       dialogpage.context.positionSource.position.coordinate.longitude);
+
+            positionPending = false;
+        }
     }
 
     id: messageslist
@@ -159,16 +175,30 @@ SilicaListView
 
         onShareImage: {
             var imageselector = pageStack.push(Qt.resolvedUrl("../../pages/selector/SelectorImagePage.qml"), { context: dialogpage.context });
-            imageselector.imageSelected.connect(function(image) { messagesmodel.sendPhoto(image, ""); });
+            imageselector.imageSelected.connect(function(image) {
+                messagesmodel.sendPhoto(image, "");
+                pageStack.pop(dialogpage);
+            });
         }
 
         onShareFile: {
             var fileselector = pageStack.push(Qt.resolvedUrl("../../pages/selector/SelectorFilePage.qml"), { context: dialogpage.context });
-            fileselector.fileSelected.connect(function(file) { messagesmodel.sendFile(file, ""); });
+
+            fileselector.fileSelected.connect(function(file)  {
+                messagesmodel.sendFile(file, "");
+                pageStack.pop(dialogpage);
+            });
         }
 
         onShareLocation: {
+            if(dialogpage.context.positionSource.valid) {
+                messagesmodel.sendLocation(dialogpage.context.positionSource.position.coordinate.latitude,
+                                           dialogpage.context.positionSource.position.coordinate.longitude);
+                return;
+            }
 
+            messageslist.positionPending = true;
+            dialogpage.context.positionSource.update();
         }
     }
 

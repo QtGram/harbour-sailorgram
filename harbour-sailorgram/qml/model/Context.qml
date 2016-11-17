@@ -1,4 +1,5 @@
 import QtQuick 2.1
+import QtPositioning 5.0
 import Sailfish.Silica 1.0
 import harbour.sailorgram.LibQTelegram 1.0
 import harbour.sailorgram.SailorGram 1.0
@@ -35,6 +36,11 @@ Item
     property real bubblesopacity: 100.0
 
     property Page mainPage: null
+
+    property PositionSource positionSource: PositionSource {
+        id: positionsource
+        preferredPositioningMethods: PositionSource.AllPositioningMethods
+    }
 
     property Telegram telegram: Telegram {
         initializer: TelegramInitializer {
