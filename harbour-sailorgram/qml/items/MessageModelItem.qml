@@ -74,6 +74,7 @@ ListItem
             emojiPath: context.sailorgram.emojiPath
             font { bold: true; pixelSize: Theme.fontSizeSmall }
             color: ColorScheme.colorizeText(model.isMessageService, model.isMessageOut, context)
+            linkColor: ColorScheme.colorizeLink(model.isMessageService, model.isMessageOut, context)
             visible: !model.isMessageOut && !model.isMessageService
             rawText: model.messageFrom
 
@@ -158,6 +159,7 @@ ListItem
             wrapMode: Text.Wrap
             font { italic: model.isMessageService; pixelSize: model.isMessageService ? Theme.fontSizeExtraSmall : Theme.fontSizeSmall }
             color: ColorScheme.colorizeText(model.isMessageService, model.isMessageOut, context)
+            linkColor: ColorScheme.colorizeLink(model.isMessageService, model.isMessageOut, context)
             visible: rawText.length > 0
 
             rawText: {

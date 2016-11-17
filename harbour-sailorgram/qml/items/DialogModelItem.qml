@@ -120,6 +120,7 @@ ListItem
             elide: Text.ElideRight
             verticalAlignment: Text.AlignVCenter
             color: model.isTopMessageService ? Theme.rgba(Theme.secondaryHighlightColor, 1.0) : Theme.primaryColor
+            linkColor: Theme.secondaryColor
             font { pixelSize: Theme.fontSizeExtraSmall; italic: model.isTopMessageService }
             emojiPath: context.sailorgram.emojiPath
             openUrls: false

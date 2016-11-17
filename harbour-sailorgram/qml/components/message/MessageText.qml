@@ -14,7 +14,7 @@ Label
 
     id: messagetext
     textFormat: Text.StyledText
-    text: TextElaborator.elaborate(rawText, emojiPath, font.pixelSize, "red", openUrls)
+    text: TextElaborator.elaborate(rawText, emojiPath, font.pixelSize, linkColor, openUrls)
     verticalAlignment: Text.AlignTop
 
     onLinkActivated: {

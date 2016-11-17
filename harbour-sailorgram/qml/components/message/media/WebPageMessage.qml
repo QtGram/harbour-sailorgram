@@ -37,6 +37,7 @@ MouseArea
             emojiPath: context.sailorgram.emojiPath
             font.pixelSize: Theme.fontSizeSmall
             color: webpagemessage.color
+            linkColor: webpagemessage.quoteColor
             width: parent.width
             wrapMode: Text.Wrap
             elide: Text.ElideRight
@@ -63,6 +64,7 @@ MouseArea
                     emojiPath: context.sailorgram.emojiPath
                     visible: rawText.length > 0
                     color: webpagemessage.color
+                    linkColor: webpagemessage.quoteColor
                     width: parent.width
                     wrapMode: Text.Wrap
                     font { bold: true; pixelSize: Theme.fontSizeSmall }
@@ -74,6 +76,7 @@ MouseArea
                     emojiPath: context.sailorgram.emojiPath
                     visible: rawText.length > 0
                     color: webpagemessage.color
+                    linkColor: webpagemessage.quoteColor
                     width: parent.width
                     wrapMode: Text.Wrap
                     font { pixelSize: Theme.fontSizeExtraSmall; italic: true }

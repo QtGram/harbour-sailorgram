@@ -51,6 +51,8 @@ Item
                 visible: messagesmodel.isChat && !model.isMessageOut && !model.isMessageService
                 rawText: model.replyFrom
                 color: messagereplyitem.color
+                linkColor: messagereplyitem.quoteColor
+
             }
 
             MessageText
@@ -64,6 +66,7 @@ Item
                 wrapMode: Text.Wrap
                 elide: Text.ElideRight
                 color: messagereplyitem.color
+                linkColor: messagereplyitem.quoteColor
                 horizontalAlignment: Text.AlignLeft
             }
         }
