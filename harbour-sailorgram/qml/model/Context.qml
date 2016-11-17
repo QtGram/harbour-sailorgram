@@ -12,7 +12,7 @@ Item
     readonly property string hereAppId: "MqR7KyY6dZpTbKiFwc3h"
     readonly property string hereAppCode: "zfYp6V9Ou_wDQn4NVqMofA"
     readonly property string version: "0.89"
-    readonly property bool beta: false
+    readonly property bool beta: true
     readonly property int betanum: 1
 
     readonly property int bubbleradius: {
