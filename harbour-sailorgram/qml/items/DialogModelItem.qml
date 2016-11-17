@@ -152,8 +152,8 @@ ListItem
         Rectangle
         {
             id: rectunreadcount
-            width: parent.height
-            height: parent.height
+            width: parent.height - Theme.paddingSmall
+            height: parent.height - Theme.paddingSmall
             color: Theme.secondaryHighlightColor
             radius: width * 0.5
             visible: model.unreadCount > 0
