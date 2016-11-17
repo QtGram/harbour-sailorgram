@@ -63,7 +63,7 @@ Page
                 clip: true
 
                 height: {
-                    var h = parent.height;
+                    var h = parent.height - mediaPanelHeight;
 
                     if(dialogtopheader.visible)
                         h -= dialogtopheader.height;

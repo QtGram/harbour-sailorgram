@@ -7,6 +7,7 @@ InverseMouseArea
 {
     property alias text: tamessage.text
 
+    signal shareMedia()
     signal sendMessage(string message)
 
     function focusTextArea() {
@@ -62,7 +63,13 @@ InverseMouseArea
         id: btnsend
         anchors.right: parent.right
         icon.source: (tamessage.text.length <= 0) ? "image://theme/icon-m-attach" : "image://theme/icon-m-message"
-        onClicked: prepareMessage()
+
+        onClicked: {
+            if(tamessage.text.length <= 0)
+                return shareMedia();
+
+            prepareMessage();
+        }
 
         visible: {
             if(context.sendwithreturn && (tamessage.text.length > 0))

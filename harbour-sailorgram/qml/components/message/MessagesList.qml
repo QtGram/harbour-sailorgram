@@ -8,6 +8,8 @@ import "../../model"
 
 SilicaListView
 {
+    readonly property real mediaPanelHeight: dialogmediapanel.visibleSize
+
     property Message selectedMessage: null
     property string selectedMessageFrom
     property string selectedMessageText
@@ -52,7 +54,7 @@ SilicaListView
             if(dialognotificationswitch.visible)
                 return dialognotificationswitch.height;
 
-            return messagereplyinput.height + messagetextinput.height
+            return messagereplyinput.height + messagetextinput.height;
         }
 
         Item { width: parent.width; height: Theme.paddingSmall }
@@ -76,6 +78,7 @@ SilicaListView
         MessageTextInput {
             id: messagetextinput
             width: parent.width
+            onShareMedia: dialogmediapanel.expanded ? dialogmediapanel.hide() : dialogmediapanel.show()
 
             onSendMessage: {
                 if(replyMode)
@@ -145,6 +148,27 @@ SilicaListView
                     headerItem.activateInput(selectedMessageText);
                 }
             }
+        }
+    }
+
+    DialogMediaPanel
+    {
+        id: dialogmediapanel
+        width: messageslist.width
+        parent: messageslist.parent
+
+        onShareImage: {
+            var imageselector = pageStack.push(Qt.resolvedUrl("../../pages/selector/SelectorImagePage.qml"), { context: dialogpage.context });
+            imageselector.imageSelected.connect(function(image) { messagesmodel.sendPhoto(image, ""); });
+        }
+
+        onShareFile: {
+            var fileselector = pageStack.push(Qt.resolvedUrl("../../pages/selector/SelectorFilePage.qml"), { context: dialogpage.context });
+            fileselector.fileSelected.connect(function(file) { messagesmodel.sendFile(file, ""); });
+        }
+
+        onShareLocation: {
+
         }
     }
 
