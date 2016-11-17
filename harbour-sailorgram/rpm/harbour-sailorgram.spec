@@ -71,6 +71,7 @@ ln -s ../harbour-sailorgram-notifications.service %{buildroot}/usr/lib/systemd/u
 ln -s /usr/share/%{name}/lib/libQTelegram.so %{buildroot}/usr/share/%{name}/lib/libQTelegram.so.1
 ln -s /usr/share/%{name}/lib/libQTelegram.so %{buildroot}/usr/share/%{name}/lib/libQTelegram.so.1.0
 ln -s /usr/share/%{name}/lib/libQTelegram.so %{buildroot}/usr/share/%{name}/lib/libQTelegram.so.1.0.0
+
 # << install post
 
 desktop-file-install --delete-original       \
@@ -101,6 +102,10 @@ fi
 systemctl-user restart mce.service
 systemctl-user restart ngfd.service
 systemctl-user restart harbour-sailorgram-notifications.service
+
+# Reset settings
+rm -rf /home/nemo/.cache/%{name}
+rm -rf /home/nemo/.local/share/%{name}
 # << post
 
 %files
