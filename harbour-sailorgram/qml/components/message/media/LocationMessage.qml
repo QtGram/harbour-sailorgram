@@ -14,8 +14,9 @@ Column
     Label
     {
         id: txtvenue
+        width: parent.width
         wrapMode: Text.Wrap
-        font.pixelSize: Theme.fontSizeSmall
+        font.pixelSize: Theme.fontSizeExtraSmall
         visible: (title.length > 0) || (address.length > 0)
 
         text: {
