@@ -9,6 +9,8 @@ Column
     id: signin
     spacing: Theme.paddingMedium
 
+    Item { width: parent.width; height: Theme.paddingLarge }
+
     Connections
     {
         target: context.telegram

@@ -10,6 +10,8 @@ Column
     id: phonenumber
     spacing: Theme.paddingLarge
 
+    Item { width: parent.width; height: Theme.paddingLarge }
+
     Image
     {
         id: imglogo

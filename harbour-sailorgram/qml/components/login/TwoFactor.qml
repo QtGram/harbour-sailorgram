@@ -10,6 +10,8 @@ Column
     id: twofactor
     spacing: Theme.paddingMedium
 
+    Item { width: parent.width; height: Theme.paddingLarge }
+
     Connections
     {
         target: context.telegram
