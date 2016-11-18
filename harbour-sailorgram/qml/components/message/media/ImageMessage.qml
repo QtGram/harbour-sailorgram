@@ -22,6 +22,7 @@ Item
     {
         z: 2
         source: "image://theme/icon-m-cloud-download"
+        asynchronous: true
         fillMode: Image.PreserveAspectFit
         anchors.centerIn: parent
         width: parent.width * 0.2
@@ -30,5 +31,19 @@ Item
     }
 
     BusyIndicator { z: 2; size: BusyIndicatorSize.Small; anchors.centerIn: parent; running: mediamessageitem.downloading }
-    MouseArea { anchors.fill: parent; onClicked: mediamessageitem.download() }
+
+    MouseArea
+    {
+        anchors.fill: parent
+        enabled: !mediamessageitem.isSticker
+
+        onClicked: {
+            if(mediamessageitem.downloaded) {
+                pageStack.push(Qt.resolvedUrl("../../../pages/media/ImageViewerPage.qml"), { source: imagemessage.source });
+                return;
+            }
+
+            mediamessageitem.download();
+        }
+    }
 }
