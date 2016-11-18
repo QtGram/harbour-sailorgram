@@ -83,28 +83,10 @@ Page
 
         anchors.fill: parent
 
-        PageHeader
-        {
-            id: header
-
-            title: {
-                if(!mainpage.loggedIn)
-                    return "";
-
-                if(!context.telegram.connected)
-                    return qsTr("Connecting...");
-
-                if(context.telegram.syncing)
-                    return qsTr("Syncing...");
-
-                return qsTr("Chats");
-            }
-        }
-
         Loader
         {
             id: loader
-            anchors { left: parent.left; top: header.bottom; right: parent.right; bottom: parent.bottom }
+            anchors.fill: parent
         }
     }
 }

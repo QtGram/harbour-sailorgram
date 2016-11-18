@@ -43,6 +43,23 @@ SilicaListView
     model: context.dialogs
     clip: true
 
+    header: PageHeader {
+        id: header
+
+        title: {
+            if(!mainpage.loggedIn)
+                return "";
+
+            if(!context.telegram.connected)
+                return qsTr("Connecting...");
+
+            if(context.telegram.syncing)
+                return qsTr("Syncing...");
+
+            return qsTr("Chats");
+        }
+    }
+
     delegate: DialogModelItem {
         width: parent.width
         onClicked: openDialog(model.item)

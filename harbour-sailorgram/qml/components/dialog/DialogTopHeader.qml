@@ -3,7 +3,7 @@ import Sailfish.Silica 1.0
 import harbour.sailorgram.LibQTelegram 1.0
 import "../custom"
 
-BackgroundRectangle
+Item
 {
     property alias title: lbltitle.text
     property alias statusText: lblstatus.text
