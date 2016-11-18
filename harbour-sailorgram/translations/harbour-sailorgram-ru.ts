@@ -245,17 +245,9 @@ message(s)</source>
     </message>
 </context>
 <context>
-    <name>MainPage</name>
+    <name>DialogsList</name>
     <message>
-        <source>Chats</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Contacts</source>
+        <source>Connecting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -263,7 +255,18 @@ message(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Connecting...</source>
+        <source>Chats</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MainPage</name>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contacts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -85,9 +85,10 @@ MouseArea
                 Image
                 {
                     id: imgthumbnail
+                    fillMode: Image.PreserveAspectFit
                     width: parent.width
                     asynchronous: true
-                    fillMode: Image.PreserveAspectFit
+                    cache: false
                 }
             }
         }
