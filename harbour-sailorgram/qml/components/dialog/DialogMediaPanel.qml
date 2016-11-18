@@ -13,7 +13,7 @@ BackgroundRectangle
 
     Behavior on height {
         NumberAnimation {
-            duration: 500; easing.type: Easing.OutQuad
+            duration: 250; easing.type: Easing.OutQuad
         }
     }
 
