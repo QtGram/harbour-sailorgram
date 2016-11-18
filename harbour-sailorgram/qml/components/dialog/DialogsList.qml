@@ -41,11 +41,10 @@ SilicaListView
     id: dialogslist
     spacing: Theme.paddingMedium
     model: context.dialogs
+    cacheBuffer: Screen.height * 2
     clip: true
 
     header: PageHeader {
-        id: header
-
         title: {
             if(!mainpage.loggedIn)
                 return "";
