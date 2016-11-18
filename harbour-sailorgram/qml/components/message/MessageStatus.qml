@@ -24,7 +24,7 @@ Label
         var status = "";
 
         if(isMute)
-            status += "<img align='middle' width='" + font.pixelSize + "' height='" + font.pixelSize + "' src='qrc:///res/mute.png'> ";
+            status += "🔇";
 
         if(isMessageEdited)
             status += qsTr("edited") + " ";
