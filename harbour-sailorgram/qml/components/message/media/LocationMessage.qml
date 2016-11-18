@@ -32,5 +32,11 @@ Column
         id: imgmap
         asynchronous: true
         fillMode: Image.PreserveAspectFit
+
+        MouseArea
+        {
+            anchors.fill: parent
+            onClicked: Qt.openUrlExternally("geo:" + mediamessageitem.geoPoint.latitude + "," + mediamessageitem.geoPoint.longitude)
+        }
     }
 }

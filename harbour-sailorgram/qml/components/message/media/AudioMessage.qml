@@ -22,7 +22,7 @@ Item
         id: imgplay
         width: Theme.iconSizeMedium
         height: Theme.iconSizeMedium
-        anchors { verticalCenter: parent.verticalCenter; verticalCenterOffset: Theme.paddingMedium }
+        anchors { verticalCenter: parent.verticalCenter }
         fillMode: Image.PreserveAspectFit
 
         source: {
@@ -64,7 +64,7 @@ Item
     {
         id: lblduration
         anchors { left: imgplay.right; top: waveform.bottom; right: parent.right; leftMargin: Theme.paddingSmall; topMargin: Theme.paddingMedium }
-        font.pointSize: Theme.fontSizeSmall
+        font.pixelSize: Theme.fontSizeSmall
         text: audiomessage.duration + " <font color='" + waveform.barColor + "'>⚫</font>";
     }
 }

@@ -13,7 +13,7 @@ Item
     property color color: Theme.primaryColor
 
     id: messagereplyitem
-    height: Math.max(content.height, mediamessageitem.height)
+    height: Math.max(content.height, mediamessageitem.height) + Theme.paddingSmall
 
     Row
     {
@@ -22,7 +22,7 @@ Item
         height: parent.height
         spacing: Theme.paddingSmall
 
-        MessageQuote { id: messagequote; height: parent.height }
+        MessageQuote { id: messagequote; height: parent.height - Theme.paddingSmall }
 
         MediaMessageItem
         {
