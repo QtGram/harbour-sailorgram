@@ -8,8 +8,6 @@ import "../../model"
 
 SilicaListView
 {
-    readonly property real mediaPanelHeight: dialogmediapanel.visibleSize
-
     property Message selectedMessage: null
     property string selectedMessageFrom
     property string selectedMessageText
@@ -164,41 +162,6 @@ SilicaListView
                     headerItem.activateInput(selectedMessageText);
                 }
             }
-        }
-    }
-
-    DialogMediaPanel
-    {
-        id: dialogmediapanel
-        width: messageslist.width
-        parent: messageslist.parent
-
-        onShareImage: {
-            var imageselector = pageStack.push(Qt.resolvedUrl("../../pages/selector/SelectorImagePage.qml"), { context: dialogpage.context });
-            imageselector.imageSelected.connect(function(image) {
-                messagesmodel.sendPhoto(image, "");
-                pageStack.pop(dialogpage);
-            });
-        }
-
-        onShareFile: {
-            var fileselector = pageStack.push(Qt.resolvedUrl("../../pages/selector/SelectorFilePage.qml"), { context: dialogpage.context });
-
-            fileselector.fileSelected.connect(function(file)  {
-                messagesmodel.sendFile(file, "");
-                pageStack.pop(dialogpage);
-            });
-        }
-
-        onShareLocation: {
-            if(dialogpage.context.positionSource.valid) {
-                messagesmodel.sendLocation(dialogpage.context.positionSource.position.coordinate.latitude,
-                                           dialogpage.context.positionSource.position.coordinate.longitude);
-                return;
-            }
-
-            messageslist.positionPending = true;
-            dialogpage.context.positionSource.update();
         }
     }
 

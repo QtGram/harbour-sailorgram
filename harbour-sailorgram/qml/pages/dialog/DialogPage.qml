@@ -39,6 +39,7 @@ Page
             top: parent.top
             right: parent.right
             bottom: parent.bottom
+            bottomMargin: dialogmediapanel.height
         }
 
         Column
@@ -63,7 +64,7 @@ Page
                 clip: true
 
                 height: {
-                    var h = parent.height - mediaPanelHeight;
+                    var h = parent.height;
 
                     if(dialogtopheader.visible)
                         h -= dialogtopheader.height;
@@ -71,6 +72,41 @@ Page
                     return h;
                 }
             }
+        }
+    }
+
+    DialogMediaPanel
+    {
+        id: dialogmediapanel
+        anchors { left: parent.left; bottom: parent.bottom; right: parent.right }
+        width: parent.width
+
+        onShareImage: {
+            var imageselector = pageStack.push(Qt.resolvedUrl("../../pages/selector/SelectorImagePage.qml"), { context: dialogpage.context });
+            imageselector.imageSelected.connect(function(image) {
+                messagesmodel.sendPhoto(image, "");
+                pageStack.pop(dialogpage);
+            });
+        }
+
+        onShareFile: {
+            var fileselector = pageStack.push(Qt.resolvedUrl("../../pages/selector/SelectorFilePage.qml"), { context: dialogpage.context });
+
+            fileselector.fileSelected.connect(function(file)  {
+                messagesmodel.sendFile(file, "");
+                pageStack.pop(dialogpage);
+            });
+        }
+
+        onShareLocation: {
+            if(dialogpage.context.positionSource.valid) {
+                messagesmodel.sendLocation(dialogpage.context.positionSource.position.coordinate.latitude,
+                                           dialogpage.context.positionSource.position.coordinate.longitude);
+                return;
+            }
+
+            messageslist.positionPending = true;
+            dialogpage.context.positionSource.update();
         }
     }
 }

@@ -39,7 +39,7 @@ SilicaListView
     }
 
     id: dialogslist
-    spacing: Theme.paddingSmall
+    spacing: Theme.paddingMedium
     model: context.dialogs
     clip: true
 

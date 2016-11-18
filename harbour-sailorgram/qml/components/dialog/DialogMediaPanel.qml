@@ -1,11 +1,29 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
+import "../custom"
 
-DockedPanel
+BackgroundRectangle
 {
+    readonly property bool expanded: height > 0
+    property real contentHeight: Theme.itemSizeSmall
+
     id: dialogmediapanel
-    dock: Dock.Bottom
-    height: Theme.itemSizeSmall
+    height: 0
+    clip: true
+
+    Behavior on height {
+        NumberAnimation {
+            duration: 500; easing.type: Easing.OutQuad
+        }
+    }
+
+    function hide() {
+        height = 0;
+    }
+
+    function show() {
+        height = contentHeight;
+    }
 
     signal shareImage()
     signal shareFile()
