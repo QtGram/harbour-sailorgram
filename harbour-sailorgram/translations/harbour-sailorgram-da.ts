@@ -245,6 +245,13 @@ message(s)</source>
     </message>
 </context>
 <context>
+    <name>DialogPage</name>
+    <message>
+        <source>Sending location</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DialogsList</name>
     <message>
         <source>Connecting...</source>
