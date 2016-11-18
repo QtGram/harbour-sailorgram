@@ -32,6 +32,8 @@ Page
         isActive: (Qt.application.state === Qt.ApplicationActive) && (dialogpage.status === PageStatus.Active)
     }
 
+    RemorsePopup { id: remorsepopup }
+
     SilicaFlickable
     {
         anchors  {
@@ -99,14 +101,16 @@ Page
         }
 
         onShareLocation: {
-            if(dialogpage.context.positionSource.valid) {
-                messagesmodel.sendLocation(dialogpage.context.positionSource.position.coordinate.latitude,
-                                           dialogpage.context.positionSource.position.coordinate.longitude);
-                return;
-            }
+            remorsepopup.execute(qsTr("Sending location"), function() {
+                if(dialogpage.context.positionSource.valid) {
+                    messagesmodel.sendLocation(dialogpage.context.positionSource.position.coordinate.latitude,
+                                               dialogpage.context.positionSource.position.coordinate.longitude);
+                    return;
+                }
 
-            messageslist.positionPending = true;
-            dialogpage.context.positionSource.update();
+                messageslist.positionPending = true;
+                dialogpage.context.positionSource.update();
+            });
         }
     }
 }
