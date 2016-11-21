@@ -36,7 +36,7 @@ CoverBackground
             Label
             {
                 id: lblunreadcount
-                text: "0"
+                text: context.telegram.unreadCount
                 font.pixelSize: Theme.fontSizeHuge
                 font.family: Theme.fontFamilyHeading
             }
