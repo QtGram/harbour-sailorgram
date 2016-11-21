@@ -32,6 +32,16 @@ Item
 
     BusyIndicator { z: 2; size: BusyIndicatorSize.Small; anchors.centerIn: parent; running: mediamessageitem.downloading }
 
+    ProgressCircle
+    {
+        z: 2
+        width: Math.min(parent.width, parent.height) * 0.8
+        height: width
+        anchors.centerIn: parent
+        visible: mediamessageitem.uploading
+        value: mediamessageitem.progress
+    }
+
     MouseArea
     {
         anchors.fill: parent

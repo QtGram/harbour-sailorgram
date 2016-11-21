@@ -20,6 +20,14 @@ Row
         height: Theme.itemSizeSmall
     }
 
+    ProgressCircle
+    {
+        z: 2
+        anchors.fill: image
+        visible: mediamessageitem.uploading
+        value: mediamessageitem.progress
+    }
+
     Column
     {
         id: coltext
