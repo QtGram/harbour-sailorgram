@@ -13,7 +13,7 @@ Page
     property var dialog
 
     id: dialogpage
-    allowedOrientations: Orientation.All
+    allowedOrientations: defaultAllowedOrientations
 
     onStatusChanged: {
         context.sailorgram.notifications.currentDialog = (status === PageStatus.Active) ? dialogpage.dialog : null;
@@ -42,6 +42,22 @@ Page
             right: parent.right
             bottom: parent.bottom
             bottomMargin: dialogmediapanel.height
+        }
+
+        PushUpMenu
+        {
+            enabled: !dialogmediapanel.expanded
+
+            MenuItem
+            {
+                text: qsTr("Select")
+            }
+
+            MenuItem
+            {
+                text: qsTr("Details")
+                onClicked: pageStack.push(Qt.resolvedUrl("DetailsPage.qml"), { context: dialogpage.context, dialog: dialogpage.dialog })
+            }
         }
 
         Column

@@ -22,7 +22,7 @@ Page
     }
 
     id: mainpage
-    allowedOrientations: Orientation.All
+    allowedOrientations: defaultAllowedOrientations
 
     Component.onCompleted: {
         context.mainPage = mainpage;

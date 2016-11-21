@@ -213,4 +213,5 @@ DISTFILES += \
     qml/components/dialog/DialogMediaPanel.qml \
     qml/pages/selector/SelectorImagePage.qml \
     qml/pages/selector/SelectorFilePage.qml \
-    qml/pages/media/ImageViewerPage.qml
+    qml/pages/media/ImageViewerPage.qml \
+    qml/pages/dialog/DetailsPage.qml
