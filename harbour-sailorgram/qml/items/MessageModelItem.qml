@@ -9,6 +9,10 @@ import "../js/ColorScheme.js" as ColorScheme
 
 ListItem
 {
+    readonly property color bubbleColor: ColorScheme.colorizeBubble(model.isMessageService, model.isMessageOut, context)
+    readonly property color textColor: ColorScheme.colorizeText(model.isMessageService, model.isMessageOut, context)
+    readonly property color linkColor: ColorScheme.colorizeLink(model.isMessageService, model.isMessageOut, context)
+    readonly property color quoteColor: linkColor
     property real maxWidth
 
     signal replyRequested()
@@ -75,8 +79,8 @@ ListItem
             elide: Text.ElideRight
             horizontalAlignment: Text.AlignLeft
             font { bold: true; pixelSize: Theme.fontSizeSmall }
-            color: ColorScheme.colorizeText(model.isMessageService, model.isMessageOut, context)
-            linkColor: ColorScheme.colorizeLink(model.isMessageService, model.isMessageOut, context)
+            color: messagemodelitem.textColor
+            linkColor: messagemodelitem.linkColor
             rawText: model.isMessageForwarded ? qsTr("Forwarded from %1").arg(model.forwardedFromName) : model.messageFrom
             visible: !model.isMessageService
         }
@@ -85,8 +89,8 @@ ListItem
         {
             id: messagereplyitem
             width: parent.width
-            quoteColor: ColorScheme.colorizeLink(model.isMessageService, model.isMessageOut, context)
-            color: ColorScheme.colorizeText(model.isMessageService, model.isMessageOut, context)
+            quoteColor: messagemodelitem.quoteColor
+            color: messagemodelitem.textColor
             visible: model.messageHasReply
         }
 
@@ -109,7 +113,7 @@ ListItem
             locationDelegate: LocationMessage {
                 title: mediamessageitem.venueTitle
                 address: mediamessageitem.venueAddress
-                color: ColorScheme.colorizeText(model.isMessageService, model.isMessageOut, context)
+                color: messagemodelitem.textColor
 
                 source: {
                     return context.locationThumbnail(mediamessageitem.geoPoint.latitude,
@@ -120,8 +124,8 @@ ListItem
 
             webPageDelegate: WebPageMessage {
                 width: Math.min(contentWidth, maxWidth)
-                color: ColorScheme.colorizeText(model.isMessageService, model.isMessageOut, context)
-                quoteColor: ColorScheme.colorizeLink(model.isMessageService, model.isMessageOut, context)
+                color: messagemodelitem.textColor
+                quoteColor: messagemodelitem.linkColor
                 title: mediamessageitem.webPageTitle
                 description: mediamessageitem.webPageDescription
                 destinationUrl: mediamessageitem.webPageUrl
@@ -132,8 +136,8 @@ ListItem
             audioDelegate: AudioMessage {
                 width: Math.min(contentWidth, maxWidth)
                 duration: mediamessageitem.duration
-                color: ColorScheme.colorizeText(model.isMessageService, model.isMessageOut, context)
-                barColor: ColorScheme.colorizeLink(model.isMessageService, model.isMessageOut, context)
+                color: messagemodelitem.textColor
+                barColor: messagemodelitem.linkColor
                 source: mediamessageitem.source
                 message: model.item
             }
@@ -152,8 +156,8 @@ ListItem
             emojiPath: context.sailorgram.emojiPath
             wrapMode: Text.Wrap
             font { italic: model.isMessageService; pixelSize: model.isMessageService ? Theme.fontSizeExtraSmall : Theme.fontSizeSmall }
-            color: ColorScheme.colorizeText(model.isMessageService, model.isMessageOut, context)
-            linkColor: ColorScheme.colorizeLink(model.isMessageService, model.isMessageOut, context)
+            color: messagemodelitem.textColor
+            linkColor: messagemodelitem.linkColor
             visible: rawText.length > 0
 
             rawText: {
@@ -182,7 +186,7 @@ ListItem
             isMessageUnread: model.isMessageUnread
             isMessageEdited: model.isMessageEdited
             messageDate: model.messageDate
-            color: Qt.darker(ColorScheme.colorizeText(model.isMessageService, model.isMessageOut, context), 1.5)
+            color: messagemodelitem.textColor
             ticksColor: messagestatus.color
         }
     }
