@@ -43,6 +43,8 @@ Item
     }
 
     property Telegram telegram: Telegram {
+        autoDownload: context.autoloadimages
+
         initializer: TelegramInitializer {
             debugMode: true
             apiId: context.apiId
