@@ -68,7 +68,7 @@ SilicaListView
             if(dialognotificationswitch.visible)
                 return dialognotificationswitch.height;
 
-            return messagereplyinput.height + messagetextinput.height;
+            return messagereplyinput.height + messagetextinput.height + Theme.paddingSmall;
         }
 
         Item { width: parent.width; height: Theme.paddingSmall }

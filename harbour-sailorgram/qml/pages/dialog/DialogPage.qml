@@ -36,13 +36,8 @@ Page
 
     SilicaFlickable
     {
-        anchors  {
-            left: parent.left
-            top: parent.top
-            right: parent.right
-            bottom: parent.bottom
-            bottomMargin: dialogmediapanel.height
-        }
+        anchors.fill: parent
+        contentHeight: content.height
 
         PushUpMenu
         {
@@ -51,6 +46,10 @@ Page
             MenuItem
             {
                 text: qsTr("Select")
+
+                onClicked: {
+
+                }
             }
 
             MenuItem
@@ -63,7 +62,7 @@ Page
         Column
         {
             id: content
-            anchors.fill: parent
+            width: parent.width
 
             DialogTopHeader
             {
@@ -82,51 +81,53 @@ Page
                 clip: true
 
                 height: {
-                    var h = parent.height;
+                    var h = dialogpage.height;
 
                     if(dialogtopheader.visible)
                         h -= dialogtopheader.height;
 
+                    if(dialogmediapanel.visible)
+                        h -= dialogmediapanel.height;
+
                     return h;
                 }
             }
-        }
-    }
 
-    DialogMediaPanel
-    {
-        id: dialogmediapanel
-        anchors { left: parent.left; bottom: parent.bottom; right: parent.right }
-        width: parent.width
+            DialogMediaPanel
+            {
+                id: dialogmediapanel
+                width: parent.width
 
-        onShareImage: {
-            var imageselector = pageStack.push(Qt.resolvedUrl("../../pages/selector/SelectorImagePage.qml"), { context: dialogpage.context });
-            imageselector.imageSelected.connect(function(image) {
-                messagesmodel.sendPhoto(image, "");
-                pageStack.pop(dialogpage);
-            });
-        }
-
-        onShareFile: {
-            var fileselector = pageStack.push(Qt.resolvedUrl("../../pages/selector/SelectorFilePage.qml"), { context: dialogpage.context });
-
-            fileselector.fileSelected.connect(function(file)  {
-                messagesmodel.sendFile(file, "");
-                pageStack.pop(dialogpage);
-            });
-        }
-
-        onShareLocation: {
-            remorsepopup.execute(qsTr("Sending location"), function() {
-                if(dialogpage.context.positionSource.valid) {
-                    messagesmodel.sendLocation(dialogpage.context.positionSource.position.coordinate.latitude,
-                                               dialogpage.context.positionSource.position.coordinate.longitude);
-                    return;
+                onShareImage: {
+                    var imageselector = pageStack.push(Qt.resolvedUrl("../../pages/selector/SelectorImagePage.qml"), { context: dialogpage.context });
+                    imageselector.imageSelected.connect(function(image) {
+                        messagesmodel.sendPhoto(image, "");
+                        pageStack.pop(dialogpage);
+                    });
                 }
 
-                messageslist.positionPending = true;
-                dialogpage.context.positionSource.update();
-            });
+                onShareFile: {
+                    var fileselector = pageStack.push(Qt.resolvedUrl("../../pages/selector/SelectorFilePage.qml"), { context: dialogpage.context });
+
+                    fileselector.fileSelected.connect(function(file)  {
+                        messagesmodel.sendFile(file, "");
+                        pageStack.pop(dialogpage);
+                    });
+                }
+
+                onShareLocation: {
+                    remorsepopup.execute(qsTr("Sending location"), function() {
+                        if(dialogpage.context.positionSource.valid) {
+                            messagesmodel.sendLocation(dialogpage.context.positionSource.position.coordinate.latitude,
+                                                       dialogpage.context.positionSource.position.coordinate.longitude);
+                            return;
+                        }
+
+                        messageslist.positionPending = true;
+                        dialogpage.context.positionSource.update();
+                    });
+                }
+            }
         }
     }
 }
