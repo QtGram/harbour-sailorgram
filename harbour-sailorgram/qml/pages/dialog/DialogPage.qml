@@ -83,7 +83,7 @@ Page
                 clip: true
 
                 height: {
-                    var h = dialogpage.height;
+                    var h = dialogpage.height - Theme.paddingSmall;
 
                     if(dialogtopheader.visible)
                         h -= dialogtopheader.height;
