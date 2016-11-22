@@ -21,7 +21,7 @@ ProgressCircle
         anchors.centerIn: parent
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        text: "25%" // Math.ceil(value * 100) + "%"
+        text: Math.ceil(value * 100) + "%"
         font { bold: true; pixelSize: Theme.fontSizeMedium }
         color: progressColor
     }
