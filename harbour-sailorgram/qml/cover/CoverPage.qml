@@ -124,7 +124,7 @@ CoverBackground
             iconSource: "image://theme/icon-cover-message"
 
             onTriggered: {
-                pageStack.push(Qt.resolvedUrl("../pages/contact/ContactsPage.qml"), { context: coverpage.context });
+                pageStack.push(Qt.resolvedUrl("../pages/contact/ContactsPage.qml"), { context: coverpage.context }, PageStackAction.Immediate);
                 mainwindow.activate();
             }
         }
