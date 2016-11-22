@@ -1,6 +1,6 @@
 #include "dialogscovermodel.h"
 
-DialogsCoverModel::DialogsCoverModel(QObject *parent) : QIdentityProxyModel(parent), _dialogsmodel(NULL)
+DialogsCoverModel::DialogsCoverModel(QObject *parent) : QIdentityProxyModel(parent), _dialogsmodel(NULL), _maxdialogs(0)
 {
 
 }
