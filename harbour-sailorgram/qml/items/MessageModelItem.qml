@@ -102,7 +102,7 @@ ListItem
 
             imageDelegate: ImageMessage {
                 anchors.fill: parent
-                source: mediamessageitem.source
+                source: mediamessageitem.isVideo ? mediamessageitem.videoThumbnail : mediamessageitem.source
             }
 
             animatedDelegate: AnimatedMessage {

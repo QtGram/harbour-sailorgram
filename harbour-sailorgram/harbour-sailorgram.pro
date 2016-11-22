@@ -217,4 +217,14 @@ DISTFILES += \
     qml/pages/dialog/DetailsPage.qml \
     qml/components/custom/ProgressIndicator.qml \
     qml/components/custom/ConnectionStatus.qml \
-    qml/components/custom/MessagePopup.qml
+    qml/components/custom/MessagePopup.qml \
+    qml/components/mediaplayer/mediacomponents/MediaPlayerCursor.qml \
+    qml/components/mediaplayer/mediacomponents/MediaPlayerError.qml \
+    qml/components/mediaplayer/mediacomponents/MediaPlayerPopup.qml \
+    qml/components/mediaplayer/mediacomponents/MediaPlayerProgressBar.qml \
+    qml/components/mediaplayer/mediacomponents/MediaPlayerTitle.qml \
+    qml/components/mediaplayer/mediacomponents/MediaPlayerToolBar.qml \
+    qml/js/MediaPlayerHelper.js \
+    qml/components/mediaplayer/mediacomponents/MediaPlayerLoadingBar.qml \
+    qml/pages/media/MediaPlayerPage.qml \
+    qml/components/mediaplayer/InternalMediaPlayer.qml

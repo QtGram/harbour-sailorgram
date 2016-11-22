@@ -161,6 +161,21 @@ message(s)</source>
     </message>
 </context>
 <context>
+    <name>DetailsPage</name>
+    <message>
+        <source>%1&apos;s profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DevelopersPage</name>
     <message>
         <source>Developers</source>
@@ -248,6 +263,14 @@ message(s)</source>
     <name>DialogPage</name>
     <message>
         <source>Sending location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Details</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -635,6 +658,13 @@ message(s)</source>
     </message>
     <message>
         <source>Sending request...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>WebPageMessage</name>
+    <message>
+        <source>Launching external web browser</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

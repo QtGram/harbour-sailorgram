@@ -104,8 +104,8 @@ systemctl-user restart ngfd.service
 systemctl-user restart harbour-sailorgram-notifications.service
 
 # Reset settings
-rm -rf /home/nemo/.cache/%{name}
-rm -rf /home/nemo/.local/share/%{name}
+# rm -rf /home/nemo/.cache/%{name}
+# rm -rf /home/nemo/.local/share/%{name}
 # << post
 
 %files

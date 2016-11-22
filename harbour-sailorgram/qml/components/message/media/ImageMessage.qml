@@ -17,18 +17,30 @@ Item
         cache: false
     }
 
-    FastBlur { anchors.fill: image; source: image; visible:!mediamessageitem.downloaded; radius: !mediamessageitem.downloaded ? 32.0 : 0.0 }
+    FastBlur { anchors.fill: image; source: image; radius: (!mediamessageitem.downloaded || mediamessageitem.isVideo) ? 32.0 : 0.0 }
 
     Image
     {
         z: 2
-        source: "image://theme/icon-m-cloud-download"
         asynchronous: true
         fillMode: Image.PreserveAspectFit
         anchors.centerIn: parent
         width: parent.width * 0.2
         height: parent.height * 0.2
-        visible: !mediamessageitem.downloaded && !mediamessageitem.downloading
+
+        visible: {
+            if(mediamessageitem.downloading)
+                return false;
+
+            return !mediamessageitem.downloaded || mediamessageitem.isVideo;
+        }
+
+        source: {
+            if(mediamessageitem.isVideo && mediamessageitem.downloaded)
+                return "image://theme/icon-m-play";
+
+            return "image://theme/icon-m-cloud-download";
+        }
     }
 
     BusyIndicator { z: 2; size: BusyIndicatorSize.Small; anchors.centerIn: parent; running: mediamessageitem.downloading }
@@ -51,7 +63,11 @@ Item
 
         onClicked: {
             if(mediamessageitem.downloaded) {
-                pageStack.push(Qt.resolvedUrl("../../../pages/media/ImageViewerPage.qml"), { source: imagemessage.source });
+                if(mediamessageitem.isVideo)
+                    pageStack.push(Qt.resolvedUrl("../../../pages/media/MediaPlayerPage.qml"), { source: mediamessageitem.source, thumbnail: mediamessageitem.videoThumbnail });
+                else
+                    pageStack.push(Qt.resolvedUrl("../../../pages/media/ImageViewerPage.qml"), { source: imagemessage.source });
+
                 return;
             }
 
