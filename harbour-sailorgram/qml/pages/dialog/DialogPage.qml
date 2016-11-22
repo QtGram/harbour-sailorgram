@@ -2,8 +2,9 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.LibQTelegram 1.0
 import "../../components/dialog"
-import "../../components/message"
 import "../../components/message/panel"
+import "../../components/message"
+import "../../components/custom"
 import "../../model"
 
 Page
@@ -32,6 +33,7 @@ Page
         isActive: (Qt.application.state === Qt.ApplicationActive) && (dialogpage.status === PageStatus.Active)
     }
 
+    MessagePopup { id: messagepopup }
     RemorsePopup { id: remorsepopup }
 
     SilicaFlickable

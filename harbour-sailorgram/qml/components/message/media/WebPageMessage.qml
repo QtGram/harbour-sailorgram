@@ -21,7 +21,7 @@ MouseArea
     height: content.height
 
     onClicked: {
-        console.log(destinationUrl);
+        messagepopup.popup(qsTr("Launching external web browser"));
         Qt.resolvedUrl(destinationUrl);
     }
 
