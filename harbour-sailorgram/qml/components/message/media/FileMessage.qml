@@ -19,6 +19,19 @@ Row
         asynchronous: true
         width: Theme.itemSizeSmall
         height: Theme.itemSizeSmall
+
+        source: {
+            if(mediamessageitem.isAudio)
+                return "image://theme/icon-m-sounds";
+
+            if(mediamessageitem.isVideo)
+                return "image://theme/icon-m-video";
+
+            if(mediamessageitem.isImage)
+                return "image://theme/icon-m-image";
+
+            return "image://theme/icon-m-file-document";
+        }
     }
 
     ProgressIndicator
