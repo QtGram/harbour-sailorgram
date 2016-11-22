@@ -1,5 +1,6 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
+import "../../custom"
 
 Row
 {
@@ -20,12 +21,15 @@ Row
         height: Theme.itemSizeSmall
     }
 
-    ProgressCircle
+    ProgressIndicator
     {
-        z: 2
-        anchors.fill: image
+        size: Math.min(parent.width, parent.height) * 0.8
+        backgroundColor: messagemodelitem.bubbleColor
+        progressColor: messagemodelitem.textColor
         visible: mediamessageitem.uploading
         value: mediamessageitem.progress
+        anchors.centerIn: parent
+        z: 2
     }
 
     Column

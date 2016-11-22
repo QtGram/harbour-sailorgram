@@ -12,7 +12,7 @@ Item
     Rectangle
     {
         id: mainbubble
-        color: ColorScheme.colorizeBubble(model.isMessageService, model.isMessageOut, context)
+        color: messagemodelitem.bubbleColor
         anchors.fill: parent
         radius: context.bubbleradius
         smooth: true

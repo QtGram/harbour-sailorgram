@@ -1,6 +1,7 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import QtGraphicalEffects 1.0
+import "../../custom"
 
 Item
 {
@@ -32,14 +33,15 @@ Item
 
     BusyIndicator { z: 2; size: BusyIndicatorSize.Small; anchors.centerIn: parent; running: mediamessageitem.downloading }
 
-    ProgressCircle
+    ProgressIndicator
     {
-        z: 2
-        width: Math.min(parent.width, parent.height) * 0.8
-        height: width
-        anchors.centerIn: parent
+        size: Math.min(parent.width, parent.height) * 0.8
+        backgroundColor: messagemodelitem.bubbleColor
+        progressColor: messagemodelitem.textColor
         visible: mediamessageitem.uploading
         value: mediamessageitem.progress
+        anchors.centerIn: parent
+        z: 2
     }
 
     MouseArea

@@ -214,4 +214,5 @@ DISTFILES += \
     qml/pages/selector/SelectorImagePage.qml \
     qml/pages/selector/SelectorFilePage.qml \
     qml/pages/media/ImageViewerPage.qml \
-    qml/pages/dialog/DetailsPage.qml
+    qml/pages/dialog/DetailsPage.qml \
+    qml/components/custom/ProgressIndicator.qml
