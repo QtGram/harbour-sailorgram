@@ -24,6 +24,7 @@ Item
     MouseArea
     {
         anchors.fill: parent
+        enabled: !messageslist.selectionMode
 
         onClicked: {
             if(mediamessageitem.downloaded) {
