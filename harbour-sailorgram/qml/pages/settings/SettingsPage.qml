@@ -42,8 +42,9 @@ Page
                 width: parent.width
                 height: Theme.itemSizeSmall
                 icon: "qrc:///res/daemon.png"
-                text: qsTr("Daemon")
-                onActionRequested: pageStack.push(Qt.resolvedUrl("DaemonSettingsPage.qml"), { "context": settingspage.context })
+                text: qsTr("Daemon") + " (Disabled)"
+                enabled: false
+                //onActionRequested: pageStack.push(Qt.resolvedUrl("DaemonSettingsPage.qml"), { "context": settingspage.context })
             }
 
             /*
