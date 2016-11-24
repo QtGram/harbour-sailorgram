@@ -59,7 +59,7 @@ Item
     MouseArea
     {
         anchors.fill: parent
-        enabled: !mediamessageitem.isSticker
+        enabled: !mediamessageitem.isSticker && !messageslist.selectionMode
 
         onClicked: {
             if(mediamessageitem.downloaded) {

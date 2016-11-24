@@ -36,6 +36,7 @@ Column
         MouseArea
         {
             anchors.fill: parent
+            enabled: !messageslist.selectionMode
             onClicked: Qt.openUrlExternally("geo:" + mediamessageitem.geoPoint.latitude + "," + mediamessageitem.geoPoint.longitude)
         }
     }

@@ -61,7 +61,7 @@ Page
 
                     newchatpage.cloudChatRequested.connect(function() {
                         pageStack.pop(mainpage, PageStackAction.Immediate);
-                        loader.item.openDialog(context.dialogs.cloudDialog, true);
+                        context.openDialog(context.dialogs.cloudDialog, true);
                     });
                 }
             }
@@ -75,7 +75,7 @@ Page
 
                     contactspage.dialogCreated.connect(function(dialog) {
                         pageStack.pop(mainpage, PageStackAction.Immediate);
-                        loader.item.openDialog(dialog, true);
+                        context.openDialog(dialog, true);
                     });
                 }
             }

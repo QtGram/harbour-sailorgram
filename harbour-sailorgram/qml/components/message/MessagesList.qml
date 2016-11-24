@@ -13,7 +13,22 @@ SilicaListView
     property string selectedMessageText
     property bool replyMode: false
     property bool editMode: false
+    property bool selectionMode: false
     property bool positionPending: false
+    property var selectedMessages: null
+
+    function getSelectionList() {
+        var selectionlist = [ ];
+
+        for(var selindex in selectedMessages) {
+            if(!selectedMessages.hasOwnProperty(selindex))
+                continue;
+
+            selectionlist.push(messagesmodel.get(selindex));
+        }
+
+        return selectionlist;
+    }
 
     function prepareActions(model) {
         messageslist.selectedMessage = model.item;
@@ -47,6 +62,15 @@ SilicaListView
 
     Component.onCompleted: messageslist.positionViewAtIndex(model.newMessageIndex, ListView.Center);
 
+    onSelectionModeChanged: {
+        if(selectionMode) {
+            selectedMessages = new Object;
+            return;
+        }
+
+        delete selectedMessages;
+    }
+
     header: Column {
         function activateInput(text) {
             if(text)
@@ -65,6 +89,9 @@ SilicaListView
         width: messageslist.width
 
         height: {
+            if(selectionMode)
+                return 0;
+
             if(dialognotificationswitch.visible)
                 return dialognotificationswitch.height;
 
@@ -116,6 +143,14 @@ SilicaListView
         Row {
             width: parent.width
 
+            GlassItem
+            {
+                id: selindicator
+                anchors.verticalCenter: parent.verticalCenter
+                visible: selectionMode
+                dimmed: !messagemodelitem.selected
+            }
+
             Item {
                 id: picontainer
                 anchors.top: parent.top
@@ -141,8 +176,17 @@ SilicaListView
             }
 
             MessageModelItem {
-                width: parent.width - picontainer.width - Theme.paddingSmall
+                id: messagemodelitem
                 maxWidth: width * 0.8
+
+                width: {
+                    var w = parent.width - picontainer.width - Theme.paddingSmall;
+
+                    if(selindicator.visible)
+                        w -= selindicator.width;
+
+                    return w;
+                }
 
                 onReplyRequested: {
                     prepareActions(model);

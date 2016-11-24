@@ -13,7 +13,7 @@ Item
     readonly property string hereAppCode: "zfYp6V9Ou_wDQn4NVqMofA"
     readonly property string version: "0.89"
     readonly property bool beta: true
-    readonly property int betanum: 1
+    readonly property int betanum: 3
 
     readonly property int bubbleradius: {
         if(context.angledbubbles)
@@ -36,6 +36,7 @@ Item
     property real bubblesopacity: 100.0
 
     property Page mainPage: null
+    property var lastDialog: null
 
     property PositionSource positionSource: PositionSource {
         id: positionsource
@@ -60,6 +61,15 @@ Item
 
     property SailorGram sailorgram: SailorGram {
         telegram: context.telegram
+
+        onOpenDialogRequested: {
+            var dialog = context.dialogs.getDialog(dialogid);
+
+            if(!dialog)
+                return;
+
+            openDialog(dialog, true);
+        }
     }
 
     property DialogsModel dialogs: DialogsModel {
@@ -73,6 +83,21 @@ Item
             ver += " BETA " + betanum;
 
         return ver + " (LAYER " + context.telegram.apiLayer + ")";
+    }
+
+    function openDialog(dialog, immediate) {
+        if(pageStack.depth > 1)
+            pageStack.pop(context.mainPage, PageStackAction.Immediate);
+
+        if(dialog !== context.lastDialog) {
+            context.lastDialog = dialog;
+            pageStack.pushAttached(Qt.resolvedUrl("../pages/dialog/DialogPage.qml"), { context: context, dialog: dialog, firstLoad: true });
+        }
+
+        pageStack.navigateForward((immediate === true) ? PageStackAction.Immediate : PageStackAction.Animated);
+
+         if((immediate === true) && (Qt.application.state !== Qt.ApplicationActive))
+             mainwindow.activate();
     }
 
     function locationThumbnail(latitude, longitude, width, height, z) {

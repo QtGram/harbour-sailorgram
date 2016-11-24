@@ -4,6 +4,7 @@ import harbour.sailorgram.LibQTelegram 1.0
 import "../components/message/reply"
 import "../components/message/media"
 import "../components/message"
+import "../components/custom"
 import "../menu"
 import "../js/ColorScheme.js" as ColorScheme
 
@@ -13,6 +14,8 @@ ListItem
     readonly property color textColor: ColorScheme.colorizeText(model.isMessageService, model.isMessageOut, context)
     readonly property color linkColor: ColorScheme.colorizeLink(model.isMessageService, model.isMessageOut, context)
     readonly property color quoteColor: linkColor
+
+    property bool selected: false
     property real maxWidth
 
     signal replyRequested()
@@ -20,7 +23,25 @@ ListItem
 
     id: messagemodelitem
     contentHeight: content.height + Theme.paddingLarge
-    menu: MessageModelItemMenu { }
+    highlighted: false
+
+    onClicked: {
+        if(!messageslist.selectionMode)
+            return;
+
+        if(messageslist.selectedMessages[model.index] === true) {
+            delete messageslist.selectedMessages[model.index];
+            messagemodelitem.selected = false;
+            return;
+        }
+
+        messageslist.selectedMessages[model.index] = true;
+        messagemodelitem.selected = true;
+    }
+
+    menu: MessageModelItemMenu {
+        enabled: !messageslist.selectionMode
+    }
 
     MessageBubble
     {
@@ -83,6 +104,7 @@ ListItem
             linkColor: messagemodelitem.linkColor
             rawText: model.isMessageForwarded ? qsTr("Forwarded from %1").arg(model.forwardedFromName) : model.messageFrom
             visible: !model.isMessageService
+            openUrls: !messageslist.selectionMode
         }
 
         MessageReplyItem
@@ -158,6 +180,7 @@ ListItem
             font { italic: model.isMessageService; pixelSize: model.isMessageService ? Theme.fontSizeExtraSmall : Theme.fontSizeSmall }
             color: messagemodelitem.textColor
             linkColor: messagemodelitem.linkColor
+            openUrls: !messageslist.selectionMode
             visible: rawText.length > 0
 
             rawText: {

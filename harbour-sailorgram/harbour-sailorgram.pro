@@ -227,4 +227,6 @@ DISTFILES += \
     qml/js/MediaPlayerHelper.js \
     qml/components/mediaplayer/mediacomponents/MediaPlayerLoadingBar.qml \
     qml/pages/media/MediaPlayerPage.qml \
-    qml/components/mediaplayer/InternalMediaPlayer.qml
+    qml/components/mediaplayer/InternalMediaPlayer.qml \
+    qml/pages/dialog/ForwardPage.qml \
+    qml/items/ForwardDialogModelItem.qml

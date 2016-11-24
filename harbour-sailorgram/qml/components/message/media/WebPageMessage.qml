@@ -19,6 +19,7 @@ MouseArea
 
     id: webpagemessage
     height: content.height
+    enabled: !messageslist.selectionMode
 
     onClicked: {
         messagepopup.popup(qsTr("Launching external web browser"));

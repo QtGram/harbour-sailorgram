@@ -47,16 +47,48 @@ Page
 
             MenuItem
             {
-                text: qsTr("Select")
+                text: qsTr("Forward")
+                visible: messageslist.selectionMode
 
                 onClicked: {
+                    var forwardpage = pageStack.push(Qt.resolvedUrl("ForwardPage.qml"), { context: dialogpage.context, fromDialog: dialogpage.dialog });
 
+                    forwardpage.forwardRequested.connect(function(todialog) {
+                        messagesmodel.forwardMessages(todialog, messageslist.getSelectionList());
+                        context.openDialog(todialog, true);
+                    });
+                }
+            }
+
+            MenuItem
+            {
+                text: qsTr("Delete")
+                visible: messageslist.selectionMode
+
+                onClicked: {
+                    remorsepopup.execute(qsTr("Deleting messages"), function() {
+                        messagesmodel.deleteMessages(messageslist.getSelectionList());
+                        messageslist.selectionMode = false;
+                    });
+                }
+            }
+
+            MenuItem
+            {
+                text: messageslist.selectionMode ? qsTr("Cancel selection") : qsTr("Select")
+
+                onClicked: {
+                    messageslist.selectionMode = !messageslist.selectionMode;
+
+                    if(messageslist.selectionMode)
+                        dialogmediapanel.hide();
                 }
             }
 
             MenuItem
             {
                 text: qsTr("Details")
+                visible: !messageslist.selectionMode
                 onClicked: pageStack.push(Qt.resolvedUrl("DetailsPage.qml"), { context: dialogpage.context, dialog: dialogpage.dialog })
             }
         }
