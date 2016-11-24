@@ -185,6 +185,7 @@ ListItem
             isMessageOut: model.isMessageOut
             isMessageUnread: model.isMessageUnread
             isMessageEdited: model.isMessageEdited
+            isMessagePending: model.isMessagePending
             messageDate: model.messageDate
             color: messagemodelitem.textColor
             ticksColor: messagestatus.color
