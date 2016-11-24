@@ -7,15 +7,15 @@ ContextMenu
 
     MenuItem
     {
-        text: qsTr("Reply")
-        visible: messagesmodel.isWritable
-        onClicked: replyRequested()
+        text: qsTr("Edit")
+        visible: messagesmodel.isWritable && model.isMessageOut
+        onClicked: editRequested()
     }
 
     MenuItem
     {
-        text: qsTr("Edit")
-        visible: messagesmodel.isWritable && model.isMessageOut
-        onClicked: editRequested()
+        text: qsTr("Reply")
+        visible: messagesmodel.isWritable
+        onClicked: replyRequested()
     }
 }
