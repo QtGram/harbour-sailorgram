@@ -180,7 +180,7 @@ SilicaListView
                 maxWidth: width * 0.8
 
                 width: {
-                    var w = parent.width - picontainer.width - Theme.paddingSmall;
+                    var w = parent.width - picontainer.width;
 
                     if(selindicator.visible)
                         w -= selindicator.width;

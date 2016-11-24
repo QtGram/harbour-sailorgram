@@ -10,7 +10,15 @@ import "../js/ColorScheme.js" as ColorScheme
 
 ListItem
 {
-    readonly property color bubbleColor: ColorScheme.colorizeBubble(model.isMessageService, model.isMessageOut, context)
+    readonly property color bubbleColor: {
+        var c = ColorScheme.colorizeBubble(model.isMessageService, model.isMessageOut, context)
+
+        if(down)
+            return Qt.darker(c, 1.5);
+
+        return c;
+    }
+
     readonly property color textColor: ColorScheme.colorizeText(model.isMessageService, model.isMessageOut, context)
     readonly property color linkColor: ColorScheme.colorizeLink(model.isMessageService, model.isMessageOut, context)
     readonly property color quoteColor: linkColor
@@ -23,7 +31,13 @@ ListItem
 
     id: messagemodelitem
     contentHeight: content.height + Theme.paddingLarge
-    highlighted: false
+
+    _backgroundColor: {
+        if(context.bubbleshidden)
+            return _showPress ? highlightedColor : "transparent";
+
+        return "transparent";
+    }
 
     onClicked: {
         if(!messageslist.selectionMode)
