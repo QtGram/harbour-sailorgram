@@ -23,6 +23,14 @@ Page
             onDialogCreated: contactspage.dialogCreated(dialog)
         }
 
+        section.property: "firstLetter"
+        section.criteria: ViewSection.FirstCharacter
+
+        section.delegate: SectionHeader {
+            text: section
+            font.pixelSize: Theme.fontSizeLarge
+        }
+
         header: PageHeader {
             title: qsTr("Contacts")
         }

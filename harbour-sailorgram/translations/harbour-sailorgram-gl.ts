@@ -273,6 +273,22 @@ message(s)</source>
         <source>Details</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Forward</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel selection</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogsList</name>
@@ -286,6 +302,13 @@ message(s)</source>
     </message>
     <message>
         <source>Chats</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ForwardPage</name>
+    <message>
+        <source>Forward message(s)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
