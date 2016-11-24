@@ -47,13 +47,13 @@ ListItem
 
             text: {
                 if(model.isCloud)
-                    return "\u2601 " + model.title;
+                    return "<font color='" + Theme.primaryColor + "'><b>\u2601</b></font> " + model.title;
 
                 if(model.isBroadcast)
-                    return "\uD83D\uDCE3 " + model.title;
+                    return "<font color='" + Theme.primaryColor + "'><b>\uD83D\uDCE3</b></font> " + model.title;
 
                 if(model.isChat || model.isMegaGroup)
-                    return "\uD83D\uDC65 " + model.title;
+                    return "<font color='" + Theme.primaryColor + "'><b>\uD83D\uDC65</b></font> " + model.title;
 
                 return model.title;
             }
