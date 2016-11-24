@@ -25,7 +25,7 @@ Label
         var status = "";
 
         if(isMute)
-            status += "🔇";
+            status += "\uD83D\uDD07";
 
         if(isMessageEdited)
             status += qsTr("edited") + " ";
@@ -37,11 +37,11 @@ Label
             status += "<font color=\"" + ticksColor + "\">";
 
             if(isMessagePending)
-                status += " <b>⏱</b>";
+                status += " <b>\u23F1</b>";
             else if(!isMessageUnread)
-                status += " <b>✓✓</b> ";
+                status += " <b>\u2713\u2713</b> ";
             else
-                status += " <b>✓</b> ";
+                status += " <b>\u2713</b> ";
 
             status += "</font>";
         }

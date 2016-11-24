@@ -47,13 +47,13 @@ ListItem
 
             text: {
                 if(model.isCloud)
-                    return "<img align='middle' width='" + font.pixelSize + "' height='" + font.pixelSize + "' src='qrc:///res/cloud.png'> " + model.title;
+                    return "\u2601 " + model.title;
 
                 if(model.isBroadcast)
-                    return "<img align='middle' width='" + font.pixelSize + "' height='" + font.pixelSize + "' src='qrc:///res/channel.png'> " + model.title;
+                    return "\uD83D\uDCE3 " + model.title;
 
                 if(model.isChat || model.isMegaGroup)
-                    return "<img align='middle' width='" + font.pixelSize + "' height='" + font.pixelSize + "' src='qrc:///res/chat.png'> " + model.title;
+                    return "\uD83D\uDC65 " + model.title;
 
                 return model.title;
             }
