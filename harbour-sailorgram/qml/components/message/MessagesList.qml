@@ -8,11 +8,6 @@ import "../../model"
 
 SilicaListView
 {
-    property Message selectedMessage: null
-    property string selectedMessageFrom
-    property string selectedMessageText
-    property bool replyMode: false
-    property bool editMode: false
     property bool selectionMode: false
     property bool positionPending: false
     property var selectedMessages: null
@@ -30,16 +25,6 @@ SilicaListView
         return selectionlist;
     }
 
-    function prepareActions(model) {
-        messageslist.selectedMessage = model.item;
-        messageslist.selectedMessageFrom = model.messageFrom;
-        messageslist.selectedMessageText = model.messageText;
-    }
-
-    function activateInput() {
-        headerItem.activateInput();
-    }
-
     Connections
     {
         target: dialogpage.context.positionSource
@@ -53,6 +38,11 @@ SilicaListView
 
             positionPending = false;
         }
+    }
+
+    DialogInputPanel {
+        id: dialoginputpanel
+        anchors { left: parent.left; bottom: parent.bottom; right: parent.right }
     }
 
     id: messageslist
@@ -71,67 +61,9 @@ SilicaListView
         delete selectedMessages;
     }
 
-    header: Column {
-        function activateInput(text) {
-            if(text)
-                messagetextinput.text = text;
-
-            messagetextinput.focusTextArea();
-        }
-
-        function cancelActions() {
-            replyMode = editMode = false;
-            selectedMessageFrom = selectedMessageText = "";
-            selectedMessage = null;
-        }
-
-        id: messagelistheader
+    header: Item {
         width: messageslist.width
-
-        height: {
-            if(selectionMode)
-                return 0;
-
-            if(dialognotificationswitch.visible)
-                return dialognotificationswitch.height;
-
-            return messagereplyinput.height + messagetextinput.height + Theme.paddingSmall;
-        }
-
-        Item { width: parent.width; height: Theme.paddingSmall }
-
-        DialogNotificationSwitch
-        {
-            id: dialognotificationswitch
-            width: parent.width
-            visible: messagesmodel.isBroadcast && !messagesmodel.isWritable
-        }
-
-        MessageReplyInput {
-            id: messagereplyinput
-            replyMessage: replyMode ? selectedMessage : null
-            replyFrom: replyMode ? selectedMessageFrom : ""
-            replyText: replyMode ? selectedMessageText : ""
-            width: parent.width
-            onReplyCancelled: messagelistheader.cancelActions()
-        }
-
-        MessageTextInput {
-            id: messagetextinput
-            width: parent.width
-            onShareMedia: dialogmediapanel.expanded ? dialogmediapanel.hide() : dialogmediapanel.show()
-
-            onSendMessage: {
-                if(replyMode)
-                    messagesmodel.replyMessage(message, selectedMessage)
-                else if(editMode)
-                    messagesmodel.editMessage(message, selectedMessage);
-                else
-                    messagesmodel.sendMessage(message);
-
-                messagelistheader.cancelActions();
-            }
-        }
+        height: dialoginputpanel.height
     }
 
     delegate: Column {
@@ -189,21 +121,13 @@ SilicaListView
                 }
 
                 onReplyRequested: {
-                    prepareActions(model);
-
-                    editMode = false;
-                    replyMode = true;
-
-                    headerItem.activateInput();
+                    dialoginputpanel.prepareReply(model);
+                    messageslist.positionViewAtBeginning();
                 }
 
                 onEditRequested: {
-                    prepareActions(model);
-
-                    editMode = true;
-                    replyMode = false;
-
-                    headerItem.activateInput(selectedMessageText);
+                    dialoginputpanel.prepareEdit(model);
+                    messageslist.positionViewAtBeginning();
                 }
             }
         }

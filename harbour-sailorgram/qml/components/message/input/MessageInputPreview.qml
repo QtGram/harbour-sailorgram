@@ -7,15 +7,15 @@ import "../"
 
 Item
 {
-    property alias replyFrom: lblfrom.rawText
-    property alias replyText: lblmessage.rawText
-    property Message replyMessage: null
+    property alias previewFrom: lblfrom.rawText
+    property alias previewText: lblmessage.rawText
+    property Message previewMessage: null
 
-    id: messagereplyinput
-    height: visible ? previewcontent.height : 0
-    visible: replyMessage !== null
+    id: messageinputpreview
+    height: Theme.itemSizeSmall
+    visible: previewMessage !== null
 
-    signal replyCancelled()
+    signal inputCancelled()
 
     BackgroundRectangle { anchors.fill: parent }
 
@@ -27,16 +27,16 @@ Item
 
         MessageQuote {
             id: messagequote
-            anchors.verticalCenter: previewcontent.verticalCenter
+            anchors.verticalCenter: parent.verticalCenter
             height: previewcontent.height
         }
 
         MediaMessageItem
         {
             id: mediamessageitem
-            message: replyMessage
-            size: Theme.iconSizeSmall
-            anchors.verticalCenter: parent.venueAddress
+            message: previewMessage
+            size: Theme.itemSizeSmall
+            anchors.verticalCenter: parent.verticalCenter
 
             imageDelegate: MessageReplyImage {
                 anchors.fill: parent
@@ -47,6 +47,7 @@ Item
         Column
         {
             id: previewcontent
+            anchors.verticalCenter: parent.verticalCenter
             width: parent.width - btnclose.width - Theme.paddingSmall
 
             MessageText
@@ -76,7 +77,7 @@ Item
             width: parent.height
             height: parent.height
             icon.source: "image://theme/icon-s-clear-opaque-cross"
-            onClicked: replyCancelled()
+            onClicked: inputCancelled()
         }
     }
 }

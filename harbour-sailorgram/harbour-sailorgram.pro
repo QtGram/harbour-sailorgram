@@ -200,7 +200,6 @@ DISTFILES += \
     qml/components/message/input/MessageTextInput.qml \
     qml/components/message/panel/MessagePanel.qml \
     qml/components/message/panel/MessagePanelItem.qml \
-    qml/components/message/input/MessageReplyInput.qml \
     qml/components/login/TwoFactor.qml \
     qml/menu/DialogModelItemMenu.qml \
     qml/menu/MessageModelItemMenu.qml \
@@ -229,4 +228,6 @@ DISTFILES += \
     qml/pages/media/MediaPlayerPage.qml \
     qml/components/mediaplayer/InternalMediaPlayer.qml \
     qml/pages/dialog/ForwardPage.qml \
-    qml/items/ForwardDialogModelItem.qml
+    qml/items/ForwardDialogModelItem.qml \
+    qml/components/dialog/DialogInputPanel.qml \
+    qml/components/message/input/MessageInputPreview.qml
