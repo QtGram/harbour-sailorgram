@@ -22,6 +22,9 @@ SilicaListView
             if(!mainpage.loggedIn)
                 return "";
 
+            if(context.reconnecting)
+                return qsTr("Connection in %1...").arg(context.reconnectSeconds);
+
             if(!context.telegram.connected)
                 return qsTr("Connecting...");
 

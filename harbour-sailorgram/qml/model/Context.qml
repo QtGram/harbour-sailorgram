@@ -15,6 +15,8 @@ Item
     readonly property bool beta: true
     readonly property int betanum: 3
 
+    readonly property bool reconnecting: reconnectTimer.running
+
     readonly property int bubbleradius: {
         if(context.angledbubbles)
             return 20;
@@ -37,6 +39,16 @@ Item
 
     property Page mainPage: null
     property var lastDialog: null
+    property int reconnectSeconds: 0
+
+    property Timer reconnectTimer: Timer {
+        interval: 1000
+        repeat: true
+
+        onTriggered: {
+            reconnectSeconds--;
+        }
+    }
 
     property PositionSource positionSource: PositionSource {
         id: positionsource
@@ -54,6 +66,18 @@ Item
             port: 443
             dcId: 2
             publicKey: sailorgram.publicKey
+        }
+
+        onConnectedChanged: {
+            if(!telegram.connected)
+                return;
+
+            reconnectTimer.stop();
+        }
+
+        onConnectionTimeout: {
+            context.reconnectSeconds = seconds;
+            reconnectTimer.start();
         }
 
         onLoginCompleted: Settings.set("phonenumber", initializer.phoneNumber);

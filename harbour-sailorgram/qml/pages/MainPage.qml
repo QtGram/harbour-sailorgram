@@ -44,7 +44,7 @@ Page
         PullDownMenu
         {
             visible: mainpage.loggedIn
-            busy: context.telegram.syncing
+            busy: context.telegram.syncing || context.reconnecting
 
             MenuItem
             {
@@ -54,7 +54,15 @@ Page
 
             MenuItem
             {
+                text: qsTr("Connect now")
+                visible: context.reconnecting
+                onClicked: context.telegram.reconnect()
+            }
+
+            MenuItem
+            {
                 text: qsTr("New Chat")
+                visible: context.telegram.connected
 
                 onClicked: {
                     var newchatpage = pageStack.push(Qt.resolvedUrl("dialog/chat/NewChatPage.qml"), { context: mainpage.context });
@@ -69,6 +77,7 @@ Page
             MenuItem
             {
                 text: qsTr("Contacts")
+                visible: context.telegram.connected
 
                 onClicked: {
                     var contactspage = pageStack.push(Qt.resolvedUrl("contact/ContactsPage.qml"), { context: mainpage.context });
