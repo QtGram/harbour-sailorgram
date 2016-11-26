@@ -72,7 +72,7 @@ Column
     Button
     {
         id: btnsubmit
-        anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
+        anchors { horizontalCenter: parent.horizontalCenter }
         text: qsTr("Submit")
         enabled: tfcloudpassword.text.length > 0
 

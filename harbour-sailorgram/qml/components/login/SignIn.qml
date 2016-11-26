@@ -62,7 +62,7 @@ Column
     Button
     {
         id: btnsignin
-        anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
+        anchors { horizontalCenter: parent.horizontalCenter }
         text: qsTr("Sign In")
         enabled: tfcode.text.length > 0
 

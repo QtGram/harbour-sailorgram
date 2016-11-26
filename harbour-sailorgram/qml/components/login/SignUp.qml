@@ -85,7 +85,7 @@ Column
     Button
     {
         id: btnsignup
-        anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingMedium; rightMargin: Theme.paddingMedium }
+        anchors { horizontalCenter: parent.horizontalCenter }
         text: qsTr("Sign Up")
         enabled: (tfirstname.text.length > 0) && (tfcode.text.length > 0)
 

@@ -304,6 +304,10 @@ message(s)</source>
         <source>Chats</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Connection in %1...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ForwardPage</name>
@@ -324,6 +328,10 @@ message(s)</source>
     </message>
     <message>
         <source>New Chat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connect now</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
