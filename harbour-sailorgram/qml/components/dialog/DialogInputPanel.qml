@@ -73,6 +73,7 @@ Column
         id: messagetextinput
         width: parent.width
         onShareMedia: dialogmediapanel.expanded ? dialogmediapanel.hide() : dialogmediapanel.show()
+        visible: messagesmodel.isWritable
 
         onSendMessage: {
             if(replyMode)
