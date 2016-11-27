@@ -2,6 +2,7 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.LibQTelegram 1.0
 import "../custom"
+import "../peer"
 
 BackgroundRectangle
 {
@@ -45,9 +46,6 @@ BackgroundRectangle
         id: peerimage
         anchors { verticalCenter: parent.verticalCenter; right: parent.right; rightMargin: Theme.horizontalPageMargin }
         size: Theme.itemSizeSmall
-        backgroundColor: Theme.secondaryHighlightColor
-        foregroundColor: Theme.primaryColor
-        fontPixelSize: Theme.fontSizeLarge
         peer: model.item
     }
 }

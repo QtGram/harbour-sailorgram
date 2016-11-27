@@ -1,6 +1,7 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.LibQTelegram 1.0
+import "../components/peer"
 
 ListItem
 {
@@ -11,9 +12,6 @@ ListItem
     {
         id: peerimage
         size: forwarddialogmodelitem.contentHeight
-        backgroundColor: Theme.secondaryHighlightColor
-        foregroundColor: Theme.primaryColor
-        fontPixelSize: Theme.fontSizeLarge
         peer: model.item
 
         anchors {

@@ -230,4 +230,5 @@ DISTFILES += \
     qml/pages/dialog/ForwardPage.qml \
     qml/items/ForwardDialogModelItem.qml \
     qml/components/dialog/DialogInputPanel.qml \
-    qml/components/message/input/MessageInputPreview.qml
+    qml/components/message/input/MessageInputPreview.qml \
+    qml/components/peer/PeerImage.qml

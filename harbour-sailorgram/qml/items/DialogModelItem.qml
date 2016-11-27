@@ -2,6 +2,7 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.LibQTelegram 1.0
 import "../components/message"
+import "../components/peer"
 import "../menu"
 
 ListItem

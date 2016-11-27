@@ -1,6 +1,7 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.LibQTelegram 1.0
+import "../components/peer"
 
 ListItem
 {
@@ -12,9 +13,6 @@ ListItem
         id: peerimage
         anchors { left: parent.left; top: parent.top; leftMargin: Theme.paddingSmall }
         size: contactmodelitem.height
-        backgroundColor: Theme.secondaryHighlightColor
-        foregroundColor: Theme.primaryColor
-        fontPixelSize: Theme.fontSizeLarge
         peer: model.item
     }
 

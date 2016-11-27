@@ -5,6 +5,7 @@ import "../../components/message/input"
 import "../../components/dialog"
 import "../../items"
 import "../../model"
+import "../peer"
 
 SilicaListView
 {
@@ -101,9 +102,6 @@ SilicaListView
                     size: Theme.iconSizeSmallPlus
                     peer: model.needsPeerImage ? model.item : null
                     visible: model.needsPeerImage && !model.isMessageOut && messagesmodel.isChat
-                    backgroundColor: Theme.secondaryHighlightColor
-                    foregroundColor: Theme.primaryColor
-                    fontPixelSize: Theme.fontSizeExtraSmall
                 }
             }
 

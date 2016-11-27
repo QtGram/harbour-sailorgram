@@ -2,6 +2,7 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.LibQTelegram 1.0
 import "../../components/custom"
+import "../../components/peer"
 import "../../model"
 
 Page
@@ -32,9 +33,6 @@ Page
                 id: peerimage
                 anchors.horizontalCenter: parent.horizontalCenter
                 size: Screen.width * 0.3
-                backgroundColor: Theme.secondaryHighlightColor
-                foregroundColor: Theme.primaryColor
-                fontPixelSize: Theme.fontSizeLarge
                 peer: detailspage.dialog
             }
 
