@@ -100,8 +100,8 @@ CoverBackground
 
         Repeater {
             model: DialogsCoverModel {
-                dialogsModel: context.dialogs
-                maxDialogs: (context.dialogs.initializing || context.dialogs.loading) ? 0 : 3
+                dialogsModel: (context.dialogs.initializing || context.dialogs.loading) ? null : context.dialogs
+                maxDialogs: 3
             }
 
             delegate: Label {
