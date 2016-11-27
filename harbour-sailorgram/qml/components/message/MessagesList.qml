@@ -9,6 +9,7 @@ import "../peer"
 
 SilicaListView
 {
+    readonly property alias dialogInputPanel: messageslist.headerItem
     property bool selectionMode: false
     property bool positionPending: false
     property var selectedMessages: null
@@ -41,10 +42,6 @@ SilicaListView
         }
     }
 
-    DialogInputPanel {
-        id: dialoginputpanel
-        anchors { left: parent.left; bottom: parent.bottom; right: parent.right }
-    }
 
     id: messageslist
     cacheBuffer: Screen.height * 2
@@ -62,9 +59,8 @@ SilicaListView
         delete selectedMessages;
     }
 
-    header: Item {
+    header: DialogInputPanel {
         width: messageslist.width
-        height: dialoginputpanel.height
     }
 
     delegate: Column {
@@ -119,12 +115,12 @@ SilicaListView
                 }
 
                 onReplyRequested: {
-                    dialoginputpanel.prepareReply(model);
+                    dialogInputPanel.prepareReply(model);
                     messageslist.positionViewAtBeginning();
                 }
 
                 onEditRequested: {
-                    dialoginputpanel.prepareEdit(model);
+                    dialogInputPanel.prepareEdit(model);
                     messageslist.positionViewAtBeginning();
                 }
             }

@@ -39,7 +39,6 @@ Page
     SilicaFlickable
     {
         anchors.fill: parent
-        contentHeight: content.height
 
         PushUpMenu
         {
@@ -93,74 +92,57 @@ Page
             }
         }
 
-        Column
+        DialogTopHeader
         {
-            id: content
-            width: parent.width
+            id: dialogtopheader
+            anchors { left: parent.left; top: parent.top; right: parent.right }
+            title: messagesmodel.title
+            statusText: messagesmodel.statusText
+            peer: dialogpage.dialog
+            visible: !context.chatheaderhidden && dialogpage.isPortrait
+        }
 
-            DialogTopHeader
-            {
-                id: dialogtopheader
-                title: messagesmodel.title
-                statusText: messagesmodel.statusText
-                peer: dialogpage.dialog
-                visible: !context.chatheaderhidden && dialogpage.isPortrait
+        MessagesList
+        {
+            id: messageslist
+            anchors { left: parent.left; top: dialogtopheader.bottom; right: parent.right; bottom: dialogmediapanel.top }
+            model: messagesmodel
+            clip: true
+        }
+
+        DialogMediaPanel
+        {
+            id: dialogmediapanel
+            anchors { left: parent.left; bottom: parent.bottom; right: parent.right }
+
+            onShareImage: {
+                var imageselector = pageStack.push(Qt.resolvedUrl("../../pages/selector/SelectorImagePage.qml"), { context: dialogpage.context });
+                imageselector.imageSelected.connect(function(image) {
+                    messagesmodel.sendPhoto(image, "");
+                    pageStack.pop(dialogpage);
+                });
             }
 
-            MessagesList
-            {
-                id: messageslist
-                model: messagesmodel
-                width: parent.width
-                clip: true
+            onShareFile: {
+                var fileselector = pageStack.push(Qt.resolvedUrl("../../pages/selector/SelectorFilePage.qml"), { context: dialogpage.context });
 
-                height: {
-                    var h = dialogpage.height - Theme.paddingSmall;
-
-                    if(dialogtopheader.visible)
-                        h -= dialogtopheader.height;
-
-                    if(dialogmediapanel.visible)
-                        h -= dialogmediapanel.height;
-
-                    return h;
-                }
+                fileselector.fileSelected.connect(function(file)  {
+                    messagesmodel.sendFile(file, "");
+                    pageStack.pop(dialogpage);
+                });
             }
 
-            DialogMediaPanel
-            {
-                id: dialogmediapanel
-                width: parent.width
+            onShareLocation: {
+                remorsepopup.execute(qsTr("Sending location"), function() {
+                    if(dialogpage.context.positionSource.valid) {
+                        messagesmodel.sendLocation(dialogpage.context.positionSource.position.coordinate.latitude,
+                                                   dialogpage.context.positionSource.position.coordinate.longitude);
+                        return;
+                    }
 
-                onShareImage: {
-                    var imageselector = pageStack.push(Qt.resolvedUrl("../../pages/selector/SelectorImagePage.qml"), { context: dialogpage.context });
-                    imageselector.imageSelected.connect(function(image) {
-                        messagesmodel.sendPhoto(image, "");
-                        pageStack.pop(dialogpage);
-                    });
-                }
-
-                onShareFile: {
-                    var fileselector = pageStack.push(Qt.resolvedUrl("../../pages/selector/SelectorFilePage.qml"), { context: dialogpage.context });
-
-                    fileselector.fileSelected.connect(function(file)  {
-                        messagesmodel.sendFile(file, "");
-                        pageStack.pop(dialogpage);
-                    });
-                }
-
-                onShareLocation: {
-                    remorsepopup.execute(qsTr("Sending location"), function() {
-                        if(dialogpage.context.positionSource.valid) {
-                            messagesmodel.sendLocation(dialogpage.context.positionSource.position.coordinate.latitude,
-                                                       dialogpage.context.positionSource.position.coordinate.longitude);
-                            return;
-                        }
-
-                        messageslist.positionPending = true;
-                        dialogpage.context.positionSource.update();
-                    });
-                }
+                    messageslist.positionPending = true;
+                    dialogpage.context.positionSource.update();
+                });
             }
         }
     }
