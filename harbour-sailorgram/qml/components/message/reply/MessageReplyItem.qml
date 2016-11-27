@@ -5,9 +5,10 @@ import "../"
 
 Item
 {
-    readonly property real calculatedWidth: Math.max(lblfrom.calculatedWidth,
-                                                     mediamessageitem.contentWidth,
-                                                     lblmessage.calculatedWidth)
+    readonly property real calculatedWidth: messagequote.width +
+                                            mediamessageitem.size +
+                                            Math.max(lblfrom.calculatedWidth, lblmessage.calculatedWidth) +
+                                            Theme.paddingSmall
 
     property alias quoteColor: messagequote.color
     property color color: Theme.primaryColor
@@ -27,12 +28,34 @@ Item
         MediaMessageItem
         {
             id: mediamessageitem
+            anchors.verticalCenter: parent.verticalCenter
             message: model.messageHasReply ? model.replyItem : null
-            size: Theme.itemSizeSmall
 
-            imageDelegate: MessageReplyImage {
+            size: {
+                if(mediamessageitem.isFile || mediamessageitem.isAudio)
+                    return 0;
+
+                if(mediamessageitem.isImage || mediamessageitem.isVideo)
+                    return Theme.itemSizeSmall;
+
+                return parent.width;
+            }
+
+            imageDelegate: Image {
                 anchors.fill: parent
-                source: mediamessageitem.source
+                fillMode: Image.PreserveAspectFit
+                source: mediamessageitem.thumbnail
+                asynchronous: true
+            }
+
+            fileDelegate: MessageText {
+                width: Math.min(parent.width, calculatedWidth)
+                emojiPath: context.sailorgram.emojiPath
+                font.pixelSize: Theme.fontSizeExtraSmall
+                wrapMode: Text.NoWrap
+                elide: Text.ElideRight
+                color: messagereplyitem.color
+                openUrls: false
             }
         }
 
@@ -51,7 +74,6 @@ Item
                 rawText: model.replyFrom
                 color: messagereplyitem.color
                 linkColor: messagereplyitem.quoteColor
-
             }
 
             MessageText
@@ -60,13 +82,19 @@ Item
                 width: parent.width - (Theme.paddingSmall * 2)
                 font { italic: true; pixelSize: Theme.fontSizeExtraSmall }
                 emojiPath: context.sailorgram.emojiPath
-                rawText: model.replyText
                 maximumLineCount: 3
                 wrapMode: Text.Wrap
                 elide: Text.ElideRight
                 color: messagereplyitem.color
                 linkColor: messagereplyitem.quoteColor
                 horizontalAlignment: Text.AlignLeft
+
+                rawText: {
+                    if(model.replyCaption.length <= 0)
+                        return model.replyText;
+
+                    return model.replyCaption;
+                }
             }
         }
     }
