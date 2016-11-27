@@ -42,7 +42,6 @@ SilicaListView
         }
     }
 
-
     id: messageslist
     cacheBuffer: Screen.height * 2
     verticalLayoutDirection: ListView.BottomToTop

@@ -21,6 +21,12 @@ Row
         height: Theme.itemSizeSmall
 
         source: {
+            if(mediamessageitem.downloading)
+                return "";
+
+            if(!mediamessageitem.downloaded)
+                return "image://theme/icon-m-cloud-download";
+
             if(mediamessageitem.isAudio)
                 return "image://theme/icon-m-sounds";
 
@@ -31,6 +37,27 @@ Row
                 return "image://theme/icon-m-image";
 
             return "image://theme/icon-m-file-document";
+        }
+
+        BusyIndicator
+        {
+            anchors.centerIn: parent
+            size: BusyIndicatorSize.Medium
+            running: mediamessageitem.downloading
+        }
+
+        MouseArea
+        {
+            anchors.fill: parent
+
+            onClicked: {
+                if(!mediamessageitem.downloaded) {
+                    mediamessageitem.download();
+                    return;
+                }
+
+                Qt.openUrlExternally("file://" + mediamessageitem.source);
+            }
         }
     }
 
@@ -59,6 +86,7 @@ Row
             id: lblfilename
             width: parent.width - Theme.paddingSmall
             color: filemessage.color
+            font.pixelSize: Theme.fontSizeSmall
             text: lblhiddenfilename.text
             elide: Text.ElideRight
         }
@@ -70,6 +98,7 @@ Row
             color: filemessage.color
             text: lblhiddenfilesize.text
             elide: Text.ElideRight
+            font.pixelSize: Theme.fontSizeExtraSmall
         }
     }
 }
