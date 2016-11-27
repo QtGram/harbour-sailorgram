@@ -32,13 +32,10 @@ Item
             message: model.messageHasReply ? model.replyItem : null
 
             size: {
-                if(mediamessageitem.isFile || mediamessageitem.isAudio)
-                    return 0;
-
                 if(mediamessageitem.isImage || mediamessageitem.isVideo)
                     return Theme.itemSizeSmall;
 
-                return parent.width;
+                return 0;
             }
 
             imageDelegate: Image {
@@ -46,16 +43,6 @@ Item
                 fillMode: Image.PreserveAspectFit
                 source: mediamessageitem.thumbnail
                 asynchronous: true
-            }
-
-            fileDelegate: MessageText {
-                width: Math.min(parent.width, calculatedWidth)
-                emojiPath: context.sailorgram.emojiPath
-                font.pixelSize: Theme.fontSizeExtraSmall
-                wrapMode: Text.NoWrap
-                elide: Text.ElideRight
-                color: messagereplyitem.color
-                openUrls: false
             }
         }
 
