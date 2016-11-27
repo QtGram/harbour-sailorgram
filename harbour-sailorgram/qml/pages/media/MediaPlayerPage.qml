@@ -4,6 +4,7 @@ import "../../components/mediaplayer"
 
 Page
 {
+    readonly property bool isMediaPage: true
     property alias source: mediaplayer.videoSource
     property alias thumbnail: mediaplayer.videoThumbnail
     property alias title: mediaplayer.videoTitle
