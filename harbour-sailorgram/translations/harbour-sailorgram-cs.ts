@@ -74,10 +74,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Open media without waiting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Load images automatically</source>
         <translation type="unfinished"></translation>
     </message>
@@ -310,9 +306,34 @@ message(s)</source>
     </message>
 </context>
 <context>
+    <name>FileMessage</name>
+    <message>
+        <source>Opening %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ForwardPage</name>
     <message>
         <source>Forward message(s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ImageViewerPage</name>
+    <message>
+        <source>Save to downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image saved to downloads folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>LocationMessage</name>
+    <message>
+        <source>Opening location</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -372,6 +393,13 @@ message(s)</source>
     <name>MessageStatus</name>
     <message>
         <source>edited</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MessageText</name>
+    <message>
+        <source>Opening %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

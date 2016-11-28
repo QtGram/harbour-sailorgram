@@ -16,7 +16,7 @@ Name:       harbour-sailorgram
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    SailorGram
 Version:    0.89
-Release:    12
+Release:    13
 Group:      Qt/Qt
 License:    GPL3
 URL:        https://github.com/QtGram/harbour-sailorgram/
@@ -104,8 +104,8 @@ systemctl-user restart ngfd.service
 systemctl-user restart harbour-sailorgram-notifications.service
 
 # Reset settings
-# rm -rf /home/nemo/.cache/%{name}
-# rm -rf /home/nemo/.local/share/%{name}
+#rm -rf /home/nemo/.cache/%{name}
+rm -rf /home/nemo/.local/share/%{name}
 # << post
 
 %files
