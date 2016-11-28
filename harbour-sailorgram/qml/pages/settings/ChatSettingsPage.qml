@@ -14,7 +14,6 @@ Dialog
         context.sendwithreturn = tssendwithreturn.checked;
         context.chatheaderhidden = !tsshowchatheader.checked;
         context.defaultemojiset = tsdefaultemojiset.checked;
-        context.immediateopen = tsimmediateopen.checked;
         context.autoloadimages = tsautoloadimages.checked;
         context.bubbleshidden = !tsbubblesvisible.checked;
         context.angledbubbles = tsangledbubbles.checked;
@@ -23,7 +22,6 @@ Dialog
         Settings.set("sendwithreturn", tssendwithreturn.checked);
         Settings.set("chatheaderhidden", !tsshowchatheader.checked);
         Settings.set("defaultemojiset", tsdefaultemojiset.checked);
-        Settings.set("immediateopen", tsimmediateopen.checked);
         Settings.set("autoloadimages", tsautoloadimages.checked);
         Settings.set("hidebubbles", !tsbubblesvisible.checked);
         Settings.set("angledbubbles", tsangledbubbles.checked);
@@ -57,14 +55,6 @@ Dialog
                 anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
                 text: qsTr("Use default emoji set")
                 checked: context.defaultemojiset
-            }
-
-            TextSwitch
-            {
-                id: tsimmediateopen
-                anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingSmall; rightMargin: Theme.paddingSmall }
-                text: qsTr("Open media without waiting")
-                checked: context.immediateopen
             }
 
             TextSwitch
