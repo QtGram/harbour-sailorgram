@@ -195,8 +195,6 @@ DISTFILES += \
     qml/pages/settings/DaemonSettingsPage.qml \
     qml/components/message/NewMessage.qml \
     qml/components/message/MessageQuote.qml \
-    qml/components/message/reply/MessageReplyItem.qml \
-    qml/components/message/reply/MessageReplyImage.qml \
     qml/components/message/input/MessageTextInput.qml \
     qml/components/message/panel/MessagePanel.qml \
     qml/components/message/panel/MessagePanelItem.qml \
@@ -232,4 +230,6 @@ DISTFILES += \
     qml/components/dialog/DialogInputPanel.qml \
     qml/components/message/input/MessageInputPreview.qml \
     qml/components/peer/PeerImage.qml \
-    qml/components/custom/BlurredImage.qml
+    qml/components/custom/BlurredImage.qml \
+    qml/components/message/preview/MessagePreviewImage.qml \
+    qml/components/message/preview/MessagePreviewItem.qml

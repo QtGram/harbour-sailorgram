@@ -1,7 +1,7 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import harbour.sailorgram.LibQTelegram 1.0
-import "../components/message/reply"
+import "../components/message/preview"
 import "../components/message/media"
 import "../components/message"
 import "../components/custom"
@@ -121,13 +121,25 @@ ListItem
             openUrls: !messageslist.selectionMode
         }
 
-        MessageReplyItem
+        MessagePreviewItem
         {
             id: messagereplyitem
             width: parent.width
             quoteColor: messagemodelitem.quoteColor
             color: messagemodelitem.textColor
             visible: model.messageHasReply
+            message: model.messageHasReply ? model.replyItem : null
+            previewFrom: model.replyFrom
+
+            previewText: {
+                if(!model.messageHasReply)
+                    return "";
+
+                if(model.replyCaption.length <= 0)
+                    return model.replyText;
+
+                return model.replyCaption;
+            }
         }
 
         MediaMessageItem

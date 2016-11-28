@@ -12,6 +12,9 @@ Item
 
     property alias quoteColor: messagequote.color
     property color color: Theme.primaryColor
+    property alias message: mediamessageitem.message
+    property alias previewFrom: lblfrom.rawText
+    property alias previewText: lblmessage.rawText
 
     id: messagereplyitem
     height: Math.max(content.height, mediamessageitem.height) + Theme.paddingSmall
@@ -29,7 +32,6 @@ Item
         {
             id: mediamessageitem
             anchors.verticalCenter: parent.verticalCenter
-            message: model.messageHasReply ? model.replyItem : null
 
             size: {
                 if(mediamessageitem.isImage || mediamessageitem.isVideo)
@@ -58,7 +60,6 @@ Item
                 emojiPath: context.sailorgram.emojiPath
                 width: parent.width - (Theme.paddingSmall * 2)
                 horizontalAlignment: Text.AlignLeft
-                rawText: model.replyFrom
                 color: messagereplyitem.color
                 linkColor: messagereplyitem.quoteColor
             }
@@ -75,13 +76,6 @@ Item
                 color: messagereplyitem.color
                 linkColor: messagereplyitem.quoteColor
                 horizontalAlignment: Text.AlignLeft
-
-                rawText: {
-                    if(model.replyCaption.length <= 0)
-                        return model.replyText;
-
-                    return model.replyCaption;
-                }
             }
         }
     }
