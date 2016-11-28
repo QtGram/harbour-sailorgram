@@ -117,9 +117,9 @@ Page
 
             onShareImage: {
                 var imageselector = pageStack.push(Qt.resolvedUrl("../../pages/selector/SelectorImagePage.qml"), { context: dialogpage.context });
+
                 imageselector.imageSelected.connect(function(image) {
                     messagesmodel.sendPhoto(image, "");
-                    pageStack.pop(dialogpage);
                 });
             }
 
@@ -128,7 +128,6 @@ Page
 
                 fileselector.fileSelected.connect(function(file)  {
                     messagesmodel.sendFile(file, "");
-                    pageStack.pop(dialogpage);
                 });
             }
 
