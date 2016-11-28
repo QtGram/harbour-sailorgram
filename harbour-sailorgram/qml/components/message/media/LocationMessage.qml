@@ -37,7 +37,11 @@ Column
         {
             anchors.fill: parent
             enabled: !messageslist.selectionMode
-            onClicked: Qt.openUrlExternally("geo:" + mediamessageitem.geoPoint.latitude + "," + mediamessageitem.geoPoint.longitude)
+
+            onClicked: {
+                messagepopup.popup(qsTr("Opening location"));
+                Qt.openUrlExternally("geo:" + mediamessageitem.geoPoint.latitude + "," + mediamessageitem.geoPoint.longitude)
+            }
         }
     }
 }

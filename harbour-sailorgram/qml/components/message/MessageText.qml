@@ -21,6 +21,7 @@ Label
         if(!openUrls)
             return;
 
+        messagepopup.popup(qsTr("Opening %1").arg(link));
         Qt.openUrlExternally(link);
     }
 }

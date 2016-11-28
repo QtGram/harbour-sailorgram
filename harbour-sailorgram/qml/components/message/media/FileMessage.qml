@@ -56,6 +56,7 @@ Row
                     return;
                 }
 
+                messagepopup.popup(qsTr("Opening %1").arg(filemessage.fileName));
                 Qt.openUrlExternally("file://" + mediamessageitem.source);
             }
         }
