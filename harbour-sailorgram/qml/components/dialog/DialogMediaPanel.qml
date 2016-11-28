@@ -48,7 +48,7 @@ BackgroundRectangle
         IconButton
         {
             id: btnsharefile
-            icon.source: "image://theme/icon-m-file-document"
+            icon.source: "image://theme/icon-m-document"
 
             onClicked: {
                 dialogmediapanel.hide();
