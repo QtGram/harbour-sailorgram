@@ -26,6 +26,9 @@ Item
         fillMode: Image.PreserveAspectFit
 
         source: {
+            if(!mediamessageitem.downloaded)
+                return "image://theme/icon-m-cloud-download?" + waveform.barColor;
+
             if(mediaplayer.playbackState !== MediaPlayer.PlayingState)
                 return "image://theme/icon-m-play?" + waveform.barColor;
 
