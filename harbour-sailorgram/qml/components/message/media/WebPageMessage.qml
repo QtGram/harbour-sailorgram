@@ -1,6 +1,7 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import "../../message"
+import "../../custom"
 
 MouseArea
 {
@@ -83,12 +84,10 @@ MouseArea
                     font { pixelSize: Theme.fontSizeExtraSmall; italic: true }
                 }
 
-                Image
+                BlurredImage
                 {
                     id: imgthumbnail
-                    fillMode: Image.PreserveAspectFit
                     width: parent.width
-                    asynchronous: true
                     cache: false
                 }
             }

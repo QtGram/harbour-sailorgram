@@ -13,7 +13,7 @@ Item
     readonly property string hereAppCode: "zfYp6V9Ou_wDQn4NVqMofA"
     readonly property string version: "0.89"
     readonly property bool beta: true
-    readonly property int betanum: 3
+    readonly property int betanum: 4
 
     readonly property bool reconnecting: reconnectTimer.running
 
@@ -31,7 +31,6 @@ Item
     property bool angledbubbles: false
     property bool sendwithreturn: false
     property bool chatheaderhidden: false
-    property bool immediateopen: false
     property bool autoloadimages:false
     property bool showsearchfield: false
     property bool defaultemojiset: false
@@ -138,7 +137,6 @@ Item
         Settings.load(function(tx) {
             context.sendwithreturn = parseInt(Settings.transactionGet(tx, "sendwithreturn"));
             context.chatheaderhidden = parseInt(Settings.transactionGet(tx, "chatheaderhidden"));
-            context.immediateopen = parseInt(Settings.transactionGet(tx, "immediateopen"));
             context.autoloadimages = parseInt(Settings.transactionGet(tx, "autoloadimages"));
             context.bubbleshidden = parseInt(Settings.transactionGet(tx, "hidebubbles"));
             context.angledbubbles = parseInt(Settings.transactionGet(tx, "angledbubbles"));
