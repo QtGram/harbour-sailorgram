@@ -62,6 +62,7 @@ Item
                 horizontalAlignment: Text.AlignLeft
                 color: messagereplyitem.color
                 linkColor: messagereplyitem.quoteColor
+                elide: Text.ElideRight
             }
 
             MessageText
