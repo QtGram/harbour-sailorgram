@@ -36,20 +36,25 @@ MouseArea
         NumberAnimation { duration: 250; easing.type: Easing.InOutQuad }
     }
 
-    Rectangle
-    {
-        anchors.fill: parent
-        color: Theme.rgba(Theme.highlightDimmerColor, 0.9)
-    }
+    Rectangle { anchors.fill: parent; color: Theme.rgba(Theme.highlightDimmerColor, 0.9) }
 
     Label
     {
         id: lblmessage
-        anchors { left: parent.left; top: parent.top; right: parent.right; bottom: bottombar.top }
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        truncationMode: TruncationMode.Fade
         font.pixelSize: Theme.fontSizeSmall
+        elide: Text.ElideRight
+        wrapMode: Text.NoWrap
+
+        anchors {
+            left: parent.left
+            top: parent.top
+            right: parent.right
+            bottom: bottombar.top
+            leftMargin: Theme.horizontalPageMargin
+            rightMargin: Theme.horizontalPageMargin
+        }
     }
 
     Rectangle
