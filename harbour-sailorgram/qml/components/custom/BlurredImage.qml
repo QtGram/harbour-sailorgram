@@ -4,6 +4,8 @@ import Sailfish.Silica 1.0
 
 Image
 {
+    property bool showActions: true
+
     id: blurredimage
     asynchronous: true
     fillMode: Image.PreserveAspectFit
@@ -27,7 +29,7 @@ Image
         height: parent.height * 0.2
 
         visible: {
-            if(mediamessageitem.downloading)
+            if(!showActions || mediamessageitem.downloading)
                 return false;
 
             return !mediamessageitem.downloaded || mediamessageitem.isVideo;
@@ -46,7 +48,7 @@ Image
     MouseArea
     {
         anchors.fill: parent
-        enabled: !mediamessageitem.isSticker && !messageslist.selectionMode
+        enabled: showActions && !mediamessageitem.isSticker && !messageslist.selectionMode
 
         onClicked: {
             if(mediamessageitem.downloaded) {
