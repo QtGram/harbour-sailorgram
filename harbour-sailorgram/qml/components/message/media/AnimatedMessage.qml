@@ -1,6 +1,7 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import QtMultimedia 5.0
+import "../../custom"
 
 Item
 {
@@ -11,6 +12,13 @@ Item
     MediaPlayer { id: mediaplayer; autoPlay: false; autoLoad: false; loops: MediaPlayer.Infinite }
     VideoOutput { anchors.fill: parent; source: mediaplayer }
     BusyIndicator { size: BusyIndicatorSize.Small; anchors.centerIn: parent; running: mediamessageitem.downloading }
+
+    BlurredImage
+    {
+        anchors.fill: parent
+        source: mediamessageitem.thumbnail
+        showActions: false
+    }
 
     Image {
         source: "image://theme/icon-m-play"
