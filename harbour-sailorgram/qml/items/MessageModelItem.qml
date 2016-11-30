@@ -153,6 +153,11 @@ ListItem
                 source: mediamessageitem.isVideo ? mediamessageitem.videoThumbnail : mediamessageitem.source
             }
 
+            stickerDelegate: StickerMessage {
+                anchors.fill: parent
+                source: mediamessageitem.downloaded ? mediamessageitem.source : mediamessageitem.thumbnail
+            }
+
             animatedDelegate: AnimatedMessage {
                 anchors.fill: parent
                 source: mediamessageitem.source
