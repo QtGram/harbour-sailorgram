@@ -2,26 +2,19 @@ import QtQuick 2.1
 import QtGraphicalEffects 1.0
 import Sailfish.Silica 1.0
 
-Item
+Image
 {
-    property alias source: image.source
-    property alias sourceSize: image.sourceSize
-    property alias cache: image.cache
+    id: blurredimage
+    asynchronous: true
+    fillMode: Image.PreserveAspectFit
+    cache: false
 
-    Image
-    {
-        id: image
-        anchors.fill: parent
-        asynchronous: true
-        fillMode: Image.PreserveAspectFit
-    }
+    layer.enabled: !mediamessageitem.downloaded
 
-    FastBlur
-    {
-        anchors.fill: image
-        source: image
-        radius: !mediamessageitem.downloaded ? 32.0 : 0.0
-        visible: !mediamessageitem.downloaded
+    layer.effect: FastBlur {
+        width: blurredimage.width
+        height: blurredimage.height
+        radius: 32.0
     }
 
     Image

@@ -171,7 +171,7 @@ ListItem
             }
 
             webPageDelegate: WebPageMessage {
-                width: Math.min(contentWidth, maxWidth)
+                width: Math.min(calculatedWidth, maxWidth)
                 color: messagemodelitem.textColor
                 quoteColor: messagemodelitem.linkColor
                 title: mediamessageitem.webPageTitle

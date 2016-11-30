@@ -7,8 +7,7 @@ MouseArea
 {
     readonly property real calculatedWidth: Math.max(wpmessage.calculatedWidth,
                                                      wptitle.calculatedWidth,
-                                                     wpdescription.calculatedWidth,
-                                                     imgthumbnail.sourceSize.width)
+                                                     wpdescription.calculatedWidth)
 
     property alias messageText: wpmessage.rawText
     property alias title: wptitle.rawText
@@ -88,7 +87,7 @@ MouseArea
                 {
                     id: imgthumbnail
                     width: parent.width
-                    cache: false
+                    height: mediamessageitem.webPageThumbnailHeight
                 }
             }
         }
